@@ -124,13 +124,14 @@ const HEADER = `<header class="site-header" id="header">
                 <span class="mm-badge"><svg class="icon"><use href="#i-users"/></svg></span>
                 <p class="mm-title">Ven en grupo</p>
                 <p class="mm-text">Encuentra la experiencia que mejor se adapta a tu grupo.</p>
-                <a class="btn btn--purple-outline" href="index.html#grupos">Cotiza tu visita<svg class="icon"><use href="#i-arrow"/></svg></a>
+                <a class="mm-landing" href="ven-en-grupo.html"><span>Ir a Ven en grupo</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+                <a class="btn btn--purple-outline" href="ven-en-grupo.html#cotiza">Cotiza tu visita<svg class="icon"><use href="#i-arrow"/></svg></a>
               </div>
               <ul class="mm-tiles">
-                <li><a class="mm-tile" href="index.html#grupos"><span class="mm-ic"><svg class="icon"><use href="#i-cap"/></svg></span><b>Colegios y universidades</b><small>Visitas que conectan con el aula.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
-                <li><a class="mm-tile" href="index.html#grupos"><span class="mm-ic"><svg class="icon"><use href="#i-cake"/></svg></span><b>Cumpleaños</b><small>Una celebración llena de experimentos.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
-                <li><a class="mm-tile" href="index.html#grupos"><span class="mm-ic"><svg class="icon"><use href="#i-briefcase"/></svg></span><b>Empresas y eventos</b><small>Experiencias y espacios para equipos.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
-                <li><a class="mm-tile" href="index.html#grupos"><span class="mm-ic"><svg class="icon"><use href="#i-door"/></svg></span><b><abbr title="Maloka Puertas Abiertas">MPA</abbr></b><small>Maloka Puertas Abiertas: ciencia para comunidades.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                <li><a class="mm-tile" href="ven-en-grupo.html#colegios"><span class="mm-ic"><svg class="icon"><use href="#i-cap"/></svg></span><b>Colegios y universidades</b><small>Visitas que conectan con el aula.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                <li><a class="mm-tile" href="ven-en-grupo.html#cumpleanos"><span class="mm-ic"><svg class="icon"><use href="#i-cake"/></svg></span><b>Cumpleaños</b><small>Una celebración llena de experimentos.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                <li><a class="mm-tile" href="ven-en-grupo.html#empresas"><span class="mm-ic"><svg class="icon"><use href="#i-briefcase"/></svg></span><b>Empresas y eventos</b><small>Experiencias y espacios para equipos.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                <li><a class="mm-tile" href="ven-en-grupo.html#mpa"><span class="mm-ic"><svg class="icon"><use href="#i-door"/></svg></span><b><abbr title="Maloka Puertas Abiertas">MPA</abbr></b><small>Maloka Puertas Abiertas: ciencia para comunidades.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
               </ul>
             </div>
           </div>
@@ -231,12 +232,12 @@ const HEADER = `<header class="site-header" id="header">
   <section class="d-screen d-sub" id="ds-grupo" aria-label="Ven en grupo" style="--acc:var(--purple);--acc-ink:var(--purple-ink)">
     <div class="d-sub-head"><button class="d-back" type="button"><svg class="icon"><use href="#i-arrow"/></svg><span class="sr-only">Volver al menú: </span>Ven en grupo</button><p class="d-desc">Encuentra la experiencia que mejor se adapta a tu grupo.</p></div>
     <ul class="d-links">
-      <li><a class="d-link" href="index.html#grupos">Colegios y universidades<svg class="icon"><use href="#i-arrow"/></svg></a></li>
-      <li><a class="d-link" href="index.html#grupos">Cumpleaños<svg class="icon"><use href="#i-arrow"/></svg></a></li>
-      <li><a class="d-link" href="index.html#grupos">Empresas y eventos<svg class="icon"><use href="#i-arrow"/></svg></a></li>
-      <li><a class="d-link" href="index.html#grupos"><span>MPA<small>Maloka Puertas Abiertas</small></span><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="d-link" href="ven-en-grupo.html#colegios">Colegios y universidades<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="d-link" href="ven-en-grupo.html#cumpleanos">Cumpleaños<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="d-link" href="ven-en-grupo.html#empresas">Empresas y eventos<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="d-link" href="ven-en-grupo.html#mpa"><span>MPA<small>Maloka Puertas Abiertas</small></span><svg class="icon"><use href="#i-arrow"/></svg></a></li>
     </ul>
-    <a class="btn btn--purple btn--lg" href="index.html#grupos">Cotiza tu visita<svg class="icon"><use href="#i-arrow"/></svg></a>
+    <a class="btn btn--purple btn--lg" href="ven-en-grupo.html#cotiza">Cotiza tu visita<svg class="icon"><use href="#i-arrow"/></svg></a>
   </section>
 
   <section class="d-screen d-sub" id="ds-descubre" aria-label="Descubre" style="--acc:var(--blue);--acc-ink:#0F5DC7">
@@ -277,7 +278,7 @@ const FOOTER = `<footer class="site-footer on-dark" id="contacto">
         <nav class="footer-col" aria-labelledby="f1"><h2 id="f1">Visítanos</h2><ul>
           <li><a href="index.html#entradas">Horarios y tarifas</a></li><li><a href="index.html#entradas">Cómo llegar</a></li><li><a href="index.html#entradas">Servicios</a></li><li><a href="index.html#experiencias">Experiencias</a></li><li><a href="agendate.html">Agéndate</a></li><li><a href="index.html#entradas">Compra entradas</a></li></ul></nav>
         <nav class="footer-col" aria-labelledby="f2"><h2 id="f2">Ven en grupo</h2><ul>
-          <li><a href="index.html#grupos">Colegios y universidades</a></li><li><a href="index.html#grupos">Cumpleaños</a></li><li><a href="index.html#grupos">Empresas y eventos</a></li><li><a href="index.html#grupos">MPA · Maloka Puertas Abiertas</a></li><li><a href="index.html#grupos">Cotiza tu visita</a></li></ul></nav>
+          <li><a href="ven-en-grupo.html#colegios">Colegios y universidades</a></li><li><a href="ven-en-grupo.html#cumpleanos">Cumpleaños</a></li><li><a href="ven-en-grupo.html#empresas">Empresas y eventos</a></li><li><a href="ven-en-grupo.html#mpa">MPA · Maloka Puertas Abiertas</a></li><li><a href="ven-en-grupo.html#cotiza">Cotiza tu visita</a></li></ul></nav>
         <nav class="footer-col" aria-labelledby="f3"><h2 id="f3">Descubre</h2><ul>
           <li><a href="index.html#descubre">Programas y proyectos</a></li><li><a href="index.html#experiencias">Experiencias</a></li><li><a href="index.html#descubre">Conoce Maloka</a></li><li><a href="index.html#noticias">Noticias</a></li></ul></nav>
         <nav class="footer-col" aria-labelledby="f5"><h2 id="f5">Crea con Maloka</h2><ul>
@@ -319,8 +320,8 @@ const SEARCH = `<dialog class="search-dlg" id="search-dlg" aria-label="Buscar en
     <ul>
       <li><a class="chip-link" href="index.html#entradas">Horarios y tarifas</a></li>
       <li><a class="chip-link" href="index.html#experiencias">Experiencias</a></li>
-      <li><a class="chip-link" href="index.html#grupos">Cumpleaños</a></li>
-      <li><a class="chip-link" href="index.html#grupos">Colegios y universidades</a></li>
+      <li><a class="chip-link" href="ven-en-grupo.html#cumpleanos">Cumpleaños</a></li>
+      <li><a class="chip-link" href="ven-en-grupo.html#colegios">Colegios y universidades</a></li>
       <li><a class="chip-link" href="agendate.html">Agéndate</a></li>
       <li><a class="chip-link" href="index.html#entradas">Cómo llegar</a></li>
     </ul>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ven en grupo · estados</title>
+<meta name="description" content="Estados de diseño de la landing Ven en grupo de Maloka: secciones, formulario por pasos, estado enviado y componentes reutilizables.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/grupos.css">
+<style>
+/* Hoja de estados: los recuadros grandes son la página real con parámetros; los componentes usan las mismas clases. */
+body{background:var(--g50)}
+.doc-top{background:var(--navy);color:var(--white);padding-block:56px 48px}
+.doc-top .k{font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#B9A3F0;margin-bottom:12px}
+.doc-top h1{font-size:clamp(2.25rem,1.6rem + 2.6vw,3.75rem);letter-spacing:-.035em;margin-bottom:16px}
+.doc-top p{max-width:70ch;color:#C9D1EA}
+.doc-top nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.doc-top nav a{display:inline-flex;align-items:center;min-height:40px;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.08);color:var(--white);font-weight:700;font-size:.875rem;text-decoration:none}
+.doc-top nav a:hover{background:rgba(255,255,255,.16)}
+.doc main{padding-block:48px 96px;display:grid;gap:80px}
+.grp h2{font-size:clamp(1.5rem,1.2rem + 1vw,2rem);color:var(--navy);letter-spacing:-.02em;margin-bottom:8px}
+.grp > p{color:var(--g700);max-width:72ch;margin-bottom:24px}
+.g2{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:24px;align-items:start}
+.g2e{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:stretch}
+.st{display:grid;gap:10px;min-width:0}
+.st-h{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.st-h b{color:var(--navy)}
+.st-h span{font-size:.8125rem;color:var(--g700)}
+.frame{position:relative;overflow:hidden;border-radius:16px;background:var(--white);border:1px solid var(--g200);box-shadow:0 20px 40px -32px rgba(16,28,76,.5)}
+.frame iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0;background:var(--white)}
+.anatomy{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:20px}
+.anatomy li{padding:14px 16px;border-radius:14px;background:var(--white);border:1px solid var(--g100);font-size:.875rem;color:var(--g700)}
+.anatomy b{display:block;color:var(--navy)}
+@media (max-width:1000px){ .g2,.g2e,.g4{grid-template-columns:1fr} }
+</style>
+</head>
+<body class="doc vg">
+<script src="assets/site.js" data-layout="bare"></script>
+
+<header class="doc-top">
+  <div class="wrap">
+    <p class="k">Maloka · Ven en grupo</p>
+    <h1>Ven en grupo: estados de diseño</h1>
+    <p>Los recuadros son la página real cargada en un estado concreto, y se pueden usar. El recorrido sigue el orden: identificar el grupo, descubrir la oferta, resolver dudas y cotizar.</p>
+    <nav aria-label="Ir a">
+      <a href="#e1">1–3 Landing y hero</a><a href="#e4">4 Selector</a><a href="#e5">5–9 Secciones</a><a href="#e10">10 Comparador</a><a href="#e11">11–12 Cotización</a><a href="#e13">13–14 Preguntas y cierre</a><a href="#e15">15 Componentes</a>
+      <a href="ven-en-grupo.html" style="background:#7546D8">Abrir Ven en grupo →</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="grp" id="e1" aria-labelledby="t1">
+    <h2 id="t1">1–3. Landing desktop y móvil · hero</h2>
+    <p>El hero pregunta «¿Con quién vienes?» desde el primer momento. En móvil, el CTA «Cotiza tu visita» queda fijo abajo después del hero y se oculta al llegar al formulario.</p>
+    <div class="g2">
+      <div class="st"><div class="st-h"><b>Desktop · 1440 px</b></div><div class="frame" data-w="1440" data-h="1700"><iframe title="Ven en grupo desktop" src="ven-en-grupo.html" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Móvil · 390 px</b></div><div class="frame" data-w="390" data-h="1700"><iframe title="Ven en grupo móvil" src="ven-en-grupo.html" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+
+  <section class="grp" id="e4" aria-labelledby="t4">
+    <h2 id="t4">4. Selector «¿Con quién vienes?»</h2>
+    <p>Composición editorial con las cuatro opciones de la arquitectura. Todas usan el mismo componente, en tamaños distintos.</p>
+    <div class="g2">
+      <div class="st"><div class="st-h"><b>Desktop</b></div><div class="frame" data-w="1440" data-h="1300"><iframe title="Selector desktop" src="ven-en-grupo.html?ir=con-quien" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Móvil · cards verticales</b></div><div class="frame" data-w="390" data-h="1300"><iframe title="Selector móvil" src="ven-en-grupo.html?ir=con-quien" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+
+  <section class="grp" id="e5" aria-labelledby="t5">
+    <h2 id="t5">5–9. Secciones por tipo de grupo</h2>
+    <p>Las secciones alternan tono y composición: colegios usa bloques informativos y un timeline, cumpleaños tiene planes y galería, empresas va sobre fondo oscuro con espacios y montajes, y MPA se centra en la sigla y el proceso. Todo lo pendiente lleva la etiqueta «Por validar».</p>
+    <div class="g2e">
+      <div class="st"><div class="st-h"><b>5 · Colegios y universidades</b></div><div class="frame" data-w="1440" data-h="1300"><iframe title="Colegios" src="ven-en-grupo.html?ir=colegios" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>9 · Recursos pedagógicos</b><span>Antes · durante · después</span></div><div class="frame" data-w="1440" data-h="1000"><iframe title="Recursos pedagógicos" src="ven-en-grupo.html?ir=recursos" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>6 · Cumpleaños</b></div><div class="frame" data-w="1440" data-h="1400"><iframe title="Cumpleaños" src="ven-en-grupo.html?ir=cumpleanos" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>7 · Empresas y eventos</b></div><div class="frame" data-w="1440" data-h="1400"><iframe title="Empresas y eventos" src="ven-en-grupo.html?ir=empresas" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>8 · MPA · Maloka Puertas Abiertas</b></div><div class="frame" data-w="1440" data-h="1400"><iframe title="MPA" src="ven-en-grupo.html?ir=mpa" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Timeline vertical · móvil</b></div><div class="frame" data-w="390" data-h="1400"><iframe title="Timeline móvil" src="ven-en-grupo.html?ir=mpa" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+
+  <section class="grp" id="e10" aria-labelledby="t10">
+    <h2 id="t10">10. Comparador de tipos de visita</h2>
+    <p>Sirve para elegir camino: objetivo, para quién es y cómo empieza cada opción. No muestra precios.</p>
+    <div class="st"><div class="frame" data-w="1440" data-h="820"><iframe title="Comparador" src="ven-en-grupo.html?ir=comparar" loading="lazy"></iframe></div></div>
+  </section>
+
+  <section class="grp" id="e11" aria-labelledby="t11">
+    <h2 id="t11">11–12. Formulario por pasos y estado enviado</h2>
+    <p>Cuatro pasos cortos: solo se pide lo necesario en cada momento. Los botones «Cotiza…» de cada sección preseleccionan el tipo de visita. Los errores explican cómo corregir el dato.</p>
+    <div class="g2e">
+      <div class="st"><div class="st-h"><b>Paso 1 · Tipo de visita</b></div><div class="frame" data-w="1440" data-h="900"><iframe title="Paso 1" src="ven-en-grupo.html?ir=cotiza" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Paso 2 · con errores</b></div><div class="frame" data-w="1440" data-h="900"><iframe title="Paso 2 con errores" src="ven-en-grupo.html?ir=cotiza&amp;tipo=colegio&amp;error=2" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Paso 4 · revisión</b></div><div class="frame" data-w="1440" data-h="900"><iframe title="Paso 4" src="ven-en-grupo.html?ir=cotiza&amp;tipo=colegio&amp;paso=4" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Estado enviado</b></div><div class="frame" data-w="1440" data-h="900"><iframe title="Solicitud enviada" src="ven-en-grupo.html?ir=cotiza&amp;tipo=cumpleanos&amp;enviado=1" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Paso 2 · móvil</b></div><div class="frame" data-w="390" data-h="900"><iframe title="Paso 2 móvil" src="ven-en-grupo.html?ir=cotiza&amp;tipo=empresa&amp;paso=2" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Enviado · móvil</b></div><div class="frame" data-w="390" data-h="900"><iframe title="Enviado móvil" src="ven-en-grupo.html?ir=cotiza&amp;tipo=mpa&amp;enviado=1" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+
+  <section class="grp" id="e13" aria-labelledby="t13">
+    <h2 id="t13">13–14. Preguntas frecuentes y cierre</h2>
+    <p>Acordeones accesibles con respuestas de ejemplo marcadas «Por validar». La página termina con «También puedes explorar» para que Ven en grupo no sea un callejón sin salida.</p>
+    <div class="g2e">
+      <div class="st"><div class="st-h"><b>Preguntas frecuentes</b></div><div class="frame" data-w="1440" data-h="900"><iframe title="Preguntas frecuentes" src="ven-en-grupo.html?ir=preguntas&amp;faq=1" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Testimonios por validar</b></div><div class="frame" data-w="1440" data-h="900"><iframe title="Testimonios" src="ven-en-grupo.html?ir=q-title" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+
+  <section class="grp" id="e15" aria-labelledby="t15">
+    <h2 id="t15">15. Componente reutilizable · Group Experience Card</h2>
+    <p>La estructura no cambia entre variantes: imagen, tipo de grupo, título, beneficio, información breve y CTA. Solo cambia el acento. Sirve para las páginas individuales de cada tipo de visita y para la Home.</p>
+    <div class="g4">
+      <article class="gx gx--education"><div class="gx-media"><div class="ph tone-purple" role="img" aria-label="Estudiantes experimentando con su docente."><div class="ph-img"></div></div></div><div class="gx-body"><span class="gx-type"><span class="gx-ic"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg></span>Education</span><h3>Colegios y universidades</h3><p class="benefit">Convierte la visita en una experiencia de aprendizaje.</p><ul class="gx-info"><li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>Información breve</li></ul><div class="gx-cta"><a href="ven-en-grupo.html#colegios">Planea tu visita educativa<span class="dot"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></div></div></article>
+      <article class="gx gx--celebration"><div class="gx-media"><div class="ph tone-warm" role="img" aria-label="Celebración de cumpleaños con experimentos."><div class="ph-img"></div></div></div><div class="gx-body"><span class="gx-type"><span class="gx-ic"><svg class="icon" aria-hidden="true"><use href="#i-cake"/></svg></span>Celebration</span><h3>Cumpleaños</h3><p class="benefit">Celebra experimentando, descubriendo y compartiendo.</p><ul class="gx-info"><li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>Información breve</li></ul><div class="gx-cta"><a href="ven-en-grupo.html#cumpleanos">Descubre los planes<span class="dot"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></div></div></article>
+      <article class="gx gx--corporate"><div class="gx-media"><div class="ph tone-arch" role="img" aria-label="Equipo de trabajo en un reto."><div class="ph-img"></div></div></div><div class="gx-body"><span class="gx-type"><span class="gx-ic"><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg></span>Corporate</span><h3>Empresas y eventos</h3><p class="benefit">Crea una experiencia diferente para tu equipo o invitados.</p><ul class="gx-info"><li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>Información breve</li></ul><div class="gx-cta"><a href="ven-en-grupo.html#empresas">Organiza tu evento<span class="dot"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></div></div></article>
+      <article class="gx gx--community"><div class="gx-media"><div class="ph tone-group" role="img" aria-label="Comunidad recorriendo Maloka."><div class="ph-img"></div></div></div><div class="gx-body"><span class="gx-type"><span class="gx-ic"><svg class="icon" aria-hidden="true"><use href="#i-door"/></svg></span>Community</span><h3>MPA</h3><p class="benefit">Una puerta abierta para vivir la ciencia.</p><ul class="gx-info"><li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>Maloka Puertas Abiertas</li></ul><div class="gx-cta"><a href="ven-en-grupo.html#mpa">Conoce MPA<span class="dot"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></div></div></article>
+    </div>
+    <ul class="anatomy">
+      <li><b>Imagen</b>Interacción real del grupo, sin poses.</li>
+      <li><b>Tipo de grupo</b>Icono outline y etiqueta de variante.</li>
+      <li><b>Título</b>El nombre exacto de la arquitectura.</li>
+      <li><b>Beneficio</b>Una frase en voz Maloka.</li>
+      <li><b>Información breve</b>Uno o dos datos clave.</li>
+      <li><b>CTA</b>Acción específica; toda la card es clicable.</li>
+    </ul>
+  </section>
+</main>
+
+<script>
+(() => {
+  const frames = [...document.querySelectorAll('.frame')];
+  const fit = () => frames.forEach(f => {
+    const w = +f.dataset.w, h = +f.dataset.h, s = f.clientWidth / w, i = f.querySelector('iframe');
+    i.style.width = w + 'px'; i.style.height = h + 'px'; i.style.transform = `scale(${s})`; f.style.height = h * s + 'px';
+  });
+  fit(); addEventListener('resize', fit);
+})();
+</script>
+</body>
+</html>
