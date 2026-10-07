@@ -576,7 +576,7 @@ body.hide-notes .ph-note{display:none}
 .footer-brand .logo{color:var(--white)}
 .footer-brand p{font-size:1.5rem;font-weight:800;color:var(--white);letter-spacing:-.02em;line-height:1.2}
 .footer-brand .btn{justify-self:start}
-.footer-cols{grid-column:4 / -1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:32px 24px}
+.footer-cols{grid-column:4 / -1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 24px}
 .footer-col h2{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:16px;font-weight:800}
 .footer-col a{display:inline-flex;align-items:center;min-height:36px;color:#C9D1EA;text-decoration:none;line-height:1.35;padding-block:4px}
 .footer-col a:hover{color:var(--white);text-decoration:underline;text-underline-offset:4px}
@@ -760,7 +760,7 @@ body.hide-notes .ph-note{display:none}
 
 <div class="proto" role="note">
   <div class="wrap">
-    <p><strong>Prototipo de alta fidelidad.</strong> Fotografías, horarios, precios, fechas y cifras son marcadores de posición.</p>
+    <p><strong>Prototipo de alta fidelidad.</strong> Fotografías, horarios, precios, fechas y cifras son marcadores de posición. <a href="menu.html" style="color:#fff;font-weight:700">Ver estados del menú →</a></p>
     <button class="switch" type="button" id="notes-toggle" aria-pressed="true"><span class="switch-track" aria-hidden="true"></span>Notas de fotografía</button>
   </div>
 </div>
@@ -1037,10 +1037,10 @@ body.hide-notes .ph-note{display:none}
       </dl>
       <div class="visit-actions">
         <ul>
-          <li><a class="chip-link" href="#"><svg class="icon"><use href="#i-calendar"/></svg>Ver horarios y tarifas</a></li>
-          <li><a class="chip-link" href="#"><svg class="icon"><use href="#i-route"/></svg>Cómo llegar</a></li>
-          <li><a class="chip-link" href="#"><svg class="icon"><use href="#i-access"/></svg>Accesibilidad</a></li>
-          <li><a class="chip-link" href="#"><svg class="icon"><use href="#i-services"/></svg>Servicios</a></li>
+          <li><a class="chip-link" href="#entradas"><svg class="icon"><use href="#i-calendar"/></svg>Horarios y tarifas</a></li>
+          <li><a class="chip-link" href="#entradas"><svg class="icon"><use href="#i-route"/></svg>Cómo llegar</a></li>
+                    <li><a class="chip-link" href="#entradas"><svg class="icon"><use href="#i-services"/></svg>Servicios</a></li>
+          <li><a class="chip-link" href="#experiencias"><svg class="icon"><use href="#i-spark"/></svg>Experiencias</a></li>
         </ul>
         <a class="btn btn--buy btn--lg" href="#"><svg class="icon ticket"><use href="#i-ticket"/></svg>Compra entradas</a>
       </div>
@@ -1171,26 +1171,25 @@ body.hide-notes .ph-note{display:none}
       <p class="eyebrow">Ven en grupo</p>
       <h2 class="h2" id="groups-title">Maloka se disfruta más cuando la vivimos juntos.</h2>
       <p class="lede">Organizamos visitas a la medida de tu colegio, tu equipo de trabajo, tu comunidad o tu celebración.</p>
-      <a class="btn btn--purple btn--lg" href="#">Cotiza tu visita<svg class="icon"><use href="#i-arrow"/></svg></a>
-      <a class="res-link" href="#"><span>Recursos pedagógicos<small>Guías y actividades para antes y después de la visita</small></span><svg class="icon"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn--purple btn--lg" href="#grupos">Cotiza tu visita<svg class="icon"><use href="#i-arrow"/></svg></a>
     </div>
 
     <div class="groups-cards">
-      <a class="gcard" href="#">
+      <a class="gcard" href="#grupos">
         <div class="ph tone-purple" role="img" aria-label="Un grupo de estudiantes de uniforme rodea a una mediadora que sostiene un generador eléctrico; varios levantan la mano."><div class="ph-img"></div><span class="ph-note"><svg class="icon"><use href="#i-camera"/></svg><span>Grupo escolar con mediadora</span></span></div>
         <div class="gcard-body"><h3>Colegios y universidades</h3><p>Visitas que conectan con el currículo y despiertan vocaciones.</p><span class="go"><span class="go-dot"><svg class="icon"><use href="#i-arrow"/></svg></span>Planea la visita escolar</span></div>
       </a>
-      <a class="gcard" href="#">
+      <a class="gcard" href="#grupos">
         <div class="ph tone-warm" role="img" aria-label="Niños celebran un cumpleaños haciendo burbujas gigantes en un laboratorio."><div class="ph-img"></div><span class="ph-note"><svg class="icon"><use href="#i-camera"/></svg><span>Celebración con experimento</span></span></div>
         <div class="gcard-body"><h3>Cumpleaños</h3><p>Una celebración llena de experimentos y sorpresas.</p><span class="go"><span class="go-dot"><svg class="icon"><use href="#i-arrow"/></svg></span>Celebra en Maloka</span></div>
       </a>
-      <a class="gcard" href="#">
+      <a class="gcard" href="#grupos">
         <div class="ph tone-arch" role="img" aria-label="Un equipo de trabajo participa en un reto de construcción dentro de una sala de Maloka."><div class="ph-img"></div><span class="ph-note"><svg class="icon"><use href="#i-camera"/></svg><span>Equipo adulto en reto creativo</span></span></div>
         <div class="gcard-body"><h3>Empresas y eventos</h3><p>Espacios y experiencias para equipos que quieren pensar distinto.</p><span class="go"><span class="go-dot"><svg class="icon"><use href="#i-arrow"/></svg></span>Organiza tu evento</span></div>
       </a>
-      <a class="gcard" href="#">
+      <a class="gcard" href="#grupos">
         <div class="ph tone-group" role="img" aria-label="Familias de distintas edades recorren una sala interactiva durante una jornada de puertas abiertas."><div class="ph-img"></div><span class="ph-note"><svg class="icon"><use href="#i-camera"/></svg><span>Comunidad diversa, varias generaciones</span></span></div>
-        <div class="gcard-body"><h3>Maloka Puertas Abiertas</h3><p>Ciencia para comunidades que también merecen descubrirla.</p><span class="go"><span class="go-dot"><svg class="icon"><use href="#i-arrow"/></svg></span>Descubre el programa</span></div>
+        <div class="gcard-body"><h3>MPA</h3><p>Maloka Puertas Abiertas: ciencia para comunidades que también merecen descubrirla.</p><span class="go"><span class="go-dot"><svg class="icon"><use href="#i-arrow"/></svg></span>Descubre el programa</span></div>
       </a>
     </div>
   </div>
@@ -1225,7 +1224,7 @@ body.hide-notes .ph-note{display:none}
       </div>
 
       <div class="d-list">
-        <a class="d-item" href="#">
+        <a class="d-item" href="#descubre">
           <div class="ph tone-teal" role="img" aria-label="Una mediadora de Maloka trabaja con niños en una escuela rural alrededor de un experimento con agua."><div class="ph-img"></div><span class="ph-note"><svg class="icon"><use href="#i-camera"/></svg><span>Proyecto en territorio</span></span></div>
           <div>
             <span class="cat" style="--dot:var(--teal)"><i></i>En territorio</span>
@@ -1234,22 +1233,22 @@ body.hide-notes .ph-note{display:none}
             <span class="link-arrow"><span>Descubre los proyectos</span><svg class="icon"><use href="#i-arrow"/></svg></span>
           </div>
         </a>
-        <a class="d-item" href="#">
+        <a class="d-item" href="#experiencias">
+          <div class="ph tone-dome" role="img" aria-label="Público recostado en el Cine Domo mira una galaxia proyectada en la cúpula."><div class="ph-img"></div><span class="ph-note"><svg class="icon"><use href="#i-camera"/></svg><span>Cine Domo</span></span></div>
+          <div>
+            <span class="cat" style="--dot:var(--yellow)"><i></i>Qué vivir</span>
+            <h3>Experiencias</h3>
+            <p>Cine Domo, salas interactivas, laboratorios y exposiciones para explorar con todos los sentidos.</p>
+            <span class="link-arrow"><span>Explora las experiencias</span><svg class="icon"><use href="#i-arrow"/></svg></span>
+          </div>
+        </a>
+        <a class="d-item" href="#descubre">
           <div class="ph tone-arch" role="img" aria-label="La cúpula de Maloka vista desde el parque al atardecer."><div class="ph-img"></div><span class="ph-note"><svg class="icon"><use href="#i-camera"/></svg><span>Arquitectura: la cúpula</span></span></div>
           <div>
             <span class="cat" style="--dot:var(--blue)"><i></i>Quiénes somos</span>
             <h3>Conoce Maloka</h3>
             <p>Nuestra historia, el equipo y la idea que nos mueve: que la ciencia es para todas las personas.</p>
             <span class="link-arrow"><span>Conoce nuestra historia</span><svg class="icon"><use href="#i-arrow"/></svg></span>
-          </div>
-        </a>
-        <a class="d-item" href="#">
-          <div class="ph tone-group" role="img" aria-label="Un grupo de docentes comparte resultados de un taller frente a un tablero lleno de notas."><div class="ph-img"></div><span class="ph-note"><svg class="icon"><use href="#i-camera"/></svg><span>Docentes en formación</span></span></div>
-          <div>
-            <span class="cat" style="--dot:var(--yellow)"><i></i>Resultados</span>
-            <h3>Impacto</h3>
-            <p>Lo que cambia cuando una comunidad empieza a hacerse preguntas. Datos, historias e informes.</p>
-            <span class="link-arrow"><span>Explora los resultados</span><svg class="icon"><use href="#i-arrow"/></svg></span>
           </div>
         </a>
       </div>
@@ -1286,14 +1285,12 @@ body.hide-notes .ph-note{display:none}
       </figure>
 
       <ul class="services">
-        <li class="svc"><a href="#"><span class="svc-tag">Diseño y producción</span><h3>Experiencias museográficas</h3><p>Exposiciones, módulos y espacios interactivos para museos, marcas y ciudades.</p><span class="arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
-        <li class="svc"><a href="#"><span class="svc-tag">Conocimiento</span><h3>Investigación y consultoría</h3><p>Estudios de públicos, evaluación de impacto y estrategia en apropiación social del conocimiento.</p><span class="arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
-        <li class="svc"><a href="#"><span class="svc-tag">Educación</span><h3>Formación y acompañamiento educativo</h3><p>Procesos con docentes e instituciones para enseñar desde la pregunta y la experimentación.</p><span class="arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
-        <li class="svc"><a href="#"><span class="svc-tag">Producto</span><h3>Herramientas educativas</h3><p>Kits, guías y contenidos para llevar la experimentación al aula y al hogar.</p><span class="arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
-        <li class="svc svc--feature"><a href="#">
-          <div class="ph tone-teal mini" role="img" aria-label="El montaje itinerante de Maloka Viajera instalado en la plaza de un municipio."><div class="ph-img"></div><span class="ph-note">Maloka Viajera en plaza</span></div>
-          <span class="svc-tag">Itinerante</span><h3>Maloka Viajera</h3><p>Experiencias que viajan a municipios, ferias y colegios de todo el país.</p><span class="arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
-        <li class="svc"><a href="#"><span class="svc-tag">Alianzas</span><h3>Patrocinios y alianzas</h3><p>Sumemos esfuerzos para que más personas vivan la ciencia.</p><span class="arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
+        <li class="svc"><a href="#crea"><span class="svc-tag">Alianzas</span><h3>Patrocinios y alianzas</h3><p>Sumemos esfuerzos para que más personas vivan la ciencia.</p><span class="arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
+        <li class="svc svc--feature"><a href="#crea">
+          <div class="ph tone-teal mini" role="img" aria-label="Un módulo interactivo diseñado por Maloka instalado en una exposición."><div class="ph-img"></div><span class="ph-note">Módulo interactivo</span></div>
+          <span class="svc-tag">Diseño y producción</span><h3>Experiencias museográficas</h3><p>Exposiciones, módulos y espacios interactivos para museos, marcas y ciudades.</p><span class="arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
+        <li class="svc"><a href="#crea"><span class="svc-tag">Educación</span><h3>Acompañamiento pedagógico</h3><p>Procesos con docentes e instituciones para enseñar desde la pregunta y la experimentación.</p><span class="arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
+        <li class="svc"><a href="#crea"><span class="svc-tag">Conocimiento</span><h3>Investigación y consultoría</h3><p>Estudios de públicos, evaluación de impacto y estrategia en apropiación social del conocimiento.</p><span class="arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
       </ul>
     </div>
 
@@ -1416,12 +1413,14 @@ body.hide-notes .ph-note{display:none}
         <a class="btn btn--buy" href="#entradas"><svg class="icon ticket"><use href="#i-ticket"/></svg>Compra entradas</a>
       </div>
       <div class="footer-cols">
-        <nav class="footer-col" aria-labelledby="f1"><h2 id="f1">Visita Maloka</h2><ul>
-          <li><a href="#">Horarios y tarifas</a></li><li><a href="#">Experiencias</a></li><li><a href="#">Cómo llegar</a></li><li><a href="#">Servicios</a></li><li><a href="#">Preguntas frecuentes</a></li><li><a href="#">Compra entradas</a></li></ul></nav>
-        <nav class="footer-col" aria-labelledby="f2"><h2 id="f2">Descubre Maloka</h2><ul>
-          <li><a href="#">Noticias</a></li><li><a href="#">Conoce Maloka</a></li><li><a href="#">Programas y proyectos</a></li><li><a href="#">Trabaja con nosotros</a></li></ul></nav>
-        <nav class="footer-col" aria-labelledby="f3"><h2 id="f3">Crea con Maloka</h2><ul>
-          <li><a href="#">Experiencias museográficas</a></li><li><a href="#">Formación y acompañamiento educativo</a></li><li><a href="#">Herramientas educativas</a></li><li><a href="#">Maloka Viajera</a></li><li><a href="#">Patrocinios y alianzas</a></li></ul></nav>
+        <nav class="footer-col" aria-labelledby="f1"><h2 id="f1">Visítanos</h2><ul>
+          <li><a href="#entradas">Horarios y tarifas</a></li><li><a href="#entradas">Cómo llegar</a></li><li><a href="#entradas">Servicios</a></li><li><a href="#experiencias">Experiencias</a></li><li><a href="#agenda">Agéndate</a></li><li><a href="#entradas">Compra entradas</a></li></ul></nav>
+        <nav class="footer-col" aria-labelledby="f2"><h2 id="f2">Ven en grupo</h2><ul>
+          <li><a href="#grupos">Colegios y universidades</a></li><li><a href="#grupos">Cumpleaños</a></li><li><a href="#grupos">Empresas y eventos</a></li><li><a href="#grupos">MPA · Maloka Puertas Abiertas</a></li><li><a href="#grupos">Cotiza tu visita</a></li></ul></nav>
+        <nav class="footer-col" aria-labelledby="f3"><h2 id="f3">Descubre</h2><ul>
+          <li><a href="#descubre">Programas y proyectos</a></li><li><a href="#experiencias">Experiencias</a></li><li><a href="#descubre">Conoce Maloka</a></li><li><a href="#noticias">Noticias</a></li></ul></nav>
+        <nav class="footer-col" aria-labelledby="f5"><h2 id="f5">Crea con Maloka</h2><ul>
+          <li><a href="#crea">Patrocinios y alianzas</a></li><li><a href="#crea">Experiencias museográficas</a></li><li><a href="#crea">Acompañamiento pedagógico</a></li><li><a href="#crea">Investigación y consultoría</a></li></ul></nav>
         <nav class="footer-col" aria-labelledby="f4"><h2 id="f4">Corporación Maloka</h2><ul>
           <li><a href="#">Informes de gestión</a></li><li><a href="#">Sistema Integrado de Gestión</a></li><li><a href="#">Junta Directiva</a></li><li><a href="#">Contratación</a></li><li><a href="#">PQRSF</a></li><li><a href="#">Registro de proveedores</a></li><li><a href="#">Tratamiento de datos</a></li><li><a href="#">Intranet</a></li></ul></nav>
         <div class="footer-col"><h2>Contacto</h2>
@@ -1466,10 +1465,10 @@ body.hide-notes .ph-note{display:none}
     <h2>Lo más buscado</h2>
     <ul>
       <li><a class="chip-link" href="#entradas">Horarios y tarifas</a></li>
-      <li><a class="chip-link" href="#experiencias">Cine Domo</a></li>
+      <li><a class="chip-link" href="#experiencias">Experiencias</a></li>
       <li><a class="chip-link" href="#grupos">Cumpleaños</a></li>
-      <li><a class="chip-link" href="#grupos">Visitas escolares</a></li>
-      <li><a class="chip-link" href="#agenda">Agenda de hoy</a></li>
+      <li><a class="chip-link" href="#grupos">Colegios y universidades</a></li>
+      <li><a class="chip-link" href="#agenda">Agéndate</a></li>
       <li><a class="chip-link" href="#entradas">Cómo llegar</a></li>
     </ul>
   </div>
