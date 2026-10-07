@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agéndate · Maloka</title>
+<meta name="description" content="Actividades, talleres, funciones de Cine Domo y eventos en Maloka. Encuentra qué hacer hoy, este fin de semana y próximamente.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/agenda.css">
+</head>
+<body data-section="agendate">
+
+<a class="skip" href="#main">Saltar al contenido</a>
+<script src="assets/site.js"></script>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="ag-hero" aria-labelledby="ag-title">
+  <svg class="ag-hero-deco" viewBox="0 0 560 560" aria-hidden="true">
+    <g fill="none" stroke="#FFC928" stroke-width="1.5">
+      <circle cx="280" cy="280" r="120" stroke-opacity=".7"/>
+      <circle cx="280" cy="280" r="190" stroke-dasharray="3 8"/>
+      <ellipse cx="280" cy="280" rx="260" ry="90" transform="rotate(-24 280 280)" stroke-opacity=".5"/>
+    </g>
+    <circle cx="400" cy="280" r="9" fill="#FFC928"/><circle cx="130" cy="180" r="5" fill="#101C4C"/><circle cx="420" cy="440" r="4" fill="#146FE8"/>
+  </svg>
+  <div class="wrap">
+    <div class="ag-hero-copy">
+      <p class="eyebrow">Agenda Maloka</p>
+      <h1 id="ag-title">¿Qué está <span class="hl">pasando</span> en Maloka?</h1>
+      <p class="ag-hero-lede">Descubre actividades, talleres, experiencias y eventos para vivir la ciencia de nuevas maneras.</p>
+      <div class="ag-hero-ctas">
+        <a class="btn btn--navy btn--lg" href="#ag-results" id="go-today">Ver actividades de hoy<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="link-arrow" href="#ag-results" id="go-finde"><span>Este fin de semana</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+
+    <div class="ag-now" aria-label="Hoy en Maloka">
+      <div class="today-tile">
+        <p class="k">Hoy</p>
+        <div><p class="wd" id="today-wd">miércoles</p><p class="dn" id="today-dn">7</p><p class="mo" id="today-mo">de octubre</p></div>
+        <p class="sr-only" id="today-label"></p>
+      </div>
+      <a class="next-card" id="next-card" href="#ag-results">
+        <span class="k" id="next-k">Próxima actividad</span>
+        <span class="t" id="next-t">10:00 a. m.</span>
+        <span><span class="n" id="next-n">Exploración del universo</span><br><span class="m" id="next-m">Cine Domo</span></span>
+        <span class="go">Ver actividad<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a>
+      <p class="ag-now-count"><span id="today-count"><b>7 actividades</b> hoy en Maloka</span><svg class="icon" aria-hidden="true" style="color:var(--y-ink)"><use href="#i-calendar"/></svg></p>
+    </div>
+  </div>
+</section>
+
+<span id="ag-sentinel" aria-hidden="true"></span>
+
+<!-- ================= NAVEGACIÓN TEMPORAL + FILTROS ================= -->
+<div class="ag-bar" id="ag-bar">
+  <div class="wrap" style="position:relative">
+    <div class="ag-tabs-row">
+      <div class="ag-tabs" role="tablist" aria-label="¿Cuándo quieres venir?">
+        <button class="ag-tab" role="tab" id="tab-hoy" data-range="hoy" aria-selected="true" aria-controls="ag-results"><b>Hoy</b><small></small><span class="cnt"></span></button>
+        <button class="ag-tab" role="tab" id="tab-manana" data-range="manana" aria-selected="false" aria-controls="ag-results" tabindex="-1"><b>Mañana</b><small></small><span class="cnt"></span></button>
+        <button class="ag-tab" role="tab" id="tab-finde" data-range="finde" aria-selected="false" aria-controls="ag-results" tabindex="-1"><b>Este fin de semana</b><small></small><span class="cnt"></span></button>
+        <button class="ag-tab" role="tab" id="tab-prox" data-range="prox" aria-selected="false" aria-controls="ag-results" tabindex="-1"><b>Próximamente</b><small></small><span class="cnt"></span></button>
+        <button class="ag-tab ag-tab--date" role="tab" id="tab-fecha" data-range="fecha" aria-selected="false" aria-controls="ag-results" aria-haspopup="dialog" aria-expanded="false" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><b>Elegir fecha</b><small>Calendario</small></button>
+      </div>
+    </div>
+
+    <div class="ag-filters" role="group" aria-label="Filtros">
+      <div class="flt-wrap">
+        <button class="flt" type="button" aria-expanded="false" aria-controls="pop-publico"><span class="lbl">Público</span><span class="badge" hidden>0</span><svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></button>
+        <div class="flt-pop" id="pop-publico"><fieldset><legend>Público</legend><div class="opts"></div></fieldset></div>
+      </div>
+      <div class="flt-wrap">
+        <button class="flt" type="button" aria-expanded="false" aria-controls="pop-tipo"><span class="lbl">Tipo de actividad</span><span class="badge" hidden>0</span><svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></button>
+        <div class="flt-pop" id="pop-tipo"><fieldset><legend>Tipo de actividad</legend><div class="opts"></div></fieldset></div>
+      </div>
+      <div class="flt-wrap">
+        <button class="flt" type="button" aria-expanded="false" aria-controls="pop-lugar"><span class="lbl">Lugar</span><span class="badge" hidden>0</span><svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></button>
+        <div class="flt-pop" id="pop-lugar"><fieldset><legend>Lugar</legend><div class="opts"></div></fieldset></div>
+      </div>
+      <div class="flt-wrap">
+        <button class="flt" type="button" aria-expanded="false" aria-controls="pop-precio"><span class="lbl">Precio</span><span class="badge" hidden>0</span><svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></button>
+        <div class="flt-pop" id="pop-precio"><fieldset><legend>Precio</legend><div class="opts"></div></fieldset></div>
+      </div>
+      <button class="flt flt-mobile" type="button" id="flt-open" aria-haspopup="dialog"><svg class="icon" aria-hidden="true" style="transform:none"><use href="#i-filter"/></svg>Filtrar<span class="badge" hidden>0</span></button>
+      <form class="ag-search" id="ag-search" role="search">
+        <label class="sr-only" for="ag-q">Buscar actividad</label>
+        <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <input id="ag-q" type="search" placeholder="Buscar actividad" autocomplete="off">
+      </form>
+    </div>
+
+    <div class="ag-active" id="ag-active" hidden>
+      <span id="ag-active-list" style="display:contents"></span>
+      <button type="button" class="clear" data-clear>Limpiar filtros</button>
+    </div>
+
+    <!-- Date picker (popover accesible, no modal) -->
+    <div class="dp" id="dp" role="dialog" aria-modal="false" aria-labelledby="dp-title" hidden>
+      <div class="dp-head">
+        <button type="button" class="dp-nav dp-nav--prev" id="dp-prev" aria-label="Mes anterior"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        <h2 id="dp-title" aria-live="polite">octubre de 2026</h2>
+        <button type="button" class="dp-nav" id="dp-next" aria-label="Mes siguiente"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      </div>
+      <table class="dp-grid" id="dp-grid" role="grid" aria-labelledby="dp-title">
+        <thead><tr><th scope="col" abbr="lunes">L</th><th scope="col" abbr="martes">M</th><th scope="col" abbr="miércoles">M</th><th scope="col" abbr="jueves">J</th><th scope="col" abbr="viernes">V</th><th scope="col" abbr="sábado">S</th><th scope="col" abbr="domingo">D</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p class="dp-legend"><i aria-hidden="true"></i>Días con actividades</p>
+      <div class="dp-foot"><button type="button" id="dp-today">Ir a hoy</button><button type="button" id="dp-close">Cerrar</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= RESULTADOS ================= -->
+<section class="ag-results" id="ag-results" aria-labelledby="ag-results-title">
+  <div class="wrap" id="agenda-app">
+    <div class="ag-summary">
+      <h2 id="ag-results-title" tabindex="-1">Encuentra algo para hacer hoy</h2>
+      <p id="ag-results-sub" aria-live="polite"></p>
+    </div>
+    <!-- Este contenedor se alimenta de MalokaAgenda.EVENTS (en producción: /wp-json/wp/v2/actividades) -->
+    <div id="ag-list"></div>
+  </div>
+</section>
+
+<!-- ================= AGENDA + EXPERIENCIAS ================= -->
+<section class="section ag-exp" id="experiencias-siempre" aria-labelledby="exp-title">
+  <div class="wrap">
+    <div class="ag-exp-head">
+      <div>
+        <p class="eyebrow">Experiencias</p>
+        <h2 class="h2" id="exp-title">Además de la agenda, esto te espera todos los días.</h2>
+      </div>
+      <div class="diff">
+        <p><b>Experiencias:</b> lo que existe siempre en Maloka.</p>
+        <p><b>Agenda:</b> lo que sucede en una fecha y hora específicas.</p>
+      </div>
+    </div>
+    <div class="exp-row" id="exp-row"></div>
+  </div>
+</section>
+
+<!-- ================= PLANEA TU VISITA ================= -->
+<section class="plan" id="planea" aria-labelledby="plan-title">
+  <div class="wrap">
+    <div class="plan-card on-dark">
+      <svg viewBox="0 0 360 360" aria-hidden="true"><g fill="none" stroke="#FFC928" stroke-opacity=".5"><circle cx="180" cy="180" r="90"/><circle cx="180" cy="180" r="150" stroke-dasharray="3 8"/></g><circle cx="270" cy="180" r="8" fill="#FFC928"/></svg>
+      <div class="plan-copy">
+        <h2 id="plan-title">¿Ya sabes qué quieres hacer?</h2>
+        <p>Prepara tu visita en un minuto y asegura tu entrada.</p>
+      </div>
+      <nav class="plan-links" aria-label="Planea tu visita">
+        <a href="index.html#entradas"><span><svg class="icon" aria-hidden="true"><use href="#i-ticket"/></svg>Horarios y tarifas</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a href="index.html#entradas"><span><svg class="icon" aria-hidden="true"><use href="#i-route"/></svg>Cómo llegar</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a href="index.html#experiencias"><span><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Experiencias</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a href="index.html#entradas"><span><svg class="icon" aria-hidden="true"><use href="#i-services"/></svg>Servicios</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </nav>
+      <div class="plan-cta"><a class="btn btn--buy btn--lg" href="index.html#entradas"><svg class="icon ticket" aria-hidden="true"><use href="#i-ticket"/></svg>Compra entradas</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<script>Maloka.footer()</script>
+
+<!-- Filtros en móvil: hoja inferior -->
+<dialog class="sheet" id="flt-sheet" aria-labelledby="sheet-title">
+  <div class="sheet-in">
+    <div class="sheet-head"><h2 id="sheet-title">Filtrar actividades</h2><button class="icon-btn" type="button" id="sheet-close" aria-label="Cerrar filtros"><svg class="icon"><use href="#i-close"/></svg></button></div>
+    <div class="sheet-body">
+      <fieldset><legend>Público</legend><div class="togs" id="sheet-publico"></div></fieldset>
+      <fieldset><legend>Tipo de actividad</legend><div class="togs" id="sheet-tipo"></div></fieldset>
+      <fieldset><legend>Lugar</legend><div class="togs" id="sheet-lugar"></div></fieldset>
+      <fieldset><legend>Precio</legend><div class="togs" id="sheet-precio"></div></fieldset>
+    </div>
+    <div class="sheet-foot"><button type="button" class="btn btn--outline" data-clear>Limpiar filtros</button><button type="button" class="btn btn--navy" id="sheet-apply">Ver actividades</button></div>
+  </div>
+</dialog>
+
+<script src="assets/agenda-data.js"></script>
+<script src="assets/agenda.js"></script>
+</body>
+</html>

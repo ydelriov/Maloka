@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Actividad · Agéndate · Maloka</title>
+<meta name="description" content="Fecha, hora, lugar, público, precio y disponibilidad de esta actividad en Maloka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/agenda.css">
+</head>
+<body data-section="agendate">
+
+<a class="skip" href="#main">Saltar al contenido</a>
+<script src="assets/site.js"></script>
+
+<main id="main">
+  <!-- Ficha de actividad: se genera desde MalokaAgenda.EVENTS según ?id= -->
+  <article id="actividad-app"></article>
+
+  <section class="section related" aria-labelledby="rel-title">
+    <div class="wrap">
+      <div class="related-head">
+        <div><p class="eyebrow">Agéndate</p><h2 id="rel-title">También te puede interesar</h2></div>
+        <a class="btn btn--navy" href="agendate.html">Ver toda la agenda<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="ev-grid2" id="rel-grid"></div>
+    </div>
+  </section>
+
+  <section class="plan" aria-labelledby="plan-title">
+    <div class="wrap">
+      <div class="plan-card on-dark">
+        <svg viewBox="0 0 360 360" aria-hidden="true"><g fill="none" stroke="#FFC928" stroke-opacity=".5"><circle cx="180" cy="180" r="90"/><circle cx="180" cy="180" r="150" stroke-dasharray="3 8"/></g><circle cx="270" cy="180" r="8" fill="#FFC928"/></svg>
+        <div class="plan-copy"><h2 id="plan-title">¿Ya sabes qué quieres hacer?</h2><p>Prepara tu visita en un minuto y asegura tu entrada.</p></div>
+        <nav class="plan-links" aria-label="Planea tu visita">
+          <a href="index.html#entradas"><span><svg class="icon" aria-hidden="true"><use href="#i-ticket"/></svg>Horarios y tarifas</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a href="index.html#entradas"><span><svg class="icon" aria-hidden="true"><use href="#i-route"/></svg>Cómo llegar</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a href="index.html#experiencias"><span><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Experiencias</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a href="index.html#entradas"><span><svg class="icon" aria-hidden="true"><use href="#i-services"/></svg>Servicios</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </nav>
+        <div class="plan-cta"><a class="btn btn--buy btn--lg" href="index.html#entradas"><svg class="icon ticket" aria-hidden="true"><use href="#i-ticket"/></svg>Compra entradas</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>Maloka.footer()</script>
+
+<!-- CTA fijo en móvil cuando la tarjeta de reserva sale de pantalla -->
+<div class="act-bar" id="act-bar" inert>
+  <div class="info"><b></b><span></span></div>
+  <span id="act-bar-cta"></span>
+</div>
+
+<script src="assets/agenda-data.js"></script>
+<script src="assets/agenda.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agéndate · estados</title>
+<meta name="description" content="Estados de diseño de la sección Agéndate de Maloka: listado, filtros, vacío, cards, destacada, ficha y disponibilidad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/agenda.css">
+<style>
+/* Hoja de estados: los iframes cargan las páginas reales con parámetros; los componentes se renderizan con el mismo código. */
+body{background:var(--g50)}
+.doc-top{background:var(--navy);color:var(--white);padding-block:56px 48px}
+.doc-top .k{font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--y);margin-bottom:12px}
+.doc-top h1{font-size:clamp(2.25rem,1.6rem + 2.6vw,3.75rem);letter-spacing:-.035em;margin-bottom:16px}
+.doc-top p{max-width:70ch;color:#C9D1EA}
+.doc-top nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.doc-top nav a{display:inline-flex;align-items:center;min-height:40px;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.08);color:var(--white);font-weight:700;font-size:.875rem;text-decoration:none}
+.doc-top nav a:hover{background:rgba(255,255,255,.16)}
+.doc main{padding-block:48px 96px;display:grid;gap:80px}
+.grp h2{font-size:clamp(1.5rem,1.2rem + 1vw,2rem);color:var(--navy);letter-spacing:-.02em;margin-bottom:8px}
+.grp > p{color:var(--g700);max-width:72ch;margin-bottom:24px}
+.g2{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:24px;align-items:start}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;align-items:start}
+.st{display:grid;gap:10px;min-width:0}
+.st-h{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.st-h b{color:var(--navy)}
+.st-h a{font-size:.8125rem;font-weight:700;color:var(--blue)}
+.st-h span{font-size:.8125rem;color:var(--g700)}
+.frame{position:relative;overflow:hidden;border-radius:16px;background:var(--white);border:1px solid var(--g200);box-shadow:0 20px 40px -32px rgba(16,28,76,.5)}
+.frame iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0;background:var(--white)}
+.states-row{display:flex;flex-wrap:wrap;gap:12px;padding:24px;border-radius:20px;background:var(--white);border:1px solid var(--g100)}
+.spec{padding:24px;border-radius:20px;background:var(--white);border:1px solid var(--g100)}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px}
+.legend li{display:grid;gap:4px;padding:14px 16px;border-radius:14px;background:var(--white);border:1px solid var(--g100);font-size:.875rem;color:var(--g700)}
+.legend b{color:var(--navy)}
+.hier{counter-reset:h;display:grid;gap:6px;font-size:.9375rem;color:var(--g700);margin-top:16px}
+.hier li{counter-increment:h;display:flex;gap:10px;align-items:center}
+.hier li::before{content:counter(h);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--y);color:var(--navy);font-size:.75rem;font-weight:800}
+@media (max-width:1000px){ .g2,.g3,.g4{grid-template-columns:1fr} }
+</style>
+</head>
+<body class="doc">
+<script src="assets/site.js" data-layout="bare"></script>
+
+<header class="doc-top">
+  <div class="wrap">
+    <p class="k">Maloka · Agéndate</p>
+    <h1>Agenda: estados de diseño</h1>
+    <p>Los recuadros grandes son las páginas reales cargadas en un estado concreto, y se pueden usar. Los componentes se dibujan con el mismo código y los mismos datos de ejemplo que el sitio.</p>
+    <nav aria-label="Ir a">
+      <a href="#e1">1–2 Página</a><a href="#e3">3–4 Hoy y fin de semana</a><a href="#e5">5 Filtros</a><a href="#e6">6 Sin resultados</a><a href="#e7">7–8 Card y destacada</a><a href="#e9">9 Ficha</a><a href="#e10">10 Estados</a><a href="#e11">11–12 Experiencias y compra</a>
+      <a href="agendate.html" style="background:var(--y);color:var(--navy)">Abrir Agéndate →</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="grp" id="e1" aria-labelledby="t1">
+    <h2 id="t1">1–2. Página Agéndate · desktop y móvil</h2>
+    <p>Hero editorial con la fecha de hoy y la próxima actividad. Debajo, la navegación por momento (sticky), los filtros ligeros y los resultados agrupados.</p>
+    <div class="g2">
+      <div class="st"><div class="st-h"><b>Desktop · 1440 px</b><a href="agendate.html" target="_blank" rel="noopener">Abrir</a></div><div class="frame" data-w="1440" data-h="1500"><iframe title="Agéndate desktop" src="agendate.html" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Móvil · 390 px</b></div><div class="frame" data-w="390" data-h="1500"><iframe title="Agéndate móvil" src="agendate.html" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+
+  <section class="grp" id="e3" aria-labelledby="t3">
+    <h2 id="t3">3–4. Estado HOY y ESTE FIN DE SEMANA</h2>
+    <p>Un solo día se agrupa por Mañana, Tarde y Noche. Varios días se agrupan por fecha. Si hay 4 actividades o más, la primera destacada abre el listado.</p>
+    <div class="g2">
+      <div class="st"><div class="st-h"><b>Hoy</b><span>Agrupado por momento del día</span></div><div class="frame" data-w="1440" data-h="1300"><iframe title="Estado hoy" src="agendate.html?f=hoy&amp;ir=ag-results" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Este fin de semana · móvil</b><span>Agrupado por fecha</span></div><div class="frame" data-w="390" data-h="1300"><iframe title="Estado fin de semana" src="agendate.html?f=finde&amp;ir=ag-results" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+
+  <section class="grp" id="e5" aria-labelledby="t5">
+    <h2 id="t5">5. Filtros activos</h2>
+    <p>En desktop los filtros son menús ligeros con conteo por opción; los filtros activos aparecen como chips que se pueden quitar, junto a «Limpiar filtros». En móvil, el botón «Filtrar» abre una hoja inferior.</p>
+    <div class="g3">
+      <div class="st"><div class="st-h"><b>Filtro «Público» abierto</b></div><div class="frame" data-w="1440" data-h="760"><iframe title="Filtro abierto" src="agendate.html?f=finde&amp;publico=familias&amp;ir=ag-sentinel&amp;abrir=publico" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Familias + Taller</b></div><div class="frame" data-w="1440" data-h="1100"><iframe title="Filtros activos" src="agendate.html?f=finde&amp;publico=familias&amp;tipo=taller&amp;ir=ag-sentinel" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Hoja de filtros · móvil</b></div><div class="frame" data-w="390" data-h="844"><iframe title="Hoja de filtros" src="agendate.html?f=finde&amp;publico=familias&amp;abrir=filtros" loading="lazy"></iframe></div></div>
+    </div>
+    <div class="st" style="margin-top:24px"><div class="st-h"><b>Elegir fecha</b><span>Date picker accesible: flechas para moverse por los días, Re Pág/Av Pág para cambiar de mes, Enter para elegir y Esc para cerrar. El punto marca los días con actividades.</span></div><div class="frame" data-w="1440" data-h="640"><iframe title="Date picker" src="agendate.html?ir=ag-sentinel&amp;abrir=fecha" loading="lazy"></iframe></div></div>
+  </section>
+
+  <section class="grp" id="e6" aria-labelledby="t6">
+    <h2 id="t6">6. Sin resultados</h2>
+    <p>Nunca un «Sin resultados» a secas: explica qué pasó y ofrece un siguiente paso.</p>
+    <div class="g2">
+      <div class="st"><div class="st-h"><b>Fecha sin actividades</b></div><div class="frame" data-w="1440" data-h="760"><iframe title="Fecha sin actividades" src="agendate.html?f=vacio&amp;ir=ag-results" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Filtros sin coincidencias · móvil</b></div><div class="frame" data-w="390" data-h="900"><iframe title="Filtros sin resultados" src="agendate.html?f=hoy&amp;lugar=domo&amp;precio=gratis&amp;ir=ag-results" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+
+  <section class="grp" id="e7" aria-labelledby="t7">
+    <h2 id="t7">7–8. Card de actividad y actividad destacada</h2>
+    <p>Jerarquía de la card: la fecha y la hora van arriba, grandes y nunca dentro del texto.</p>
+    <div class="g3" id="cards"></div>
+    <ol class="hier" aria-label="Prioridad visual de la card"><li>Fecha</li><li>Hora</li><li>Nombre</li><li>Tipo de actividad</li><li>Público</li><li>Lugar</li><li>Precio y requisito</li><li>Acción: Ver actividad o Inscríbete</li></ol>
+    <div style="margin-top:32px" id="feat"></div>
+  </section>
+
+  <section class="grp" id="e9" aria-labelledby="t9">
+    <h2 id="t9">9. Ficha individual de actividad</h2>
+    <p>Funciona como landing independiente: tiene breadcrumb, datos clave, el CTA según el tipo de acceso, video, contenido, accesibilidad, la experiencia relacionada, cómo llegar, compartir y actividades relacionadas. Incluye datos estructurados schema.org/Event para buscadores. En móvil, el CTA queda fijo al final de la pantalla.</p>
+    <div class="g2">
+      <div class="st"><div class="st-h"><b>Taller con inscripción</b><a href="actividad.html?id=construye-tu-propio-cohete" target="_blank" rel="noopener">Abrir</a></div><div class="frame" data-w="1440" data-h="1500"><iframe title="Ficha desktop" src="actividad.html?id=construye-tu-propio-cohete" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Función con compra · móvil</b><a href="actividad.html?id=gigantes-del-pasado" target="_blank" rel="noopener">Abrir</a></div><div class="frame" data-w="390" data-h="1500"><iframe title="Ficha móvil" src="actividad.html?id=gigantes-del-pasado" loading="lazy"></iframe></div></div>
+    </div>
+    <div class="g2" style="margin-top:24px">
+      <div class="st"><div class="st-h"><b>Actividad agotada</b><span>Sin CTA de compra: lleva a otras actividades</span></div><div class="frame" data-w="1440" data-h="900"><iframe title="Ficha agotada" src="actividad.html?id=robotica-en-familia" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>CTA fijo en móvil</b><span>Aparece cuando la tarjeta de datos sale de la pantalla</span></div><div class="frame" data-w="390" data-h="844"><iframe title="CTA fijo" src="actividad.html?id=quimica-de-la-cocina#h-vivir" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+
+  <section class="grp" id="e10" aria-labelledby="t10">
+    <h2 id="t10">10. Estados de cupos, precio e inscripción</h2>
+    <p>Cada estado combina texto e icono, y además cambia de forma o de relleno. Nunca depende solo del color.</p>
+    <div class="states-row" id="states"></div>
+    <ul class="legend">
+      <li><b>Cupos disponibles</b>Con inscripción o compra y espacio libre.</li>
+      <li><b>Últimos cupos</b>Relleno amarillo e icono de alerta: invita a decidir pronto.</li>
+      <li><b>Agotado</b>Relleno oscuro. La card pasa a gris y no ofrece acción de compra.</li>
+      <li><b>Gratuito / Incluido</b>El precio siempre a la vista, sin abrir la ficha.</li>
+      <li><b>Requiere inscripción / compra</b>Anuncia el paso siguiente antes del clic.</li>
+    </ul>
+    <div class="g3" style="margin-top:24px" id="cards-states"></div>
+  </section>
+
+  <section class="grp" id="e11" aria-labelledby="t11">
+    <h2 id="t11">11–12. Conexión con Experiencias y CTA de Compra entradas</h2>
+    <p>Experiencias es lo que existe siempre en Maloka; la agenda es lo que pasa en una fecha y hora. Cada actividad enlaza con su experiencia, y la página cierra con el bloque de conversión «¿Ya sabes qué quieres hacer?».</p>
+    <div class="g2">
+      <div class="st"><div class="st-h"><b>Experiencias en Agéndate</b></div><div class="frame" data-w="1440" data-h="760"><iframe title="Experiencias en Agéndate" src="agendate.html?ir=experiencias-siempre" loading="lazy"></iframe></div></div>
+      <div class="st"><div class="st-h"><b>Planea tu visita + Compra entradas</b></div><div class="frame" data-w="1440" data-h="560"><iframe title="Planea tu visita" src="agendate.html?ir=planea" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/agenda-data.js"></script>
+<script src="assets/agenda.js"></script>
+<script>
+(() => {
+  const A = window.MalokaAgenda, ui = A.ui, by = id => A.byId(id);
+  document.getElementById('cards').innerHTML = ['construye-tu-propio-cohete', 'gigantes-del-pasado', 'festival-de-burbujas-gigantes'].map(id => ui.cardHTML(by(id))).join('');
+  document.getElementById('feat').innerHTML = ui.featHTML(by('exploracion-del-universo'));
+  const e = { cupo: 'disponible' };
+  document.getElementById('states').innerHTML =
+    ui.avail({ cupo: 'disponible' }) + ui.avail({ cupo: 'ultimos' }) + ui.avail({ cupo: 'agotado' }) +
+    ui.price({ precio: 'gratis' }) + ui.price({ precio: 'incluido' }) + ui.price({ precio: 'costo', valor: '$XX.XXX' }) +
+    ui.req({ req: 'inscripcion' }) + ui.req({ req: 'compra', precio: 'costo' });
+  document.getElementById('cards-states').innerHTML = ['circuitos-que-se-encienden', 'quimica-de-la-cocina', 'robots-que-dibujan'].map(id => ui.cardHTML(by(id))).join('');
+  const frames = [...document.querySelectorAll('.frame')];
+  const fit = () => frames.forEach(f => {
+    const w = +f.dataset.w, h = +f.dataset.h, s = f.clientWidth / w, i = f.querySelector('iframe');
+    i.style.width = w + 'px'; i.style.height = h + 'px'; i.style.transform = `scale(${s})`; f.style.height = h * s + 'px';
+  });
+  fit(); addEventListener('resize', fit);
+})();
+</script>
+</body>
+</html>
