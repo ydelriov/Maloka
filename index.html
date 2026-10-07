@@ -12,7 +12,7 @@
 /* Layout: 12 columnas, máx. 1280px, ritmo de 8px. Editorial asimétrico: grandes fotos, aire blanco, acentos puntuales. */
 :root{
   /* Marca */
-  --navy:#101C4C; --blue:#146FE8; --cyan:#20B9E8; --teal:#14B89A;
+  --navy:#101C4C; --logo:#2F1A44; --blue:#146FE8; --cyan:#20B9E8; --teal:#14B89A;
   --purple:#7546D8; --yellow:#FFC928; --coral:#F45F58;
   /* Variantes de texto que cumplen AA sobre blanco */
   --teal-ink:#0A7A66; --coral-ink:#C2362F; --purple-ink:#5F33C2;
@@ -137,8 +137,9 @@ body.hide-notes .ph-note{display:none}
 .site-header.is-scrolled{border-bottom-color:var(--g100)}
 .header-bar{display:flex;align-items:center;gap:24px;height:var(--header-h)}
 .logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);flex:none;min-height:44px}
-.logo svg{height:34px;width:auto}
-.logo-word{font-weight:800;font-size:1.5rem;letter-spacing:-.04em;line-height:1}
+.logo{color:var(--logo)}
+.logo-mark{height:62px;width:auto}
+.footer-brand .logo-mark{height:96px}
 .main-nav{flex:1;display:flex;justify-content:center}
 .main-nav > ul{display:flex;gap:4px}
 .nav-btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 12px;border:0;background:none;border-radius:10px;font-size:.8125rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;position:relative;transition:background var(--t-fast)}
@@ -528,8 +529,7 @@ body.hide-notes .ph-note{display:none}
 }
 @media (max-width:720px){
   :root{--header-h:64px}
-  .logo svg{height:28px}
-  .logo-word{font-size:1.25rem}
+  .logo-mark{height:50px}
   .proto .wrap{font-size:.75rem}
   .hero{padding-top:8px}
   .hero-stage{min-height:0;padding:20px;padding-top:160px;padding-bottom:88px;border-radius:24px}
@@ -641,14 +641,11 @@ body.hide-notes .ph-note{display:none}
 <header class="site-header" id="header">
   <div class="wrap header-bar">
     <a class="logo" href="#top" aria-label="Maloka, ir al inicio">
-      <!-- Logo provisional: reemplazar por el SVG oficial de Maloka -->
-      <svg viewBox="0 0 44 34" aria-hidden="true">
-        <path d="M3 30a19 19 0 0 1 38 0" fill="none" stroke="#101C4C" stroke-width="4" stroke-linecap="round"/>
-        <ellipse cx="22" cy="22" rx="20" ry="6" fill="none" stroke="#146FE8" stroke-width="2" transform="rotate(-14 22 22)"/>
-        <circle cx="39" cy="15" r="3.2" fill="#FFC928"/>
-        <path d="M3 30h38" stroke="#101C4C" stroke-width="4" stroke-linecap="round"/>
+      <svg class="logo-mark" viewBox="10 3 78 94" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-linecap="square"><path d="M15 6.5V55M45.5 6.5V93.5" stroke-width="2.2"/><path d="M45.5 15A39 39 0 0 1 45.5 93" stroke-width="1.6"/></g>
+        <path d="M14 54H46.6V69C36 64 24 59 14 54Z" fill="currentColor"/>
+        <g fill="currentColor" font-family="Manrope, 'Avenir Next', sans-serif" font-weight="700" font-size="11.5" text-anchor="middle"><text x="24.5" y="19.5">M</text><text x="36.5" y="19.5">A</text><text x="24" y="34.5">L</text><text x="36.5" y="34.5">O</text><text x="24" y="49">K</text><text x="36.5" y="49">A</text></g>
       </svg>
-      <span class="logo-word">maloka</span>
     </a>
 
     <nav class="main-nav" aria-label="Principal">
@@ -1133,13 +1130,11 @@ body.hide-notes .ph-note{display:none}
     <div class="footer-top">
       <div class="footer-brand">
         <a class="logo" href="#top" aria-label="Maloka, ir al inicio">
-          <svg viewBox="0 0 44 34" aria-hidden="true">
-            <path d="M3 30a19 19 0 0 1 38 0" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
-            <ellipse cx="22" cy="22" rx="20" ry="6" fill="none" stroke="#20B9E8" stroke-width="2" transform="rotate(-14 22 22)"/>
-            <circle cx="39" cy="15" r="3.2" fill="#FFC928"/>
-            <path d="M3 30h38" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
-          </svg>
-          <span class="logo-word">maloka</span>
+          <svg class="logo-mark" viewBox="10 3 78 94" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-linecap="square"><path d="M15 6.5V55M45.5 6.5V93.5" stroke-width="2.2"/><path d="M45.5 15A39 39 0 0 1 45.5 93" stroke-width="1.6"/></g>
+        <path d="M14 54H46.6V69C36 64 24 59 14 54Z" fill="currentColor"/>
+        <g fill="currentColor" font-family="Manrope, 'Avenir Next', sans-serif" font-weight="700" font-size="11.5" text-anchor="middle"><text x="24.5" y="19.5">M</text><text x="36.5" y="19.5">A</text><text x="24" y="34.5">L</text><text x="36.5" y="34.5">O</text><text x="24" y="49">K</text><text x="36.5" y="49">A</text></g>
+      </svg>
         </a>
         <p>La ciencia se vive.</p>
         <a class="btn btn--buy" href="#entradas"><svg class="icon ticket"><use href="#i-ticket"/></svg>Compra entradas</a>
