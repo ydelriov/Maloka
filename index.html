@@ -126,79 +126,203 @@ body.hide-notes .ph-note{display:none}
 .proto{background:var(--g950);color:#C9CFDB;font-size:.8125rem}
 .proto .wrap{display:flex;gap:8px 24px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-block:8px}
 .proto strong{color:var(--white)}
+.demo .proto{display:none}
 .switch{display:inline-flex;align-items:center;gap:10px;min-height:32px;background:none;border:0;color:var(--white);cursor:pointer;font-weight:700;padding:0}
 .switch-track{width:34px;height:20px;border-radius:20px;background:#4A5266;position:relative;transition:background var(--t)}
 .switch-track::after{content:"";position:absolute;left:3px;top:3px;width:14px;height:14px;border-radius:50%;background:var(--white);transition:transform var(--t) var(--ease)}
 .switch[aria-pressed="true"] .switch-track{background:var(--blue)}
 .switch[aria-pressed="true"] .switch-track::after{transform:translateX(14px)}
 
-/* ---------- Header ---------- */
-.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:100;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color var(--t), box-shadow var(--t)}
-.site-header.is-scrolled{border-bottom-color:var(--g100)}
-.header-bar{display:flex;align-items:center;gap:24px;height:var(--header-h)}
-.logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);flex:none;min-height:44px}
-.logo{color:var(--logo)}
-.logo-mark{height:62px;width:auto}
+/* ---------- Header + mega menú ----------
+   Arquitectura: Visítanos · Agéndate (enlace directo) · Ven en grupo · Descubre · Crea con Maloka.
+   Cada panel vive junto a su botón en el DOM (orden de tabulación lógico) y se posiciona
+   sobre un contenedor compartido (.mm-shell) que anima su altura al cambiar de categoría. */
+.site-header{--bar:88px;--logo-h:60px;position:sticky;top:env(safe-area-inset-top,0px);z-index:100;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color var(--t), box-shadow var(--t)}
+.site-header.is-scrolled{--bar:68px;--logo-h:46px;border-bottom-color:var(--g100);box-shadow:0 10px 30px -24px rgba(16,28,76,.45)}
+.site-header.mm-open{border-bottom-color:var(--g100)}
+.header-bar{display:flex;align-items:center;gap:24px;height:var(--bar);transition:height var(--t-slow) var(--ease)}
+.logo{display:inline-flex;align-items:center;text-decoration:none;color:var(--logo);flex:none;min-height:44px;border-radius:8px}
+.logo-mark{height:var(--logo-h);width:auto;transition:height var(--t-slow) var(--ease)}
 .footer-brand .logo-mark{height:96px}
-.main-nav{flex:1;display:flex;justify-content:center}
-.main-nav > ul{display:flex;gap:4px}
-.nav-btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 12px;border:0;background:none;border-radius:10px;font-size:.8125rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;position:relative;transition:background var(--t-fast)}
-.nav-btn .icon{width:14px;height:14px;transition:transform var(--t) var(--ease)}
-.nav-btn::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;border-radius:2px;background:var(--accent,var(--blue));transform:scaleX(0);transform-origin:left;transition:transform var(--t) var(--ease)}
-.nav-btn:hover{background:var(--g50)}
-.nav-btn[aria-expanded="true"]::after{transform:scaleX(1)}
-.nav-btn[aria-expanded="true"] .icon{transform:rotate(180deg)}
-.utils{display:flex;align-items:center;gap:4px;flex:none}
-.icon-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:0;border-radius:12px;background:none;color:var(--navy);cursor:pointer;transition:background var(--t-fast)}
+
+.nav{flex:1;display:flex;justify-content:center;min-width:0}
+.nav-list{display:flex;align-items:center;gap:clamp(4px,1.1vw,16px)}
+.nav-trigger{position:relative;display:inline-flex;align-items:center;gap:6px;min-height:48px;padding:10px 14px;border:0;border-radius:12px;background:none;font-size:1rem;font-weight:600;letter-spacing:-.005em;color:var(--navy);text-decoration:none;white-space:nowrap;cursor:pointer;transition:background var(--t-fast) var(--ease), color var(--t-fast) var(--ease)}
+.nav-trigger .chev{width:16px;height:16px;color:var(--g500);transition:transform var(--t) var(--ease), color var(--t-fast)}
+.nav-trigger::after{content:"";position:absolute;left:14px;right:14px;bottom:3px;height:3px;border-radius:3px;background:var(--acc);transform:scaleX(0);transform-origin:left center;transition:transform var(--t) var(--ease)}
+.nav-trigger:hover,.nav-trigger.is-hover{background:var(--g50)}
+.nav-trigger:hover::after,.nav-trigger.is-hover::after{transform:scaleX(.3)}
+.nav-trigger:hover .chev,.nav-trigger.is-hover .chev{color:var(--acc-ink)}
+.nav-trigger[aria-expanded="true"]{background:var(--g50)}
+.nav-trigger[aria-expanded="true"]::after{transform:scaleX(1)}
+.nav-trigger[aria-expanded="true"] .chev{transform:rotate(180deg);color:var(--acc-ink)}
+
+.actions{display:flex;align-items:center;gap:4px;flex:none}
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border:0;border-radius:12px;background:none;color:var(--navy);cursor:pointer;transition:background var(--t-fast)}
 .icon-btn:hover{background:var(--g50)}
 .icon-btn .icon{width:22px;height:22px}
-.util-link{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;font-size:.875rem;font-weight:700;color:var(--navy);text-decoration:none;border-radius:10px}
+.util-link{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 14px;border-radius:12px;font-size:1rem;font-weight:600;color:var(--navy);text-decoration:none;transition:background var(--t-fast)}
+.util-link .icon{display:none;width:22px;height:22px}
 .util-link:hover{background:var(--g50)}
 .header-buy{margin-left:8px}
-.menu-toggle{display:none}
-.buy-compact{display:none}
+.m-buy,.m-toggle{display:none}
 
-/* Mega menú */
-.mega{position:absolute;left:0;right:0;top:100%;background:var(--white);border-top:1px solid var(--g100);box-shadow:0 24px 48px -24px rgba(16,28,76,.28);opacity:0;transform:translateY(-8px);pointer-events:none;visibility:hidden;transition:opacity var(--t) var(--ease), transform var(--t) var(--ease), visibility 0s linear var(--t)}
-.mega.is-open{opacity:1;transform:none;pointer-events:auto;visibility:visible;transition-delay:0s}
-.mega-inner{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding-block:40px 32px}
-.mega-intro{grid-column:span 3;display:grid;align-content:start;gap:12px;padding-right:16px}
-.mega-intro .kicker{font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink,var(--blue))}
-.mega-intro h2{font-size:1.75rem;color:var(--navy)}
-.mega-intro p{color:var(--g700);font-size:.9375rem}
-.mega-col{grid-column:span 2;min-width:0}
-.mega-col h3{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--g500);margin-bottom:12px;font-weight:800}
-.mega-col a{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;padding:6px 0;font-weight:700;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--g100)}
-.mega-col a .icon{width:16px;height:16px;opacity:0;transform:translateX(-6px);transition:all var(--t) var(--ease);color:var(--accent-ink,var(--blue))}
-.mega-col a:hover .icon,.mega-col a:focus-visible .icon{opacity:1;transform:none}
-.mega-col a:hover{color:var(--accent-ink,var(--blue))}
-.mega-feature{grid-column:span 5;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;text-decoration:none;color:inherit;background:var(--g50);border-radius:var(--r-card);padding:12px;min-width:0}
-.mega-feature .ph{border-radius:14px;min-height:200px}
-.mega-feature-body{display:grid;align-content:center;gap:8px;padding:8px 8px 8px 0}
-.mega-feature-body .kicker{font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink,var(--blue))}
-.mega-feature-body h3{font-size:1.375rem;color:var(--navy)}
-.mega-feature-body p{font-size:.9375rem;color:var(--g700)}
-.mega-feature:hover .ph-img{transform:scale(1.04)}
-.mega-bar{grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:20px;border-top:1px solid var(--g100);font-size:.9375rem;color:var(--g700)}
-.mega-bar .facts{display:flex;gap:24px;flex-wrap:wrap}
-.mega-bar .facts span{display:inline-flex;align-items:center;gap:8px}
-.mega-bar .facts .icon{color:var(--accent-ink,var(--blue))}
-.mega-scrim{position:fixed;inset:0;top:0;background:rgba(19,23,34,.28);opacity:0;pointer-events:none;transition:opacity var(--t);z-index:90}
-.mega-scrim.is-open{opacity:1;pointer-events:auto}
+/* Contenedor compartido */
+.mm-shell{position:absolute;left:0;right:0;top:100%;z-index:1;height:0;background:var(--white);border-top:1px solid var(--g100);box-shadow:0 40px 60px -40px rgba(16,28,76,.4);opacity:0;transform:translateY(-8px);visibility:hidden;transition:height var(--t-slow) var(--ease), opacity var(--t) var(--ease), transform var(--t) var(--ease), visibility 0s linear var(--t)}
+.mm-shell.is-open{opacity:1;transform:none;visibility:visible;transition-delay:0s}
+.mm-shell::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--shell-acc,transparent);transition:background var(--t)}
+.mm-panel{position:absolute;left:0;right:0;top:100%;z-index:2;opacity:0;visibility:hidden;transform:translateY(-6px);pointer-events:none;transition:opacity 200ms var(--ease), transform 250ms var(--ease), visibility 0s linear 250ms}
+.mm-panel.is-active{opacity:1;visibility:visible;transform:none;pointer-events:auto;transition-delay:70ms,70ms,0s}
+.mm-scrim{position:fixed;inset:0;z-index:90;background:rgba(16,28,76,.22);opacity:0;pointer-events:none;transition:opacity var(--t) var(--ease)}
+.mm-scrim.is-open{opacity:1;pointer-events:auto}
 
-/* Drawer móvil */
-.drawer{position:fixed;left:0;right:0;bottom:0;top:calc(var(--header-h) + env(safe-area-inset-top,0px));z-index:99;background:var(--white);overflow:auto;padding:8px var(--gutter) calc(32px + env(safe-area-inset-bottom,0px));transform:translateY(-12px);opacity:0;visibility:hidden;transition:opacity var(--t) var(--ease), transform var(--t) var(--ease), visibility 0s linear var(--t)}
+.mm-inner{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px;padding-block:44px 48px}
+.mm-intro{grid-column:span 4;display:grid;align-content:start;justify-items:start;gap:14px;padding-right:32px;border-right:1px solid var(--g100)}
+.mm-badge{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--acc-soft);color:var(--acc-ink)}
+.mm-badge .icon{width:24px;height:24px}
+.mm-title{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;line-height:1.15;color:var(--navy)}
+.mm-text{font-size:1rem;line-height:1.55;color:var(--g700);max-width:34ch}
+.mm-landing{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:.9375rem;font-weight:700;color:var(--acc-ink);text-decoration:none}
+.mm-landing .icon{width:18px;height:18px;transition:transform var(--t-fast) var(--ease)}
+.mm-landing:hover .icon{transform:translateX(4px)}
+.mm-landing:hover span{text-decoration:underline;text-underline-offset:4px}
+.mm-intro .btn{margin-top:8px}
+.mm-col{grid-column:span 4;display:grid;align-content:start;gap:8px;min-width:0}
+.mm-label{font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--g500);margin-bottom:2px}
+.mm-label:not(:first-child){margin-top:16px}
+.mm-links{display:grid;gap:2px}
+
+/* Enlaces ligeros */
+.mm-link{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:2px 16px;min-height:52px;padding:10px 14px;margin-inline:-14px;border-radius:12px;text-decoration:none;color:var(--navy);transition:background 180ms var(--ease), color 180ms var(--ease)}
+.mm-link b{font-size:1.0625rem;font-weight:600;line-height:1.3}
+.mm-link small{grid-column:1;font-size:.875rem;line-height:1.4;color:var(--g700)}
+.mm-link > .icon{grid-column:2;grid-row:1 / span 2;width:18px;height:18px;color:var(--g500);transition:transform 180ms var(--ease), color 180ms}
+.mm-link:hover,.mm-link.is-hover{background:var(--g50);color:var(--acc-ink)}
+.mm-link:hover > .icon,.mm-link.is-hover > .icon{transform:translateX(4px);color:var(--acc-ink)}
+/* Horarios y tarifas: mayor jerarquía */
+.mm-link--key{grid-template-columns:auto minmax(0,1fr) auto;column-gap:16px;margin-inline:0;padding:16px;margin-bottom:6px;background:var(--acc-soft);border-radius:16px}
+.mm-link--key .mm-ic{grid-row:1 / span 2;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--white);color:var(--acc-ink)}
+.mm-link--key .mm-ic .icon{width:22px;height:22px}
+.mm-link--key b{font-size:1.25rem;font-weight:800;letter-spacing:-.01em}
+.mm-link--key small{grid-column:2}
+.mm-link--key > .icon{grid-column:3}
+.mm-link--key:hover,.mm-link--key.is-hover{background:var(--acc-soft);box-shadow:inset 0 0 0 1.5px var(--acc)}
+/* Editorial (Descubre) */
+.mm-links--lg .mm-link{min-height:72px;border-bottom:1px solid var(--g100);border-radius:12px}
+.mm-links--lg .mm-link b{font-size:1.375rem;font-weight:700;letter-spacing:-.02em}
+
+/* ¿Vienes hoy? */
+.mm-today{grid-column:span 4;align-self:start;display:grid;gap:16px;padding:24px;border-radius:20px;background:var(--g50)}
+.mm-today-k{display:flex;align-items:center;gap:10px;font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:-.01em}
+.mm-today-k .icon{width:22px;height:22px;color:var(--acc-ink)}
+.mm-today-row{display:grid;gap:4px;padding:14px 16px;border-radius:14px;background:var(--white)}
+.mm-today-row span{font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--g500)}
+.mm-today-row strong{font-size:1.5rem;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.mm-today-note{font-size:.8125rem;color:var(--g700)}
+.mm-today .btn{width:100%}
+
+/* Tarjetas de opción (Ven en grupo) */
+.mm-tiles{grid-column:span 8;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-content:start}
+.mm-tile{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:4px 16px;min-height:96px;padding:20px;border-radius:18px;border:1px solid var(--g100);background:var(--white);text-decoration:none;color:var(--navy);transition:border-color 180ms var(--ease), background 180ms var(--ease), transform 220ms var(--ease)}
+.mm-tile .mm-ic{grid-row:1 / span 2;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--acc-soft);color:var(--acc-ink);transition:background 180ms, color 180ms}
+.mm-tile .mm-ic .icon{width:26px;height:26px}
+.mm-tile b{font-size:1.125rem;font-weight:700;line-height:1.25}
+.mm-tile b abbr{text-decoration:none}
+.mm-tile small{grid-column:2;font-size:.875rem;line-height:1.4;color:var(--g700)}
+.mm-tile > .icon{grid-column:3;grid-row:1 / span 2;width:18px;height:18px;color:var(--g500);transition:transform 180ms var(--ease), color 180ms}
+.mm-tile:hover,.mm-tile.is-hover{border-color:var(--acc);background:#FBFAFF;transform:translateY(-2px)}
+.mm-tile:hover .mm-ic,.mm-tile.is-hover .mm-ic{background:var(--acc);color:var(--white)}
+.mm-tile:hover > .icon,.mm-tile.is-hover > .icon{transform:translateX(4px);color:var(--acc-ink)}
+
+/* Tarjeta editorial (Descubre) */
+.mm-feature{grid-column:span 4;display:grid;gap:14px;align-content:start;text-decoration:none;color:var(--navy)}
+.mm-feature .ph{border-radius:18px;aspect-ratio:16/10;max-width:100%}
+.mm-feature .ph-note{font-size:.6875rem}
+.mm-feature:hover .ph-img{transform:scale(1.04)}
+.mm-feature-k{font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--acc-ink)}
+.mm-feature-t{font-size:1.25rem;font-weight:800;line-height:1.25;letter-spacing:-.015em}
+.mm-feature .mm-landing{min-height:32px}
+
+/* Servicios (Crea con Maloka): más estructurado, B2B */
+.mm-services{grid-column:span 8;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px;align-content:start}
+.mm-svc{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:start;gap:4px 16px;padding:22px 4px;border-top:1px solid var(--g200);text-decoration:none;color:var(--navy);transition:color 180ms var(--ease)}
+.mm-svc .mm-ic{grid-row:1 / span 2;width:40px;height:40px;border-radius:10px;display:grid;place-items:center;border:1.5px solid var(--g200);color:var(--navy);transition:border-color 180ms, color 180ms}
+.mm-svc .mm-ic .icon{width:20px;height:20px}
+.mm-svc b{font-size:1.125rem;font-weight:700;line-height:1.3}
+.mm-svc small{grid-column:2;font-size:.875rem;line-height:1.45;color:var(--g700)}
+.mm-svc > .icon{grid-column:3;grid-row:1;width:18px;height:18px;margin-top:3px;color:var(--g500);transition:transform 180ms var(--ease), color 180ms}
+.mm-svc:hover,.mm-svc.is-hover{color:var(--acc-ink)}
+.mm-svc:hover .mm-ic,.mm-svc.is-hover .mm-ic{border-color:var(--acc);color:var(--acc-ink)}
+.mm-svc:hover > .icon,.mm-svc.is-hover > .icon{transform:translate(4px,0);color:var(--acc-ink)}
+.btn--purple-outline{border-color:var(--purple);color:var(--purple-ink);background:var(--white)}
+.btn--purple-outline:hover{background:var(--purple);color:var(--white)}
+
+/* ---------- Menú móvil (drawer con navegación progresiva) ---------- */
+.drawer{position:fixed;left:0;right:0;bottom:0;top:var(--drawer-top,72px);z-index:99;background:var(--white);overflow:hidden;opacity:0;transform:translateY(-8px);visibility:hidden;transition:opacity var(--t) var(--ease), transform var(--t) var(--ease), visibility 0s linear var(--t)}
 .drawer.is-open{opacity:1;transform:none;visibility:visible;transition-delay:0s}
-.drawer-today{display:flex;gap:12px;align-items:center;padding:14px 16px;background:var(--g50);border-radius:16px;margin-block:8px 16px;font-size:.9375rem;font-weight:600}
-.acc{border-bottom:1px solid var(--g100)}
-.acc > button{display:flex;width:100%;align-items:center;justify-content:space-between;min-height:60px;border:0;background:none;font-size:1.0625rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:0}
-.acc > button .icon{transition:transform var(--t) var(--ease)}
-.acc > button[aria-expanded="true"] .icon{transform:rotate(180deg)}
-.acc-panel{padding-bottom:16px;display:grid;gap:16px}
-.acc-panel h3{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--g500);font-weight:800;margin-bottom:4px}
-.acc-panel a{display:flex;align-items:center;min-height:44px;font-weight:600;color:var(--g950);text-decoration:none}
-.drawer-utils{display:grid;gap:12px;margin-top:24px}
-.drawer-utils .btn{width:100%}
+.d-screen{position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;padding:12px var(--gutter) calc(32px + env(safe-area-inset-bottom,0px));background:var(--white);transition:transform var(--t-slow) var(--ease), visibility 0s linear var(--t-slow)}
+.d-root{transform:none;visibility:visible}
+.drawer.show-sub .d-root{transform:translateX(-30%);visibility:hidden}
+.d-sub{transform:translateX(100%);visibility:hidden}
+.d-sub.is-active{transform:none;visibility:visible;transition-delay:0s}
+.drawer:not(.show-sub) .d-root{transition-delay:0s}
+.d-kicker{font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--g500);padding-block:8px 4px}
+.d-list{border-bottom:1px solid var(--g200)}
+.d-row{display:flex;align-items:center;gap:14px;width:100%;min-height:68px;padding:0;border:0;border-top:1px solid var(--g100);background:none;font:inherit;font-size:1.25rem;font-weight:700;letter-spacing:-.015em;color:var(--navy);text-align:left;text-decoration:none;cursor:pointer}
+.d-list li:first-child .d-row{border-top:0}
+.d-row .d-ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--acc-soft);color:var(--acc-ink);flex:none}
+.d-row .d-ic .icon{width:22px;height:22px}
+.d-row .d-txt{flex:1}
+.d-row .d-end{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--navy);transition:background var(--t-fast)}
+.d-row .d-end .icon{width:20px;height:20px}
+.d-row:hover .d-end{background:var(--g50)}
+.d-utils{display:grid;padding-block:8px 16px}
+.d-util{display:flex;align-items:center;gap:14px;width:100%;min-height:52px;padding:0;border:0;background:none;font:inherit;font-size:1.0625rem;font-weight:600;color:var(--navy);text-decoration:none;cursor:pointer}
+.d-util .icon{width:22px;height:22px;color:var(--g700)}
+.d-buy{width:100%}
+.d-back{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 14px 0 8px;margin-left:-8px;border:0;border-radius:12px;background:none;font:inherit;font-size:1.375rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);cursor:pointer}
+.d-back .icon{width:22px;height:22px;transform:rotate(180deg);color:var(--acc-ink)}
+.d-back:hover{background:var(--g50)}
+.d-sub-head{display:grid;gap:8px;padding-bottom:16px;border-bottom:3px solid var(--acc)}
+.d-desc{font-size:1rem;color:var(--g700)}
+.d-links{display:grid;margin-bottom:24px}
+.d-link{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;border-bottom:1px solid var(--g100);font-size:1.125rem;font-weight:600;color:var(--navy);text-decoration:none}
+.d-link small{display:block;font-size:.8125rem;font-weight:500;color:var(--g700)}
+.d-link .icon{width:20px;height:20px;color:var(--acc-ink);flex:none}
+.d-link--key{font-weight:800;font-size:1.25rem}
+.d-sub .btn{width:100%}
+
+/* Tablet horizontal: menos aire, columnas reorganizadas */
+@media (max-width:1279px){
+  .header-bar{gap:12px}
+  .nav-trigger{padding:10px 10px;font-size:.9375rem}
+  .nav-trigger::after{left:10px;right:10px}
+  .util-link span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .util-link{padding:0;width:48px;justify-content:center}
+  .util-link .icon{display:block}
+  .header-buy{margin-left:4px;padding-inline:16px}
+  .mm-inner{gap:24px 32px;padding-block:32px 36px}
+  .mm-intro{grid-column:1 / -1;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;column-gap:20px;padding:0 0 24px;border-right:0;border-bottom:1px solid var(--g100)}
+  .mm-intro .mm-badge{grid-row:1 / span 2}
+  .mm-intro .mm-title,.mm-intro .mm-text{grid-column:2}
+  .mm-intro .mm-text{max-width:60ch}
+  .mm-intro .mm-landing,.mm-intro .btn{grid-column:3;grid-row:1 / span 2;margin:0}
+  .mm-col,.mm-today,.mm-feature{grid-column:span 6}
+  .mm-tiles,.mm-services{grid-column:1 / -1}
+}
+/* Tablet vertical y móvil: drawer */
+@media (max-width:1024px){
+  .site-header{--bar:76px;--logo-h:52px}
+  .site-header.is-scrolled{--bar:64px;--logo-h:46px}
+  .nav,.actions > .icon-btn,.util-link,.header-buy,.mm-shell,.mm-scrim{display:none}
+  .m-buy{display:inline-flex;min-height:44px;padding:8px 14px;font-size:.8125rem}
+  .m-toggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px 0 12px;border:1.5px solid var(--g200);border-radius:12px;background:var(--white);font-size:.9375rem;font-weight:700;color:var(--navy);cursor:pointer}
+  .m-toggle .icon{width:22px;height:22px}
+  .m-toggle[aria-expanded="true"]{background:var(--navy);border-color:var(--navy);color:var(--white)}
+  .actions{gap:8px}
+}
+@media (min-width:1025px){ .drawer{display:none} }
+@media (max-width:360px){ .m-buy span{display:none} }
 
 /* ---------- Hero ---------- */
 .hero{padding-top:16px}
@@ -488,12 +612,7 @@ body.hide-notes .ph-note{display:none}
 
 /* ================= Responsive ================= */
 @media (max-width:1180px){
-  .main-nav,.utils .util-link,.utils .header-buy{display:none}
-  .menu-toggle{display:inline-flex}
-  .buy-compact{display:inline-flex}
   .header-bar{justify-content:space-between}
-  .utils{gap:4px}
-  .mega,.mega-scrim{display:none}
   .facts{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 0}
   .visit-title{grid-column:1 / -1}
   .facts{grid-column:1 / -1}
@@ -626,6 +745,15 @@ body.hide-notes .ph-note{display:none}
   <symbol id="i-fb" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M13 21v-7.5h2.5M10.5 13.5H13M13 13.5V10a2 2 0 0 1 2-2h1.5"/></symbol>
   <symbol id="i-tt" viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2.3 4.5 5 4.7"/></symbol>
   <symbol id="i-in" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5V16M8 7.8v.1M11.5 16v-5.5M11.5 13c0-1.6 1-2.6 2.4-2.6S16 11.3 16 13v3"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2.5 9.5L12 5l9.5 4.5L12 14z"/><path d="M6.5 11.6V16c1.6 1.6 3.5 2.4 5.5 2.4s3.9-.8 5.5-2.4v-4.4M21.5 9.5V15"/></symbol>
+  <symbol id="i-cake" viewBox="0 0 24 24"><path d="M4 20.5h16M5 20.5v-7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7"/><path d="M5 15.5c1.2 1 2.3 1 3.5 0s2.3-1 3.5 0 2.3 1 3.5 0 2.3-1 3.5 0M12 11.5V8M12 5.5c-.8-.8-.8-1.8 0-2.5.8.7.8 1.7 0 2.5z"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 12.5h18M10.5 12.5v1.5h3v-1.5"/></symbol>
+  <symbol id="i-door" viewBox="0 0 24 24"><path d="M4 21h16M6 21V4.5A1.5 1.5 0 0 1 7.5 3h9A1.5 1.5 0 0 1 18 4.5V21"/><path d="M6 21l7-2V5l-7-2"/><circle cx="10.5" cy="12" r=".6" fill="currentColor"/></symbol>
+  <symbol id="i-shapes" viewBox="0 0 24 24"><circle cx="7.5" cy="7.5" r="4"/><rect x="13" y="13" width="8" height="8" rx="1.5"/><path d="M17 3l4 7h-8zM3.5 20.5l7-7"/></symbol>
+  <symbol id="i-handshake" viewBox="0 0 24 24"><path d="M2.5 7.5l3-1.5 4 1.5M21.5 7.5l-3-1.5-5 2-3.5 3a1.4 1.4 0 0 0 2 2l2.5-1.5 4.5 4.5"/><path d="M2.5 14.5l3 .5 4.5 4a1.4 1.4 0 0 0 2-2M11 18.5a1.4 1.4 0 0 0 2-2M13.5 17a1.4 1.4 0 0 0 2-2M21.5 14.5l-3 .5"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M4 7.4l8 4.6 8-4.6M12 12v9.2"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17M6.5 17v-5M11 17V8M15.5 17v-3.5M20 17V5"/></symbol>
 </svg>
 
 <a class="skip" href="#main">Saltar al contenido</a>
@@ -640,47 +768,195 @@ body.hide-notes .ph-note{display:none}
 <!-- ================= HEADER ================= -->
 <header class="site-header" id="header">
   <div class="wrap header-bar">
-    <a class="logo" href="#top" aria-label="Maloka, ir al inicio">
-      <svg class="logo-mark" viewBox="10 3 78 94" aria-hidden="true">
+    <a class="logo" href="#top" aria-label="Maloka, ir al inicio"><svg class="logo-mark" viewBox="10 3 78 94" aria-hidden="true">
         <g fill="none" stroke="currentColor" stroke-linecap="square"><path d="M15 6.5V55M45.5 6.5V93.5" stroke-width="2.2"/><path d="M45.5 15A39 39 0 0 1 45.5 93" stroke-width="1.6"/></g>
         <path d="M14 54H46.6V69C36 64 24 59 14 54Z" fill="currentColor"/>
         <g fill="currentColor" font-family="Manrope, 'Avenir Next', sans-serif" font-weight="700" font-size="11.5" text-anchor="middle"><text x="24.5" y="19.5">M</text><text x="36.5" y="19.5">A</text><text x="24" y="34.5">L</text><text x="36.5" y="34.5">O</text><text x="24" y="49">K</text><text x="36.5" y="49">A</text></g>
-      </svg>
-    </a>
+      </svg></a>
 
-    <nav class="main-nav" aria-label="Principal">
-      <ul>
-        <li><button class="nav-btn" type="button" data-menu="visitanos" aria-expanded="false" aria-controls="mega" style="--accent:var(--blue)">Visítanos<svg class="icon"><use href="#i-chev"/></svg></button></li>
-        <li><button class="nav-btn" type="button" data-menu="agendate" aria-expanded="false" aria-controls="mega" style="--accent:var(--teal)">Agéndate<svg class="icon"><use href="#i-chev"/></svg></button></li>
-        <li><button class="nav-btn" type="button" data-menu="grupo" aria-expanded="false" aria-controls="mega" style="--accent:var(--purple)">Ven en grupo<svg class="icon"><use href="#i-chev"/></svg></button></li>
-        <li><button class="nav-btn" type="button" data-menu="descubre" aria-expanded="false" aria-controls="mega" style="--accent:var(--cyan)">Descubre<svg class="icon"><use href="#i-chev"/></svg></button></li>
-        <li><button class="nav-btn" type="button" data-menu="crea" aria-expanded="false" aria-controls="mega" style="--accent:var(--coral)">Crea con Maloka<svg class="icon"><use href="#i-chev"/></svg></button></li>
+    <nav class="nav" aria-label="Principal">
+      <ul class="nav-list">
+        <!-- VISÍTANOS · acento teal -->
+        <li style="--acc:var(--teal);--acc-ink:var(--teal-ink);--acc-soft:#E6F6F2">
+          <button class="nav-trigger" type="button" id="nt-visitanos" aria-expanded="false" aria-controls="mm-visitanos">Visítanos<svg class="icon chev"><use href="#i-chev"/></svg></button>
+          <div class="mm-panel" id="mm-visitanos" data-acc="var(--teal)">
+            <div class="wrap mm-inner">
+              <div class="mm-intro">
+                <span class="mm-badge"><svg class="icon"><use href="#i-pin"/></svg></span>
+                <p class="mm-title">Visítanos</p>
+                <p class="mm-text">Todo lo que necesitas para preparar tu visita a Maloka.</p>
+                <a class="mm-landing" href="#entradas"><span>Ir a Visítanos</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+              </div>
+              <div class="mm-col">
+                <p class="mm-label">Planea tu visita</p>
+                <ul class="mm-links">
+                  <li><a class="mm-link mm-link--key" href="#entradas"><span class="mm-ic"><svg class="icon"><use href="#i-ticket"/></svg></span><b>Horarios y tarifas</b><small>Consulta precios, días y horarios de apertura.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                  <li><a class="mm-link" href="#entradas"><b>Cómo llegar</b><small>Dirección y opciones de transporte.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                  <li><a class="mm-link" href="#entradas"><b>Servicios</b><small>Lo que encuentras durante tu visita.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                </ul>
+                <p class="mm-label">Explora</p>
+                <ul class="mm-links">
+                  <li><a class="mm-link" href="#experiencias"><b>Experiencias</b><small>Todo lo que puedes vivir en Maloka.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                </ul>
+              </div>
+              <aside class="mm-today" aria-label="¿Vienes hoy?">
+                <p class="mm-today-k"><svg class="icon"><use href="#i-clock"/></svg>¿Vienes hoy?</p>
+                <div class="mm-today-row"><span>Horario de hoy</span><strong>XX:XX – XX:XX</strong></div>
+                <p class="mm-today-note">Dato dinámico: se conecta al calendario oficial de apertura.</p>
+                <a class="btn btn--buy" href="#entradas"><svg class="icon ticket"><use href="#i-ticket"/></svg>Compra entradas</a>
+              </aside>
+            </div>
+          </div>
+        </li>
+
+        <!-- AGÉNDATE · enlace directo, sin submenú -->
+        <li style="--acc:var(--yellow);--acc-ink:#7A5A00">
+          <a class="nav-trigger nav-trigger--link" href="#agenda">Agéndate</a>
+        </li>
+
+        <!-- VEN EN GRUPO · acento morado -->
+        <li style="--acc:var(--purple);--acc-ink:var(--purple-ink);--acc-soft:var(--purple-50)">
+          <button class="nav-trigger" type="button" id="nt-grupo" aria-expanded="false" aria-controls="mm-grupo">Ven en grupo<svg class="icon chev"><use href="#i-chev"/></svg></button>
+          <div class="mm-panel" id="mm-grupo" data-acc="var(--purple)">
+            <div class="wrap mm-inner">
+              <div class="mm-intro">
+                <span class="mm-badge"><svg class="icon"><use href="#i-users"/></svg></span>
+                <p class="mm-title">Ven en grupo</p>
+                <p class="mm-text">Encuentra la experiencia que mejor se adapta a tu grupo.</p>
+                <a class="btn btn--purple-outline" href="#grupos">Cotiza tu visita<svg class="icon"><use href="#i-arrow"/></svg></a>
+              </div>
+              <ul class="mm-tiles">
+                <li><a class="mm-tile" href="#grupos"><span class="mm-ic"><svg class="icon"><use href="#i-cap"/></svg></span><b>Colegios y universidades</b><small>Visitas que conectan con el aula.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                <li><a class="mm-tile" href="#grupos"><span class="mm-ic"><svg class="icon"><use href="#i-cake"/></svg></span><b>Cumpleaños</b><small>Una celebración llena de experimentos.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                <li><a class="mm-tile" href="#grupos"><span class="mm-ic"><svg class="icon"><use href="#i-briefcase"/></svg></span><b>Empresas y eventos</b><small>Experiencias y espacios para equipos.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                <li><a class="mm-tile" href="#grupos"><span class="mm-ic"><svg class="icon"><use href="#i-door"/></svg></span><b><abbr title="Maloka Puertas Abiertas">MPA</abbr></b><small>Maloka Puertas Abiertas: ciencia para comunidades.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <!-- DESCUBRE · acento azul, tratamiento editorial -->
+        <li style="--acc:var(--blue);--acc-ink:#0F5DC7;--acc-soft:var(--blue-50)">
+          <button class="nav-trigger" type="button" id="nt-descubre" aria-expanded="false" aria-controls="mm-descubre">Descubre<svg class="icon chev"><use href="#i-chev"/></svg></button>
+          <div class="mm-panel" id="mm-descubre" data-acc="var(--blue)">
+            <div class="wrap mm-inner">
+              <div class="mm-intro">
+                <span class="mm-badge"><svg class="icon"><use href="#i-spark"/></svg></span>
+                <p class="mm-title">Descubre</p>
+                <p class="mm-text">Conoce las experiencias, proyectos y el impacto de Maloka.</p>
+                <a class="mm-landing" href="#descubre"><span>Ir a Descubre</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+              </div>
+              <div class="mm-col">
+                <ul class="mm-links mm-links--lg">
+                  <li><a class="mm-link" href="#descubre"><b>Programas y proyectos</b><small>Ciencia que llega a territorios y comunidades.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                  <li><a class="mm-link" href="#experiencias"><b>Experiencias</b><small>Salas, laboratorios, Cine Domo y más.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                  <li><a class="mm-link" href="#descubre"><b>Conoce Maloka</b><small>Quiénes somos y qué nos mueve.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                </ul>
+              </div>
+              <a class="mm-feature" href="#descubre">
+                <div class="ph tone-teal" role="img" aria-label="Una mediadora de Maloka trabaja con niños de una escuela rural alrededor de un experimento con agua."><div class="ph-img"></div><span class="ph-note"><svg class="icon"><use href="#i-camera"/></svg><span>Proyecto en territorio</span></span></div>
+                <span class="mm-feature-k">Programas y proyectos</span>
+                <span class="mm-feature-t">La ciencia también transforma territorios.</span>
+                <span class="mm-landing"><span>Descubre los proyectos</span><svg class="icon"><use href="#i-arrow"/></svg></span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- CREA CON MALOKA · acento coral, tono B2B -->
+        <li style="--acc:var(--coral);--acc-ink:var(--coral-ink);--acc-soft:var(--coral-50)">
+          <button class="nav-trigger" type="button" id="nt-crea" aria-expanded="false" aria-controls="mm-crea">Crea con Maloka<svg class="icon chev"><use href="#i-chev"/></svg></button>
+          <div class="mm-panel" id="mm-crea" data-acc="var(--coral)">
+            <div class="wrap mm-inner">
+              <div class="mm-intro">
+                <span class="mm-badge"><svg class="icon"><use href="#i-shapes"/></svg></span>
+                <p class="mm-title">Crea con Maloka</p>
+                <p class="mm-text">Desarrollamos soluciones y experiencias junto a organizaciones, empresas y comunidades.</p>
+                <a class="btn btn--coral" href="#crea">Hablemos de tu proyecto<svg class="icon"><use href="#i-arrow"/></svg></a>
+              </div>
+              <ul class="mm-services">
+                <li><a class="mm-svc" href="#crea"><span class="mm-ic"><svg class="icon"><use href="#i-handshake"/></svg></span><b>Patrocinios y alianzas</b><small>Sumemos esfuerzos para que más personas vivan la ciencia.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                <li><a class="mm-svc" href="#crea"><span class="mm-ic"><svg class="icon"><use href="#i-cube"/></svg></span><b>Experiencias museográficas</b><small>Diseño y producción de exposiciones y módulos interactivos.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                <li><a class="mm-svc" href="#crea"><span class="mm-ic"><svg class="icon"><use href="#i-book"/></svg></span><b>Acompañamiento pedagógico</b><small>Procesos con docentes e instituciones educativas.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+                <li><a class="mm-svc" href="#crea"><span class="mm-ic"><svg class="icon"><use href="#i-chart"/></svg></span><b>Investigación y consultoría</b><small>Estudios de públicos, evaluación y estrategia.</small><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
       </ul>
     </nav>
 
-    <div class="utils">
+    <div class="actions">
       <button class="icon-btn" type="button" id="search-open" aria-label="Buscar"><svg class="icon"><use href="#i-search"/></svg></button>
-      <a class="util-link" href="#contacto">Contacto</a>
+      <a class="util-link" href="#contacto"><svg class="icon"><use href="#i-mail"/></svg><span>Contacto</span></a>
       <a class="btn btn--buy header-buy" href="#entradas"><svg class="icon ticket"><use href="#i-ticket"/></svg>Compra entradas</a>
-      <a class="btn btn--buy buy-compact" href="#entradas" style="min-height:44px;padding:8px 14px;font-size:.8125rem"><svg class="icon ticket"><use href="#i-ticket"/></svg><span>Entradas</span></a>
-      <button class="icon-btn menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menú"><svg class="icon"><use href="#i-menu"/></svg></button>
+      <a class="btn btn--buy m-buy" href="#entradas"><svg class="icon ticket"><use href="#i-ticket"/></svg><span>Entradas</span></a>
+      <button class="m-toggle" type="button" id="m-toggle" aria-expanded="false" aria-controls="drawer"><svg class="icon"><use href="#i-menu"/></svg><span>Menú</span></button>
     </div>
   </div>
-
-  <!-- Mega menú reutilizable: el contenido se genera desde MENU (ver script) -->
-  <div class="mega" id="mega" role="region" aria-label="Submenú">
-    <div class="wrap mega-inner" id="mega-inner"></div>
-  </div>
+  <div class="mm-shell" id="mm-shell" aria-hidden="true"></div>
 </header>
-<div class="mega-scrim" id="mega-scrim"></div>
+<div class="mm-scrim" id="mm-scrim" aria-hidden="true"></div>
 
-<div class="drawer" id="drawer" aria-label="Menú" hidden>
-  <div class="drawer-today"><span class="live-dot" aria-hidden="true"></span><span><b>Abierto hoy</b> · 9:00 a. m. – 5:00 p. m.</span></div>
-  <div id="drawer-acc"></div>
-  <div class="drawer-utils">
+<!-- ===== Menú móvil: navegación progresiva ===== -->
+<div class="drawer" id="drawer" hidden>
+  <nav class="d-screen d-root" id="d-root" aria-label="Menú principal">
+    <p class="d-kicker" aria-hidden="true">Menú</p>
+    <ul class="d-list">
+      <li style="--acc-ink:var(--teal-ink);--acc-soft:#E6F6F2"><button class="d-row" type="button" aria-expanded="false" aria-controls="ds-visitanos"><span class="d-ic"><svg class="icon"><use href="#i-pin"/></svg></span><span class="d-txt">Visítanos</span><span class="d-end"><svg class="icon"><use href="#i-plus"/></svg></span></button></li>
+      <li style="--acc-ink:#0F5DC7;--acc-soft:#FFF6D9"><a class="d-row" href="#agenda"><span class="d-ic" style="color:#7A5A00"><svg class="icon"><use href="#i-calendar"/></svg></span><span class="d-txt">Agéndate</span><span class="d-end"><svg class="icon"><use href="#i-arrow"/></svg></span></a></li>
+      <li style="--acc-ink:var(--purple-ink);--acc-soft:var(--purple-50)"><button class="d-row" type="button" aria-expanded="false" aria-controls="ds-grupo"><span class="d-ic"><svg class="icon"><use href="#i-users"/></svg></span><span class="d-txt">Ven en grupo</span><span class="d-end"><svg class="icon"><use href="#i-plus"/></svg></span></button></li>
+      <li style="--acc-ink:#0F5DC7;--acc-soft:var(--blue-50)"><button class="d-row" type="button" aria-expanded="false" aria-controls="ds-descubre"><span class="d-ic"><svg class="icon"><use href="#i-spark"/></svg></span><span class="d-txt">Descubre</span><span class="d-end"><svg class="icon"><use href="#i-plus"/></svg></span></button></li>
+      <li style="--acc-ink:var(--coral-ink);--acc-soft:var(--coral-50)"><button class="d-row" type="button" aria-expanded="false" aria-controls="ds-crea"><span class="d-ic"><svg class="icon"><use href="#i-shapes"/></svg></span><span class="d-txt">Crea con Maloka</span><span class="d-end"><svg class="icon"><use href="#i-plus"/></svg></span></button></li>
+    </ul>
+    <ul class="d-utils">
+      <li><button class="d-util" type="button" id="m-search"><svg class="icon"><use href="#i-search"/></svg>Buscar</button></li>
+      <li><a class="d-util" href="#contacto"><svg class="icon"><use href="#i-mail"/></svg>Contacto</a></li>
+    </ul>
+    <a class="btn btn--buy btn--lg d-buy" href="#entradas"><svg class="icon ticket"><use href="#i-ticket"/></svg>Compra entradas</a>
+  </nav>
+
+  <section class="d-screen d-sub" id="ds-visitanos" aria-label="Visítanos" style="--acc:var(--teal);--acc-ink:var(--teal-ink)">
+    <div class="d-sub-head"><button class="d-back" type="button"><svg class="icon"><use href="#i-arrow"/></svg><span class="sr-only">Volver al menú: </span>Visítanos</button><p class="d-desc">Todo lo que necesitas para preparar tu visita a Maloka.</p></div>
+    <ul class="d-links">
+      <li><a class="d-link d-link--key" href="#entradas">Horarios y tarifas<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="d-link" href="#entradas">Cómo llegar<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="d-link" href="#entradas">Servicios<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="d-link" href="#experiencias">Experiencias<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+    </ul>
     <a class="btn btn--buy btn--lg" href="#entradas"><svg class="icon ticket"><use href="#i-ticket"/></svg>Compra entradas</a>
-    <a class="btn btn--outline" href="#contacto">Contacto</a>
-  </div>
+  </section>
+
+  <section class="d-screen d-sub" id="ds-grupo" aria-label="Ven en grupo" style="--acc:var(--purple);--acc-ink:var(--purple-ink)">
+    <div class="d-sub-head"><button class="d-back" type="button"><svg class="icon"><use href="#i-arrow"/></svg><span class="sr-only">Volver al menú: </span>Ven en grupo</button><p class="d-desc">Encuentra la experiencia que mejor se adapta a tu grupo.</p></div>
+    <ul class="d-links">
+      <li><a class="d-link" href="#grupos">Colegios y universidades<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="d-link" href="#grupos">Cumpleaños<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="d-link" href="#grupos">Empresas y eventos<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="d-link" href="#grupos"><span>MPA<small>Maloka Puertas Abiertas</small></span><svg class="icon"><use href="#i-arrow"/></svg></a></li>
+    </ul>
+    <a class="btn btn--purple btn--lg" href="#grupos">Cotiza tu visita<svg class="icon"><use href="#i-arrow"/></svg></a>
+  </section>
+
+  <section class="d-screen d-sub" id="ds-descubre" aria-label="Descubre" style="--acc:var(--blue);--acc-ink:#0F5DC7">
+    <div class="d-sub-head"><button class="d-back" type="button"><svg class="icon"><use href="#i-arrow"/></svg><span class="sr-only">Volver al menú: </span>Descubre</button><p class="d-desc">Conoce las experiencias, proyectos y el impacto de Maloka.</p></div>
+    <ul class="d-links">
+      <li><a class="d-link" href="#descubre">Programas y proyectos<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="d-link" href="#experiencias">Experiencias<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="d-link" href="#descubre">Conoce Maloka<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+    </ul>
+  </section>
+
+  <section class="d-screen d-sub" id="ds-crea" aria-label="Crea con Maloka" style="--acc:var(--coral);--acc-ink:var(--coral-ink)">
+    <div class="d-sub-head"><button class="d-back" type="button"><svg class="icon"><use href="#i-arrow"/></svg><span class="sr-only">Volver al menú: </span>Crea con Maloka</button><p class="d-desc">Desarrollamos soluciones y experiencias junto a organizaciones, empresas y comunidades.</p></div>
+    <ul class="d-links">
+      <li><a class="d-link" href="#crea">Patrocinios y alianzas<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="d-link" href="#crea">Experiencias museográficas<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="d-link" href="#crea">Acompañamiento pedagógico<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+      <li><a class="d-link" href="#crea">Investigación y consultoría<svg class="icon"><use href="#i-arrow"/></svg></a></li>
+    </ul>
+    <a class="btn btn--coral btn--lg" href="#crea">Hablemos de tu proyecto<svg class="icon"><use href="#i-arrow"/></svg></a>
+  </section>
 </div>
 
 <main id="main">
@@ -1214,156 +1490,165 @@ body.hide-notes .ph-note{display:none}
     document.body.classList.toggle('hide-notes', !on);
   });
 
-  /* ---------- Header ---------- */
+  /* ---------- Header sticky: se compacta suavemente al hacer scroll ---------- */
   const header = $('#header');
-  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+  let compact = false;
+  const onScroll = () => {
+    const y = window.scrollY;
+    if (!compact && y > 48) { compact = true; header.classList.add('is-scrolled'); }
+    else if (compact && y < 12) { compact = false; header.classList.remove('is-scrolled'); }
+  };
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-  /* ---------- Datos del menú (una sola fuente para mega menú y drawer) ---------- */
-  const MENU = {
-    visitanos: {
-      label: 'Visítanos', ink: 'var(--blue)', kicker: 'Visítanos',
-      title: 'Planea un día para descubrir', text: 'Todo lo que necesitas para venir: horarios, tarifas, cómo llegar y qué vivir.',
-      cols: [
-        { title: 'Planea tu visita', links: ['Horarios y tarifas', 'Cómo llegar', 'Accesibilidad', 'Servicios', 'Preguntas frecuentes'] },
-        { title: 'Experiencias', links: ['Cine Domo', 'Sala Digital', 'Salas interactivas', 'Laboratorios', 'Exposiciones temporales'] }
-      ],
-      feature: { tone: 'tone-dome', alt: 'Público mirando la cúpula del Cine Domo', kicker: 'Cine Domo', title: 'Levanta la mirada', text: 'El universo está más cerca de lo que imaginas.', cta: 'Explora Cine Domo' },
-      bar: true, cta: { label: 'Compra entradas', cls: 'btn--buy', icon: 'ticket' }
-    },
-    agendate: {
-      label: 'Agéndate', ink: 'var(--teal-ink)', kicker: 'Agenda',
-      title: 'Siempre está pasando algo', text: 'Funciones, talleres, charlas y temporadas especiales para cada público.',
-      cols: [
-        { title: 'Cuándo', links: ['Hoy en Maloka', 'Este fin de semana', 'Próximamente', 'Temporada de vacaciones'] },
-        { title: 'Para quién', links: ['Familias', 'Niñas y niños', 'Jóvenes y adultos', 'Docentes'] }
-      ],
-      feature: { tone: 'tone-lab', alt: 'Taller de laboratorio con familias', kicker: 'Hoy · 2:00 p. m.', title: 'Química de la cocina', text: 'Un taller para descubrir qué pasa cuando cocinamos.', cta: 'Ver actividad' },
-      cta: { label: 'Ver toda la agenda', cls: 'btn--navy', icon: 'arrow' }
-    },
-    grupo: {
-      label: 'Ven en grupo', ink: 'var(--purple-ink)', kicker: 'Ven en grupo',
-      title: 'Experiencias para vivir juntos', text: 'Visitas a la medida de colegios, empresas, comunidades y celebraciones.',
-      cols: [
-        { title: 'Grupos', links: ['Colegios y universidades', 'Cumpleaños', 'Empresas y eventos', 'Maloka Puertas Abiertas'] },
-        { title: 'Docentes', links: ['Recursos pedagógicos', 'Guías de visita', 'Formación docente'] }
-      ],
-      feature: { tone: 'tone-purple', alt: 'Grupo escolar con una mediadora', kicker: 'Colegios', title: 'Una visita que sigue en el aula', text: 'Recorridos conectados con el currículo y guías para después.', cta: 'Planea la visita escolar' },
-      cta: { label: 'Cotiza tu visita', cls: 'btn--purple', icon: 'arrow' }
-    },
-    descubre: {
-      label: 'Descubre', ink: 'var(--blue)', kicker: 'Descubre',
-      title: 'Más que un lugar para visitar', text: 'Proyectos, territorios e historias que hacen de la ciencia algo de todos.',
-      cols: [
-        { title: 'Maloka', links: ['Conoce Maloka', 'Programas y proyectos', 'Impacto', 'Noticias'] },
-        { title: 'Corporación', links: ['Informes de gestión', 'Trabaja con nosotros', 'Contratación'] }
-      ],
-      feature: { tone: 'tone-teal', alt: 'Proyecto de Maloka en una escuela rural', kicker: 'En territorio', title: 'La ciencia viaja', text: 'Proyectos que nacen de preguntas locales.', cta: 'Descubre los proyectos' },
-      cta: { label: 'Descubre lo que hacemos', cls: 'btn--navy', icon: 'arrow' }
-    },
-    crea: {
-      label: 'Crea con Maloka', ink: 'var(--coral-ink)', kicker: 'Crea con Maloka',
-      title: 'Transformemos una idea en una experiencia', text: 'Soluciones que conectan ciencia, educación e innovación.',
-      cols: [
-        { title: 'Servicios', links: ['Experiencias museográficas', 'Investigación y consultoría', 'Formación y acompañamiento educativo'] },
-        { title: ' ', links: ['Herramientas educativas', 'Maloka Viajera', 'Patrocinios y alianzas'] }
-      ],
-      feature: { tone: 'tone-coral', alt: 'Equipo de museografía construyendo un prototipo', kicker: 'Museografía', title: 'Del boceto al módulo', text: 'Diseñamos, prototipamos y probamos con público real.', cta: 'Explora el proceso' },
-      cta: { label: 'Hablemos de tu proyecto', cls: 'btn--coral', icon: 'arrow' }
-    }
-  };
+  /* ---------- Mega menú (desktop / tablet horizontal) ----------
+     Patrón "disclosure navigation": botón con aria-expanded + aria-controls.
+     Un solo contenedor (.mm-shell) anima la altura entre categorías: no se cierra y reabre. */
+  const triggers = $$('.nav-trigger[aria-controls]');
+  const shell = $('#mm-shell'), mmScrim = $('#mm-scrim');
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const panelOf = btn => document.getElementById(btn.getAttribute('aria-controls'));
+  let current = null, tOpen, tClose, hoverOpened = false;
 
-  const linkHTML = l => `<li><a href="#">${l}<svg class="icon"><use href="#i-arrow"/></svg></a></li>`;
-  const ctaHTML = c => `<a class="btn ${c.cls}" href="#">${c.icon === 'ticket' ? '<svg class="icon ticket"><use href="#i-ticket"/></svg>' : ''}${c.label}${c.icon === 'arrow' ? arrow : ''}</a>`;
-
-  function renderMega(key) {
-    const m = MENU[key];
-    $('#mega').style.setProperty('--accent-ink', m.ink);
-    $('#mega-inner').innerHTML = `
-      <div class="mega-intro"><span class="kicker">${m.kicker}</span><h2>${m.title}</h2><p>${m.text}</p></div>
-      ${m.cols.map(c => `<div class="mega-col"><h3>${c.title}</h3><ul>${c.links.map(linkHTML).join('')}</ul></div>`).join('')}
-      <a class="mega-feature" href="#">
-        <div class="ph ${m.feature.tone}" role="img" aria-label="${m.feature.alt}"><div class="ph-img"></div></div>
-        <div class="mega-feature-body"><span class="kicker">${m.feature.kicker}</span><h3>${m.feature.title}</h3><p>${m.feature.text}</p><span class="link-arrow" style="color:${m.ink}"><span>${m.feature.cta}</span>${arrow}</span></div>
-      </a>
-      <div class="mega-bar">
-        <div class="facts">${m.bar
-          ? '<span><svg class="icon"><use href="#i-clock"/></svg><b>Abierto hoy</b>&nbsp;9:00 a. m. – 5:00 p. m.</span><span><svg class="icon"><use href="#i-pin"/></svg>Cra. 68D #24A-51, Bogotá</span><span><svg class="icon"><use href="#i-ticket"/></svg>Desde $XX.XXX</span>'
-          : `<span>${m.text}</span>`}</div>
-        ${ctaHTML(m.cta)}
-      </div>`;
+  function sizeShell() { if (current) shell.style.height = panelOf(current).offsetHeight + 'px'; }
+  function openMenu(btn) {
+    clearTimeout(tClose);
+    if (current === btn) return;
+    if (current) { current.setAttribute('aria-expanded', 'false'); panelOf(current).classList.remove('is-active'); }
+    current = btn;
+    const panel = panelOf(btn);
+    btn.setAttribute('aria-expanded', 'true');
+    panel.classList.add('is-active');
+    shell.style.setProperty('--shell-acc', panel.dataset.acc);
+    sizeShell();
+    shell.classList.add('is-open'); mmScrim.classList.add('is-open'); header.classList.add('mm-open');
+  }
+  function closeMenu(returnFocus) {
+    clearTimeout(tOpen); clearTimeout(tClose);
+    if (!current) return;
+    const btn = current; current = null;
+    btn.setAttribute('aria-expanded', 'false');
+    panelOf(btn).classList.remove('is-active');
+    shell.classList.remove('is-open'); mmScrim.classList.remove('is-open'); header.classList.remove('mm-open');
+    if (returnFocus) btn.focus();
   }
 
-  const mega = $('#mega'), scrim = $('#mega-scrim');
-  const navBtns = $$('.nav-btn');
-  let openKey = null, hoverTimer;
-
-  function openMega(key, btn) {
-    if (openKey !== key) renderMega(key);
-    openKey = key;
-    navBtns.forEach(b => b.setAttribute('aria-expanded', String(b === btn)));
-    mega.setAttribute('aria-label', `Submenú ${MENU[key].label}`);
-    mega.classList.add('is-open'); scrim.classList.add('is-open');
-  }
-  function closeMega(focusBtn) {
-    if (!openKey) return;
-    const btn = navBtns.find(b => b.dataset.menu === openKey);
-    openKey = null;
-    navBtns.forEach(b => b.setAttribute('aria-expanded', 'false'));
-    mega.classList.remove('is-open'); scrim.classList.remove('is-open');
-    if (focusBtn && btn) btn.focus();
-  }
-  navBtns.forEach(btn => {
-    btn.addEventListener('click', () => openKey === btn.dataset.menu ? closeMega() : openMega(btn.dataset.menu, btn));
-    btn.addEventListener('mouseenter', () => {
-      if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
-      clearTimeout(hoverTimer);
-      hoverTimer = setTimeout(() => openMega(btn.dataset.menu, btn), openKey ? 0 : 120);
+  triggers.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      if (current === btn && !hoverOpened) closeMenu(); else openMenu(btn);
+      hoverOpened = false;
     });
+    btn.addEventListener('mouseenter', () => {
+      if (!finePointer.matches) return;
+      clearTimeout(tOpen); clearTimeout(tClose);
+      tOpen = setTimeout(() => { if (current !== btn) { openMenu(btn); hoverOpened = true; setTimeout(() => { hoverOpened = false; }, 600); } }, current ? 40 : 140);
+    });
+    btn.addEventListener('mouseleave', () => clearTimeout(tOpen));
     btn.addEventListener('keydown', e => {
-      if (e.key === 'ArrowDown') { e.preventDefault(); openMega(btn.dataset.menu, btn); $('#mega a')?.focus(); }
+      if (e.key === 'ArrowDown') { e.preventDefault(); openMenu(btn); panelOf(btn).querySelector('a')?.focus(); }
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        const items = $$('.nav-trigger');
+        const n = items[(items.indexOf(btn) + (e.key === 'ArrowRight' ? 1 : -1) + items.length) % items.length];
+        e.preventDefault(); n.focus();
+      }
     });
   });
-  header.addEventListener('mouseleave', () => { clearTimeout(hoverTimer); hoverTimer = setTimeout(() => closeMega(), 220); });
-  header.addEventListener('mouseenter', () => clearTimeout(hoverTimer));
-  scrim.addEventListener('click', () => closeMega());
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeMega(true); closeDrawer(true); } });
-  document.addEventListener('focusin', e => { if (openKey && !header.contains(e.target)) closeMega(); });
+  // Agéndate: enlace directo. Al pasar por encima solo cambia su estado visual y cierra cualquier panel abierto.
+  $$('.nav-trigger--link').forEach(a => {
+    a.addEventListener('mouseenter', () => { if (finePointer.matches) { clearTimeout(tOpen); tClose = setTimeout(() => closeMenu(), 120); } });
+    a.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        const items = $$('.nav-trigger');
+        e.preventDefault(); items[(items.indexOf(a) + (e.key === 'ArrowRight' ? 1 : -1) + items.length) % items.length].focus();
+      }
+    });
+  });
+  header.addEventListener('mouseleave', () => { if (finePointer.matches && current) { clearTimeout(tOpen); tClose = setTimeout(() => closeMenu(), 260); } });
+  header.addEventListener('mouseenter', () => clearTimeout(tClose));
+  mmScrim.addEventListener('click', () => closeMenu());
+  document.addEventListener('pointerdown', e => { if (current && !header.contains(e.target)) closeMenu(); });
+  document.addEventListener('focusin', e => {
+    if (current && e.target !== current && !panelOf(current).contains(e.target)) closeMenu();
+  });
+  $$('.mm-panel a').forEach(a => a.addEventListener('click', () => closeMenu()));
+  window.addEventListener('resize', () => { sizeShell(); if (window.innerWidth <= 1024) closeMenu(); });
 
-  /* ---------- Drawer móvil ---------- */
-  const drawer = $('#drawer'), toggle = $('#menu-toggle');
-  $('#drawer-acc').innerHTML = Object.entries(MENU).map(([k, m], i) => `
-    <div class="acc">
-      <button type="button" aria-expanded="false" aria-controls="acc-${k}">${m.label}<svg class="icon"><use href="#i-chev"/></svg></button>
-      <div class="acc-panel" id="acc-${k}" hidden>
-        ${m.cols.map(c => `<div>${c.title.trim() ? `<h3>${c.title}</h3>` : ''}<ul>${c.links.map(l => `<li><a href="#">${l}</a></li>`).join('')}</ul></div>`).join('')}
-        ${ctaHTML(m.cta)}
-      </div>
-    </div>`).join('');
-  $$('.acc > button').forEach(b => b.addEventListener('click', () => {
-    const open = b.getAttribute('aria-expanded') === 'true';
-    b.setAttribute('aria-expanded', String(!open));
-    b.nextElementSibling.hidden = open;
-  }));
-  function openDrawer() {
+  /* ---------- Menú móvil: drawer con navegación progresiva ---------- */
+  const drawer = $('#drawer'), mToggle = $('#m-toggle');
+  const outside = () => [$('main'), $('.site-footer'), $('.proto'), $('#buy-bar')].filter(Boolean);
+  let activeSub = null, subTrigger = null;
+
+  function openDrawer(focus = true) {
+    drawer.style.setProperty('--drawer-top', header.getBoundingClientRect().bottom + 'px');
     drawer.hidden = false;
-    requestAnimationFrame(() => drawer.classList.add('is-open'));
-    toggle.setAttribute('aria-expanded', 'true'); toggle.setAttribute('aria-label', 'Cerrar menú');
-    toggle.querySelector('use').setAttribute('href', '#i-close');
+    drawer.offsetHeight; // reflow para que la transición arranque
+    drawer.classList.add('is-open');
+    mToggle.setAttribute('aria-expanded', 'true');
+    mToggle.querySelector('span').textContent = 'Cerrar';
+    mToggle.querySelector('use').setAttribute('href', '#i-close');
     document.body.style.overflow = 'hidden';
+    outside().forEach(el => el.inert = true);
+    if (focus) $('.d-row', drawer).focus();
   }
-  function closeDrawer(focus) {
+  function closeDrawer(returnFocus) {
     if (drawer.hidden) return;
     drawer.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-label', 'Abrir menú');
-    toggle.querySelector('use').setAttribute('href', '#i-menu');
+    mToggle.setAttribute('aria-expanded', 'false');
+    mToggle.querySelector('span').textContent = 'Menú';
+    mToggle.querySelector('use').setAttribute('href', '#i-menu');
     document.body.style.overflow = '';
-    setTimeout(() => { drawer.hidden = true; }, reduce.matches ? 0 : 250);
-    if (focus) toggle.focus();
+    outside().forEach(el => el.inert = false);
+    setTimeout(() => { drawer.hidden = true; closeSub(false); }, reduce.matches ? 0 : 250);
+    if (returnFocus) mToggle.focus();
   }
-  toggle.addEventListener('click', () => drawer.hidden ? openDrawer() : closeDrawer());
+  function openSub(btn, focus = true) {
+    activeSub = document.getElementById(btn.getAttribute('aria-controls'));
+    subTrigger = btn;
+    btn.setAttribute('aria-expanded', 'true');
+    drawer.classList.add('show-sub');
+    activeSub.classList.add('is-active');
+    activeSub.scrollTop = 0;
+    if (focus) setTimeout(() => $('.d-back', activeSub).focus(), reduce.matches ? 0 : 60);
+  }
+  function closeSub(returnFocus = true) {
+    if (!activeSub) return;
+    activeSub.classList.remove('is-active');
+    drawer.classList.remove('show-sub');
+    subTrigger.setAttribute('aria-expanded', 'false');
+    if (returnFocus) subTrigger.focus();
+    activeSub = subTrigger = null;
+  }
+  mToggle.addEventListener('click', () => drawer.hidden ? openDrawer() : closeDrawer());
+  $$('.d-row[aria-controls]', drawer).forEach(b => b.addEventListener('click', () => openSub(b)));
+  $$('.d-back', drawer).forEach(b => b.addEventListener('click', () => closeSub()));
   drawer.addEventListener('click', e => { if (e.target.closest('a[href^="#"]')) closeDrawer(); });
-  window.addEventListener('resize', () => { if (window.innerWidth > 1180) closeDrawer(); });
+  $('#m-search').addEventListener('click', () => { closeDrawer(); setTimeout(() => { $('#search-dlg').showModal(); $('#q').focus(); }, 50); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 1024) closeDrawer(); });
+
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (current) closeMenu(true);
+    else if (activeSub) closeSub();
+    else closeDrawer(true);
+  });
+
+  /* ---------- Estados de demostración (menu.html los usa en iframes) ----------
+     ?estado=visitanos | grupo | descubre | crea | hover | hover-link | sticky | movil | movil-visitanos | movil-grupo */
+  const estado = new URLSearchParams(location.search).get('estado');
+  if (estado) {
+    document.body.classList.add('demo');
+    const now = el => { el.style.transition = 'none'; requestAnimationFrame(() => requestAnimationFrame(() => { el.style.transition = ''; })); };
+    const openNow = id => { [shell, ...$$('.mm-panel')].forEach(now); openMenu($('#nt-' + id)); };
+    if (['visitanos', 'grupo', 'descubre', 'crea'].includes(estado)) openNow(estado);
+    if (estado === 'hover') $('.nav-trigger--link').classList.add('is-hover');
+    if (estado === 'hover-link') { openNow('visitanos'); $$('#mm-visitanos .mm-link')[1].classList.add('is-hover'); }
+    if (estado === 'hover-tile') { openNow('grupo'); $$('#mm-grupo .mm-tile')[1].classList.add('is-hover'); }
+    if (estado === 'sticky') window.scrollTo({ top: 900, behavior: 'instant' });
+    if (estado.startsWith('movil')) {
+      now(drawer); openDrawer(false);
+      const sub = estado.split('-')[1];
+      if (sub) { [...$$('.d-screen')].forEach(now); openSub($(`.d-row[aria-controls="ds-${sub}"]`), false); }
+    }
+  }
 
   /* ---------- Búsqueda ---------- */
   const dlg = $('#search-dlg');

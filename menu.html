@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mega menú Maloka</title>
+<meta name="description" content="Estados del header y mega menú del nuevo sitio de Maloka: desktop, hover, sticky, tablet y móvil.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+/* Hoja de estados: cada recuadro es el sitio real (index.html) cargado con ?estado=… y escalado. */
+:root{
+  --navy:#101C4C; --blue:#146FE8; --teal:#14B89A; --teal-ink:#0A7A66; --purple:#7546D8; --yellow:#FFC928; --coral:#F45F58;
+  --white:#FFFFFF; --g50:#F7F8FA; --g100:#EEF0F4; --g200:#DDE1E9; --g700:#384152; --g950:#131722;
+  --font:"Manrope","Avenir Next","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--g50);color:var(--g950);font-family:var(--font);font-size:1rem;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1360px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+header.top{background:var(--navy);color:var(--white);padding-block:56px 48px}
+header.top p.k{font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#7FD3EE;margin:0 0 12px}
+header.top h1{font-size:clamp(2.25rem,1.6rem + 2.6vw,3.75rem);line-height:1.05;letter-spacing:-.035em;margin:0 0 16px;font-weight:800;text-wrap:balance}
+header.top p.l{max-width:68ch;color:#C9D1EA;margin:0 0 24px;font-size:1.0625rem}
+.ia{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.ia li{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.08);font-weight:700;font-size:.875rem}
+.ia i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.ia small{font-weight:500;color:#9AA6C8}
+a.live{display:inline-flex;align-items:center;gap:8px;margin-top:24px;min-height:48px;padding:12px 20px;border-radius:12px;background:var(--yellow);color:var(--navy);font-weight:800;text-decoration:none;letter-spacing:.02em}
+a.live:focus-visible,.state a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+main{padding-block:48px 96px;display:grid;gap:72px}
+.group h2{font-size:clamp(1.5rem,1.2rem + 1vw,2rem);letter-spacing:-.02em;margin:0 0 8px;color:var(--navy);text-wrap:balance}
+.group > p{margin:0 0 24px;color:var(--g700);max-width:72ch}
+.grid{display:grid;gap:24px}
+.grid--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid--m{grid-template-columns:repeat(auto-fill,minmax(260px,1fr));align-items:start}
+.state{display:grid;gap:12px;min-width:0}
+.state-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.state-h b{font-size:1rem;color:var(--navy)}
+.state-h span{font-size:.8125rem;color:var(--g700)}
+.state-h a{font-size:.8125rem;font-weight:700;color:var(--blue)}
+.frame{position:relative;width:100%;overflow:hidden;border-radius:16px;background:var(--white);border:1px solid var(--g200);box-shadow:0 20px 40px -32px rgba(16,28,76,.5)}
+.frame iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0;background:var(--white)}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:24px 0 0;padding:0;list-style:none}
+.notes li{background:var(--white);border:1px solid var(--g100);border-radius:14px;padding:16px 18px;font-size:.9375rem;color:var(--g700)}
+.notes b{display:block;color:var(--navy);margin-bottom:4px}
+.journey{width:100%;border-collapse:collapse;background:var(--white);border-radius:16px;overflow:hidden;font-size:.9375rem}
+.journey th,.journey td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--g100);vertical-align:top}
+.journey th{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g700)}
+.journey td:last-child{font-weight:700;color:var(--navy)}
+.tbl{overflow-x:auto;border-radius:16px;border:1px solid var(--g200)}
+@media (max-width:860px){ .grid--2{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <p class="k">Maloka · Sistema de navegación</p>
+    <h1>Header y mega menú</h1>
+    <p class="l">Cada recuadro es el sitio real cargado en un estado específico y se puede usar con el mouse y el teclado. La arquitectura es exactamente la aprobada: cinco entradas de primer nivel, Agéndate como enlace directo y solo los submenús definidos.</p>
+    <ul class="ia" aria-label="Arquitectura de primer nivel">
+      <li style="--c:var(--teal)"><i></i>Visítanos <small>4</small></li>
+      <li style="--c:var(--yellow)"><i></i>Agéndate <small>enlace directo</small></li>
+      <li style="--c:var(--purple)"><i></i>Ven en grupo <small>4</small></li>
+      <li style="--c:var(--blue)"><i></i>Descubre <small>3</small></li>
+      <li style="--c:var(--coral)"><i></i>Crea con Maloka <small>4</small></li>
+    </ul>
+    <a class="live" href="index.html">Abrir el sitio completo →</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="group" aria-labelledby="g1">
+    <h2 id="g1">1–2. Header desktop · estado cerrado</h2>
+    <p>Logo a la izquierda (enlace al inicio), navegación centrada y acciones globales a la derecha. Compra entradas es el único elemento con relleno de color.</p>
+    <div class="state"><div class="state-h"><b>Desktop 1440 px, en la parte superior de la página</b><a href="index.html" target="_blank" rel="noopener">Abrir</a></div>
+      <div class="frame" data-w="1440" data-h="420"><iframe title="Header cerrado" src="index.html?estado=cerrado" loading="lazy"></iframe></div></div>
+  </section>
+
+  <section class="group" aria-labelledby="g2">
+    <h2 id="g2">3–6. Mega menús abiertos</h2>
+    <p>Un panel ancho bajo el header. Al pasar de una categoría a otra el panel no se cierra: cambia su contenido con un fundido y ajusta la altura.</p>
+    <div class="grid">
+      <div class="state"><div class="state-h"><b>3 · Visítanos</b><span>Planificación: Horarios y tarifas con mayor jerarquía y bloque «¿Vienes hoy?»</span></div>
+        <div class="frame" data-w="1440" data-h="560"><iframe title="Mega menú Visítanos" src="index.html?estado=visitanos" loading="lazy"></iframe></div></div>
+      <div class="state"><div class="state-h"><b>4 · Ven en grupo</b><span>Cuatro opciones visuales con iconos y el CTA Cotiza tu visita</span></div>
+        <div class="frame" data-w="1440" data-h="580"><iframe title="Mega menú Ven en grupo" src="index.html?estado=grupo" loading="lazy"></iframe></div></div>
+      <div class="state"><div class="state-h"><b>5 · Descubre</b><span>Tratamiento editorial con una card de contenido</span></div>
+        <div class="frame" data-w="1440" data-h="560"><iframe title="Mega menú Descubre" src="index.html?estado=descubre" loading="lazy"></iframe></div></div>
+      <div class="state"><div class="state-h"><b>6 · Crea con Maloka</b><span>Tono profesional (B2B) con el CTA Hablemos de tu proyecto</span></div>
+        <div class="frame" data-w="1440" data-h="580"><iframe title="Mega menú Crea con Maloka" src="index.html?estado=crea" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+
+  <section class="group" aria-labelledby="g3">
+    <h2 id="g3">7. Estados hover</h2>
+    <p>El hover cambia el color, mueve la flecha 4 px y muestra un fondo muy suave, en 150–250 ms. La categoría abierta se señala con una barra completa y el chevron girado, no solo con color.</p>
+    <div class="grid grid--2">
+      <div class="state"><div class="state-h"><b>Agéndate en hover</b><span>Solo estado visual: subrayado parcial y flecha</span></div>
+        <div class="frame" data-w="1440" data-h="300"><iframe title="Hover en Agéndate" src="index.html?estado=hover" loading="lazy"></iframe></div></div>
+      <div class="state"><div class="state-h"><b>Enlace en hover</b><span>«Cómo llegar» dentro de Visítanos</span></div>
+        <div class="frame" data-w="1440" data-h="560"><iframe title="Hover en enlace" src="index.html?estado=hover-link" loading="lazy"></iframe></div></div>
+      <div class="state"><div class="state-h"><b>Opción en hover</b><span>«Cumpleaños» dentro de Ven en grupo</span></div>
+        <div class="frame" data-w="1440" data-h="580"><iframe title="Hover en opción de grupo" src="index.html?estado=hover-tile" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+
+  <section class="group" aria-labelledby="g4">
+    <h2 id="g4">8. Header sticky</h2>
+    <p>Arriba de la página el header mide 88 px. Al pasar los 48 px de scroll se reduce a 68 px, con el logo más pequeño, una línea inferior y una sombra suave. Logo, navegación y Compra entradas siguen siempre visibles.</p>
+    <div class="state"><div class="state-h"><b>Header compacto tras el scroll</b></div>
+      <div class="frame" data-w="1440" data-h="420"><iframe title="Header sticky" src="index.html?estado=sticky" loading="lazy"></iframe></div></div>
+  </section>
+
+  <section class="group" aria-labelledby="g5">
+    <h2 id="g5">9. Menú móvil</h2>
+    <p>No replica el mega menú de escritorio. Es un menú a pantalla completa con navegación progresiva: cada categoría abre su propio nivel con «← volver». El botón Entradas sigue visible en el header.</p>
+    <div class="grid grid--m">
+      <div class="state"><div class="state-h"><b>Cerrado</b></div><div class="frame" data-w="390" data-h="844"><iframe title="Móvil cerrado" src="index.html?estado=cerrado" loading="lazy"></iframe></div></div>
+      <div class="state"><div class="state-h"><b>Menú abierto</b></div><div class="frame" data-w="390" data-h="844"><iframe title="Menú móvil" src="index.html?estado=movil" loading="lazy"></iframe></div></div>
+      <div class="state"><div class="state-h"><b>← Visítanos</b></div><div class="frame" data-w="390" data-h="844"><iframe title="Menú móvil, Visítanos" src="index.html?estado=movil-visitanos" loading="lazy"></iframe></div></div>
+      <div class="state"><div class="state-h"><b>← Ven en grupo</b></div><div class="frame" data-w="390" data-h="844"><iframe title="Menú móvil, Ven en grupo" src="index.html?estado=movil-grupo" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+
+  <section class="group" aria-labelledby="g6">
+    <h2 id="g6">10. Estados responsive</h2>
+    <p>Entre 1025 y 1279 px se mantiene el mega menú: la introducción pasa a una fila superior, el contenido se reparte en dos columnas y Contacto se vuelve un icono con nombre accesible. Desde 1024 px hacia abajo se usa el menú móvil.</p>
+    <div class="grid grid--2">
+      <div class="state"><div class="state-h"><b>Tablet horizontal · 1180 px</b><span>Visítanos abierto</span></div>
+        <div class="frame" data-w="1180" data-h="720"><iframe title="Tablet horizontal" src="index.html?estado=visitanos" loading="lazy"></iframe></div></div>
+      <div class="state"><div class="state-h"><b>Tablet vertical · 820 px</b><span>Menú móvil abierto</span></div>
+        <div class="frame" data-w="820" data-h="1000"><iframe title="Tablet vertical" src="index.html?estado=movil" loading="lazy"></iframe></div></div>
+    </div>
+    <ul class="notes">
+      <li><b>Teclado</b>Tab recorre el botón y luego su panel. Enter o Espacio abren y cierran. Flecha abajo entra al panel y las flechas izquierda/derecha pasan entre categorías. Esc cierra y devuelve el foco al botón.</li>
+      <li><b>ARIA</b>Patrón de navegación desplegable: <code>aria-expanded</code> y <code>aria-controls</code> en cada botón. No se usa <code>aria-haspopup</code> porque los paneles son navegación, no menús de aplicación.</li>
+      <li><b>Cierre</b>Al hacer clic fuera o en el fondo, con Esc, al seguir un enlace del panel, cuando el foco sale del panel o cuando el puntero sale del header (con 260 ms de margen).</li>
+      <li><b>Movimiento</b>Fundido y desplazamiento de 6–8 px, entre 200 y 300 ms. Con <code>prefers-reduced-motion</code> las transiciones son instantáneas.</li>
+    </ul>
+  </section>
+
+  <section class="group" aria-labelledby="g7">
+    <h2 id="g7">Objetivo UX: dónde está cada respuesta</h2>
+    <div class="tbl"><table class="journey">
+      <thead><tr><th scope="col">Pregunta del visitante</th><th scope="col">Ruta</th></tr></thead>
+      <tbody>
+        <tr><td>¿Cuánto cuesta Maloka?</td><td>Visítanos → Horarios y tarifas</td></tr>
+        <tr><td>¿Cómo llego?</td><td>Visítanos → Cómo llegar</td></tr>
+        <tr><td>¿Qué puedo hacer en Maloka?</td><td>Visítanos → Experiencias · Descubre → Experiencias</td></tr>
+        <tr><td>¿Puedo ir con mi colegio?</td><td>Ven en grupo → Colegios y universidades</td></tr>
+        <tr><td>¿Puedo celebrar un cumpleaños?</td><td>Ven en grupo → Cumpleaños</td></tr>
+        <tr><td>¿Puedo hacer un evento?</td><td>Ven en grupo → Empresas y eventos</td></tr>
+        <tr><td>¿Qué proyectos realiza Maloka?</td><td>Descubre → Programas y proyectos</td></tr>
+        <tr><td>¿Quién es Maloka?</td><td>Descubre → Conoce Maloka</td></tr>
+        <tr><td>¿Cómo puedo crear algo con Maloka?</td><td>Crea con Maloka</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+</main>
+
+<script>
+// Escala cada iframe para que el viewport simulado (data-w × data-h) quepa en su recuadro.
+const frames = [...document.querySelectorAll('.frame')];
+function fit() {
+  frames.forEach(f => {
+    const w = +f.dataset.w, h = +f.dataset.h, s = f.clientWidth / w;
+    const ifr = f.querySelector('iframe');
+    ifr.style.width = w + 'px'; ifr.style.height = h + 'px'; ifr.style.transform = `scale(${s})`;
+    f.style.height = h * s + 'px';
+  });
+}
+fit(); addEventListener('resize', fit);
+</script>
+</body>
+</html>
