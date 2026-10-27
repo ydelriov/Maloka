@@ -33,7 +33,7 @@
   --mk-lavanda-50: #EDEAFF; --mk-lavanda-500: #915FFF; --mk-lavanda-700: #6137B4; --mk-lavanda-900: #311B5E;
   --mk-verde-50: #E8FEEB;  --mk-verde-600: #00D45B;  --mk-verde-800: #036D2C;  --mk-verde-900: #004117;
   --mk-amar-50: #FCF9E5;   --mk-amar-600: #D3BB03;   --mk-amar-900: #3F3700;
-  --mk-cyan-50: #E9FDFA;   --mk-cyan-600: #0AD3C2;   --mk-cyan-900: #00403A;
+  --mk-cyan-50: #E9FDFA;   --mk-cyan-500: #00FFEA;   --mk-cyan-600: #0AD3C2;   --mk-cyan-900: #00403A;
   --mk-salmon-50: #FFEAE8; --mk-salmon-500: #FF5252; --mk-salmon-900: #570E11;
 
   /* Roles */
@@ -60,7 +60,8 @@
   --mk-info: #1F5FD1;      --mk-info-fondo: #E8F0FF;
   --mk-error: #C0352B;     --mk-error-fondo: #FDECEA;
 
-  /* Fondo del hero: el mismo tono del banner, para que el borde de la imagen no se note en móvil */
+  /* Solo la variante Elementor (banner a sangre): el tono del banner, para que el borde no se note en móvil.
+     No es un color del Design System: no usarlo en bloques nuevos. */
   --mk-hero-fondo: #141E27;
 
   /* Velo plano sobre fotografía */

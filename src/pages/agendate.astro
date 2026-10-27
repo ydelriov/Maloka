@@ -28,7 +28,7 @@ const nombreDia = (id) => data.dias.find((d) => d.id === id);
         <Button href="#programacion" variant="destacado" size="lg" icon="arrow" class="btn--movil-bloque">Ver la programación</Button>
         <Button href={url('visitanos/#horarios')} variant="invertido" size="lg" class="btn--movil-bloque">Horarios y tarifas</Button>
       </Fragment>
-      <a slot="aside" class="agd mk-oscuro" href="#programacion" data-agd data-el="Contenedor-enlace · Evento destacado (campo «destacado» del CPT)">
+      <a slot="aside" class="agd" href="#programacion" data-agd data-el="Contenedor-enlace · Evento destacado (campo «destacado» del CPT)">
         <div class="agd-media">
           <Picture src={img(dest.imagen)} alt={dest.alt} formats={['avif', 'webp']} widths={[480, 938]} sizes="(max-width: 1024px) 92vw, 460px" class="agd-img" loading="eager" />
         </div>
@@ -94,13 +94,14 @@ const nombreDia = (id) => data.dias.find((d) => d.id === id);
 </Base>
 
 <style>
-  .agd { display: flex; flex-direction: column; border-radius: var(--mk-r-28); overflow: hidden; background: var(--mk-oscuro-superficie); border: 1px solid var(--mk-oscuro-linea); color: #fff; transition: box-shadow var(--mk-t) var(--mk-ease); }
+  .agd { display: flex; flex-direction: column; border-radius: var(--mk-r-28); overflow: hidden; background: var(--mk-violeta-800); border: 1px solid var(--mk-violeta-600); color: #fff; transition: box-shadow var(--mk-t) var(--mk-ease); }
   .agd:hover { box-shadow: var(--mk-sombra-3); }
+  .agd:focus-visible { outline: var(--mk-foco-oscuro); outline-offset: 4px; }
   .agd-media { position: relative; aspect-ratio: 938 / 398; }
   .agd-media :global(picture), .agd-media :global(.agd-img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .agd-body { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 24px; }
   .agd-t { font-size: var(--mk-h3); font-weight: 700; line-height: 1.2; }
-  .agd-f { display: flex; gap: 8px; align-items: center; font-size: var(--mk-small); color: var(--mk-oscuro-texto); }
+  .agd-f { display: flex; gap: 8px; align-items: center; font-size: var(--mk-small); color: var(--mk-violeta-100); }
   .agd-f :global(.mk-ic) { color: var(--mk-violeta-300); }
   .agd-cta { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; margin-top: 4px; }
 

@@ -13,7 +13,7 @@ import EstadoHoy from '../ui/EstadoHoy.astro';
     <Button href="#tarifas" variant="destacado" size="lg" icon="arrow" class="btn--movil-bloque">Ver tarifas</Button>
     <Button href="#llegar" variant="invertido" size="lg" class="btn--movil-bloque">Cómo llegar</Button>
   </Fragment>
-  <aside slot="aside" class="vh-hoy" aria-labelledby="vh-hoy-t" data-el="Contenedor · Fondo superficie oscura · Radio 28 · Icon List">
+  <aside slot="aside" class="vh-hoy" aria-labelledby="vh-hoy-t" data-el="Contenedor · Fondo violeta 800 · Radio 28 · Icon List">
     <p class="vh-hoy-eb" id="vh-hoy-t">Hoy en Maloka</p>
     <EstadoHoy />
     <ul class="vh-hor">
@@ -26,11 +26,11 @@ import EstadoHoy from '../ui/EstadoHoy.astro';
 </PageHero>
 
 <style>
-  .vh-hoy { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 32px; border-radius: var(--mk-r-28); background: var(--mk-oscuro-superficie); border: 1px solid var(--mk-oscuro-linea); }
+  .vh-hoy { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 32px; border-radius: var(--mk-r-28); background: var(--mk-violeta-800); border: 1px solid var(--mk-violeta-600); }
   .vh-hoy-eb { font-size: 14px; font-weight: 600; color: var(--mk-violeta-200); }
   .vh-hor { display: grid; gap: 14px; width: 100%; }
-  .vh-hor li { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; color: var(--mk-oscuro-texto); }
-  .vh-hor li + li { padding-top: 14px; border-top: 1px solid var(--mk-oscuro-linea); }
+  .vh-hor li { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; color: var(--mk-violeta-100); }
+  .vh-hor li + li { padding-top: 14px; border-top: 1px solid var(--mk-violeta-600); }
   .vh-hor b { display: block; font-weight: 600; color: #fff; }
   .vh-hor :global(.mk-ic) { color: var(--mk-violeta-300); margin-top: 1px; }
   @media (max-width: 767px) { .vh-hoy { padding: 24px 20px; border-radius: var(--mk-r-20); } }

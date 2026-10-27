@@ -11,6 +11,7 @@ import PorValidar from '../ui/PorValidar.astro';
 import { img } from '../../lib/images.js';
 import { url } from '../../lib/url.js';
 import { ruta } from '../../lib/rutas.js';
+const { tono = 'oscuro' } = Astro.props;
 const domo = data.items.find((i) => i.id === 'domo');
 const resto = data.items.filter((i) => i.id !== 'domo');
 ---
@@ -25,7 +26,7 @@ const resto = data.items.filter((i) => i.id !== 'domo');
     </div>
 
     <div class="v7v-grid">
-      <a class="v7v-domo mk-oscuro" href={url('agendate/#programacion')} data-el="Contenedor-enlace · Fondo oscuro #140A1F · Radio 28">
+      <a class:list={['v7v-domo', tono === 'oscuro' ? 'mk-oscuro' : 'v7v-domo--tonal']} href={url('agendate/#programacion')} data-el={tono === 'oscuro' ? 'Contenedor-enlace · Modo oscuro Cine Domo #140A1F · Radio 28' : 'Contenedor-enlace · Fondo violeta 50 · Radio 28'}>
         <div class="v7v-domo-media">
           <Picture src={img(domo.imagen)} alt={domo.alt} formats={['avif', 'webp']} widths={[480, 750]} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 90vw, 620px" class="v7v-domo-img" loading="lazy" />
           <Chip cat="cine" label="Cine Domo" class="v7v-chip" />
@@ -68,7 +69,12 @@ const resto = data.items.filter((i) => i.id !== 'domo');
   .v7v-domo-d { font-size: var(--mk-body); line-height: 1.6; color: var(--mk-oscuro-texto); max-width: 520px; }
   .v7v-datos { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: var(--mk-small); font-weight: 600; color: #fff; }
   .v7v-datos li { display: flex; align-items: center; gap: 8px; }
-  .v7v-datos :global(.mk-ic) { color: var(--mk-violeta-300); }
+  .v7v-datos :global(.mk-ic) { color: var(--mk-cyan-500); }
+  /* Tonal: cuando la página ya tiene su sección oscura */
+  .v7v-domo--tonal { background: var(--mk-fondo-tonal); color: var(--mk-texto); }
+  .v7v-domo--tonal .v7v-domo-t, .v7v-domo--tonal .v7v-datos, .v7v-domo--tonal .v7v-cta { color: var(--mk-texto); }
+  .v7v-domo--tonal .v7v-domo-d { color: var(--mk-texto-2); }
+  .v7v-domo--tonal .v7v-datos :global(.mk-ic), .v7v-domo--tonal .v7v-cta { color: var(--mk-violeta-700); }
   .v7v-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 8px; font-weight: 700; color: #fff; }
   .v7v-cta :global(.mk-ic) { transition: transform var(--mk-t-rapida) var(--mk-ease); }
   .v7v-domo:hover .v7v-cta :global(.mk-ic) { transform: translateX(4px); }

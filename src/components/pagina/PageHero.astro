@@ -1,11 +1,11 @@
 ---
-/* Encabezado de página interna: fondo oscuro con el arco del domo, migas de pan, H1 y lead.
+/* Encabezado de página interna: bloque de marca violeta 700 con el arco del domo, migas de pan, H1 y lead.
    Slots: «ctas» (botones bajo el texto) y «aside» (tarjeta a la derecha). */
 import { url } from '../../lib/url.js';
 const { titulo, lead, actual = titulo } = Astro.props;
 const hasAside = Astro.slots.has('aside');
 ---
-<section class:list={['ph mk-sobre-foto', !hasAside && 'ph--solo']} aria-labelledby="ph-t" data-el="Contenedor ancho completo · Fondo #141E27 · Divisor de forma «Curva» abajo">
+<section class:list={['ph mk-sobre-foto', !hasAside && 'ph--solo']} aria-labelledby="ph-t" data-el="Contenedor ancho completo · Fondo violeta 700 (bloque de marca) · Divisor de forma «Curva» abajo">
   <div class="mk-w ph-in">
     <div class="ph-txt">
       <nav aria-label="Migas de pan" class="ph-migas">
@@ -20,13 +20,13 @@ const hasAside = Astro.slots.has('aside');
 </section>
 
 <style>
-  .ph { position: relative; overflow: hidden; background: var(--mk-hero-fondo); color: #fff; padding-block: 168px 152px; }
+  .ph { position: relative; overflow: hidden; background: var(--mk-violeta-700); color: #fff; padding-block: 168px 152px; }
   .ph::after { content: ""; position: absolute; left: -15%; right: -15%; bottom: -1px; height: 88px; background: #fff; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
   .ph-in { position: relative; z-index: 1; display: grid; grid-template-columns: 7fr 5fr; gap: 48px 64px; align-items: center; }
   .ph--solo .ph-in { grid-template-columns: 1fr; }
   .ph-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
   .ph-migas ol { display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; font-weight: 600; color: var(--mk-violeta-200); }
-  .ph-migas li + li::before { content: "/"; margin-right: 8px; color: var(--mk-oscuro-texto-3); }
+  .ph-migas li + li::before { content: "/"; margin-right: 8px; color: var(--mk-violeta-300); }
   .ph-migas a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
   .ph-t { color: #fff; }
   .ph-lead { font-size: var(--mk-lead); line-height: 1.5; color: #E6DCF0; max-width: 600px; }
