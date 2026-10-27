@@ -1,0 +1,260 @@
+---
+/* Header + mega menú + menú móvil.
+   variante: "centrado" (V4, navegación centrada) · "transparente" (V5, sobre el hero) · "tonal" (V6, ítem activo en tonal).
+   Escritorio (≥1100 px): mega menús que se abren con hover, Enter o Espacio y se cierran con Esc o al salir del foco.
+   Menos de 1100 px: botón de menú y panel a pantalla completa con acordeones y trampa de foco. */
+import nav from '../../data/nav.json';
+import site from '../../data/site.json';
+import Logo from '../ui/Logo.astro';
+import Icon from '../ui/Icon.astro';
+import Button from '../ui/Button.astro';
+import EstadoHoy from '../ui/EstadoHoy.astro';
+import { url } from '../../lib/url.js';
+
+const { variante = 'centrado', inicio = url('') } = Astro.props;
+const items = nav.items;
+---
+<header class:list={['hd', `hd--${variante}`]} data-header data-variante={variante}>
+  <div class="mk-w hd-bar">
+    <a class="hd-logo" href={inicio} aria-label="Maloka, ir al inicio"><Logo size={variante === 'transparente' ? 48 : 44} /></a>
+
+    <nav class="hd-nav" aria-label="Principal">
+      <ul class="hd-list">
+        {items.map((it, i) => it.links.length > 1 ? (
+          <li class="hd-item" data-mm-item>
+            <button class="hd-trig" type="button" aria-expanded="false" aria-controls={`mm-${it.id}`} id={`mt-${it.id}`} data-active={variante === 'tonal' && i === 0 ? 'true' : undefined}>
+              {it.label}<Icon name="down" size="18" class="hd-chev" />
+            </button>
+            <div class="mm" id={`mm-${it.id}`} data-mm hidden>
+              <div class="mk-w mm-in">
+                <div class="mm-intro">
+                  <p class="t-eyebrow">{it.label}</p>
+                  <p class="mm-intro-t">{it.intro}</p>
+                </div>
+                <ul class:list={['mm-links', it.horarioHoy && 'mm-links--grid']}>
+                  {it.links.map((l) => (
+                    <li><a class="mm-link" href="#"><span class="mk-ib mm-ib"><Icon name={l.icono} /></span><span><b>{l.label}</b>{l.desc && <small>{l.desc}</small>}</span></a></li>
+                  ))}
+                </ul>
+                {it.horarioHoy && (
+                  <aside class="mm-hoy" aria-label="Horario de hoy">
+                    <p class="t-eyebrow">Horario de hoy</p>
+                    <EstadoHoy />
+                    <p class="mm-hoy-l"><b>{site.horarios.semana.dias}</b><span>{site.horarios.semana.texto}</span></p>
+                    <p class="mm-hoy-l"><b>{site.horarios.finde.dias}</b><span>{site.horarios.finde.texto}</span></p>
+                    <p class="t-small t-muted">{site.horarios.ventaHasta}</p>
+                    <Button href={site.entradas.url} external variant="primario" size="sm" icon="ext">{site.entradas.texto}</Button>
+                  </aside>
+                )}
+              </div>
+            </div>
+          </li>
+        ) : (
+          <li class="hd-item"><a class="hd-trig" href="#">{it.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="hd-acc">
+      <Button variant={variante === 'transparente' ? 'invertido' : 'secundario'} size="sm" icon="search" label="Buscar" class="hd-buscar" data-hd-buscar />
+      <Button href={site.entradas.url} external variant="primario" size="sm" iconStart="ticket" class="hd-cta">{site.entradas.texto}</Button>
+      <Button variant={variante === 'transparente' ? 'invertido' : 'secundario'} size="sm" icon="menu" label="Abrir menú" class="hd-burger" aria-expanded="false" aria-controls="menu-movil" data-mv-abrir />
+    </div>
+  </div>
+</header>
+
+<!-- Menú móvil: panel a pantalla completa -->
+<div class="mv" id="menu-movil" role="dialog" aria-modal="true" aria-label="Menú" hidden data-mv>
+  <div class="mv-top mk-w">
+    <a class="hd-logo" href={inicio} aria-label="Maloka, ir al inicio"><Logo size={40} /></a>
+    <Button variant="secundario" size="sm" icon="close" label="Cerrar menú" data-mv-cerrar />
+  </div>
+  <div class="mv-body mk-w">
+    <div class="mv-hoy"><EstadoHoy /><span class="t-small t-muted">{site.horarios.ventaHasta}</span></div>
+    <ul class="mv-list">
+      {items.map((it) => (
+        <li class="mv-item">
+          {it.links.length > 1 ? (
+            <>
+              <button class="mv-trig" type="button" aria-expanded="false" aria-controls={`mv-${it.id}`}>
+                <span class="mk-ib mv-ib"><Icon name={it.icono} /></span>{it.label}<Icon name="down" size="20" class="mv-chev" />
+              </button>
+              <ul class="mv-sub" id={`mv-${it.id}`} hidden>
+                {it.links.map((l) => <li><a href="#"><Icon name={l.icono} size="20" />{l.label}</a></li>)}
+              </ul>
+            </>
+          ) : (
+            <a class="mv-trig" href="#"><span class="mk-ib mv-ib"><Icon name={it.icono} /></span>{it.label}</a>
+          )}
+        </li>
+      ))}
+    </ul>
+    <p class="mv-dato"><Icon name="pin" size="20" />{site.direccion}</p>
+    <p class="mv-dato"><Icon name="phone" size="20" />{site.telefono}</p>
+  </div>
+  <div class="mv-cta mk-w">
+    <Button href={site.entradas.url} external variant="primario" iconStart="ticket" block>{site.entradas.texto}</Button>
+  </div>
+</div>
+
+<style>
+  .hd { position: sticky; top: 0; z-index: 100; background: #fff; transition: box-shadow var(--mk-t) var(--mk-ease), background-color var(--mk-t) var(--mk-ease), color var(--mk-t) var(--mk-ease); }
+  .hd.is-fijo { box-shadow: var(--mk-sombra-3); }
+  .hd--centrado { border-bottom: 1px solid var(--mk-borde); }
+  .hd-bar { height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .hd-logo { display: inline-flex; color: var(--mk-violeta-700); border-radius: 8px; flex: none; }
+  .hd-nav { flex: 1; display: flex; }
+  .hd--centrado .hd-nav { justify-content: center; }
+  .hd-list { display: flex; align-items: center; gap: 4px; }
+  .hd--centrado .hd-list { gap: 24px; }
+  .hd-trig { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; padding: 8px 14px; border: 0; border-radius: var(--mk-r-pill); background: none; font-size: 15px; font-weight: 600; color: var(--mk-texto); cursor: pointer; white-space: nowrap; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
+  .hd-trig:hover { color: var(--mk-violeta-700); }
+  :global(.hd-chev) { transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .hd-trig[aria-expanded="true"] :global(.hd-chev) { transform: rotate(180deg); }
+  /* V4: subrayado; V6: píldora tonal */
+  .hd--centrado .hd-trig { padding-inline: 0; border-radius: 0; }
+  .hd--centrado .hd-trig[aria-expanded="true"] { color: var(--mk-violeta-700); box-shadow: inset 0 -2px 0 var(--mk-violeta-700); }
+  .hd--tonal .hd-trig[aria-expanded="true"], .hd--tonal .hd-trig[data-active="true"] { background: var(--mk-violeta-50); color: var(--mk-violeta-700); }
+  .hd-acc { display: flex; align-items: center; gap: 8px; flex: none; }
+  .hd-acc :global(.hd-burger) { display: none; }
+
+  /* V5: transparente sobre el hero hasta hacer scroll */
+  .hd--transparente { position: fixed; left: 0; right: 0; background: transparent; color: #fff; }
+  .hd--transparente .hd-bar { height: 96px; }
+  .hd--transparente:not(.is-fijo) .hd-logo, .hd--transparente:not(.is-fijo) .hd-trig { color: #fff; }
+  .hd--transparente:not(.is-fijo) :global(.hd-trig:focus-visible), .hd--transparente:not(.is-fijo) .hd-logo:focus-visible { outline: var(--mk-foco-oscuro); }
+  .hd--transparente.is-fijo { background: #fff; color: var(--mk-texto); }
+  .hd--transparente.is-fijo .hd-bar { height: 80px; }
+  .hd--transparente.is-fijo :global(.btn--invertido) { color: var(--mk-violeta-700); box-shadow: inset 0 0 0 1.5px var(--mk-violeta-700); }
+  .hd--transparente.is-fijo :global(.btn--invertido:focus-visible) { outline: var(--mk-foco); }
+  .hd--transparente.mm-abierto { background: #fff; }
+  .hd--transparente.mm-abierto .hd-logo, .hd--transparente.mm-abierto .hd-trig { color: var(--mk-texto); }
+  .hd--transparente.mm-abierto .hd-logo { color: var(--mk-violeta-700); }
+
+  /* Mega menú */
+  .mm { position: absolute; left: 0; right: 0; top: 100%; background: #fff; color: var(--mk-texto); border-top: 1px solid var(--mk-borde); box-shadow: var(--mk-sombra-3); animation: mmIn 200ms var(--mk-ease); }
+  @keyframes mmIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+  .mm-in { display: grid; grid-template-columns: 260px 1fr auto; gap: 40px; padding-block: 40px; align-items: start; }
+  .mm-intro { display: grid; gap: 8px; }
+  .mm-intro-t { font-size: var(--mk-h5); font-weight: 600; line-height: 1.4; }
+  .mm-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; }
+  .mm-links--grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mm-link { display: flex; align-items: center; gap: 14px; min-height: 64px; padding: 6px 10px 6px 6px; border-radius: var(--mk-r-20); transition: background-color var(--mk-t-rapida); }
+  .mm-link:hover { background: var(--mk-fondo-alt); }
+  .mm-link b { display: block; font-size: 16px; font-weight: 600; }
+  .mm-link small { display: block; font-size: 14px; color: var(--mk-texto-2); line-height: 1.4; }
+  .mm-ib { width: 44px; height: 44px; border-radius: 14px; }
+  .mm-hoy { width: 300px; display: grid; gap: 10px; padding: 24px; border-radius: var(--mk-r-28); background: var(--mk-fondo-tonal); justify-items: start; }
+  .mm-hoy-l { display: grid; font-size: 14px; }
+  .mm-hoy-l b { font-weight: 600; }
+  .mm-hoy-l span { color: var(--mk-texto-2); }
+
+  /* Menú móvil */
+  .mv { position: fixed; inset: 0; z-index: 200; background: #fff; display: flex; flex-direction: column; overflow: hidden; }
+  .mv-top { display: flex; align-items: center; justify-content: space-between; height: 72px; flex: none; border-bottom: 1px solid var(--mk-borde); }
+  .mv-top .hd-logo { color: var(--mk-violeta-700); }
+  .mv-body { flex: 1; overflow-y: auto; padding-block: 16px 24px; display: grid; gap: 16px; align-content: start; }
+  .mv-hoy { display: grid; gap: 6px; justify-items: start; padding: 16px; border-radius: var(--mk-r-20); background: var(--mk-fondo-tonal); }
+  .mv-list { border-top: 1px solid var(--mk-borde); }
+  .mv-item { border-bottom: 1px solid var(--mk-borde); }
+  .mv-trig { display: flex; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 8px 0; border: 0; background: none; font-size: 18px; font-weight: 600; color: var(--mk-texto); text-align: left; cursor: pointer; }
+  .mv-ib { width: 44px; height: 44px; border-radius: 14px; }
+  :global(.mv-chev) { margin-left: auto; transition: transform var(--mk-t-rapida); color: var(--mk-violeta-700); }
+  .mv-trig[aria-expanded="true"] :global(.mv-chev) { transform: rotate(180deg); }
+  .mv-sub { padding: 0 0 12px 58px; display: grid; }
+  .mv-sub a { display: flex; align-items: center; gap: 12px; min-height: 44px; font-weight: 600; color: var(--mk-texto-2); }
+  .mv-sub a :global(.mk-ic) { color: var(--mk-violeta-700); }
+  .mv-dato { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--mk-texto-2); }
+  .mv-dato :global(.mk-ic) { color: var(--mk-violeta-700); }
+  .mv-cta { flex: none; padding-block: 12px calc(12px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--mk-borde); background: #fff; }
+
+  @media (max-width: 1099px) {
+    .hd-nav { display: none; }
+    .hd-acc :global(.hd-buscar) { display: none; }
+    .hd-acc :global(.hd-burger) { display: inline-flex; }
+    .hd-bar, .hd--transparente .hd-bar, .hd--transparente.is-fijo .hd-bar { height: 72px; }
+  }
+  @media (max-width: 479px) {
+    .hd-acc :global(.hd-cta) { padding: 0 14px; font-size: 14px; }
+    .hd-acc :global(.hd-cta .mk-ic) { display: none; }
+  }
+</style>
+
+<script>
+  const header = document.querySelector('[data-header]');
+  const desktop = window.matchMedia('(min-width: 1100px)');
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+  /* Header fijo con sombra al hacer scroll */
+  const onScroll = () => header.classList.toggle('is-fijo', window.scrollY > 24);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Mega menú */
+  const items = [...header.querySelectorAll('[data-mm-item]')];
+  let abierto = null, tCerrar;
+  const panelDe = (item) => item.querySelector('[data-mm]');
+  const botonDe = (item) => item.querySelector('button');
+  function abrir(item) {
+    if (abierto === item) return;
+    if (abierto) cerrar(false);
+    abierto = item;
+    botonDe(item).setAttribute('aria-expanded', 'true');
+    panelDe(item).hidden = false;
+    header.classList.add('mm-abierto');
+  }
+  function cerrar(devolverFoco) {
+    if (!abierto) return;
+    const b = botonDe(abierto);
+    b.setAttribute('aria-expanded', 'false');
+    panelDe(abierto).hidden = true;
+    header.classList.remove('mm-abierto');
+    abierto = null;
+    if (devolverFoco) b.focus();
+  }
+  items.forEach((item) => {
+    const b = botonDe(item);
+    b.addEventListener('click', () => (abierto === item ? cerrar(false) : abrir(item)));
+    item.addEventListener('mouseenter', () => { if (finePointer.matches && desktop.matches) { clearTimeout(tCerrar); abrir(item); } });
+    item.addEventListener('mouseleave', () => { if (finePointer.matches) { clearTimeout(tCerrar); tCerrar = setTimeout(() => cerrar(false), 200); } });
+    item.addEventListener('focusout', (e) => { if (!item.contains(e.relatedTarget) && abierto === item) cerrar(false); });
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && abierto) cerrar(true); });
+  document.addEventListener('click', (e) => { if (abierto && !abierto.contains(e.target)) cerrar(false); });
+
+  /* Menú móvil con trampa de foco */
+  const panel = document.querySelector('[data-mv]');
+  const abrirBtn = header.querySelector('[data-mv-abrir]');
+  const cerrarBtn = panel.querySelector('[data-mv-cerrar]');
+  const enfocables = () => [...panel.querySelectorAll('a[href], button:not([disabled])')].filter((el) => el.offsetParent !== null);
+  const fuera = () => [...document.body.children].filter((el) => el !== panel && el.tagName !== 'SCRIPT');
+  function abrirMovil() {
+    panel.hidden = false;
+    abrirBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    fuera().forEach((el) => el.setAttribute('inert', ''));
+    cerrarBtn.focus();
+  }
+  function cerrarMovil() {
+    panel.hidden = true;
+    abrirBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    fuera().forEach((el) => el.removeAttribute('inert'));
+    abrirBtn.focus();
+  }
+  abrirBtn.addEventListener('click', abrirMovil);
+  cerrarBtn.addEventListener('click', cerrarMovil);
+  panel.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { cerrarMovil(); return; }
+    if (e.key !== 'Tab') return;
+    const f = enfocables(), first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+  panel.querySelectorAll('.mv-trig[aria-controls]').forEach((b) => b.addEventListener('click', () => {
+    const open = b.getAttribute('aria-expanded') === 'true';
+    b.setAttribute('aria-expanded', String(!open));
+    document.getElementById(b.getAttribute('aria-controls')).hidden = open;
+  }));
+  desktop.addEventListener('change', (e) => { if (e.matches && !panel.hidden) cerrarMovil(); });
+</script>

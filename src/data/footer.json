@@ -1,0 +1,16 @@
+{
+  "suscripcion": {
+    "titulo": "Que la curiosidad no se detenga.",
+    "texto": "Recibe la programación y las novedades de Maloka en tu correo.",
+    "boton": "Suscribirme",
+    "ok": "¡Listo! Prototipo: en la versión final aquí se confirmará tu suscripción."
+  },
+  "columnas": [
+    { "titulo": "Visítanos", "links": ["Horarios y tarifas", "Cómo llegar", "Servicios", "Accesibilidad", "Preguntas frecuentes"] },
+    { "titulo": "Agéndate", "links": ["Programación", "Cine Domo"] },
+    { "titulo": "Ven en grupo", "links": ["Colegios y universidades", "Cumpleaños", "Empresas y eventos", "MPA"] },
+    { "titulo": "Descubre", "links": ["Programas y proyectos", "Recursos educativos", "Conoce Maloka", "Noticias"] },
+    { "titulo": "Crea con Maloka", "links": ["Patrocinios y alianzas", "Experiencias museográficas", "Acompañamiento pedagógico", "Investigación y consultoría", "Maloka viajera"] }
+  ],
+  "legal": ["Política de privacidad", "Tratamiento de datos", "PQRSF"]
+}

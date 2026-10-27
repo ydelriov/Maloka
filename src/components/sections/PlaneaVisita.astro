@@ -1,0 +1,101 @@
+---
+/* Planea tu visita. V4: columnas con línea (01) · V5: tarjetas tonales centradas · V6: accesos rápidos
+   (el horario y la dirección ya están en el panel del hero). */
+import data from '../../data/visita.json';
+import SectionHead from '../ui/SectionHead.astro';
+import Icon from '../ui/Icon.astro';
+import EstadoHoy from '../ui/EstadoHoy.astro';
+import PorValidar from '../ui/PorValidar.astro';
+const { variante } = Astro.props;
+const v4 = data.items.filter((i) => ['horarios', 'llegar', 'servicios', 'faq'].includes(i.id));
+const v5 = data.items.filter((i) => ['horarios', 'llegar', 'servicios', 'guia'].includes(i.id));
+const v6 = [
+  ...data.items.filter((i) => ['servicios', 'faq', 'guia'].includes(i.id)),
+  { id: 'grupos', titulo: 'Visitas en grupo', icono: 'users' }
+];
+---
+{variante === 'v4' && (
+  <section class="pv pv--v4" id="planea" aria-labelledby="pv-t" style="padding-top:96px">
+    <div class="mk-w">
+      <SectionHead estilo="linea" num="01" eyebrow={data.eyebrow} title="Todo listo para venir." id="pv-t">
+        <EstadoHoy slot="accion" />
+      </SectionHead>
+      <ul class="pv4">
+        {v4.map((it) => (
+          <li><a href="#" class="pv4-i">
+            <Icon name={it.icono} size="28" />
+            <h3 class="t-h5">{it.titulo}</h3>
+            <p class="t-small t-muted">{it.texto}</p>
+            {it.porValidar && <PorValidar texto="Detalles por validar" />}
+            <span class="mk-enlace t-small">{it.cta}<Icon name="arrow" size="18" /></span>
+          </a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+{variante === 'v5' && (
+  <section class="pv pv--v5" id="planea" aria-labelledby="pv-t" style="padding-top:40px">
+    <div class="mk-w">
+      <SectionHead estilo="centro" eyebrow={data.eyebrow} title={data.titulo} id="pv-t" />
+      <div class="pv5-hoy"><EstadoHoy /></div>
+      <ul class="pv5">
+        {v5.map((it) => (
+          <li><a href="#" class="pv5-i">
+            <span class="pv5-ic"><Icon name={it.icono} size="28" /></span>
+            <h3 class="t-h5">{it.titulo}</h3>
+            <p class="t-small t-muted">{it.corto}</p>
+            <span class="btn btn--secundario btn--sm" aria-hidden="true">{it.cta}</span>
+          </a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+{variante === 'v6' && (
+  <section class="pv pv--v6" id="planea" aria-labelledby="pv-t" style="padding-top:32px">
+    <div class="mk-w">
+      <h2 class="sr-only" id="pv-t">{data.eyebrow}</h2>
+      <ul class="pv6">
+        {v6.map((it) => (
+          <li><a href="#" class="pv6-i mk-tarjeta"><span class="mk-ib"><Icon name={it.icono} /></span><b>{it.titulo}</b><Icon name="arrow" size="20" class="pv6-fl" /></a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+<style>
+  .pv4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--mk-borde); }
+  .pv4 li + li .pv4-i { border-left: 1px solid var(--mk-borde); padding-left: 24px; }
+  .pv4-i { display: flex; flex-direction: column; gap: 12px; height: 100%; padding: 0 24px 32px 0; color: var(--mk-texto); align-items: flex-start; }
+  .pv4-i :global(.mk-ic--28) { color: var(--mk-violeta-700); }
+  .pv4-i .mk-enlace { margin-top: auto; }
+
+  .pv5-hoy { display: flex; justify-content: center; margin: -24px 0 40px; }
+  .pv5 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+  .pv5-i { display: flex; flex-direction: column; align-items: center; gap: 12px; height: 100%; padding: 40px 24px 28px; border-radius: var(--mk-r-28); background: var(--mk-fondo-tonal); text-align: center; color: var(--mk-texto); }
+  .pv5-ic { width: 64px; height: 64px; border-radius: 50%; background: #fff; color: var(--mk-violeta-700); display: grid; place-items: center; }
+  .pv5-i .btn { margin-top: auto; }
+  .pv5-i:hover .btn { background: var(--mk-violeta-50); }
+
+  .pv6 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .pv6-i { display: flex; align-items: center; gap: 14px; padding: 20px; height: 100%; color: var(--mk-texto); transition: box-shadow var(--mk-t) var(--mk-ease); }
+  .pv6-i:hover { box-shadow: var(--mk-sombra-2); }
+  .pv6-i b { font-weight: 600; flex: 1; }
+  .pv6-i :global(.pv6-fl) { color: var(--mk-violeta-700); transition: transform var(--mk-t-rapida); }
+  .pv6-i:hover :global(.pv6-fl) { transform: translateX(4px); }
+
+  @media (max-width: 1099px) {
+    .pv4, .pv5, .pv6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pv4 { gap: 24px 0; }
+    .pv4 li:nth-child(3) .pv4-i { border-left: 0; padding-left: 0; }
+  }
+  @media (max-width: 767px) {
+    .pv4, .pv5, .pv6 { grid-template-columns: 1fr; }
+    .pv4 li + li .pv4-i { border-left: 0; padding-left: 0; border-top: 1px solid var(--mk-borde); padding-top: 24px; }
+    .pv5-hoy { margin-top: -16px; }
+  }
+</style>

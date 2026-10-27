@@ -1,0 +1,112 @@
+---
+/* Agéndate (programación de ejemplo). Todas las actividades son ActionCard con la fecha u hora sobre la imagen.
+   V4: fechas grandes (03) · V5: panel con pestañas Hoy / Fin de semana / Próximamente · V6: selector de días. */
+import data from '../../data/agenda.json';
+import SectionHead from '../ui/SectionHead.astro';
+import ActionCard from '../ui/ActionCard.astro';
+import Button from '../ui/Button.astro';
+import PorValidar from '../ui/PorValidar.astro';
+const { variante } = Astro.props;
+const meta = (it) => `${it.lugar} · ${it.costo}`;
+---
+{variante === 'v4' && (
+  <section class="ag mk-seccion" aria-labelledby="ag-t">
+    <div class="mk-w">
+      <SectionHead estilo="linea" num="03" eyebrow={data.eyebrow} title="Lo que pasa esta semana." id="ag-t">
+        <Button slot="accion" href="#" variant="primario">Ver programación</Button>
+      </SectionHead>
+      <ul class="ag-grid mk-carrusel" data-carrusel>
+        {data.items.map((it) => (
+          <li><ActionCard image={it.imagen} alt={it.alt} date={{ dia: it.dia, mes: it.mes }} fechaGrande category={it.categoria} title={it.titulo} description={`${it.hora}. ${it.descripcion}`} meta={meta(it)} metaIcono="pin" /></li>
+        ))}
+      </ul>
+      <p class="ag-pv"><PorValidar texto="Programación de ejemplo" /></p>
+    </div>
+  </section>
+)}
+
+{variante === 'v5' && (
+  <section class="ag mk-seccion" aria-labelledby="ag-t">
+    <div class="mk-w">
+      <div class="ag5" data-filtros>
+        <SectionHead eyebrow={data.eyebrow} title="¿Qué hay en Maloka esta semana?" id="ag-t">
+          <div slot="accion" class="ag-tabs" role="group" aria-label="Filtrar por fecha">
+            {data.pestanas.map((p, i) => <Button variant="tonal" size="sm" aria-pressed={i === 0 ? 'true' : 'false'} data-filtro={p.id}>{p.label}</Button>)}
+          </div>
+        </SectionHead>
+        <ul class="ag-grid ag-grid--3 mk-carrusel" data-carrusel>
+          {data.items.map((it) => (
+            <li data-grupos={it.pestana}><ActionCard image={it.imagen} alt={it.alt} time={it.hora} category={it.categoria} title={it.titulo} description={it.descripcion} meta={meta(it)} metaIcono="pin" /></li>
+          ))}
+        </ul>
+        <p class="ag-vacio" data-filtros-vacio hidden>Aún no hay actividades de ejemplo para estas fechas.</p>
+        <p class="sr-only" aria-live="polite" data-filtros-estado></p>
+        <div class="ag5-pie"><PorValidar texto="Programación de ejemplo" /><Button href="#" variant="secundario">{data.cta}</Button></div>
+      </div>
+    </div>
+  </section>
+)}
+
+{variante === 'v6' && (
+  <section class="ag mk-seccion" aria-labelledby="ag-t">
+    <div class="mk-w ag6" data-filtros>
+      <div class="ag6-txt">
+        <p class="t-eyebrow">{data.eyebrow}</p>
+        <h2 class="t-h2" id="ag-t">{data.titulo}</h2>
+        <p class="t-muted">{data.texto}</p>
+        <Button href="#" variant="secundario">{data.cta}</Button>
+        <PorValidar texto="Programación de ejemplo" />
+      </div>
+      <div class="ag6-main">
+        <div class="ag-dias" role="group" aria-label="Elegir día">
+          {data.dias.map((d, i) => (
+            <button type="button" class="btn btn--tonal ag-dia" aria-pressed={i === 0 ? 'true' : 'false'} data-filtro={d.id}>
+              <span class="ag-dia-s">{d.dia}</span><span class="t-num">{d.num}</span>
+            </button>
+          ))}
+        </div>
+        <ul class="ag-grid ag-grid--2">
+          {data.items.map((it) => (
+            <li data-grupos={it.diaId}><ActionCard image={it.imagen} alt={it.alt} time={it.hora} category={it.categoria} title={it.titulo} description={it.descripcion} meta={meta(it)} metaIcono="pin" /></li>
+          ))}
+        </ul>
+        <p class="ag-vacio" data-filtros-vacio hidden>No hay actividades de ejemplo para este día. Prueba otro día o mira toda la programación.</p>
+        <p class="sr-only" aria-live="polite" data-filtros-estado></p>
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .ag-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; align-items: start; }
+  .ag-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ag-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ag-pv { margin-top: 20px; }
+  .ag-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+  .ag5 { background: var(--mk-fondo-alt); border: 1px solid var(--mk-borde); border-radius: var(--mk-r-40); padding: clamp(24px, 3.3vw, 48px); }
+  .ag5-pie { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+  .ag-vacio { padding: 24px; border-radius: var(--mk-r-20); background: var(--mk-fondo-tonal); color: var(--mk-texto-2); }
+  .ag6 { display: grid; grid-template-columns: 4fr 8fr; gap: 48px; align-items: start; }
+  .ag6 > * { min-width: 0; }
+  .ag6-txt { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; position: sticky; top: 112px; }
+  .ag-dias { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; margin-bottom: 24px; }
+  .ag-dia { --h: 68px; padding: 0; flex-direction: column; gap: 2px; border-radius: var(--mk-r-20); font-size: 18px; }
+  .ag-dia-s { font-size: 12px; font-weight: 600; }
+  @media (max-width: 1099px) {
+    .ag-grid, .ag-grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ag6 { grid-template-columns: 1fr; gap: 32px; }
+    .ag6-txt { position: static; }
+  }
+  @media (max-width: 767px) {
+    .ag-grid--2 { grid-template-columns: 1fr; }
+    .ag-dias { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .ag-dia { flex: 0 0 64px; scroll-snap-align: start; }
+  }
+</style>
+
+<script>
+  import { iniciarFiltros } from '../../lib/filtros.js';
+  import { iniciarCarruseles } from '../../lib/carrusel.js';
+  iniciarFiltros();
+  iniciarCarruseles();
+</script>

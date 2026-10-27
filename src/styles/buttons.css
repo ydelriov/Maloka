@@ -1,0 +1,55 @@
+/* Maloka · botones (DS-Botones). Solo seis variantes, forma píldora, Montserrat 700, sin sombra.
+   No existe botón blanco relleno. */
+.btn {
+  --h: 52px;
+  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: var(--h); min-width: 44px; padding: 0 24px;
+  border: 0; border-radius: var(--mk-r-pill);
+  font-family: var(--mk-fuente); font-weight: 700; font-size: 16px; line-height: 1; white-space: nowrap;
+  cursor: pointer; text-decoration: none;
+  transition: background-color var(--mk-t-rapida) var(--mk-ease), color var(--mk-t-rapida) var(--mk-ease), box-shadow var(--mk-t-rapida) var(--mk-ease);
+}
+.btn--sm { --h: 44px; padding: 0 20px; font-size: 15px; }
+.btn--lg { --h: 58px; padding: 0 30px; font-size: 17px; }
+.btn--icono { width: var(--h); padding: 0; }
+.btn--bloque { width: 100%; }
+.btn .mk-ic { width: 20px; height: 20px; }
+
+/* Destacado: amarillo, un solo botón por vista */
+.btn--destacado { background: var(--mk-amarillo-500); color: var(--mk-violeta-900); }
+.btn--destacado:hover { background: #D3BB03; }   /* amarillo-600: un paso */
+.btn--destacado:active { background: #9B8907; }  /* amarillo-700: dos pasos */
+
+/* Primario */
+.btn--primario { background: var(--mk-violeta-700); color: #fff; }
+.btn--primario:hover { background: var(--mk-violeta-800); }
+.btn--primario:active { background: var(--mk-violeta-900); }
+
+/* Secundario */
+.btn--secundario { background: #fff; color: var(--mk-violeta-700); box-shadow: inset 0 0 0 1.5px var(--mk-violeta-700); }
+.btn--secundario:hover { background: var(--mk-violeta-50); }
+.btn--secundario:active { background: var(--mk-violeta-100); }
+
+/* Tonal */
+.btn--tonal { background: var(--mk-violeta-50); color: var(--mk-violeta-700); }
+.btn--tonal:hover { background: var(--mk-violeta-100); }
+.btn--tonal:active { background: var(--mk-violeta-200); }
+.btn--tonal[aria-pressed="true"], .btn--tonal[aria-selected="true"] { background: var(--mk-violeta-700); color: #fff; }
+
+/* Contorno invertido: sobre foto o fondo oscuro */
+.btn--invertido { background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px #fff; }
+.btn--invertido:hover { background: rgba(255, 255, 255, .12); }
+.btn--invertido:active { background: rgba(255, 255, 255, .2); }
+.btn--invertido:focus-visible { outline: var(--mk-foco-oscuro); }
+
+/* Enlace */
+.btn--enlace { --h: 32px; padding: 0; background: none; color: var(--mk-enlace); }
+.btn--enlace .mk-ic { transition: transform var(--mk-t-rapida) var(--mk-ease); }
+.btn--enlace:hover .mk-ic { transform: translateX(4px); }
+
+/* Deshabilitado */
+.btn:disabled, .btn[aria-disabled="true"] { background: var(--mk-borde); color: var(--mk-texto-3); box-shadow: none; cursor: not-allowed; }
+
+@media (max-width: 767px) {
+  .btn--movil-bloque { width: 100%; }
+}

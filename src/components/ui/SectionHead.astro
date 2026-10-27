@@ -1,0 +1,31 @@
+---
+/* Encabezado de sección. estilo: "linea" (V4 numerada, con línea superior) · "split" (título + acción) · "centro".
+   El nivel HTML (h2) se elige por jerarquía; el estilo visual por tamaño. */
+const { eyebrow, title, num, texto, estilo = 'split', id, tono = 'claro' } = Astro.props;
+const hasAccion = Astro.slots.has('accion');
+---
+<div class:list={['sh', `sh--${estilo}`, tono === 'oscuro' && 'sh--oscuro']}>
+  {num && <span class="sh-num t-num" aria-hidden="true">{num}</span>}
+  <div class="sh-txt">
+    {eyebrow && <p class="t-eyebrow sh-eb">{eyebrow}</p>}
+    <h2 class="t-h2" id={id}>{title}</h2>
+    {texto && <p class="t-lead sh-lead">{texto}</p>}
+  </div>
+  {hasAccion && <div class="sh-acc"><slot name="accion" /></div>}
+</div>
+<style>
+  .sh { display: grid; gap: 16px 24px; align-items: end; margin-bottom: 40px; }
+  .sh-txt { display: grid; gap: 8px; max-width: 760px; }
+  .sh--split { grid-template-columns: 1fr auto; }
+  .sh--linea { grid-template-columns: 100px 1fr auto; border-top: 2px solid var(--mk-texto); padding-top: 24px; }
+  .sh-num { font-size: 14px; font-weight: 600; color: var(--mk-violeta-500); align-self: start; padding-top: 4px; }
+  .sh--centro { justify-items: center; text-align: center; }
+  .sh--centro .sh-txt { justify-items: center; }
+  .sh-acc { display: flex; flex-wrap: wrap; gap: 8px; }
+  .sh--oscuro .sh-eb { color: var(--mk-violeta-200); }
+  .sh--oscuro .sh-lead { color: var(--mk-violeta-100); }
+  @media (max-width: 767px) {
+    .sh--split, .sh--linea { grid-template-columns: 1fr; }
+    .sh--linea .sh-num { padding-top: 0; }
+  }
+</style>

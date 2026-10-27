@@ -1,0 +1,19 @@
+{
+  "name": "maloka-home-prototipo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Prototipo navegable de la home de Maloka (tres variantes) para validar el diseño antes de Elementor.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "screenshots": "node scripts/screenshots.mjs"
+  },
+  "dependencies": {
+    "astro": "7.4.1"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
+}

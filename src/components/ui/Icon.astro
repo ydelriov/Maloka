@@ -1,0 +1,5 @@
+---
+// Icono del set de trazo (ver IconSprite). Decorativo por defecto.
+const { name, size, class: cls = '' } = Astro.props;
+---
+<svg class:list={['mk-ic', size && `mk-ic--${size}`, cls]} aria-hidden="true" focusable="false"><use href={`#i-${name}`} /></svg>

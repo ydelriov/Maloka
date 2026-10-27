@@ -1,0 +1,13 @@
+{
+  "eyebrow": "Crea con Maloka",
+  "titulo": "Transformemos una idea en una experiencia.",
+  "texto": "Experiencias, contenidos y soluciones que conectan ciencia, educación e innovación.",
+  "cta": "Hablemos de tu proyecto",
+  "items": [
+    { "titulo": "Patrocinios y alianzas", "icono": "heart" },
+    { "titulo": "Experiencias museográficas", "icono": "dome" },
+    { "titulo": "Acompañamiento pedagógico", "icono": "book" },
+    { "titulo": "Investigación y consultoría", "icono": "flask" },
+    { "titulo": "Maloka viajera", "icono": "globe" }
+  ]
+}

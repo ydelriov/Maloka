@@ -1,0 +1,60 @@
+---
+/* Layout base: SEO en español, Open Graph, datos estructurados Museum (solo datos reales), fuentes y estilos. */
+import { getImage } from 'astro:assets';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/buttons.css';
+import IconSprite from '../components/ui/IconSprite.astro';
+import VariantSwitcher from '../components/layout/VariantSwitcher.astro';
+import site from '../data/site.json';
+import hero from '../data/hero.json';
+import { img } from '../lib/images.js';
+
+const { title, description, variante, precargarHero = false } = Astro.props;
+const ogImg = await getImage({ src: img(hero.imagen), width: 1200, format: 'jpg' });
+const heroAvif = precargarHero ? await getImage({ src: img(hero.imagen), width: 1440, format: 'avif' }) : null;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Museum',
+  name: site.nombre,
+  description: site.descripcion,
+  url: site.url,
+  telephone: site.telefono,
+  address: { '@type': 'PostalAddress', streetAddress: site.direccionCorta, addressLocality: site.ciudad, addressCountry: 'CO' },
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: site.horarios.semana.abre, closes: site.horarios.semana.cierra },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday', 'Sunday'], opens: site.horarios.finde.abre, closes: site.horarios.finde.cierra }
+  ]
+};
+---
+<!doctype html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="robots" content="noindex" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:site_name" content="Maloka" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(ogImg.src, Astro.site).href} />
+  <meta name="theme-color" content="#472066" />
+  <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" />
+  {heroAvif && <link rel="preload" as="image" href={heroAvif.src} type="image/avif" fetchpriority="high" />}
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</head>
+<body>
+  <a class="mk-saltar" href="#contenido">Saltar al contenido</a>
+  <IconSprite />
+  <slot />
+  {variante && <VariantSwitcher actual={variante} />}
+</body>
+</html>

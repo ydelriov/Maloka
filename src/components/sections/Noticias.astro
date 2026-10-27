@@ -1,0 +1,35 @@
+---
+/* Noticias (de ejemplo) como ActionCard. V4: lista en filas (07) · V5: tres columnas · V6: una grande y dos. */
+import data from '../../data/noticias.json';
+import SectionHead from '../ui/SectionHead.astro';
+import ActionCard from '../ui/ActionCard.astro';
+import Button from '../ui/Button.astro';
+import PorValidar from '../ui/PorValidar.astro';
+const { variante } = Astro.props;
+const card = (it) => ({ image: it.imagen, alt: it.alt, date: { dia: it.dia, mes: it.mes }, category: it.categoria, categoryLabel: it.categoriaLabel, title: it.titulo, description: it.descripcion });
+---
+<section class:list={['no', `no--${variante}`, 'mk-seccion']} aria-labelledby="no-t">
+  <div class="mk-w">
+    {variante === 'v4'
+      ? <SectionHead estilo="linea" num="07" eyebrow={data.eyebrow} title={data.titulo} id="no-t"><Button slot="accion" href="#" variant="secundario">Ver todas</Button></SectionHead>
+      : <SectionHead eyebrow={data.eyebrow} title={data.titulo} id="no-t"><Button slot="accion" href="#" variant="secundario">{data.cta}</Button></SectionHead>}
+    <ul class="no-grid">
+      {data.items.map((it, i) => (
+        <li class={variante === 'v6' && i === 0 ? 'no-grande' : undefined}>
+          <ActionCard {...card(it)} layout={variante === 'v4' ? 'fila' : 'columna'} sizes={variante === 'v6' && i === 0 ? '(max-width: 767px) 92vw, 620px' : undefined} />
+        </li>
+      ))}
+    </ul>
+    <p class="no-pv"><PorValidar texto="Noticias de ejemplo" /></p>
+  </div>
+</section>
+
+<style>
+  .no-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+  .no--v4 .no-grid { grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--mk-borde); }
+  .no--v4 .no-grid li { padding-block: 20px; border-bottom: 1px solid var(--mk-borde); }
+  .no--v6 .no-grid { grid-template-columns: 2fr 1fr 1fr; }
+  .no-pv { margin-top: 16px; }
+  @media (max-width: 1099px) { .no-grid, .no--v6 .no-grid { grid-template-columns: 1fr 1fr; } .no-grande { grid-column: 1 / -1; } }
+  @media (max-width: 767px) { .no-grid, .no--v6 .no-grid { grid-template-columns: 1fr; } }
+</style>

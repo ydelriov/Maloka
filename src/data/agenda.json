@@ -1,0 +1,18 @@
+{
+  "eyebrow": "Agéndate",
+  "titulo": "Esta semana en Maloka.",
+  "texto": "Funciones, talleres y actividades para todas las edades.",
+  "cta": "Ver toda la programación",
+  "ejemplo": true,
+  "pestanas": [ { "id": "hoy", "label": "Hoy" }, { "id": "finde", "label": "Fin de semana" }, { "id": "prox", "label": "Próximamente" } ],
+  "dias": [
+    { "id": "lun", "dia": "lun", "num": "26" }, { "id": "mar", "dia": "mar", "num": "27" }, { "id": "mie", "dia": "mié", "num": "28" },
+    { "id": "jue", "dia": "jue", "num": "29" }, { "id": "vie", "dia": "vie", "num": "30" }, { "id": "sab", "dia": "sáb", "num": "31" }, { "id": "dom", "dia": "dom", "num": "01" }
+  ],
+  "items": [
+    { "id": "universo", "titulo": "Exploración del universo", "categoria": "cine", "imagen": "cine-domo-cupula.jpg", "alt": "Planeta proyectado en la cúpula del Cine Domo", "descripcion": "Un viaje por el sistema solar proyectado en toda la cúpula.", "lugar": "Cine Domo", "costo": "Incluido", "hora": "10:00 a. m.", "dia": "26", "mes": "oct", "diaId": "lun", "pestana": "hoy" },
+    { "id": "quimica", "titulo": "Química de la cocina", "categoria": "taller", "imagen": "laboratorio-familia.jpg", "alt": "Mediadora de Maloka con una familia en el laboratorio", "descripcion": "Experimenta con lo que hay en tu cocina y descubre qué pasa.", "lugar": "Laboratorio 2", "costo": "Costo adicional", "hora": "11:30 a. m.", "dia": "28", "mes": "oct", "diaId": "mie", "pestana": "hoy" },
+    { "id": "ilusiones", "titulo": "Ilusiones que engañan al cerebro", "categoria": "experiencia", "imagen": "publico-alta-tension.jpg", "alt": "Niños y familias reaccionando sorprendidos en una sala", "descripcion": "Un recorrido para entender cómo ve tu cerebro.", "lugar": "Salas interactivas", "costo": "Incluido", "hora": "2:00 p. m.", "dia": "31", "mes": "oct", "diaId": "sab", "pestana": "finde" },
+    { "id": "pequenos", "titulo": "Pequeños exploradores", "categoria": "familiar", "imagen": "sala-pequenos-exploradores.jpg", "alt": "Sala Pequeños Exploradores con mesas bajas y colores", "descripcion": "Juegos sensoriales para descubrir en familia.", "lugar": "Salas interactivas", "costo": "Incluido", "hora": "10:30 a. m.", "dia": "01", "mes": "nov", "diaId": "dom", "pestana": "finde" }
+  ]
+}

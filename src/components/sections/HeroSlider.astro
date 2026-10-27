@@ -1,0 +1,141 @@
+---
+/* Hero / banner con slider de 3 diapositivas (misma imagen real mientras llegan las demás).
+   Fundido de 600 ms, 7 s por diapositiva, indicadores, flechas y botón de pausa. Sin autoplay con
+   prefers-reduced-motion. Solo la primera diapositiva lleva <h1>.
+   variante: "banner" (V4, ancho completo) · "arco" (V5, header transparente encima y arco blanco abajo)
+   · "contenedor" (V6, dentro de un contenedor redondeado; el panel de visita entra por el slot). */
+import { Picture } from 'astro:assets';
+import hero from '../../data/hero.json';
+import site from '../../data/site.json';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+import { img } from '../../lib/images.js';
+
+const { variante = 'banner' } = Astro.props;
+const imagen = img(hero.imagen);
+---
+<section class:list={['hero', `hero--${variante}`]} aria-roledescription="carrusel" aria-label="Destacados de Maloka" data-slider>
+  <div class="hero-marco mk-sobre-foto">
+    <Picture src={imagen} alt={hero.alt} formats={['avif', 'webp']} widths={[640, 1024, 1440, 1942]} sizes="100vw" class="hero-img" loading="eager" fetchpriority="high" decoding="async" />
+    <span class="hero-velo" aria-hidden="true"></span>
+
+    <div class="hero-slides mk-w">
+      {hero.slides.map((s, i) => (
+        <div class:list={['hero-slide', i === 0 && 'is-activa']} role="group" aria-roledescription="diapositiva" aria-label={`${i + 1} de ${hero.slides.length}`} aria-hidden={i === 0 ? undefined : 'true'} inert={i === 0 ? undefined : true} data-slide>
+          <p class="hero-eb">{hero.eyebrow}</p>
+          {i === 0 ? <h1 class="t-display hero-t">{s.titulo}</h1> : <h2 class="t-display hero-t">{s.titulo}</h2>}
+          <p class="hero-lead">{s.lead}</p>
+          <div class="hero-ctas">
+            <Button href={site.entradas.url} external variant="destacado" size="lg" icon="ext" class="btn--movil-bloque">{site.entradas.texto}</Button>
+            <Button href="#planea" variant="invertido" size="lg" class="btn--movil-bloque">{s.secundario}</Button>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="hero-ctrl mk-w">
+      <div class="hero-dots" role="group" aria-label="Elegir diapositiva">
+        {hero.slides.map((_, i) => (
+          <button type="button" class="hero-dot" aria-label={`Ir a la diapositiva ${i + 1}`} aria-current={i === 0 ? 'true' : undefined} data-ir={i}></button>
+        ))}
+      </div>
+      <div class="hero-flechas">
+        <Button variant="invertido" size="sm" icon="arrowl" label="Diapositiva anterior" data-prev />
+        <button type="button" class="btn btn--invertido btn--sm btn--icono" aria-label="Pausar el carrusel" data-pausa>
+          <Icon name="pause" class="ic-pausa" /><Icon name="play" class="ic-play" />
+        </button>
+        <Button variant="invertido" size="sm" icon="arrow" label="Diapositiva siguiente" data-next />
+      </div>
+    </div>
+    <p class="sr-only" aria-live="polite" data-anuncio></p>
+  </div>
+  {Astro.slots.has('default') && <div class="hero-panel"><slot /></div>}
+</section>
+
+<style>
+  .hero { position: relative; }
+  .hero-marco { position: relative; overflow: hidden; background: var(--mk-oscuro); color: #fff; height: 760px; display: flex; flex-direction: column; justify-content: center; }
+  .hero :global(picture), .hero :global(.hero-img) { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero :global(.hero-img) { object-fit: cover; object-position: 70% 50%; }
+  .hero-velo { position: absolute; inset: 0; background: var(--mk-velo); opacity: 0; }
+  .hero-slides { position: relative; display: grid; }
+  .hero-slide { grid-area: 1 / 1; max-width: 640px; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; opacity: 0; visibility: hidden; transition: opacity 600ms var(--mk-ease), visibility 0s linear 600ms; }
+  .hero-slide.is-activa { opacity: 1; visibility: visible; transition-delay: 0s; }
+  .hero-eb { font-size: 14px; font-weight: 600; color: var(--mk-violeta-200); }
+  .hero-t { color: #fff; max-width: 15ch; }
+  .hero-lead { font-size: var(--mk-lead); line-height: 1.5; color: #E6DCF0; max-width: 560px; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .hero-ctrl { position: absolute; left: 0; right: 0; bottom: 36px; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .hero-dots { display: flex; gap: 4px; }
+  .hero-dot { width: 44px; height: 44px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center; border-radius: var(--mk-r-pill); }
+  .hero-dot::before { content: ""; width: 16px; height: 4px; border-radius: var(--mk-r-pill); background: rgba(255, 255, 255, .45); transition: width var(--mk-t) var(--mk-ease), background-color var(--mk-t); }
+  .hero-dot[aria-current="true"]::before { width: 36px; background: #fff; }
+  .hero-flechas { display: flex; gap: 8px; }
+  .hero :global(.ic-play) { display: none; }
+  .hero.is-pausado :global(.ic-play) { display: block; }
+  .hero.is-pausado :global(.ic-pausa) { display: none; }
+
+  /* V4 · banner a ancho completo */
+  .hero--banner .hero-marco { height: clamp(520px, 52vw, 760px); }
+
+  /* V5 · header transparente encima y arco blanco que cierra el hero */
+  .hero--arco .hero-marco { height: clamp(560px, 56vw, 800px); padding-top: 72px; }
+  .hero--arco .hero-marco::after { content: ""; position: absolute; left: -15%; right: -15%; bottom: -1px; height: clamp(48px, 7vw, 110px); background: #fff; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+  .hero--arco .hero-ctrl { bottom: clamp(64px, 8.5vw, 132px); }
+
+  /* V6 · contenedor redondeado con panel flotante */
+  .hero--contenedor { padding-inline: clamp(8px, 1.7vw, 24px); }
+  .hero--contenedor .hero-marco { height: clamp(560px, 51vw, 740px); border-radius: var(--mk-r-40); }
+  .hero--contenedor .hero-panel { position: absolute; right: calc(clamp(8px, 1.7vw, 24px) + 32px); bottom: 32px; width: 400px; z-index: 2; }
+  .hero--contenedor .hero-ctrl { justify-content: flex-start; gap: 24px; }
+
+  @media (max-width: 1099px) {
+    .hero-marco, .hero--banner .hero-marco, .hero--arco .hero-marco, .hero--contenedor .hero-marco { height: 560px; }
+    .hero--contenedor .hero-panel { position: static; width: auto; margin: 16px clamp(8px, 1.7vw, 24px) 0; }
+    .hero-velo { opacity: .55; }
+  }
+  @media (max-width: 767px) {
+    .hero-marco, .hero--banner .hero-marco, .hero--arco .hero-marco, .hero--contenedor .hero-marco { height: auto; min-height: 520px; justify-content: flex-end; padding-bottom: 96px; padding-top: 200px; }
+    .hero--contenedor .hero-marco { border-radius: var(--mk-r-28); }
+    .hero :global(.hero-img) { object-position: 78% 50%; }
+    .hero-velo { opacity: 1; }
+    .hero-ctas { width: 100%; }
+    .hero-ctrl { bottom: 24px; }
+    .hero--arco .hero-ctrl { bottom: 56px; }
+    .hero--arco .hero-marco { padding-bottom: 120px; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('[data-slider]').forEach((root) => {
+    const slides = [...root.querySelectorAll('[data-slide]')];
+    const dots = [...root.querySelectorAll('[data-ir]')];
+    const pausaBtn = root.querySelector('[data-pausa]');
+    const anuncio = root.querySelector('[data-anuncio]');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let actual = 0, timer = null, pausado = reduce.matches;
+
+    function mostrar(n, anunciar = true) {
+      actual = (n + slides.length) % slides.length;
+      slides.forEach((s, i) => {
+        const on = i === actual;
+        s.classList.toggle('is-activa', on);
+        if (on) { s.removeAttribute('aria-hidden'); s.inert = false; } else { s.setAttribute('aria-hidden', 'true'); s.inert = true; }
+      });
+      dots.forEach((d, i) => (i === actual ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current')));
+      if (anunciar) anuncio.textContent = `Diapositiva ${actual + 1} de ${slides.length}`;
+    }
+    const programar = () => { clearInterval(timer); if (!pausado) timer = setInterval(() => mostrar(actual + 1, false), 7000); };
+    function setPausa(p) {
+      pausado = p;
+      root.classList.toggle('is-pausado', p);
+      pausaBtn.setAttribute('aria-label', p ? 'Reproducir el carrusel' : 'Pausar el carrusel');
+      programar();
+    }
+    root.querySelector('[data-prev]').addEventListener('click', () => { mostrar(actual - 1); programar(); });
+    root.querySelector('[data-next]').addEventListener('click', () => { mostrar(actual + 1); programar(); });
+    dots.forEach((d) => d.addEventListener('click', () => { mostrar(+d.dataset.ir); programar(); }));
+    pausaBtn.addEventListener('click', () => setPausa(!pausado));
+    setPausa(pausado);
+  });
+</script>

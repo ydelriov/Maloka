@@ -1,0 +1,40 @@
+---
+/* Estado de apertura de hoy. El servidor pinta el horario general; el script lo ajusta a la hora de Bogotá.
+   Los festivos no se detectan automáticamente (usan horario de fin de semana). */
+import site from '../../data/site.json';
+const { variante = 'chip' } = Astro.props;
+---
+<span class:list={['mk-hoy', `mk-hoy--${variante}`]} data-horario-hoy data-semana={`${site.horarios.semana.abre}-${site.horarios.semana.cierra}`} data-finde={`${site.horarios.finde.abre}-${site.horarios.finde.cierra}`}>
+  <span class="mk-hoy-dot" aria-hidden="true"></span><span data-horario-texto>Abierto hoy · {site.horarios.semana.texto}</span>
+</span>
+<style>
+  .mk-hoy { display: inline-flex; align-items: center; gap: 8px; min-height: 34px; padding: 4px 14px; border-radius: var(--mk-r-pill); background: var(--mk-exito-fondo); color: var(--mk-exito); font-size: 14px; font-weight: 700; line-height: 1.3; }
+  .mk-hoy-dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; flex: none; }
+  .mk-hoy[data-estado="cerrado"] { background: var(--mk-neutro-100); color: var(--mk-texto-2); }
+  .mk-hoy--chip-sm { min-height: 28px; padding: 2px 12px; font-size: 12px; }
+</style>
+<script>
+  const fmt = (hm) => {
+    const [h, m] = hm.split(':').map(Number);
+    const ap = h >= 12 ? 'p. m.' : 'a. m.';
+    return `${((h + 11) % 12) + 1}:${String(m).padStart(2, '0')} ${ap}`;
+  };
+  const mins = (hm) => { const [h, m] = hm.split(':').map(Number); return h * 60 + m; };
+  function actualizar() {
+    const ahora = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Bogota' }));
+    const dia = ahora.getDay();
+    const m = ahora.getHours() * 60 + ahora.getMinutes();
+    document.querySelectorAll('[data-horario-hoy]').forEach((el) => {
+      const [abre, cierra] = (dia === 0 || dia === 6 ? el.dataset.finde : el.dataset.semana).split('-');
+      const manana = (dia === 5 || dia === 6) ? el.dataset.finde : el.dataset.semana;
+      const t = el.querySelector('[data-horario-texto]');
+      let estado = 'abierto', texto;
+      if (m < mins(abre)) texto = `Hoy abrimos de ${fmt(abre)} a ${fmt(cierra)}`;
+      else if (m < mins(cierra)) texto = `Abierto hoy hasta las ${fmt(cierra)}`;
+      else { estado = 'cerrado'; texto = `Cerrado ahora · Mañana abrimos a las ${fmt(manana.split('-')[0])}`; }
+      el.dataset.estado = estado;
+      t.textContent = texto;
+    });
+  }
+  actualizar();
+</script>

@@ -1,0 +1,22 @@
+{
+  "imagen": "hero-slide-1.jpg",
+  "alt": "Banner de Maloka: collage de experiencias científicas junto al domo.",
+  "eyebrow": "Centro interactivo de ciencia y tecnología · Bogotá",
+  "slides": [
+    {
+      "titulo": "Atrévete a vivir la ciencia.",
+      "lead": "En Maloka la ciencia se toca, se escucha y se pregunta. Ven a descubrirla en familia, con amigos o con tu colegio.",
+      "secundario": "Planea tu visita"
+    },
+    {
+      "titulo": "El universo, sobre tu cabeza.",
+      "lead": "En el Cine Domo las estrellas, los planetas y las galaxias se proyectan sobre toda la cúpula.",
+      "secundario": "Conoce el Cine Domo"
+    },
+    {
+      "titulo": "Aquí está prohibido no tocar.",
+      "lead": "En las salas interactivas las preguntas se responden con las manos.",
+      "secundario": "Explora las salas"
+    }
+  ]
+}

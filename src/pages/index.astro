@@ -1,0 +1,64 @@
+---
+/* Índice del prototipo: miniaturas y enlaces a las tres variantes de la home. */
+import Base from '../layouts/Base.astro';
+import Logo from '../components/ui/Logo.astro';
+import Icon from '../components/ui/Icon.astro';
+import PorValidar from '../components/ui/PorValidar.astro';
+import data from '../data/variantes.json';
+import { url } from '../lib/url.js';
+---
+<Base title="Prototipo de la home de Maloka · tres variantes" description="Prototipo navegable de la home de maloka.org en tres variantes de layout para comparar en el navegador.">
+  <header class="ix-top mk-w">
+    <span class="ix-logo"><Logo size={56} /></span>
+    <div>
+      <p class="t-eyebrow">Prototipo navegable</p>
+      <h1 class="t-h1">Home de Maloka · tres variantes</h1>
+      <p class="t-lead">La misma home con el Design System de Claude Design, imágenes reales y datos confirmados. Lo que no está validado aparece marcado.</p>
+    </div>
+  </header>
+  <main id="contenido" class="mk-w ix-main">
+    <ul class="ix-grid">
+      {data.items.map((v) => (
+        <li>
+          <a class="ix-card" href={url(`${v.id}/`)}>
+            <span class="ix-thumb"><img src={url(`miniaturas/${v.id}.jpg`)} alt="" width="720" height="900" loading="lazy" /></span>
+            <span class="ix-txt">
+              <h2 class="t-h4">{v.nombre}</h2>
+              <span class="t-small t-muted">{v.descripcion}</span>
+              <span class="mk-enlace">Ver {v.id.toUpperCase()}<Icon name="arrow" size="18" /></span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <section class="ix-notas" aria-labelledby="ix-n">
+      <h2 class="t-h4" id="ix-n">Antes de revisar</h2>
+      <ul>
+        <li><PorValidar /> marca datos no confirmados: cifras de impacto, planes, servicios y accesibilidad.</li>
+        <li><PorValidar texto="Contenido de ejemplo" /> marca la agenda y las noticias.</li>
+        <li>Los enlaces internos apuntan a <code>#</code>: solo existe la home. La compra de entradas abre Tuboleta en otra pestaña.</li>
+        <li>El prototipo anterior (Agéndate, Ven en grupo y la home navy) sigue disponible en <a href={url('legacy/')}>/legacy</a>.</li>
+      </ul>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .ix-top { display: flex; gap: 24px; align-items: flex-start; padding-block: 56px 40px; }
+  .ix-logo { color: var(--mk-violeta-700); flex: none; }
+  .ix-top > div { display: grid; gap: 12px; }
+  .ix-main { padding-bottom: 96px; display: grid; gap: 48px; }
+  .ix-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .ix-card { display: grid; gap: 16px; border-radius: var(--mk-r-28); color: var(--mk-texto); }
+  .ix-card:focus-visible { outline-offset: 6px; }
+  .ix-thumb { display: block; aspect-ratio: 4 / 5; border-radius: var(--mk-r-20); overflow: hidden; border: 1px solid var(--mk-borde); background: var(--mk-fondo-alt); transition: box-shadow var(--mk-t) var(--mk-ease); }
+  .ix-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .ix-card:hover .ix-thumb { box-shadow: var(--mk-sombra-2); }
+  .ix-txt { display: grid; gap: 6px; }
+  .ix-notas { padding: 28px; border-radius: var(--mk-r-28); background: var(--mk-fondo-tonal); display: grid; gap: 12px; }
+  .ix-notas ul { display: grid; gap: 10px; }
+  .ix-notas li { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; color: var(--mk-texto-2); }
+  .ix-notas a { color: var(--mk-enlace); font-weight: 700; text-decoration: underline; }
+  @media (max-width: 1099px) { .ix-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 767px) { .ix-grid { grid-template-columns: 1fr; } .ix-top { flex-direction: column; } }
+</style>

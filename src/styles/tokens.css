@@ -1,0 +1,110 @@
+/* Maloka · tokens del Design System (fuente: canvas «Maloka Design System» de Claude Design,
+   tableros DS-Maloka y DS-Botones). No crear colores, sombras ni radios fuera de este archivo. */
+:root {
+  /* Violeta · marca y acción */
+  --mk-violeta-50: #F5F0FA;
+  --mk-violeta-100: #EBE1F4;
+  --mk-violeta-200: #D6C4E8;
+  --mk-violeta-300: #B897D6;
+  --mk-violeta-400: #8E62B8;
+  --mk-violeta-500: #642D90;
+  --mk-violeta-600: #55267C;
+  --mk-violeta-700: #472066;
+  --mk-violeta-800: #341749;
+  --mk-violeta-900: #1F0E2C;
+
+  /* Neutro · ligeramente violeta */
+  --mk-neutro-50: #FBF9FD;
+  --mk-neutro-100: #F5F2F8;
+  --mk-neutro-200: #ECE6F2;
+  --mk-neutro-300: #D9D2E1;
+  --mk-neutro-400: #B5ADBF;
+  --mk-neutro-500: #8C8496;
+  --mk-neutro-600: #5B5366;
+  --mk-neutro-700: #3D3447;
+  --mk-neutro-800: #2A2133;
+  --mk-neutro-900: #1F1428;
+
+  /* Amarillo · una sola vez por vista */
+  --mk-amarillo-500: #FFE200;
+
+  /* Escalas de experiencia (chip: fondo 50 · punto 500/600 · texto 900) */
+  --mk-azul-50: #E1ECFE;   --mk-azul-500: #006CFF;   --mk-azul-700: #0048B0;   --mk-azul-900: #002563;
+  --mk-lavanda-50: #EDEAFF; --mk-lavanda-500: #915FFF; --mk-lavanda-700: #6137B4; --mk-lavanda-900: #311B5E;
+  --mk-verde-50: #E8FEEB;  --mk-verde-600: #00D45B;  --mk-verde-800: #036D2C;  --mk-verde-900: #004117;
+  --mk-amar-50: #FCF9E5;   --mk-amar-600: #D3BB03;   --mk-amar-900: #3F3700;
+  --mk-cyan-50: #E9FDFA;   --mk-cyan-600: #0AD3C2;   --mk-cyan-900: #00403A;
+  --mk-salmon-50: #FFEAE8; --mk-salmon-500: #FF5252; --mk-salmon-900: #570E11;
+
+  /* Roles */
+  --mk-texto: #1F1428;
+  --mk-texto-2: #5B5366;
+  --mk-texto-3: #8C8496;
+  --mk-borde: #ECE6F2;
+  --mk-fondo: #FFFFFF;
+  --mk-fondo-alt: #FBF9FD;
+  --mk-fondo-tonal: #F5F0FA;
+  --mk-enlace: #642D90;
+
+  /* Modo oscuro (solo Cine Domo) y footer */
+  --mk-oscuro: #140A1F;
+  --mk-oscuro-superficie: #22132F;
+  --mk-oscuro-linea: #3A2550;
+  --mk-oscuro-texto: #CFC4DB;
+  --mk-oscuro-texto-3: #B2A4C2;
+  --mk-footer: #1F0E2C;
+
+  /* Estados del sistema */
+  --mk-exito: #0F7B4B;     --mk-exito-fondo: #E3F7EC;
+  --mk-atencion: #8A6A00;  --mk-atencion-fondo: #FFF7C2;
+  --mk-info: #1F5FD1;      --mk-info-fondo: #E8F0FF;
+  --mk-error: #C0352B;     --mk-error-fondo: #FDECEA;
+
+  /* Velo plano sobre fotografía */
+  --mk-velo: rgba(20, 10, 31, .6);
+
+  /* Tipografía · solo Montserrat 400/600/700 */
+  --mk-fuente: "Montserrat", Arial, sans-serif;
+  /* Escala escritorio/tablet/móvil interpolada entre 390 y 1440 px */
+  --mk-display: clamp(2.375rem, 1.771rem + 2.476vw, 4rem);     /* 64 / 50 / 38 */
+  --mk-h1: clamp(2.125rem, 1.707rem + 1.714vw, 3.25rem);       /* 52 / 42 / 34 */
+  --mk-h2: clamp(1.75rem, 1.471rem + 1.143vw, 2.5rem);         /* 40 / 33 / 28 */
+  --mk-h3: clamp(1.3125rem, 1.15rem + .667vw, 1.75rem);        /* 28 / 24 / 21 */
+  --mk-h4: clamp(1.125rem, 1.032rem + .381vw, 1.375rem);       /* 22 / 20 / 18 */
+  --mk-h5: clamp(1rem, .954rem + .19vw, 1.125rem);             /* 18 / 17 / 16 */
+  --mk-lead: clamp(1.125rem, 1.079rem + .19vw, 1.25rem);       /* 20 / 19 / 18 */
+  --mk-body: 1rem;
+  --mk-small: .875rem;
+  --mk-caption: .75rem;
+
+  /* Radios */
+  --mk-r-12: 12px;
+  --mk-r-14: 14px;
+  --mk-r-20: 20px;
+  --mk-r-28: 28px;
+  --mk-r-40: 40px;
+  --mk-r-pill: 999px;
+  --mk-arco: 999px 999px 0 0;
+
+  /* Espaciado (base 4) */
+  --mk-sp-1: 4px; --mk-sp-2: 8px; --mk-sp-3: 12px; --mk-sp-4: 16px; --mk-sp-5: 20px; --mk-sp-6: 24px;
+  --mk-sp-8: 32px; --mk-sp-10: 40px; --mk-sp-12: 48px; --mk-sp-14: 56px; --mk-sp-16: 64px;
+  --mk-seccion: clamp(3.5rem, 2.2rem + 5.333vw, 7rem);          /* 112 / 80 / 56 */
+  --mk-contenedor: 1280px;
+  --mk-margen: clamp(1rem, -.4875rem + 6.095vw, 5rem);          /* 80 / 40 / 16 */
+
+  /* Sombras: solo para lo que flota */
+  --mk-sombra-1: 0 1px 2px rgba(31,14,44,.06), 0 1px 3px rgba(31,14,44,.05);
+  --mk-sombra-2: 0 2px 6px rgba(31,14,44,.06), 0 10px 20px -10px rgba(31,14,44,.14);
+  --mk-sombra-3: 0 4px 12px rgba(31,14,44,.08), 0 20px 36px -14px rgba(31,14,44,.18);
+  --mk-sombra-4: 0 8px 24px rgba(31,14,44,.10), 0 36px 64px -18px rgba(31,14,44,.26);
+
+  /* Foco */
+  --mk-foco: 3px solid #B897D6;
+  --mk-foco-oscuro: 3px solid #FFFFFF;
+
+  /* Movimiento */
+  --mk-t-rapida: 150ms;
+  --mk-t: 300ms;
+  --mk-ease: cubic-bezier(.2, .7, .2, 1);
+}

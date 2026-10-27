@@ -1,0 +1,96 @@
+---
+// Footer global (fondo #1F0E2C) con suscripción. El formulario es de prototipo: no envía datos.
+import footer from '../../data/footer.json';
+import site from '../../data/site.json';
+import Logo from '../ui/Logo.astro';
+import Icon from '../ui/Icon.astro';
+import Button from '../ui/Button.astro';
+const s = footer.suscripcion;
+---
+<footer class="ft mk-oscuro" id="contacto">
+  <div class="mk-w ft-in">
+    <div class="ft-sus">
+      <div>
+        <h2 class="ft-sus-t">{s.titulo}</h2>
+        <p>{s.texto}</p>
+      </div>
+      <form class="ft-form" data-suscripcion novalidate>
+        <label class="sr-only" for="ft-email">Correo electrónico</label>
+        <input id="ft-email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required aria-describedby="ft-msg" />
+        <Button type="submit" variant="invertido">{s.boton}</Button>
+        <p class="ft-msg" id="ft-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div class="ft-grid">
+      <div class="ft-marca">
+        <span class="ft-logo"><Logo size={56} /></span>
+        <p class="ft-dato"><Icon name="pin" size="20" />{site.direccion}</p>
+        <p class="ft-dato"><Icon name="phone" size="20" /><a href={`tel:${site.telefonoHref}`}>{site.telefono}</a></p>
+        <ul class="ft-redes" aria-label="Redes sociales">
+          {site.redes.map((r) => <li><a href={r.url}>{r.nombre}</a></li>)}
+        </ul>
+      </div>
+      {footer.columnas.map((c) => (
+        <nav class="ft-col" aria-label={c.titulo}>
+          <p class="ft-col-t">{c.titulo}</p>
+          <ul>{c.links.map((l) => <li><a href="#">{l}</a></li>)}</ul>
+        </nav>
+      ))}
+    </div>
+
+    <div class="ft-legal">
+      <span>© 2026 Corporación Maloka</span>
+      {footer.legal.map((l) => <a href="#">{l}</a>)}
+    </div>
+  </div>
+</footer>
+
+<style>
+  .ft { margin-top: var(--mk-seccion); background: var(--mk-footer); color: var(--mk-oscuro-texto); font-size: 14px; }
+  .ft-in { display: grid; gap: 40px; padding-block: 64px 32px; }
+  .ft-sus { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 48px; align-items: center; padding-bottom: 40px; border-bottom: 1px solid var(--mk-oscuro-linea); }
+  .ft-sus-t { font-size: clamp(1.5rem, 1.3rem + .8vw, 1.875rem); line-height: 1.2; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .ft-sus p { font-size: 16px; }
+  .ft-form { display: flex; flex-wrap: wrap; gap: 10px; }
+  .ft-form input { flex: 1 1 240px; min-width: 0; height: 52px; padding: 0 20px; border: 1.5px solid var(--mk-oscuro-linea); border-radius: var(--mk-r-pill); background: var(--mk-oscuro-superficie); color: #fff; font: inherit; font-size: 16px; }
+  .ft-form input::placeholder { color: var(--mk-oscuro-texto-3); }
+  .ft-form input:focus-visible { outline: var(--mk-foco-oscuro); outline-offset: 2px; }
+  .ft-form input[aria-invalid="true"] { border-color: #FF7973; }
+  .ft-msg { flex-basis: 100%; min-height: 1.4em; font-weight: 600; }
+  .ft-msg[data-tipo="error"] { color: #FFD6D2; }
+  .ft-msg[data-tipo="ok"] { color: #B8FFC3; }
+  .ft-grid { display: grid; grid-template-columns: 1.6fr repeat(5, minmax(0, 1fr)); gap: 32px 24px; }
+  .ft-marca { display: grid; gap: 12px; align-content: start; }
+  .ft-logo { color: #fff; margin-bottom: 8px; }
+  .ft-dato { display: flex; gap: 10px; align-items: flex-start; }
+  .ft-dato a:hover { color: #fff; text-decoration: underline; }
+  .ft-redes { display: flex; flex-wrap: wrap; gap: 4px 16px; font-weight: 600; color: #fff; }
+  .ft-redes a, .ft-col a { display: inline-flex; align-items: center; min-height: 32px; }
+  .ft-redes a:hover, .ft-col a:hover { text-decoration: underline; text-underline-offset: 4px; color: #fff; }
+  .ft-col-t { font-weight: 700; color: #fff; margin-bottom: 8px; }
+  .ft-legal { display: flex; flex-wrap: wrap; gap: 8px 20px; padding-top: 24px; border-top: 1px solid var(--mk-oscuro-linea); font-size: 12px; color: var(--mk-oscuro-texto-3); }
+  .ft-legal a { min-height: 32px; display: inline-flex; align-items: center; }
+  .ft-legal a:hover { color: #fff; }
+  @media (max-width: 1099px) { .ft-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .ft-marca { grid-column: 1 / -1; } }
+  @media (max-width: 767px) { .ft-sus { grid-template-columns: 1fr; } .ft-grid { grid-template-columns: 1fr 1fr; } .ft-form :global(.btn) { width: 100%; } }
+</style>
+
+<script>
+  const form = document.querySelector('[data-suscripcion]');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input'), msg = form.querySelector('.ft-msg');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim())) {
+      input.setAttribute('aria-invalid', 'true');
+      msg.dataset.tipo = 'error';
+      msg.textContent = 'Escribe un correo válido, por ejemplo nombre@correo.com.';
+      input.focus();
+      return;
+    }
+    input.removeAttribute('aria-invalid');
+    msg.dataset.tipo = 'ok';
+    msg.textContent = '¡Gracias! Prototipo: en la versión final aquí se confirmará tu suscripción.';
+    form.reset();
+  });
+</script>

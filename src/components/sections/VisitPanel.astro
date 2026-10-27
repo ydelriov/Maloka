@@ -1,0 +1,23 @@
+---
+// Panel blanco flotante del hero V6: horario de hoy, dirección y accesos.
+import site from '../../data/site.json';
+import Icon from '../ui/Icon.astro';
+import Button from '../ui/Button.astro';
+import EstadoHoy from '../ui/EstadoHoy.astro';
+---
+<aside class="vp" aria-label="Planea tu visita">
+  <div class="vp-top"><p class="t-eyebrow">Planea tu visita</p><EstadoHoy variante="chip-sm" /></div>
+  <div class="vp-row"><span class="mk-ib"><Icon name="clock" /></span><span><b>Lunes a viernes · {site.horarios.semana.texto}</b><span class="t-small t-muted">Fines de semana y festivos · {site.horarios.finde.texto}</span><span class="t-small t-muted">{site.horarios.ventaHasta}</span></span></div>
+  <div class="vp-row"><span class="mk-ib"><Icon name="pin" /></span><span><b>{site.direccionCorta}</b><span class="t-small t-muted">{site.ciudad}</span></span></div>
+  <div class="vp-acc"><Button href="#" variant="tonal" size="sm">Horarios y tarifas</Button><Button href="#" variant="tonal" size="sm">Cómo llegar</Button></div>
+</aside>
+<style>
+  .vp { background: #fff; color: var(--mk-texto); border-radius: var(--mk-r-28); padding: 28px; display: grid; gap: 18px; box-shadow: var(--mk-sombra-4); }
+  .vp-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .vp-row { display: flex; gap: 14px; align-items: center; }
+  .vp-row b { display: block; font-weight: 600; line-height: 1.35; }
+  .vp-row .t-small { display: block; line-height: 1.45; }
+  .vp-acc { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  @media (max-width: 1099px) { .vp { box-shadow: none; border: 1px solid var(--mk-borde); } }
+  @media (max-width: 420px) { .vp { padding: 20px; } .vp-acc { grid-template-columns: 1fr; } }
+</style>

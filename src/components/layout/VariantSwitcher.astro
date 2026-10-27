@@ -1,0 +1,18 @@
+---
+// Barra flotante solo del prototipo (fuera del diseño) para saltar entre variantes.
+import { url } from '../../lib/url.js';
+const { actual } = Astro.props;
+const vs = ['v4', 'v5', 'v6'];
+---
+<nav class="vs" aria-label="Variantes del prototipo">
+  <a href={url('')} class="vs-i">Índice</a>
+  {vs.map((v) => <a href={url(`${v}/`)} class="vs-v" aria-current={v === actual ? 'page' : undefined}>{v.toUpperCase()}</a>)}
+</nav>
+<style>
+  .vs { position: fixed; left: 16px; bottom: 16px; z-index: 150; display: flex; gap: 4px; padding: 4px; border-radius: var(--mk-r-pill); background: var(--mk-neutro-900); box-shadow: var(--mk-sombra-3); font-size: 13px; font-weight: 700; }
+  .vs a { display: inline-grid; place-items: center; min-width: 44px; height: 36px; padding: 0 12px; border-radius: var(--mk-r-pill); color: #fff; }
+  .vs a:hover { background: var(--mk-neutro-700); }
+  .vs a[aria-current="page"] { background: #fff; color: var(--mk-neutro-900); }
+  .vs a:focus-visible { outline: var(--mk-foco-oscuro); outline-offset: 2px; }
+  @media (max-width: 767px) { .vs { left: 50%; transform: translateX(-50%); bottom: 12px; } }
+</style>

@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "id": "visitanos", "label": "Visítanos", "icono": "pin",
+      "intro": "Todo lo que necesitas para preparar tu visita.",
+      "links": [
+        { "label": "Horarios y tarifas", "icono": "clock", "desc": "Días, horas y precios de entrada" },
+        { "label": "Cómo llegar", "icono": "pin", "desc": "Dirección y cómo llegar en transporte" },
+        { "label": "Servicios", "icono": "ticket", "desc": "Lo que encuentras en Maloka" },
+        { "label": "Accesibilidad", "icono": "access", "desc": "Recorre Maloka sin barreras" },
+        { "label": "Experiencias", "icono": "dome", "desc": "Cine Domo, Sala Digital, Salas interactivas y Laboratorios" },
+        { "label": "Preguntas frecuentes", "icono": "help", "desc": "Entradas, edades, tiempos de visita" }
+      ],
+      "horarioHoy": true
+    },
+    {
+      "id": "agendate", "label": "Agéndate", "icono": "cal",
+      "intro": "Funciones, talleres y actividades con fecha y hora.",
+      "links": [ { "label": "Programación", "icono": "cal", "desc": "Cada actividad tiene su ficha con fecha, hora, lugar y público" } ]
+    },
+    {
+      "id": "grupo", "label": "Ven en grupo", "icono": "users",
+      "intro": "Organizamos tu visita con colegio, empresa o comunidad.",
+      "links": [
+        { "label": "Colegios y universidades", "icono": "school" },
+        { "label": "Cumpleaños", "icono": "cake" },
+        { "label": "Empresas y eventos", "icono": "building" },
+        { "label": "MPA", "icono": "heart", "desc": "Maloka Puertas Abiertas" }
+      ]
+    },
+    {
+      "id": "descubre", "label": "Descubre", "icono": "compass",
+      "intro": "La ciencia también transforma territorios, comunidades e ideas.",
+      "links": [
+        { "label": "Programas y proyectos", "icono": "globe" },
+        { "label": "Experiencias", "icono": "dome" },
+        { "label": "Conoce Maloka", "icono": "compass" },
+        { "label": "Recursos educativos", "icono": "book" },
+        { "label": "Noticias", "icono": "news" }
+      ]
+    },
+    {
+      "id": "crea", "label": "Crea con Maloka", "icono": "bulb",
+      "intro": "Transformemos una idea en una experiencia.",
+      "links": [
+        { "label": "Patrocinios y alianzas", "icono": "heart" },
+        { "label": "Experiencias museográficas", "icono": "dome" },
+        { "label": "Acompañamiento pedagógico", "icono": "book" },
+        { "label": "Investigación y consultoría", "icono": "flask", "desc": "Grupo de investigación" },
+        { "label": "Maloka viajera", "icono": "globe" }
+      ]
+    }
+  ]
+}

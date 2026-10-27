@@ -1,0 +1,26 @@
+---
+/* Botón del Design System. Variantes: destacado · primario · secundario · tonal · invertido · enlace.
+   Tamaños: sm (44) · md (52) · lg (58). Con `href` es <a>; sin `href` es <button>.
+   `external` abre en otra pestaña y lo anuncia al lector de pantalla. Sin slot = botón solo icono (pasa `label`). */
+import Icon from './Icon.astro';
+const {
+  href, variant = 'primario', size = 'md', icon, iconStart, external = false,
+  label, type = 'button', block = false, class: cls = '', ...rest
+} = Astro.props;
+const hasText = Astro.slots.has('default');
+const Tag = href ? 'a' : 'button';
+---
+<Tag
+  class:list={['btn', `btn--${variant}`, size !== 'md' && `btn--${size}`, !hasText && 'btn--icono', block && 'btn--bloque', cls]}
+  href={href}
+  type={href ? undefined : type}
+  aria-label={label}
+  target={external ? '_blank' : undefined}
+  rel={external ? 'noopener' : undefined}
+  {...rest}
+>
+  {iconStart && <Icon name={iconStart} />}
+  <slot />
+  {icon && <Icon name={icon} />}
+  {external && <span class="sr-only"> (se abre en otra pestaña)</span>}
+</Tag>

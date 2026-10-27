@@ -1,0 +1,43 @@
+{
+  "eyebrow": "Ven en grupo",
+  "titulo": "Maloka se vive mejor en compañía.",
+  "texto": "Organizamos tu visita con colegio, empresa, comunidad o para celebrar tu cumpleaños.",
+  "cta": "Cotiza tu visita",
+  "items": [
+    {
+      "id": "colegios",
+      "titulo": "Colegios y universidades",
+      "categoria": "colegios",
+      "imagen": "nino-lupa.jpg",
+      "alt": "Niño de colegio observando una hoja con una lupa",
+      "descripcion": "Propuesta educativa, experiencias, tarifas y proceso de reserva."
+    },
+    {
+      "id": "cumple",
+      "titulo": "Cumpleaños",
+      "categoria": "familiar",
+      "imagen": "nino-explorador.png",
+      "alt": "Niño con gorro de fiesta y binoculares, sonriendo",
+      "descripcion": "Planes por edades para celebrar experimentando.",
+      "porValidar": true
+    },
+    {
+      "id": "empresas",
+      "titulo": "Empresas y eventos",
+      "categoria": "especial",
+      "imagen": "sala-infinito.jpg",
+      "alt": "Sala Infinito de Maloka con mesas para eventos",
+      "descripcion": "Espacios y experiencias para equipos e invitados.",
+      "porValidar": true
+    },
+    {
+      "id": "mpa",
+      "titulo": "Maloka Puertas Abiertas",
+      "categoria": "evolucion",
+      "imagen": "publico-alta-tension.jpg",
+      "alt": "Familias y niños disfrutando una experiencia en Maloka",
+      "descripcion": "Ciencia para comunidades: qué es, requisitos y proceso.",
+      "fotoReutilizada": true
+    }
+  ]
+}

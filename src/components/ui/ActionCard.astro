@@ -1,0 +1,82 @@
+---
+/* ActionCard · toda acción que invita a hacer algo (agenda, experiencias, planes de grupo, programas, noticias).
+   Anatomía fija: imagen real 4:3 (radio 20) con la fecha u hora arriba a la izquierda y el chip de categoría arriba
+   a la derecha; debajo, título (H4 visual), descripción breve y meta (lugar · costo). Toda la tarjeta es un solo <a>.
+   Las variantes de la home solo cambian la grilla, la forma (`forma="arco"`) o la orientación (`layout="fila"`). */
+import { Picture } from 'astro:assets';
+import Chip from './Chip.astro';
+import Icon from './Icon.astro';
+import { img } from '../../lib/images.js';
+
+const {
+  image, alt, date, time, category, categoryLabel, title, description, meta,
+  href = '#', nivel = 3, metaIcono, forma = 'rect', layout = 'columna', tono = 'claro', fechaGrande = false,
+  sizes = '(max-width: 767px) 82vw, (max-width: 1100px) 45vw, 300px', class: cls = '', ...rest
+} = Astro.props;
+const H = `h${nivel}`;
+const [horaNum, horaAmPm] = time ? [time.replace(/\s*[ap]\. m\.$/, ''), (time.match(/[ap]\. m\.$/) || [''])[0]] : [];
+---
+<a
+  class:list={['ac', `ac--${forma}`, `ac--${layout}`, `ac--${tono}`, fechaGrande && 'ac--fecha-xl', cls]}
+  href={href}
+  {...rest}
+>
+  <div class="ac-media">
+    <Picture src={img(image)} alt={alt} formats={['avif', 'webp']} widths={[360, 560, 840]} sizes={sizes} class="ac-img" loading="lazy" decoding="async" />
+    {(date || time) && (
+      <span class="ac-fecha">
+        {date ? <><b class="t-num">{date.dia}</b><span>{date.mes}</span></> : <><b class="t-num">{horaNum}</b><span>{horaAmPm}</span></>}
+      </span>
+    )}
+    {category && <Chip cat={category} label={categoryLabel} class="ac-chip" />}
+  </div>
+  <div class="ac-texto">
+    <H class="ac-titulo">{title}</H>
+    {description && <p class="ac-desc">{description}</p>}
+    {meta && <p class="ac-meta">{metaIcono && <Icon name={metaIcono} size="18" />}{meta}</p>}
+  </div>
+</a>
+
+<style>
+  .ac { position: relative; display: flex; flex-direction: column; gap: 16px; color: var(--mk-texto); border-radius: var(--mk-r-20); min-width: 0; }
+  .ac:focus-visible { outline-offset: 6px; }
+  .ac-media { position: relative; aspect-ratio: 4 / 3; max-width: 100%; border-radius: var(--mk-r-20); overflow: hidden; background: var(--mk-neutro-100); transition: box-shadow var(--mk-t) var(--mk-ease); }
+  .ac-media :global(picture), .ac-media :global(.ac-img) { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .ac-media :global(.ac-img) { object-fit: cover; transition: transform var(--mk-t) var(--mk-ease); }
+  .ac:hover .ac-media { box-shadow: var(--mk-sombra-2); }
+  .ac:hover .ac-media :global(.ac-img) { transform: scale(1.04); }
+
+  /* Fecha u hora sobre la imagen: bloque blanco, radio 14 */
+  .ac-fecha { position: absolute; left: 12px; top: 12px; z-index: 1; display: grid; justify-items: center; min-width: 58px; padding: 8px 10px 7px; border-radius: var(--mk-r-14); background: #fff; color: var(--mk-violeta-700); line-height: 1; }
+  .ac-fecha b { font-size: 24px; font-weight: 700; }
+  .ac-fecha span { font-size: 12px; font-weight: 600; margin-top: 4px; color: var(--mk-texto-2); }
+  .ac--fecha-xl .ac-fecha { min-width: 72px; padding: 10px 12px 9px; }
+  .ac--fecha-xl .ac-fecha b { font-size: 28px; }
+  .ac :global(.ac-chip) { position: absolute; right: 12px; top: 12px; z-index: 1; }
+
+  .ac-texto { display: flex; flex-direction: column; gap: 6px; }
+  .ac-titulo { font-size: var(--mk-h4); line-height: 1.3; font-weight: 600; }
+  .ac-desc { font-size: var(--mk-small); color: var(--mk-texto-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .ac-meta { display: flex; align-items: center; gap: 6px; font-size: var(--mk-small); font-weight: 600; color: var(--mk-texto); }
+  .ac-meta :global(.mk-ic) { color: var(--mk-violeta-700); }
+
+  /* Recorte en arco (V5): las etiquetas se centran bajo la cúpula para no recortarse */
+  .ac--arco .ac-media { border-radius: 999px 999px var(--mk-r-20) var(--mk-r-20); aspect-ratio: 3 / 4; }
+  .ac--arco .ac-fecha { left: 50%; top: 28px; transform: translateX(-50%); }
+  .ac--arco :global(.ac-chip) { left: 50%; right: auto; top: auto; bottom: 16px; transform: translateX(-50%); }
+
+  /* Orientación en fila (V4 · noticias en lista) */
+  @media (min-width: 768px) {
+    .ac--fila { display: grid; grid-template-columns: minmax(200px, 280px) 1fr; gap: 28px; align-items: center; }
+  }
+
+  /* Sobre fondo oscuro o violeta */
+  .ac--oscuro { color: #fff; }
+  .ac--oscuro .ac-desc { color: var(--mk-violeta-200); }
+  .ac--oscuro .ac-meta, .ac--oscuro .ac-meta :global(.mk-ic) { color: #fff; }
+  .ac--oscuro:focus-visible { outline: var(--mk-foco-oscuro); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ac:hover .ac-media :global(.ac-img) { transform: none; }
+  }
+</style>

@@ -1,0 +1,63 @@
+---
+/* Vive Maloka: las cuatro experiencias como ActionCard.
+   V4: grilla de 2 columnas (02) · V5: carrusel con Cine Domo en arco (único arco de la sección) · V6: filtros. */
+import data from '../../data/experiencias.json';
+import SectionHead from '../ui/SectionHead.astro';
+import ActionCard from '../ui/ActionCard.astro';
+import Button from '../ui/Button.astro';
+const { variante } = Astro.props;
+---
+<section class:list={['vm', `vm--${variante}`, 'mk-seccion']} aria-labelledby="vm-t" data-filtros={variante === 'v6' ? '' : undefined}>
+  <div class="mk-w">
+    {variante === 'v4' && (
+      <SectionHead estilo="linea" num="02" eyebrow={data.eyebrow} title={data.titulo} id="vm-t">
+        <Button slot="accion" href="#" variant="secundario">Todas las experiencias</Button>
+      </SectionHead>
+    )}
+    {variante === 'v5' && (
+      <SectionHead eyebrow={data.eyebrow} title={data.titulo} id="vm-t">
+        <div slot="accion" class="vm-flechas">
+          <Button variant="secundario" icon="arrowl" label="Experiencia anterior" data-car-prev />
+          <Button variant="primario" icon="arrow" label="Experiencia siguiente" data-car-next />
+        </div>
+      </SectionHead>
+    )}
+    {variante === 'v6' && (
+      <SectionHead eyebrow={data.eyebrow} title={data.titulo} id="vm-t">
+        <div slot="accion" class="vm-filtros" role="group" aria-label="Filtrar experiencias">
+          {data.filtros.map((f, i) => <Button variant="tonal" size="sm" aria-pressed={i === 0 ? 'true' : 'false'} data-filtro={f.id}>{f.label}</Button>)}
+        </div>
+      </SectionHead>
+    )}
+
+    <ul class="vm-grid mk-carrusel" data-carrusel>
+      {data.items.map((it, i) => (
+        <li data-grupos={it.filtro}>
+          <ActionCard
+            image={it.imagen} alt={it.alt} category={it.categoria} title={it.titulo}
+            description={it.descripcion} meta={it.meta}
+            forma={variante === 'v5' && i === 0 ? 'arco' : 'rect'}
+            sizes={variante === 'v4' ? '(max-width: 767px) 82vw, (max-width: 1100px) 45vw, 560px' : undefined}
+          />
+        </li>
+      ))}
+    </ul>
+    {variante === 'v6' && <p class="sr-only" aria-live="polite" data-filtros-estado></p>}
+  </div>
+</section>
+
+<style>
+  .vm-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; align-items: start; }
+  .vm--v4 .vm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 24px; }
+  .vm--v5 .vm-grid { align-items: end; }
+  .vm-flechas, .vm-filtros { display: flex; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 1099px) { .vm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 768px) { .vm-flechas { display: none; } }
+</style>
+
+<script>
+  import { iniciarFiltros } from '../../lib/filtros.js';
+  import { iniciarCarruseles } from '../../lib/carrusel.js';
+  iniciarFiltros();
+  iniciarCarruseles();
+</script>

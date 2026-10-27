@@ -1,0 +1,9 @@
+---
+// Etiqueta visible para contenido no confirmado («Por validar», «Contenido de ejemplo»).
+const { texto = 'Por validar', class: cls = '' } = Astro.props;
+---
+<span class:list={['mk-pv', cls]}>{texto}</span>
+<style>
+  .mk-pv { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: var(--mk-r-pill); background: var(--mk-atencion-fondo); color: var(--mk-atencion); font-size: 12px; font-weight: 700; line-height: 1.4; white-space: nowrap; }
+  .mk-pv::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+</style>

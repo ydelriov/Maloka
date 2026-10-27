@@ -1,0 +1,12 @@
+{
+  "eyebrow": "Descubre Maloka",
+  "titulo": "La ciencia también transforma territorios, comunidades e ideas.",
+  "texto": "Programas, recursos y experiencias en escuelas, barrios y regiones del país.",
+  "cta": "Mira nuestro impacto",
+  "items": [
+    { "id": "programas", "titulo": "Programas y proyectos", "categoria": "evolucion", "imagen": "paramo.jpg", "alt": "Páramo con frailejones y una laguna", "descripcion": "Ciencia en territorio, en escuelas, barrios y regiones.", "meta": "Ciencia en territorio" },
+    { "id": "recursos", "titulo": "Recursos educativos", "categoria": "colegios", "imagen": "laboratorio-sala.jpg", "alt": "Laboratorio de Maloka con mesas y bancos de colores", "descripcion": "Materiales para el aula y la casa.", "meta": "Para docentes y familias" },
+    { "id": "conoce", "titulo": "Conoce Maloka", "categoria": "experiencia", "imagen": "edificio-domo.jpg", "alt": "Exterior de Maloka con su domo y el cielo azul", "descripcion": "Quiénes somos, nuestra historia y lo que nos mueve.", "meta": "Quiénes somos" }
+  ],
+  "cifras": [ { "valor": "+XX", "label": "personas impactadas" }, { "valor": "XX", "label": "territorios" } ]
+}

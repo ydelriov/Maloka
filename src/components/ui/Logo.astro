@@ -1,0 +1,13 @@
+---
+// Logo de Maloka (tomado de las maquetas). Hereda el color del texto: violeta sobre claro, blanco sobre oscuro.
+const { size = 44 } = Astro.props;
+const w = Math.round(size * 100 / 130);
+---
+<svg class="mk-logo" aria-hidden="true" focusable="false" width={w} height={size} viewBox="0 0 100 130">
+  <rect x="2" y="2" width="40" height="70" fill="none" stroke="currentColor" stroke-width="4"></rect>
+  <text x="8" y="27" font-family="Montserrat, sans-serif" font-weight="700" font-size="16" fill="currentColor">M A</text>
+  <text x="9" y="47" font-family="Montserrat, sans-serif" font-weight="700" font-size="16" fill="currentColor">L O</text>
+  <text x="9" y="66" font-family="Montserrat, sans-serif" font-weight="700" font-size="16" fill="currentColor">K A</text>
+  <polygon points="2,72 42,72 42,88" fill="currentColor"></polygon>
+  <path d="M42 10 A58 58 0 0 1 42 126 Z" fill="none" stroke="currentColor" stroke-width="4"></path>
+</svg>

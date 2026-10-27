@@ -1,0 +1,16 @@
+---
+import { CATEGORIAS } from '../../lib/categorias.js';
+const { cat, label, class: cls = '' } = Astro.props;
+---
+<span class:list={['mk-chip', `mk-chip--${cat}`, cls]}><span class="mk-chip-dot" aria-hidden="true"></span>{label ?? CATEGORIAS[cat]?.label}</span>
+<style>
+  .mk-chip { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 12px; border-radius: var(--mk-r-pill); font-size: 12px; font-weight: 700; line-height: 1; white-space: nowrap; background: var(--c-50); color: var(--c-900); }
+  .mk-chip-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--c-500); }
+  .mk-chip--cine { --c-50: var(--mk-azul-50); --c-500: var(--mk-azul-500); --c-900: var(--mk-azul-900); }
+  .mk-chip--experiencia { --c-50: var(--mk-lavanda-50); --c-500: var(--mk-lavanda-500); --c-900: var(--mk-lavanda-900); }
+  .mk-chip--taller { --c-50: var(--mk-verde-50); --c-500: var(--mk-verde-600); --c-900: var(--mk-verde-900); }
+  .mk-chip--familiar { --c-50: var(--mk-amar-50); --c-500: var(--mk-amar-600); --c-900: var(--mk-amar-900); }
+  .mk-chip--colegios { --c-50: var(--mk-cyan-50); --c-500: var(--mk-cyan-600); --c-900: var(--mk-cyan-900); }
+  .mk-chip--evolucion { --c-50: var(--mk-salmon-50); --c-500: var(--mk-salmon-500); --c-900: var(--mk-salmon-900); }
+  .mk-chip--especial { --c-50: #FEE9FD; --c-500: #FF2EFF; --c-900: #510052; }
+</style>

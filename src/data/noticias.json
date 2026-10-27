@@ -1,0 +1,11 @@
+{
+  "eyebrow": "Noticias",
+  "titulo": "Lo último en Maloka.",
+  "cta": "Ver todas las noticias",
+  "ejemplo": true,
+  "items": [
+    { "id": "n1", "titulo": "Así se diseña una experiencia que hace preguntas", "categoria": "experiencia", "categoriaLabel": "Detrás de escena", "imagen": "sala-tic.jpg", "alt": "Sala TIC de Maloka con computadores", "descripcion": "Cada módulo pasa por bocetos, prototipos y pruebas con visitantes.", "dia": "02", "mes": "oct" },
+    { "id": "n2", "titulo": "Nueva función en el Cine Domo", "categoria": "cine", "imagen": "campana-astronauta.jpg", "alt": "Pieza gráfica con una astronauta rodeada de mariposas y plantas", "descripcion": "Un recorrido por la biodiversidad desde el espacio.", "dia": "26", "mes": "sept" },
+    { "id": "n3", "titulo": "Docentes que convierten el aula en laboratorio", "categoria": "colegios", "categoriaLabel": "Educación", "imagen": "laboratorio-familia.jpg", "alt": "Mediadora explicando un experimento a una familia", "descripcion": "Tres maestras cuentan qué cambió en sus clases.", "dia": "18", "mes": "sept" }
+  ]
+}

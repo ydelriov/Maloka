@@ -1,0 +1,84 @@
+---
+/* Ven en grupo: los cuatro planes como ActionCard.
+   V4: fila de 4 (04) · V5: foto en arco + 2×2 · V6: mosaico con la primera tarjeta grande. */
+import { Picture } from 'astro:assets';
+import data from '../../data/grupos.json';
+import SectionHead from '../ui/SectionHead.astro';
+import ActionCard from '../ui/ActionCard.astro';
+import Button from '../ui/Button.astro';
+import PorValidar from '../ui/PorValidar.astro';
+import { img } from '../../lib/images.js';
+const { variante } = Astro.props;
+const card = (it, extra = {}) => ({ image: it.imagen, alt: it.alt, category: it.categoria, title: it.titulo, description: it.descripcion, meta: it.meta, ...extra });
+---
+<section class:list={['vg', `vg--${variante}`, 'mk-seccion']} aria-labelledby="vg-t">
+  <div class="mk-w">
+    {variante === 'v4' && (
+      <>
+        <SectionHead estilo="linea" num="04" eyebrow={data.eyebrow} title={data.titulo} id="vg-t">
+          <Button slot="accion" href="#" variant="primario">{data.cta}</Button>
+        </SectionHead>
+        <ul class="vg-grid">{data.items.map((it) => <li><ActionCard {...card(it)} /></li>)}</ul>
+      </>
+    )}
+
+    {variante === 'v5' && (
+      <div class="vg5">
+        <div class="vg5-foto">
+          <Picture src={img('nino-lupa.jpg')} alt="Niño de colegio observando una hoja con una lupa" formats={['avif', 'webp']} widths={[480, 720]} sizes="(max-width: 767px) 92vw, 460px" class="vg5-img" loading="lazy" />
+        </div>
+        <div class="vg5-txt">
+          <p class="t-eyebrow">{data.eyebrow}</p>
+          <h2 class="t-h2" id="vg-t">{data.titulo}</h2>
+          <p class="t-lead">{data.texto}</p>
+          <ul class="vg5-grid">{data.items.map((it) => <li><ActionCard {...card(it)} nivel={3} sizes="(max-width: 767px) 92vw, 300px" /></li>)}</ul>
+          <Button href="#" variant="primario">{data.cta}</Button>
+          <PorValidar texto="Planes, tarifas y espacios por validar" />
+        </div>
+      </div>
+    )}
+
+    {variante === 'v6' && (
+      <>
+        <div class="vg6-head">
+          <SectionHead eyebrow={data.eyebrow} title={data.titulo} id="vg-t" />
+          <p class="t-muted">{data.texto}</p>
+        </div>
+        <ul class="vg6-mosaico">
+          {data.items.map((it, i) => <li class={i === 0 ? 'vg6-grande' : undefined}><ActionCard {...card(it)} layout={i === 3 ? 'fila' : 'columna'} sizes={i === 0 ? '(max-width: 767px) 92vw, 620px' : undefined} /></li>)}
+        </ul>
+        <div class="vg6-pie"><Button href="#" variant="primario">{data.cta}</Button></div>
+      </>
+    )}
+    {variante !== 'v5' && <p class="vg-pv"><PorValidar texto="Planes, tarifas y espacios por validar" /></p>}
+  </div>
+</section>
+
+<style>
+  .vg-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; align-items: start; }
+  .vg-pv { margin-top: 20px; }
+  .vg5 { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: center; }
+  .vg5-foto { position: relative; aspect-ratio: 4 / 5; border-radius: 999px 999px var(--mk-r-28) var(--mk-r-28); overflow: hidden; max-width: 100%; }
+  .vg5-foto :global(picture), .vg5-foto :global(.vg5-img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .vg5-txt { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+  .vg5-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 20px; margin: 8px 0; width: 100%; }
+  .vg6-head { display: grid; grid-template-columns: 7fr 5fr; gap: 24px 48px; align-items: end; margin-bottom: 40px; }
+  .vg6-head :global(.sh) { margin-bottom: 0; }
+  .vg6-mosaico { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 24px; align-items: start; }
+  .vg6-grande { grid-row: span 2; }
+  .vg6-mosaico li:last-child { grid-column: span 2; }
+  .vg6-pie { margin-top: 32px; }
+  @media (max-width: 1099px) {
+    .vg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .vg5 { grid-template-columns: 1fr; gap: 40px; }
+    .vg5-foto { max-width: 460px; }
+    .vg6-head { grid-template-columns: 1fr; }
+    .vg6-mosaico { grid-template-columns: 1fr 1fr; }
+    .vg6-grande { grid-row: auto; grid-column: 1 / -1; }
+    .vg6-mosaico li:last-child { grid-column: auto; }
+  }
+  @media (max-width: 767px) {
+    .vg-grid, .vg5-grid, .vg6-mosaico { grid-template-columns: 1fr; }
+    .vg5-foto { aspect-ratio: 1; }
+  }
+</style>

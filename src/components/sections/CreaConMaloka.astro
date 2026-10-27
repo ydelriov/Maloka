@@ -1,0 +1,80 @@
+---
+/* Crea con Maloka: servicios B2B. V4: mosaicos tonales (06) · V5: lista con iconos · V6: bloque violeta. */
+import data from '../../data/crea.json';
+import SectionHead from '../ui/SectionHead.astro';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+const { variante } = Astro.props;
+---
+<section class:list={['cr', `cr--${variante}`, 'mk-seccion']} aria-labelledby="cr-t">
+  <div class="mk-w">
+    {variante === 'v4' && (
+      <>
+        <SectionHead estilo="linea" num="06" eyebrow={data.eyebrow} title={data.titulo} id="cr-t">
+          <Button slot="accion" href="#" variant="primario">{data.cta}</Button>
+        </SectionHead>
+        <ul class="cr4">
+          {data.items.map((it) => <li><a href="#" class="cr4-i"><Icon name={it.icono} size="28" /><b>{it.titulo}</b><Icon name="arrow" size="20" class="cr-fl" /></a></li>)}
+        </ul>
+      </>
+    )}
+
+    {variante === 'v5' && (
+      <div class="cr5">
+        <div class="cr5-txt">
+          <p class="t-eyebrow">{data.eyebrow}</p>
+          <h2 class="t-h2" id="cr-t">{data.titulo}</h2>
+          <p class="t-muted">{data.texto}</p>
+          <Button href="#" variant="primario">{data.cta}</Button>
+        </div>
+        <ul class="cr5-list">
+          {data.items.map((it) => <li><a href="#" class="cr5-i"><span class="cr5-n"><Icon name={it.icono} />{it.titulo}</span><span class="btn btn--tonal btn--sm btn--icono" aria-hidden="true"><Icon name="arrow" /></span></a></li>)}
+        </ul>
+      </div>
+    )}
+
+    {variante === 'v6' && (
+      <div class="cr6 mk-oscuro">
+        <div class="cr6-txt">
+          <p class="cr6-eb">{data.eyebrow}</p>
+          <h2 class="t-h2" id="cr-t">{data.titulo}</h2>
+          <p>{data.texto}</p>
+          <Button href="#" variant="invertido" size="lg">{data.cta}</Button>
+        </div>
+        <ul class="cr6-list">
+          {data.items.map((it) => <li><a href="#" class="cr6-i"><Icon name={it.icono} size="20" />{it.titulo}</a></li>)}
+        </ul>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .cr4 { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+  .cr4-i { display: flex; flex-direction: column; gap: 14px; height: 100%; min-height: 180px; padding: 24px; border-radius: var(--mk-r-28); background: var(--mk-fondo-tonal); color: var(--mk-texto); transition: background-color var(--mk-t-rapida); }
+  .cr4-i:hover { background: var(--mk-violeta-100); }
+  .cr4-i :global(.mk-ic--28) { color: var(--mk-violeta-700); }
+  .cr4-i b { font-size: 17px; font-weight: 600; line-height: 1.35; margin-top: auto; }
+  .cr4-i :global(.cr-fl) { color: var(--mk-violeta-700); transition: transform var(--mk-t-rapida); }
+  .cr4-i:hover :global(.cr-fl) { transform: translateX(4px); }
+
+  .cr5 { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: start; }
+  .cr5-txt { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+  .cr5-list { border-top: 1px solid var(--mk-borde); }
+  .cr5-i { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 76px; padding: 14px 0; border-bottom: 1px solid var(--mk-borde); color: var(--mk-texto); }
+  .cr5-n { display: flex; align-items: center; gap: 16px; font-size: var(--mk-h5); font-weight: 600; }
+  .cr5-n :global(.mk-ic) { color: var(--mk-violeta-700); }
+  .cr5-i:hover .btn { background: var(--mk-violeta-700); color: #fff; }
+
+  .cr6 { display: grid; grid-template-columns: 5fr 7fr; gap: 48px; align-items: center; padding: clamp(28px, 3.9vw, 56px); border-radius: var(--mk-r-40); background: var(--mk-violeta-700); color: #fff; }
+  .cr6-txt { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+  .cr6-txt p:not(.cr6-eb) { color: var(--mk-violeta-100); }
+  .cr6-eb { font-size: 14px; font-weight: 600; color: var(--mk-violeta-200); }
+  .cr6-list { display: flex; flex-wrap: wrap; gap: 10px; }
+  .cr6-i { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 0 22px; border-radius: var(--mk-r-pill); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.5); font-weight: 700; color: #fff; transition: box-shadow var(--mk-t-rapida), background-color var(--mk-t-rapida); }
+  .cr6-i:hover { box-shadow: inset 0 0 0 1.5px #fff; background: rgba(255,255,255,.12); }
+
+  @media (max-width: 1099px) { .cr4 { grid-template-columns: repeat(3, minmax(0, 1fr)); } .cr5, .cr6 { grid-template-columns: 1fr; gap: 32px; } }
+  @media (max-width: 767px) { .cr4 { grid-template-columns: 1fr 1fr; } .cr4-i { min-height: 150px; padding: 20px; } }
+  @media (max-width: 420px) { .cr4 { grid-template-columns: 1fr; } .cr4-i { min-height: 0; } }
+</style>

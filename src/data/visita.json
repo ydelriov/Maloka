@@ -1,0 +1,11 @@
+{
+  "eyebrow": "Planea tu visita",
+  "titulo": "Todo listo para venir a Maloka.",
+  "items": [
+    { "id": "horarios", "titulo": "Horarios y tarifas", "icono": "clock", "texto": "Lunes a viernes 11:00 a. m. – 5:00 p. m. · Sábados, domingos y festivos 9:30 a. m. – 6:00 p. m.", "corto": "L–V 11:00 a. m. – 5:00 p. m. · Fines de semana y festivos 9:30 a. m. – 6:00 p. m.", "cta": "Ver tarifas" },
+    { "id": "llegar", "titulo": "Cómo llegar", "icono": "pin", "texto": "Carrera 68D #24A-51, Bogotá.", "corto": "Carrera 68D #24A-51, Bogotá", "cta": "Ver cómo llegar" },
+    { "id": "servicios", "titulo": "Servicios y accesibilidad", "icono": "access", "texto": "Lo que encuentras en Maloka y cómo recorrerla sin barreras.", "corto": "Recorre Maloka sin barreras", "cta": "Conocer", "porValidar": true },
+    { "id": "faq", "titulo": "Preguntas frecuentes", "icono": "help", "texto": "Entradas, edades, tiempos de visita y más.", "corto": "Entradas, edades y más", "cta": "Resolver dudas" },
+    { "id": "guia", "titulo": "Guía digital", "icono": "guide", "texto": "Recorre Maloka desde tu celular con Bloomberg Connects.", "corto": "Recorre Maloka desde tu celular", "cta": "Accede a la guía" }
+  ]
+}

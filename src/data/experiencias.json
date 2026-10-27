@@ -1,0 +1,11 @@
+{
+  "eyebrow": "Vive Maloka",
+  "titulo": "Hay muchas formas de vivir la ciencia.",
+  "filtros": [ { "id": "todo", "label": "Todo" }, { "id": "domo", "label": "Cine Domo" }, { "id": "salas", "label": "Salas" }, { "id": "labs", "label": "Laboratorios" } ],
+  "items": [
+    { "id": "domo", "filtro": "domo", "titulo": "Cine Domo", "categoria": "cine", "imagen": "cine-domo-cupula.jpg", "alt": "Interior del Cine Domo con un planeta proyectado en la cúpula", "descripcion": "Levanta la mirada. El universo está más cerca de lo que imaginas.", "meta": "Funciones todos los días" },
+    { "id": "digital", "filtro": "salas", "titulo": "Sala Digital", "categoria": "experiencia", "imagen": "sala-alta-tension.jpg", "alt": "Público frente a una experiencia de la sala Alta Tensión", "descripcion": "Entra a mundos que responden a tus movimientos.", "meta": "Incluido con la entrada", "fotoReutilizada": true },
+    { "id": "salas", "filtro": "salas", "titulo": "Salas interactivas", "categoria": "experiencia", "imagen": "sala-experimenta.jpg", "alt": "Sala Experimenta con mesas y módulos de colores", "descripcion": "Toca, prueba, equivócate y vuelve a intentar.", "meta": "Incluido con la entrada" },
+    { "id": "labs", "filtro": "labs", "titulo": "Laboratorios", "categoria": "taller", "imagen": "laboratorio-microscopio.jpg", "alt": "Niñas de colegio observando por un microscopio", "descripcion": "Ponte la bata y haz ciencia de verdad junto a nuestros mediadores.", "meta": "Talleres con mediadores" }
+  ]
+}
