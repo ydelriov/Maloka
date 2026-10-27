@@ -1,0 +1,205 @@
+---
+/* Header para Elementor: plantilla «Header» del Theme Builder con el widget Menú (mega menú).
+   Escritorio (> 1200 px, breakpoint «Tablet extra» de Elementor): cada ítem abre un contenedor a ancho completo
+   al pasar el mouse o con Enter/Espacio; Esc lo cierra y devuelve el foco.
+   ≤ 1200 px: el mismo widget en modo desplegable debajo del header, con submenús en acordeón (sin modal). */
+import nav from '../../data/nav.json';
+import site from '../../data/site.json';
+import Logo from '../ui/Logo.astro';
+import Icon from '../ui/Icon.astro';
+import Button from '../ui/Button.astro';
+import { url } from '../../lib/url.js';
+
+const inicio = url('elementor/');
+---
+<header class="eh" data-eh data-el="Theme Builder › Header · Contenedor flex fila · Sticky (Efectos de movimiento)">
+  <div class="mk-w eh-bar">
+    <a class="eh-logo" href={inicio} aria-label="Maloka, ir al inicio"><Logo size={44} /></a>
+
+    <nav class="eh-nav" aria-label="Principal" data-el="Widget Menú · Mega menú · Abrir con hover">
+      <ul class="eh-list">
+        {nav.items.map((it) => it.links.length > 1 ? (
+          <li data-mm-item>
+            <button class="eh-trig" type="button" aria-expanded="false" aria-controls={`emm-${it.id}`}>
+              {it.label}<Icon name="down" size="18" class="eh-chev" />
+            </button>
+            <div class="emm" id={`emm-${it.id}`} data-mm hidden>
+              <div class="mk-w emm-in" data-el="Contenido del ítem · Contenedor ancho completo · Grid 3 col">
+                <div class="emm-intro">
+                  <p class="t-eyebrow">{it.label}</p>
+                  <p class="emm-intro-t">{it.intro}</p>
+                </div>
+                <ul class="emm-links" data-el="Icon Box ×N · enlace en todo el cuadro">
+                  {it.links.map((l) => (
+                    <li><a class="emm-link" href="#"><span class="mk-ib emm-ib"><Icon name={l.icono} /></span><span><b>{l.label}</b>{l.desc && <small>{l.desc}</small>}</span></a></li>
+                  ))}
+                </ul>
+                {it.horarioHoy ? (
+                  <aside class="emm-card" aria-label="Horarios" data-el="Contenedor tonal · Icon List + Botón">
+                    <p class="t-eyebrow">Horarios</p>
+                    <p class="emm-h"><b>{site.horarios.semana.dias}</b><span>{site.horarios.semana.texto}</span></p>
+                    <p class="emm-h"><b>{site.horarios.finde.dias}</b><span>{site.horarios.finde.texto}</span></p>
+                    <p class="t-small t-muted">{site.horarios.ventaHasta}</p>
+                    <Button href={site.entradas.url} external variant="primario" size="sm" icon="ext">{site.entradas.texto}</Button>
+                  </aside>
+                ) : <span aria-hidden="true"></span>}
+              </div>
+            </div>
+          </li>
+        ) : (
+          <li><a class="eh-trig" href="#">{it.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="eh-acc">
+      <Button href={site.entradas.url} external variant="primario" size="sm" iconStart="ticket" class="eh-cta" data-el="Botón · Primario">{site.entradas.texto}</Button>
+      <Button variant="secundario" size="sm" icon="menu" label="Menú" class="eh-burger" aria-expanded="false" aria-controls="eh-desplegable" data-eh-burger />
+    </div>
+  </div>
+
+  <!-- ≤ 1200 px: desplegable del widget Menú -->
+  <div class="eh-dd" id="eh-desplegable" hidden data-eh-dd data-el="Menú · Desplegable (Tablet extra y menos)">
+    <div class="mk-w">
+      <ul class="eh-dd-list">
+        {nav.items.map((it) => (
+          <li>
+            {it.links.length > 1 ? (
+              <>
+                <button class="eh-dd-trig" type="button" aria-expanded="false" aria-controls={`edd-${it.id}`}>
+                  {it.label}<Icon name="down" size="20" class="eh-chev" />
+                </button>
+                <ul class="eh-dd-sub" id={`edd-${it.id}`} hidden>
+                  {it.links.map((l) => <li><a href="#"><Icon name={l.icono} size="20" />{l.label}</a></li>)}
+                </ul>
+              </>
+            ) : (
+              <a class="eh-dd-trig" href="#">{it.label}</a>
+            )}
+          </li>
+        ))}
+      </ul>
+      <div class="eh-dd-datos">
+        <p><Icon name="clock" size="20" /><span>L–V {site.horarios.semana.texto} · Fines de semana y festivos {site.horarios.finde.texto}</span></p>
+        <p><Icon name="pin" size="20" /><span>{site.direccion}</span></p>
+        <p><Icon name="phone" size="20" /><a href={`tel:${site.telefonoHref}`}>{site.telefono}</a></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .eh { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid var(--mk-borde); transition: box-shadow var(--mk-t) var(--mk-ease); }
+  .eh.is-fijo { box-shadow: var(--mk-sombra-3); border-bottom-color: transparent; }
+  .eh-bar { height: 80px; display: flex; align-items: center; gap: 32px; }
+  .eh-logo { display: inline-flex; color: var(--mk-violeta-700); border-radius: 8px; flex: none; }
+  .eh-nav { flex: 1; }
+  .eh-list { display: flex; align-items: center; gap: 4px; }
+  .eh-trig { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; padding: 8px 12px; border: 0; border-radius: var(--mk-r-pill); background: none; font-size: 15px; font-weight: 600; color: var(--mk-texto); cursor: pointer; white-space: nowrap; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
+  .eh-trig:hover, .eh-trig[aria-expanded="true"] { background: var(--mk-violeta-50); color: var(--mk-violeta-700); }
+  :global(.eh-chev) { transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  [aria-expanded="true"] > :global(.eh-chev) { transform: rotate(180deg); }
+  .eh-acc { display: flex; align-items: center; gap: 8px; flex: none; margin-left: auto; }
+  .eh-acc :global(.eh-burger) { display: none; }
+
+  /* Mega menú: contenedor a ancho completo */
+  .emm { position: absolute; left: 0; right: 0; top: 100%; background: #fff; border-top: 1px solid var(--mk-borde); box-shadow: var(--mk-sombra-3); }
+  .emm-in { display: grid; grid-template-columns: 240px 1fr 300px; gap: 40px; padding-block: 40px; align-items: start; }
+  .emm-intro { display: grid; gap: 8px; }
+  .emm-intro-t { font-size: var(--mk-h5); font-weight: 600; line-height: 1.4; }
+  .emm-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; }
+  .emm-link { display: flex; align-items: center; gap: 14px; min-height: 64px; padding: 6px 10px 6px 6px; border-radius: var(--mk-r-20); transition: background-color var(--mk-t-rapida); }
+  .emm-link:hover { background: var(--mk-fondo-alt); }
+  .emm-link b { display: block; font-size: 16px; font-weight: 600; }
+  .emm-link small { display: block; font-size: 14px; color: var(--mk-texto-2); line-height: 1.4; }
+  .emm-ib { width: 44px; height: 44px; border-radius: 14px; }
+  .emm-card { display: grid; gap: 10px; justify-items: start; padding: 24px; border-radius: var(--mk-r-28); background: var(--mk-fondo-tonal); }
+  .emm-h { display: grid; font-size: 14px; }
+  .emm-h b { font-weight: 600; }
+  .emm-h span { color: var(--mk-texto-2); }
+
+  /* Desplegable ≤ 1200 px */
+  .eh-dd { position: absolute; left: 0; right: 0; top: 100%; max-height: calc(100dvh - 72px); overflow-y: auto; background: #fff; border-top: 1px solid var(--mk-borde); box-shadow: var(--mk-sombra-3); padding-bottom: 24px; }
+  .eh-dd-list > li { border-bottom: 1px solid var(--mk-borde); }
+  .eh-dd-trig { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 60px; border: 0; background: none; font-size: 18px; font-weight: 600; color: var(--mk-texto); text-align: left; cursor: pointer; }
+  .eh-dd-trig :global(.eh-chev) { color: var(--mk-violeta-700); }
+  .eh-dd-sub { display: grid; padding: 0 0 12px; }
+  .eh-dd-sub a { display: flex; align-items: center; gap: 12px; min-height: 44px; font-weight: 600; color: var(--mk-texto-2); }
+  .eh-dd-sub a :global(.mk-ic) { color: var(--mk-violeta-700); }
+  .eh-dd-datos { display: grid; gap: 10px; padding-top: 20px; font-size: 14px; color: var(--mk-texto-2); }
+  .eh-dd-datos p { display: flex; gap: 10px; align-items: flex-start; }
+  .eh-dd-datos :global(.mk-ic) { color: var(--mk-violeta-700); }
+
+  @media (max-width: 1200px) {
+    .eh-nav { display: none; }
+    .eh-bar { height: 72px; }
+    .eh-acc :global(.eh-burger) { display: inline-flex; }
+  }
+  @media (max-width: 479px) {
+    .eh-acc :global(.eh-cta) { padding: 0 14px; font-size: 14px; }
+    .eh-acc :global(.eh-cta .mk-ic) { display: none; }
+  }
+</style>
+
+<script>
+  const header = document.querySelector('[data-eh]');
+  const escritorio = window.matchMedia('(min-width: 1201px)');
+  const mouse = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+  const onScroll = () => header.classList.toggle('is-fijo', window.scrollY > 24);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Mega menú (escritorio) */
+  let abierto = null, t;
+  const boton = (li) => li.querySelector('button');
+  const panel = (li) => li.querySelector('[data-mm]');
+  function abrir(li) {
+    if (abierto === li) return;
+    if (abierto) cerrar(false);
+    abierto = li;
+    boton(li).setAttribute('aria-expanded', 'true');
+    panel(li).hidden = false;
+  }
+  function cerrar(foco) {
+    if (!abierto) return;
+    const b = boton(abierto);
+    b.setAttribute('aria-expanded', 'false');
+    panel(abierto).hidden = true;
+    abierto = null;
+    if (foco) b.focus();
+  }
+  header.querySelectorAll('[data-mm-item]').forEach((li) => {
+    boton(li).addEventListener('click', () => (abierto === li ? cerrar(false) : abrir(li)));
+    li.addEventListener('mouseenter', () => { if (mouse.matches && escritorio.matches) { clearTimeout(t); abrir(li); } });
+    li.addEventListener('mouseleave', () => { if (mouse.matches) { clearTimeout(t); t = setTimeout(() => cerrar(false), 200); } });
+    li.addEventListener('focusout', (e) => { if (!li.contains(e.relatedTarget) && abierto === li) cerrar(false); });
+  });
+
+  /* Desplegable (≤ 1200 px) */
+  const burger = header.querySelector('[data-eh-burger]');
+  const dd = header.querySelector('[data-eh-dd]');
+  const setDd = (open, foco) => {
+    dd.hidden = !open;
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Menú');
+    if (!open && foco) burger.focus();
+  };
+  burger.addEventListener('click', () => setDd(dd.hidden));
+  dd.querySelectorAll('button[aria-controls]').forEach((b) => b.addEventListener('click', () => {
+    const open = b.getAttribute('aria-expanded') === 'true';
+    b.setAttribute('aria-expanded', String(!open));
+    document.getElementById(b.getAttribute('aria-controls')).hidden = open;
+  }));
+  escritorio.addEventListener('change', (e) => { if (e.matches) setDd(false); });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (abierto) cerrar(true);
+    else if (!dd.hidden) setDd(false, true);
+  });
+  document.addEventListener('click', (e) => {
+    if (abierto && !abierto.contains(e.target)) cerrar(false);
+    if (!dd.hidden && !header.contains(e.target)) setDd(false);
+  });
+</script>

@@ -1,7 +1,24 @@
 {
   "items": [
-    { "id": "v4", "nombre": "V4 · Editorial numerada", "descripcion": "Header blanco con navegación centrada, secciones numeradas 01–07, agenda con fechas grandes y noticias en lista." },
-    { "id": "v5", "nombre": "V5 · Arcos del domo", "descripcion": "Header transparente sobre el hero, arco blanco que cierra el hero, recortes en arco y bloque violeta en Descubre." },
-    { "id": "v6", "nombre": "V6 · Panel de visita", "descripcion": "Hero en contenedor redondeado con panel flotante de visita, filtros en experiencias, selector de días y grupos en mosaico." }
+    {
+      "id": "v4",
+      "nombre": "V4 · Editorial numerada",
+      "descripcion": "Header blanco con navegación centrada, secciones numeradas 01–07, agenda con fechas grandes y noticias en lista."
+    },
+    {
+      "id": "v5",
+      "nombre": "V5 · Arcos del domo",
+      "descripcion": "Header transparente sobre el hero, arco blanco que cierra el hero, recortes en arco y bloque violeta en Descubre."
+    },
+    {
+      "id": "v6",
+      "nombre": "V6 · Panel de visita",
+      "descripcion": "Hero en contenedor redondeado con panel flotante de visita, filtros en experiencias, selector de días y grupos en mosaico."
+    },
+    {
+      "id": "elementor",
+      "nombre": "Elementor · Lista para construir",
+      "descripcion": "Diseño pensado para WordPress + Elementor Pro: solo contenedores y widgets nativos, breakpoints de Elementor y guía de construcción sección por sección."
+    }
   ]
 }

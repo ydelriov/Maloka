@@ -1,0 +1,68 @@
+---
+/* Ven en grupo: dos columnas. Foto con el arco del domo (radio superior 999, el único arco de la página)
+   y lista de planes como Icon Box horizontales con enlace. */
+import { Picture } from 'astro:assets';
+import data from '../../data/grupos.json';
+import nav from '../../data/nav.json';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+import PorValidar from '../ui/PorValidar.astro';
+import { img } from '../../lib/images.js';
+const iconos = Object.fromEntries(nav.items.find((i) => i.id === 'grupo').links.map((l) => [l.label, l.icono]));
+const icono = (it) => iconos[it.titulo] ?? (it.id === 'mpa' ? 'heart' : 'users');
+---
+<section class="egr mk-seccion" aria-labelledby="egr-t">
+  <div class="mk-w egr-in" data-el="Contenedor grid · 2 col (5fr 7fr) / 1 col · Gap 64 / 40 / 32">
+    <div class="egr-foto" data-el="Imagen · Radio 999 999 28 28 (arco)">
+      <Picture src={img('nino-lupa.jpg')} alt="Niño de colegio observando una hoja con una lupa" formats={['avif', 'webp']} widths={[480, 720, 960]} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 60vw, 480px" class="egr-img" loading="lazy" />
+    </div>
+    <div class="egr-txt">
+      <p class="t-eyebrow">{data.eyebrow}</p>
+      <h2 class="t-h2" id="egr-t">{data.titulo}</h2>
+      <p class="t-lead">{data.texto}</p>
+      <ul class="egr-lista" data-el="Icon Box ×4 · posición izquierda · enlace en todo el cuadro">
+        {data.items.map((it) => (
+          <li>
+            <a class="egr-item" href="#">
+              <span class="mk-ib"><Icon name={icono(it)} /></span>
+              <span class="egr-item-t"><b>{it.titulo}</b><span>{it.descripcion}</span></span>
+              <Icon name="arrow" class="egr-flecha" />
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div class="egr-pie">
+        <Button href="#" variant="primario">{data.cta}</Button>
+        <PorValidar texto="Planes, tarifas y espacios por validar" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .egr-in { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: center; }
+  .egr-foto { position: relative; aspect-ratio: 4 / 5; border-radius: 999px 999px var(--mk-r-28) var(--mk-r-28); overflow: hidden; background: var(--mk-neutro-100); }
+  .egr-foto :global(picture), .egr-foto :global(.egr-img) { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .egr-foto :global(.egr-img) { object-fit: cover; }
+  .egr-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .egr-lista { width: 100%; margin-block: 16px 12px; border-top: 1px solid var(--mk-borde); }
+  .egr-lista li { border-bottom: 1px solid var(--mk-borde); }
+  .egr-item { display: flex; align-items: center; gap: 16px; padding: 16px 8px 16px 0; border-radius: var(--mk-r-14); transition: background-color var(--mk-t-rapida); }
+  .egr-item:hover { background: var(--mk-fondo-alt); }
+  .egr-item-t { flex: 1; display: grid; gap: 2px; }
+  .egr-item-t b { font-size: var(--mk-h5); font-weight: 600; }
+  .egr-item-t span { font-size: var(--mk-small); color: var(--mk-texto-2); }
+  .egr-item :global(.egr-flecha) { color: var(--mk-violeta-700); transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .egr-item:hover :global(.egr-flecha) { transform: translateX(4px); }
+  .egr-pie { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+  @media (max-width: 1024px) {
+    .egr-in { grid-template-columns: 1fr; gap: 40px; }
+    .egr-foto { width: min(60%, 420px); aspect-ratio: 1 / 1; margin-inline: auto; }
+  }
+  @media (max-width: 767px) {
+    .egr-in { gap: 32px; }
+    .egr-foto { width: 100%; aspect-ratio: 4 / 3; }
+    .egr-pie { width: 100%; }
+    .egr-pie :global(.btn) { width: 100%; }
+  }
+</style>

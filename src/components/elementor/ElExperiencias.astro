@@ -1,0 +1,45 @@
+---
+/* Vive Maloka: widget Filtro de taxonomía + Loop Grid (CPT «Experiencias», taxonomía «Tipo»). 4 / 2 / 1 columnas. */
+import data from '../../data/experiencias.json';
+import ActionCard from '../ui/ActionCard.astro';
+import Icon from '../ui/Icon.astro';
+import PorValidar from '../ui/PorValidar.astro';
+---
+<section class="eex mk-seccion" aria-labelledby="eex-t">
+  <div class="mk-w" data-filtros>
+    <div class="el-head" data-el="Contenedor flex fila · Encabezado + Botón enlace">
+      <div class="el-head-txt">
+        <p class="t-eyebrow">{data.eyebrow}</p>
+        <h2 class="t-h2" id="eex-t">{data.titulo}</h2>
+      </div>
+      <a class="mk-enlace" href="#">Ver todas las experiencias<Icon name="arrow" size="18" /></a>
+    </div>
+    <div class="eex-filtros" role="group" aria-label="Filtrar experiencias" data-el="Filtro de taxonomía · Botones tonal">
+      {data.filtros.map((f, i) => (
+        <button type="button" class="btn btn--tonal btn--sm" aria-pressed={i === 0 ? 'true' : 'false'} data-filtro={f.id}>{f.label}</button>
+      ))}
+      <span class="sr-only" aria-live="polite" data-filtros-estado></span>
+    </div>
+    <ul class="el-grid el-grid--4" data-el="Loop Grid · 4 / 2 / 1 col · Plantilla «Tarjeta de acción»">
+      {data.items.map((it) => (
+        <li data-grupos={it.filtro}>
+          <ActionCard image={it.imagen} alt={it.alt} category={it.categoria} title={it.titulo} description={it.descripcion} meta={it.meta} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 45vw, 300px" />
+          {it.fotoReutilizada && <PorValidar texto="Foto por confirmar" class="eex-pv" />}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .eex-filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+  .eex :global(.eex-pv) { margin-top: 10px; }
+  @media (max-width: 767px) {
+    .eex-filtros { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(-1 * var(--mk-margen)); padding-inline: var(--mk-margen); scrollbar-width: none; }
+  }
+</style>
+
+<script>
+  import { iniciarFiltros } from '../../lib/filtros.js';
+  iniciarFiltros();
+</script>

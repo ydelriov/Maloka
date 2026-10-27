@@ -1,0 +1,32 @@
+---
+/* Agéndate: sección con fondo alterno y Loop Grid de las próximas 4 actividades (CPT «Actividades»,
+   ordenadas por el campo de fecha). Sin pestañas: el filtro por fecha lo hace la consulta, no el visitante. */
+import data from '../../data/agenda.json';
+import ActionCard from '../ui/ActionCard.astro';
+import Button from '../ui/Button.astro';
+import PorValidar from '../ui/PorValidar.astro';
+---
+<section class="eag" aria-labelledby="eag-t" data-el="Contenedor ancho completo · Fondo: Alterno (#FBF9FD) · Padding 112 / 80 / 56">
+  <div class="mk-w">
+    <div class="el-head" data-el="Contenedor flex fila · Encabezado + Botón secundario">
+      <div class="el-head-txt">
+        <p class="t-eyebrow">{data.eyebrow}</p>
+        <h2 class="t-h2" id="eag-t">{data.titulo}</h2>
+        <p class="t-muted">{data.texto}</p>
+        <PorValidar texto="Contenido de ejemplo" />
+      </div>
+      <Button href="#" variant="secundario">{data.cta}</Button>
+    </div>
+    <ul class="el-grid el-grid--4" data-el="Loop Grid · 4 / 2 / 1 col · Consulta: fecha ≥ hoy, ascendente">
+      {data.items.map((it) => (
+        <li>
+          <ActionCard image={it.imagen} alt={it.alt} date={{ dia: it.dia, mes: it.mes }} category={it.categoria} title={it.titulo} description={it.descripcion} meta={`${it.hora} · ${it.lugar} · ${it.costo}`} metaIcono="clock" sizes="(max-width: 767px) 92vw, (max-width: 1024px) 45vw, 300px" />
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .eag { margin-top: var(--mk-seccion); padding-block: var(--mk-seccion); background: var(--mk-fondo-alt); border-block: 1px solid var(--mk-borde); }
+</style>

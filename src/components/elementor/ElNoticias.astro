@@ -1,0 +1,24 @@
+---
+/* Noticias: Loop Grid de entradas (posts) · 3 / 3 / 1 columnas, con la fecha de publicación sobre la imagen. */
+import data from '../../data/noticias.json';
+import ActionCard from '../ui/ActionCard.astro';
+import Icon from '../ui/Icon.astro';
+import PorValidar from '../ui/PorValidar.astro';
+---
+<section class="eno mk-seccion" aria-labelledby="eno-t">
+  <div class="mk-w">
+    <div class="el-head" data-el="Contenedor flex fila · Encabezado + Botón enlace">
+      <div class="el-head-txt">
+        <p class="t-eyebrow">{data.eyebrow}</p>
+        <h2 class="t-h2" id="eno-t">{data.titulo}</h2>
+        <PorValidar texto="Contenido de ejemplo" />
+      </div>
+      <a class="mk-enlace" href="#">{data.cta}<Icon name="arrow" size="18" /></a>
+    </div>
+    <ul class="el-grid el-grid--3" data-el="Loop Grid (entradas) · 3 / 3 / 1 col">
+      {data.items.map((it) => (
+        <li><ActionCard image={it.imagen} alt={it.alt} date={{ dia: it.dia, mes: it.mes }} category={it.categoria} categoryLabel={it.categoriaLabel} title={it.titulo} description={it.descripcion} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 31vw, 410px" /></li>
+      ))}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+/* Variante Elementor: los tamaños cambian en escalones por breakpoint de Elementor (Escritorio · Tablet ≤ 1024 ·
+   Móvil ≤ 767), igual que los valores responsive de Global Fonts y de los contenedores. Sin clamp(). */
+.el {
+  --mk-display: 64px; --mk-h1: 52px; --mk-h2: 40px; --mk-h3: 28px; --mk-h4: 22px; --mk-h5: 18px; --mk-lead: 20px;
+  --mk-seccion: 112px; --mk-margen: 80px;
+}
+@media (max-width: 1024px) {
+  .el { --mk-display: 50px; --mk-h1: 42px; --mk-h2: 33px; --mk-h3: 24px; --mk-h4: 20px; --mk-h5: 17px; --mk-lead: 19px; --mk-seccion: 80px; --mk-margen: 40px; }
+}
+@media (max-width: 767px) {
+  .el { --mk-display: 38px; --mk-h1: 34px; --mk-h2: 28px; --mk-h3: 21px; --mk-h4: 18px; --mk-h5: 16px; --mk-lead: 18px; --mk-seccion: 56px; --mk-margen: 16px; }
+}
+
+/* Encabezado de sección: contenedor flex fila (columna en móvil) */
+.el-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px 32px; margin-bottom: 40px; }
+.el-head-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; max-width: 760px; }
+.el-head > .mk-enlace, .el-head > .btn { flex: none; }
+
+/* Loop Grid */
+.el-grid { display: grid; gap: 32px 24px; align-items: start; }
+.el-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.el-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1024px) {
+  .el-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .el-grid--3 { gap: 32px 20px; }
+}
+@media (max-width: 767px) {
+  .el-head { flex-direction: column; align-items: flex-start; margin-bottom: 28px; }
+  .el-grid--4, .el-grid--3 { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* Anotaciones de estructura (solo prototipo): botón «Estructura» de la barra de variantes */
+.el-anotar [data-el] { outline: 1.5px dashed #FF2EFF; outline-offset: -1.5px; }
+.el-anotar [data-el]:not(.eho):not(.epl-card):not(.eh) { position: relative; }
+.el-anotar [data-el]::before {
+  content: attr(data-el); position: absolute; left: 0; top: 0; z-index: 60; max-width: 100%;
+  padding: 3px 8px; border-radius: 0 0 8px 0; background: #510052; color: #fff;
+  font: 600 11px/1.35 var(--mk-fuente); letter-spacing: 0; white-space: normal; pointer-events: none;
+}
+.el-anotar .ac-media::before { content: none; }

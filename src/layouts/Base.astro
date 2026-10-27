@@ -10,7 +10,7 @@ import site from '../data/site.json';
 import hero from '../data/hero.json';
 import { img } from '../lib/images.js';
 
-const { title, description, variante, precargarHero = false } = Astro.props;
+const { title, description, variante, precargarHero = false, clase } = Astro.props;
 const ogImg = await getImage({ src: img(hero.imagen), width: 1200, format: 'jpg' });
 const heroAvif = precargarHero ? await getImage({ src: img(hero.imagen), width: 1440, format: 'avif' }) : null;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
@@ -51,7 +51,7 @@ const jsonLd = {
   {heroAvif && <link rel="preload" as="image" href={heroAvif.src} type="image/avif" fetchpriority="high" />}
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </head>
-<body>
+<body class={clase}>
   <a class="mk-saltar" href="#contenido">Saltar al contenido</a>
   <IconSprite />
   <slot />

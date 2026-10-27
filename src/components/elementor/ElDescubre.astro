@@ -1,0 +1,35 @@
+---
+/* Descubre: tres tarjetas (Loop Grid de páginas o tres contenedores fijos) y una franja de cifras por validar. */
+import data from '../../data/descubre.json';
+import ActionCard from '../ui/ActionCard.astro';
+import Icon from '../ui/Icon.astro';
+import PorValidar from '../ui/PorValidar.astro';
+---
+<section class="eds mk-seccion" aria-labelledby="eds-t">
+  <div class="mk-w">
+    <div class="el-head" data-el="Contenedor flex fila · Encabezado + Botón enlace">
+      <div class="el-head-txt">
+        <p class="t-eyebrow">{data.eyebrow}</p>
+        <h2 class="t-h2" id="eds-t">{data.titulo}</h2>
+        <p class="t-muted">{data.texto}</p>
+      </div>
+      <a class="mk-enlace" href="#">{data.cta}<Icon name="arrow" size="18" /></a>
+    </div>
+    <ul class="el-grid el-grid--3" data-el="Loop Grid (páginas) · 3 / 3 / 1 col">
+      {data.items.map((it) => (
+        <li><ActionCard image={it.imagen} alt={it.alt} category={it.categoria} title={it.titulo} description={it.descripcion} meta={it.meta} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 31vw, 410px" /></li>
+      ))}
+    </ul>
+    <div class="eds-cifras" data-el="Contenedor flex fila · Contador ×2 (cuando haya cifras)">
+      {data.cifras.map((c) => <p class="eds-cifra"><b class="t-num">{c.valor}</b><span>{c.label}</span></p>)}
+      <PorValidar texto="Cifras por validar" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .eds-cifras { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 48px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--mk-borde); }
+  .eds-cifra { display: flex; align-items: baseline; gap: 12px; }
+  .eds-cifra b { font-size: var(--mk-h2); font-weight: 700; color: var(--mk-violeta-700); line-height: 1; }
+  .eds-cifra span { font-weight: 600; color: var(--mk-texto-2); }
+</style>

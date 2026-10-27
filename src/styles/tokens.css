@@ -60,6 +60,9 @@
   --mk-info: #1F5FD1;      --mk-info-fondo: #E8F0FF;
   --mk-error: #C0352B;     --mk-error-fondo: #FDECEA;
 
+  /* Fondo del hero: el mismo tono del banner, para que el borde de la imagen no se note en móvil */
+  --mk-hero-fondo: #141E27;
+
   /* Velo plano sobre fotografía */
   --mk-velo: rgba(20, 10, 31, .6);
 

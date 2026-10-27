@@ -1,0 +1,65 @@
+---
+/* Planea tu visita: tarjeta blanca que sube sobre el hero (margen superior negativo) con cuatro Icon Box.
+   Es lo único que flota en la página además del header, por eso lleva sombra. */
+import visita from '../../data/visita.json';
+import site from '../../data/site.json';
+import Icon from '../ui/Icon.astro';
+import PorValidar from '../ui/PorValidar.astro';
+const ids = ['horarios', 'llegar', 'servicios', 'guia'];
+const items = ids.map((id) => visita.items.find((i) => i.id === id));
+---
+<section class="epl" id="planea" aria-labelledby="epl-t">
+  <div class="mk-w">
+    <div class="epl-card" data-el="Contenedor · Fondo blanco · Radio 28 · Sombra 3 · Margen sup. −80 / −64 / −56">
+      <div class="epl-head" data-el="Contenedor flex fila · Título + Botón enlace">
+        <h2 class="t-h4" id="epl-t">{visita.eyebrow}</h2>
+        <a class="mk-enlace" href="#">Preguntas frecuentes<Icon name="arrow" size="18" /></a>
+      </div>
+      <ul class="epl-grid" data-el="Contenedor grid · 4 / 2 / 1 columnas">
+        {items.map((it) => (
+          <li class="epl-item" data-el="Icon Box (vista apilada a la izquierda)">
+            <span class="mk-ib"><Icon name={it.icono} /></span>
+            <h3 class="t-h5">{it.titulo}</h3>
+            {it.id === 'horarios' ? (
+              <p class="epl-txt">
+                <span><b>Lunes a viernes</b> {site.horarios.semana.texto}</span>
+                <span><b>Fines de semana y festivos</b> {site.horarios.finde.texto}</span>
+                <span class="t-muted">{site.horarios.ventaHasta}</span>
+              </p>
+            ) : it.id === 'guia' ? (
+              <p class="epl-txt">Recorre Maloka desde tu celular con {site.guiaDigital}.</p>
+            ) : (
+              <p class="epl-txt">{it.texto}</p>
+            )}
+            {it.porValidar && <PorValidar />}
+            <a class="mk-enlace epl-link" href="#">{it.cta}<span class="sr-only">: {it.titulo}</span><Icon name="arrow" size="18" /></a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .epl { position: relative; z-index: 2; margin-top: -80px; }
+  .epl-card { background: #fff; border-radius: var(--mk-r-28); box-shadow: var(--mk-sombra-3); padding: 32px 40px 36px; }
+  .epl-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 24px; padding-bottom: 24px; margin-bottom: 28px; border-bottom: 1px solid var(--mk-borde); }
+  .epl-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+  .epl-item { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+  .epl-txt { display: grid; gap: 4px; font-size: var(--mk-small); color: var(--mk-texto-2); }
+  .epl-txt b { font-weight: 600; color: var(--mk-texto); display: block; }
+  .epl-link { margin-top: auto; padding-top: 4px; font-size: 15px; }
+  @media (max-width: 1024px) {
+    .epl { margin-top: -64px; }
+    .epl-card { padding: 28px 32px 32px; }
+    .epl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 28px; }
+  }
+  @media (max-width: 767px) {
+    .epl { margin-top: -56px; }
+    .epl-card { padding: 24px 20px 28px; border-radius: var(--mk-r-20); }
+    .epl-grid { grid-template-columns: 1fr; gap: 0; }
+    .epl-item { padding-block: 20px; border-top: 1px solid var(--mk-borde); }
+    .epl-item:first-child { border-top: 0; padding-top: 0; }
+    .epl-item:last-child { padding-bottom: 0; }
+  }
+</style>

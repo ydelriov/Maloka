@@ -1,0 +1,47 @@
+---
+/* Hero: contenedor ancho completo con imagen de fondo (sin velo: el banner ya es oscuro) y contenido en caja.
+   Un solo H1 y el único botón amarillo de la página. Sin carrusel: los carruseles de Elementor no traen botón
+   de pausa y un hero fijo carga más rápido. */
+import { Picture } from 'astro:assets';
+import hero from '../../data/hero.json';
+import site from '../../data/site.json';
+import Button from '../ui/Button.astro';
+import { img } from '../../lib/images.js';
+const s = hero.slides[0];
+---
+<section class="eho mk-sobre-foto" aria-labelledby="eho-t" data-el="Contenedor ancho completo · Fondo: imagen · Altura mín. 640 / 560 / auto">
+  <Picture src={img(hero.imagen)} alt="" formats={['avif', 'webp']} widths={[640, 1024, 1440, 1942]} sizes="100vw" class="eho-img" loading="eager" fetchpriority="high" decoding="async" />
+  <div class="mk-w eho-in" data-el="Contenedor en caja 1280 · Flex columna · Gap 20">
+    <p class="eho-eb">{hero.eyebrow}</p>
+    <h1 class="t-display eho-t" id="eho-t">{s.titulo}</h1>
+    <p class="eho-lead">{s.lead}</p>
+    <div class="eho-ctas" data-el="2 × Botón · Destacado + Contorno invertido">
+      <Button href={site.entradas.url} external variant="destacado" size="lg" icon="ext" class="btn--movil-bloque">{site.entradas.texto}</Button>
+      <Button href="#planea" variant="invertido" size="lg" class="btn--movil-bloque">{s.secundario}</Button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .eho { position: relative; overflow: hidden; background: var(--mk-hero-fondo); color: #fff; min-height: 640px; display: flex; align-items: center; padding-block: 96px 160px; }
+  .eho :global(picture), .eho :global(.eho-img) { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .eho :global(.eho-img) { object-fit: cover; object-position: 70% 50%; }
+  .eho-in { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+  .eho-eb { font-size: 14px; font-weight: 600; color: var(--mk-violeta-200); }
+  .eho-t { color: #fff; max-width: 14ch; }
+  .eho-lead { font-size: var(--mk-lead); line-height: 1.5; color: #E6DCF0; max-width: 560px; }
+  .eho-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  @media (max-width: 1024px) {
+    .eho { min-height: 560px; padding-block: 80px 136px; }
+    .eho :global(.eho-img) { object-position: 85% 50%; }
+    .eho-lead { max-width: 420px; }
+  }
+  @media (max-width: 767px) {
+    /* Móvil: la imagen ocupa solo la franja superior (fondo: tamaño «auto 300px», posición arriba) y el texto
+       queda sobre el color de fondo, sin tapar la figura del banner. */
+    .eho { min-height: 0; align-items: flex-end; padding-block: 292px 104px; }
+    .eho :global(picture), .eho :global(.eho-img) { height: 300px; }
+    .eho :global(.eho-img) { object-position: 74% 50%; }
+    .eho-ctas { width: 100%; }
+  }
+</style>

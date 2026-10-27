@@ -1,0 +1,44 @@
+---
+/* Crea con Maloka: contenedor en caja con fondo violeta 700 y radio 40. Texto + botón contorno invertido
+   a la izquierda; a la derecha, Icon List de las cinco líneas con enlace. */
+import data from '../../data/crea.json';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+---
+<section class="ecr mk-seccion" aria-labelledby="ecr-t">
+  <div class="mk-w">
+    <div class="ecr-in mk-oscuro" data-el="Contenedor · Fondo violeta 700 · Radio 40 / 28 / 20 · Grid 2 col / 1 col">
+      <div class="ecr-txt">
+        <p class="ecr-eb">{data.eyebrow}</p>
+        <h2 class="t-h2" id="ecr-t">{data.titulo}</h2>
+        <p class="ecr-lead">{data.texto}</p>
+        <Button href="#" variant="invertido" icon="arrow" class="btn--movil-bloque">{data.cta}</Button>
+      </div>
+      <ul class="ecr-lista" data-el="Icon List · enlaces · separadores">
+        {data.items.map((it) => (
+          <li><a href="#"><Icon name={it.icono} /><span>{it.titulo}</span><Icon name="arrow" size="20" class="ecr-flecha" /></a></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ecr-in { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding: 64px; border-radius: var(--mk-r-40); background: var(--mk-violeta-700); color: #fff; }
+  .ecr-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .ecr-eb { font-size: var(--mk-small); font-weight: 600; color: var(--mk-violeta-200); }
+  .ecr-lead { font-size: var(--mk-lead); line-height: 1.5; color: var(--mk-violeta-100); margin-bottom: 8px; }
+  .ecr-lista { border-top: 1px solid rgba(255, 255, 255, .2); }
+  .ecr-lista li { border-bottom: 1px solid rgba(255, 255, 255, .2); }
+  .ecr-lista a { display: flex; align-items: center; gap: 14px; min-height: 64px; font-size: var(--mk-h5); font-weight: 600; color: #fff; }
+  .ecr-lista span { flex: 1; }
+  .ecr-lista :global(.mk-ic) { color: var(--mk-violeta-200); }
+  .ecr-lista :global(.ecr-flecha) { color: #fff; transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .ecr-lista a:hover :global(.ecr-flecha) { transform: translateX(4px); }
+  @media (max-width: 1024px) {
+    .ecr-in { grid-template-columns: 1fr; gap: 40px; padding: 48px; border-radius: var(--mk-r-28); }
+  }
+  @media (max-width: 767px) {
+    .ecr-in { padding: 32px 20px; border-radius: var(--mk-r-20); gap: 32px; }
+  }
+</style>

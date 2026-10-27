@@ -5,7 +5,7 @@ import { chromium } from 'playwright';
 import { mkdir } from 'node:fs/promises';
 
 const BASE = process.env.BASE_URL || 'http://localhost:4321/Maloka/';
-const variantes = ['v4', 'v5', 'v6'];
+const variantes = ['v4', 'v5', 'v6', 'elementor'];
 const anchos = [390, 834, 1440];
 
 await mkdir('screenshots', { recursive: true });
