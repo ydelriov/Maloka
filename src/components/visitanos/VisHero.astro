@@ -1,50 +1,31 @@
 ---
-/* Encabezado de Visítanos: fondo oscuro con el arco del domo, migas de pan, H1, estado de hoy y compra.
-   A la derecha, la tarjeta «Hoy en Maloka» con los dos horarios. */
+/* Encabezado de Visítanos: lleva a tarifas y a cómo llegar (la compra vive en el header y al final de las tarifas)
+   y muestra la tarjeta «Hoy en Maloka» con los dos horarios. */
 import data from '../../data/visitanos.json';
 import site from '../../data/site.json';
+import PageHero from '../pagina/PageHero.astro';
 import Button from '../ui/Button.astro';
 import Icon from '../ui/Icon.astro';
 import EstadoHoy from '../ui/EstadoHoy.astro';
-import { url } from '../../lib/url.js';
 ---
-<section class="vh mk-sobre-foto" aria-labelledby="vh-t" data-el="Contenedor ancho completo · Fondo #141E27 · Arco inferior (Divisor de forma «Curva»)">
-  <div class="mk-w vh-in">
-    <div class="vh-txt">
-      <nav aria-label="Migas de pan" class="vh-migas">
-        <ol><li><a href={url('v7/')}>Inicio</a></li><li aria-current="page">Visítanos</li></ol>
-      </nav>
-      <h1 class="t-display vh-t" id="vh-t">{data.hero.titulo}</h1>
-      <p class="vh-lead">{data.hero.lead}</p>
-      <div class="vh-ctas">
-        <Button href={site.entradas.url} external variant="destacado" size="lg" icon="ext" class="btn--movil-bloque">{site.entradas.texto}</Button>
-        <Button href="#tarifas" variant="invertido" size="lg" class="btn--movil-bloque">Ver tarifas</Button>
-      </div>
-    </div>
-    <aside class="vh-hoy" aria-labelledby="vh-hoy-t" data-el="Contenedor · Fondo superficie oscura · Radio 28 · Icon List">
-      <p class="vh-hoy-eb" id="vh-hoy-t">Hoy en Maloka</p>
-      <EstadoHoy />
-      <ul class="vh-hor">
-        <li><Icon name="clock" size="20" /><span><b>{site.horarios.semana.dias}</b>{site.horarios.semana.texto}</span></li>
-        <li><Icon name="cal" size="20" /><span><b>{site.horarios.finde.dias}</b>{site.horarios.finde.texto}</span></li>
-        <li><Icon name="ticket" size="20" /><span>{site.horarios.ventaHasta}</span></li>
-        <li><Icon name="pin" size="20" /><span>{site.direccion}</span></li>
-      </ul>
-    </aside>
-  </div>
-</section>
+<PageHero titulo={data.hero.titulo} lead={data.hero.lead}>
+  <Fragment slot="ctas">
+    <Button href="#tarifas" variant="destacado" size="lg" icon="arrow" class="btn--movil-bloque">Ver tarifas</Button>
+    <Button href="#llegar" variant="invertido" size="lg" class="btn--movil-bloque">Cómo llegar</Button>
+  </Fragment>
+  <aside slot="aside" class="vh-hoy" aria-labelledby="vh-hoy-t" data-el="Contenedor · Fondo superficie oscura · Radio 28 · Icon List">
+    <p class="vh-hoy-eb" id="vh-hoy-t">Hoy en Maloka</p>
+    <EstadoHoy />
+    <ul class="vh-hor">
+      <li><Icon name="clock" size="20" /><span><b>{site.horarios.semana.dias}</b>{site.horarios.semana.texto}</span></li>
+      <li><Icon name="cal" size="20" /><span><b>{site.horarios.finde.dias}</b>{site.horarios.finde.texto}</span></li>
+      <li><Icon name="ticket" size="20" /><span>{site.horarios.ventaHasta}</span></li>
+      <li><Icon name="pin" size="20" /><span>{site.direccion}</span></li>
+    </ul>
+  </aside>
+</PageHero>
 
 <style>
-  .vh { position: relative; overflow: hidden; background: var(--mk-hero-fondo); color: #fff; padding-block: 168px 152px; }
-  .vh::after { content: ""; position: absolute; left: -15%; right: -15%; bottom: -1px; height: 88px; background: #fff; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
-  .vh-in { position: relative; z-index: 1; display: grid; grid-template-columns: 7fr 5fr; gap: 48px 64px; align-items: center; }
-  .vh-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
-  .vh-migas ol { display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; font-weight: 600; color: var(--mk-violeta-200); }
-  .vh-migas li + li::before { content: "/"; margin-right: 8px; color: var(--mk-oscuro-texto-3); }
-  .vh-migas a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
-  .vh-t { color: #fff; }
-  .vh-lead { font-size: var(--mk-lead); line-height: 1.5; color: #E6DCF0; max-width: 560px; }
-  .vh-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
   .vh-hoy { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 32px; border-radius: var(--mk-r-28); background: var(--mk-oscuro-superficie); border: 1px solid var(--mk-oscuro-linea); }
   .vh-hoy-eb { font-size: 14px; font-weight: 600; color: var(--mk-violeta-200); }
   .vh-hor { display: grid; gap: 14px; width: 100%; }
@@ -52,15 +33,5 @@ import { url } from '../../lib/url.js';
   .vh-hor li + li { padding-top: 14px; border-top: 1px solid var(--mk-oscuro-linea); }
   .vh-hor b { display: block; font-weight: 600; color: #fff; }
   .vh-hor :global(.mk-ic) { color: var(--mk-violeta-300); margin-top: 1px; }
-  @media (max-width: 1024px) {
-    .vh { padding-block: 136px 120px; }
-    .vh::after { height: 56px; }
-    .vh-in { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 767px) {
-    .vh { padding-block: 104px 88px; }
-    .vh::after { height: 32px; }
-    .vh-hoy { padding: 24px 20px; border-radius: var(--mk-r-20); }
-    .vh-ctas { width: 100%; }
-  }
+  @media (max-width: 767px) { .vh-hoy { padding: 24px 20px; border-radius: var(--mk-r-20); } }
 </style>

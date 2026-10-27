@@ -1,0 +1,178 @@
+---
+/* Agéndate: la programación de la semana. Evento destacado del Cine Domo, selector de día, filtros por tipo
+   y tarjetas de evento con sus funciones. Contenido de ejemplo hasta conectar el CPT «Actividad».
+   En Elementor: Loop Grid con Filtro de taxonomía (tipo) y un filtro por fecha (Query ID + campo «fecha»). */
+import { Picture } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import ElHeader from '../components/elementor/ElHeader.astro';
+import PageHero from '../components/pagina/PageHero.astro';
+import AgEvento from '../components/agendate/AgEvento.astro';
+import Footer from '../components/layout/Footer.astro';
+import Button from '../components/ui/Button.astro';
+import Chip from '../components/ui/Chip.astro';
+import Icon from '../components/ui/Icon.astro';
+import PorValidar from '../components/ui/PorValidar.astro';
+import site from '../data/site.json';
+import data from '../data/eventos.json';
+import { img } from '../lib/images.js';
+import { url } from '../lib/url.js';
+import '../styles/elementor.css';
+const dest = data.items.find((e) => e.id === data.destacado);
+const nombreDia = (id) => data.dias.find((d) => d.id === id);
+---
+<Base title="Agéndate · Programación de Maloka" description="Funciones del Cine Domo, talleres en los laboratorios y actividades en familia esta semana en Maloka, Bogotá." variante="agendate" clase="el">
+  <ElHeader transparente ctaVariante="azul" inicio={url('v7/')} />
+  <main id="contenido">
+    <PageHero titulo="Agéndate" lead="Funciones del Cine Domo, talleres y actividades para todas las edades. Elige el día y planea tu visita.">
+      <Fragment slot="ctas">
+        <Button href="#programacion" variant="destacado" size="lg" icon="arrow" class="btn--movil-bloque">Ver la programación</Button>
+        <Button href={url('visitanos/#horarios')} variant="invertido" size="lg" class="btn--movil-bloque">Horarios y tarifas</Button>
+      </Fragment>
+      <a slot="aside" class="agd mk-oscuro" href="#programacion" data-agd data-el="Contenedor-enlace · Evento destacado (campo «destacado» del CPT)">
+        <div class="agd-media">
+          <Picture src={img(dest.imagen)} alt={dest.alt} formats={['avif', 'webp']} widths={[480, 938]} sizes="(max-width: 1024px) 92vw, 460px" class="agd-img" loading="eager" />
+        </div>
+        <div class="agd-body">
+          <Chip cat="cine" label="Estreno en el Cine Domo" />
+          <p class="agd-t">{dest.titulo}</p>
+          <p class="agd-f"><Icon name="cal" size="18" />{dest.funciones.length} funciones esta semana · desde las {dest.funciones[0][1]}</p>
+          <span class="agd-cta">Ver sus funciones<Icon name="arrow" size="18" /></span>
+        </div>
+      </a>
+    </PageHero>
+
+    <section class="agp mk-seccion" id="programacion" aria-labelledby="agp-t" data-agenda>
+      <div class="mk-w">
+        <div class="el-head">
+          <div class="el-head-txt">
+            <p class="t-eyebrow">Programación</p>
+            <h2 class="t-h2" id="agp-t">Esta semana en Maloka.</h2>
+            <PorValidar texto="Contenido de ejemplo" />
+          </div>
+          <p class="agp-hor"><Icon name="clock" size="20" /><span>L–V {site.horarios.semana.texto} · Fines de semana y festivos {site.horarios.finde.texto}</span></p>
+        </div>
+
+        <div class="agp-dias" role="group" aria-label="Elegir día" data-el="Filtro por fecha · Botones de día">
+          <button type="button" class="agp-dia agp-dia--todo" aria-pressed="true" data-dia="todo"><b>Toda</b><span>la semana</span></button>
+          {data.dias.map((d) => (
+            <button type="button" class="agp-dia" aria-pressed="false" data-dia={d.id} aria-label={`${d.dia} ${Number(d.num)} de ${d.mes === 'oct' ? 'octubre' : 'noviembre'}${d.festivo ? ', festivo' : ''}`}>
+              <span>{d.dia}</span><b class="t-num">{d.num}</b>{d.festivo && <small>Festivo</small>}
+            </button>
+          ))}
+        </div>
+
+        <div class="agp-cats" role="group" aria-label="Filtrar por tipo" data-el="Filtro de taxonomía · Botones tonal">
+          {data.categorias.map((c, i) => <button type="button" class="btn btn--tonal btn--sm" aria-pressed={i === 0 ? 'true' : 'false'} data-cat={c.id}>{c.label}</button>)}
+        </div>
+        <p class="agp-estado" aria-live="polite" data-estado>{data.items.length} eventos</p>
+
+        <ul class="agp-grid" data-el="Loop Grid · 3 / 2 / 1 col · Plantilla «Evento»">
+          {data.items.map((ev) => <li><AgEvento ev={ev} /></li>)}
+        </ul>
+        <div class="agp-vacio" hidden data-vacio>
+          <Icon name="cal" size="28" />
+          <p><b>No hay eventos con estos filtros.</b> Prueba otro día o mira toda la semana.</p>
+          <button type="button" class="btn btn--secundario btn--sm" data-limpiar>Ver toda la semana</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="agg mk-seccion" aria-labelledby="agg-t">
+      <div class="mk-w">
+        <div class="agg-in" data-el="Contenedor · Fondo Violeta 50 · Radio 28 · flex fila">
+          <span class="agg-ic"><Icon name="users" size="28" /></span>
+          <div class="agg-txt">
+            <h2 class="t-h3" id="agg-t">¿Vienes con tu colegio, empresa o para celebrar?</h2>
+            <p>Organizamos la visita y las actividades para tu grupo.</p>
+          </div>
+          <Button href={url('v7/#grupos')} variant="primario" icon="arrow">Ven en grupo</Button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>
+
+<style>
+  .agd { display: flex; flex-direction: column; border-radius: var(--mk-r-28); overflow: hidden; background: var(--mk-oscuro-superficie); border: 1px solid var(--mk-oscuro-linea); color: #fff; transition: box-shadow var(--mk-t) var(--mk-ease); }
+  .agd:hover { box-shadow: var(--mk-sombra-3); }
+  .agd-media { position: relative; aspect-ratio: 938 / 398; }
+  .agd-media :global(picture), .agd-media :global(.agd-img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .agd-body { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 24px; }
+  .agd-t { font-size: var(--mk-h3); font-weight: 700; line-height: 1.2; }
+  .agd-f { display: flex; gap: 8px; align-items: center; font-size: var(--mk-small); color: var(--mk-oscuro-texto); }
+  .agd-f :global(.mk-ic) { color: var(--mk-violeta-300); }
+  .agd-cta { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; margin-top: 4px; }
+
+  .agp-hor { display: flex; gap: 8px; align-items: center; font-size: var(--mk-small); color: var(--mk-texto-2); max-width: 360px; }
+  .agp-hor :global(.mk-ic) { color: var(--mk-violeta-700); flex: none; }
+  .agp-dias { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 8px; margin-bottom: 16px; }
+  .agp-dia { position: relative; display: grid; justify-items: center; align-content: center; gap: 2px; min-height: 76px; padding: 8px 4px; border: 1px solid var(--mk-borde); border-radius: var(--mk-r-20); background: #fff; color: var(--mk-texto); cursor: pointer; transition: background-color var(--mk-t-rapida), border-color var(--mk-t-rapida); }
+  .agp-dia span { font-size: 13px; font-weight: 600; color: var(--mk-texto-2); }
+  .agp-dia b { font-size: 22px; font-weight: 700; line-height: 1.1; }
+  .agp-dia--todo b { font-size: 16px; }
+  .agp-dia small { font-size: 11px; font-weight: 700; color: var(--mk-violeta-500); }
+  .agp-dia:hover { border-color: var(--mk-violeta-300); background: var(--mk-violeta-50); }
+  .agp-dia[aria-pressed="true"] { background: var(--mk-violeta-700); border-color: var(--mk-violeta-700); color: #fff; }
+  .agp-dia[aria-pressed="true"] span, .agp-dia[aria-pressed="true"] small { color: var(--mk-violeta-100); }
+  .agp-cats { display: flex; flex-wrap: wrap; gap: 8px; }
+  .agp-estado { margin: 16px 0 24px; font-size: var(--mk-small); font-weight: 600; color: var(--mk-texto-2); }
+  .agp-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+  .agp-vacio { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 48px 24px; border: 1px dashed var(--mk-neutro-300); border-radius: var(--mk-r-28); text-align: center; color: var(--mk-texto-2); }
+  .agp-vacio :global(.mk-ic) { color: var(--mk-violeta-700); }
+  .agp-vacio b { color: var(--mk-texto); }
+
+  .agg-in { display: flex; align-items: center; gap: 24px 32px; padding: 40px; border-radius: var(--mk-r-28); background: var(--mk-fondo-tonal); }
+  .agg-ic { width: 72px; height: 72px; flex: none; border-radius: 22px; display: grid; place-items: center; background: #fff; color: var(--mk-violeta-700); }
+  .agg-txt { flex: 1; display: grid; gap: 6px; }
+  .agg-txt p { color: var(--mk-texto-2); }
+
+  @media (max-width: 1024px) {
+    .agp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .agp-dias { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .agg-in { flex-wrap: wrap; }
+  }
+  @media (max-width: 767px) {
+    .agp-dias { display: flex; overflow-x: auto; scrollbar-width: none; margin-inline: calc(-1 * var(--mk-margen)); padding-inline: var(--mk-margen); }
+    .agp-dia { flex: 0 0 68px; }
+    .agp-dia--todo { flex-basis: 92px; }
+    .agp-cats { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: calc(-1 * var(--mk-margen)); padding-inline: var(--mk-margen); }
+    .agp-cats .btn { flex: none; }
+    .agp-grid { grid-template-columns: 1fr; }
+    .agg-in { flex-direction: column; align-items: flex-start; padding: 28px 20px; }
+    .agg-in :global(.btn) { width: 100%; }
+  }
+</style>
+
+<script>
+  /* Filtros combinados: día + tipo. Resalta la función del día elegido y mueve la fecha de la tarjeta a ese día. */
+  const root = document.querySelector('[data-agenda]');
+  const dias = [...root.querySelectorAll('[data-dia]')].filter((b) => b.tagName === 'BUTTON');
+  const cats = [...root.querySelectorAll('button[data-cat]')];
+  const eventos = [...root.querySelectorAll('[data-evento]')];
+  const estado = root.querySelector('[data-estado]');
+  const vacio = root.querySelector('[data-vacio]');
+  let dia = 'todo', cat = 'todo';
+  function aplicar() {
+    dias.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.dia === dia)));
+    cats.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cat === cat)));
+    let n = 0;
+    eventos.forEach((ev) => {
+      const ok = (dia === 'todo' || ev.dataset.dias.split(' ').includes(dia)) && (cat === 'todo' || ev.dataset.cat === cat);
+      ev.parentElement.hidden = !ok;
+      if (ok) n++;
+      ev.querySelectorAll('li[data-dia]').forEach((li) => li.classList.toggle('is-dia', li.dataset.dia === dia));
+      const f = dia === 'todo' ? ev.dataset.dias.split(' ')[0] : dia;
+      const [, mes, d] = f.split('-');
+      ev.querySelector('[data-fecha] b').textContent = d;
+      ev.querySelector('[data-fecha] span').textContent = mes === '10' ? 'oct' : 'nov';
+    });
+    vacio.hidden = n > 0;
+    estado.textContent = n ? `${n} ${n === 1 ? 'evento' : 'eventos'}` : 'Sin eventos';
+  }
+  dias.forEach((b) => b.addEventListener('click', () => { dia = b.dataset.dia; aplicar(); }));
+  cats.forEach((b) => b.addEventListener('click', () => { cat = b.dataset.cat; aplicar(); }));
+  /* El destacado lleva a la programación filtrada por Cine Domo */
+  document.querySelector('[data-agd]').addEventListener('click', () => { dia = 'todo'; cat = 'cine'; aplicar(); });
+  root.querySelector('[data-limpiar]').addEventListener('click', () => { dia = 'todo'; cat = 'todo'; aplicar(); dias[0].focus(); });
+</script>

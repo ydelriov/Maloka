@@ -1,6 +1,7 @@
 ---
 /* Horarios y tarifas: lo más importante de la página.
-   1. Horarios (datos reales) · 2. Productos con lo que incluyen y la tabla de precios por público (por validar)
+   1. Horarios (datos reales) · 2. Productos con lo que incluyen y la tabla de precios por público (por validar),
+   con una sola compra al final para comparar antes de comprar
    · 3. Películas del Cine Domo en modo oscuro · 4. Condiciones de compra.
    En Elementor: grid de 3 Icon Box tonales; Loop Grid de productos (CPT «Producto» con campos de precio);
    contenedor oscuro con Icon List para las películas. */
@@ -13,6 +14,7 @@ import Icon from '../ui/Icon.astro';
 import PorValidar from '../ui/PorValidar.astro';
 import EstadoHoy from '../ui/EstadoHoy.astro';
 import { img } from '../../lib/images.js';
+import { url } from '../../lib/url.js';
 const prod = data.productos;
 ---
 <section class="vho mk-seccion" id="horarios" aria-labelledby="vho-t">
@@ -52,7 +54,6 @@ const prod = data.productos;
           <p class="t-muted">{prod.texto}</p>
           <PorValidar texto="Productos y precios por validar" />
         </div>
-        <Button href={site.entradas.url} external variant="primario" icon="ext">Comprar en Tuboleta</Button>
       </div>
       <ul class="vho-grid" data-el="Loop Grid · 4 / 2 / 1 col · Plantilla «Producto»">
         {prod.items.map((p) => (
@@ -70,11 +71,14 @@ const prod = data.productos;
               <dl class="vp-precios">
                 {prod.publicos.map((pub) => <div><dt>{pub}</dt><dd class="t-num">$ XX.XXX</dd></div>)}
               </dl>
-              <Button href={site.entradas.url} external variant={p.destacado ? 'primario' : 'secundario'} size="sm" block>Comprar<span class="sr-only"> {p.titulo}</span></Button>
             </div>
           </li>
         ))}
       </ul>
+      <div class="vho-compra" data-el="Contenedor flex fila · Texto + Botón primario (única compra de la sección)">
+        <p><b>¿Ya elegiste?</b> Compra en línea: eliges la entrada, el día y, si quieres Cine Domo, la función.</p>
+        <Button href={site.entradas.url} external variant="primario" size="lg" icon="ext" class="btn--movil-bloque">{site.entradas.texto}</Button>
+      </div>
     </div>
 
     <!-- Cine Domo -->
@@ -83,7 +87,7 @@ const prod = data.productos;
         <Chip cat="cine" label="Cine Domo" />
         <h3 class="t-h2">{data.cartelera.titulo}</h3>
         <p>{data.cartelera.texto}</p>
-        <Button href={site.entradas.url} external variant="invertido" icon="ext">Ver funciones en Tuboleta</Button>
+        <Button href={url('agendate/#programacion')} variant="invertido" icon="arrow">Ver funciones de la semana</Button>
         <PorValidar texto="Cartelera por validar" />
       </div>
       <ul class="vho-pelis" data-el="Loop Grid (CPT «Película») · lista">
@@ -120,11 +124,14 @@ const prod = data.productos;
   .vp-incluye { display: grid; gap: 6px; font-size: var(--mk-small); font-weight: 600; }
   .vp-incluye li { display: flex; gap: 8px; align-items: flex-start; }
   .vp-incluye :global(.mk-ic) { color: var(--mk-exito); margin-top: 1px; }
-  .vp-precios { display: grid; gap: 0; margin: 4px 0 8px; margin-top: auto; border-top: 1px solid var(--mk-borde); }
+  .vp-precios { display: grid; gap: 0; margin-top: auto; border-top: 1px solid var(--mk-borde); }
   .vp-precios div { display: flex; justify-content: space-between; gap: 8px; padding-block: 8px; border-bottom: 1px solid var(--mk-borde); font-size: var(--mk-small); }
   .vp-precios dt { color: var(--mk-texto-2); }
   .vp-precios dd { margin: 0; font-weight: 700; color: var(--mk-texto-2); }
 
+  .vho-compra { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-top: 24px; padding: 24px 28px; border-radius: var(--mk-r-28); background: var(--mk-fondo-tonal); }
+  .vho-compra p { flex: 1 1 320px; color: var(--mk-texto-2); }
+  .vho-compra b { color: var(--mk-texto); }
   .vho-domo { display: grid; grid-template-columns: 5fr 7fr; gap: 40px 64px; align-items: center; margin-top: 56px; padding: 48px; border-radius: var(--mk-r-28); background: var(--mk-oscuro); color: #fff; }
   .vho-domo-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
   .vho-domo-txt p { color: var(--mk-oscuro-texto); }

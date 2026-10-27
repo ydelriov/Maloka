@@ -7,8 +7,9 @@ import data from '../../data/crea.json';
 import Button from '../ui/Button.astro';
 import Icon from '../ui/Icon.astro';
 import { img } from '../../lib/images.js';
+import { ruta } from '../../lib/rutas.js';
 ---
-<section class="v7c mk-seccion" aria-labelledby="v7c-t">
+<section class="v7c mk-seccion" id="crea" aria-labelledby="v7c-t">
   <div class="mk-w">
     <div class="v7c-head" data-el="Contenedor grid · Texto + Imagen (radio 28)">
       <div class="v7c-txt">
@@ -24,7 +25,7 @@ import { img } from '../../lib/images.js';
     <ul class="v7c-grid" data-el="Contenedor grid · 5 / 3 / 1 col · Icon Box con enlace">
       {data.items.map((it, i) => (
         <li>
-          <a href="#" class="v7c-i">
+          <a href={ruta(it.titulo)} class="v7c-i">
             <span class="v7c-n t-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
             <span class="v7c-ib"><Icon name={it.icono} size="28" /></span>
             <b>{it.titulo}</b>

@@ -1,0 +1,85 @@
+{
+  "nota": "Contenido de ejemplo: películas que se han presentado en el Cine Domo y actividades como las que programa Maloka. Fechas de la semana del 27 de octubre al 2 de noviembre de 2026.",
+  "dias": [
+    { "id": "2026-10-27", "dia": "mar", "num": "27", "mes": "oct" },
+    { "id": "2026-10-28", "dia": "mié", "num": "28", "mes": "oct" },
+    { "id": "2026-10-29", "dia": "jue", "num": "29", "mes": "oct" },
+    { "id": "2026-10-30", "dia": "vie", "num": "30", "mes": "oct" },
+    { "id": "2026-10-31", "dia": "sáb", "num": "31", "mes": "oct" },
+    { "id": "2026-11-01", "dia": "dom", "num": "01", "mes": "nov" },
+    { "id": "2026-11-02", "dia": "lun", "num": "02", "mes": "nov", "festivo": true }
+  ],
+  "categorias": [
+    { "id": "todo", "label": "Todo" },
+    { "id": "cine", "label": "Cine Domo" },
+    { "id": "taller", "label": "Talleres" },
+    { "id": "experiencia", "label": "Experiencias" },
+    { "id": "familiar", "label": "En familia" }
+  ],
+  "destacado": "esfera",
+  "items": [
+    {
+      "id": "esfera", "titulo": "Esfera: un instante de vida", "categoria": "cine",
+      "imagen": "campana-astronauta.jpg", "alt": "Pieza gráfica con una astronauta rodeada de mariposas y plantas",
+      "descripcion": "El estreno del Cine Domo: un viaje por la vida en la Tierra proyectado en toda la cúpula.",
+      "lugar": "Cine Domo", "costo": "Entrada al Cine Domo", "compra": true,
+      "funciones": [["2026-10-27", "2:00 p. m."], ["2026-10-29", "2:00 p. m."], ["2026-10-31", "2:00 p. m."], ["2026-11-01", "4:00 p. m."], ["2026-11-02", "2:00 p. m."]]
+    },
+    {
+      "id": "sistema-solar", "titulo": "El increíble sistema solar", "categoria": "cine",
+      "imagen": "cine-domo-cupula.jpg", "alt": "Planeta proyectado en la cúpula del Cine Domo",
+      "descripcion": "Recorre los planetas, sus lunas y el Sol sin salir de la sala.",
+      "lugar": "Cine Domo", "costo": "Entrada al Cine Domo", "compra": true,
+      "funciones": [["2026-10-27", "12:00 m."], ["2026-10-28", "12:00 m."], ["2026-10-30", "12:00 m."], ["2026-10-31", "11:00 a. m."], ["2026-11-01", "12:00 m."]]
+    },
+    {
+      "id": "migrantes", "titulo": "Migrantes climáticos", "categoria": "cine",
+      "imagen": "cine-domo-acceso.jpg", "alt": "Acceso al Cine Domo de Maloka",
+      "descripcion": "Las especies que se mueven por el planeta cuando cambia el clima.",
+      "lugar": "Cine Domo", "costo": "Entrada al Cine Domo", "compra": true,
+      "funciones": [["2026-10-28", "11:00 a. m."], ["2026-10-30", "3:00 p. m."], ["2026-11-01", "10:00 a. m."]]
+    },
+    {
+      "id": "tunka", "titulo": "Tunka", "categoria": "cine",
+      "imagen": "colibri-paramo.jpg", "alt": "Colibrí posado en una planta de páramo",
+      "descripcion": "Una función del Cine Domo para toda la familia.",
+      "lugar": "Cine Domo", "costo": "Entrada al Cine Domo", "compra": true,
+      "funciones": [["2026-10-29", "3:30 p. m."], ["2026-10-31", "4:00 p. m."], ["2026-11-02", "11:00 a. m."]]
+    },
+    {
+      "id": "quimica", "titulo": "Química de la cocina", "categoria": "taller",
+      "imagen": "laboratorio-familia.jpg", "alt": "Mediadora de Maloka con una familia en el laboratorio",
+      "descripcion": "Experimenta con lo que hay en tu cocina y descubre qué pasa.",
+      "lugar": "Laboratorio", "costo": "Costo adicional",
+      "funciones": [["2026-10-29", "11:30 a. m."], ["2026-10-31", "11:30 a. m."], ["2026-11-01", "11:30 a. m."]]
+    },
+    {
+      "id": "microscopio", "titulo": "Lo que no se ve a simple vista", "categoria": "taller",
+      "imagen": "laboratorio-microscopio.jpg", "alt": "Niñas de colegio observando por un microscopio",
+      "descripcion": "Prepara tus muestras y míralas al microscopio con un mediador.",
+      "lugar": "Laboratorio", "costo": "Costo adicional",
+      "funciones": [["2026-10-27", "3:00 p. m."], ["2026-10-30", "11:30 a. m."], ["2026-11-02", "3:00 p. m."]]
+    },
+    {
+      "id": "ilusiones", "titulo": "Ilusiones que engañan al cerebro", "categoria": "experiencia",
+      "imagen": "sala-alta-tension.jpg", "alt": "Público frente a la jaula de Faraday en la sala Alta Tensión",
+      "descripcion": "Un recorrido guiado para entender cómo ve tu cerebro.",
+      "lugar": "Salas interactivas", "costo": "Incluido con la entrada",
+      "funciones": [["2026-10-28", "2:00 p. m."], ["2026-10-30", "2:00 p. m."], ["2026-11-01", "2:00 p. m."]]
+    },
+    {
+      "id": "pequenos", "titulo": "Pequeños exploradores", "categoria": "familiar",
+      "imagen": "sala-pequenos-exploradores.jpg", "alt": "Sala Pequeños Exploradores con mesas bajas y colores",
+      "descripcion": "Juegos sensoriales para descubrir en familia con los más pequeños.",
+      "lugar": "Salas interactivas", "costo": "Incluido con la entrada",
+      "funciones": [["2026-10-31", "10:30 a. m."], ["2026-11-01", "10:30 a. m."], ["2026-11-02", "10:30 a. m."]]
+    },
+    {
+      "id": "inventores", "titulo": "Taller de inventores", "categoria": "familiar",
+      "imagen": "sala-inventores.jpg", "alt": "Sala Inventores de Maloka con módulos interactivos",
+      "descripcion": "Construye, prueba y mejora tu propio invento con piezas de la sala.",
+      "lugar": "Sala Inventores", "costo": "Incluido con la entrada",
+      "funciones": [["2026-10-28", "3:30 p. m."], ["2026-10-31", "3:00 p. m."]]
+    }
+  ]
+}

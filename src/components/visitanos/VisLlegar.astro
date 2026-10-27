@@ -1,50 +1,152 @@
 ---
-/* Cómo llegar: dirección real, enlace a Google Maps y foto del edificio. Las indicaciones por modo de transporte
-   están por validar. En Elementor: grid 2 columnas; Botón + Icon List; Imagen con radio 28 (o widget Google Maps). */
-import { Picture } from 'astro:assets';
+/* Cómo llegar: dirección y accesos rápidos arriba; abajo, pestañas por medio de transporte
+   (TransMilenio, SITP, Carro y moto con tarifas del parqueadero, Bicicleta). Información de maloka.org/como-llegar.
+   En Elementor: grid 2 columnas (texto | widget Google Maps) + widget Pestañas (anidado) con Icon List y una tabla en cada pestaña. */
 import data from '../../data/visitanos.json';
 import site from '../../data/site.json';
 import Button from '../ui/Button.astro';
 import Icon from '../ui/Icon.astro';
 import PorValidar from '../ui/PorValidar.astro';
-import { img } from '../../lib/images.js';
 const l = data.llegar;
 ---
 <section class="vll mk-seccion" id="llegar" aria-labelledby="vll-t">
-  <div class="mk-w vll-in" data-el="Contenedor grid · 5fr 7fr / 1 col">
-    <div class="vll-txt">
-      <p class="t-eyebrow">Cómo llegar</p>
-      <h2 class="t-h2" id="vll-t">{l.titulo}</h2>
-      <p class="vll-dir"><Icon name="pin" /><span><b>{site.direccion}</b>{site.descripcion}</span></p>
-      <div class="vll-ctas">
-        <Button href={l.mapa} external variant="primario" icon="ext">Abrir en Google Maps</Button>
-        <Button href={`tel:${site.telefonoHref}`} variant="secundario" iconStart="phone">{site.telefono}</Button>
+  <div class="mk-w">
+    <div class="vll-top" data-el="Contenedor grid · 5fr 7fr / 1 col">
+      <div class="vll-txt">
+        <p class="t-eyebrow">Cómo llegar</p>
+        <h2 class="t-h2" id="vll-t">{l.titulo}</h2>
+        <p class="t-lead">{l.texto}</p>
+        <ul class="vll-datos" data-el="Icon List · dirección, estación, parqueadero">
+          <li><span class="mk-ib"><Icon name="pin" /></span><span><b>{site.direccion}</b>Dirección</span></li>
+          <li><span class="mk-ib"><Icon name="compass" /></span><span><b>Estación El Tiempo – Maloka</b>TransMilenio, Calle 26</span></li>
+          <li><span class="mk-ib"><Icon name="building" /></span><span><b>Parqueadero con entrada por la Calle 25</b>Carros, motos y bicicletas</span></li>
+        </ul>
+        <div class="vll-ctas">
+          <Button href={l.mapa} external variant="primario" icon="ext">Abrir en Google Maps</Button>
+          <Button href={`tel:${site.telefonoHref}`} variant="secundario" iconStart="phone">{site.telefono}</Button>
+        </div>
       </div>
-      <ul class="vll-modos" data-el="Icon List · modos de transporte">
-        {l.modos.map((m) => <li><span class="mk-ib"><Icon name={m.icono} /></span><span><b>{m.titulo}</b><span>Indicaciones por validar</span></span></li>)}
-      </ul>
-      <PorValidar texto="Rutas y parqueadero por validar" />
+      <div class="vll-mapa" data-el="Widget Google Maps · dirección de Maloka · Radio 28">
+        <iframe src={l.embed} title="Mapa de Google con la ubicación de Maloka" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
-    <div class="vll-foto">
-      <Picture src={img('panoramica-maloka.jpg')} alt="Panorámica del edificio de Maloka con su domo" formats={['avif', 'webp']} widths={[640, 1024, 1433]} sizes="(max-width: 1024px) 92vw, 720px" class="vll-img" loading="lazy" />
+
+    <div class="vll-tabs" data-tabs data-el="Pestañas (anidado) · una por medio de transporte">
+      <div class="vll-tablist" role="tablist" aria-label="Cómo llegar según tu medio de transporte">
+        {l.modos.map((m, i) => (
+          <button type="button" role="tab" id={`tab-${m.id}`} aria-controls={`pan-${m.id}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? undefined : '-1'} class="vll-tab">
+            <Icon name={m.icono} size="20" />{m.label}
+          </button>
+        ))}
+      </div>
+      {l.modos.map((m, i) => (
+        <div class="vll-panel" role="tabpanel" id={`pan-${m.id}`} aria-labelledby={`tab-${m.id}`} hidden={i !== 0} tabindex="0">
+          <h3 class="t-h4">{m.titulo}</h3>
+          <div class="vll-panel-grid">
+            {m.pasos && (
+              <ol class="vll-pasos">
+                {m.pasos.map((p, n) => <li><span class="vll-n t-num" aria-hidden="true">{n + 1}</span><span>{p}</span></li>)}
+              </ol>
+            )}
+            {m.paraderos && (
+              <div class="vll-bloque">
+                <p class="vll-sub">Paraderos cercanos</p>
+                <ul class="vll-paraderos">{m.paraderos.map((p) => <li><Icon name="pin" size="20" />{p}</li>)}</ul>
+              </div>
+            )}
+            {m.rutas && (
+              <div class="vll-bloque">
+                <p class="vll-sub">{m.rutasTitulo}</p>
+                <ul class="vll-rutas">{m.rutas.map((r) => <li>{r}</li>)}</ul>
+              </div>
+            )}
+            {m.tarifas && (
+              <div class="vll-bloque">
+                <p class="vll-sub">Tarifas del parqueadero</p>
+                <table class="vll-tabla">
+                  <thead><tr><th scope="col">Vehículo</th><th scope="col">Por minuto</th><th scope="col">Tarifa plena</th></tr></thead>
+                  <tbody>{m.tarifas.map((t) => <tr><th scope="row">{t.tipo}</th><td class="t-num">{t.minuto.replace(' por minuto', '')}</td><td class="t-num">{t.plena.replace(' tarifa plena', '')}</td></tr>)}</tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+      <p class="vll-fuente"><Icon name="help" size="18" /><span>{l.fuente}</span><PorValidar texto="Confirmar vigencia" /></p>
     </div>
   </div>
 </section>
 
 <style>
-  .vll-in { display: grid; grid-template-columns: 5fr 7fr; gap: 40px 64px; align-items: center; }
-  .vll-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
-  .vll-dir { display: flex; gap: 12px; align-items: flex-start; }
-  .vll-dir :global(.mk-ic) { color: var(--mk-violeta-700); margin-top: 2px; }
-  .vll-dir b { display: block; font-size: var(--mk-h5); font-weight: 700; }
-  .vll-dir span span, .vll-dir span { color: var(--mk-texto-2); }
+  .vll-top { display: grid; grid-template-columns: 5fr 7fr; gap: 40px 64px; align-items: center; }
+  .vll-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .vll-datos { display: grid; gap: 14px; width: 100%; margin-block: 4px 8px; }
+  .vll-datos li { display: flex; gap: 14px; align-items: center; font-size: var(--mk-small); color: var(--mk-texto-2); }
+  .vll-datos b { display: block; font-size: 16px; font-weight: 600; color: var(--mk-texto); }
   .vll-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-  .vll-modos { display: grid; gap: 12px; width: 100%; margin-top: 8px; }
-  .vll-modos li { display: flex; gap: 14px; align-items: center; }
-  .vll-modos b { display: block; font-weight: 600; }
-  .vll-modos li > span:last-child span { font-size: var(--mk-small); color: var(--mk-texto-2); }
-  .vll-foto { position: relative; aspect-ratio: 4 / 3; border-radius: var(--mk-r-28); overflow: hidden; background: var(--mk-neutro-100); }
-  .vll-foto :global(picture), .vll-foto :global(.vll-img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%; }
-  @media (max-width: 1024px) { .vll-in { grid-template-columns: 1fr; } .vll-foto { aspect-ratio: 16 / 9; } }
-  @media (max-width: 767px) { .vll-ctas, .vll-ctas :global(.btn) { width: 100%; } .vll-foto { border-radius: var(--mk-r-20); } }
+  .vll-mapa { position: relative; aspect-ratio: 4 / 3; border-radius: var(--mk-r-28); overflow: hidden; background: var(--mk-neutro-100); border: 1px solid var(--mk-borde); }
+  .vll-mapa iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  .vll-tabs { margin-top: 56px; border: 1px solid var(--mk-borde); border-radius: var(--mk-r-28); overflow: hidden; }
+  .vll-tablist { display: flex; gap: 8px; padding: 12px; background: var(--mk-fondo-alt); border-bottom: 1px solid var(--mk-borde); overflow-x: auto; scrollbar-width: none; }
+  .vll-tab { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 20px; border: 0; border-radius: var(--mk-r-pill); background: transparent; color: var(--mk-texto-2); font-size: 15px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
+  .vll-tab:hover { background: var(--mk-violeta-50); color: var(--mk-violeta-700); }
+  .vll-tab[aria-selected="true"] { background: var(--mk-violeta-700); color: #fff; }
+  .vll-panel { padding: 32px 40px 36px; }
+  .vll-panel:focus-visible { outline-offset: -3px; }
+  .vll-panel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px 48px; margin-top: 20px; align-items: start; }
+  .vll-pasos { display: grid; gap: 14px; }
+  .vll-pasos li { display: flex; gap: 14px; align-items: flex-start; }
+  .vll-n { width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--mk-violeta-50); color: var(--mk-violeta-700); font-size: 14px; font-weight: 700; }
+  .vll-pasos li > span:last-child { padding-top: 4px; }
+  .vll-bloque { display: grid; gap: 12px; }
+  .vll-sub { font-size: var(--mk-small); font-weight: 700; color: var(--mk-texto); }
+  .vll-paraderos { display: grid; gap: 10px; }
+  .vll-paraderos li { display: flex; gap: 10px; align-items: flex-start; color: var(--mk-texto-2); }
+  .vll-paraderos :global(.mk-ic) { color: var(--mk-violeta-700); flex: none; margin-top: 2px; }
+  .vll-rutas { display: flex; flex-wrap: wrap; gap: 8px; }
+  .vll-rutas li { display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: var(--mk-r-12); background: var(--mk-fondo-tonal); color: var(--mk-violeta-800); font-size: 14px; font-weight: 700; }
+  .vll-tabla { width: 100%; border-collapse: collapse; font-size: var(--mk-small); }
+  .vll-tabla th, .vll-tabla td { text-align: left; padding: 12px 8px; border-bottom: 1px solid var(--mk-borde); }
+  .vll-tabla thead th { font-weight: 600; color: var(--mk-texto-2); }
+  .vll-tabla tbody th { font-weight: 700; }
+  .vll-tabla td { font-weight: 600; color: var(--mk-violeta-700); }
+  .vll-fuente { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; padding: 16px 40px; border-top: 1px solid var(--mk-borde); font-size: 13px; color: var(--mk-texto-2); }
+  .vll-fuente :global(.mk-ic) { color: var(--mk-violeta-700); }
+
+  @media (max-width: 1024px) { .vll-top { grid-template-columns: 1fr; } .vll-mapa { aspect-ratio: 16 / 10; } }
+  @media (max-width: 767px) {
+    .vll-ctas, .vll-ctas :global(.btn) { width: 100%; }
+    .vll-mapa, .vll-tabs { border-radius: var(--mk-r-20); }
+    .vll-mapa { aspect-ratio: 1 / 1; }
+    .vll-tabs { margin-top: 40px; }
+    .vll-panel { padding: 24px 20px 28px; }
+    .vll-panel-grid { grid-template-columns: 1fr; }
+    .vll-fuente { padding: 16px 20px; }
+  }
 </style>
+
+<script>
+  /* Pestañas accesibles: clic, flechas izquierda/derecha, Inicio y Fin. */
+  document.querySelectorAll('[data-tabs]').forEach((root) => {
+    const tabs = [...root.querySelectorAll('[role="tab"]')];
+    const elegir = (t, foco = false) => {
+      tabs.forEach((x) => {
+        const on = x === t;
+        x.setAttribute('aria-selected', String(on));
+        on ? x.removeAttribute('tabindex') : x.setAttribute('tabindex', '-1');
+        document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+      });
+      if (foco) t.focus();
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => elegir(t));
+      t.addEventListener('keydown', (e) => {
+        const n = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+        if (n === undefined) return;
+        e.preventDefault();
+        elegir(tabs[(n + tabs.length) % tabs.length], true);
+      });
+    });
+  });
+</script>

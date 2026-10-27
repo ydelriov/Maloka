@@ -9,6 +9,8 @@ import Chip from '../ui/Chip.astro';
 import Icon from '../ui/Icon.astro';
 import PorValidar from '../ui/PorValidar.astro';
 import { img } from '../../lib/images.js';
+import { url } from '../../lib/url.js';
+import { ruta } from '../../lib/rutas.js';
 const domo = data.items.find((i) => i.id === 'domo');
 const resto = data.items.filter((i) => i.id !== 'domo');
 ---
@@ -19,11 +21,11 @@ const resto = data.items.filter((i) => i.id !== 'domo');
         <p class="t-eyebrow">{data.eyebrow}</p>
         <h2 class="t-h2" id="v7v-t">{data.titulo}</h2>
       </div>
-      <a class="mk-enlace" href="#">Ver todas las experiencias<Icon name="arrow" size="18" /></a>
+      <a class="mk-enlace" href={ruta('Experiencias')}>Ver todas las experiencias<Icon name="arrow" size="18" /></a>
     </div>
 
     <div class="v7v-grid">
-      <a class="v7v-domo mk-oscuro" href="#" data-el="Contenedor-enlace · Fondo oscuro #140A1F · Radio 28">
+      <a class="v7v-domo mk-oscuro" href={url('agendate/#programacion')} data-el="Contenedor-enlace · Fondo oscuro #140A1F · Radio 28">
         <div class="v7v-domo-media">
           <Picture src={img(domo.imagen)} alt={domo.alt} formats={['avif', 'webp']} widths={[480, 750]} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 90vw, 620px" class="v7v-domo-img" loading="lazy" />
           <Chip cat="cine" label="Cine Domo" class="v7v-chip" />

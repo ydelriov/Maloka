@@ -96,7 +96,7 @@
   },
   "cartelera": {
     "titulo": "En el Cine Domo.",
-    "texto": "Películas que se han presentado en el Cine Domo. Revisa en Tuboleta las funciones de cada día.",
+    "texto": "Películas que se han presentado en el Cine Domo. Mira en la agenda las funciones de cada día.",
     "items": [
       {
         "titulo": "Esfera: un instante de vida"
@@ -118,22 +118,83 @@
   ],
   "llegar": {
     "titulo": "Cómo llegar.",
-    "texto": "Estamos en Bogotá, en la Carrera 68D #24A-51.",
+    "texto": "Estamos sobre la Calle 26, junto a la estación El Tiempo – Maloka de TransMilenio.",
     "mapa": "https://www.google.com/maps/search/?api=1&query=Maloka%2C%20Carrera%2068D%20%2324A-51%2C%20Bogot%C3%A1",
+    "fuente": "Información de maloka.org/como-llegar. Las rutas cambian: confírmalas en la app de TransMilenio el día de tu visita.",
     "modos": [
       {
-        "titulo": "En transporte público",
-        "icono": "pin"
+        "id": "transmilenio",
+        "label": "TransMilenio",
+        "icono": "pin",
+        "titulo": "Estación El Tiempo – Maloka",
+        "pasos": [
+          "Toma una ruta troncal por la Calle 26 hacia la zona K.",
+          "Bájate en la estación El Tiempo – Maloka.",
+          "Sal de la estación y camina hacia el suroccidente hasta Maloka."
+        ],
+        "rutasTitulo": "Rutas troncales",
+        "rutas": [
+          "K16",
+          "K23",
+          "K43",
+          "K54",
+          "K86"
+        ]
       },
       {
-        "titulo": "En bicicleta",
-        "icono": "compass"
+        "id": "sitp",
+        "label": "SITP",
+        "icono": "users",
+        "titulo": "Rutas zonales del SITP",
+        "paraderos": [
+          "Calle 26 con Carrera 68D – Estación El Tiempo – Maloka",
+          "Av. La Esperanza (Calle 24) con Carrera 69 – Maloka"
+        ],
+        "rutasTitulo": "Rutas",
+        "rutas": [
+          "291 · Terminal Norte – Makro – Tierra Buena",
+          "C27 · La Estancia – Normandía",
+          "C115",
+          "C135",
+          "603B",
+          "Z8"
+        ]
       },
       {
-        "titulo": "En carro",
-        "icono": "building"
+        "id": "carro",
+        "label": "Carro y moto",
+        "icono": "building",
+        "titulo": "Parqueadero de Maloka",
+        "pasos": [
+          "El parqueadero está al respaldo del centro interactivo.",
+          "La entrada es por la Calle 25.",
+          "Tiene espacios para carros, motos y bicicletas."
+        ],
+        "tarifas": [
+          {
+            "tipo": "Carro",
+            "minuto": "$130 por minuto",
+            "plena": "$27.000 tarifa plena hasta 12 horas"
+          },
+          {
+            "tipo": "Moto",
+            "minuto": "$90 por minuto",
+            "plena": "$15.000 tarifa plena hasta 12 horas"
+          }
+        ]
+      },
+      {
+        "id": "bici",
+        "label": "Bicicleta",
+        "icono": "compass",
+        "titulo": "Llega en bicicleta",
+        "pasos": [
+          "El parqueadero de Maloka tiene espacios para bicicletas.",
+          "Entra por la Calle 25, al respaldo del centro interactivo."
+        ]
       }
-    ]
+    ],
+    "embed": "https://www.google.com/maps?q=Maloka%2C%20Carrera%2068D%20%2324A-51%2C%20Bogot%C3%A1&output=embed"
   },
   "servicios": [
     {

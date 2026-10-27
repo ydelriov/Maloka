@@ -10,6 +10,9 @@ Design System de Claude Design para validar el diseño antes de llevarlo a WordP
 - **Visítanos** (`/visitanos`): horarios (reales), productos y tarifas por público (precios por validar), películas del
   Cine Domo, cómo llegar, servicios, accesibilidad, experiencias y preguntas frecuentes. Datos en `src/data/visitanos.json`;
   los enlaces del menú, el footer y Planea tu visita salen de `src/lib/rutas.js`.
+- **Agéndate** (`/agendate`): evento destacado, selector de día, filtros por tipo y tarjetas con sus funciones.
+  Contenido de ejemplo en `src/data/eventos.json`.
+- Todos los ítems del menú llevan a su página o, si aún no existe, a su sección en la home V7 (`src/lib/rutas.js`).
 - Variantes: `/v4` Editorial numerada · `/v5` Arcos del domo · `/v6` Panel de visita · `/elementor` lista para construir en WordPress + Elementor Pro
 - Guía de construcción en Elementor: `/elementor/guia` (fuente: `src/pages/elementor/guia.md`)
 - Prototipo anterior (home navy, Agéndate, Ven en grupo): `/legacy/`

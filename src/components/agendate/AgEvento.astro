@@ -1,0 +1,61 @@
+---
+/* Tarjeta de evento de la agenda: foto 4:3 con la próxima fecha y el chip, título, descripción, lugar y costo,
+   y las funciones de la semana. data-dias y data-cat alimentan los filtros.
+   En Elementor: Loop Item del CPT «Actividad» con un campo repetidor de funciones (fecha + hora). */
+import { Picture } from 'astro:assets';
+import site from '../../data/site.json';
+import data from '../../data/eventos.json';
+import Chip from '../ui/Chip.astro';
+import Icon from '../ui/Icon.astro';
+import Button from '../ui/Button.astro';
+import { img } from '../../lib/images.js';
+const { ev } = Astro.props;
+const dia = (id) => data.dias.find((d) => d.id === id);
+const primera = dia(ev.funciones[0][0]);
+---
+<article class="ag" data-evento data-cat={ev.categoria} data-dias={ev.funciones.map((f) => f[0]).join(' ')} aria-labelledby={`ag-${ev.id}`}>
+  <div class="ag-media">
+    <Picture src={img(ev.imagen)} alt={ev.alt} formats={['avif', 'webp']} widths={[360, 560]} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 45vw, 300px" class="ag-img" loading="lazy" />
+    <span class="ag-fecha" data-fecha><b class="t-num">{primera.num}</b><span>{primera.mes}</span></span>
+    <Chip cat={ev.categoria} label={ev.categoria === 'cine' ? 'Cine Domo' : undefined} class="ag-chip" />
+  </div>
+  <div class="ag-body">
+    <h3 class="t-h4" id={`ag-${ev.id}`}>{ev.titulo}</h3>
+    <p class="ag-desc">{ev.descripcion}</p>
+    <p class="ag-meta"><span><Icon name="pin" size="18" />{ev.lugar}</span><span><Icon name="ticket" size="18" />{ev.costo}</span></p>
+    <div class="ag-func">
+      <p class="ag-func-t">Funciones</p>
+      <ul>
+        {ev.funciones.map(([d, h]) => {
+          const x = dia(d);
+          return <li data-dia={d}><b>{x.dia} {Number(x.num)}</b> · {h}</li>;
+        })}
+      </ul>
+    </div>
+    {ev.compra && <Button href={site.entradas.url} external variant="enlace" icon="ext">Elegir función<span class="sr-only"> de {ev.titulo}</span></Button>}
+  </div>
+</article>
+
+<style>
+  .ag { display: flex; flex-direction: column; height: 100%; border: 1px solid var(--mk-borde); border-radius: var(--mk-r-28); overflow: hidden; background: #fff; transition: box-shadow var(--mk-t) var(--mk-ease); }
+  .ag:hover { box-shadow: var(--mk-sombra-2); }
+  .ag-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--mk-neutro-100); }
+  .ag-media :global(picture), .ag-media :global(.ag-img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .ag-fecha { position: absolute; left: 12px; top: 12px; display: grid; justify-items: center; min-width: 58px; padding: 8px 10px 7px; border-radius: var(--mk-r-14); background: #fff; color: var(--mk-violeta-700); line-height: 1; }
+  .ag-fecha b { font-size: 24px; font-weight: 700; }
+  .ag-fecha span { font-size: 12px; font-weight: 600; margin-top: 4px; color: var(--mk-texto-2); }
+  .ag-media :global(.ag-chip) { position: absolute; right: 12px; top: 12px; }
+  .ag-body { flex: 1; display: flex; flex-direction: column; gap: 10px; padding: 20px 20px 24px; }
+  .ag-desc { font-size: var(--mk-small); color: var(--mk-texto-2); }
+  .ag-meta { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: var(--mk-small); font-weight: 600; }
+  .ag-meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .ag-meta :global(.mk-ic) { color: var(--mk-violeta-700); }
+  .ag-func { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--mk-borde); }
+  .ag-func-t { font-size: 12px; font-weight: 700; color: var(--mk-texto-2); margin-bottom: 8px; }
+  .ag-func ul { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ag-body :global(.btn--enlace) { align-self: flex-start; margin-top: 4px; }
+  .ag-func li { padding: 4px 10px; border-radius: var(--mk-r-pill); background: var(--mk-fondo-alt); border: 1px solid var(--mk-borde); font-size: 13px; color: var(--mk-texto-2); }
+  .ag-func li b { font-weight: 700; color: var(--mk-texto); }
+  .ag-func li.is-dia { background: var(--mk-violeta-700); border-color: var(--mk-violeta-700); color: #fff; }
+  .ag-func li.is-dia b { color: #fff; }
+</style>

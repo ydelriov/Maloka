@@ -8,7 +8,7 @@ import PorValidar from '../ui/PorValidar.astro';
 const { variante, sinFecha = false } = Astro.props;
 const card = (it) => ({ image: it.imagen, alt: it.alt, date: sinFecha ? undefined : { dia: it.dia, mes: it.mes }, category: it.categoria, categoryLabel: it.categoriaLabel, title: it.titulo, description: it.descripcion });
 ---
-<section class:list={['no', `no--${variante}`, 'mk-seccion']} aria-labelledby="no-t">
+<section class:list={['no', `no--${variante}`, 'mk-seccion']} id="noticias" aria-labelledby="no-t">
   <div class="mk-w">
     {variante === 'v4'
       ? <SectionHead estilo="linea" num="07" eyebrow={data.eyebrow} title={data.titulo} id="no-t"><Button slot="accion" href="#" variant="secundario">Ver todas</Button></SectionHead>
