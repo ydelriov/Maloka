@@ -1,0 +1,55 @@
+---
+/* Cumpleaños: banda violeta 700. Qué combinas, qué incluye y descarga del brochure.
+   En Elementor: contenedor ancho completo violeta 700, grid 2 col (imagen | texto), Icon List y Botones. */
+import { Picture } from 'astro:assets';
+import d from '../../data/ven-en-grupo.json';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+import { img } from '../../lib/images.js';
+const c = d.cumpleanos;
+---
+<section class="gcu mk-banda mk-banda--violeta" id="cumpleanos" aria-labelledby="gcu-t" data-el="Contenedor ancho completo · Fondo violeta 700">
+  <div class="mk-w gcu-in">
+    <div class="gcu-foto">
+      <Picture src={img(c.imagen)} alt={c.alt} formats={['avif', 'webp']} widths={[476]} sizes="(max-width: 1024px) 80vw, 440px" class="gcu-img" loading="lazy" />
+    </div>
+    <div class="gcu-txt">
+      <p class="t-eyebrow">Cumpleaños</p>
+      <h2 class="t-h2" id="gcu-t">{c.titulo}</h2>
+      <p class="t-lead">{c.texto}</p>
+      <ul class="gcu-combina" data-el="Icon Box ×3 · Fondo violeta 800">
+        {c.combina.map((x) => <li><Icon name={x.icono} size="28" /><span>{x.titulo}</span></li>)}
+      </ul>
+      <div class="gcu-incluye">
+        <p class="gcu-sub">Tu celebración incluye</p>
+        <ul>{c.incluye.map((x) => <li><Icon name="check" size="18" />{x}</li>)}</ul>
+      </div>
+      <div class="gcu-ctas">
+        <Button href="#cotizar" variant="invertido" icon="arrow" class="btn--movil-bloque">Cotiza tu cumpleaños</Button>
+        <a class="mk-enlace" href="#descargas"><Icon name="download" size="18" />Descarga el brochure</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gcu-in { display: grid; grid-template-columns: 5fr 7fr; gap: 40px 64px; align-items: center; }
+  .gcu-foto { position: relative; aspect-ratio: 476 / 584; max-width: 440px; border-radius: var(--mk-r-28); overflow: hidden; background: var(--mk-violeta-800); }
+  .gcu-foto :global(picture), .gcu-foto :global(.gcu-img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .gcu-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .gcu-combina { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; width: 100%; margin-top: 8px; }
+  .gcu-combina li { display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: var(--mk-r-20); background: var(--mk-violeta-800); font-weight: 600; line-height: 1.35; }
+  .gcu-combina :global(.mk-ic) { color: var(--mk-violeta-200); }
+  .gcu-sub { font-size: var(--mk-small); font-weight: 700; color: var(--mk-violeta-200); margin-bottom: 10px; }
+  .gcu-incluye ul { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+  .gcu-incluye li { display: flex; gap: 8px; align-items: center; font-weight: 600; }
+  .gcu-incluye :global(.mk-ic) { color: var(--mk-verde-600); }
+  .gcu-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 8px; }
+  @media (max-width: 1024px) { .gcu-in { grid-template-columns: 1fr; } .gcu-foto { max-width: 360px; } }
+  @media (max-width: 767px) {
+    .gcu-combina { grid-template-columns: 1fr; }
+    .gcu-combina li { flex-direction: row; align-items: center; padding: 16px; }
+    .gcu-foto { max-width: none; aspect-ratio: 4 / 3; border-radius: var(--mk-r-20); }
+    .gcu-ctas { width: 100%; }
+  }
+</style>

@@ -5,20 +5,21 @@ import site from '../../data/site.json';
 import Icon from '../ui/Icon.astro';
 import Button from '../ui/Button.astro';
 import PorValidar from '../ui/PorValidar.astro';
+const { preguntas = data.preguntas, titulo = 'Resolvemos tus dudas.' } = Astro.props;
 ---
 <section class="vfq mk-seccion" id="preguntas" aria-labelledby="vfq-t">
   <div class="mk-w vfq-in">
     <div class="vfq-txt">
       <p class="t-eyebrow">Preguntas frecuentes</p>
-      <h2 class="t-h2" id="vfq-t">Resolvemos tus dudas.</h2>
+      <h2 class="t-h2" id="vfq-t">{titulo}</h2>
       <p class="t-muted">¿No encuentras tu respuesta? Llámanos.</p>
       <Button href={`tel:${site.telefonoHref}`} variant="secundario" iconStart="phone">{site.telefono}</Button>
     </div>
     <div class="vfq-lista" data-el="Acordeón anidado · FAQ Schema">
-      {data.preguntas.map((q, i) => (
+      {preguntas.map((q, i) => (
         <details class="vfq-item" open={i === 0}>
           <summary><span>{q.p}</span><Icon name="down" class="vfq-chev" /></summary>
-          <div class="vfq-r"><p>{q.r}</p>{!q.real && <PorValidar />}</div>
+          <div class="vfq-r"><p>{q.r}</p>{q.real === false && <PorValidar />}</div>
         </details>
       ))}
     </div>

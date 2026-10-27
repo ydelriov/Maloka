@@ -1,0 +1,66 @@
+---
+/* Ven en grupo (maloka.org/cotizaciones-y-grupos): elige tu grupo, cada público con su sección
+   (colegios, cumpleaños, empresas, MPA), descargas, formulario de cotización y preguntas.
+   Ritmo de color: violeta (encabezado) · blanco · violeta · blanco · lila · blanco · violeta · blanco. */
+import Base from '../layouts/Base.astro';
+import ElHeader from '../components/elementor/ElHeader.astro';
+import PageHero from '../components/pagina/PageHero.astro';
+import AnclasNav from '../components/pagina/AnclasNav.astro';
+import GrColegios from '../components/grupos/GrColegios.astro';
+import GrCumple from '../components/grupos/GrCumple.astro';
+import GrEmpresas from '../components/grupos/GrEmpresas.astro';
+import GrMpa from '../components/grupos/GrMpa.astro';
+import GrDescargas from '../components/grupos/GrDescargas.astro';
+import GrCotizar from '../components/grupos/GrCotizar.astro';
+import VisFaq from '../components/visitanos/VisFaq.astro';
+import Footer from '../components/layout/Footer.astro';
+import Button from '../components/ui/Button.astro';
+import Icon from '../components/ui/Icon.astro';
+import d from '../data/ven-en-grupo.json';
+import { url } from '../lib/url.js';
+import '../styles/elementor.css';
+---
+<Base title="Ven en grupo · Colegios, cumpleaños, empresas y MPA · Maloka" description="Visitas a Maloka para colegios y universidades, cumpleaños, eventos corporativos y Maloka Puertas Abiertas. Descarga la oferta educativa y pide tu cotización." variante="ven-en-grupo" clase="el">
+  <ElHeader transparente ctaVariante="azul" inicio={url('v7/')} />
+  <main id="contenido">
+    <PageHero titulo="Ven en grupo" lead="Organizamos tu visita con tu colegio, tu empresa o tu comunidad, o para celebrar tu cumpleaños. Elige tu grupo y pide tu cotización.">
+      <Fragment slot="ctas">
+        <Button href="#cotizar" variant="destacado" size="lg" icon="arrow" class="btn--movil-bloque">Cotiza tu visita</Button>
+        <Button href="#descargas" variant="invertido" size="lg" iconStart="download" class="btn--movil-bloque">Descargas</Button>
+      </Fragment>
+      <nav slot="aside" class="gh-elige" aria-labelledby="gh-elige-t" data-el="Contenedor · Fondo violeta 800 · 4 Icon Box con ancla">
+        <p class="gh-elige-t" id="gh-elige-t">¿Con quién vienes?</p>
+        <ul>
+          {d.publicos.map((p) => (
+            <li><a href={`#${p.id}`}><span class="gh-ic"><Icon name={p.icono} /></span><span class="gh-txt"><b>{p.titulo}</b><span>{p.texto}</span></span><Icon name="arrow" size="20" class="gh-fl" /></a></li>
+          ))}
+        </ul>
+      </nav>
+    </PageHero>
+    <AnclasNav secciones={d.secciones} />
+    <GrColegios />
+    <GrCumple />
+    <GrEmpresas />
+    <GrMpa />
+    <GrDescargas />
+    <GrCotizar />
+    <VisFaq preguntas={d.preguntas} titulo="Preguntas de grupos." />
+  </main>
+  <Footer />
+</Base>
+
+<style>
+  .gh-elige { display: flex; flex-direction: column; gap: 12px; padding: 24px; border-radius: var(--mk-r-28); background: var(--mk-violeta-800); border: 1px solid var(--mk-violeta-600); }
+  .gh-elige-t { font-size: 14px; font-weight: 600; color: var(--mk-violeta-200); }
+  .gh-elige ul { display: grid; gap: 8px; }
+  .gh-elige a { display: flex; align-items: center; gap: 14px; padding: 12px; border-radius: var(--mk-r-20); color: #fff; transition: background-color var(--mk-t-rapida); }
+  .gh-elige a:hover { background: var(--mk-violeta-700); }
+  .gh-ic { width: 44px; height: 44px; flex: none; border-radius: 14px; display: grid; place-items: center; background: var(--mk-violeta-700); color: var(--mk-violeta-100); }
+  .gh-txt { flex: 1; display: grid; gap: 2px; }
+  .gh-txt b { font-weight: 600; }
+  .gh-txt span { font-size: 13px; color: var(--mk-violeta-200); }
+  .gh-elige :global(.gh-fl) { color: var(--mk-violeta-200); transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .gh-elige a:hover :global(.gh-fl) { transform: translateX(4px); }
+  @media (max-width: 767px) { .gh-elige { padding: 16px; border-radius: var(--mk-r-20); } }
+  :global(#colegios), :global(#empresas), :global(#descargas) { scroll-margin-top: 140px; }
+</style>

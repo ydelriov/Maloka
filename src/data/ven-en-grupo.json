@@ -1,0 +1,95 @@
+{
+  "fuente": "Información de maloka.org/cotizaciones-y-grupos y maloka.org/maloka-puertas-abiertas-mpa.",
+  "paginaOficial": "https://maloka.org/cotizaciones-y-grupos/",
+  "secciones": [
+    { "id": "colegios", "label": "Colegios y universidades" },
+    { "id": "cumpleanos", "label": "Cumpleaños" },
+    { "id": "empresas", "label": "Empresas y eventos" },
+    { "id": "mpa", "label": "MPA" },
+    { "id": "descargas", "label": "Descargas" },
+    { "id": "cotizar", "label": "Cotiza tu visita" }
+  ],
+  "publicos": [
+    { "id": "colegios", "titulo": "Colegios y universidades", "texto": "Salidas pedagógicas y experiencias educativas", "icono": "school" },
+    { "id": "cumpleanos", "titulo": "Cumpleaños", "texto": "Un plan a tu medida para celebrar", "icono": "cake" },
+    { "id": "empresas", "titulo": "Empresas y eventos", "texto": "Eventos corporativos en el Domo", "icono": "building" },
+    { "id": "mpa", "titulo": "Maloka Puertas Abiertas", "texto": "Acceso gratuito para quienes cumplen los requisitos", "icono": "heart" }
+  ],
+  "colegios": {
+    "titulo": "Una salida pedagógica que se aprende con las manos.",
+    "texto": "Experiencias educativas en ciencia y tecnología para colegios y universidades: recorrido por las salas interactivas, talleres en los laboratorios y funciones en el Cine Domo.",
+    "imagen": "laboratorio-microscopio.jpg",
+    "alt": "Niñas de colegio observando por un microscopio en un laboratorio de Maloka",
+    "oferta": [
+      { "titulo": "Oferta educativa", "edad": "Niñas y niños de 6 a 11 años", "archivo": "PDF" },
+      { "titulo": "Oferta educativa", "edad": "De 11 años en adelante", "archivo": "PDF" }
+    ],
+    "laboratorios": [
+      { "titulo": "Pequeños Inventores", "edad": "4 a 7 años" },
+      { "titulo": "Laboratorio Bio", "edad": "7 a 9 años" },
+      { "titulo": "Inventores", "edad": "9 años en adelante" }
+    ],
+    "pasos": [
+      "Elige la experiencia según la edad de tus estudiantes.",
+      "Pide tu cotización con la fecha y el número de personas.",
+      "Organiza grupos de máximo 30 personas, con al menos un adulto a cargo.",
+      "Prepara la visita con la guía de recomendaciones."
+    ],
+    "club": { "titulo": "Club de Ciencias", "texto": "Para niñas y niños de 10 a 12 años: 14 sesiones prácticas los sábados.", "href": "https://maloka.org/noticias/club-de-ciencias-maloka-2026-nuevas-fechas/" }
+  },
+  "cumpleanos": {
+    "titulo": "Celebra tu cumpleaños experimentando.",
+    "texto": "Arma tu plan combinando el recorrido por el museo, talleres de laboratorio y funciones en el Cine Domo.",
+    "imagen": "nino-explorador.png",
+    "alt": "Niño con gorro de fiesta y binoculares, sonriendo",
+    "incluye": ["Salón decorado", "Actividades educativas", "Souvenirs", "Tarifas especiales para grupos"],
+    "combina": [
+      { "titulo": "Recorrido por el museo", "icono": "compass" },
+      { "titulo": "Talleres de laboratorio", "icono": "flask" },
+      { "titulo": "Funciones en el Cine Domo", "icono": "dome" }
+    ]
+  },
+  "empresas": {
+    "titulo": "Eventos que la gente recuerda.",
+    "texto": "Lanzamientos, conferencias, premiaciones y encuentros de equipo en un espacio que conecta ciencia, innovación y creatividad.",
+    "dato": "Más de 70 organizaciones, compañías y entidades han hecho sus encuentros en Maloka.",
+    "espacios": [
+      { "titulo": "El Domo", "texto": "El espacio icónico de Maloka para lanzamientos, conferencias y premiaciones.", "imagen": "edificio-domo.jpg", "alt": "Exterior de Maloka con su domo" },
+      { "titulo": "Sala Infinito", "texto": "Un salón para reuniones, talleres y encuentros de equipo.", "imagen": "sala-infinito.jpg", "alt": "Sala Infinito de Maloka con mesas para eventos" }
+    ],
+    "href": "https://maloka.org/eventos-corporativos/"
+  },
+  "mpa": {
+    "titulo": "Maloka Puertas Abiertas.",
+    "texto": "Un programa de acceso gratuito para que más personas de Bogotá y Cundinamarca vivan la ciencia.",
+    "quienes": [
+      "Personas de Bogotá o Cundinamarca con Sisbén en los grupos A, B o C",
+      "Personas con discapacidad",
+      "Personas con un recibo de servicios públicos o telefonía a su nombre de estrato 1 o 2 (un recibo permite reservar para 4 personas)",
+      "Instituciones educativas oficiales",
+      "Organizaciones que trabajan con población que enfrenta barreras de acceso"
+    ],
+    "pasos": [
+      "Reserva con mínimo 72 horas de anticipación.",
+      "Cada persona diligencia el formulario y adjunta sus soportes.",
+      "Grupos de máximo 30 personas, con al menos un adulto a cargo.",
+      "Presenta tu reserva en taquilla el día de la visita."
+    ],
+    "correo": "gratuidad@maloka.org",
+    "href": "https://maloka.org/maloka-puertas-abiertas-mpa/"
+  },
+  "descargas": [
+    { "titulo": "Oferta educativa · 6 a 11 años", "texto": "Experiencias, talleres y funciones para primaria.", "publico": "Colegios", "href": "https://maloka.org/cotizaciones-y-grupos/", "directo": false },
+    { "titulo": "Oferta educativa · 11 años en adelante", "texto": "Experiencias para secundaria y universidad.", "publico": "Colegios", "href": "https://maloka.org/cotizaciones-y-grupos/", "directo": false },
+    { "titulo": "Tips para tu visita a Maloka", "texto": "Recomendaciones para preparar la salida con tu grupo.", "publico": "Colegios", "href": "https://maloka.org/wp-content/uploads/2026/01/2026_TIPS-PARA-VISITA-A-MALOKA_PRE_VISITA.pdf", "directo": true },
+    { "titulo": "Brochure de cumpleaños", "texto": "Planes, qué incluye y cómo reservar.", "publico": "Cumpleaños", "href": "https://maloka.org/cotizaciones-y-grupos/", "directo": false },
+    { "titulo": "Portafolio de eventos", "texto": "Espacios y servicios para eventos corporativos.", "publico": "Empresas", "href": "https://maloka.org/cotizaciones-y-grupos/", "directo": false }
+  ],
+  "contacto": { "correo": "info@maloka.org" },
+  "preguntas": [
+    { "p": "¿Cuántas personas puede tener cada grupo?", "r": "Los grupos son de máximo 30 personas, con al menos un adulto a cargo." },
+    { "p": "¿Con cuánta anticipación reservo en Maloka Puertas Abiertas?", "r": "Con mínimo 72 horas de anticipación. Cada persona diligencia el formulario y adjunta sus soportes antes de ir a taquilla." },
+    { "p": "¿Puedo combinar actividades en un cumpleaños?", "r": "Sí. Puedes combinar el recorrido por el museo, talleres de laboratorio y funciones en el Cine Domo." },
+    { "p": "¿A dónde escribo si tengo dudas?", "r": "A info@maloka.org. Para Maloka Puertas Abiertas, a gratuidad@maloka.org." }
+  ]
+}

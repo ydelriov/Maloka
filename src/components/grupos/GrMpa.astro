@@ -1,0 +1,44 @@
+---
+/* Maloka Puertas Abiertas: banda lila. Quiénes pueden acceder, cómo reservar y contacto.
+   En Elementor: contenedor ancho completo lila, grid 2 col con Icon List y lista numerada. */
+import d from '../../data/ven-en-grupo.json';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+const m = d.mpa;
+---
+<section class="gmp mk-banda mk-banda--alt" id="mpa" aria-labelledby="gmp-t">
+  <div class="mk-w">
+    <div class="el-head">
+      <div class="el-head-txt">
+        <p class="t-eyebrow">MPA · Acceso gratuito</p>
+        <h2 class="t-h2" id="gmp-t">{m.titulo}</h2>
+        <p class="t-lead">{m.texto}</p>
+      </div>
+      <Button href={m.href} external variant="secundario" icon="ext">Ver requisitos completos</Button>
+    </div>
+    <div class="gmp-grid" data-el="Contenedor grid · 2 col / 1 col">
+      <div class="gmp-card">
+        <h3 class="t-h4">¿Quiénes pueden acceder?</h3>
+        <ul class="gmp-lista">{m.quienes.map((q) => <li><Icon name="check" size="20" /><span>{q}</span></li>)}</ul>
+      </div>
+      <div class="gmp-card">
+        <h3 class="t-h4">¿Cómo reservar?</h3>
+        <ol class="gr-pasos">{m.pasos.map((p, n) => <li><span class="gr-n t-num" aria-hidden="true">{n + 1}</span><span>{p}</span></li>)}</ol>
+        <p class="gmp-correo"><Icon name="mail" size="20" /><span>Escríbenos a <a href={`mailto:${m.correo}`}>{m.correo}</a></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gmp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .gmp-card { display: flex; flex-direction: column; gap: 18px; padding: 32px; border-radius: var(--mk-r-28); background: #fff; border: 1px solid var(--mk-borde); }
+  .gmp-lista { display: grid; gap: 12px; }
+  .gmp-lista li { display: flex; gap: 10px; align-items: flex-start; }
+  .gmp-lista :global(.mk-ic) { color: var(--mk-exito); flex: none; margin-top: 2px; }
+  .gmp-correo { display: flex; gap: 10px; align-items: center; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--mk-borde); font-size: var(--mk-small); }
+  .gmp-correo :global(.mk-ic) { color: var(--mk-violeta-700); }
+  .gmp-correo a { color: var(--mk-enlace); font-weight: 700; text-decoration: underline; }
+  @media (max-width: 1024px) { .gmp-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 767px) { .gmp-card { padding: 24px 20px; border-radius: var(--mk-r-20); } }
+</style>

@@ -1,12 +1,12 @@
 ---
-/* Navegación de la página: píldoras con anclas a cada sección, fija bajo el header.
+/* Navegación de una página interna: píldoras con anclas a cada sección (prop «secciones»), fija bajo el header.
    Marca la sección visible con aria-current. En Elementor: Nav Menu horizontal con anclas + sticky. */
-import data from '../../data/visitanos.json';
+const { secciones } = Astro.props;
 ---
 <nav class="vsn" aria-label="En esta página" data-vsn data-el="Menú de anclas · Sticky bajo el header">
   <div class="mk-w">
     <ul class="vsn-list">
-      {data.secciones.map((s) => <li><a href={`#${s.id}`} data-ancla={s.id}>{s.label}</a></li>)}
+      {secciones.map((s) => <li><a href={`#${s.id}`} data-ancla={s.id}>{s.label}</a></li>)}
     </ul>
   </div>
 </nav>

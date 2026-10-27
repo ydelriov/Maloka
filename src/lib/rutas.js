@@ -17,12 +17,14 @@ const RUTAS = {
   'Agéndate': 'agendate/',
   'Programación': 'agendate/',
   'Cine Domo': 'agendate/#programacion',
-  // Ven en grupo (sección de la home hasta que exista la página)
-  'Ven en grupo': 'v7/#grupos',
-  'Colegios y universidades': 'v7/#grupos',
-  'Cumpleaños': 'v7/#grupos',
-  'Empresas y eventos': 'v7/#grupos',
-  'MPA': 'v7/#grupos',
+  // Ven en grupo
+  'Ven en grupo': 'ven-en-grupo/',
+  'Colegios y universidades': 'ven-en-grupo/#colegios',
+  'Cumpleaños': 'ven-en-grupo/#cumpleanos',
+  'Empresas y eventos': 'ven-en-grupo/#empresas',
+  'MPA': 'ven-en-grupo/#mpa',
+  'Maloka Puertas Abiertas': 'ven-en-grupo/#mpa',
+  'Cotiza tu visita': 'ven-en-grupo/#cotizar',
   // Descubre
   'Descubre': 'v7/#descubre',
   'Programas y proyectos': 'v7/#descubre',

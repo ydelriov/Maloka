@@ -1,0 +1,46 @@
+---
+/* Descargas: todos los documentos en un solo lugar, marcados por público.
+   Los PDF sin enlace directo confirmado llevan a la página oficial. En Elementor: grid de Icon Box con enlace al archivo. */
+import d from '../../data/ven-en-grupo.json';
+import Icon from '../ui/Icon.astro';
+import PorValidar from '../ui/PorValidar.astro';
+---
+<section class="gde mk-seccion" id="descargas" aria-labelledby="gde-t">
+  <div class="mk-w">
+    <div class="el-head">
+      <div class="el-head-txt">
+        <p class="t-eyebrow">Descargas</p>
+        <h2 class="t-h2" id="gde-t">Todo lo que necesitas para planear.</h2>
+        <p class="t-muted">Ofertas, brochure y recomendaciones en PDF.</p>
+      </div>
+    </div>
+    <ul class="gde-grid" data-el="Contenedor grid · 3 / 2 / 1 col · Icon Box con enlace al PDF">
+      {d.descargas.map((f) => (
+        <li>
+          <a class="gr-descarga gde-item" href={f.href} target="_blank" rel="noopener">
+            <span class="mk-ib"><Icon name="file" /></span>
+            <span class="gr-descarga-t">
+              <span class="gde-pub">{f.publico}</span>
+              <b>{f.titulo}</b>
+              <span>{f.texto}</span>
+              <span class="gde-tipo">{f.directo ? 'PDF' : 'PDF · en maloka.org'}<span class="sr-only"> (se abre en otra pestaña)</span></span>
+            </span>
+            <Icon name={f.directo ? 'download' : 'ext'} class="gr-descarga-ic" />
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="gde-nota"><Icon name="help" size="18" /><span>Los documentos marcados «en maloka.org» se descargan desde la página oficial mientras se cargan los archivos en el nuevo sitio.</span><PorValidar texto="Subir los PDF" /></p>
+  </div>
+</section>
+
+<style>
+  .gde-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .gde-item { align-items: flex-start; padding: 20px; }
+  .gde-pub { font-size: 12px !important; font-weight: 700; color: var(--mk-violeta-500) !important; }
+  .gde-tipo { margin-top: 6px; font-size: 12px !important; font-weight: 700; color: var(--mk-texto-2); }
+  .gde-nota { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 20px; font-size: 13px; color: var(--mk-texto-2); }
+  .gde-nota :global(.mk-ic) { color: var(--mk-violeta-700); }
+  @media (max-width: 1024px) { .gde-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 767px) { .gde-grid { grid-template-columns: 1fr; } }
+</style>

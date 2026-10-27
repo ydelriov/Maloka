@@ -1,0 +1,98 @@
+---
+/* Cotiza tu visita: banda violeta 700 con formulario corto. Prototipo: no envía datos.
+   En Elementor: widget Formulario con acción de correo a info@maloka.org (o el CRM de Maloka). */
+import d from '../../data/ven-en-grupo.json';
+import site from '../../data/site.json';
+import Icon from '../ui/Icon.astro';
+---
+<section class="gct mk-banda mk-banda--violeta" id="cotizar" aria-labelledby="gct-t" data-el="Contenedor ancho completo · Fondo violeta 700 · Widget Formulario">
+  <div class="mk-w gct-in">
+    <div class="gct-txt">
+      <p class="t-eyebrow">Cotiza tu visita</p>
+      <h2 class="t-h2" id="gct-t">Cuéntanos de tu grupo y te enviamos la propuesta.</h2>
+      <p class="t-lead">Te respondemos por correo con opciones, fechas y tarifas para tu grupo.</p>
+      <ul class="gct-datos">
+        <li><Icon name="mail" size="20" /><a href={`mailto:${d.contacto.correo}`}>{d.contacto.correo}</a></li>
+        <li><Icon name="phone" size="20" /><a href={`tel:${site.telefonoHref}`}>{site.telefono}</a></li>
+        <li><Icon name="heart" size="20" /><span>Maloka Puertas Abiertas: <a href={`mailto:${d.mpa.correo}`}>{d.mpa.correo}</a></span></li>
+      </ul>
+    </div>
+    <form class="gct-form" novalidate data-cotizar>
+      <div class="gct-campo gct-campo--full">
+        <label for="ct-tipo">¿Qué tipo de grupo es?</label>
+        <select id="ct-tipo" name="tipo" required>
+          <option value="">Elige una opción</option>
+          <option>Colegio o universidad</option>
+          <option>Cumpleaños</option>
+          <option>Empresa o evento</option>
+          <option>Maloka Puertas Abiertas</option>
+          <option>Otro grupo</option>
+        </select>
+      </div>
+      <div class="gct-campo"><label for="ct-nombre">Nombre</label><input id="ct-nombre" name="nombre" autocomplete="name" required /></div>
+      <div class="gct-campo"><label for="ct-org">Institución o empresa <span>(opcional)</span></label><input id="ct-org" name="org" autocomplete="organization" /></div>
+      <div class="gct-campo"><label for="ct-correo">Correo</label><input id="ct-correo" name="correo" type="email" autocomplete="email" required /></div>
+      <div class="gct-campo"><label for="ct-tel">Celular</label><input id="ct-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" required /></div>
+      <div class="gct-campo"><label for="ct-personas">Número de personas</label><input id="ct-personas" name="personas" type="number" min="1" inputmode="numeric" required /></div>
+      <div class="gct-campo"><label for="ct-fecha">Fecha tentativa</label><input id="ct-fecha" name="fecha" type="date" /></div>
+      <div class="gct-campo gct-campo--full"><label for="ct-msg">¿Algo más que debamos saber? <span>(opcional)</span></label><textarea id="ct-msg" name="msg" rows="3"></textarea></div>
+      <div class="gct-campo--full gct-acc">
+        <label class="gct-check"><input type="checkbox" name="datos" required /> <span>Acepto la política de tratamiento de datos.</span></label>
+        <button type="submit" class="btn btn--destacado btn--lg">Pedir cotización</button>
+      </div>
+      <p class="gct-msg gct-campo--full" role="status" aria-live="polite" data-msg></p>
+    </form>
+  </div>
+</section>
+
+<style>
+  .gct-in { display: grid; grid-template-columns: 5fr 7fr; gap: 40px 64px; align-items: start; }
+  .gct-txt { display: flex; flex-direction: column; gap: 16px; }
+  .gct-datos { display: grid; gap: 12px; margin-top: 8px; }
+  .gct-datos li { display: flex; gap: 10px; align-items: center; color: var(--mk-violeta-100); }
+  .gct-datos :global(.mk-ic) { color: var(--mk-violeta-200); flex: none; }
+  .gct-datos a { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  .gct-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 32px; border-radius: var(--mk-r-28); background: #fff; color: var(--mk-texto); }
+  .gct-form :focus-visible { outline: var(--mk-foco); }
+  .gct-campo { display: grid; gap: 6px; }
+  .gct-campo--full { grid-column: 1 / -1; }
+  .gct-campo label { font-size: var(--mk-small); font-weight: 600; }
+  .gct-campo label span { font-weight: 400; color: var(--mk-texto-2); }
+  .gct-form input:not([type="checkbox"]), .gct-form select, .gct-form textarea { width: 100%; min-height: 48px; padding: 10px 14px; border: 1.5px solid var(--mk-neutro-300); border-radius: var(--mk-r-14); background: #fff; font: inherit; color: var(--mk-texto); }
+  .gct-form [aria-invalid="true"] { border-color: var(--mk-error); }
+  .gct-acc { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+  .gct-check { display: flex; gap: 10px; align-items: center; font-size: var(--mk-small); }
+  .gct-check input { width: 20px; height: 20px; accent-color: var(--mk-violeta-700); }
+  .gct-msg { min-height: 1.4em; font-weight: 600; }
+  .gct-msg.is-ok { color: var(--mk-exito); }
+  .gct-msg.is-error { color: var(--mk-error); }
+  @media (max-width: 1024px) { .gct-in { grid-template-columns: 1fr; } }
+  @media (max-width: 767px) {
+    .gct-form { grid-template-columns: 1fr; padding: 24px 20px; border-radius: var(--mk-r-20); }
+    .gct-acc .btn { width: 100%; }
+  }
+</style>
+
+<script>
+  const form = document.querySelector('[data-cotizar]');
+  const msg = form.querySelector('[data-msg]');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const req = [...form.querySelectorAll('[required]')];
+    let primero = null;
+    req.forEach((el) => {
+      const ok = el.type === 'checkbox' ? el.checked : el.value.trim() !== '' && el.checkValidity();
+      el.setAttribute('aria-invalid', String(!ok));
+      if (!ok && !primero) primero = el;
+    });
+    if (primero) {
+      msg.className = 'gct-msg gct-campo--full is-error';
+      msg.textContent = 'Revisa los campos marcados para poder enviar tu solicitud.';
+      primero.focus();
+      return;
+    }
+    msg.className = 'gct-msg gct-campo--full is-ok';
+    msg.textContent = 'Prototipo: en el sitio final aquí se enviará tu solicitud y te llegará una confirmación por correo.';
+    form.reset();
+  });
+</script>

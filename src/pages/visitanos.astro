@@ -4,7 +4,8 @@
 import Base from '../layouts/Base.astro';
 import ElHeader from '../components/elementor/ElHeader.astro';
 import VisHero from '../components/visitanos/VisHero.astro';
-import VisSubnav from '../components/visitanos/VisSubnav.astro';
+import AnclasNav from '../components/pagina/AnclasNav.astro';
+import data from '../data/visitanos.json';
 import VisHorarios from '../components/visitanos/VisHorarios.astro';
 import VisLlegar from '../components/visitanos/VisLlegar.astro';
 import VisServicios from '../components/visitanos/VisServicios.astro';
@@ -18,7 +19,7 @@ import '../styles/elementor.css';
   <ElHeader transparente ctaVariante="azul" inicio={url('v7/')} />
   <main id="contenido">
     <VisHero />
-    <VisSubnav />
+    <AnclasNav secciones={data.secciones} />
     <VisHorarios />
     <VisLlegar />
     <VisServicios />

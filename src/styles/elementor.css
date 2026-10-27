@@ -50,3 +50,15 @@
 :is(.mk-banda--violeta, .mk-banda--noche) :is(.t-muted, .t-lead) { color: var(--mk-violeta-100); }
 :is(.mk-banda--violeta, .mk-banda--noche) .mk-enlace { color: #fff; }
 :is(.mk-banda--violeta, .mk-banda--noche) :focus-visible { outline: var(--mk-foco-oscuro); }
+
+/* Ven en grupo · piezas compartidas: tarjeta de descarga y pasos numerados */
+.gr-descarga { display: flex; align-items: center; gap: 14px; height: 100%; padding: 14px 16px; border: 1px solid var(--mk-borde); border-radius: var(--mk-r-20); background: #fff; color: var(--mk-texto); transition: border-color var(--mk-t-rapida), background-color var(--mk-t-rapida); }
+.gr-descarga:hover { border-color: var(--mk-violeta-300); background: var(--mk-violeta-50); }
+.gr-descarga-t { flex: 1; display: grid; gap: 2px; }
+.gr-descarga-t b { font-weight: 600; }
+.gr-descarga-t span { font-size: var(--mk-small); color: var(--mk-texto-2); }
+.gr-descarga-ic { color: var(--mk-violeta-700); flex: none; }
+.gr-pasos { display: grid; gap: 14px; }
+.gr-pasos li { display: flex; gap: 14px; align-items: flex-start; }
+.gr-n { width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--mk-violeta-50); color: var(--mk-violeta-700); font-size: 14px; font-weight: 700; }
+.gr-pasos li > span:last-child { padding-top: 4px; }

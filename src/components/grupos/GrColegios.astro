@@ -1,0 +1,95 @@
+---
+/* Colegios y universidades: propuesta, oferta por edades (descargas), laboratorios por edad, cómo reservar
+   y Club de Ciencias. En Elementor: grid 2 col (texto | imagen), Icon Box de descarga, Icon List numerada. */
+import { Picture } from 'astro:assets';
+import d from '../../data/ven-en-grupo.json';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+import PorValidar from '../ui/PorValidar.astro';
+import { img } from '../../lib/images.js';
+const c = d.colegios;
+---
+<section class="gco mk-seccion" id="colegios" aria-labelledby="gco-t">
+  <div class="mk-w">
+    <div class="gco-top" data-el="Contenedor grid · 7fr 5fr / 1 col">
+      <div class="gco-txt">
+        <p class="t-eyebrow">Colegios y universidades</p>
+        <h2 class="t-h2" id="gco-t">{c.titulo}</h2>
+        <p class="t-lead">{c.texto}</p>
+        <ul class="gco-ofertas" data-el="Icon Box ×2 · enlace de descarga">
+          {c.oferta.map((o) => (
+            <li>
+              <a class="gr-descarga" href="#descargas">
+                <span class="mk-ib"><Icon name="file" /></span>
+                <span class="gr-descarga-t"><b>{o.titulo}</b><span>{o.edad}</span></span>
+                <Icon name="download" class="gr-descarga-ic" />
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div class="gco-ctas">
+          <Button href="#cotizar" variant="primario" icon="arrow">Cotiza la salida de tu colegio</Button>
+        </div>
+      </div>
+      <div class="gco-foto">
+        <Picture src={img(c.imagen)} alt={c.alt} formats={['avif', 'webp']} widths={[342]} sizes="(max-width: 1024px) 92vw, 480px" class="gco-img" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="gco-bloques">
+      <div class="gco-bloque" data-el="Contenedor · Fondo Violeta 50 · Radio 28 · lista">
+        <h3 class="t-h4">Laboratorios por edad</h3>
+        <ul class="gco-labs">
+          {c.laboratorios.map((l) => <li><Icon name="flask" size="20" /><b>{l.titulo}</b><span>{l.edad}</span></li>)}
+        </ul>
+        <PorValidar texto="Edades por confirmar" />
+      </div>
+      <div class="gco-bloque" data-el="Contenedor · Icon List numerada">
+        <h3 class="t-h4">Así organizas la visita</h3>
+        <ol class="gr-pasos">
+          {c.pasos.map((p, n) => <li><span class="gr-n t-num" aria-hidden="true">{n + 1}</span><span>{p}</span></li>)}
+        </ol>
+      </div>
+      <a class="gco-club" href={c.club.href} target="_blank" rel="noopener" data-el="Contenedor-enlace · Club de Ciencias">
+        <span class="gco-club-ic"><Icon name="bulb" size="28" /></span>
+        <span class="gco-club-t"><b>{c.club.titulo}</b><span>{c.club.texto}</span></span>
+        <span class="mk-enlace">Conoce el club<Icon name="ext" size="18" /><span class="sr-only"> (se abre en otra pestaña)</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gco-top { display: grid; grid-template-columns: 7fr 5fr; gap: 40px 64px; align-items: center; }
+  .gco-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .gco-ofertas { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; margin-top: 8px; }
+  .gco-ctas { margin-top: 8px; }
+  .gco-foto { position: relative; aspect-ratio: 4 / 5; border-radius: 999px 999px var(--mk-r-28) var(--mk-r-28); overflow: hidden; background: var(--mk-neutro-100); max-width: 460px; justify-self: end; width: 100%; }
+  .gco-foto :global(picture), .gco-foto :global(.gco-img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .gco-bloques { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; }
+  .gco-bloque { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 32px; border-radius: var(--mk-r-28); border: 1px solid var(--mk-borde); }
+  .gco-bloque:first-child { background: var(--mk-fondo-tonal); border-color: transparent; }
+  .gco-labs { display: grid; gap: 12px; width: 100%; }
+  .gco-labs li { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--mk-violeta-100); }
+  .gco-labs :global(.mk-ic) { color: var(--mk-violeta-700); }
+  .gco-labs b { font-weight: 600; }
+  .gco-labs span { font-size: var(--mk-small); font-weight: 700; color: var(--mk-violeta-700); }
+  .gco-club { grid-column: 1 / -1; display: flex; align-items: center; gap: 16px 24px; flex-wrap: wrap; padding: 24px 32px; border-radius: var(--mk-r-28); border: 1px solid var(--mk-borde); transition: box-shadow var(--mk-t) var(--mk-ease); }
+  .gco-club:hover { box-shadow: var(--mk-sombra-2); }
+  .gco-club-ic { width: 56px; height: 56px; flex: none; border-radius: 16px; display: grid; place-items: center; background: var(--mk-amar-50); color: var(--mk-amar-900); }
+  .gco-club-t { flex: 1 1 280px; display: grid; gap: 2px; }
+  .gco-club-t b { font-size: var(--mk-h5); font-weight: 600; }
+  .gco-club-t span { font-size: var(--mk-small); color: var(--mk-texto-2); }
+  @media (max-width: 1024px) {
+    .gco-top { grid-template-columns: 1fr; }
+    .gco-foto { justify-self: start; max-width: 420px; aspect-ratio: 1; }
+    .gco-bloques { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 767px) {
+    .gco-ofertas { grid-template-columns: 1fr; }
+    .gco-foto { max-width: none; aspect-ratio: 4 / 3; border-radius: var(--mk-r-20); }
+    .gco-bloque { padding: 24px 20px; border-radius: var(--mk-r-20); }
+    .gco-club { padding: 20px; border-radius: var(--mk-r-20); }
+    .gco-ctas, .gco-ctas :global(.btn) { width: 100%; }
+  }
+</style>

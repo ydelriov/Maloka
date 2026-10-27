@@ -6,8 +6,9 @@ import data from '../../data/grupos.json';
 import ActionCard from '../ui/ActionCard.astro';
 import Button from '../ui/Button.astro';
 import PorValidar from '../ui/PorValidar.astro';
+import { ruta } from '../../lib/rutas.js';
 const [principal, ...resto] = data.items;
-const card = (it) => ({ image: it.imagen, alt: it.alt, category: it.categoria, title: it.titulo, description: it.descripcion });
+const card = (it) => ({ image: it.imagen, alt: it.alt, category: it.categoria, title: it.titulo, description: it.descripcion, href: ruta(it.titulo) });
 ---
 <section class="v7g mk-seccion" id="grupos" aria-labelledby="v7g-t">
   <div class="mk-w">
@@ -19,7 +20,7 @@ const card = (it) => ({ image: it.imagen, alt: it.alt, category: it.categoria, t
       <div class="v7g-intro">
         <p class="t-lead">{data.texto}</p>
         <div class="v7g-cta">
-          <Button href="#" variant="primario">{data.cta}</Button>
+          <Button href={ruta('Cotiza tu visita')} variant="primario">{data.cta}</Button>
           <PorValidar texto="Planes, tarifas y espacios por validar" />
         </div>
       </div>
