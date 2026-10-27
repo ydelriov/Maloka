@@ -5,6 +5,7 @@ import visita from '../../data/visita.json';
 import site from '../../data/site.json';
 import Icon from '../ui/Icon.astro';
 import PorValidar from '../ui/PorValidar.astro';
+import { ruta } from '../../lib/rutas.js';
 const ids = ['horarios', 'llegar', 'servicios', 'guia'];
 const items = ids.map((id) => visita.items.find((i) => i.id === id));
 const { subir = false } = Astro.props;
@@ -14,7 +15,7 @@ const { subir = false } = Astro.props;
     <div class="epl-card" data-el="Contenedor · Fondo blanco · Radio 28 · Sombra 3 · Margen sup. −80 / −64 / −56">
       <div class="epl-head" data-el="Contenedor flex fila · Título + Botón enlace">
         <h2 class="t-h4" id="epl-t">{visita.eyebrow}</h2>
-        <a class="mk-enlace" href="#">Preguntas frecuentes<Icon name="arrow" size="18" /></a>
+        <a class="mk-enlace" href={ruta('Preguntas frecuentes')}>Preguntas frecuentes<Icon name="arrow" size="18" /></a>
       </div>
       <ul class="epl-grid" data-el="Contenedor grid · 4 / 2 / 1 columnas">
         {items.map((it) => (
@@ -33,7 +34,7 @@ const { subir = false } = Astro.props;
               <p class="epl-txt">{it.texto}</p>
             )}
             {it.porValidar && <PorValidar />}
-            <a class="mk-enlace epl-link" href="#">{it.cta}<span class="sr-only">: {it.titulo}</span><Icon name="arrow" size="18" /></a>
+            <a class="mk-enlace epl-link" href={ruta(it.titulo)}>{it.cta}<span class="sr-only">: {it.titulo}</span><Icon name="arrow" size="18" /></a>
           </li>
         ))}
       </ul>

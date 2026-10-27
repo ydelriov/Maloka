@@ -5,6 +5,7 @@ import site from '../../data/site.json';
 import Logo from '../ui/Logo.astro';
 import Icon from '../ui/Icon.astro';
 import Button from '../ui/Button.astro';
+import { ruta } from '../../lib/rutas.js';
 const s = footer.suscripcion;
 ---
 <footer class="ft mk-oscuro" id="contacto">
@@ -34,7 +35,7 @@ const s = footer.suscripcion;
       {footer.columnas.map((c) => (
         <nav class="ft-col" aria-label={c.titulo}>
           <p class="ft-col-t">{c.titulo}</p>
-          <ul>{c.links.map((l) => <li><a href="#">{l}</a></li>)}</ul>
+          <ul>{c.links.map((l) => <li><a href={ruta(l)}>{l}</a></li>)}</ul>
         </nav>
       ))}
     </div>

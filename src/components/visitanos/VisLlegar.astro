@@ -1,0 +1,50 @@
+---
+/* Cómo llegar: dirección real, enlace a Google Maps y foto del edificio. Las indicaciones por modo de transporte
+   están por validar. En Elementor: grid 2 columnas; Botón + Icon List; Imagen con radio 28 (o widget Google Maps). */
+import { Picture } from 'astro:assets';
+import data from '../../data/visitanos.json';
+import site from '../../data/site.json';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+import PorValidar from '../ui/PorValidar.astro';
+import { img } from '../../lib/images.js';
+const l = data.llegar;
+---
+<section class="vll mk-seccion" id="llegar" aria-labelledby="vll-t">
+  <div class="mk-w vll-in" data-el="Contenedor grid · 5fr 7fr / 1 col">
+    <div class="vll-txt">
+      <p class="t-eyebrow">Cómo llegar</p>
+      <h2 class="t-h2" id="vll-t">{l.titulo}</h2>
+      <p class="vll-dir"><Icon name="pin" /><span><b>{site.direccion}</b>{site.descripcion}</span></p>
+      <div class="vll-ctas">
+        <Button href={l.mapa} external variant="primario" icon="ext">Abrir en Google Maps</Button>
+        <Button href={`tel:${site.telefonoHref}`} variant="secundario" iconStart="phone">{site.telefono}</Button>
+      </div>
+      <ul class="vll-modos" data-el="Icon List · modos de transporte">
+        {l.modos.map((m) => <li><span class="mk-ib"><Icon name={m.icono} /></span><span><b>{m.titulo}</b><span>Indicaciones por validar</span></span></li>)}
+      </ul>
+      <PorValidar texto="Rutas y parqueadero por validar" />
+    </div>
+    <div class="vll-foto">
+      <Picture src={img('panoramica-maloka.jpg')} alt="Panorámica del edificio de Maloka con su domo" formats={['avif', 'webp']} widths={[640, 1024, 1433]} sizes="(max-width: 1024px) 92vw, 720px" class="vll-img" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .vll-in { display: grid; grid-template-columns: 5fr 7fr; gap: 40px 64px; align-items: center; }
+  .vll-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+  .vll-dir { display: flex; gap: 12px; align-items: flex-start; }
+  .vll-dir :global(.mk-ic) { color: var(--mk-violeta-700); margin-top: 2px; }
+  .vll-dir b { display: block; font-size: var(--mk-h5); font-weight: 700; }
+  .vll-dir span span, .vll-dir span { color: var(--mk-texto-2); }
+  .vll-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .vll-modos { display: grid; gap: 12px; width: 100%; margin-top: 8px; }
+  .vll-modos li { display: flex; gap: 14px; align-items: center; }
+  .vll-modos b { display: block; font-weight: 600; }
+  .vll-modos li > span:last-child span { font-size: var(--mk-small); color: var(--mk-texto-2); }
+  .vll-foto { position: relative; aspect-ratio: 4 / 3; border-radius: var(--mk-r-28); overflow: hidden; background: var(--mk-neutro-100); }
+  .vll-foto :global(picture), .vll-foto :global(.vll-img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%; }
+  @media (max-width: 1024px) { .vll-in { grid-template-columns: 1fr; } .vll-foto { aspect-ratio: 16 / 9; } }
+  @media (max-width: 767px) { .vll-ctas, .vll-ctas :global(.btn) { width: 100%; } .vll-foto { border-radius: var(--mk-r-20); } }
+</style>

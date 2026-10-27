@@ -1,0 +1,42 @@
+---
+/* Navegación de la página: píldoras con anclas a cada sección, fija bajo el header.
+   Marca la sección visible con aria-current. En Elementor: Nav Menu horizontal con anclas + sticky. */
+import data from '../../data/visitanos.json';
+---
+<nav class="vsn" aria-label="En esta página" data-vsn data-el="Menú de anclas · Sticky bajo el header">
+  <div class="mk-w">
+    <ul class="vsn-list">
+      {data.secciones.map((s) => <li><a href={`#${s.id}`} data-ancla={s.id}>{s.label}</a></li>)}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .vsn { position: sticky; top: 80px; z-index: 90; background: #fff; border-bottom: 1px solid var(--mk-borde); }
+  .vsn-list { display: flex; gap: 8px; padding-block: 12px; overflow-x: auto; scrollbar-width: none; }
+  .vsn-list::-webkit-scrollbar { display: none; }
+  .vsn a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: var(--mk-r-pill); background: var(--mk-fondo-tonal); color: var(--mk-violeta-700); font-size: 15px; font-weight: 600; white-space: nowrap; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
+  .vsn a:hover { background: var(--mk-violeta-100); }
+  .vsn a[aria-current="true"] { background: var(--mk-violeta-700); color: #fff; }
+  @media (max-width: 1200px) { .vsn { top: 72px; } }
+  @media (max-width: 767px) { .vsn-list { margin-inline: calc(-1 * var(--mk-margen)); padding-inline: var(--mk-margen); } }
+</style>
+
+<script>
+  const nav = document.querySelector('[data-vsn]');
+  if (nav && 'IntersectionObserver' in window) {
+    const lista = nav.querySelector('ul');
+    const links = [...nav.querySelectorAll('[data-ancla]')];
+    const secciones = links.map((a) => document.getElementById(a.dataset.ancla)).filter(Boolean);
+    const marcar = (id) => links.forEach((a) => {
+      const on = a.dataset.ancla === id;
+      on ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current');
+      if (on && lista.scrollWidth > lista.clientWidth) lista.scrollTo({ left: a.offsetLeft - 16 });
+    });
+    const io = new IntersectionObserver((entradas) => {
+      const visible = entradas.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+      if (visible) marcar(visible.target.id);
+    }, { rootMargin: '-160px 0px -55% 0px' });
+    secciones.forEach((s) => io.observe(s));
+  }
+</script>

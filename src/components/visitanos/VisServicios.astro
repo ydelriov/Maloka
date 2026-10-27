@@ -1,0 +1,52 @@
+---
+/* Servicios y accesibilidad. Solo se nombran servicios confirmados; el resto queda marcado por validar.
+   En Elementor: grid de Icon Box con borde y un contenedor tonal para accesibilidad. */
+import data from '../../data/visitanos.json';
+import Icon from '../ui/Icon.astro';
+import Button from '../ui/Button.astro';
+import PorValidar from '../ui/PorValidar.astro';
+---
+<section class="vse mk-seccion" id="servicios" aria-labelledby="vse-t">
+  <div class="mk-w">
+    <div class="el-head">
+      <div class="el-head-txt">
+        <p class="t-eyebrow">Servicios</p>
+        <h2 class="t-h2" id="vse-t">Lo que encuentras en Maloka.</h2>
+        <PorValidar texto="Otros servicios por validar" />
+      </div>
+    </div>
+    <ul class="vse-grid" data-el="Contenedor grid · 3 / 3 / 1 col · Icon Box con borde">
+      {data.servicios.map((s) => (
+        <li><span class="mk-ib"><Icon name={s.icono} /></span><h3 class="t-h5">{s.titulo}</h3><p>{s.texto}</p></li>
+      ))}
+    </ul>
+
+    <div class="vse-acc" id="accesibilidad" data-el="Contenedor · Fondo Violeta 50 · Radio 28 · flex fila">
+      <span class="vse-acc-ic"><Icon name="access" size="28" /></span>
+      <div class="vse-acc-txt">
+        <p class="t-eyebrow">Accesibilidad</p>
+        <h2 class="t-h3">{data.accesibilidad.titulo}</h2>
+        <p>{data.accesibilidad.texto}</p>
+        <PorValidar texto="Detalles de accesibilidad por validar" />
+      </div>
+      <Button href="#preguntas" variant="secundario">Resolver dudas</Button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .vse-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .vse-grid li { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 28px; border: 1px solid var(--mk-borde); border-radius: var(--mk-r-28); }
+  .vse-grid p { font-size: var(--mk-small); color: var(--mk-texto-2); }
+  .vse-acc { display: flex; align-items: center; gap: 24px 32px; margin-top: 40px; padding: 40px; border-radius: var(--mk-r-28); background: var(--mk-fondo-tonal); scroll-margin-top: 160px; }
+  .vse-acc-ic { width: 72px; height: 72px; flex: none; border-radius: 22px; display: grid; place-items: center; background: #fff; color: var(--mk-violeta-700); }
+  .vse-acc-txt { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+  .vse-acc-txt > p:not(.t-eyebrow) { color: var(--mk-texto-2); max-width: 640px; }
+  @media (max-width: 1024px) { .vse-acc { flex-wrap: wrap; } .vse-acc-txt { flex-basis: calc(100% - 104px); } }
+  @media (max-width: 767px) {
+    .vse-grid { grid-template-columns: 1fr; }
+    .vse-grid li { padding: 20px; }
+    .vse-acc { flex-direction: column; align-items: flex-start; padding: 28px 20px; border-radius: var(--mk-r-20); }
+    .vse-acc :global(.btn) { width: 100%; }
+  }
+</style>

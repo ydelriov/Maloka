@@ -36,7 +36,8 @@ import { url } from '../lib/url.js';
       <ul>
         <li><PorValidar /> marca datos no confirmados: cifras de impacto, planes, servicios y accesibilidad.</li>
         <li><PorValidar texto="Contenido de ejemplo" /> marca la agenda y las noticias.</li>
-        <li>Los enlaces internos apuntan a <code>#</code>: solo existe la home. La compra de entradas abre Tuboleta en otra pestaña.</li>
+        <li>Los enlaces a páginas que aún no existen apuntan a <code>#</code>. La compra de entradas abre Tuboleta en otra pestaña.</li>
+        <li>Primera página interna: <a href={url('visitanos/')}>Visítanos</a> (horarios, tarifas, cómo llegar, servicios, accesibilidad, experiencias y preguntas frecuentes). El menú de V7 ya enlaza a sus secciones.</li>
         <li>La variante <a href={url('elementor/')}>Elementor</a> tiene su <a href={url('elementor/guia/')}>guía de construcción</a> y el botón «Estructura» en la barra inferior.</li>
         <li>El prototipo anterior (Agéndate, Ven en grupo y la home navy) sigue disponible en <a href={url('legacy/')}>/legacy</a>.</li>
       </ul>

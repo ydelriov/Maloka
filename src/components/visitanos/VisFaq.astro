@@ -1,0 +1,39 @@
+---
+/* Preguntas frecuentes: acordeón nativo (details/summary). En Elementor: widget Acordeón (anidado), con FAQ Schema. */
+import data from '../../data/visitanos.json';
+import site from '../../data/site.json';
+import Icon from '../ui/Icon.astro';
+import Button from '../ui/Button.astro';
+import PorValidar from '../ui/PorValidar.astro';
+---
+<section class="vfq mk-seccion" id="preguntas" aria-labelledby="vfq-t">
+  <div class="mk-w vfq-in">
+    <div class="vfq-txt">
+      <p class="t-eyebrow">Preguntas frecuentes</p>
+      <h2 class="t-h2" id="vfq-t">Resolvemos tus dudas.</h2>
+      <p class="t-muted">¿No encuentras tu respuesta? Llámanos.</p>
+      <Button href={`tel:${site.telefonoHref}`} variant="secundario" iconStart="phone">{site.telefono}</Button>
+    </div>
+    <div class="vfq-lista" data-el="Acordeón anidado · FAQ Schema">
+      {data.preguntas.map((q, i) => (
+        <details class="vfq-item" open={i === 0}>
+          <summary><span>{q.p}</span><Icon name="down" class="vfq-chev" /></summary>
+          <div class="vfq-r"><p>{q.r}</p>{!q.real && <PorValidar />}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .vfq-in { display: grid; grid-template-columns: 4fr 8fr; gap: 40px 64px; align-items: start; }
+  .vfq-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+  .vfq-lista { border-top: 1px solid var(--mk-borde); }
+  .vfq-item { border-bottom: 1px solid var(--mk-borde); }
+  .vfq-item summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 64px; padding-block: 16px; font-size: var(--mk-h5); font-weight: 600; cursor: pointer; list-style: none; }
+  .vfq-item summary::-webkit-details-marker { display: none; }
+  .vfq-item summary :global(.vfq-chev) { color: var(--mk-violeta-700); transition: transform var(--mk-t-rapida) var(--mk-ease); flex: none; }
+  .vfq-item[open] summary :global(.vfq-chev) { transform: rotate(180deg); }
+  .vfq-r { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding-bottom: 20px; color: var(--mk-texto-2); max-width: 680px; }
+  @media (max-width: 1024px) { .vfq-in { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,33 @@
+---
+/* Visítanos: horarios y tarifas primero, luego cómo llegar, servicios, accesibilidad, experiencias y preguntas.
+   Mismo sistema que V7 (header transparente con botón azul, breakpoints de Elementor). */
+import Base from '../layouts/Base.astro';
+import ElHeader from '../components/elementor/ElHeader.astro';
+import VisHero from '../components/visitanos/VisHero.astro';
+import VisSubnav from '../components/visitanos/VisSubnav.astro';
+import VisHorarios from '../components/visitanos/VisHorarios.astro';
+import VisLlegar from '../components/visitanos/VisLlegar.astro';
+import VisServicios from '../components/visitanos/VisServicios.astro';
+import V7Vive from '../components/v7/V7Vive.astro';
+import VisFaq from '../components/visitanos/VisFaq.astro';
+import Footer from '../components/layout/Footer.astro';
+import { url } from '../lib/url.js';
+import '../styles/elementor.css';
+---
+<Base title="Visítanos · Horarios, tarifas y cómo llegar · Maloka" description="Horarios de Maloka en Bogotá: lunes a viernes de 11:00 a. m. a 5:00 p. m.; sábados, domingos y festivos de 9:30 a. m. a 6:00 p. m. Tarifas, Cine Domo, cómo llegar, servicios, accesibilidad y preguntas frecuentes." variante="visitanos" clase="el">
+  <ElHeader transparente ctaVariante="azul" inicio={url('v7/')} />
+  <main id="contenido">
+    <VisHero />
+    <VisSubnav />
+    <VisHorarios />
+    <VisLlegar />
+    <VisServicios />
+    <div id="experiencias" class="vis-exp"><V7Vive /></div>
+    <VisFaq />
+  </main>
+  <Footer />
+</Base>
+<style>
+  .vis-exp { scroll-margin-top: 140px; }
+  :global(#horarios), :global(#llegar), :global(#servicios), :global(#preguntas) { scroll-margin-top: 140px; }
+</style>

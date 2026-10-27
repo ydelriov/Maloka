@@ -1,0 +1,189 @@
+{
+  "hero": {
+    "titulo": "Visítanos",
+    "lead": "Horarios, tarifas y todo lo que necesitas para vivir Maloka. Compra tus entradas en línea y llega listo para explorar.",
+    "imagen": "panoramica-maloka.jpg",
+    "alt": "Panorámica del edificio de Maloka con su domo"
+  },
+  "secciones": [
+    {
+      "id": "horarios",
+      "label": "Horarios y tarifas"
+    },
+    {
+      "id": "llegar",
+      "label": "Cómo llegar"
+    },
+    {
+      "id": "servicios",
+      "label": "Servicios"
+    },
+    {
+      "id": "accesibilidad",
+      "label": "Accesibilidad"
+    },
+    {
+      "id": "experiencias",
+      "label": "Experiencias"
+    },
+    {
+      "id": "preguntas",
+      "label": "Preguntas frecuentes"
+    }
+  ],
+  "productos": {
+    "eyebrow": "Tarifas",
+    "titulo": "Elige tu entrada.",
+    "texto": "Todas las entradas se compran en Tuboleta. Los precios cambian según la edad y la temporada.",
+    "items": [
+      {
+        "id": "general",
+        "titulo": "Entrada general",
+        "categoria": "experiencia",
+        "categoriaLabel": "Salas interactivas",
+        "imagen": "sala-experimenta.jpg",
+        "alt": "Sala Experimenta con mesas y módulos de colores",
+        "descripcion": "Recorre las salas interactivas a tu ritmo y experimenta con todo.",
+        "incluye": [
+          "Salas interactivas",
+          "Guía digital en Bloomberg Connects"
+        ]
+      },
+      {
+        "id": "domo",
+        "titulo": "Cine Domo",
+        "categoria": "cine",
+        "categoriaLabel": "Cine Domo",
+        "imagen": "cine-domo-cupula.jpg",
+        "alt": "Interior del Cine Domo con un planeta proyectado en la cúpula",
+        "descripcion": "Una función proyectada en toda la cúpula. Elige la película y el horario.",
+        "incluye": [
+          "Una función del Cine Domo"
+        ],
+        "destacado": true
+      },
+      {
+        "id": "combo",
+        "titulo": "Entrada general + Cine Domo",
+        "categoria": "especial",
+        "categoriaLabel": "Plan completo",
+        "imagen": "cine-domo-acceso.jpg",
+        "alt": "Acceso al Cine Domo de Maloka",
+        "descripcion": "Las salas interactivas y una función del Cine Domo en la misma visita.",
+        "incluye": [
+          "Salas interactivas",
+          "Una función del Cine Domo"
+        ]
+      },
+      {
+        "id": "labs",
+        "titulo": "Laboratorios y talleres",
+        "categoria": "taller",
+        "categoriaLabel": "Costo adicional",
+        "imagen": "laboratorio-microscopio.jpg",
+        "alt": "Niñas de colegio observando por un microscopio",
+        "descripcion": "Actividades con mediadores en los laboratorios. Revisa la agenda del día.",
+        "incluye": [
+          "Actividad guiada por mediadores"
+        ]
+      }
+    ],
+    "publicos": [
+      "Adultos",
+      "Niños",
+      "Personas mayores"
+    ]
+  },
+  "cartelera": {
+    "titulo": "En el Cine Domo.",
+    "texto": "Películas que se han presentado en el Cine Domo. Revisa en Tuboleta las funciones de cada día.",
+    "items": [
+      {
+        "titulo": "Esfera: un instante de vida"
+      },
+      {
+        "titulo": "El increíble sistema solar"
+      },
+      {
+        "titulo": "Migrantes climáticos"
+      },
+      {
+        "titulo": "Tunka"
+      }
+    ]
+  },
+  "condiciones": [
+    "La venta de entradas cierra a las 4:00 p. m.",
+    "Los festivos aplica el horario de fines de semana: 9:30 a. m. – 6:00 p. m."
+  ],
+  "llegar": {
+    "titulo": "Cómo llegar.",
+    "texto": "Estamos en Bogotá, en la Carrera 68D #24A-51.",
+    "mapa": "https://www.google.com/maps/search/?api=1&query=Maloka%2C%20Carrera%2068D%20%2324A-51%2C%20Bogot%C3%A1",
+    "modos": [
+      {
+        "titulo": "En transporte público",
+        "icono": "pin"
+      },
+      {
+        "titulo": "En bicicleta",
+        "icono": "compass"
+      },
+      {
+        "titulo": "En carro",
+        "icono": "building"
+      }
+    ]
+  },
+  "servicios": [
+    {
+      "titulo": "Guía digital",
+      "icono": "guide",
+      "texto": "Recorre Maloka desde tu celular con Bloomberg Connects. Es gratuita."
+    },
+    {
+      "titulo": "Venta de entradas",
+      "icono": "ticket",
+      "texto": "En línea en Tuboleta. La venta cierra a las 4:00 p. m."
+    },
+    {
+      "titulo": "Atención al visitante",
+      "icono": "phone",
+      "texto": "Llámanos al (+57) 601 427 2707."
+    }
+  ],
+  "accesibilidad": {
+    "titulo": "Recorre Maloka sin barreras.",
+    "texto": "Queremos que todas las personas puedan vivir la ciencia. Aquí encontrarás cómo es el acceso a las salas, al Cine Domo y a los laboratorios."
+  },
+  "preguntas": [
+    {
+      "p": "¿Cuál es el horario de Maloka?",
+      "r": "De lunes a viernes de 11:00 a. m. a 5:00 p. m. Sábados, domingos y festivos de 9:30 a. m. a 6:00 p. m.",
+      "real": true
+    },
+    {
+      "p": "¿Hasta qué hora puedo comprar entradas?",
+      "r": "La venta de entradas cierra a las 4:00 p. m.",
+      "real": true
+    },
+    {
+      "p": "¿Dónde compro las entradas?",
+      "r": "En línea en Tuboleta. Desde allí eliges la entrada, el día y, para el Cine Domo, la función.",
+      "real": true
+    },
+    {
+      "p": "¿Hay guía para recorrer Maloka?",
+      "r": "Sí. La guía digital es gratuita y se usa desde el celular con la aplicación Bloomberg Connects.",
+      "real": true
+    },
+    {
+      "p": "¿Cuánto dura la visita?",
+      "r": "Respuesta por validar."
+    },
+    {
+      "p": "¿Desde qué edad se puede entrar al Cine Domo?",
+      "r": "Respuesta por validar."
+    }
+  ]
+}

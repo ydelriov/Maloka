@@ -10,6 +10,7 @@ import Logo from '../ui/Logo.astro';
 import Icon from '../ui/Icon.astro';
 import Button from '../ui/Button.astro';
 import { url } from '../../lib/url.js';
+import { ruta } from '../../lib/rutas.js';
 
 const { inicio = url('elementor/'), transparente = false, ctaVariante = 'primario' } = Astro.props;
 ---
@@ -32,7 +33,7 @@ const { inicio = url('elementor/'), transparente = false, ctaVariante = 'primari
                 </div>
                 <ul class="emm-links" data-el="Icon Box ×N · enlace en todo el cuadro">
                   {it.links.map((l) => (
-                    <li><a class="emm-link" href="#"><span class="mk-ib emm-ib"><Icon name={l.icono} /></span><span><b>{l.label}</b>{l.desc && <small>{l.desc}</small>}</span></a></li>
+                    <li><a class="emm-link" href={ruta(l.label)}><span class="mk-ib emm-ib"><Icon name={l.icono} /></span><span><b>{l.label}</b>{l.desc && <small>{l.desc}</small>}</span></a></li>
                   ))}
                 </ul>
                 {it.horarioHoy ? (
@@ -48,7 +49,7 @@ const { inicio = url('elementor/'), transparente = false, ctaVariante = 'primari
             </div>
           </li>
         ) : (
-          <li><a class="eh-trig" href="#">{it.label}</a></li>
+          <li><a class="eh-trig" href={ruta(it.label)}>{it.label}</a></li>
         ))}
       </ul>
     </nav>
@@ -71,11 +72,11 @@ const { inicio = url('elementor/'), transparente = false, ctaVariante = 'primari
                   {it.label}<Icon name="down" size="20" class="eh-chev" />
                 </button>
                 <ul class="eh-dd-sub" id={`edd-${it.id}`} hidden>
-                  {it.links.map((l) => <li><a href="#"><Icon name={l.icono} size="20" />{l.label}</a></li>)}
+                  {it.links.map((l) => <li><a href={ruta(l.label)}><Icon name={l.icono} size="20" />{l.label}</a></li>)}
                 </ul>
               </>
             ) : (
-              <a class="eh-dd-trig" href="#">{it.label}</a>
+              <a class="eh-dd-trig" href={ruta(it.label)}>{it.label}</a>
             )}
           </li>
         ))}
