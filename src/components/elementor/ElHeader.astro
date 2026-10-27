@@ -11,7 +11,7 @@ import Icon from '../ui/Icon.astro';
 import Button from '../ui/Button.astro';
 import { url } from '../../lib/url.js';
 
-const { inicio = url('elementor/'), transparente = false } = Astro.props;
+const { inicio = url('elementor/'), transparente = false, ctaVariante = 'primario' } = Astro.props;
 ---
 <header class:list={['eh', transparente && 'eh--tr']} data-eh data-el={transparente ? 'Theme Builder › Header · Transparente sobre el hero · Sticky con fondo blanco al hacer scroll' : 'Theme Builder › Header · Contenedor flex fila · Sticky (Efectos de movimiento)'}>
   <div class="mk-w eh-bar">
@@ -54,7 +54,7 @@ const { inicio = url('elementor/'), transparente = false } = Astro.props;
     </nav>
 
     <div class="eh-acc">
-      <Button href={site.entradas.url} external variant="primario" size="sm" iconStart="ticket" class="eh-cta" data-el="Botón · Primario">{site.entradas.texto}</Button>
+      <Button href={site.entradas.url} external variant={ctaVariante} size="sm" iconStart="ticket" class="eh-cta" data-el={ctaVariante === 'azul' ? 'Botón · Azul 500' : 'Botón · Primario'}>{site.entradas.texto}</Button>
       <Button variant="secundario" size="sm" icon="menu" label="Menú" class="eh-burger" aria-expanded="false" aria-controls="eh-desplegable" data-eh-burger />
     </div>
   </div>

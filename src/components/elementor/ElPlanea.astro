@@ -7,8 +7,9 @@ import Icon from '../ui/Icon.astro';
 import PorValidar from '../ui/PorValidar.astro';
 const ids = ['horarios', 'llegar', 'servicios', 'guia'];
 const items = ids.map((id) => visita.items.find((i) => i.id === id));
+const { subir = false } = Astro.props;
 ---
-<section class="epl" id="planea" aria-labelledby="epl-t">
+<section class:list={['epl', subir && 'epl--subir']} id="planea" aria-labelledby="epl-t">
   <div class="mk-w">
     <div class="epl-card" data-el="Contenedor · Fondo blanco · Radio 28 · Sombra 3 · Margen sup. −80 / −64 / −56">
       <div class="epl-head" data-el="Contenedor flex fila · Título + Botón enlace">
@@ -49,13 +50,17 @@ const items = ids.map((id) => visita.items.find((i) => i.id === id));
   .epl-txt { display: grid; gap: 4px; font-size: var(--mk-small); color: var(--mk-texto-2); }
   .epl-txt b { font-weight: 600; color: var(--mk-texto); display: block; }
   .epl-link { margin-top: auto; padding-top: 4px; font-size: 15px; }
+  /* V7: la tarjeta sube más sobre el hero */
+  .epl--subir { margin-top: -152px; }
   @media (max-width: 1024px) {
     .epl { margin-top: -64px; }
+    .epl--subir { margin-top: -112px; }
     .epl-card { padding: 28px 32px 32px; }
     .epl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 28px; }
   }
   @media (max-width: 767px) {
     .epl { margin-top: -56px; }
+    .epl--subir { margin-top: -72px; }
     .epl-card { padding: 24px 20px 28px; border-radius: var(--mk-r-20); }
     .epl-grid { grid-template-columns: 1fr; gap: 0; }
     .epl-item { padding-block: 20px; border-top: 1px solid var(--mk-borde); }

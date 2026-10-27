@@ -59,7 +59,7 @@ const slides = data.slides;
 </section>
 
 <style>
-  .h7 { position: relative; overflow: hidden; background: var(--mk-hero-fondo); color: #fff; min-height: 780px; display: flex; align-items: center; padding-block: 128px 176px; }
+  .h7 { position: relative; overflow: hidden; background: var(--mk-hero-fondo); color: #fff; min-height: 780px; display: flex; align-items: center; padding-block: 128px 224px; }
   /* Arco blanco del domo que cierra el hero (el único arco de esta sección) */
   .h7::after { content: ""; position: absolute; z-index: 1; left: -15%; right: -15%; bottom: -1px; height: 110px; background: #fff; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
 
@@ -95,14 +95,14 @@ const slides = data.slides;
   .h7.is-pausado :global(.ic-pausa) { display: none; }
 
   @media (max-width: 1024px) {
-    .h7 { min-height: 640px; padding-block: 112px 168px; }
+    .h7 { min-height: 640px; padding-block: 112px 184px; }
     .h7::after { height: 72px; }
     .h7-bg :global(.h7-bg-img) { object-position: 85% 50%; }
     .h7-slide--media { grid-template-columns: 1fr 1fr; gap: 32px; }
     .h7-slide--fondo .h7-lead { max-width: 420px; }
   }
   @media (max-width: 767px) {
-    .h7 { min-height: 0; padding-block: 88px 136px; align-items: flex-start; }
+    .h7 { min-height: 0; padding-block: 88px 112px; align-items: flex-start; }
     .h7::after { height: 40px; }
     .h7-bg { display: none; }
     .h7-in { gap: 24px; }

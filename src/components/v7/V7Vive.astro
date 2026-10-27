@@ -1,7 +1,7 @@
 ---
-/* Vive Maloka (V7): el Cine Domo como protagonista. Tarjeta grande en modo oscuro (el Design System reserva el
-   modo oscuro para el Cine Domo) y, al lado, las otras experiencias como ActionCard en fila.
-   En Elementor: contenedor grid 7fr 5fr; la tarjeta grande es un contenedor-enlace y las demás un Loop Grid de 1 columna. */
+/* Vive Maloka (V7): el Cine Domo como protagonista, con la misma proporción que Ven en grupo. Tarjeta en modo
+   oscuro (el Design System reserva el modo oscuro para el Cine Domo) y, al lado, las otras experiencias en fila.
+   En Elementor: contenedor grid 2 columnas; la tarjeta grande es un contenedor-enlace y las demás un Loop Grid de 1 columna. */
 import { Picture } from 'astro:assets';
 import data from '../../data/experiencias.json';
 import ActionCard from '../ui/ActionCard.astro';
@@ -25,11 +25,11 @@ const resto = data.items.filter((i) => i.id !== 'domo');
     <div class="v7v-grid">
       <a class="v7v-domo mk-oscuro" href="#" data-el="Contenedor-enlace · Fondo oscuro #140A1F · Radio 28">
         <div class="v7v-domo-media">
-          <Picture src={img(domo.imagen)} alt={domo.alt} formats={['avif', 'webp']} widths={[480, 750]} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 90vw, 720px" class="v7v-domo-img" loading="lazy" />
+          <Picture src={img(domo.imagen)} alt={domo.alt} formats={['avif', 'webp']} widths={[480, 750]} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 90vw, 620px" class="v7v-domo-img" loading="lazy" />
           <Chip cat="cine" label="Cine Domo" class="v7v-chip" />
         </div>
         <div class="v7v-domo-txt">
-          <h3 class="t-h1 v7v-domo-t">{domo.titulo}</h3>
+          <h3 class="t-h2 v7v-domo-t">{domo.titulo}</h3>
           <p class="v7v-domo-d">{domo.descripcion}</p>
           <ul class="v7v-datos">
             <li><Icon name="cal" size="20" />{domo.meta}</li>
@@ -42,7 +42,7 @@ const resto = data.items.filter((i) => i.id !== 'domo');
       <ul class="v7v-resto" data-el="Loop Grid · 1 columna · Tarjeta en fila">
         {resto.map((it) => (
           <li>
-            <ActionCard image={it.imagen} alt={it.alt} category={it.categoria} title={it.titulo} description={it.descripcion} meta={it.meta} layout="fila" sizes="(max-width: 767px) 92vw, 200px" />
+            <ActionCard image={it.imagen} alt={it.alt} category={it.categoria} title={it.titulo} description={it.descripcion} meta={it.meta} layout="fila" sizes="(max-width: 767px) 92vw, 220px" />
             {it.fotoReutilizada && <PorValidar texto="Foto por confirmar" class="v7v-pv" />}
           </li>
         ))}
@@ -52,18 +52,18 @@ const resto = data.items.filter((i) => i.id !== 'domo');
 </section>
 
 <style>
-  .v7v-grid { display: grid; grid-template-columns: 7fr 5fr; gap: 40px; align-items: stretch; }
+  .v7v-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 64px; align-items: start; }
   .v7v-domo { display: flex; flex-direction: column; border-radius: var(--mk-r-28); overflow: hidden; background: var(--mk-oscuro); color: #fff; transition: box-shadow var(--mk-t) var(--mk-ease); }
   .v7v-domo:hover { box-shadow: var(--mk-sombra-2); }
   .v7v-domo:focus-visible { outline: var(--mk-foco); outline-offset: 4px; }
-  .v7v-domo-media { position: relative; aspect-ratio: 16 / 9; overflow: hidden; }
+  .v7v-domo-media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
   .v7v-domo-media :global(picture), .v7v-domo-media :global(.v7v-domo-img) { position: absolute; inset: 0; width: 100%; height: 100%; }
   .v7v-domo-media :global(.v7v-domo-img) { object-fit: cover; transition: transform var(--mk-t) var(--mk-ease); }
   .v7v-domo:hover :global(.v7v-domo-img) { transform: scale(1.04); }
   .v7v-domo-media :global(.v7v-chip) { position: absolute; left: 20px; top: 20px; }
-  .v7v-domo-txt { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 32px 36px 36px; }
+  .v7v-domo-txt { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 24px 28px 28px; }
   .v7v-domo-t { color: #fff; }
-  .v7v-domo-d { font-size: var(--mk-lead); line-height: 1.5; color: var(--mk-oscuro-texto); max-width: 520px; }
+  .v7v-domo-d { font-size: var(--mk-body); line-height: 1.6; color: var(--mk-oscuro-texto); max-width: 520px; }
   .v7v-datos { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: var(--mk-small); font-weight: 600; color: #fff; }
   .v7v-datos li { display: flex; align-items: center; gap: 8px; }
   .v7v-datos :global(.mk-ic) { color: var(--mk-violeta-300); }
@@ -71,9 +71,9 @@ const resto = data.items.filter((i) => i.id !== 'domo');
   .v7v-cta :global(.mk-ic) { transition: transform var(--mk-t-rapida) var(--mk-ease); }
   .v7v-domo:hover .v7v-cta :global(.mk-ic) { transform: translateX(4px); }
 
-  .v7v-resto { display: flex; flex-direction: column; justify-content: center; gap: 24px; }
-  .v7v-resto li + li { padding-top: 24px; border-top: 1px solid var(--mk-borde); }
-  .v7v-resto :global(.ac--fila) { grid-template-columns: 180px 1fr; gap: 20px; }
+  .v7v-resto { display: flex; flex-direction: column; gap: 20px; }
+  .v7v-resto li + li { padding-top: 20px; border-top: 1px solid var(--mk-borde); }
+  .v7v-resto :global(.ac--fila) { grid-template-columns: 200px 1fr; gap: 24px; }
   .v7v-resto :global(.v7v-pv) { margin-top: 8px; }
 
   @media (max-width: 1024px) {
