@@ -7,12 +7,12 @@ import PorValidar from '../components/ui/PorValidar.astro';
 import data from '../data/variantes.json';
 import { url } from '../lib/url.js';
 ---
-<Base title="Prototipo de la home de Maloka · cinco variantes" description="Prototipo navegable de la home de maloka.org en cinco variantes de layout para comparar en el navegador.">
+<Base title="Prototipo de la home de Maloka · cinco variantes" description="Prototipo navegable de la home de maloka.org en varias propuestas de layout para comparar en el navegador.">
   <header class="ix-top mk-w">
     <span class="ix-logo"><Logo size={56} /></span>
     <div>
       <p class="t-eyebrow">Prototipo navegable</p>
-      <h1 class="t-h1">Home de Maloka · cinco variantes</h1>
+      <h1 class="t-h1">Home de Maloka · propuestas</h1>
       <p class="t-lead">La misma home con el Design System de Claude Design, imágenes reales y datos confirmados. Lo que no está validado aparece marcado.</p>
     </div>
   </header>
@@ -37,6 +37,7 @@ import { url } from '../lib/url.js';
         <li><PorValidar /> marca datos no confirmados: cifras de impacto, planes, servicios y accesibilidad.</li>
         <li><PorValidar texto="Contenido de ejemplo" /> marca la agenda y las noticias.</li>
         <li>Los enlaces a páginas que aún no existen apuntan a <code>#</code>. La compra de entradas abre Tuboleta en otra pestaña.</li>
+        <li>V8, V9 y V10 son la nueva dirección visual (menos morado, fondo hueso, fotos rectas y un solo botón). Las anteriores siguen disponibles para comparar.</li>
         <li>Primera página interna: <a href={url('visitanos/')}>Visítanos</a> (horarios, tarifas, cómo llegar, servicios, accesibilidad, experiencias y preguntas frecuentes). El menú de V7 ya enlaza a sus secciones.</li>
         <li>La variante <a href={url('elementor/')}>Elementor</a> tiene su <a href={url('elementor/guia/')}>guía de construcción</a> y el botón «Estructura» en la barra inferior.</li>
         <li>El prototipo anterior (Agéndate, Ven en grupo y la home navy) sigue disponible en <a href={url('legacy/')}>/legacy</a>.</li>
@@ -51,7 +52,6 @@ import { url } from '../lib/url.js';
   .ix-top > div { display: grid; gap: 12px; }
   .ix-main { padding-bottom: 96px; display: grid; gap: 48px; }
   .ix-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-  .ix-grid li:first-child { grid-column: span 2; grid-row: span 2; }
   .ix-card { display: grid; gap: 16px; border-radius: var(--mk-r-28); color: var(--mk-texto); }
   .ix-card:focus-visible { outline-offset: 6px; }
   .ix-thumb { display: block; aspect-ratio: 4 / 5; border-radius: var(--mk-r-20); overflow: hidden; border: 1px solid var(--mk-borde); background: var(--mk-fondo-alt); transition: box-shadow var(--mk-t) var(--mk-ease); }

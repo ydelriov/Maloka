@@ -66,6 +66,24 @@ Las secciones reciben `variante="v4" | "v5" | "v6"`: cambian la grilla y el trat
 - Arco del domo: máximo uno por sección.
 - Foco visible: `3px solid #B897D6` (blanco sobre fondo oscuro).
 
+## Nueva dirección · V8, V9 y V10
+
+Tres propuestas de la home con la dirección aprobada tras la revisión: el violeta solo en detalles, fondo hueso
+`#F4F1EC` y tintes de la paleta de experiencias, fotos y bloques rectos (radio 0), un solo botón («Compra tus
+entradas» en el menú) y enlaces de texto subrayados con flecha. Componentes en `src/components/p/`, estilos en
+`src/styles/propuestas.css` y contenido en `src/data/propuestas/home.json`.
+
+| Ruta | Propuesta | Cómo se arma en Elementor |
+|---|---|---|
+| `/v8` | P1 · Galería a sangre | Contenedores de ancho completo con imagen de fondo, superposición plana en la mitad inferior y el contenedor completo como enlace; agenda y noticias con Loop Grid |
+| `/v9` | P2 · Paneles de color | Fondo hueso en el cuerpo; cada panel es un contenedor con color de fondo y **Efectos de movimiento › Sticky: arriba** con un desplazamiento distinto (24, 100, 176, 252 px) y «Sticky en: escritorio y tablet»; Loop Grid para agenda y noticias |
+| `/v10` | P3 · Bandas de color | Un contenedor de ancho completo por sección con su color global; listas con Icon List o contenedores con borde inferior de 1.5 px; Loop Grid para agenda y noticias |
+
+Piezas comunes: `PHeader` (Theme Builder › Header con el widget Menú y un solo Botón), `PHero` (Carrusel anidado con
+fundido; la pausa va en un widget HTML), `PCard` (plantilla de Loop Item: imagen sin radio, fecha y categoría en
+posición absoluta, todo el contenedor como enlace), `PLink` (Botón con estilo de enlace: sin fondo, borde inferior de
+2 px e icono de flecha) y `PFooter` (Theme Builder › Footer con Formulario de un campo).
+
 ## Variante Elementor
 
 `/elementor` usa la misma información y el mismo Design System, pero solo con lo que Elementor Pro hace de forma nativa:

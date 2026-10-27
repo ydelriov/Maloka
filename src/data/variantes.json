@@ -1,6 +1,21 @@
 {
   "items": [
     {
+      "id": "v8",
+      "nombre": "V8 · P1 Galería a sangre",
+      "descripcion": "Fotos a ancho completo, una tras otra, con etiqueta de color, título y una línea sobre un velo plano. Inspirada en rijksmuseum.nl."
+    },
+    {
+      "id": "v9",
+      "nombre": "V9 · P2 Paneles de color",
+      "descripcion": "Fondo hueso, titular grande antes del banner y paneles de color plano que se apilan al hacer scroll. Inspirada en vangoghmuseum.nl."
+    },
+    {
+      "id": "v10",
+      "nombre": "V10 · P3 Bandas de color",
+      "descripcion": "Cada sección con su fondo de la paleta, listas grandes separadas por líneas y fotos rectas."
+    },
+    {
       "id": "v7",
       "nombre": "V7 · Combinada",
       "descripcion": "La mezcla elegida en la revisión: hero rotativo de V5, Planea tu visita y Agenda de Elementor, Cine Domo protagonista, grupos de V6 ordenado, Descubre en bloque tonal, Crea con Maloka de V4 y noticias sin fecha."

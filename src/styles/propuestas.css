@@ -1,0 +1,44 @@
+/* Nueva dirección visual (V8–V10): menos morado, fondos hueso y tintes de la paleta, fotos y bloques rectos,
+   un solo botón («Compra tus entradas» en el menú) y enlaces de texto subrayados con flecha.
+   Breakpoints de Elementor: tablet ≤ 1024 · móvil ≤ 767. */
+.pp {
+  --pp-h2: 56px; --pp-display: 64px; --pp-lead: 18px;
+  --mk-seccion: 104px; --mk-margen: 80px;
+  background: #fff;
+}
+@media (max-width: 1024px) { .pp { --pp-h2: 40px; --pp-display: 50px; --mk-seccion: 80px; --mk-margen: 40px; } }
+@media (max-width: 767px) { .pp { --pp-h2: 32px; --pp-display: 38px; --pp-lead: 17px; --mk-seccion: 56px; --mk-margen: 16px; } }
+
+.pp img, .pp picture { border-radius: 0; }
+.pp-h2 { margin: 0; font-size: var(--pp-h2); line-height: 1.05; font-weight: 700; letter-spacing: -0.02em; }
+.pp-eb { font-size: 14px; font-weight: 600; color: var(--mk-violeta-500); }
+.pp-lead { font-size: var(--pp-lead); line-height: 1.55; }
+.pp-muted { color: var(--mk-texto-2); }
+.pp-sec { padding-top: var(--mk-seccion); }
+.pp-banda { padding-block: var(--mk-seccion); }
+.pp-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px 32px; flex-wrap: wrap; margin-bottom: 40px; }
+.pp-head > div { display: grid; gap: 8px; }
+
+/* Enlace de acción: texto 700, subrayado de 2 px y flecha */
+.pp-tl { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; align-self: flex-start; font-weight: 700; font-size: 16px; color: inherit; border-bottom: 2px solid currentColor; padding-bottom: 2px; transition: color var(--mk-t-rapida), border-color var(--mk-t-rapida); }
+.pp-tl .mk-ic { transition: transform var(--mk-t-rapida) var(--mk-ease); }
+.pp-tl:hover { border-color: var(--mk-violeta-500); }
+.pp-tl:hover .mk-ic { transform: translateX(4px); }
+
+/* Etiqueta recta */
+.pp-et { display: inline-flex; align-items: center; height: 26px; padding: 0 10px; font-size: 12px; font-weight: 700; line-height: 1; color: var(--mk-texto); background: #fff; align-self: flex-start; white-space: nowrap; }
+
+/* Contenido no confirmado */
+.pp-ej { display: inline-block; margin-top: 16px; padding: 2px 8px; font-size: 12px; font-weight: 700; color: var(--mk-atencion); background: var(--mk-atencion-fondo); }
+
+/* Foto que llena su caja, recta */
+.pp-foto { position: relative; display: block; overflow: hidden; background: var(--mk-neutro-200); }
+.pp-foto picture, .pp-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* Lista grande separada por líneas de 1.5 px */
+.pp-lista { border-top: 1.5px solid var(--mk-texto); }
+.pp-lista > li > a { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; padding-block: 18px; border-bottom: 1.5px solid var(--mk-texto); font-weight: 700; color: inherit; }
+.pp-lista > li > a .mk-ic { flex: none; transition: transform var(--mk-t-rapida) var(--mk-ease); }
+.pp-lista > li > a:hover .mk-ic { transform: translateX(4px); }
+
+@media (prefers-reduced-motion: reduce) { .pp-tl:hover .mk-ic, .pp-lista > li > a:hover .mk-ic { transform: none; } }

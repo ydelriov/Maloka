@@ -1,0 +1,18 @@
+---
+// Barra flotante solo del prototipo para saltar entre las tres propuestas (P1 = V8, P2 = V9, P3 = V10).
+import { url } from '../../lib/url.js';
+const { actual } = Astro.props;
+const ps = [['v8', 'P1 · Galería'], ['v9', 'P2 · Paneles'], ['v10', 'P3 · Bandas']];
+---
+<nav class="pb" aria-label="Propuestas del prototipo">
+  <a href={url('')}>Índice</a>
+  {ps.map(([v, l]) => <a href={url(`${v}/`)} aria-current={v === actual ? 'page' : undefined}>{l}</a>)}
+</nav>
+<style>
+  .pb { position: fixed; left: 16px; bottom: 16px; z-index: 150; display: flex; gap: 2px; padding: 4px; background: var(--mk-texto); font-size: 13px; font-weight: 700; max-width: calc(100vw - 32px); overflow-x: auto; scrollbar-width: none; }
+  .pb a { display: inline-grid; place-items: center; flex: none; height: 36px; padding: 0 12px; color: #fff; }
+  .pb a:hover { background: var(--mk-neutro-700); }
+  .pb a[aria-current="page"] { background: #fff; color: var(--mk-texto); }
+  .pb a:focus-visible { outline: var(--mk-foco-oscuro); outline-offset: 2px; }
+  @media (max-width: 767px) { .pb { left: 50%; transform: translateX(-50%); bottom: 12px; } }
+</style>

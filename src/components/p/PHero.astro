@@ -1,0 +1,155 @@
+---
+/* Banner del hero con hero-slide-1.jpg y slider de 3 diapositivas (misma imagen, otros textos).
+   Fundido de 600 ms, 7 s por diapositiva, indicadores de línea y pausa; sin autoplay con «reducir movimiento».
+   variante: «p1» (a sangre, texto abajo sobre velo) · «p2» (en caja; el H1 va en la intro de la página)
+   · «p3» (a sangre, texto arriba a la izquierda con enlace). Solo la primera diapositiva lleva <h1> (salvo en p2). */
+import { Picture } from 'astro:assets';
+import data from '../../data/propuestas/home.json';
+import site from '../../data/site.json';
+import Icon from '../ui/Icon.astro';
+import PLink from './PLink.astro';
+import { img } from '../../lib/images.js';
+const { variante = 'p1' } = Astro.props;
+const h = data.hero;
+const formato = variante === 'p3' ? 'hasta' : 'rango';
+---
+<section class:list={['phe', `phe--${variante}`, 'mk-sobre-foto']} aria-roledescription="carrusel" aria-label="Destacados de Maloka" data-pslider>
+  <div class:list={['phe-marco', variante === 'p2' && 'mk-w']}>
+    <div class="phe-caja">
+      <Picture src={img(h.imagen)} alt="" formats={['avif', 'webp']} widths={[640, 1024, 1440, 1942]} sizes={variante === 'p2' ? '(max-width: 1024px) 100vw, 1280px' : '100vw'} class="phe-img" loading="eager" fetchpriority="high" decoding="async" />
+      {variante !== 'p3' && <span class="phe-velo" aria-hidden="true"></span>}
+      <div class:list={['phe-in', variante !== 'p2' && 'mk-w']}>
+        <span class:list={['pp-et', 'phe-hoy', variante === 'p3' && 'phe-hoy--amarillo']} data-hoy data-formato={formato} data-semana={`${site.horarios.semana.abre}-${site.horarios.semana.cierra}`} data-finde={`${site.horarios.finde.abre}-${site.horarios.finde.cierra}`}>
+          {variante === 'p3' ? 'Abierto hoy hasta las 5:00 p. m.' : `Abierto hoy · ${site.horarios.semana.texto}`}
+        </span>
+        <div class="phe-slides">
+          {h.slides.map((s, i) => (
+            <div class:list={['phe-slide', i === 0 && 'is-activa']} role="group" aria-roledescription="diapositiva" aria-label={`${i + 1} de ${h.slides.length}`} aria-hidden={i === 0 ? undefined : 'true'} data-slide>
+              {i === 0 && variante !== 'p2' ? <h1 class="phe-t">{s.titulo}</h1> : <p class="phe-t">{s.titulo}</p>}
+              <p class="phe-x">{s.texto}</p>
+            </div>
+          ))}
+        </div>
+        {variante === 'p3' && <PLink texto={h.enlace.texto} class="phe-link" />}
+      </div>
+      <div class:list={['phe-ctrl', variante !== 'p2' && 'mk-w']}>
+        {variante === 'p3' && <b class="phe-num t-num" aria-hidden="true" data-num>01</b>}
+        <div class="phe-dots" role="group" aria-label="Elegir diapositiva">
+          {h.slides.map((_, i) => <button type="button" class="phe-dot" aria-label={`Ir a la diapositiva ${i + 1}`} aria-current={i === 0 ? 'true' : undefined} data-ir={i}></button>)}
+        </div>
+        {variante === 'p3' && <span class="phe-num t-num" aria-hidden="true">0{h.slides.length}</span>}
+        <button type="button" class="phe-pausa" aria-label="Pausar el carrusel" data-pausa><Icon name="pause" size="20" class="ic-pausa" /><Icon name="play" size="20" class="ic-play" /></button>
+      </div>
+    </div>
+  </div>
+  <p class="sr-only" aria-live="polite" data-anuncio></p>
+</section>
+
+<style>
+  .phe { position: relative; color: #fff; }
+  .phe-caja { position: relative; overflow: hidden; background: var(--mk-hero-fondo); }
+  .phe :global(picture), .phe :global(.phe-img) { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .phe :global(.phe-img) { object-fit: cover; object-position: 70% 50%; }
+  .phe-velo { position: absolute; left: 0; right: 0; bottom: 0; height: 50%; background: var(--mk-velo); }
+  .phe-in { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+  .phe-hoy { color: var(--mk-texto); }
+  .phe-hoy--amarillo { background: var(--mk-amarillo-500); color: var(--mk-violeta-900); }
+  .phe-slides { display: grid; max-width: 680px; }
+  .phe-slide { grid-area: 1 / 1; display: grid; gap: 12px; opacity: 0; visibility: hidden; transition: opacity 600ms var(--mk-ease), visibility 0s linear 600ms; }
+  .phe-slide.is-activa { opacity: 1; visibility: visible; transition-delay: 0s; }
+  .phe-t { margin: 0; font-size: var(--pp-display); line-height: 1.06; font-weight: 700; letter-spacing: -0.025em; }
+  .phe-x { font-size: 18px; line-height: 1.5; color: #E6E1EA; max-width: 560px; }
+  .phe-ctrl { position: absolute; z-index: 1; display: flex; align-items: center; gap: 8px; }
+  .phe-dots { display: flex; gap: 6px; }
+  .phe-dot { width: 56px; height: 44px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; align-items: center; }
+  .phe-dot::before { content: ""; height: 3px; background: rgba(255, 255, 255, .35); transition: background-color var(--mk-t); }
+  .phe-dot[aria-current="true"]::before { background: #fff; }
+  .phe-pausa { display: grid; place-items: center; width: 44px; height: 44px; margin-left: 8px; padding: 0; border: 0; background: none; color: #fff; cursor: pointer; }
+  .phe :global(.ic-play) { display: none; }
+  .phe.is-pausado :global(.ic-play) { display: block; }
+  .phe.is-pausado :global(.ic-pausa) { display: none; }
+  .phe-num { font-size: 14px; }
+
+  /* P1 · a sangre, texto abajo a la izquierda sobre el velo */
+  .phe--p1 .phe-caja { height: 820px; display: flex; align-items: flex-end; }
+  .phe--p1 .phe-in { padding-bottom: 56px; }
+  .phe--p1 .phe-t { font-size: 56px; }
+  .phe--p1 .phe-ctrl { left: 0; right: 0; bottom: 48px; margin-inline: auto; justify-content: flex-end; }
+
+  /* P2 · en caja, debajo de la intro */
+  .phe--p2 { color: #fff; }
+  .phe--p2 .phe-caja { height: 620px; display: flex; align-items: flex-end; }
+  .phe--p2 .phe-in { padding: 0 24px 24px; }
+  .phe--p2 .phe-t { font-size: 32px; letter-spacing: -0.01em; }
+  .phe--p2 .phe-x { font-size: 16px; }
+  .phe--p2 .phe-ctrl { right: 16px; bottom: 16px; }
+
+  /* P3 · a sangre, texto arriba a la izquierda */
+  .phe--p3 .phe-caja { height: 760px; }
+  .phe--p3 .phe-in { padding-top: 170px; gap: 18px; }
+  .phe--p3 .phe-x { font-size: 20px; }
+  .phe--p3 :global(.phe-link) { color: #fff; margin-top: 6px; }
+  .phe--p3 .phe-ctrl { left: 0; right: 0; bottom: 32px; margin-inline: auto; }
+  .phe--p3 .phe-dots { gap: 0; }
+  .phe--p3 .phe-dot { width: 40px; }
+  .phe--p3 .phe-dot::before { height: 2px; }
+
+  @media (max-width: 1024px) {
+    .phe--p1 .phe-caja, .phe--p3 .phe-caja { height: 560px; }
+    .phe--p2 .phe-caja { height: 480px; }
+    .phe--p1 .phe-t { font-size: var(--pp-display); }
+    .phe--p3 .phe-in { padding-top: 120px; }
+    .phe :global(.phe-img) { object-position: 80% 50%; }
+  }
+  @media (max-width: 767px) {
+    .phe--p1 .phe-caja, .phe--p3 .phe-caja { height: 520px; }
+    .phe--p2 .phe-marco { padding-inline: 0; }
+    .phe--p2 .phe-caja { height: 420px; }
+    .phe :global(.phe-img) { object-position: 78% 30%; }
+    .phe--p1 .phe-in { padding-bottom: 92px; }
+    .phe--p1 .phe-ctrl, .phe--p3 .phe-ctrl { justify-content: flex-start; bottom: 24px; }
+    .phe--p3 .phe-caja { display: flex; align-items: flex-end; }
+    .phe--p3 .phe-caja::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 60%; background: var(--mk-velo); }
+    .phe--p3 .phe-in { padding: 0 var(--mk-margen) 88px; }
+    .phe--p2 .phe-in { padding: 0 16px 72px; }
+    .phe--p2 .phe-ctrl { left: 8px; right: auto; bottom: 8px; }
+    .phe-x { font-size: 16px; }
+    .phe--p3 .phe-x { font-size: 17px; }
+  }
+</style>
+
+<script>
+  /* Horario de hoy (hora de Bogotá). Los festivos no se detectan. */
+  const fmt = (hm) => { const [h, m] = hm.split(':').map(Number); return `${((h + 11) % 12) + 1}:${String(m).padStart(2, '0')} ${h >= 12 ? 'p. m.' : 'a. m.'}`; };
+  const min = (hm) => { const [h, m] = hm.split(':').map(Number); return h * 60 + m; };
+  document.querySelectorAll('[data-hoy]').forEach((el) => {
+    const ahora = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Bogota' }));
+    const finde = ahora.getDay() === 0 || ahora.getDay() === 6;
+    const [abre, cierra] = (finde ? el.dataset.finde : el.dataset.semana).split('-');
+    const m = ahora.getHours() * 60 + ahora.getMinutes();
+    if (m < min(abre)) el.textContent = `Hoy abrimos a las ${fmt(abre)}`;
+    else if (m >= min(cierra)) el.textContent = 'Cerrado ahora · Abrimos mañana';
+    else el.textContent = el.dataset.formato === 'hasta' ? `Abierto hoy hasta las ${fmt(cierra)}` : `Abierto hoy · ${fmt(abre)} – ${fmt(cierra)}`;
+  });
+
+  document.querySelectorAll('[data-pslider]').forEach((root) => {
+    const slides = [...root.querySelectorAll('[data-slide]')];
+    const dots = [...root.querySelectorAll('[data-ir]')];
+    const pausa = root.querySelector('[data-pausa]');
+    const num = root.querySelector('[data-num]');
+    const anuncio = root.querySelector('[data-anuncio]');
+    let actual = 0, timer = null, pausado = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mostrar = (n, anunciar = true) => {
+      actual = (n + slides.length) % slides.length;
+      slides.forEach((s, i) => { const on = i === actual; s.classList.toggle('is-activa', on); on ? s.removeAttribute('aria-hidden') : s.setAttribute('aria-hidden', 'true'); });
+      dots.forEach((d, i) => (i === actual ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current')));
+      if (num) num.textContent = `0${actual + 1}`;
+      if (anunciar) anuncio.textContent = `Diapositiva ${actual + 1} de ${slides.length}`;
+    };
+    const programar = () => { clearInterval(timer); if (!pausado) timer = setInterval(() => mostrar(actual + 1, false), 7000); };
+    const setPausa = (p) => { pausado = p; root.classList.toggle('is-pausado', p); pausa.setAttribute('aria-label', p ? 'Reproducir el carrusel' : 'Pausar el carrusel'); programar(); };
+    dots.forEach((d) => d.addEventListener('click', () => { mostrar(+d.dataset.ir); programar(); }));
+    pausa.addEventListener('click', () => setPausa(!pausado));
+    setPausa(pausado);
+  });
+</script>

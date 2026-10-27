@@ -1,0 +1,40 @@
+---
+/* Tarjeta de actividad o noticia. Foto recta (1:1, 3:4, 4:3 o 16:10) con la fecha en un bloque blanco arriba a la
+   izquierda y la etiqueta de categoría arriba a la derecha (o como antetítulo de color, estilo «texto»).
+   Toda la tarjeta es un solo enlace; la foto hace zoom 1.04 en hover (no con «reducir movimiento»). */
+import { Picture } from 'astro:assets';
+import { img } from '../../lib/images.js';
+const {
+  image, alt = '', day, monthTime, category, categoryColor, categoryText, categoryStyle = 'etiqueta',
+  title, description, meta, href = '#', ratio = '1 / 1', titleSize = 19, sizes = '(max-width: 767px) 80vw, (max-width: 1024px) 45vw, 300px', nivel = 3
+} = Astro.props;
+const H = `h${nivel}`;
+---
+<a class="pc" href={href} style={`--pc-ratio:${ratio};--pc-t:${titleSize}px`}>
+  <span class="pp-foto pc-foto">
+    <Picture src={img(image)} alt={alt} formats={['avif', 'webp']} widths={[360, 560, 800]} sizes={sizes} loading="lazy" decoding="async" />
+    {day && <span class="pc-fecha"><b class="t-num">{day}</b><span>{monthTime}</span></span>}
+    {category && categoryStyle === 'etiqueta' && <span class="pp-et pc-cat" style={`background:var(--mk-${categoryColor})`}>{category}</span>}
+  </span>
+  {category && categoryStyle === 'texto' && <span class="pc-cat-t" style={`color:var(--mk-${categoryText})`}>{category}</span>}
+  <H class="pc-t">{title}</H>
+  {description && <span class="pc-d">{description}</span>}
+  {meta && <span class="pc-m">{meta}</span>}
+</a>
+
+<style>
+  .pc { display: flex; flex-direction: column; gap: 10px; color: var(--mk-texto); min-width: 0; }
+  .pc-foto { aspect-ratio: var(--pc-ratio); }
+  .pc-foto :global(img) { transition: transform 300ms var(--mk-ease); }
+  .pc:hover .pc-foto :global(img) { transform: scale(1.04); }
+  .pc:focus-visible { outline-offset: 4px; }
+  .pc-fecha { position: absolute; left: 0; top: 0; z-index: 1; display: grid; padding: 10px 14px; background: #fff; line-height: 1.1; }
+  .pc-fecha b { font-size: 26px; font-weight: 700; }
+  .pc-fecha span { font-size: 12px; font-weight: 600; }
+  .pc-cat { position: absolute; right: 0; top: 0; z-index: 1; height: 28px; }
+  .pc-cat-t { margin-top: 4px; font-size: 12px; font-weight: 700; }
+  .pc-t { margin: 2px 0 0; font-size: var(--pc-t); line-height: 1.3; font-weight: 700; }
+  .pc-d { font-size: 14px; color: var(--mk-texto-2); }
+  .pc-m { font-size: 14px; font-weight: 600; }
+  @media (prefers-reduced-motion: reduce) { .pc:hover .pc-foto :global(img) { transform: none; } }
+</style>

@@ -1,0 +1,72 @@
+---
+/* Footer en tinta con suscripción: campo con línea inferior y «Suscribirme →» como enlace de texto (no botón visual). */
+import data from '../../data/propuestas/home.json';
+import site from '../../data/site.json';
+import Logo from '../ui/Logo.astro';
+import Icon from '../ui/Icon.astro';
+import { ruta } from '../../lib/rutas.js';
+const f = data.footer;
+---
+<footer class="pf mk-oscuro">
+  <div class="mk-w pf-in">
+    <div class="pf-top">
+      <div class="pf-marca">
+        <span class="pf-logo"><Logo size={42} /></span>
+        <p>{site.direccion}<br /><a href={`tel:${site.telefonoHref}`}>{site.telefono}</a></p>
+        <p>{site.horarios.semana.dias} {site.horarios.semana.texto}<br />{site.horarios.finde.dias} {site.horarios.finde.texto}</p>
+      </div>
+      <form class="pf-form" novalidate data-pf>
+        <p class="pf-t" id="pf-t">{f.titulo}</p>
+        <div class="pf-campo">
+          <label class="sr-only" for="pf-correo">Correo electrónico</label>
+          <input id="pf-correo" type="email" autocomplete="email" placeholder={f.placeholder} required aria-describedby="pf-msg" />
+          <button type="submit" class="pf-enviar">{f.enlace}<Icon name="arrow" size="20" /></button>
+        </div>
+        <p class="pf-msg" id="pf-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div class="pf-cols">
+      {f.columnas.map((c) => (
+        <nav aria-label={c.titulo}><p class="pf-ct">{c.titulo}</p><ul>{c.links.map((l) => <li><a href={ruta(l)}>{l}</a></li>)}</ul></nav>
+      ))}
+      <div><p class="pf-ct">Síguenos</p><ul>{f.redes.map((r) => <li><a href="#">{r}</a></li>)}</ul></div>
+    </div>
+    <p class="pf-legal">© 2026 Corporación Maloka{f.legal.map((l) => <> · <a href="#">{l}</a></>)}</p>
+  </div>
+</footer>
+
+<style>
+  .pf { background: var(--mk-texto); color: var(--mk-neutro-300); font-size: 14px; }
+  .pf a { color: inherit; }
+  .pf a:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+  .pf-in { display: grid; gap: 48px; padding-block: 72px 32px; }
+  .pf-top { display: grid; grid-template-columns: 5fr 7fr; gap: 40px 64px; align-items: end; }
+  .pf-marca { display: grid; gap: 14px; }
+  .pf-logo { color: #fff; display: inline-flex; }
+  .pf-form { display: grid; gap: 12px; }
+  .pf-t { font-size: 24px; font-weight: 700; color: #fff; }
+  .pf-campo { display: flex; align-items: center; gap: 16px; border-bottom: 2px solid #fff; }
+  .pf-campo input { flex: 1; min-width: 0; height: 52px; padding: 0; border: 0; background: transparent; color: #fff; font: inherit; font-size: 16px; }
+  .pf-campo input::placeholder { color: var(--mk-neutro-400); }
+  .pf-campo input:focus-visible { outline: var(--mk-foco-oscuro); outline-offset: 4px; }
+  .pf-enviar { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0; border: 0; background: none; color: #fff; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; }
+  .pf-enviar :global(.mk-ic) { transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .pf-enviar:hover :global(.mk-ic) { transform: translateX(4px); }
+  .pf-msg { min-height: 1.4em; font-weight: 600; color: #fff; }
+  .pf-cols { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px; padding-top: 32px; border-top: 1px solid var(--mk-neutro-700); }
+  .pf-cols ul { display: grid; gap: 6px; }
+  .pf-ct { font-weight: 700; color: #fff; margin-bottom: 10px; }
+  .pf-legal { font-size: 12px; color: var(--mk-neutro-400); }
+  @media (max-width: 1024px) { .pf-top { grid-template-columns: 1fr; } .pf-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 767px) { .pf-cols { grid-template-columns: 1fr 1fr; } .pf-in { padding-block: 56px 28px; } }
+</style>
+
+<script>
+  const form = document.querySelector('[data-pf]');
+  if (form) form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input'), msg = form.querySelector('.pf-msg');
+    if (!input.checkValidity() || !input.value) { input.setAttribute('aria-invalid', 'true'); msg.textContent = 'Escribe un correo válido.'; input.focus(); return; }
+    input.removeAttribute('aria-invalid'); msg.textContent = 'Prototipo: en la versión final aquí se confirmará tu suscripción.'; form.reset();
+  });
+</script>

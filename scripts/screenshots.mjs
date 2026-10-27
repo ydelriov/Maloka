@@ -5,7 +5,7 @@ import { chromium } from 'playwright';
 import { mkdir } from 'node:fs/promises';
 
 const BASE = process.env.BASE_URL || 'http://localhost:4321/Maloka/';
-const variantes = ['v7', 'v4', 'v5', 'v6', 'elementor'];
+const variantes = ['v8', 'v9', 'v10', 'v7', 'v4', 'v5', 'v6', 'elementor'];
 const anchos = [390, 834, 1440];
 
 await mkdir('screenshots', { recursive: true });
@@ -32,7 +32,7 @@ for (const v of variantes) {
   }
   const thumb = await browser.newPage({ viewport: { width: 1440, height: 1800 }, deviceScaleFactor: 0.5, reducedMotion: 'reduce' });
   await thumb.goto(`${BASE}${v}/`, { waitUntil: 'networkidle' });
-  await thumb.addStyleTag({ content: '.vs{display:none!important}' }); // la barra del prototipo no va en la miniatura
+  await thumb.addStyleTag({ content: '.vs,.pb{display:none!important}' }); // la barra del prototipo no va en la miniatura
   await thumb.screenshot({ path: `public/miniaturas/${v}.jpg`, type: 'jpeg', quality: 80 });
   await thumb.close();
 }

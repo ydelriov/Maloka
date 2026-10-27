@@ -1,0 +1,7 @@
+---
+/* Enlace de acción: texto 700 con subrayado de 2 px y flecha. Sin `href`, toma la ruta del texto (lib/rutas.js). */
+import Icon from '../ui/Icon.astro';
+import { ruta } from '../../lib/rutas.js';
+const { href, texto, class: cls = '', ...rest } = Astro.props;
+---
+<a class:list={['pp-tl', cls]} href={href ?? ruta(texto)} {...rest}>{texto}<Icon name="arrow" size="20" /></a>

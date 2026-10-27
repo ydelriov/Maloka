@@ -28,6 +28,15 @@
   /* Amarillo · una sola vez por vista */
   --mk-amarillo-500: #FFE200;
 
+  /* Nueva dirección (V8–V10): fondo hueso y tintes de la paleta de experiencias como protagonistas */
+  --mk-hueso: #F4F1EC;
+  --mk-amar-300: #FFED81;
+  --mk-lavanda-300: #B39DFF;
+  --mk-cyan-300: #96FFF0;   --mk-cyan-100: #D1FFF8;
+  --mk-azul-200: #99C0FF;
+  --mk-salmon-300: #FF9B94;
+  --mk-verde-300: #96FFAA;
+
   /* Escalas de experiencia (chip: fondo 50 · punto 500/600 · texto 900) */
   --mk-azul-50: #E1ECFE;   --mk-azul-500: #006CFF;   --mk-azul-700: #0048B0;   --mk-azul-900: #002563;
   --mk-lavanda-50: #EDEAFF; --mk-lavanda-500: #915FFF; --mk-lavanda-700: #6137B4; --mk-lavanda-900: #311B5E;
