@@ -1,8 +1,8 @@
 ---
 /* Hero de V7: banner rotativo con el header transparente encima y el arco blanco de V5 abajo.
    Cada diapositiva trae su imagen, su texto y su propio botón amarillo (solo hay uno visible a la vez).
-   Fondo de marca violeta 700 (Design System: el hero es bloque de marca, el modo oscuro es solo del Cine Domo);
-   la imagen de cada campaña va a la derecha en un marco redondeado.
+   La campaña con «fondo» (el banner actual) cubre todo el ancho; las demás van sobre violeta 700 (bloque de marca)
+   con la foto a la derecha en un marco redondeado, porque sus imágenes no tienen resolución para ir a sangre.
    Fundido de 600 ms, 7 s por diapositiva, botón de pausa; sin movimiento automático con «reducir movimiento».
    En Elementor: widget Carrusel (anidado) con una diapositiva por campaña + botón de pausa en un widget HTML. */
 import { Picture } from 'astro:assets';
@@ -14,12 +14,18 @@ import { img } from '../../lib/images.js';
 const slides = data.slides;
 ---
 <section class="h7 mk-sobre-foto" aria-roledescription="carrusel" aria-label="Destacados de Maloka" data-h7 data-el="Carrusel anidado · 3 diapositivas · Fundido · Autoplay 7 s + pausa">
+  {slides.map((s, i) => (
+    <div class:list={['h7-bg', s.fondo && 'h7-bg--foto', i === 0 && 'is-activa']} data-bg={i} aria-hidden="true">
+      {s.fondo && <Picture src={img(s.imagen)} alt="" formats={['avif', 'webp']} widths={[1024, 1440, 1942]} sizes="100vw" class="h7-bg-img" loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} decoding="async" />}
+    </div>
+  ))}
+
   <div class="mk-w h7-in">
     <div class="h7-slides">
       {slides.map((s, i) => (
-        <div class:list={['h7-slide', `h7-slide--${s.id}`, i === 0 && 'is-activa']} role="group" aria-roledescription="diapositiva" aria-label={`${i + 1} de ${slides.length}`} aria-hidden={i === 0 ? undefined : 'true'} inert={i === 0 ? undefined : true} data-slide>
+        <div class:list={['h7-slide', s.fondo ? 'h7-slide--fondo' : 'h7-slide--media', i === 0 && 'is-activa']} role="group" aria-roledescription="diapositiva" aria-label={`${i + 1} de ${slides.length}`} aria-hidden={i === 0 ? undefined : 'true'} inert={i === 0 ? undefined : true} data-slide>
           <div class="h7-media">
-            <Picture src={img(s.imagen)} alt={s.alt} formats={['avif', 'webp']} widths={s.id === 'vive' ? [720, 1000, 1500, 1942] : [480, 720, 960]} sizes={s.id === 'vive' ? '(max-width: 767px) 170vw, 1000px' : '(max-width: 767px) 92vw, (max-width: 1024px) 45vw, 560px'} class="h7-media-img" loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} decoding="async" />
+            <Picture src={img(s.imagen)} alt={s.fondo ? '' : s.alt} formats={['avif', 'webp']} widths={[480, 720, 960]} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 45vw, 560px" class="h7-media-img" loading="lazy" decoding="async" />
           </div>
           <div class="h7-txt">
             <p class="h7-eb">{s.eyebrow}</p>
@@ -58,15 +64,20 @@ const slides = data.slides;
   /* Arco blanco del domo que cierra el hero (el único arco de esta sección) */
   .h7::after { content: ""; position: absolute; z-index: 1; left: -15%; right: -15%; bottom: -1px; height: 110px; background: #fff; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
 
+  .h7-bg { position: absolute; inset: 0; opacity: 0; transition: opacity 600ms var(--mk-ease); }
+  .h7-bg.is-activa { opacity: 1; }
+  .h7-bg :global(picture), .h7-bg :global(.h7-bg-img) { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .h7-bg :global(.h7-bg-img) { object-fit: cover; object-position: 70% 50%; }
   .h7-in { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 48px; }
   .h7-slides { display: grid; }
   .h7-slide { grid-area: 1 / 1; display: grid; grid-template-columns: 6fr 5fr; gap: 56px; align-items: center; opacity: 0; visibility: hidden; transition: opacity 600ms var(--mk-ease), visibility 0s linear 600ms; }
   .h7-slide.is-activa { opacity: 1; visibility: visible; transition-delay: 0s; }
+  .h7-slide--fondo { grid-template-columns: 1fr; }
+  .h7-slide--fondo .h7-media { display: none; }
   .h7-media { order: 2; position: relative; aspect-ratio: 4 / 3; border-radius: var(--mk-r-28); overflow: hidden; background: var(--mk-violeta-800); }
   .h7-media :global(picture), .h7-media :global(.h7-media-img) { position: absolute; inset: 0; width: 100%; height: 100%; }
   .h7-media :global(.h7-media-img) { object-fit: cover; }
-  /* El banner actual tiene la figura pequeña a la derecha: se acerca dentro del marco */
-  .h7-slide--vive .h7-media :global(.h7-media-img) { object-position: 74% 50%; transform: scale(1.5); transform-origin: 84% 46%; }
+
   .h7-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; max-width: 640px; }
   .h7-eb { font-size: 14px; font-weight: 600; color: var(--mk-violeta-200); }
   .h7-t { color: #fff; max-width: 15ch; }
@@ -87,6 +98,9 @@ const slides = data.slides;
     .h7 { min-height: 640px; padding-block: 112px 184px; }
     .h7::after { height: 72px; }
     .h7-slide { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .h7-slide--fondo { grid-template-columns: 1fr; }
+    .h7-slide--fondo .h7-lead { max-width: 420px; }
+    .h7-bg :global(.h7-bg-img) { object-position: 85% 50%; }
   }
   @media (max-width: 767px) {
     .h7 { min-height: 0; padding-block: 88px 112px; align-items: flex-start; }
@@ -94,6 +108,9 @@ const slides = data.slides;
     .h7-in { gap: 24px; }
     .h7-slide { grid-template-columns: 1fr; gap: 24px; align-items: start; }
     .h7-media { order: 0; }
+    .h7-bg--foto { display: none; }
+    .h7-slide--fondo .h7-media { display: block; }
+    .h7-slide--fondo .h7-media :global(.h7-media-img) { object-position: 74% 50%; }
     .h7-media { aspect-ratio: 16 / 10; border-radius: var(--mk-r-20); }
     .h7-ctas { width: 100%; }
     .h7-ctrl { justify-content: space-between; }
@@ -103,6 +120,7 @@ const slides = data.slides;
 <script>
   document.querySelectorAll('[data-h7]').forEach((root) => {
     const slides = [...root.querySelectorAll('[data-slide]')];
+    const bgs = [...root.querySelectorAll('[data-bg]')];
     const dots = [...root.querySelectorAll('[data-ir]')];
     const pausaBtn = root.querySelector('[data-pausa]');
     const anuncio = root.querySelector('[data-anuncio]');
@@ -115,6 +133,7 @@ const slides = data.slides;
         s.classList.toggle('is-activa', on);
         if (on) { s.removeAttribute('aria-hidden'); s.inert = false; } else { s.setAttribute('aria-hidden', 'true'); s.inert = true; }
       });
+      bgs.forEach((b) => b.classList.toggle('is-activa', +b.dataset.bg === actual));
       dots.forEach((d, i) => (i === actual ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current')));
       if (anunciar) anuncio.textContent = `Diapositiva ${actual + 1} de ${slides.length}`;
     }

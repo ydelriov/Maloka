@@ -11,11 +11,11 @@ import PorValidar from '../ui/PorValidar.astro';
 import { img } from '../../lib/images.js';
 import { url } from '../../lib/url.js';
 import { ruta } from '../../lib/rutas.js';
-const { tono = 'oscuro' } = Astro.props;
+const { tono = 'oscuro', banda } = Astro.props;
 const domo = data.items.find((i) => i.id === 'domo');
 const resto = data.items.filter((i) => i.id !== 'domo');
 ---
-<section class="v7v mk-seccion" id="vive" aria-labelledby="v7v-t">
+<section class:list={['v7v', banda ? `mk-banda mk-banda--${banda}` : 'mk-seccion']} id="vive" aria-labelledby="v7v-t">
   <div class="mk-w">
     <div class="el-head" data-el="Contenedor flex fila · Encabezado + Botón enlace">
       <div class="el-head-txt">
@@ -45,7 +45,7 @@ const resto = data.items.filter((i) => i.id !== 'domo');
       <ul class="v7v-resto" data-el="Loop Grid · 1 columna · Tarjeta en fila">
         {resto.map((it) => (
           <li>
-            <ActionCard image={it.imagen} alt={it.alt} category={it.categoria} title={it.titulo} description={it.descripcion} meta={it.meta} layout="fila" sizes="(max-width: 767px) 92vw, 220px" />
+            <ActionCard image={it.imagen} alt={it.alt} category={it.categoria} title={it.titulo} description={it.descripcion} meta={it.meta} layout="fila" tono={banda ? 'oscuro' : 'claro'} sizes="(max-width: 767px) 92vw, 220px" />
             {it.fotoReutilizada && <PorValidar texto="Foto por confirmar" class="v7v-pv" />}
           </li>
         ))}
@@ -83,6 +83,7 @@ const resto = data.items.filter((i) => i.id !== 'domo');
   .v7v-resto li + li { padding-top: 20px; border-top: 1px solid var(--mk-borde); }
   .v7v-resto :global(.ac--fila) { grid-template-columns: 200px 1fr; gap: 24px; }
   .v7v-resto :global(.v7v-pv) { margin-top: 8px; }
+  .mk-banda .v7v-resto li + li { border-top-color: rgba(255, 255, 255, .2); }
 
   @media (max-width: 1024px) {
     .v7v-grid { grid-template-columns: 1fr; }

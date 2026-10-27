@@ -1,7 +1,7 @@
 ---
 /* Horarios y tarifas: lo más importante de la página.
-   1. Horarios (datos reales) · 2. Productos con lo que incluyen y la tabla de precios por público (por validar),
-   con una sola compra al final para comparar antes de comprar
+   1. Horarios (datos reales) y avisos · 2. Planes de maloka.org con a quién van dirigidos, qué incluyen, duración
+   y cuándo aplican, con filtros y una sola compra al final
    · 3. Películas del Cine Domo en modo oscuro · 4. Condiciones de compra.
    En Elementor: grid de 3 Icon Box tonales; Loop Grid de productos (CPT «Producto» con campos de precio);
    contenedor oscuro con Icon List para las películas. */
@@ -45,40 +45,55 @@ const prod = data.productos;
       </li>
     </ul>
 
-    <!-- Productos -->
-    <div class="vho-prod" id="tarifas">
-      <div class="el-head" data-el="Contenedor flex fila · Encabezado + Botón">
+    {data.avisos.map((a) => <p class="vho-aviso" role="note"><Icon name="cal" size="20" /><span><b>Aviso · {a.fecha}:</b> {a.texto}</span></p>)}
+
+    <!-- Planes -->
+    <div class="vho-prod" id="tarifas" data-filtros>
+      <div class="el-head" data-el="Contenedor flex fila · Encabezado">
         <div class="el-head-txt">
           <p class="t-eyebrow">{prod.eyebrow}</p>
           <h3 class="t-h2">{prod.titulo}</h3>
           <p class="t-muted">{prod.texto}</p>
-          <PorValidar texto="Productos y precios por validar" />
         </div>
       </div>
-      <ul class="vho-grid" data-el="Loop Grid · 4 / 2 / 1 col · Plantilla «Producto»">
+      <div class="vho-filtros" role="group" aria-label="Filtrar planes" data-el="Filtro de taxonomía · Botones tonal">
+        {prod.filtros.map((f, i) => <button type="button" class="btn btn--tonal btn--sm" aria-pressed={i === 0 ? 'true' : 'false'} data-filtro={f.id}>{f.label}</button>)}
+        <span class="sr-only" aria-live="polite" data-filtros-estado></span>
+      </div>
+      <ul class="vho-grid" data-el="Loop Grid · 3 / 2 / 1 col · Plantilla «Plan» (CPT con campos Dirigido a, Incluye, Duración, Aplica)">
         {prod.items.map((p) => (
-          <li class:list={['vp', p.destacado && 'vp--destacado']}>
+          <li class:list={['vp', p.destacado && 'vp--destacado']} data-grupos={p.grupos}>
             <div class="vp-media">
-              <Picture src={img(p.imagen)} alt={p.alt} formats={['avif', 'webp']} widths={[360, 560]} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 45vw, 300px" class="vp-img" loading="lazy" />
+              <Picture src={img(p.imagen)} alt={p.alt} formats={['avif', 'webp']} widths={[360, 560, 788]} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 45vw, 400px" class="vp-img" loading="lazy" />
               <Chip cat={p.categoria} label={p.categoriaLabel} class="vp-chip" />
             </div>
             <div class="vp-body">
               <h4 class="t-h4">{p.titulo}</h4>
               <p class="vp-desc">{p.descripcion}</p>
-              <ul class="vp-incluye" aria-label="Incluye">
-                {p.incluye.map((x) => <li><Icon name="check" size="18" />{x}</li>)}
-              </ul>
-              <dl class="vp-precios">
-                {prod.publicos.map((pub) => <div><dt>{pub}</dt><dd class="t-num">$ XX.XXX</dd></div>)}
-              </dl>
+              <div class="vp-bloque">
+                <p class="vp-sub">Dirigido a</p>
+                <ul class="vp-lista vp-lista--dirigido">{p.dirigido.map((x) => <li><Icon name="users" size="18" />{x}</li>)}</ul>
+              </div>
+              <div class="vp-bloque">
+                <p class="vp-sub">Incluye</p>
+                <ul class="vp-lista">{p.incluye.map((x) => <li><Icon name="check" size="18" />{x}</li>)}</ul>
+              </div>
+              {(p.duracion || p.aplica) && (
+                <dl class="vp-datos">
+                  {p.duracion && <div><dt><Icon name="clock" size="18" />Duración</dt><dd>{p.duracion}</dd></div>}
+                  {p.aplica && <div><dt><Icon name="cal" size="18" />Aplica</dt><dd>{p.aplica}</dd></div>}
+                </dl>
+              )}
+              <p class="vp-precio">{p.precio ? <><b class="t-num">{p.precio}</b><span>Precio por validar</span></> : <span>Precio en Tuboleta</span>}</p>
             </div>
           </li>
         ))}
       </ul>
       <div class="vho-compra" data-el="Contenedor flex fila · Texto + Botón primario (única compra de la sección)">
-        <p><b>¿Ya elegiste?</b> Compra en línea: eliges la entrada, el día y, si quieres Cine Domo, la función.</p>
+        <p><b>¿Ya elegiste tu plan?</b> Compra en línea y elige el día y, si incluye Cine Domo o laboratorio, el horario.</p>
         <Button href={site.entradas.url} external variant="primario" size="lg" icon="ext" class="btn--movil-bloque">{site.entradas.texto}</Button>
       </div>
+      <p class="vho-fuente"><Icon name="help" size="18" /><span>{prod.fuente}</span><PorValidar texto="Confirmar vigencia" /></p>
     </div>
 
     <!-- Cine Domo -->
@@ -94,7 +109,7 @@ const prod = data.productos;
         {data.cartelera.items.map((f) => (
           <li>
             <span class="vho-peli-ic"><Icon name="dome" /></span>
-            <span class="vho-peli-t"><b>{f.titulo}</b><span>Duración y horarios por validar</span></span>
+            <span class="vho-peli-t"><b>{f.titulo}</b><span>{f.meta}</span></span>
           </li>
         ))}
       </ul>
@@ -113,7 +128,11 @@ const prod = data.productos;
   .vho-hora { font-size: var(--mk-h3); font-weight: 700; line-height: 1.2; color: var(--mk-violeta-700); }
 
   .vho-prod { margin-top: 80px; scroll-margin-top: 160px; }
-  .vho-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+  .vho-aviso { display: flex; gap: 10px; align-items: center; margin-top: 16px; padding: 14px 20px; border-radius: var(--mk-r-20); background: var(--mk-info-fondo); color: var(--mk-info); font-size: var(--mk-small); }
+  .vho-aviso b { font-weight: 700; }
+  .vho-filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .vho-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+  .vho-grid > li[hidden] { display: none; }
   .vp { display: flex; flex-direction: column; border: 1px solid var(--mk-borde); border-radius: var(--mk-r-28); overflow: hidden; background: #fff; }
   .vp--destacado { border: 2px solid var(--mk-violeta-700); }
   .vp-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--mk-neutro-100); }
@@ -121,13 +140,21 @@ const prod = data.productos;
   .vp-media :global(.vp-chip) { position: absolute; left: 12px; top: 12px; }
   .vp-body { flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 20px 20px 24px; }
   .vp-desc { font-size: var(--mk-small); color: var(--mk-texto-2); }
-  .vp-incluye { display: grid; gap: 6px; font-size: var(--mk-small); font-weight: 600; }
-  .vp-incluye li { display: flex; gap: 8px; align-items: flex-start; }
-  .vp-incluye :global(.mk-ic) { color: var(--mk-exito); margin-top: 1px; }
-  .vp-precios { display: grid; gap: 0; margin-top: auto; border-top: 1px solid var(--mk-borde); }
-  .vp-precios div { display: flex; justify-content: space-between; gap: 8px; padding-block: 8px; border-bottom: 1px solid var(--mk-borde); font-size: var(--mk-small); }
-  .vp-precios dt { color: var(--mk-texto-2); }
-  .vp-precios dd { margin: 0; font-weight: 700; color: var(--mk-texto-2); }
+  .vp-bloque { display: grid; gap: 6px; }
+  .vp-sub { font-size: 12px; font-weight: 700; color: var(--mk-texto-2); }
+  .vp-lista { display: grid; gap: 6px; font-size: var(--mk-small); font-weight: 600; }
+  .vp-lista li { display: flex; gap: 8px; align-items: flex-start; }
+  .vp-lista :global(.mk-ic) { color: var(--mk-exito); margin-top: 1px; flex: none; }
+  .vp-lista--dirigido :global(.mk-ic) { color: var(--mk-violeta-700); }
+  .vp-datos { display: grid; gap: 6px; margin: 0; font-size: var(--mk-small); }
+  .vp-datos div { display: flex; flex-wrap: wrap; gap: 4px 8px; }
+  .vp-datos dt { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; }
+  .vp-datos dt :global(.mk-ic) { color: var(--mk-violeta-700); }
+  .vp-datos dd { margin: 0; color: var(--mk-texto-2); }
+  .vp-precio { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--mk-borde); font-size: var(--mk-small); color: var(--mk-texto-2); }
+  .vp-precio b { font-size: var(--mk-h4); font-weight: 700; color: var(--mk-violeta-700); }
+  .vho-fuente { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 16px; font-size: 13px; color: var(--mk-texto-2); }
+  .vho-fuente :global(.mk-ic) { color: var(--mk-violeta-700); }
 
   .vho-compra { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-top: 24px; padding: 24px 28px; border-radius: var(--mk-r-28); background: var(--mk-fondo-tonal); }
   .vho-compra p { flex: 1 1 320px; color: var(--mk-texto-2); }
@@ -162,3 +189,8 @@ const prod = data.productos;
     .vho-prod { margin-top: 56px; }
   }
 </style>
+
+<script>
+  import { iniciarFiltros } from '../../lib/filtros.js';
+  iniciarFiltros();
+</script>

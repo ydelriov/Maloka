@@ -17,13 +17,13 @@ import Footer from '../components/layout/Footer.astro';
 import { url } from '../lib/url.js';
 import '../styles/elementor.css';
 ---
-<Base title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." variante="v7" clase="el">
+<Base title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." variante="v7" precargarHero clase="el">
   <ElHeader transparente ctaVariante="azul" inicio={url('v7/')} />
   <main id="contenido">
     <V7Hero />
     <ElPlanea subir />
     <V7Vive />
-    <ElAgenda />
+    <ElAgenda tono="violeta" />
     <V7Grupos />
     <V7Descubre />
     <V7Crea />

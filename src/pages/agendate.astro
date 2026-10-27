@@ -77,15 +77,15 @@ const nombreDia = (id) => data.dias.find((d) => d.id === id);
       </div>
     </section>
 
-    <section class="agg mk-seccion" aria-labelledby="agg-t">
+    <section class="agg mk-banda mk-banda--violeta" aria-labelledby="agg-t">
       <div class="mk-w">
-        <div class="agg-in" data-el="Contenedor · Fondo Violeta 50 · Radio 28 · flex fila">
+        <div class="agg-in" data-el="Contenedor ancho completo · Fondo violeta 700 · flex fila">
           <span class="agg-ic"><Icon name="users" size="28" /></span>
           <div class="agg-txt">
             <h2 class="t-h3" id="agg-t">¿Vienes con tu colegio, empresa o para celebrar?</h2>
             <p>Organizamos la visita y las actividades para tu grupo.</p>
           </div>
-          <Button href={url('v7/#grupos')} variant="primario" icon="arrow">Ven en grupo</Button>
+          <Button href={url('v7/#grupos')} variant="invertido" icon="arrow">Ven en grupo</Button>
         </div>
       </div>
     </section>
@@ -123,10 +123,10 @@ const nombreDia = (id) => data.dias.find((d) => d.id === id);
   .agp-vacio :global(.mk-ic) { color: var(--mk-violeta-700); }
   .agp-vacio b { color: var(--mk-texto); }
 
-  .agg-in { display: flex; align-items: center; gap: 24px 32px; padding: 40px; border-radius: var(--mk-r-28); background: var(--mk-fondo-tonal); }
+  .agg-in { display: flex; align-items: center; gap: 24px 32px; }
   .agg-ic { width: 72px; height: 72px; flex: none; border-radius: 22px; display: grid; place-items: center; background: #fff; color: var(--mk-violeta-700); }
   .agg-txt { flex: 1; display: grid; gap: 6px; }
-  .agg-txt p { color: var(--mk-texto-2); }
+  .agg-txt p { color: var(--mk-violeta-100); }
 
   @media (max-width: 1024px) {
     .agp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -140,7 +140,7 @@ const nombreDia = (id) => data.dias.find((d) => d.id === id);
     .agp-cats { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: calc(-1 * var(--mk-margen)); padding-inline: var(--mk-margen); }
     .agp-cats .btn { flex: none; }
     .agp-grid { grid-template-columns: 1fr; }
-    .agg-in { flex-direction: column; align-items: flex-start; padding: 28px 20px; }
+    .agg-in { flex-direction: column; align-items: flex-start; }
     .agg-in :global(.btn) { width: 100%; }
   }
 </style>

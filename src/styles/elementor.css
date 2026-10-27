@@ -38,3 +38,15 @@
   font: 600 11px/1.35 var(--mk-fuente); letter-spacing: 0; white-space: normal; pointer-events: none;
 }
 .el-anotar .ac-media::before { content: none; }
+
+/* Bandas de color a todo el ancho para dar ritmo entre secciones (solo colores del Design System).
+   violeta = bloque de marca violeta 700 · noche = violeta 900 · alt = fondo lila neutro 50.
+   En Elementor: contenedor ancho completo con el color global como fondo y relleno 112 / 80 / 56. */
+.mk-banda { margin-top: var(--mk-seccion); padding-block: var(--mk-seccion); }
+.mk-banda--violeta { background: var(--mk-violeta-700); color: #fff; }
+.mk-banda--noche { background: var(--mk-violeta-900); color: #fff; }
+.mk-banda--alt { background: var(--mk-fondo-alt); border-block: 1px solid var(--mk-borde); }
+:is(.mk-banda--violeta, .mk-banda--noche) .t-eyebrow { color: var(--mk-violeta-200); }
+:is(.mk-banda--violeta, .mk-banda--noche) :is(.t-muted, .t-lead) { color: var(--mk-violeta-100); }
+:is(.mk-banda--violeta, .mk-banda--noche) .mk-enlace { color: #fff; }
+:is(.mk-banda--violeta, .mk-banda--noche) :focus-visible { outline: var(--mk-foco-oscuro); }

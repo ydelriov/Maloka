@@ -1,6 +1,6 @@
 ---
-/* Crea con Maloka (V7): los mosaicos de V4 con más peso. Encabezado partido con foto de una sala diseñada por
-   Maloka y cinco mosaicos tonales grandes que pasan a violeta al pasar el mouse.
+/* Crea con Maloka (V7): los mosaicos de V4 con más peso. Banda violeta 900 a todo el ancho, encabezado partido
+   con foto de una sala de Maloka y cinco mosaicos violeta 800 que se aclaran al pasar el mouse.
    En Elementor: contenedor grid 2 columnas (texto | imagen) y contenedor grid 5 / 3 / 1 columnas de Icon Box con enlace. */
 import { Picture } from 'astro:assets';
 import data from '../../data/crea.json';
@@ -9,14 +9,14 @@ import Icon from '../ui/Icon.astro';
 import { img } from '../../lib/images.js';
 import { ruta } from '../../lib/rutas.js';
 ---
-<section class="v7c mk-seccion" id="crea" aria-labelledby="v7c-t">
+<section class="v7c mk-banda mk-banda--noche" id="crea" aria-labelledby="v7c-t" data-el="Contenedor ancho completo · Fondo violeta 900 · Padding 112 / 80 / 56">
   <div class="mk-w">
     <div class="v7c-head" data-el="Contenedor grid · Texto + Imagen (radio 28)">
       <div class="v7c-txt">
         <p class="t-eyebrow">{data.eyebrow}</p>
         <h2 class="t-h2" id="v7c-t">{data.titulo}</h2>
         <p class="t-lead">{data.texto}</p>
-        <Button href="#" variant="primario" icon="arrow" class="btn--movil-bloque">{data.cta}</Button>
+        <Button href="#" variant="invertido" icon="arrow" class="btn--movil-bloque">{data.cta}</Button>
       </div>
       <div class="v7c-foto">
         <Picture src={img('sala-inventores.jpg')} alt="Sala Inventores de Maloka, una experiencia museográfica con módulos interactivos" formats={['avif', 'webp']} widths={[480, 788]} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 90vw, 620px" class="v7c-img" loading="lazy" />
@@ -44,12 +44,13 @@ import { ruta } from '../../lib/rutas.js';
   .v7c-foto { position: relative; aspect-ratio: 16 / 10; border-radius: var(--mk-r-28); overflow: hidden; background: var(--mk-neutro-100); }
   .v7c-foto :global(picture), .v7c-foto :global(.v7c-img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .v7c-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
-  .v7c-i { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; height: 100%; min-height: 240px; padding: 24px; border-radius: var(--mk-r-28); background: var(--mk-fondo-tonal); color: var(--mk-texto); transition: background-color var(--mk-t) var(--mk-ease), color var(--mk-t) var(--mk-ease); }
-  .v7c-n { position: absolute; right: 24px; top: 24px; font-size: 14px; font-weight: 600; color: var(--mk-violeta-500); }
-  .v7c-ib { width: 56px; height: 56px; border-radius: 16px; background: #fff; color: var(--mk-violeta-700); display: grid; place-items: center; }
+  .v7c-i { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; height: 100%; min-height: 240px; padding: 24px; border-radius: var(--mk-r-28); background: var(--mk-violeta-800); color: #fff; transition: background-color var(--mk-t) var(--mk-ease), color var(--mk-t) var(--mk-ease); }
+  .v7c-n { position: absolute; right: 24px; top: 24px; font-size: 14px; font-weight: 600; color: var(--mk-violeta-300); }
+  .v7c-ib { width: 56px; height: 56px; border-radius: 16px; background: var(--mk-violeta-700); color: #fff; display: grid; place-items: center; }
   .v7c-i b { margin-top: auto; font-size: var(--mk-h5); font-weight: 700; line-height: 1.3; }
-  .v7c-i :global(.v7c-fl) { color: var(--mk-violeta-700); transition: transform var(--mk-t-rapida) var(--mk-ease); }
-  .v7c-i:hover { background: var(--mk-violeta-700); color: #fff; }
+  .v7c-i :global(.v7c-fl) { color: var(--mk-violeta-200); transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .v7c-i:hover { background: var(--mk-violeta-600); }
+  .v7c-i:hover .v7c-ib { background: var(--mk-violeta-800); }
   .v7c-i:hover .v7c-n { color: var(--mk-violeta-200); }
   .v7c-i:hover :global(.v7c-fl) { color: #fff; transform: translateX(4px); }
   @media (max-width: 1024px) {

@@ -3,6 +3,7 @@
   "slides": [
     {
       "id": "vive",
+      "fondo": true,
       "imagen": "hero-slide-1.jpg",
       "alt": "Banner de Maloka: collage con un invitado, el domo y ondas de sonido.",
       "eyebrow": "Centro interactivo de ciencia y tecnología · Bogotá",

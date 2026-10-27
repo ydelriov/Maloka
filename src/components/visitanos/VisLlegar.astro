@@ -9,7 +9,7 @@ import Icon from '../ui/Icon.astro';
 import PorValidar from '../ui/PorValidar.astro';
 const l = data.llegar;
 ---
-<section class="vll mk-seccion" id="llegar" aria-labelledby="vll-t">
+<section class="vll mk-banda mk-banda--alt" id="llegar" aria-labelledby="vll-t">
   <div class="mk-w">
     <div class="vll-top" data-el="Contenedor grid · 5fr 7fr / 1 col">
       <div class="vll-txt">
@@ -87,7 +87,7 @@ const l = data.llegar;
   .vll-mapa { position: relative; aspect-ratio: 4 / 3; border-radius: var(--mk-r-28); overflow: hidden; background: var(--mk-neutro-100); border: 1px solid var(--mk-borde); }
   .vll-mapa iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
-  .vll-tabs { margin-top: 56px; border: 1px solid var(--mk-borde); border-radius: var(--mk-r-28); overflow: hidden; }
+  .vll-tabs { margin-top: 56px; border: 1px solid var(--mk-borde); border-radius: var(--mk-r-28); overflow: hidden; background: #fff; }
   .vll-tablist { display: flex; gap: 8px; padding: 12px; background: var(--mk-fondo-alt); border-bottom: 1px solid var(--mk-borde); overflow-x: auto; scrollbar-width: none; }
   .vll-tab { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 20px; border: 0; border-radius: var(--mk-r-pill); background: transparent; color: var(--mk-texto-2); font-size: 15px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
   .vll-tab:hover { background: var(--mk-violeta-50); color: var(--mk-violeta-700); }
