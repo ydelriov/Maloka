@@ -1,0 +1,66 @@
+---
+/* Crea con Maloka (V7): los mosaicos de V4 con más peso. Encabezado partido con foto de una sala diseñada por
+   Maloka y cinco mosaicos tonales grandes que pasan a violeta al pasar el mouse.
+   En Elementor: contenedor grid 2 columnas (texto | imagen) y contenedor grid 5 / 3 / 1 columnas de Icon Box con enlace. */
+import { Picture } from 'astro:assets';
+import data from '../../data/crea.json';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+import { img } from '../../lib/images.js';
+---
+<section class="v7c mk-seccion" aria-labelledby="v7c-t">
+  <div class="mk-w">
+    <div class="v7c-head" data-el="Contenedor grid · Texto + Imagen (radio 28)">
+      <div class="v7c-txt">
+        <p class="t-eyebrow">{data.eyebrow}</p>
+        <h2 class="t-h2" id="v7c-t">{data.titulo}</h2>
+        <p class="t-lead">{data.texto}</p>
+        <Button href="#" variant="primario" icon="arrow" class="btn--movil-bloque">{data.cta}</Button>
+      </div>
+      <div class="v7c-foto">
+        <Picture src={img('sala-inventores.jpg')} alt="Sala Inventores de Maloka, una experiencia museográfica con módulos interactivos" formats={['avif', 'webp']} widths={[480, 788]} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 90vw, 620px" class="v7c-img" loading="lazy" />
+      </div>
+    </div>
+    <ul class="v7c-grid" data-el="Contenedor grid · 5 / 3 / 1 col · Icon Box con enlace">
+      {data.items.map((it, i) => (
+        <li>
+          <a href="#" class="v7c-i">
+            <span class="v7c-n t-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <span class="v7c-ib"><Icon name={it.icono} size="28" /></span>
+            <b>{it.titulo}</b>
+            <Icon name="arrow" class="v7c-fl" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .v7c-head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 64px; align-items: center; margin-bottom: 40px; }
+  .v7c-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .v7c-txt :global(.btn) { margin-top: 8px; }
+  .v7c-foto { position: relative; aspect-ratio: 16 / 10; border-radius: var(--mk-r-28); overflow: hidden; background: var(--mk-neutro-100); }
+  .v7c-foto :global(picture), .v7c-foto :global(.v7c-img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .v7c-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+  .v7c-i { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; height: 100%; min-height: 240px; padding: 24px; border-radius: var(--mk-r-28); background: var(--mk-fondo-tonal); color: var(--mk-texto); transition: background-color var(--mk-t) var(--mk-ease), color var(--mk-t) var(--mk-ease); }
+  .v7c-n { position: absolute; right: 24px; top: 24px; font-size: 14px; font-weight: 600; color: var(--mk-violeta-500); }
+  .v7c-ib { width: 56px; height: 56px; border-radius: 16px; background: #fff; color: var(--mk-violeta-700); display: grid; place-items: center; }
+  .v7c-i b { margin-top: auto; font-size: var(--mk-h5); font-weight: 700; line-height: 1.3; }
+  .v7c-i :global(.v7c-fl) { color: var(--mk-violeta-700); transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .v7c-i:hover { background: var(--mk-violeta-700); color: #fff; }
+  .v7c-i:hover .v7c-n { color: var(--mk-violeta-200); }
+  .v7c-i:hover :global(.v7c-fl) { color: #fff; transform: translateX(4px); }
+  @media (max-width: 1024px) {
+    .v7c-head { grid-template-columns: 1fr; }
+    .v7c-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .v7c-i { min-height: 200px; }
+  }
+  @media (max-width: 767px) {
+    .v7c-grid { grid-template-columns: 1fr; gap: 12px; }
+    .v7c-i { flex-direction: row; align-items: center; min-height: 0; padding: 16px 20px; border-radius: var(--mk-r-20); }
+    .v7c-n { display: none; }
+    .v7c-ib { width: 48px; height: 48px; flex: none; }
+    .v7c-i b { margin-top: 0; flex: 1; }
+  }
+</style>

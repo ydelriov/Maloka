@@ -1,0 +1,57 @@
+---
+/* Descubre Maloka (V7): la versión V6 dentro de un bloque tonal con radio 40. Arriba, texto y cifras grandes
+   en tarjetas blancas; abajo, las tres tarjetas.
+   En Elementor: contenedor en caja con fondo Violeta 50 y radio 40; grid 7fr 5fr; Loop Grid de 3 columnas. */
+import data from '../../data/descubre.json';
+import ActionCard from '../ui/ActionCard.astro';
+import Button from '../ui/Button.astro';
+import PorValidar from '../ui/PorValidar.astro';
+---
+<section class="v7d mk-seccion" aria-labelledby="v7d-t">
+  <div class="mk-w">
+    <div class="v7d-in" data-el="Contenedor · Fondo Violeta 50 · Radio 40 / 28 / 20 · Padding 56 / 40 / 20">
+      <div class="v7d-top" data-el="Contenedor grid · 7fr 5fr / 1 col">
+        <div class="v7d-txt">
+          <p class="t-eyebrow">{data.eyebrow}</p>
+          <h2 class="t-h2" id="v7d-t">{data.titulo}</h2>
+          <p class="v7d-lead">{data.texto}</p>
+          <Button href="#" variant="primario">{data.cta}</Button>
+        </div>
+        <div class="v7d-cifras-w">
+          <div class="v7d-cifras" data-el="Contador ×2 (cuando haya cifras)">
+            {data.cifras.map((c) => <p><b class="t-num">{c.valor}</b><span>{c.label}</span></p>)}
+          </div>
+          <PorValidar texto="Cifras por validar" />
+        </div>
+      </div>
+      <ul class="v7d-grid" data-el="Loop Grid (páginas) · 3 / 3 / 1 col">
+        {data.items.map((it) => (
+          <li><ActionCard image={it.imagen} alt={it.alt} category={it.categoria} title={it.titulo} description={it.descripcion} meta={it.meta} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 30vw, 380px" /></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .v7d-in { display: grid; gap: 48px; padding: 56px; border-radius: var(--mk-r-40); background: var(--mk-fondo-tonal); }
+  .v7d-top { display: grid; grid-template-columns: 7fr 5fr; gap: 32px 64px; align-items: end; }
+  .v7d-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .v7d-lead { color: var(--mk-texto-2); font-size: var(--mk-lead); line-height: 1.5; }
+  .v7d-txt :global(.btn) { margin-top: 8px; }
+  .v7d-cifras-w { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .v7d-cifras { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }
+  .v7d-cifras p { display: grid; gap: 6px; padding: 24px; border-radius: var(--mk-r-20); background: #fff; }
+  .v7d-cifras b { font-size: var(--mk-h1); line-height: 1; font-weight: 700; color: var(--mk-violeta-700); }
+  .v7d-cifras span { font-size: var(--mk-small); font-weight: 600; color: var(--mk-texto-2); }
+  .v7d-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+  @media (max-width: 1024px) {
+    .v7d-in { gap: 40px; padding: 40px; border-radius: var(--mk-r-28); }
+    .v7d-top { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 767px) {
+    .v7d-in { padding: 28px 20px; border-radius: var(--mk-r-20); }
+    .v7d-grid { grid-template-columns: 1fr; gap: 32px; }
+    .v7d-cifras p { padding: 20px 16px; }
+  }
+</style>

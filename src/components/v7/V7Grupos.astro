@@ -1,0 +1,56 @@
+---
+/* Ven en grupo (V7): el mosaico de V6 ordenado. Encabezado en dos columnas; abajo, Colegios como tarjeta grande
+   a la izquierda y los otros tres planes en filas a la derecha, separados por líneas.
+   En Elementor: contenedor grid 2 columnas; a la derecha, Loop Grid de 1 columna con la tarjeta en fila. */
+import data from '../../data/grupos.json';
+import ActionCard from '../ui/ActionCard.astro';
+import Button from '../ui/Button.astro';
+import PorValidar from '../ui/PorValidar.astro';
+const [principal, ...resto] = data.items;
+const card = (it) => ({ image: it.imagen, alt: it.alt, category: it.categoria, title: it.titulo, description: it.descripcion });
+---
+<section class="v7g mk-seccion" id="grupos" aria-labelledby="v7g-t">
+  <div class="mk-w">
+    <div class="v7g-head" data-el="Contenedor grid · 2 columnas · Encabezado | Texto + Botón">
+      <div class="el-head-txt">
+        <p class="t-eyebrow">{data.eyebrow}</p>
+        <h2 class="t-h2" id="v7g-t">{data.titulo}</h2>
+      </div>
+      <div class="v7g-intro">
+        <p class="t-lead">{data.texto}</p>
+        <div class="v7g-cta">
+          <Button href="#" variant="primario">{data.cta}</Button>
+          <PorValidar texto="Planes, tarifas y espacios por validar" />
+        </div>
+      </div>
+    </div>
+    <div class="v7g-grid" data-el="Contenedor grid · 2 columnas / 1 columna">
+      <div class="v7g-principal"><ActionCard {...card(principal)} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 90vw, 620px" /></div>
+      <ul class="v7g-lista">
+        {resto.map((it) => <li><ActionCard {...card(it)} layout="fila" sizes="(max-width: 767px) 92vw, 220px" /></li>)}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .v7g-head { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 64px; align-items: end; margin-bottom: 40px; }
+  .v7g-intro { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+  .v7g-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+  .v7g-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 64px; align-items: start; }
+  .v7g-principal :global(.ac-titulo) { font-size: var(--mk-h3); }
+  .v7g-lista { display: grid; border-top: 1px solid var(--mk-borde); }
+  .v7g-lista li { padding-block: 20px; border-bottom: 1px solid var(--mk-borde); }
+  .v7g-lista li:first-child { padding-top: 0; border-top: 0; }
+  .v7g-lista { border-top: 0; }
+  .v7g-lista :global(.ac--fila) { grid-template-columns: 200px 1fr; gap: 24px; }
+  @media (max-width: 1024px) {
+    .v7g-head, .v7g-grid { grid-template-columns: 1fr; }
+    .v7g-lista li:first-child { padding-top: 20px; border-top: 1px solid var(--mk-borde); }
+  }
+  @media (max-width: 767px) {
+    .v7g-lista li { padding-block: 24px; }
+    .v7g-cta { width: 100%; }
+    .v7g-cta :global(.btn) { width: 100%; }
+  }
+</style>

@@ -1,0 +1,36 @@
+{
+  "nota": "Banner rotativo. Cada diapositiva lleva su propia imagen, texto y botón amarillo. Los textos están por validar: deben salir de los banners vigentes de maloka.org.",
+  "slides": [
+    {
+      "id": "vive",
+      "imagen": "hero-slide-1.jpg",
+      "alt": "Banner de Maloka: collage con un invitado, el domo y ondas de sonido.",
+      "fondo": true,
+      "eyebrow": "Centro interactivo de ciencia y tecnología · Bogotá",
+      "titulo": "Atrévete a vivir la ciencia.",
+      "lead": "En Maloka la ciencia se toca, se escucha y se pregunta. Ven a descubrirla en familia, con amigos o con tu colegio.",
+      "cta": { "texto": "Planea tu visita", "href": "#planea" },
+      "secundario": { "texto": "Ver la agenda", "href": "#agenda" }
+    },
+    {
+      "id": "domo",
+      "imagen": "campana-astronauta.jpg",
+      "alt": "Pieza gráfica de la función: una astronauta rodeada de mariposas y plantas.",
+      "eyebrow": "Nueva función en el Cine Domo",
+      "titulo": "La biodiversidad, vista desde el espacio.",
+      "lead": "Un recorrido proyectado en toda la cúpula del Cine Domo.",
+      "cta": { "texto": "Ver funciones", "href": "#vive" },
+      "secundario": { "texto": "Conoce el Cine Domo", "href": "#vive" }
+    },
+    {
+      "id": "salas",
+      "imagen": "sala-alta-tension.jpg",
+      "alt": "Público frente a la jaula de Faraday en la sala Alta Tensión.",
+      "eyebrow": "Salas interactivas",
+      "titulo": "Aquí está prohibido no tocar.",
+      "lead": "En las salas interactivas las preguntas se responden con las manos.",
+      "cta": { "texto": "Explora las salas", "href": "#vive" },
+      "secundario": { "texto": "Ven en grupo", "href": "#grupos" }
+    }
+  ]
+}

@@ -1,9 +1,12 @@
 # Maloka · prototipo navegable de la home
 
-Prototipo responsive de la home de maloka.org en **cuatro variantes de layout** (V4, V5, V6 y Elementor), construido con el
+Prototipo responsive de la home de maloka.org en **cinco variantes de layout** (V7 combinada, V4, V5, V6 y Elementor), construido con el
 Design System de Claude Design para validar el diseño antes de llevarlo a WordPress + Elementor.
 
 - Publicado: https://ydelriov.github.io/Maloka/
+- **V7 · Combinada** (`/v7`): hero rotativo de V5 con un botón amarillo por campaña, Planea tu visita y Agenda de Elementor,
+  Cine Domo protagonista en Vive Maloka, Ven en grupo de V6 ordenado, Descubre de V6 en bloque tonal, Crea con Maloka de V4
+  con más peso y Noticias de V6 sin fecha. Los textos del banner están en `src/data/campanas.json` (por validar).
 - Variantes: `/v4` Editorial numerada · `/v5` Arcos del domo · `/v6` Panel de visita · `/elementor` lista para construir en WordPress + Elementor Pro
 - Guía de construcción en Elementor: `/elementor/guia` (fuente: `src/pages/elementor/guia.md`)
 - Prototipo anterior (home navy, Agéndate, Ven en grupo): `/legacy/`
@@ -32,10 +35,11 @@ src/
   components/
     ui/          Icon · IconSprite · Logo · Button · Chip · PorValidar · EstadoHoy · SectionHead · ActionCard
     layout/      Header (mega menú + menú móvil) · Footer · VariantSwitcher
+    v7/          V7Hero · V7Vive · V7Grupos · V7Descubre · V7Crea
     elementor/   ElHeader · ElHero · ElPlanea · ElExperiencias · ElAgenda · ElGrupos · ElDescubre · ElCrea · ElNoticias
     sections/    HeroSlider · VisitPanel · PlaneaVisita · ViveMaloka · Agenda · VenEnGrupo · Descubre · CreaConMaloka · Noticias
   layouts/       Base.astro (SEO, Open Graph, JSON-LD Museum)
-  pages/         index (miniaturas) · v4 · v5 · v6 · elementor (+ elementor/guia.md)
+  pages/         index (miniaturas) · v7 · v4 · v5 · v6 · elementor (+ elementor/guia.md)
 public/legacy/   prototipo anterior, servido tal cual
 scripts/         screenshots.mjs (Playwright)
 ```

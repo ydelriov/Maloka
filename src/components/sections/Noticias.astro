@@ -5,8 +5,8 @@ import SectionHead from '../ui/SectionHead.astro';
 import ActionCard from '../ui/ActionCard.astro';
 import Button from '../ui/Button.astro';
 import PorValidar from '../ui/PorValidar.astro';
-const { variante } = Astro.props;
-const card = (it) => ({ image: it.imagen, alt: it.alt, date: { dia: it.dia, mes: it.mes }, category: it.categoria, categoryLabel: it.categoriaLabel, title: it.titulo, description: it.descripcion });
+const { variante, sinFecha = false } = Astro.props;
+const card = (it) => ({ image: it.imagen, alt: it.alt, date: sinFecha ? undefined : { dia: it.dia, mes: it.mes }, category: it.categoria, categoryLabel: it.categoriaLabel, title: it.titulo, description: it.descripcion });
 ---
 <section class:list={['no', `no--${variante}`, 'mk-seccion']} aria-labelledby="no-t">
   <div class="mk-w">

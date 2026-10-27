@@ -1,6 +1,11 @@
 {
   "items": [
     {
+      "id": "v7",
+      "nombre": "V7 · Combinada",
+      "descripcion": "La mezcla elegida en la revisión: hero rotativo de V5, Planea tu visita y Agenda de Elementor, Cine Domo protagonista, grupos de V6 ordenado, Descubre en bloque tonal, Crea con Maloka de V4 y noticias sin fecha."
+    },
+    {
       "id": "v4",
       "nombre": "V4 · Editorial numerada",
       "descripcion": "Header blanco con navegación centrada, secciones numeradas 01–07, agenda con fechas grandes y noticias en lista."
