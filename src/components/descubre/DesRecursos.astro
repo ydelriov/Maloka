@@ -1,0 +1,45 @@
+---
+/* Recursos educativos: tarjetas por público que llevan a cada recurso. En Elementor: Loop Grid (CPT «Recurso») o Icon Box. */
+import d from '../../data/descubre-pagina.json';
+import Icon from '../ui/Icon.astro';
+import PorValidar from '../ui/PorValidar.astro';
+import { url } from '../../lib/url.js';
+const r = d.recursos;
+---
+<section class="dre mk-seccion" id="recursos" aria-labelledby="dre-t">
+  <div class="mk-w">
+    <div class="el-head">
+      <div class="el-head-txt">
+        <p class="t-eyebrow">Recursos educativos</p>
+        <h2 class="t-h2" id="dre-t">{r.titulo}</h2>
+        <p class="t-muted">{r.texto}</p>
+      </div>
+      <span class="dre-prox"><PorValidar texto="Página de recursos: próxima" /></span>
+    </div>
+    <ul class="dre-grid" data-el="Loop Grid · 3 / 2 / 1 col · CPT «Recurso»">
+      {r.items.map((x) => (
+        <li>
+          <a class="dre-item" href={x.interno ? url(x.href) : x.href} target={x.interno ? undefined : '_blank'} rel={x.interno ? undefined : 'noopener'}>
+            <span class="dre-top"><span class="mk-ib"><Icon name={x.icono} /></span><span class="dre-pub">{x.publico}</span></span>
+            <b>{x.titulo}</b>
+            <span class="dre-txt">{x.texto}</span>
+            <span class="mk-enlace">{x.interno ? 'Ver' : 'Abrir'}<Icon name={x.interno ? 'arrow' : 'ext'} size="18" />{!x.interno && <span class="sr-only"> (se abre en otra pestaña)</span>}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .dre-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .dre-item { display: flex; flex-direction: column; gap: 10px; height: 100%; padding: 24px; border: 1px solid var(--mk-borde); border-radius: var(--mk-r-28); color: var(--mk-texto); transition: border-color var(--mk-t-rapida), box-shadow var(--mk-t) var(--mk-ease); }
+  .dre-item:hover { border-color: var(--mk-violeta-300); box-shadow: var(--mk-sombra-2); }
+  .dre-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .dre-pub { padding: 4px 12px; border-radius: var(--mk-r-pill); background: var(--mk-fondo-tonal); color: var(--mk-violeta-700); font-size: 12px; font-weight: 700; }
+  .dre-item b { font-size: var(--mk-h5); font-weight: 600; }
+  .dre-txt { font-size: var(--mk-small); color: var(--mk-texto-2); }
+  .dre-item .mk-enlace { margin-top: auto; }
+  @media (max-width: 1024px) { .dre-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 767px) { .dre-grid { grid-template-columns: 1fr; } .dre-item { padding: 20px; border-radius: var(--mk-r-20); } }
+</style>

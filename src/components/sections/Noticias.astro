@@ -1,26 +1,31 @@
 ---
 /* Noticias (de ejemplo) como ActionCard. V4: lista en filas (07) · V5: tres columnas · V6: una grande y dos. */
 import data from '../../data/noticias.json';
+import lista from '../../data/noticias-lista.json';
+import { url } from '../../lib/url.js';
+const etiquetas = Object.fromEntries(lista.categorias.map((c) => [c.id, c.label]));
 import SectionHead from '../ui/SectionHead.astro';
 import ActionCard from '../ui/ActionCard.astro';
 import Button from '../ui/Button.astro';
 import PorValidar from '../ui/PorValidar.astro';
 const { variante, sinFecha = false } = Astro.props;
-const card = (it) => ({ image: it.imagen, alt: it.alt, date: sinFecha ? undefined : { dia: it.dia, mes: it.mes }, category: it.categoria, categoryLabel: it.categoriaLabel, title: it.titulo, description: it.descripcion });
+/* Las tres noticias más recientes de la sala de prensa (titulares y enlaces reales). */
+const items = lista.items.slice(0, 3);
+const card = (it) => ({ image: it.imagen, alt: it.alt, category: it.chip, categoryLabel: etiquetas[it.categoria], title: it.titulo, description: it.texto, href: it.href, target: '_blank', rel: 'noopener' });
 ---
 <section class:list={['no', `no--${variante}`, 'mk-seccion']} id="noticias" aria-labelledby="no-t">
   <div class="mk-w">
     {variante === 'v4'
-      ? <SectionHead estilo="linea" num="07" eyebrow={data.eyebrow} title={data.titulo} id="no-t"><Button slot="accion" href="#" variant="secundario">Ver todas</Button></SectionHead>
-      : <SectionHead eyebrow={data.eyebrow} title={data.titulo} id="no-t"><Button slot="accion" href="#" variant="secundario">{data.cta}</Button></SectionHead>}
+      ? <SectionHead estilo="linea" num="07" eyebrow={data.eyebrow} title={data.titulo} id="no-t"><Button slot="accion" href={url('noticias/')} variant="secundario">Ver todas</Button></SectionHead>
+      : <SectionHead eyebrow={data.eyebrow} title={data.titulo} id="no-t"><Button slot="accion" href={url('noticias/')} variant="secundario">{data.cta}</Button></SectionHead>}
     <ul class="no-grid">
-      {data.items.map((it, i) => (
+      {items.map((it, i) => (
         <li class={variante === 'v6' && i === 0 ? 'no-grande' : undefined}>
           <ActionCard {...card(it)} layout={variante === 'v4' ? 'fila' : 'columna'} sizes={variante === 'v6' && i === 0 ? '(max-width: 767px) 92vw, 620px' : undefined} />
         </li>
       ))}
     </ul>
-    <p class="no-pv"><PorValidar texto="Noticias de ejemplo" /></p>
+    <p class="no-pv"><PorValidar texto="Fotos de archivo mientras llegan las de cada noticia" /></p>
   </div>
 </section>
 

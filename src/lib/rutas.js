@@ -26,11 +26,11 @@ const RUTAS = {
   'Maloka Puertas Abiertas': 'ven-en-grupo/#mpa',
   'Cotiza tu visita': 'ven-en-grupo/#cotizar',
   // Descubre
-  'Descubre': 'v7/#descubre',
-  'Programas y proyectos': 'v7/#descubre',
-  'Conoce Maloka': 'v7/#descubre',
-  'Recursos educativos': 'v7/#descubre',
-  'Noticias': 'v7/#noticias',
+  'Descubre': 'descubre/',
+  'Programas y proyectos': 'descubre/#programas',
+  'Conoce Maloka': 'descubre/#conoce',
+  'Recursos educativos': 'descubre/#recursos',
+  'Noticias': 'noticias/',
   // Crea con Maloka
   'Crea con Maloka': 'v7/#crea',
   'Patrocinios y alianzas': 'v7/#crea',

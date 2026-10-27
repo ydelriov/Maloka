@@ -31,7 +31,7 @@ const [horaNum, horaAmPm] = time ? [time.replace(/\s*[ap]\. m\.$/, ''), (time.ma
     {category && <Chip cat={category} label={categoryLabel} class="ac-chip" />}
   </div>
   <div class="ac-texto">
-    <H class="ac-titulo">{title}</H>
+    <H class="ac-titulo">{title}{rest.target === '_blank' && <span class="sr-only"> (se abre en otra pestaña)</span>}</H>
     {description && <p class="ac-desc">{description}</p>}
     {meta && <p class="ac-meta">{metaIcono && <Icon name={metaIcono} size="18" />}{meta}</p>}
   </div>

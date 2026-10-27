@@ -1,0 +1,59 @@
+---
+/* Programas y proyectos (maloka.org/programas-proyectos): cifras, tres destacados con foto y el resto en lista.
+   En Elementor: Contador ×4, Loop Grid de 3 (CPT «Programa») e Icon Box con enlace. */
+import d from '../../data/descubre-pagina.json';
+import ActionCard from '../ui/ActionCard.astro';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+const p = d.programas;
+---
+<section class="dpr mk-seccion" id="programas" aria-labelledby="dpr-t">
+  <div class="mk-w">
+    <div class="el-head">
+      <div class="el-head-txt">
+        <p class="t-eyebrow">Programas y proyectos</p>
+        <h2 class="t-h2" id="dpr-t">{p.titulo}</h2>
+        <p class="t-lead">{p.texto}</p>
+      </div>
+      <Button href={p.href} external variant="secundario" icon="ext">Todos los programas</Button>
+    </div>
+    <ul class="dpr-cifras" data-el="Contador ×4 · Fondo Violeta 50">
+      {p.cifras.map((c) => <li><b class="t-num">{c.valor}</b><span>{c.label}</span></li>)}
+    </ul>
+    <ul class="dpr-grid" data-el="Loop Grid · 3 / 2 / 1 col · CPT «Programa»">
+      {p.destacados.map((x) => (
+        <li><ActionCard image={x.imagen} alt={x.alt} category={x.categoria} categoryLabel={x.categoriaLabel} title={x.titulo} description={x.texto} href={x.href} target="_blank" rel="noopener" sizes="(max-width: 767px) 92vw, (max-width: 1024px) 45vw, 410px" /></li>
+      ))}
+    </ul>
+    <h3 class="t-h4 dpr-mas-t">Más programas y proyectos</h3>
+    <ul class="dpr-mas" data-el="Icon Box con enlace · grid 2 / 1 col">
+      {p.mas.map((x) => (
+        <li>
+          <a href={x.href} target="_blank" rel="noopener" class="dpr-item">
+            <span class="mk-ib"><Icon name={x.icono} /></span>
+            <span class="dpr-item-t"><b>{x.titulo}</b><span>{x.texto}</span></span>
+            <Icon name="ext" size="20" class="dpr-fl" /><span class="sr-only"> (se abre en otra pestaña)</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .dpr-cifras { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 40px; }
+  .dpr-cifras li { display: grid; gap: 6px; padding: 24px; border-radius: var(--mk-r-20); background: var(--mk-fondo-tonal); }
+  .dpr-cifras b { font-size: var(--mk-h1); line-height: 1; font-weight: 700; color: var(--mk-violeta-700); }
+  .dpr-cifras span { font-size: var(--mk-small); font-weight: 600; color: var(--mk-texto-2); }
+  .dpr-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+  .dpr-mas-t { margin: 56px 0 16px; }
+  .dpr-mas { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; border-top: 1px solid var(--mk-borde); }
+  .dpr-item { display: flex; align-items: center; gap: 16px; padding: 18px 8px 18px 0; border-bottom: 1px solid var(--mk-borde); color: var(--mk-texto); }
+  .dpr-item-t { flex: 1; display: grid; gap: 2px; }
+  .dpr-item-t b { font-weight: 600; }
+  .dpr-item-t span { font-size: var(--mk-small); color: var(--mk-texto-2); }
+  .dpr-item :global(.dpr-fl) { color: var(--mk-violeta-700); flex: none; }
+  .dpr-item:hover b { color: var(--mk-violeta-700); }
+  @media (max-width: 1024px) { .dpr-cifras { grid-template-columns: 1fr 1fr; } .dpr-grid { grid-template-columns: 1fr 1fr; } .dpr-mas { grid-template-columns: 1fr; } }
+  @media (max-width: 767px) { .dpr-grid { grid-template-columns: 1fr; gap: 32px; } .dpr-cifras li { padding: 18px 16px; } }
+</style>

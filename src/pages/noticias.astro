@@ -1,0 +1,93 @@
+---
+/* Noticias: todas las noticias de la sala de prensa. Destacada arriba, filtros por tema y grilla.
+   Titulares y enlaces reales; cada tarjeta abre la nota en maloka.org mientras se migran al nuevo sitio.
+   En Elementor: Archivo de entradas (Theme Builder › Archive) con Loop Grid, Filtro de taxonomía y paginación. */
+import { Picture } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import ElHeader from '../components/elementor/ElHeader.astro';
+import PageHero from '../components/pagina/PageHero.astro';
+import ActionCard from '../components/ui/ActionCard.astro';
+import Chip from '../components/ui/Chip.astro';
+import Icon from '../components/ui/Icon.astro';
+import PorValidar from '../components/ui/PorValidar.astro';
+import Footer from '../components/layout/Footer.astro';
+import n from '../data/noticias-lista.json';
+import { img } from '../lib/images.js';
+import { url } from '../lib/url.js';
+import '../styles/elementor.css';
+const etiquetas = Object.fromEntries(n.categorias.map((c) => [c.id, c.label]));
+const [dest, ...resto] = n.items;
+---
+<Base title="Noticias · Maloka" description="Noticias de Maloka: programación, educación, convocatorias y novedades institucionales." variante="noticias" clase="el">
+  <ElHeader transparente ctaVariante="azul" inicio={url('v7/')} />
+  <main id="contenido">
+    <PageHero titulo="Noticias" actual="Noticias" lead="Lo que pasa en Maloka: programación, educación, convocatorias y novedades." />
+
+    <section class="nwd mk-seccion" aria-labelledby="nwd-t">
+      <div class="mk-w">
+        <a class="nwd-card" href={dest.href} target="_blank" rel="noopener" data-el="Contenedor-enlace · Noticia destacada (la más reciente)">
+          <div class="nwd-media"><Picture src={img(dest.imagen)} alt={dest.alt} formats={['avif', 'webp']} widths={[480, 750]} sizes="(max-width: 1024px) 92vw, 640px" class="nwd-img" loading="eager" /></div>
+          <div class="nwd-body">
+            <p class="nwd-meta"><Chip cat={dest.chip} label={etiquetas[dest.categoria]} />{dest.fecha && <span>{dest.fecha}</span>}</p>
+            <h2 class="t-h2" id="nwd-t">{dest.titulo}<span class="sr-only"> (se abre en otra pestaña)</span></h2>
+            <p class="t-lead">{dest.texto}</p>
+            <span class="mk-enlace">Leer la noticia<Icon name="ext" size="18" /></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="nwl mk-seccion" aria-labelledby="nwl-t" data-filtros>
+      <div class="mk-w">
+        <div class="el-head">
+          <div class="el-head-txt">
+            <h2 class="t-h3" id="nwl-t">Todas las noticias</h2>
+          </div>
+          <a class="mk-enlace" href="https://maloka.org/sala-de-prensa/" target="_blank" rel="noopener">Sala de prensa<Icon name="ext" size="18" /><span class="sr-only"> (se abre en otra pestaña)</span></a>
+        </div>
+        <div class="nwl-filtros" role="group" aria-label="Filtrar por tema" data-el="Filtro de taxonomía · Botones tonal">
+          {n.categorias.map((c, i) => <button type="button" class="btn btn--tonal btn--sm" aria-pressed={i === 0 ? 'true' : 'false'} data-filtro={c.id}>{c.label}</button>)}
+          <span class="sr-only" aria-live="polite" data-filtros-estado></span>
+        </div>
+        <ul class="nwl-grid" data-el="Loop Grid · 3 / 2 / 1 col · paginación «Cargar más»">
+          {resto.map((it) => (
+            <li data-grupos={it.categoria}>
+              <ActionCard image={it.imagen} alt={it.alt} category={it.chip} categoryLabel={etiquetas[it.categoria]} title={it.titulo} description={it.texto} meta={it.fecha} href={it.href} target="_blank" rel="noopener" sizes="(max-width: 767px) 92vw, (max-width: 1024px) 45vw, 410px" />
+            </li>
+          ))}
+        </ul>
+        <p class="nwl-nota"><Icon name="help" size="18" /><span>{n.nota}</span><PorValidar texto="Fotos y fechas por completar" /></p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>
+
+<style>
+  .nwd-card { display: grid; grid-template-columns: 7fr 5fr; gap: 32px 48px; align-items: center; color: var(--mk-texto); }
+  .nwd-media { position: relative; aspect-ratio: 16 / 10; border-radius: var(--mk-r-28); overflow: hidden; background: var(--mk-neutro-100); transition: box-shadow var(--mk-t) var(--mk-ease); }
+  .nwd-media :global(picture), .nwd-media :global(.nwd-img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform var(--mk-t) var(--mk-ease); }
+  .nwd-card:hover .nwd-media { box-shadow: var(--mk-sombra-2); }
+  .nwd-card:hover :global(.nwd-img) { transform: scale(1.04); }
+  .nwd-card:focus-visible { outline-offset: 6px; }
+  .nwd-body { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .nwd-meta { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; font-size: var(--mk-small); font-weight: 600; color: var(--mk-texto-2); }
+  .nwl-filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+  .nwl-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 24px; align-items: start; }
+  .nwl-grid > li[hidden] { display: none; }
+  .nwl-nota { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 32px; font-size: 13px; color: var(--mk-texto-2); }
+  .nwl-nota :global(.mk-ic) { color: var(--mk-violeta-700); }
+  @media (max-width: 1024px) { .nwd-card { grid-template-columns: 1fr; } .nwl-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 767px) {
+    .nwl-grid { grid-template-columns: 1fr; gap: 32px; }
+    .nwl-filtros { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: calc(-1 * var(--mk-margen)); padding-inline: var(--mk-margen); }
+    .nwl-filtros .btn { flex: none; }
+    .nwd-media { border-radius: var(--mk-r-20); }
+  }
+  @media (prefers-reduced-motion: reduce) { .nwd-card:hover :global(.nwd-img) { transform: none; } }
+</style>
+
+<script>
+  import { iniciarFiltros } from '../lib/filtros.js';
+  iniciarFiltros();
+</script>

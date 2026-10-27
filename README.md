@@ -13,6 +13,8 @@ Design System de Claude Design para validar el diseño antes de llevarlo a WordP
 - **Agéndate** (`/agendate`): evento destacado, selector de día, filtros por tipo y tarjetas con sus funciones.
   Contenido de ejemplo en `src/data/eventos.json`.
 - Todos los ítems del menú llevan a su página o, si aún no existe, a su sección en la home V7 (`src/lib/rutas.js`).
+- **Ven en grupo** (`/ven-en-grupo`), **Descubre** (`/descubre`) y **Noticias** (`/noticias`): contenido de maloka.org
+  (cotizaciones y grupos, MPA, programas y proyectos, acerca de, sala de prensa). Datos en `src/data/`.
 - Variantes: `/v4` Editorial numerada · `/v5` Arcos del domo · `/v6` Panel de visita · `/elementor` lista para construir en WordPress + Elementor Pro
 - Guía de construcción en Elementor: `/elementor/guia` (fuente: `src/pages/elementor/guia.md`)
 - Prototipo anterior (home navy, Agéndate, Ven en grupo): `/legacy/`

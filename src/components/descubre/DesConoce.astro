@@ -1,0 +1,63 @@
+---
+/* Conoce Maloka (maloka.org/acerca-de): banda violeta 700 con quiénes somos, misión y enlaces institucionales. */
+import { Picture } from 'astro:assets';
+import d from '../../data/descubre-pagina.json';
+import Icon from '../ui/Icon.astro';
+import { img } from '../../lib/images.js';
+const c = d.conoce;
+const sa = c.satisfaccion;
+---
+<section class="dco mk-banda mk-banda--violeta" id="conoce" aria-labelledby="dco-t" data-el="Contenedor ancho completo · Fondo violeta 700 · grid 2 col">
+  <div class="mk-w dco-in">
+    <div class="dco-txt">
+      <p class="t-eyebrow">Conoce Maloka</p>
+      <h2 class="t-h2" id="dco-t">{c.titulo}</h2>
+      <p class="t-lead">{c.texto}</p>
+      <blockquote class="dco-mision"><p class="dco-m-t">Nuestra misión</p><p>{c.mision}</p></blockquote>
+      <ul class="dco-links">
+        {c.links.map((l) => <li><a class="mk-enlace" href={l.href} target="_blank" rel="noopener">{l.titulo}<Icon name="ext" size="18" /><span class="sr-only"> (se abre en otra pestaña)</span></a></li>)}
+      </ul>
+    </div>
+    <div class="dco-foto">
+      <Picture src={img(c.imagen)} alt={c.alt} formats={['avif', 'webp']} widths={[640, 1024, 1433]} sizes="(max-width: 1024px) 92vw, 620px" class="dco-img" loading="lazy" />
+    </div>
+    <div class="dco-sat" data-el="Contenedor · Fondo violeta 800 · Radio 28 · Contador ×3 + Icon List">
+      <div class="dco-sat-head">
+        <h3 class="t-h3">{sa.titulo}</h3>
+        <p>{sa.texto}</p>
+      </div>
+      <ul class="dco-sat-cifras">{sa.cifras.map((x) => <li><b class="t-num">{x.valor}</b><span>{x.label}</span></li>)}</ul>
+      <ul class="dco-sat-puntos">{sa.puntos.map((x) => <li><Icon name="check" size="20" />{x}</li>)}</ul>
+      <a class="mk-enlace" href={sa.href} target="_blank" rel="noopener">Ver los resultados completos<Icon name="ext" size="18" /><span class="sr-only"> (se abre en otra pestaña)</span></a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .dco-in { display: grid; grid-template-columns: 6fr 6fr; gap: 40px 64px; align-items: center; }
+  .dco-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .dco-mision { margin: 8px 0 0; padding: 20px 24px; border-radius: var(--mk-r-20); background: var(--mk-violeta-800); }
+  .dco-m-t { font-size: var(--mk-small); font-weight: 700; color: var(--mk-violeta-200); margin-bottom: 6px; }
+  .dco-mision p:last-child { font-size: var(--mk-h5); font-weight: 600; line-height: 1.45; }
+  .dco-links { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+  .dco-foto { position: relative; aspect-ratio: 4 / 3; border-radius: 999px 999px var(--mk-r-28) var(--mk-r-28); overflow: hidden; background: var(--mk-violeta-800); }
+  .dco-foto :global(picture), .dco-foto :global(.dco-img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%; }
+  .dco-sat { grid-column: 1 / -1; display: grid; grid-template-columns: 4fr 8fr; gap: 24px 48px; padding: 40px; border-radius: var(--mk-r-28); background: var(--mk-violeta-800); }
+  .dco-sat-head { display: grid; gap: 10px; align-content: start; }
+  .dco-sat-head p { color: var(--mk-violeta-100); }
+  .dco-sat-cifras { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .dco-sat-cifras li { display: grid; gap: 6px; align-content: start; padding: 20px; border-radius: var(--mk-r-20); background: var(--mk-violeta-700); }
+  .dco-sat-cifras b { font-size: var(--mk-h1); line-height: 1; font-weight: 700; color: #fff; }
+  .dco-sat-cifras span { font-size: var(--mk-small); color: var(--mk-violeta-100); }
+  .dco-sat-puntos { grid-column: 2; display: grid; gap: 8px; }
+  .dco-sat-puntos li { display: flex; gap: 10px; align-items: flex-start; }
+  .dco-sat-puntos :global(.mk-ic) { color: var(--mk-verde-600); flex: none; margin-top: 2px; }
+  .dco-sat > .mk-enlace { grid-column: 2; }
+  @media (max-width: 1024px) {
+    .dco-in { grid-template-columns: 1fr; }
+    .dco-sat { grid-template-columns: 1fr; padding: 28px; }
+    .dco-sat-puntos, .dco-sat > .mk-enlace { grid-column: auto; }
+  }
+  @media (max-width: 767px) { .dco-sat { padding: 24px 20px; border-radius: var(--mk-r-20); } .dco-sat-cifras { grid-template-columns: 1fr; } }
+  @media (max-width: 767px) { .dco-foto { border-radius: var(--mk-r-20); } }
+</style>
