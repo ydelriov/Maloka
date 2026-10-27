@@ -1,0 +1,236 @@
+---
+/* Crea con Maloka: servicios para empresas, entidades y aliados.
+   Patrocinios y alianzas · Experiencias museográficas · Acompañamiento pedagógico · Investigación y consultoría
+   (con el grupo de investigación) · Maloka Viajera · formulario. Ritmo: violeta · blanco · violeta · blanco · lila · noche · violeta. */
+import { Picture } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import ElHeader from '../components/elementor/ElHeader.astro';
+import PageHero from '../components/pagina/PageHero.astro';
+import AnclasNav from '../components/pagina/AnclasNav.astro';
+import FormCotizar from '../components/pagina/FormCotizar.astro';
+import Footer from '../components/layout/Footer.astro';
+import Button from '../components/ui/Button.astro';
+import Icon from '../components/ui/Icon.astro';
+import PorValidar from '../components/ui/PorValidar.astro';
+import c from '../data/crea-pagina.json';
+import { img } from '../lib/images.js';
+import { url } from '../lib/url.js';
+import '../styles/elementor.css';
+const ext = { target: '_blank', rel: 'noopener' };
+---
+<Base title="Crea con Maloka · Patrocinios, museografía, pedagogía e investigación" description="Patrocinios y alianzas, experiencias museográficas, acompañamiento pedagógico, investigación y consultoría, y Maloka Viajera: proyectos de ciencia con empresas y entidades." variante="crea" clase="el">
+  <ElHeader transparente ctaVariante="azul" inicio={url('v7/')} />
+  <main id="contenido">
+    <PageHero titulo={c.hero.titulo} lead={c.hero.lead}>
+      <Fragment slot="ctas">
+        <Button href="#contacto" variant="destacado" size="lg" icon="arrow" class="btn--movil-bloque">Hablemos de tu proyecto</Button>
+        <Button href="#patrocinios" variant="invertido" size="lg" class="btn--movil-bloque">Qué hacemos</Button>
+      </Fragment>
+      <ul slot="aside" class="cr-hero-cifras" data-el="Contenedor · Fondo violeta 800 · Contador ×3">
+        {c.hero.cifras.map((x) => <li><b class="t-num">{x.valor}</b><span>{x.label}</span></li>)}
+      </ul>
+    </PageHero>
+    <AnclasNav secciones={c.secciones} />
+
+    <!-- Patrocinios y alianzas -->
+    <section class="cr-sec mk-seccion" id="patrocinios" aria-labelledby="cr-pa-t">
+      <div class="mk-w">
+        <div class="el-head">
+          <div class="el-head-txt">
+            <p class="t-eyebrow">Patrocinios y alianzas</p>
+            <h2 class="t-h2" id="cr-pa-t">{c.patrocinios.titulo}</h2>
+            <p class="t-lead">{c.patrocinios.texto}</p>
+          </div>
+        </div>
+        <ul class="cr-formas" data-el="Grid 3 / 1 col · Icon Box con borde">
+          {c.patrocinios.formas.map((f) => <li><span class="mk-ib"><Icon name={f.icono} /></span><h3 class="t-h4">{f.titulo}</h3><p>{f.texto}</p></li>)}
+        </ul>
+        <div class="cr-aliados" data-el="Carrusel de logos (cuando lleguen) · hoy texto">
+          <p class="cr-aliados-t">Han creado con Maloka</p>
+          <ul>{c.patrocinios.aliados.map((a) => <li>{a}</li>)}</ul>
+          <PorValidar texto="Reemplazar por logos autorizados" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiencias museográficas -->
+    <section class="cr-sec mk-banda mk-banda--violeta" id="museografia" aria-labelledby="cr-mu-t">
+      <div class="mk-w cr-split">
+        <div class="cr-split-txt">
+          <p class="t-eyebrow">Experiencias museográficas</p>
+          <h2 class="t-h2" id="cr-mu-t">{c.museografia.titulo}</h2>
+          <p class="t-lead">{c.museografia.texto}</p>
+          <ol class="cr-pasos" aria-label="Cómo lo hacemos">
+            {c.museografia.pasos.map((p, n) => <li><span class="t-num">{String(n + 1).padStart(2, '0')}</span>{p}</li>)}
+          </ol>
+        </div>
+        <div class="cr-foto cr-foto--arco">
+          <Picture src={img(c.museografia.imagen)} alt={c.museografia.alt} formats={['avif', 'webp']} widths={[480, 788]} sizes="(max-width: 1024px) 92vw, 520px" class="cr-img" loading="lazy" />
+        </div>
+        <div class="cr-casos cr-casos--oscuro">
+          <p class="cr-casos-t">Lo hemos hecho</p>
+          <ul>
+            {c.museografia.casos.map((k) => (
+              <li>{k.href ? <a href={k.href} {...ext}><b>{k.titulo}</b><span>{k.texto}</span><Icon name="ext" size="18" /><span class="sr-only"> (se abre en otra pestaña)</span></a> : <div><b>{k.titulo}</b><span>{k.texto}</span></div>}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acompañamiento pedagógico -->
+    <section class="cr-sec mk-seccion" id="pedagogia" aria-labelledby="cr-pe-t">
+      <div class="mk-w cr-split cr-split--inv">
+        <div class="cr-foto">
+          <Picture src={img(c.pedagogia.imagen)} alt={c.pedagogia.alt} formats={['avif', 'webp']} widths={[342]} sizes="(max-width: 1024px) 92vw, 440px" class="cr-img" loading="lazy" />
+        </div>
+        <div class="cr-split-txt">
+          <p class="t-eyebrow">Acompañamiento pedagógico</p>
+          <h2 class="t-h2" id="cr-pe-t">{c.pedagogia.titulo}</h2>
+          <p class="t-lead">{c.pedagogia.texto}</p>
+          <ul class="cr-check">{c.pedagogia.servicios.map((s) => <li><Icon name="check" size="20" />{s}</li>)}</ul>
+        </div>
+        <div class="cr-casos">
+          <p class="cr-casos-t">Lo hemos hecho</p>
+          <ul>
+            {c.pedagogia.casos.map((k) => <li><a href={k.href} {...ext}><b>{k.titulo}</b><span>{k.texto}</span><Icon name="ext" size="18" /><span class="sr-only"> (se abre en otra pestaña)</span></a></li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Investigación y consultoría -->
+    <section class="cr-sec mk-banda mk-banda--alt" id="investigacion" aria-labelledby="cr-in-t">
+      <div class="mk-w">
+        <div class="el-head">
+          <div class="el-head-txt">
+            <p class="t-eyebrow">Investigación y consultoría</p>
+            <h2 class="t-h2" id="cr-in-t">{c.investigacion.titulo}</h2>
+            <p class="t-lead">{c.investigacion.texto}</p>
+          </div>
+        </div>
+        <ul class="cr-formas cr-formas--blanco">
+          {c.investigacion.servicios.map((f) => <li><span class="mk-ib"><Icon name={f.icono} /></span><h3 class="t-h4">{f.titulo}</h3><p>{f.texto}</p></li>)}
+        </ul>
+        <div class="cr-grupo" data-el="Contenedor · Fondo blanco · Radio 28 · enlace al grupo (página próxima)">
+          <span class="cr-grupo-ic"><Icon name="flask" size="28" /></span>
+          <div class="cr-grupo-txt">
+            <h3 class="t-h4">{c.investigacion.grupo.titulo}</h3>
+            <p>{c.investigacion.grupo.texto}</p>
+          </div>
+          <span class="cr-grupo-link" aria-disabled="true">Conoce el grupo<Icon name="arrow" size="18" /></span>
+          <PorValidar texto="Página del grupo: próximamente" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Maloka Viajera -->
+    <section class="cr-sec mk-banda mk-banda--noche mk-oscuro" id="viajera" aria-labelledby="cr-vi-t">
+      <div class="mk-w">
+        <div class="cr-vi-top">
+          <div class="cr-split-txt">
+            <p class="t-eyebrow">Maloka Viajera</p>
+            <h2 class="t-h2" id="cr-vi-t">{c.viajera.titulo}</h2>
+            <p class="t-lead">{c.viajera.texto}</p>
+            <div class="cr-vi-ctas">
+              <Button href="#contacto" variant="invertido" icon="arrow">Lleva Maloka Viajera a tu territorio</Button>
+              <a class="mk-enlace" href={c.viajera.href} {...ext}>Más sobre Maloka Viajera<Icon name="ext" size="18" /><span class="sr-only"> (se abre en otra pestaña)</span></a>
+            </div>
+          </div>
+          <ul class="cr-vi-cifras">{c.viajera.cifras.map((x) => <li><b class="t-num">{x.valor}</b><span>{x.label}</span></li>)}</ul>
+        </div>
+        <div class="cr-vi-grid">
+          <div class="cr-vi-card">
+            <h3 class="t-h5">Qué lleva</h3>
+            <ul class="cr-check cr-check--oscuro">{c.viajera.incluye.map((s) => <li><Icon name="check" size="20" />{s}</li>)}</ul>
+          </div>
+          <div class="cr-vi-card">
+            <h3 class="t-h5">Dónde ha estado</h3>
+            <ul class="cr-vi-lugares">{c.viajera.casos.map((k) => <li><Icon name="pin" size="20" /><span><b>{k.titulo}</b>{k.texto}</span></li>)}</ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <FormCotizar id="contacto" eyebrow="Hablemos" titulo={c.contacto.titulo} texto={c.contacto.texto} etiquetaTipo="¿Qué te interesa?" tipos={c.contacto.tipos} correo={c.contacto.correo} campoPersonas={false} campoCargo etiquetaOrg="Empresa o entidad" boton="Enviar mi idea" />
+  </main>
+  <Footer />
+</Base>
+
+<style>
+  .cr-sec { scroll-margin-top: 140px; }
+  .cr-hero-cifras { display: grid; gap: 12px; }
+  .cr-hero-cifras li { display: grid; gap: 4px; padding: 20px 24px; border-radius: var(--mk-r-20); background: var(--mk-violeta-800); border: 1px solid var(--mk-violeta-600); }
+  .cr-hero-cifras b { font-size: var(--mk-h2); line-height: 1; font-weight: 700; }
+  .cr-hero-cifras span { font-size: var(--mk-small); color: var(--mk-violeta-100); }
+
+  .cr-formas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .cr-formas li { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 28px; border: 1px solid var(--mk-borde); border-radius: var(--mk-r-28); background: #fff; }
+  .cr-formas p { font-size: var(--mk-small); color: var(--mk-texto-2); }
+  .cr-aliados { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--mk-borde); }
+  .cr-aliados-t { font-size: var(--mk-small); font-weight: 700; color: var(--mk-texto-2); }
+  .cr-aliados ul { display: flex; flex-wrap: wrap; gap: 8px; }
+  .cr-aliados li { padding: 8px 14px; border-radius: var(--mk-r-pill); background: var(--mk-fondo-alt); border: 1px solid var(--mk-borde); font-size: 14px; font-weight: 600; }
+
+  .cr-split { display: grid; grid-template-columns: 7fr 5fr; gap: 40px 64px; align-items: center; }
+  .cr-split--inv { grid-template-columns: 5fr 7fr; }
+  .cr-split-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .cr-foto { position: relative; aspect-ratio: 4 / 5; border-radius: var(--mk-r-28); overflow: hidden; background: var(--mk-neutro-100); }
+  .cr-foto--arco { border-radius: 999px 999px var(--mk-r-28) var(--mk-r-28); background: var(--mk-violeta-800); }
+  .cr-foto :global(picture), .cr-foto :global(.cr-img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cr-pasos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; margin-top: 8px; }
+  .cr-pasos li { display: flex; gap: 12px; align-items: center; padding: 14px 16px; border-radius: var(--mk-r-20); background: var(--mk-violeta-800); font-weight: 600; }
+  .cr-pasos span { font-size: 14px; color: var(--mk-violeta-200); }
+  .cr-casos { grid-column: 1 / -1; display: grid; grid-template-columns: 220px 1fr; gap: 12px 32px; align-items: start; padding-top: 28px; border-top: 1px solid var(--mk-borde); }
+  .cr-casos--oscuro { border-top-color: rgba(255, 255, 255, .2); }
+  .cr-casos-t { font-weight: 700; padding-top: 14px; }
+  .cr-casos ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .cr-casos li > * { display: grid; gap: 4px; height: 100%; padding: 16px 18px; border-radius: var(--mk-r-20); border: 1px solid var(--mk-borde); color: inherit; position: relative; }
+  .cr-casos--oscuro li > * { border-color: var(--mk-violeta-600); background: var(--mk-violeta-800); }
+  .cr-casos b { font-weight: 600; padding-right: 22px; }
+  .cr-casos span:not(.sr-only) { font-size: var(--mk-small); color: var(--mk-texto-2); }
+  .cr-casos--oscuro span:not(.sr-only) { color: var(--mk-violeta-100); }
+  .cr-casos a :global(.mk-ic) { position: absolute; right: 14px; top: 16px; color: var(--mk-violeta-700); }
+  .cr-casos--oscuro a :global(.mk-ic) { color: var(--mk-violeta-200); }
+  .cr-casos a:hover { border-color: var(--mk-violeta-300); }
+  .cr-check { display: grid; gap: 10px; margin-top: 4px; }
+  .cr-check li { display: flex; gap: 10px; align-items: flex-start; font-weight: 600; }
+  .cr-check :global(.mk-ic) { color: var(--mk-exito); flex: none; margin-top: 2px; }
+  .cr-check--oscuro :global(.mk-ic) { color: var(--mk-cyan-500); }
+
+  .cr-formas--blanco li { border-color: transparent; }
+  .cr-grupo { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 24px; padding: 28px 32px; border-radius: var(--mk-r-28); background: #fff; border: 1px solid var(--mk-borde); }
+  .cr-grupo-ic { width: 64px; height: 64px; flex: none; border-radius: 20px; display: grid; place-items: center; background: var(--mk-verde-50); color: var(--mk-verde-900); }
+  .cr-grupo-txt { flex: 1 1 320px; display: grid; gap: 4px; }
+  .cr-grupo-txt p { font-size: var(--mk-small); color: var(--mk-texto-2); }
+  .cr-grupo-link { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--mk-texto-3); cursor: not-allowed; }
+
+  .cr-vi-top { display: grid; grid-template-columns: 7fr 5fr; gap: 40px 64px; align-items: center; }
+  .cr-vi-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 8px; }
+  .cr-vi-cifras { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .cr-vi-cifras li { display: grid; gap: 6px; padding: 24px; border-radius: var(--mk-r-20); background: var(--mk-violeta-800); }
+  .cr-vi-cifras b { font-size: var(--mk-display); line-height: 1; font-weight: 700; color: #fff; }
+  .cr-vi-cifras span { font-size: var(--mk-small); color: var(--mk-violeta-100); }
+  .cr-vi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 48px; }
+  .cr-vi-card { display: grid; gap: 16px; align-content: start; padding: 28px; border-radius: var(--mk-r-28); background: var(--mk-violeta-800); }
+  .cr-vi-lugares { display: grid; gap: 12px; }
+  .cr-vi-lugares li { display: flex; gap: 10px; align-items: flex-start; }
+  .cr-vi-lugares :global(.mk-ic) { color: var(--mk-cyan-500); flex: none; margin-top: 2px; }
+  .cr-vi-lugares b { display: block; font-weight: 600; }
+  .cr-vi-lugares span { font-size: var(--mk-small); color: var(--mk-violeta-100); }
+
+  @media (max-width: 1024px) {
+    .cr-formas { grid-template-columns: 1fr; }
+    .cr-split, .cr-split--inv, .cr-vi-top { grid-template-columns: 1fr; }
+    .cr-foto { max-width: 420px; aspect-ratio: 1; }
+    .cr-casos { grid-template-columns: 1fr; }
+    .cr-casos ul { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 767px) {
+    .cr-pasos, .cr-vi-grid { grid-template-columns: 1fr; }
+    .cr-foto { max-width: none; aspect-ratio: 4 / 3; border-radius: var(--mk-r-20); }
+    .cr-formas li, .cr-vi-card { padding: 22px 20px; border-radius: var(--mk-r-20); }
+    .cr-grupo { padding: 22px 20px; border-radius: var(--mk-r-20); }
+    .cr-vi-ctas :global(.btn) { width: 100%; }
+  }
+</style>

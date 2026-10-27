@@ -1,44 +1,45 @@
 ---
-/* Cotiza tu visita: banda violeta 700 con formulario corto. Prototipo: no envía datos.
+/* Formulario de contacto en banda violeta 700 (Ven en grupo, Crea con Maloka). Prototipo: no envía datos.
    En Elementor: widget Formulario con acción de correo a info@maloka.org (o el CRM de Maloka). */
-import d from '../../data/ven-en-grupo.json';
 import site from '../../data/site.json';
 import Icon from '../ui/Icon.astro';
+const {
+  id = 'cotizar', eyebrow, titulo, texto, etiquetaTipo = '¿Qué tipo de grupo es?', tipos = [],
+  correo = 'info@maloka.org', extra, campoPersonas = true, campoCargo = false, boton = 'Pedir cotización',
+  etiquetaOrg = 'Institución o empresa'
+} = Astro.props;
 ---
-<section class="gct mk-banda mk-banda--violeta" id="cotizar" aria-labelledby="gct-t" data-el="Contenedor ancho completo · Fondo violeta 700 · Widget Formulario">
+<section class="gct mk-banda mk-banda--violeta" id={id} aria-labelledby="gct-t" data-el="Contenedor ancho completo · Fondo violeta 700 · Widget Formulario">
   <div class="mk-w gct-in">
     <div class="gct-txt">
-      <p class="t-eyebrow">Cotiza tu visita</p>
-      <h2 class="t-h2" id="gct-t">Cuéntanos de tu grupo y te enviamos la propuesta.</h2>
-      <p class="t-lead">Te respondemos por correo con opciones, fechas y tarifas para tu grupo.</p>
+      <p class="t-eyebrow">{eyebrow}</p>
+      <h2 class="t-h2" id="gct-t">{titulo}</h2>
+      <p class="t-lead">{texto}</p>
       <ul class="gct-datos">
-        <li><Icon name="mail" size="20" /><a href={`mailto:${d.contacto.correo}`}>{d.contacto.correo}</a></li>
+        <li><Icon name="mail" size="20" /><a href={`mailto:${correo}`}>{correo}</a></li>
         <li><Icon name="phone" size="20" /><a href={`tel:${site.telefonoHref}`}>{site.telefono}</a></li>
-        <li><Icon name="heart" size="20" /><span>Maloka Puertas Abiertas: <a href={`mailto:${d.mpa.correo}`}>{d.mpa.correo}</a></span></li>
+        {extra && <li><Icon name={extra.icono} size="20" /><span>{extra.texto} <a href={`mailto:${extra.correo}`}>{extra.correo}</a></span></li>}
       </ul>
     </div>
     <form class="gct-form" novalidate data-cotizar>
       <div class="gct-campo gct-campo--full">
-        <label for="ct-tipo">¿Qué tipo de grupo es?</label>
+        <label for="ct-tipo">{etiquetaTipo}</label>
         <select id="ct-tipo" name="tipo" required>
           <option value="">Elige una opción</option>
-          <option>Colegio o universidad</option>
-          <option>Cumpleaños</option>
-          <option>Empresa o evento</option>
-          <option>Maloka Puertas Abiertas</option>
-          <option>Otro grupo</option>
+          {tipos.map((t) => <option>{t}</option>)}
         </select>
       </div>
       <div class="gct-campo"><label for="ct-nombre">Nombre</label><input id="ct-nombre" name="nombre" autocomplete="name" required /></div>
-      <div class="gct-campo"><label for="ct-org">Institución o empresa <span>(opcional)</span></label><input id="ct-org" name="org" autocomplete="organization" /></div>
+      <div class="gct-campo"><label for="ct-org">{etiquetaOrg} <span>(opcional)</span></label><input id="ct-org" name="org" autocomplete="organization" /></div>
       <div class="gct-campo"><label for="ct-correo">Correo</label><input id="ct-correo" name="correo" type="email" autocomplete="email" required /></div>
       <div class="gct-campo"><label for="ct-tel">Celular</label><input id="ct-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" required /></div>
-      <div class="gct-campo"><label for="ct-personas">Número de personas</label><input id="ct-personas" name="personas" type="number" min="1" inputmode="numeric" required /></div>
-      <div class="gct-campo"><label for="ct-fecha">Fecha tentativa</label><input id="ct-fecha" name="fecha" type="date" /></div>
-      <div class="gct-campo gct-campo--full"><label for="ct-msg">¿Algo más que debamos saber? <span>(opcional)</span></label><textarea id="ct-msg" name="msg" rows="3"></textarea></div>
+      {campoPersonas && <div class="gct-campo"><label for="ct-personas">Número de personas</label><input id="ct-personas" name="personas" type="number" min="1" inputmode="numeric" required /></div>}
+      {campoPersonas && <div class="gct-campo"><label for="ct-fecha">Fecha tentativa</label><input id="ct-fecha" name="fecha" type="date" /></div>}
+      {campoCargo && <div class="gct-campo gct-campo--full"><label for="ct-cargo">Cargo <span>(opcional)</span></label><input id="ct-cargo" name="cargo" autocomplete="organization-title" /></div>}
+      <div class="gct-campo gct-campo--full"><label for="ct-msg">{campoPersonas ? '¿Algo más que debamos saber?' : 'Cuéntanos tu idea'} {campoPersonas && <span>(opcional)</span>}</label><textarea id="ct-msg" name="msg" rows={campoPersonas ? 3 : 5} required={!campoPersonas}></textarea></div>
       <div class="gct-campo--full gct-acc">
         <label class="gct-check"><input type="checkbox" name="datos" required /> <span>Acepto la política de tratamiento de datos.</span></label>
-        <button type="submit" class="btn btn--destacado btn--lg">Pedir cotización</button>
+        <button type="submit" class="btn btn--destacado btn--lg">{boton}</button>
       </div>
       <p class="gct-msg gct-campo--full" role="status" aria-live="polite" data-msg></p>
     </form>

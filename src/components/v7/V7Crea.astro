@@ -16,7 +16,7 @@ import { ruta } from '../../lib/rutas.js';
         <p class="t-eyebrow">{data.eyebrow}</p>
         <h2 class="t-h2" id="v7c-t">{data.titulo}</h2>
         <p class="t-lead">{data.texto}</p>
-        <Button href="#" variant="invertido" icon="arrow" class="btn--movil-bloque">{data.cta}</Button>
+        <Button href={ruta(data.cta)} variant="invertido" icon="arrow" class="btn--movil-bloque">{data.cta}</Button>
       </div>
       <div class="v7c-foto">
         <Picture src={img('sala-inventores.jpg')} alt="Sala Inventores de Maloka, una experiencia museográfica con módulos interactivos" formats={['avif', 'webp']} widths={[480, 788]} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 90vw, 620px" class="v7c-img" loading="lazy" />

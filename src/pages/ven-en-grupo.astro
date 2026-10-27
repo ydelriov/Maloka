@@ -11,7 +11,7 @@ import GrCumple from '../components/grupos/GrCumple.astro';
 import GrEmpresas from '../components/grupos/GrEmpresas.astro';
 import GrMpa from '../components/grupos/GrMpa.astro';
 import GrDescargas from '../components/grupos/GrDescargas.astro';
-import GrCotizar from '../components/grupos/GrCotizar.astro';
+import FormCotizar from '../components/pagina/FormCotizar.astro';
 import VisFaq from '../components/visitanos/VisFaq.astro';
 import Footer from '../components/layout/Footer.astro';
 import Button from '../components/ui/Button.astro';
@@ -43,7 +43,7 @@ import '../styles/elementor.css';
     <GrEmpresas />
     <GrMpa />
     <GrDescargas />
-    <GrCotizar />
+    <FormCotizar eyebrow="Cotiza tu visita" titulo="Cuéntanos de tu grupo y te enviamos la propuesta." texto="Te respondemos por correo con opciones, fechas y tarifas para tu grupo." tipos={['Colegio o universidad', 'Cumpleaños', 'Empresa o evento', 'Maloka Puertas Abiertas', 'Otro grupo']} correo={d.contacto.correo} extra={{ icono: 'heart', texto: 'Maloka Puertas Abiertas:', correo: d.mpa.correo }} />
     <VisFaq preguntas={d.preguntas} titulo="Preguntas de grupos." />
   </main>
   <Footer />

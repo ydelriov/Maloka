@@ -32,12 +32,13 @@ const RUTAS = {
   'Recursos educativos': 'descubre/#recursos',
   'Noticias': 'noticias/',
   // Crea con Maloka
-  'Crea con Maloka': 'v7/#crea',
-  'Patrocinios y alianzas': 'v7/#crea',
-  'Experiencias museográficas': 'v7/#crea',
-  'Acompañamiento pedagógico': 'v7/#crea',
-  'Investigación y consultoría': 'v7/#crea',
-  'Maloka viajera': 'v7/#crea'
+  'Crea con Maloka': 'crea-con-maloka/',
+  'Patrocinios y alianzas': 'crea-con-maloka/#patrocinios',
+  'Experiencias museográficas': 'crea-con-maloka/#museografia',
+  'Acompañamiento pedagógico': 'crea-con-maloka/#pedagogia',
+  'Investigación y consultoría': 'crea-con-maloka/#investigacion',
+  'Maloka viajera': 'crea-con-maloka/#viajera',
+  'Hablemos de tu proyecto': 'crea-con-maloka/#contacto'
 };
 
 export const ruta = (label) => (RUTAS[label] ? url(RUTAS[label]) : '#');
