@@ -249,7 +249,8 @@
         "pasos": [
           "El parqueadero está al respaldo del centro interactivo.",
           "La entrada es por la Calle 25.",
-          "Tiene espacios para carros, motos y bicicletas."
+          "Tiene espacios para carros, motos y bicicletas.",
+          "Visitantes de Maloka: 1 hora gratis."
         ],
         "tarifas": [
           {
@@ -277,23 +278,89 @@
     ],
     "embed": "https://www.google.com/maps?q=Maloka%2C%20Carrera%2068D%20%2324A-51%2C%20Bogot%C3%A1&output=embed"
   },
-  "servicios": [
-    {
-      "titulo": "Guía digital",
-      "icono": "guide",
-      "texto": "Recorre Maloka desde tu celular con Bloomberg Connects. Es gratuita."
-    },
-    {
-      "titulo": "Venta de entradas",
-      "icono": "ticket",
-      "texto": "En línea en Tuboleta. La venta cierra a las 4:00 p. m."
-    },
-    {
-      "titulo": "Atención al visitante",
-      "icono": "phone",
-      "texto": "Llámanos al (+57) 601 427 2707."
-    }
-  ],
+  "servicios": {
+    "titulo": "Lo que encuentras en Maloka.",
+    "texto": "Servicios para que tu visita sea cómoda, segura y divertida.",
+    "fuente": "Servicios de maloka.org/servicios.",
+    "grupos": [
+      {
+        "titulo": "Llega y estaciona",
+        "items": [
+          {
+            "titulo": "Parqueadero",
+            "icono": "parking",
+            "texto": "Al respaldo de Maloka, con entrada por la Calle 25. Espacios para carros, motos y bicicletas.",
+            "etiqueta": "1 hora gratis para visitantes",
+            "enlace": {
+              "texto": "Tarifas del parqueadero",
+              "href": "#llegar"
+            }
+          },
+          {
+            "titulo": "Carga para vehículos eléctricos",
+            "icono": "bolt",
+            "texto": "Estaciones de carga en el parqueadero."
+          }
+        ]
+      },
+      {
+        "titulo": "Come algo",
+        "items": [
+          {
+            "titulo": "Restaurante",
+            "icono": "food",
+            "texto": "Para almorzar durante tu visita."
+          },
+          {
+            "titulo": "Confitería",
+            "icono": "candy",
+            "texto": "Snacks y bebidas para recargar energía."
+          },
+          {
+            "titulo": "Islas comerciales",
+            "icono": "store",
+            "texto": "Sabores locales en los puntos de comida de Maloka."
+          },
+          {
+            "titulo": "Food Hall",
+            "icono": "food",
+            "texto": "Un nuevo espacio de comida.",
+            "etiqueta": "Próximamente"
+          }
+        ]
+      },
+      {
+        "titulo": "Durante tu visita",
+        "items": [
+          {
+            "titulo": "WiFi gratis",
+            "icono": "wifi",
+            "texto": "Conéctate en Maloka sin costo."
+          },
+          {
+            "titulo": "Guía digital",
+            "icono": "guide",
+            "texto": "Recorre Maloka desde tu celular con Bloomberg Connects. Es gratuita."
+          },
+          {
+            "titulo": "Atención al visitante",
+            "icono": "phone",
+            "texto": "Llámanos al (+57) 601 427 2707."
+          }
+        ]
+      },
+      {
+        "titulo": "Juega",
+        "items": [
+          {
+            "titulo": "Canchas de pádel",
+            "icono": "padel",
+            "texto": "Canchas de pádel en las instalaciones de Maloka."
+          }
+        ]
+      }
+    ]
+  },
   "accesibilidad": {
     "titulo": "Recorre Maloka sin barreras.",
     "texto": "Queremos que todas las personas puedan vivir la ciencia. Aquí encontrarás cómo es el acceso a las salas, al Cine Domo y a los laboratorios."

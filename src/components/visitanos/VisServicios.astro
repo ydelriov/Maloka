@@ -1,25 +1,43 @@
 ---
-/* Servicios y accesibilidad. Solo se nombran servicios confirmados; el resto queda marcado por validar.
-   En Elementor: grid de Icon Box con borde y un contenedor tonal para accesibilidad. */
+/* Servicios (maloka.org/servicios) agrupados por momento de la visita, y accesibilidad.
+   En Elementor: un contenedor por grupo con un Título H3 y un grid de Icon Box con borde; contenedor tonal para accesibilidad. */
 import data from '../../data/visitanos.json';
 import Icon from '../ui/Icon.astro';
 import Button from '../ui/Button.astro';
 import PorValidar from '../ui/PorValidar.astro';
+const sv = data.servicios;
 ---
 <section class="vse mk-seccion" id="servicios" aria-labelledby="vse-t">
   <div class="mk-w">
     <div class="el-head">
       <div class="el-head-txt">
         <p class="t-eyebrow">Servicios</p>
-        <h2 class="t-h2" id="vse-t">Lo que encuentras en Maloka.</h2>
-        <PorValidar texto="Otros servicios por validar" />
+        <h2 class="t-h2" id="vse-t">{sv.titulo}</h2>
+        <p class="t-muted">{sv.texto}</p>
       </div>
     </div>
-    <ul class="vse-grid" data-el="Contenedor grid · 3 / 3 / 1 col · Icon Box con borde">
-      {data.servicios.map((s) => (
-        <li><span class="mk-ib"><Icon name={s.icono} /></span><h3 class="t-h5">{s.titulo}</h3><p>{s.texto}</p></li>
+
+    <div class="vse-grupos">
+      {sv.grupos.map((g) => (
+        <div class="vse-grupo" data-el="Contenedor · Título H3 + grid de Icon Box con borde">
+          <h3 class="t-h5 vse-g-t">{g.titulo}</h3>
+          <ul class="vse-grid">
+            {g.items.map((s) => (
+              <li>
+                <span class="mk-ib"><Icon name={s.icono} /></span>
+                <div class="vse-txt">
+                  <h4 class="vse-t">{s.titulo}</h4>
+                  <p>{s.texto}</p>
+                  {s.etiqueta && <span class="vse-tag">{s.etiqueta}</span>}
+                  {s.enlace && <a class="mk-enlace vse-link" href={s.enlace.href}>{s.enlace.texto}<Icon name="arrow" size="18" /></a>}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       ))}
-    </ul>
+    </div>
+    <p class="vse-fuente"><Icon name="help" size="18" /><span>{sv.fuente}</span><PorValidar texto="Confirmar horarios de restaurante y canchas" /></p>
 
     <div class="vse-acc" id="accesibilidad" data-el="Contenedor · Fondo Violeta 50 · Radio 28 · flex fila">
       <span class="vse-acc-ic"><Icon name="access" size="28" /></span>
@@ -35,17 +53,30 @@ import PorValidar from '../ui/PorValidar.astro';
 </section>
 
 <style>
-  .vse-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-  .vse-grid li { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 28px; border: 1px solid var(--mk-borde); border-radius: var(--mk-r-28); }
-  .vse-grid p { font-size: var(--mk-small); color: var(--mk-texto-2); }
-  .vse-acc { display: flex; align-items: center; gap: 24px 32px; margin-top: 40px; padding: 40px; border-radius: var(--mk-r-28); background: var(--mk-fondo-tonal); scroll-margin-top: 160px; }
+  .vse-grupos { display: grid; gap: 40px; }
+  .vse-grupo { display: grid; grid-template-columns: 220px 1fr; gap: 16px 40px; align-items: start; padding-top: 24px; border-top: 1px solid var(--mk-borde); }
+  .vse-g-t { padding-top: 6px; }
+  .vse-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .vse-grid li { display: flex; gap: 16px; align-items: flex-start; padding: 20px; border: 1px solid var(--mk-borde); border-radius: var(--mk-r-20); }
+  .vse-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .vse-t { font-size: 17px; font-weight: 600; line-height: 1.35; }
+  .vse-txt p { font-size: var(--mk-small); color: var(--mk-texto-2); }
+  .vse-tag { display: inline-flex; padding: 3px 10px; border-radius: var(--mk-r-pill); background: var(--mk-exito-fondo); color: var(--mk-exito); font-size: 12px; font-weight: 700; }
+  .vse-link { font-size: 15px; }
+  .vse-fuente { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 24px; font-size: 13px; color: var(--mk-texto-2); }
+  .vse-fuente :global(.mk-ic) { color: var(--mk-violeta-700); }
+  .vse-acc { display: flex; align-items: center; gap: 24px 32px; margin-top: 56px; padding: 40px; border-radius: var(--mk-r-28); background: var(--mk-fondo-tonal); scroll-margin-top: 160px; }
   .vse-acc-ic { width: 72px; height: 72px; flex: none; border-radius: 22px; display: grid; place-items: center; background: #fff; color: var(--mk-violeta-700); }
   .vse-acc-txt { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
   .vse-acc-txt > p:not(.t-eyebrow) { color: var(--mk-texto-2); max-width: 640px; }
-  @media (max-width: 1024px) { .vse-acc { flex-wrap: wrap; } .vse-acc-txt { flex-basis: calc(100% - 104px); } }
+  @media (max-width: 1024px) {
+    .vse-grupo { grid-template-columns: 1fr; }
+    .vse-acc { flex-wrap: wrap; }
+    .vse-acc-txt { flex-basis: calc(100% - 104px); }
+  }
   @media (max-width: 767px) {
     .vse-grid { grid-template-columns: 1fr; }
-    .vse-grid li { padding: 20px; }
+    .vse-grid li { padding: 16px; }
     .vse-acc { flex-direction: column; align-items: flex-start; padding: 28px 20px; border-radius: var(--mk-r-20); }
     .vse-acc :global(.btn) { width: 100%; }
   }
