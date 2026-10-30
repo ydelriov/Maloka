@@ -6,7 +6,7 @@ import Icon from '../components/ui/Icon.astro';
 import data from '../data/variantes.json';
 import { url } from '../lib/url.js';
 ---
-<Base title="Prototipo de la home de Maloka · versiones" description="Versiones navegables de la home de maloka.org, en orden, para comparar en el navegador.">
+<Base variante="indice" title="Prototipo de la home de Maloka · versiones" description="Versiones navegables de la home de maloka.org, en orden, para comparar en el navegador.">
   <header class="ix-top mk-w">
     <span class="ix-logo"><Logo size={56} /></span>
     <div>
@@ -37,7 +37,7 @@ import { url } from '../lib/url.js';
   .ix-top { display: flex; gap: 24px; align-items: flex-start; padding-block: 56px 40px; }
   .ix-logo { color: var(--mk-violeta-700); flex: none; }
   .ix-top > div { display: grid; gap: 12px; }
-  .ix-main { padding-bottom: 96px; display: grid; gap: 48px; }
+  .ix-main { padding-bottom: 120px; display: grid; gap: 48px; }
   .ix-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
   .ix-card { display: grid; gap: 16px; border-radius: var(--mk-r-28); color: var(--mk-texto); }
   .ix-card:focus-visible { outline-offset: 6px; }

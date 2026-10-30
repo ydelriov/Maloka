@@ -1,19 +1,16 @@
 # Maloka · prototipo navegable de la home
 
-Prototipo responsive de la home de maloka.org en **cinco variantes de layout** (V7 combinada, V4, V5, V6 y Elementor), construido con el
+Prototipo responsive de la home de maloka.org en **nueve versiones** (V1 a V9), construido con el
 Design System de Claude Design para validar el diseño antes de llevarlo a WordPress + Elementor.
 
 - Publicado: https://ydelriov.github.io/Maloka/
-- **V7 · Combinada** (`/v7`): hero rotativo de V5 con un botón amarillo por campaña, Planea tu visita y Agenda de Elementor,
-  Cine Domo protagonista en Vive Maloka, Ven en grupo de V6 ordenado, Descubre de V6 en bloque tonal, Crea con Maloka de V4
-  con más peso y Noticias de V6 sin fecha. Los textos del banner están en `src/data/campanas.json` (por validar).
-- Variantes: `/v4` Editorial numerada · `/v5` Arcos del domo · `/v6` Panel de visita · `/elementor` lista para construir en WordPress + Elementor Pro
-- Prototipo anterior (home navy, Agéndate, Ven en grupo): `/legacy/`
 
 ## Qué se publica
 
-Solo las versiones del home, en orden: V1 (`/legacy/`), V4, V5, V6, Elementor, V7, V8, V9 y V10 (lista en
-`src/data/variantes.json`). La barra flotante de cada versión salta entre ellas. Las páginas internas (Visítanos,
+Solo las versiones del home, en orden, de `/v1/` a `/v9/` (lista en `src/data/variantes.json`): V1 prototipo inicial
+(HTML estático en `public/v1/`), V2 editorial numerada, V3 arcos del domo, V4 panel de visita, V5 Elementor, V6 combinada,
+V7 galería a sangre, V8 paneles de color y V9 bandas de color. La barra flotante de todas las pantallas salta entre
+ellas; en V1 se inserta con `node scripts/barra-v1.mjs`. Las páginas internas (Visítanos,
 Agéndate, Ven en grupo, Descubre, Noticias, Crea con Maloka) están ocultas en `src/ocultas/` y sus enlaces apuntan a
 `#`; para volver a publicarlas, ver `src/ocultas/README.md`.
 
@@ -45,9 +42,9 @@ src/
     elementor/   ElHeader · ElHero · ElPlanea · ElExperiencias · ElAgenda · ElGrupos · ElDescubre · ElCrea · ElNoticias
     sections/    HeroSlider · VisitPanel · PlaneaVisita · ViveMaloka · Agenda · VenEnGrupo · Descubre · CreaConMaloka · Noticias
   layouts/       Base.astro (SEO, Open Graph, JSON-LD Museum)
-  pages/         index (miniaturas) · v4 · v5 · v6 · elementor · v7 · v8 · v9 · v10
+  pages/         index (miniaturas) · v2 … v9 (V1 está en public/v1)
   ocultas/       páginas internas fuera de publicación por ahora
-public/legacy/   prototipo anterior, servido tal cual
+public/v1/       V1, prototipo inicial en HTML, servido tal cual
 scripts/         screenshots.mjs (Playwright)
 ```
 
@@ -65,7 +62,7 @@ Las secciones reciben `variante="v4" | "v5" | "v6"`: cambian la grilla y el trat
 - Arco del domo: máximo uno por sección.
 - Foco visible: `3px solid #B897D6` (blanco sobre fondo oscuro).
 
-## Nueva dirección · V8, V9 y V10
+## Nueva dirección · V7, V8 y V9
 
 Tres propuestas de la home con la dirección aprobada tras la revisión: el violeta solo en detalles, fondo hueso
 `#F4F1EC` y tintes de la paleta de experiencias, fotos y bloques rectos (radio 0), un solo botón («Compra tus
@@ -74,24 +71,24 @@ entradas» en el menú) y enlaces de texto subrayados con flecha. Componentes en
 
 | Ruta | Propuesta | Cómo se arma en Elementor |
 |---|---|---|
-| `/v8` | P1 · Galería a sangre | Contenedores de ancho completo con imagen de fondo, superposición plana en la mitad inferior y el contenedor completo como enlace; agenda y noticias con Loop Grid |
-| `/v9` | P2 · Paneles de color | Fondo hueso en el cuerpo; cada panel es un contenedor con color de fondo y **Efectos de movimiento › Sticky: arriba** con un desplazamiento distinto (24, 100, 176, 252 px) y «Sticky en: escritorio y tablet»; Loop Grid para agenda y noticias |
-| `/v10` | P3 · Bandas de color | Un contenedor de ancho completo por sección con su color global; listas con Icon List o contenedores con borde inferior de 1.5 px; Loop Grid para agenda y noticias |
+| `/v7` | P1 · Galería a sangre | Contenedores de ancho completo con imagen de fondo, superposición plana en la mitad inferior y el contenedor completo como enlace; agenda y noticias con Loop Grid |
+| `/v8` | P2 · Paneles de color | Fondo hueso en el cuerpo; cada panel es un contenedor con color de fondo y **Efectos de movimiento › Sticky: arriba** con un desplazamiento distinto (24, 100, 176, 252 px) y «Sticky en: escritorio y tablet»; Loop Grid para agenda y noticias |
+| `/v9` | P3 · Bandas de color | Un contenedor de ancho completo por sección con su color global; listas con Icon List o contenedores con borde inferior de 1.5 px; Loop Grid para agenda y noticias |
 
 Piezas comunes: `PHeader` (Theme Builder › Header con el widget Menú y un solo Botón), `PHero` (Carrusel anidado con
 fundido; la pausa va en un widget HTML), `PCard` (plantilla de Loop Item: imagen sin radio, fecha y categoría en
 posición absoluta, todo el contenedor como enlace), `PLink` (Botón con estilo de enlace: sin fondo, borde inferior de
 2 px e icono de flecha) y `PFooter` (Theme Builder › Footer con Formulario de un campo).
 
-## Variante Elementor
+## V5 · Elementor
 
-`/elementor` usa la misma información y el mismo Design System, pero solo con lo que Elementor Pro hace de forma nativa:
+`/v5` (Elementor) usa la misma información y el mismo Design System, pero solo con lo que Elementor Pro hace de forma nativa:
 contenedores flex/grid, widget Menú (mega menú), Loop Grid con plantilla de tarjeta, Filtro de taxonomía, Icon Box,
 Icon List y Formulario. Los tamaños cambian en escalones en los breakpoints de Elementor (1024 y 767; el menú en 1200,
 «Tablet extra»), sin `clamp()` (`src/styles/elementor.css`). El hero es fijo (sin slider) porque los carruseles de
 Elementor no traen botón de pausa. 
 
-## De componente a Elementor (V4–V6)
+## De componente a Elementor (V2–V4)
 
 | Componente | En Elementor |
 |---|---|

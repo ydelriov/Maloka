@@ -164,5 +164,16 @@ body{background:var(--g50)}
   fit(); addEventListener('resize', fit);
 })();
 </script>
+<!-- barra-versiones -->
+<nav class="mk-vs" aria-label="Versiones del home"><a href="/Maloka/">Índice</a><a href="/Maloka/v1/" aria-current="page">V1</a><a href="/Maloka/v2/">V2</a><a href="/Maloka/v3/">V3</a><a href="/Maloka/v4/">V4</a><a href="/Maloka/v5/">V5</a><a href="/Maloka/v6/">V6</a><a href="/Maloka/v7/">V7</a><a href="/Maloka/v8/">V8</a><a href="/Maloka/v9/">V9</a></nav>
+<style>
+.mk-vs{position:fixed;left:16px;bottom:16px;z-index:9999;display:flex;gap:4px;padding:4px;border-radius:999px;background:#1F1428;box-shadow:0 4px 12px rgba(31,14,44,.08),0 20px 36px -14px rgba(31,14,44,.18);font:700 13px/1 Montserrat,Arial,sans-serif;max-width:calc(100vw - 32px);overflow-x:auto;scrollbar-width:none}
+.mk-vs a{display:inline-grid;place-items:center;flex:none;min-width:44px;height:36px;padding:0 12px;border-radius:999px;color:#fff;text-decoration:none}
+.mk-vs a:hover{background:#3D3447}
+.mk-vs a[aria-current="page"]{background:#fff;color:#1F1428}
+.mk-vs a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+@media (max-width:767px){.mk-vs{left:50%;transform:translateX(-50%);bottom:12px}}
+</style>
+<!-- /barra-versiones -->
 </body>
 </html>

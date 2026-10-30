@@ -1,33 +1,122 @@
 ---
-/* V7 · Combinada: lo mejor de cada variante según la revisión.
-   Hero rotativo de V5 · Planea tu visita de Elementor · Vive Maloka con el Cine Domo como protagonista ·
-   Agenda de Elementor · Ven en grupo de V6 ordenado · Descubre de V6 en bloque tonal · Crea con Maloka de V4
-   con más peso · Noticias en tres columnas iguales, sin fecha · Footer común. Construible en Elementor (breakpoints 1024 / 767). */
+/* V7 · Galería a sangre (inspirada en rijksmuseum.nl): fotos a ancho completo, una tras otra, con etiqueta de color,
+   título y una línea sobre un velo plano. Un solo botón: «Compra tus entradas» en el menú. */
 import Base from '../layouts/Base.astro';
-import ElHeader from '../components/elementor/ElHeader.astro';
-import V7Hero from '../components/v7/V7Hero.astro';
-import ElPlanea from '../components/elementor/ElPlanea.astro';
-import V7Vive from '../components/v7/V7Vive.astro';
-import ElAgenda from '../components/elementor/ElAgenda.astro';
-import V7Grupos from '../components/v7/V7Grupos.astro';
-import V7Descubre from '../components/v7/V7Descubre.astro';
-import V7Crea from '../components/v7/V7Crea.astro';
-import Noticias from '../components/sections/Noticias.astro';
-import Footer from '../components/layout/Footer.astro';
+import PHeader from '../components/p/PHeader.astro';
+import PHero from '../components/p/PHero.astro';
+import PTile from '../components/p/PTile.astro';
+import PCard from '../components/p/PCard.astro';
+import PLink from '../components/p/PLink.astro';
+import PFooter from '../components/p/PFooter.astro';
+import Icon from '../components/ui/Icon.astro';
+import d from '../data/propuestas/home.json';
+import { ruta } from '../lib/rutas.js';
 import { url } from '../lib/url.js';
-import '../styles/elementor.css';
+import '../styles/propuestas.css';
+const [domo, ...resto] = d.vive.items;
 ---
-<Base title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." variante="v7" precargarHero clase="el">
-  <ElHeader transparente ctaVariante="azul" inicio={url('v7/')} />
+<Base variante="v7" title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." precargarHero clase="pp">
+  <PHeader variante="sobre" inicio={url('v7/')} />
   <main id="contenido">
-    <V7Hero />
-    <ElPlanea subir />
-    <V7Vive />
-    <ElAgenda tono="violeta" />
-    <V7Grupos />
-    <V7Descubre />
-    <V7Crea />
-    <Noticias variante="v5" sinFecha />
+    <PHero variante="p1" />
+
+    <section class="p1-planea" aria-labelledby="p1-planea-t">
+      <h2 class="sr-only" id="p1-planea-t">{d.planea.titulo}</h2>
+      <ul class="mk-w p1-planea-in">
+        {d.planea.items.map((it) => (
+          <li><a href={ruta(it.titulo)}><Icon name={it.icono} /><span><b>{it.titulo}</b><span>{it.corto}</span></span></a></li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="p1-vive-t">
+      <h2 class="sr-only" id="p1-vive-t">{d.vive.titulo}</h2>
+      <PTile image={domo.imagen} alt={domo.alt} etiqueta={domo.etiqueta} color={domo.color} titulo={domo.titulo} texto={domo.texto} href={ruta('Ver funciones')} alto={760} />
+      <div class="p1-tercios">
+        {resto.map((it) => <PTile image={it.imagen} alt={it.alt} etiqueta={it.etiqueta} color={it.color} titulo={it.titulo} texto={it.corto} href={ruta(it.etiqueta)} alto={600} sizes="(max-width: 767px) 100vw, 34vw" />)}
+      </div>
+    </section>
+
+    <section class="pp-sec" aria-labelledby="p1-ag-t">
+      <div class="mk-w">
+        <div class="pp-head">
+          <div><p class="pp-eb">Agéndate</p><h2 class="pp-h2" id="p1-ag-t">{d.agenda.titulo}</h2></div>
+          <PLink texto={d.agenda.enlace} />
+        </div>
+        <ul class="p1-grid4 mk-carrusel">
+          {d.agenda.items.map((a) => <li><PCard image={a.imagen} alt={a.alt} day={a.dia} monthTime={`${a.mes} · ${a.hora}`} category={a.categoria} categoryColor={a.color} title={a.titulo} description={a.texto} meta={`${a.lugar} · ${a.costo}`} href={ruta('Toda la programación')} /></li>)}
+        </ul>
+        <span class="pp-ej">Programación de ejemplo</span>
+      </div>
+    </section>
+
+    <section class="pp-sec" aria-label={d.grupos.eyebrow}>
+      <PTile image={d.grupos.imagen} alt={d.grupos.alt} etiqueta={d.grupos.eyebrow} color="salmon-300" titulo={d.grupos.titulo} alto={720} nivel={2} class="p1-grupos">
+        <ul class="p1-grupos-l">{d.grupos.items.map((g) => <li><a href={ruta(g.titulo)}>{g.titulo}<Icon name="arrow" size="20" /></a></li>)}</ul>
+      </PTile>
+    </section>
+
+    <div class="p1-mitades">
+      <PTile image={d.descubre.imagen} alt={d.descubre.alt} etiqueta={d.descubre.eyebrow} color="cyan-300" titulo={d.descubre.titulo} texto={d.descubre.texto} href={ruta('Descubre')} alto={640} nivel={2} sizes="(max-width: 767px) 100vw, 50vw" />
+      <PTile image={d.crea.imagen} alt={d.crea.alt} etiqueta={d.crea.eyebrow} color="amar-300" titulo={d.crea.titulo} texto="Alianzas, museografía, pedagogía, investigación y Maloka viajera." href={ruta('Crea con Maloka')} alto={640} nivel={2} sizes="(max-width: 767px) 100vw, 50vw" />
+    </div>
+
+    <section class="pp-banda" aria-labelledby="p1-no-t">
+      <div class="mk-w">
+        <div class="pp-head">
+          <div><p class="pp-eb">Noticias</p><h2 class="pp-h2" id="p1-no-t">{d.noticias.tituloLargo}</h2></div>
+          <PLink texto={d.noticias.enlace} />
+        </div>
+        <ul class="p1-grid3">
+          {d.noticias.items.map((n) => <li><PCard image={n.imagen} alt={n.alt} day={n.dia} monthTime={n.mes} title={n.titulo} description={n.texto} ratio="4 / 3" titleSize={20} href={ruta('Ver todas')} sizes="(max-width: 767px) 92vw, 410px" /></li>)}
+        </ul>
+        <span class="pp-ej">Noticias de ejemplo</span>
+      </div>
+    </section>
   </main>
-  <Footer />
+  <PFooter />
 </Base>
+
+<style>
+  .p1-planea { background: var(--mk-hueso); }
+  .p1-planea-in { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding-block: 32px; }
+  .p1-planea-in li + li { border-left: 1px solid var(--mk-neutro-300); }
+  .p1-planea-in a { display: flex; gap: 12px; align-items: flex-start; height: 100%; padding: 4px 18px; color: var(--mk-texto); }
+  .p1-planea-in li:first-child a { padding-left: 0; }
+  .p1-planea-in a :global(.mk-ic) { color: var(--mk-violeta-700); margin-top: 2px; }
+  .p1-planea-in b { display: block; font-weight: 700; }
+  .p1-planea-in a span span { font-size: 14px; color: var(--mk-texto-2); }
+  .p1-planea-in a:hover b { text-decoration: underline; text-underline-offset: 4px; }
+  .p1-tercios { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .p1-tercios :global(.pt-cap) { margin: 0; padding-inline: 32px; }
+  .p1-mitades { display: grid; grid-template-columns: 1fr 1fr; }
+  .p1-mitades :global(.pt-cap) { margin: 0; padding-inline: 48px; }
+  .p1-grid4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+  .p1-grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  :global(.p1-grupos) .p1-grupos-l { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin-top: 12px; }
+  .p1-grupos-l a { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 52px; padding-top: 12px; border-top: 2px solid #fff; font-weight: 700; color: #fff; }
+  .p1-grupos-l a:hover :global(.mk-ic) { transform: translateX(4px); }
+  .p1-grupos-l :global(.mk-ic) { transition: transform var(--mk-t-rapida) var(--mk-ease); flex: none; }
+  :global(.p1-grupos .pt-velo) { height: 60%; }
+  @media (max-width: 1024px) {
+    .p1-planea-in { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 20px; }
+    .p1-planea-in li:nth-child(4) { border-left: 0; }
+    .p1-planea-in li:nth-child(4) a { padding-left: 0; }
+    .p1-grid4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .p1-grid3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .p1-tercios :global(.pt-cap), .p1-mitades :global(.pt-cap) { padding-inline: 24px; }
+    .p1-tercios :global(.pt-t) { font-size: 26px; }
+    :global(.p1-grupos) .p1-grupos-l { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 767px) {
+    .p1-planea-in { grid-template-columns: 1fr; row-gap: 0; padding-block: 8px; }
+    .p1-planea-in li + li { border-left: 0; border-top: 1px solid var(--mk-neutro-300); }
+    .p1-planea-in a { padding: 16px 0; }
+    .p1-tercios, .p1-mitades, .p1-grid3 { grid-template-columns: 1fr; }
+    .p1-grid3 { gap: 32px; }
+    .p1-tercios :global(.pt-cap), .p1-mitades :global(.pt-cap) { padding-inline: var(--mk-margen); }
+    :global(.p1-grupos) { height: 620px !important; }
+    :global(.p1-grupos) .p1-grupos-l { grid-template-columns: 1fr; gap: 0; }
+    :global(.p1-grupos .pt-velo) { height: 85%; }
+  }
+</style>

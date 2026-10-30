@@ -12,7 +12,7 @@ import Button from '../ui/Button.astro';
 import { url } from '../../lib/url.js';
 import { ruta } from '../../lib/rutas.js';
 
-const { inicio = url('elementor/'), transparente = false, ctaVariante = 'primario' } = Astro.props;
+const { inicio = url('v5/'), transparente = false, ctaVariante = 'primario' } = Astro.props;
 ---
 <header class:list={['eh', transparente && 'eh--tr']} data-eh data-el={transparente ? 'Theme Builder › Header · Transparente sobre el hero · Sticky con fondo blanco al hacer scroll' : 'Theme Builder › Header · Contenedor flex fila · Sticky (Efectos de movimiento)'}>
   <div class="mk-w eh-bar">

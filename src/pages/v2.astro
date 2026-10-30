@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import HeroSlider from '../components/sections/HeroSlider.astro';
+import PlaneaVisita from '../components/sections/PlaneaVisita.astro';
+import ViveMaloka from '../components/sections/ViveMaloka.astro';
+import Agenda from '../components/sections/Agenda.astro';
+import VenEnGrupo from '../components/sections/VenEnGrupo.astro';
+import Descubre from '../components/sections/Descubre.astro';
+import CreaConMaloka from '../components/sections/CreaConMaloka.astro';
+import Noticias from '../components/sections/Noticias.astro';
+import { url } from '../lib/url.js';
+const v = 'v4';
+---
+<Base title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." variante="v2" precargarHero>
+  <Header variante="centrado" inicio={url('v2/')} />
+  <main id="contenido">
+    <HeroSlider variante="banner" />
+    <PlaneaVisita variante={v} />
+    <ViveMaloka variante={v} />
+    <Agenda variante={v} />
+    <VenEnGrupo variante={v} />
+    <Descubre variante={v} />
+    <CreaConMaloka variante={v} />
+    <Noticias variante={v} />
+  </main>
+  <Footer />
+</Base>

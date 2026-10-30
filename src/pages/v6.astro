@@ -1,30 +1,33 @@
 ---
+/* V6 · Combinada: lo mejor de cada variante según la revisión.
+   Hero rotativo de V5 · Planea tu visita de Elementor · Vive Maloka con el Cine Domo como protagonista ·
+   Agenda de Elementor · Ven en grupo de V6 ordenado · Descubre de V6 en bloque tonal · Crea con Maloka de V4
+   con más peso · Noticias en tres columnas iguales, sin fecha · Footer común. Construible en Elementor (breakpoints 1024 / 767). */
 import Base from '../layouts/Base.astro';
-import Header from '../components/layout/Header.astro';
-import Footer from '../components/layout/Footer.astro';
-import HeroSlider from '../components/sections/HeroSlider.astro';
-import VisitPanel from '../components/sections/VisitPanel.astro';
-import PlaneaVisita from '../components/sections/PlaneaVisita.astro';
-import ViveMaloka from '../components/sections/ViveMaloka.astro';
-import Agenda from '../components/sections/Agenda.astro';
-import VenEnGrupo from '../components/sections/VenEnGrupo.astro';
-import Descubre from '../components/sections/Descubre.astro';
-import CreaConMaloka from '../components/sections/CreaConMaloka.astro';
+import ElHeader from '../components/elementor/ElHeader.astro';
+import V7Hero from '../components/v7/V7Hero.astro';
+import ElPlanea from '../components/elementor/ElPlanea.astro';
+import V7Vive from '../components/v7/V7Vive.astro';
+import ElAgenda from '../components/elementor/ElAgenda.astro';
+import V7Grupos from '../components/v7/V7Grupos.astro';
+import V7Descubre from '../components/v7/V7Descubre.astro';
+import V7Crea from '../components/v7/V7Crea.astro';
 import Noticias from '../components/sections/Noticias.astro';
+import Footer from '../components/layout/Footer.astro';
 import { url } from '../lib/url.js';
-const v = 'v6';
+import '../styles/elementor.css';
 ---
-<Base title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." variante={v} precargarHero>
-  <Header variante="tonal" inicio={url(`${v}/`)} />
+<Base title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." variante="v6" precargarHero clase="el">
+  <ElHeader transparente ctaVariante="azul" inicio={url('v6/')} />
   <main id="contenido">
-    <HeroSlider variante="contenedor"><VisitPanel /></HeroSlider>
-    <PlaneaVisita variante={v} />
-    <ViveMaloka variante={v} />
-    <Agenda variante={v} />
-    <VenEnGrupo variante={v} />
-    <Descubre variante={v} />
-    <CreaConMaloka variante={v} />
-    <Noticias variante={v} />
+    <V7Hero />
+    <ElPlanea subir />
+    <V7Vive />
+    <ElAgenda tono="violeta" />
+    <V7Grupos />
+    <V7Descubre />
+    <V7Crea />
+    <Noticias variante="v5" sinFecha />
   </main>
   <Footer />
 </Base>

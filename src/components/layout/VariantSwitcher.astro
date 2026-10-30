@@ -5,7 +5,7 @@ import { url } from '../../lib/url.js';
 const { actual } = Astro.props;
 ---
 <nav class="vs" aria-label="Versiones del home">
-  <a href={url('')}>Índice</a>
+  <a href={url('')} aria-current={actual === 'indice' ? 'page' : undefined}>Índice</a>
   {data.items.map((v) => <a href={url(v.ruta)} aria-current={v.id === actual ? 'page' : undefined}>{v.etiqueta}</a>)}
 </nav>
 <style>

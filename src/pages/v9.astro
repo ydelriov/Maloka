@@ -1,7 +1,7 @@
 ---
-/* V9 · P2 Paneles de color (inspirada en vangoghmuseum.nl): fondo hueso, titular grande antes del banner y paneles
-   de color plano que se apilan al hacer scroll (sticky; cada panel cubre al anterior y deja ver su título).
-   En móvil los paneles van uno debajo del otro, sin efecto. */
+/* V9 · Bandas de color: cada sección con su fondo de la paleta (hueso, blanco, amarillo, cyan claro,
+   lavanda claro, salmón claro), listas grandes separadas por líneas de 1.5 px y fotos rectas.
+   El botón del menú va en violeta porque la agenda ya es una banda amarilla. */
 import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import PHeader from '../components/p/PHeader.astro';
@@ -9,91 +9,108 @@ import PHero from '../components/p/PHero.astro';
 import PCard from '../components/p/PCard.astro';
 import PLink from '../components/p/PLink.astro';
 import PFooter from '../components/p/PFooter.astro';
-import Logo from '../components/ui/Logo.astro';
 import Icon from '../components/ui/Icon.astro';
 import d from '../data/propuestas/home.json';
 import { img } from '../lib/images.js';
 import { ruta } from '../lib/rutas.js';
 import { url } from '../lib/url.js';
 import '../styles/propuestas.css';
-const foto = (src, alt, ratio = '4 / 3') => ({ src, alt, ratio });
-const panelesB = [
-  { id: 'grupos', nombre: d.grupos.eyebrow, color: 'salmon-300', titulo: d.grupos.titulo, ...foto(d.grupos.imagenPanel, d.grupos.altPanel, '4 / 5') },
-  { id: 'descubre', nombre: d.descubre.eyebrow, color: 'verde-300', titulo: d.descubre.titulo, texto: d.descubre.texto, enlace: 'Programas y proyectos', ...foto(d.descubre.imagen, d.descubre.alt) },
-  { id: 'crea', nombre: d.crea.eyebrow, color: 'violeta-200', titulo: d.crea.titulo, texto: d.crea.textoLargo, enlace: d.crea.enlace, ...foto(d.crea.imagen, d.crea.alt) }
-];
+const [domo, salas, labs, digital] = d.vive.items;
+const chicas = [digital, salas, labs];
+const [n1, ...nResto] = d.noticias.items;
+const P = (src, alt, w, sizes) => ({ src: img(src), alt, formats: ['avif', 'webp'], widths: w, sizes, loading: 'lazy' });
 ---
-<Base variante="v9" title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." clase="pp p2">
-  <PHeader variante="hueso" inicio={url('v9/')} />
+<Base variante="v9" title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." precargarHero clase="pp">
+  <PHeader variante="blanco" inicio={url('v9/')} />
   <main id="contenido">
-    <section class="mk-w p2-intro" aria-labelledby="p2-h1">
-      <div class="p2-intro-t"><span class="p2-logo" aria-hidden="true"><Logo size={68} /></span><h1 class="p2-h1" id="p2-h1">{d.hero.slides[0].titulo}</h1></div>
-      <div class="p2-intro-x"><p class="pp-lead">{d.hero.intro}</p><PLink texto={d.hero.enlace.texto} /></div>
-    </section>
+    <PHero variante="p3" />
 
-    <PHero variante="p2" />
-    <ul class="mk-w p2-planea" aria-label={d.planea.titulo}>
-      {d.planea.items.map((it) => <li><a href={ruta(it.titulo)}><Icon name={it.icono} /><span><b>{it.titulo}</b></span></a></li>)}
-    </ul>
-
-    <section class="pp-sec" aria-labelledby="p2-vive-t">
-      <div class="mk-w">
-        <h2 class="pp-eb p2-eb" id="p2-vive-t">{d.vive.titulo}</h2>
-        <div class="p2-pila">
-          {d.vive.items.map((it, i) => (
-            <article class="p2-pan" style={`--i:${i};--c:var(--mk-${it.panel})`} aria-labelledby={`p2-v-${it.id}`}>
-              <h3 class="p2-peek" id={`p2-v-${it.id}`}>{it.etiqueta}</h3>
-              <div class="p2-pan-in">
-                <div class="p2-pan-x"><p class="pp-lead">{it.texto}</p><PLink texto={it.enlace} /></div>
-                <span class="pp-foto p2-pan-f" style="aspect-ratio:4/3"><Picture src={img(it.imagen)} alt={it.alt} formats={['avif', 'webp']} widths={[480, 788]} sizes="(max-width: 767px) 92vw, 560px" loading="lazy" /></span>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="pp-sec" aria-labelledby="p2-ag-t">
-      <div class="mk-w">
-        <div class="p2-head">
-          <h2 class="pp-h2" id="p2-ag-t">{d.agenda.titulo}</h2>
-          <div class="p2-head-x"><p class="pp-lead">{d.agenda.texto}</p><PLink texto={d.agenda.enlace} /></div>
-        </div>
-        <ul class="p2-grid4 mk-carrusel">
-          {d.agenda.items.map((a) => <li><PCard image={a.imagen} alt={a.alt} day={a.dia} monthTime={`${a.mes} · ${a.hora}`} category={a.categoria} categoryText={a.colorTexto} categoryStyle="texto" title={a.titulo} description={`${a.texto} ${a.costo}.`} ratio="3 / 4" href={ruta('Toda la programación')} /></li>)}
+    <section class="p3-planea" aria-labelledby="p3-pl-t">
+      <div class="mk-w p3-planea-in">
+        <h2 class="pp-h2 p3-h2s" id="p3-pl-t">{d.planea.titulo}</h2>
+        <ul class="p3-planea-l">
+          {d.planea.items.map((it) => <li><a href={ruta(it.titulo)}><b>{it.titulo}</b><span>{it.texto}</span></a></li>)}
         </ul>
-        <span class="pp-ej">Programación de ejemplo</span>
       </div>
     </section>
 
-    <div class="pp-sec mk-w p2-pila">
-      {panelesB.map((p, i) => (
-        <section class="p2-pan" style={`--i:${i};--c:var(--mk-${p.color})`} aria-labelledby={`p2-b-${p.id}`}>
-          <h2 class="p2-peek" id={`p2-b-${p.id}`}>{p.nombre}</h2>
-          <div class="p2-pan-in">
-            <div class="p2-pan-x">
-              <p class="p2-pan-t">{p.titulo}</p>
-              {p.texto && <p class="pp-lead">{p.texto}</p>}
-              {p.id === 'grupos' && <ul class="pp-lista p2-lista">{d.grupos.items.map((g) => <li><a href={ruta(g.titulo)}>{g.titulo}<Icon name="arrow" size="20" /></a></li>)}</ul>}
-              {p.id === 'descubre' && (
-                <>
-                  <ul class="p2-cifras">{d.descubre.cifras.map((c) => <li><b class="t-num">{c.valor}</b><span>{c.label}</span></li>)}</ul>
-                  <span class="pp-ej p2-ej">Cifras por validar</span>
-                </>
-              )}
-              {p.enlace && <PLink texto={p.enlace} />}
-            </div>
-            <span class="pp-foto p2-pan-f" style={`aspect-ratio:${p.ratio}`}><Picture src={img(p.src)} alt={p.alt} formats={['avif', 'webp']} widths={[342, 560, 788]} sizes="(max-width: 767px) 92vw, 560px" loading="lazy" /></span>
-          </div>
-        </section>
-      ))}
-    </div>
-
-    <section class="pp-banda" aria-labelledby="p2-no-t">
+    <section class="pp-banda" aria-labelledby="p3-vi-t">
       <div class="mk-w">
-        <div class="pp-head"><h2 class="pp-h2" id="p2-no-t">{d.noticias.titulo}</h2><PLink texto={d.noticias.enlace} /></div>
-        <ul class="p2-grid3">
-          {d.noticias.items.map((n) => <li><PCard image={n.imagen} alt={n.alt} day={n.dia} monthTime={n.mes} title={n.titulo} ratio="4 / 3" titleSize={20} href={ruta('Ver todas')} sizes="(max-width: 767px) 92vw, 410px" /></li>)}
+        <div class="pp-head"><h2 class="pp-h2" id="p3-vi-t">{d.vive.titulo}</h2><PLink texto={d.vive.enlace} /></div>
+        <div class="p3-vive">
+          <a class="p3-vg" href={ruta('Ver funciones')}>
+            <span class="pp-foto" style="aspect-ratio:4/3"><Picture {...P(domo.imagen, domo.alt, [480, 750], '(max-width: 1024px) 92vw, 720px')} /><span class="pp-et p3-et" style={`background:var(--mk-${domo.color})`}>{domo.etiqueta}</span></span>
+            <h3 class="p3-vg-t">{domo.titulo}</h3>
+            <span class="pp-muted">{domo.corto}</span>
+          </a>
+          <ul class="p3-vc">
+            {chicas.map((it) => (
+              <li><a href={ruta(it.etiqueta)}>
+                <span class="pp-foto" style="aspect-ratio:1/1"><Picture {...P(it.imagenChica ?? it.imagen, it.altChica ?? it.alt, [342, 560], '200px')} /></span>
+                <span class="p3-vc-x"><span class="p3-cat" style={`color:var(--mk-${it.colorTexto})`}>{it.categoria}</span><h3 class="p3-vc-t">{it.etiqueta}</h3><span class="pp-muted">{it.corto}</span></span>
+              </a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="pp-banda p3-amarillo" aria-labelledby="p3-ag-t">
+      <div class="mk-w">
+        <div class="pp-head"><h2 class="pp-h2" id="p3-ag-t">{d.agenda.tituloCorto}</h2><PLink texto={d.agenda.enlace} /></div>
+        <ul class="p3-grid4 mk-carrusel">
+          {d.agenda.items.map((a) => <li><PCard image={a.imagen} alt={a.alt} day={a.dia} monthTime={`${a.mes} · ${a.hora}`} title={a.titulo} meta={`${a.lugar} · ${a.costo}`} href={ruta('Toda la programación')} /></li>)}
+        </ul>
+        <span class="pp-ej p3-ej-blanco">Programación de ejemplo</span>
+      </div>
+    </section>
+
+    <section class="pp-banda p3-cyan" aria-labelledby="p3-gr-t">
+      <div class="mk-w p3-gr">
+        <div class="p3-gr-x">
+          <h2 class="pp-h2" id="p3-gr-t">{d.grupos.eyebrow}</h2>
+          <p class="pp-lead">{d.grupos.titulo} {d.grupos.texto}</p>
+          <span class="pp-foto" style="aspect-ratio:4/3"><Picture {...P(d.grupos.imagen, d.grupos.alt, [342], '(max-width: 1024px) 92vw, 460px')} /></span>
+        </div>
+        <ul class="p3-filas">
+          {d.grupos.items.map((g) => (
+            <li><a href={ruta(g.titulo)}>
+              <Icon name={g.icono} size="28" />
+              <span class="p3-fila-x"><b>{g.titulo}</b><span>{g.texto}</span></span>
+              <span class:list={['pp-foto p3-fila-f', g.recorte && 'p3-fila-f--recorte']}><Picture {...P(g.imagen, '', [342, 476], '200px')} /></span>
+              <Icon name="arrow" />
+            </a></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="pp-banda p3-lavanda" aria-labelledby="p3-de-t">
+      <div class="mk-w p3-de">
+        <span class="pp-foto" style="aspect-ratio:1/1"><Picture {...P(d.descubre.imagen, d.descubre.alt, [342], '(max-width: 1024px) 92vw, 600px')} /></span>
+        <div class="p3-de-x">
+          <p class="pp-eb">{d.descubre.eyebrow}</p>
+          <h2 class="pp-h2" id="p3-de-t">{d.descubre.tituloLargo}</h2>
+          <ul class="p3-cifras">{d.descubre.cifras.map((c) => <li><b class="t-num">{c.valor}</b><span>{c.label}</span></li>)}</ul>
+          <span class="pp-ej p3-ej">Cifras por validar</span>
+          <div class="p3-links">{d.descubre.enlaces.map((e) => <PLink texto={e} />)}</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pp-banda p3-salmon" aria-labelledby="p3-cr-t">
+      <div class="mk-w p3-cr">
+        <div class="p3-cr-x"><h2 class="pp-h2" id="p3-cr-t">{d.crea.eyebrow}</h2><p class="pp-lead">{d.crea.titulo} {d.crea.texto}</p><PLink texto={d.crea.enlace} /></div>
+        <ul class="pp-lista p3-cr-l">{d.crea.items.map((c) => <li><a href={ruta(c)}>{c}<Icon name="arrow" /></a></li>)}</ul>
+      </div>
+    </section>
+
+    <section class="pp-banda" aria-labelledby="p3-no-t">
+      <div class="mk-w">
+        <div class="pp-head"><h2 class="pp-h2" id="p3-no-t">{d.noticias.titulo}</h2><PLink texto={d.noticias.enlace} /></div>
+        <ul class="p3-no">
+          <li><PCard image={n1.imagen} alt={n1.alt} day={n1.dia} monthTime={n1.mes} title={n1.titulo} description={n1.texto} ratio="16 / 10" titleSize={24} href={ruta('Ver todas')} sizes="(max-width: 767px) 92vw, 640px" /></li>
+          {nResto.map((n) => <li><PCard image={n.imagen} alt={n.alt} day={n.dia} monthTime={n.mes.replace(' 2026', '')} title={n.titulo} titleSize={18} href={ruta('Ver todas')} sizes="(max-width: 767px) 92vw, 300px" /></li>)}
         </ul>
         <span class="pp-ej">Noticias de ejemplo</span>
       </div>
@@ -103,57 +120,79 @@ const panelesB = [
 </Base>
 
 <style>
-  :global(body.p2) { background: var(--mk-hueso); }
-  .p2-intro { display: grid; grid-template-columns: 7fr 5fr; gap: 32px 56px; align-items: end; padding-block: 24px 48px; }
-  .p2-intro-t { display: flex; gap: 28px; align-items: flex-start; }
-  .p2-logo { color: var(--mk-violeta-700); display: inline-flex; margin-top: 8px; flex: none; }
-  .p2-h1 { margin: 0; font-size: var(--pp-display); line-height: 1.05; font-weight: 700; letter-spacing: -0.025em; }
-  .p2-intro-x { display: flex; flex-direction: column; gap: 14px; }
-  .p2-planea { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-bottom: 1px solid var(--mk-neutro-300); }
-  .p2-planea li + li { border-left: 1px solid var(--mk-neutro-300); }
-  .p2-planea a { display: flex; gap: 10px; align-items: center; min-height: 72px; padding: 14px 16px; font-size: 14px; color: var(--mk-texto); }
-  .p2-planea li:first-child a { padding-left: 0; }
-  .p2-planea a:hover b { text-decoration: underline; text-underline-offset: 4px; }
-  .p2-eb { margin: 0 0 16px; }
+  .p3-planea { background: var(--mk-hueso); }
+  .p3-planea-in { display: grid; grid-template-columns: 4fr 8fr; gap: 32px 56px; padding-block: 64px; }
+  .p3-h2s { font-size: 40px; }
+  .p3-planea-l { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 40px; }
+  .p3-planea-l a { display: grid; gap: 6px; padding-top: 14px; border-top: 1.5px solid var(--mk-texto); color: var(--mk-texto); }
+  .p3-planea-l b { font-size: 18px; }
+  .p3-planea-l span { font-size: 14px; color: var(--mk-texto-2); }
+  .p3-planea-l a:hover b { text-decoration: underline; text-underline-offset: 4px; }
 
-  /* Paneles apilados */
-  .p2-pila { display: grid; }
-  .p2-pan { position: sticky; top: calc(24px + var(--i) * 76px); background: var(--c); margin-inline: calc(var(--i) * -20px); padding-inline: calc(56px + var(--i) * 20px); }
-  .p2-peek { margin: 0; height: 76px; padding-top: 14px; font-size: 40px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; }
-  .p2-pan-in { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; padding-block: 16px 56px; }
-  .p2-pan-x { display: flex; flex-direction: column; gap: 20px; }
-  .p2-pan-x .pp-lead { max-width: 520px; }
-  .p2-pan-t { font-size: var(--pp-h2); line-height: 1.05; font-weight: 700; letter-spacing: -0.02em; }
-  .p2-lista { width: 100%; }
-  .p2-cifras { display: flex; gap: 40px; }
-  .p2-cifras li { display: grid; }
-  .p2-cifras b { font-size: 48px; line-height: 1; font-weight: 700; }
-  .p2-cifras span { font-size: 14px; }
-  .p2-ej { margin-top: 0; align-self: flex-start; }
+  .p3-vive { display: grid; grid-template-columns: 7fr 5fr; gap: 24px; }
+  .p3-vg { display: flex; flex-direction: column; gap: 14px; color: var(--mk-texto); }
+  .p3-et { position: absolute; left: 0; top: 0; height: 28px; }
+  .p3-vg-t { margin: 0; font-size: 28px; line-height: 1.2; font-weight: 700; }
+  .p3-vc { display: grid; gap: 24px; align-content: start; }
+  .p3-vc a { display: grid; grid-template-columns: 200px 1fr; gap: 20px; align-items: start; color: var(--mk-texto); }
+  .p3-vc-x { display: grid; gap: 6px; }
+  .p3-cat { font-size: 12px; font-weight: 700; }
+  .p3-vc-t { margin: 0; font-size: 20px; font-weight: 700; }
+  .p3-vc-x .pp-muted { font-size: 14px; }
+  .p3-vg :global(img), .p3-vc :global(img), .p3-filas :global(img) { transition: transform 300ms var(--mk-ease); }
+  .p3-vg:hover :global(img), .p3-vc a:hover :global(img), .p3-filas a:hover :global(img) { transform: scale(1.04); }
 
-  .p2-head { display: grid; grid-template-columns: 7fr 5fr; gap: 24px 56px; align-items: end; margin-bottom: 32px; }
-  .p2-head-x { display: flex; flex-direction: column; gap: 12px; }
-  .p2-grid4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
-  .p2-grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .p3-amarillo { background: var(--mk-amarillo-500); }
+  .p3-grid4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+  .p3-amarillo :global(.pc-m) { font-weight: 400; }
+  .p3-ej-blanco { background: #fff; }
+
+  .p3-cyan { background: var(--mk-cyan-100); }
+  .p3-gr { display: grid; grid-template-columns: 5fr 7fr; gap: 40px 64px; align-items: start; }
+  .p3-gr-x { display: flex; flex-direction: column; gap: 20px; }
+  .p3-filas { border-top: 1.5px solid var(--mk-texto); }
+  .p3-filas a { display: grid; grid-template-columns: 48px 1fr 200px 24px; gap: 24px; align-items: center; padding-block: 20px; border-bottom: 1.5px solid var(--mk-texto); color: var(--mk-texto); }
+  .p3-fila-x { display: grid; gap: 2px; }
+  .p3-fila-x b { font-size: 22px; line-height: 1.25; }
+  .p3-fila-x span { font-size: 14px; }
+  .p3-fila-f { aspect-ratio: 3 / 2; }
+  .p3-fila-f--recorte { background: var(--mk-amarillo-500); }
+  .p3-fila-f--recorte :global(img) { object-fit: contain; object-position: center bottom; }
+
+  .p3-lavanda { background: var(--mk-lavanda-50); }
+  .p3-de { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 64px; align-items: center; }
+  .p3-de-x { display: flex; flex-direction: column; gap: 22px; }
+  .p3-cifras { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-top: 20px; border-top: 1.5px solid var(--mk-texto); }
+  .p3-cifras li { display: grid; }
+  .p3-cifras b { font-size: 56px; line-height: 1; font-weight: 700; }
+  .p3-cifras span { font-size: 14px; }
+  .p3-ej { margin-top: 0; align-self: flex-start; }
+  .p3-links { display: flex; flex-wrap: wrap; gap: 12px 28px; }
+
+  .p3-salmon { background: var(--mk-salmon-50); }
+  .p3-cr { display: grid; grid-template-columns: 5fr 7fr; gap: 40px 64px; align-items: start; }
+  .p3-cr-x { display: flex; flex-direction: column; gap: 20px; }
+  .p3-cr-l a { font-size: 24px; min-height: 72px; }
+
+  .p3-no { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 24px; align-items: start; }
 
   @media (max-width: 1024px) {
-    .p2-intro, .p2-head { grid-template-columns: 1fr; }
-    .p2-planea { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .p2-planea li:nth-child(4) { border-left: 0; }
-    .p2-planea li:nth-child(4) a { padding-left: 0; }
-    .p2-pan { margin-inline: 0; padding-inline: 32px; }
-    .p2-pan-in { gap: 32px; }
-    .p2-grid4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .p3-planea-in, .p3-vive, .p3-gr, .p3-de, .p3-cr { grid-template-columns: 1fr; }
+    .p3-grid4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .p3-no { grid-template-columns: 1fr 1fr; }
+    .p3-no li:first-child { grid-column: 1 / -1; }
+    .p3-h2s { font-size: var(--pp-h2); }
   }
   @media (max-width: 767px) {
-    .p2-intro-t { gap: 16px; }
-    .p2-logo :global(svg) { width: 36px; height: auto; }
-    .p2-planea { grid-template-columns: 1fr; }
-    .p2-planea li + li { border-left: 0; border-top: 1px solid var(--mk-neutro-300); }
-    .p2-planea a { padding-left: 0; min-height: 56px; }
-    .p2-pan { position: static; padding-inline: 20px; margin-inline: calc(-1 * var(--mk-margen)); }
-    .p2-peek { height: auto; padding-top: 28px; font-size: 32px; }
-    .p2-pan-in { grid-template-columns: 1fr; padding-block: 16px 40px; }
-    .p2-grid3 { grid-template-columns: 1fr; gap: 32px; }
+    .p3-planea-in { padding-block: 48px; }
+    .p3-planea-l { grid-template-columns: 1fr; gap: 20px; }
+    .p3-vc a { grid-template-columns: 120px 1fr; gap: 16px; }
+    .p3-filas a { grid-template-columns: 32px 1fr 24px; gap: 14px; }
+    .p3-fila-f { display: none; }
+    .p3-fila-x b { font-size: 18px; }
+    .p3-cr-l a { font-size: 19px; min-height: 60px; }
+    .p3-cifras b { font-size: 44px; }
+    .p3-no { grid-template-columns: 1fr; gap: 32px; }
   }
+  @media (prefers-reduced-motion: reduce) { .p3-vg:hover :global(img), .p3-vc a:hover :global(img), .p3-filas a:hover :global(img) { transform: none; } }
 </style>
