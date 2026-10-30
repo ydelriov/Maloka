@@ -75,13 +75,13 @@ en `src/data/n/home.json`.
 
 | Ruta | Propuesta | Referencia | Cómo se arma en Elementor |
 |---|---|---|---|
-| `/v10` | Noche y luz | louvre.fr, museoreinasofia.es | Header noche en dos niveles; hero a sangre con el panel de horario de hoy abajo a la derecha; «No te lo pierdas» (una grande y tres) en hueso; agenda en noche con filtros; grupos en filas con relleno salmón; «Más por explorar» en Loop Carousel; Crea como un contenedor lavanda que es todo el enlace |
+| `/v10` | Noche y luz | louvre.fr, museoreinasofia.es | Header noche con mega menú (como V6); hero a sangre con el panel de horario de hoy abajo a la derecha; «No te lo pierdas» (una grande y tres) en hueso; agenda en noche con filtros; grupos en filas con relleno salmón; «Más por explorar» en Loop Carousel; Crea como un contenedor lavanda que es todo el enlace |
 | `/v11` | Bloques pastel | vangoghmuseum.nl | Hero partido (bloque amarillo con titular gigante + imagen con zoom lento); carrusel sobre noche; bloques salmón (grupos), menta (Descubre con cifras) y noche (Crea con filas); titulares con barrido al entrar |
 | `/v12` | Explorar | nhm.ac.uk, museoreinasofia.es | Casi sin botones: «No te lo pierdas» como carrusel de fotos grandes con ↗, «Esta semana» en filas con fecha grande y filtros, grupos en carrusel de tarjetas altas sobre noche, Descubre con cifras y filas, Crea en un bloque cielo con enlaces grandes |
 
 | Pieza | Elementor |
 |---|---|
-| `NHeader` (dos niveles + menú completo) | Theme Builder › Header: fila 1 con Búsqueda, enlace «Qué hay hoy», idioma (WPML/Polylang), Logo al centro y un Botón; fila 2 con el widget Menú; «Más» abre un Popup a pantalla completa con Nav Menu y acordeones en móvil |
+| `NHeader` (misma estructura que V6) | Theme Builder › Header: Logo, widget Menú en modo mega menú (cada ítem abre un contenedor a ancho completo con Icon Box en cuadros pastel y el horario en un recuadro noche) y un Botón; ≤ 1200 px, desplegable con acordeones |
 | `NHorario` (horario de hoy) | Contenedor noche en posición absoluta (abajo a la derecha) dentro del hero; el estado «Abierto ahora» va en un widget HTML con el script de hora de Bogotá |
 | `NHero` | Carrusel anidado con fundido y Efectos de movimiento › Entrada; en la variante partida, contenedor de 2 columnas con fondo amarillo |
 | `NCarrusel` + `NCardFoto` | Loop Carousel con una plantilla de Loop Item: imagen de fondo, superposición plana, título y icono ↗; todo el contenedor como enlace |
