@@ -5,7 +5,7 @@ import data from '../../data/agenda.json';
 import ActionCard from '../ui/ActionCard.astro';
 import Button from '../ui/Button.astro';
 import PorValidar from '../ui/PorValidar.astro';
-import { url } from '../../lib/url.js';
+import { pagina } from '../../lib/rutas.js';
 const { tono = 'alt' } = Astro.props;
 ---
 <section class:list={['eag', tono === 'violeta' && 'mk-banda mk-banda--violeta']} id="agenda" aria-labelledby="eag-t" data-el={tono === 'violeta' ? 'Contenedor ancho completo · Fondo violeta 700 · Padding 112 / 80 / 56' : 'Contenedor ancho completo · Fondo: Alterno (#FBF9FD) · Padding 112 / 80 / 56'}>
@@ -17,12 +17,12 @@ const { tono = 'alt' } = Astro.props;
         <p class="t-muted">{data.texto}</p>
         <PorValidar texto="Contenido de ejemplo" />
       </div>
-      <Button href={url('agendate/')} variant={tono === 'violeta' ? 'invertido' : 'secundario'}>{data.cta}</Button>
+      <Button href={pagina('agendate/')} variant={tono === 'violeta' ? 'invertido' : 'secundario'}>{data.cta}</Button>
     </div>
     <ul class="el-grid el-grid--4" data-el="Loop Grid · 4 / 2 / 1 col · Consulta: fecha ≥ hoy, ascendente">
       {data.items.map((it) => (
         <li>
-          <ActionCard image={it.imagen} alt={it.alt} date={{ dia: it.dia, mes: it.mes }} category={it.categoria} title={it.titulo} description={it.descripcion} meta={`${it.hora} · ${it.lugar} · ${it.costo}`} metaIcono="clock" tono={tono === 'violeta' ? 'oscuro' : 'claro'} href={url('agendate/#programacion')} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 45vw, 300px" />
+          <ActionCard image={it.imagen} alt={it.alt} date={{ dia: it.dia, mes: it.mes }} category={it.categoria} title={it.titulo} description={it.descripcion} meta={`${it.hora} · ${it.lugar} · ${it.costo}`} metaIcono="clock" tono={tono === 'violeta' ? 'oscuro' : 'claro'} href={pagina('agendate/#programacion')} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 45vw, 300px" />
         </li>
       ))}
     </ul>

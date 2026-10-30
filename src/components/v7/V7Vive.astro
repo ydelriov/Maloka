@@ -9,8 +9,7 @@ import Chip from '../ui/Chip.astro';
 import Icon from '../ui/Icon.astro';
 import PorValidar from '../ui/PorValidar.astro';
 import { img } from '../../lib/images.js';
-import { url } from '../../lib/url.js';
-import { ruta } from '../../lib/rutas.js';
+import { ruta, pagina } from '../../lib/rutas.js';
 const { tono = 'oscuro', banda } = Astro.props;
 const domo = data.items.find((i) => i.id === 'domo');
 const resto = data.items.filter((i) => i.id !== 'domo');
@@ -26,7 +25,7 @@ const resto = data.items.filter((i) => i.id !== 'domo');
     </div>
 
     <div class="v7v-grid">
-      <a class:list={['v7v-domo', tono === 'oscuro' ? 'mk-oscuro' : 'v7v-domo--tonal']} href={url('agendate/#programacion')} data-el={tono === 'oscuro' ? 'Contenedor-enlace · Modo oscuro Cine Domo #140A1F · Radio 28' : 'Contenedor-enlace · Fondo violeta 50 · Radio 28'}>
+      <a class:list={['v7v-domo', tono === 'oscuro' ? 'mk-oscuro' : 'v7v-domo--tonal']} href={pagina('agendate/#programacion')} data-el={tono === 'oscuro' ? 'Contenedor-enlace · Modo oscuro Cine Domo #140A1F · Radio 28' : 'Contenedor-enlace · Fondo violeta 50 · Radio 28'}>
         <div class="v7v-domo-media">
           <Picture src={img(domo.imagen)} alt={domo.alt} formats={['avif', 'webp']} widths={[480, 750]} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 90vw, 620px" class="v7v-domo-img" loading="lazy" />
           <Chip cat="cine" label="Cine Domo" class="v7v-chip" />

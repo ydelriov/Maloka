@@ -1,44 +1,14 @@
 {
+  "nota": "Versiones del home en orden. V2 y V3 solo existen como maquetas en el canvas de Claude Design.",
   "items": [
-    {
-      "id": "v8",
-      "nombre": "V8 · P1 Galería a sangre",
-      "descripcion": "Fotos a ancho completo, una tras otra, con etiqueta de color, título y una línea sobre un velo plano. Inspirada en rijksmuseum.nl."
-    },
-    {
-      "id": "v9",
-      "nombre": "V9 · P2 Paneles de color",
-      "descripcion": "Fondo hueso, titular grande antes del banner y paneles de color plano que se apilan al hacer scroll. Inspirada en vangoghmuseum.nl."
-    },
-    {
-      "id": "v10",
-      "nombre": "V10 · P3 Bandas de color",
-      "descripcion": "Cada sección con su fondo de la paleta, listas grandes separadas por líneas y fotos rectas."
-    },
-    {
-      "id": "v7",
-      "nombre": "V7 · Combinada",
-      "descripcion": "La mezcla elegida en la revisión: hero rotativo de V5, Planea tu visita y Agenda de Elementor, Cine Domo protagonista, grupos de V6 ordenado, Descubre en bloque tonal, Crea con Maloka de V4 y noticias sin fecha."
-    },
-    {
-      "id": "v4",
-      "nombre": "V4 · Editorial numerada",
-      "descripcion": "Header blanco con navegación centrada, secciones numeradas 01–07, agenda con fechas grandes y noticias en lista."
-    },
-    {
-      "id": "v5",
-      "nombre": "V5 · Arcos del domo",
-      "descripcion": "Header transparente sobre el hero, arco blanco que cierra el hero, recortes en arco y bloque violeta en Descubre."
-    },
-    {
-      "id": "v6",
-      "nombre": "V6 · Panel de visita",
-      "descripcion": "Hero en contenedor redondeado con panel flotante de visita, filtros en experiencias, selector de días y grupos en mosaico."
-    },
-    {
-      "id": "elementor",
-      "nombre": "Elementor · Lista para construir",
-      "descripcion": "Diseño pensado para WordPress + Elementor Pro: solo contenedores y widgets nativos, breakpoints de Elementor y guía de construcción sección por sección."
-    }
+    { "id": "v1", "ruta": "legacy/", "etiqueta": "V1", "nombre": "V1 · Prototipo inicial", "descripcion": "La primera home en HTML: header navy, mega menú y secciones del brief original." },
+    { "id": "v4", "ruta": "v4/", "etiqueta": "V4", "nombre": "V4 · Editorial numerada", "descripcion": "Header blanco con navegación centrada, secciones numeradas 01–07, agenda con fechas grandes y noticias en lista." },
+    { "id": "v5", "ruta": "v5/", "etiqueta": "V5", "nombre": "V5 · Arcos del domo", "descripcion": "Header transparente sobre el hero, arco blanco que cierra el hero, recortes en arco y bloque violeta en Descubre." },
+    { "id": "v6", "ruta": "v6/", "etiqueta": "V6", "nombre": "V6 · Panel de visita", "descripcion": "Hero en contenedor redondeado con panel flotante de visita, filtros en experiencias, selector de días y grupos en mosaico." },
+    { "id": "elementor", "ruta": "elementor/", "etiqueta": "Elementor", "nombre": "Elementor · Lista para construir", "descripcion": "Diseño pensado para WordPress + Elementor Pro: solo contenedores y widgets nativos y breakpoints de Elementor." },
+    { "id": "v7", "ruta": "v7/", "etiqueta": "V7", "nombre": "V7 · Combinada", "descripcion": "La mezcla elegida en la revisión: hero rotativo de V5, Planea tu visita y Agenda de Elementor, Cine Domo protagonista y bandas de color." },
+    { "id": "v8", "ruta": "v8/", "etiqueta": "V8", "nombre": "V8 · P1 Galería a sangre", "descripcion": "Fotos a ancho completo, una tras otra, con etiqueta de color, título y una línea sobre un velo plano. Inspirada en rijksmuseum.nl." },
+    { "id": "v9", "ruta": "v9/", "etiqueta": "V9", "nombre": "V9 · P2 Paneles de color", "descripcion": "Fondo hueso, titular grande antes del banner y paneles de color plano que se apilan al hacer scroll. Inspirada en vangoghmuseum.nl." },
+    { "id": "v10", "ruta": "v10/", "etiqueta": "V10", "nombre": "V10 · P3 Bandas de color", "descripcion": "Cada sección con su fondo de la paleta, listas grandes separadas por líneas y fotos rectas." }
   ]
 }

@@ -9,7 +9,6 @@ import PHero from '../components/p/PHero.astro';
 import PCard from '../components/p/PCard.astro';
 import PLink from '../components/p/PLink.astro';
 import PFooter from '../components/p/PFooter.astro';
-import PBarra from '../components/p/PBarra.astro';
 import Icon from '../components/ui/Icon.astro';
 import d from '../data/propuestas/home.json';
 import { img } from '../lib/images.js';
@@ -21,7 +20,7 @@ const chicas = [digital, salas, labs];
 const [n1, ...nResto] = d.noticias.items;
 const P = (src, alt, w, sizes) => ({ src: img(src), alt, formats: ['avif', 'webp'], widths: w, sizes, loading: 'lazy' });
 ---
-<Base title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." precargarHero clase="pp">
+<Base variante="v10" title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." precargarHero clase="pp">
   <PHeader variante="blanco" inicio={url('v10/')} />
   <main id="contenido">
     <PHero variante="p3" />
@@ -118,7 +117,6 @@ const P = (src, alt, w, sizes) => ({ src: img(src), alt, formats: ['avif', 'webp
     </section>
   </main>
   <PFooter />
-  <PBarra actual="v10" />
 </Base>
 
 <style>

@@ -2,7 +2,7 @@
 /* Noticias (de ejemplo) como ActionCard. V4: lista en filas (07) · V5: tres columnas · V6: una grande y dos. */
 import data from '../../data/noticias.json';
 import lista from '../../data/noticias-lista.json';
-import { url } from '../../lib/url.js';
+import { pagina } from '../../lib/rutas.js';
 const etiquetas = Object.fromEntries(lista.categorias.map((c) => [c.id, c.label]));
 import SectionHead from '../ui/SectionHead.astro';
 import ActionCard from '../ui/ActionCard.astro';
@@ -16,8 +16,8 @@ const card = (it) => ({ image: it.imagen, alt: it.alt, category: it.chip, catego
 <section class:list={['no', `no--${variante}`, 'mk-seccion']} id="noticias" aria-labelledby="no-t">
   <div class="mk-w">
     {variante === 'v4'
-      ? <SectionHead estilo="linea" num="07" eyebrow={data.eyebrow} title={data.titulo} id="no-t"><Button slot="accion" href={url('noticias/')} variant="secundario">Ver todas</Button></SectionHead>
-      : <SectionHead eyebrow={data.eyebrow} title={data.titulo} id="no-t"><Button slot="accion" href={url('noticias/')} variant="secundario">{data.cta}</Button></SectionHead>}
+      ? <SectionHead estilo="linea" num="07" eyebrow={data.eyebrow} title={data.titulo} id="no-t"><Button slot="accion" href={pagina('noticias/')} variant="secundario">Ver todas</Button></SectionHead>
+      : <SectionHead eyebrow={data.eyebrow} title={data.titulo} id="no-t"><Button slot="accion" href={pagina('noticias/')} variant="secundario">{data.cta}</Button></SectionHead>}
     <ul class="no-grid">
       {items.map((it, i) => (
         <li class={variante === 'v6' && i === 0 ? 'no-grande' : undefined}>

@@ -5,7 +5,7 @@
 import data from '../../data/descubre.json';
 import ActionCard from '../ui/ActionCard.astro';
 import Button from '../ui/Button.astro';
-import { url } from '../../lib/url.js';
+import { pagina } from '../../lib/rutas.js';
 ---
 <section class="v7d mk-seccion" id="descubre" aria-labelledby="v7d-t">
   <div class="mk-w">
@@ -15,7 +15,7 @@ import { url } from '../../lib/url.js';
           <p class="t-eyebrow">{data.eyebrow}</p>
           <h2 class="t-h2" id="v7d-t">{data.titulo}</h2>
           <p class="v7d-lead">{data.texto}</p>
-          <Button href={url('descubre/')} variant="primario">{data.cta}</Button>
+          <Button href={pagina('descubre/')} variant="primario">{data.cta}</Button>
         </div>
         <div class="v7d-cifras-w">
           <div class="v7d-cifras" data-el="Contador ×2 (cuando haya cifras)">
@@ -25,7 +25,7 @@ import { url } from '../../lib/url.js';
       </div>
       <ul class="v7d-grid" data-el="Loop Grid (páginas) · 3 / 3 / 1 col">
         {data.items.map((it) => (
-          <li><ActionCard image={it.imagen} alt={it.alt} category={it.categoria} title={it.titulo} description={it.descripcion} meta={it.meta} href={url(it.ruta)} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 30vw, 380px" /></li>
+          <li><ActionCard image={it.imagen} alt={it.alt} category={it.categoria} title={it.titulo} description={it.descripcion} meta={it.meta} href={pagina(it.ruta)} sizes="(max-width: 767px) 92vw, (max-width: 1024px) 30vw, 380px" /></li>
         ))}
       </ul>
     </div>

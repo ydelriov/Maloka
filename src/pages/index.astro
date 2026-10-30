@@ -1,48 +1,35 @@
 ---
-/* Índice del prototipo: miniaturas y enlaces a las cinco variantes de la home. */
+/* Índice del prototipo: miniaturas y enlaces a las versiones del home, en orden. */
 import Base from '../layouts/Base.astro';
 import Logo from '../components/ui/Logo.astro';
 import Icon from '../components/ui/Icon.astro';
-import PorValidar from '../components/ui/PorValidar.astro';
 import data from '../data/variantes.json';
 import { url } from '../lib/url.js';
 ---
-<Base title="Prototipo de la home de Maloka · cinco variantes" description="Prototipo navegable de la home de maloka.org en varias propuestas de layout para comparar en el navegador.">
+<Base title="Prototipo de la home de Maloka · versiones" description="Versiones navegables de la home de maloka.org, en orden, para comparar en el navegador.">
   <header class="ix-top mk-w">
     <span class="ix-logo"><Logo size={56} /></span>
     <div>
       <p class="t-eyebrow">Prototipo navegable</p>
-      <h1 class="t-h1">Home de Maloka · propuestas</h1>
-      <p class="t-lead">La misma home con el Design System de Claude Design, imágenes reales y datos confirmados. Lo que no está validado aparece marcado.</p>
+      <h1 class="t-h1">Home de Maloka · versiones</h1>
+      <p class="t-lead">Todas las versiones de la home, en orden. La barra de abajo de cada versión salta entre ellas.</p>
     </div>
   </header>
   <main id="contenido" class="mk-w ix-main">
     <ul class="ix-grid">
       {data.items.map((v) => (
         <li>
-          <a class="ix-card" href={url(`${v.id}/`)}>
+          <a class="ix-card" href={url(v.ruta)}>
             <span class="ix-thumb"><img src={url(`miniaturas/${v.id}.jpg`)} alt="" width="720" height="900" loading="lazy" /></span>
             <span class="ix-txt">
               <h2 class="t-h4">{v.nombre}</h2>
               <span class="t-small t-muted">{v.descripcion}</span>
-              <span class="mk-enlace">Ver {v.id === 'elementor' ? 'Elementor' : v.id.toUpperCase()}<Icon name="arrow" size="18" /></span>
+              <span class="mk-enlace">Ver {v.etiqueta}<Icon name="arrow" size="18" /></span>
             </span>
           </a>
         </li>
       ))}
     </ul>
-    <section class="ix-notas" aria-labelledby="ix-n">
-      <h2 class="t-h4" id="ix-n">Antes de revisar</h2>
-      <ul>
-        <li><PorValidar /> marca datos no confirmados: cifras de impacto, planes, servicios y accesibilidad.</li>
-        <li><PorValidar texto="Contenido de ejemplo" /> marca la agenda y las noticias.</li>
-        <li>Los enlaces a páginas que aún no existen apuntan a <code>#</code>. La compra de entradas abre Tuboleta en otra pestaña.</li>
-        <li>V8, V9 y V10 son la nueva dirección visual (menos morado, fondo hueso, fotos rectas y un solo botón). Las anteriores siguen disponibles para comparar.</li>
-        <li>Primera página interna: <a href={url('visitanos/')}>Visítanos</a> (horarios, tarifas, cómo llegar, servicios, accesibilidad, experiencias y preguntas frecuentes). El menú de V7 ya enlaza a sus secciones.</li>
-        <li>La variante <a href={url('elementor/')}>Elementor</a> tiene su <a href={url('elementor/guia/')}>guía de construcción</a> y el botón «Estructura» en la barra inferior.</li>
-        <li>El prototipo anterior (Agéndate, Ven en grupo y la home navy) sigue disponible en <a href={url('legacy/')}>/legacy</a>.</li>
-      </ul>
-    </section>
   </main>
 </Base>
 
@@ -58,10 +45,6 @@ import { url } from '../lib/url.js';
   .ix-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
   .ix-card:hover .ix-thumb { box-shadow: var(--mk-sombra-2); }
   .ix-txt { display: grid; gap: 6px; }
-  .ix-notas { padding: 28px; border-radius: var(--mk-r-28); background: var(--mk-fondo-tonal); display: grid; gap: 12px; }
-  .ix-notas ul { display: grid; gap: 10px; }
-  .ix-notas li { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; color: var(--mk-texto-2); }
-  .ix-notas a { color: var(--mk-enlace); font-weight: 700; text-decoration: underline; }
   @media (max-width: 1099px) { .ix-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 767px) { .ix-grid { grid-template-columns: 1fr; } .ix-top { flex-direction: column; } }
 </style>

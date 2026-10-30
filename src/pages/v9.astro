@@ -9,7 +9,6 @@ import PHero from '../components/p/PHero.astro';
 import PCard from '../components/p/PCard.astro';
 import PLink from '../components/p/PLink.astro';
 import PFooter from '../components/p/PFooter.astro';
-import PBarra from '../components/p/PBarra.astro';
 import Logo from '../components/ui/Logo.astro';
 import Icon from '../components/ui/Icon.astro';
 import d from '../data/propuestas/home.json';
@@ -24,7 +23,7 @@ const panelesB = [
   { id: 'crea', nombre: d.crea.eyebrow, color: 'violeta-200', titulo: d.crea.titulo, texto: d.crea.textoLargo, enlace: d.crea.enlace, ...foto(d.crea.imagen, d.crea.alt) }
 ];
 ---
-<Base title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." clase="pp p2">
+<Base variante="v9" title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." clase="pp p2">
   <PHeader variante="hueso" inicio={url('v9/')} />
   <main id="contenido">
     <section class="mk-w p2-intro" aria-labelledby="p2-h1">
@@ -101,7 +100,6 @@ const panelesB = [
     </section>
   </main>
   <PFooter />
-  <PBarra actual="v9" />
 </Base>
 
 <style>

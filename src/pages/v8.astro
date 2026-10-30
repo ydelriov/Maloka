@@ -8,7 +8,6 @@ import PTile from '../components/p/PTile.astro';
 import PCard from '../components/p/PCard.astro';
 import PLink from '../components/p/PLink.astro';
 import PFooter from '../components/p/PFooter.astro';
-import PBarra from '../components/p/PBarra.astro';
 import Icon from '../components/ui/Icon.astro';
 import d from '../data/propuestas/home.json';
 import { ruta } from '../lib/rutas.js';
@@ -16,7 +15,7 @@ import { url } from '../lib/url.js';
 import '../styles/propuestas.css';
 const [domo, ...resto] = d.vive.items;
 ---
-<Base title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." precargarHero clase="pp">
+<Base variante="v8" title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." precargarHero clase="pp">
   <PHeader variante="sobre" inicio={url('v8/')} />
   <main id="contenido">
     <PHero variante="p1" />
@@ -76,7 +75,6 @@ const [domo, ...resto] = d.vive.items;
     </section>
   </main>
   <PFooter />
-  <PBarra actual="v8" />
 </Base>
 
 <style>

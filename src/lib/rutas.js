@@ -1,6 +1,8 @@
-// A dónde lleva cada ítem del menú, del footer y de los accesos de la home. Las páginas que aún no existen
-// llevan a su sección en la home (V7); lo que no aparece aquí sigue apuntando a «#».
+// A dónde lleva cada ítem del menú, del footer y de los accesos de la home. Lo que no aparece aquí apunta a «#».
+// Las páginas internas están ocultas por ahora (src/ocultas): con MOSTRAR_PAGINAS = false todo apunta a «#».
 import { url } from './url.js';
+
+export const MOSTRAR_PAGINAS = false;
 
 const RUTAS = {
   // Visítanos
@@ -52,4 +54,7 @@ const RUTAS = {
   'Hablemos de tu proyecto': 'crea-con-maloka/#contacto'
 };
 
-export const ruta = (label) => (RUTAS[label] ? url(RUTAS[label]) : '#');
+export const ruta = (label) => (MOSTRAR_PAGINAS && RUTAS[label] ? url(RUTAS[label]) : '#');
+
+/** Enlace a una página interna por su ruta (p. ej. «agendate/»); «#» mientras estén ocultas. */
+export const pagina = (path) => (MOSTRAR_PAGINAS ? url(path) : '#');

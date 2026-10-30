@@ -1,33 +1,19 @@
 ---
-// Barra flotante solo del prototipo (fuera del diseño) para saltar entre variantes.
-// En la variante Elementor agrega «Estructura», que muestra el contenedor o widget de cada bloque.
+// Barra flotante solo del prototipo (fuera del diseño): salta entre las versiones del home.
+import data from '../../data/variantes.json';
 import { url } from '../../lib/url.js';
 const { actual } = Astro.props;
-const vs = [['v7', 'V7'], ['visitanos', 'Visítanos'], ['agendate', 'Agéndate'], ['ven-en-grupo', 'Grupos'], ['descubre', 'Descubre'], ['noticias', 'Noticias'], ['crea-con-maloka', 'Crea'], ['v4', 'V4'], ['v5', 'V5'], ['v6', 'V6'], ['elementor', 'Elementor']];
 ---
-<nav class="vs" aria-label="Variantes del prototipo">
-  <a href={url('')} class="vs-i">Índice</a>
-  {vs.map(([v, label]) => <a href={url(`${v}/`)} aria-current={v === actual ? 'page' : undefined}>{label}</a>)}
-  {(actual === 'elementor' || actual === 'v7') && (
-    <>
-      <button type="button" class="vs-b" aria-pressed="false" data-vs-anotar>Estructura</button>
-      <a href={url('elementor/guia/')}>Guía</a>
-    </>
-  )}
+<nav class="vs" aria-label="Versiones del home">
+  <a href={url('')}>Índice</a>
+  {data.items.map((v) => <a href={url(v.ruta)} aria-current={v.id === actual ? 'page' : undefined}>{v.etiqueta}</a>)}
 </nav>
 <style>
   .vs { position: fixed; left: 16px; bottom: 16px; z-index: 150; display: flex; gap: 4px; padding: 4px; border-radius: var(--mk-r-pill); background: var(--mk-neutro-900); box-shadow: var(--mk-sombra-3); font-size: 13px; font-weight: 700; max-width: calc(100vw - 32px); overflow-x: auto; scrollbar-width: none; }
-  .vs a, .vs-b { display: inline-grid; place-items: center; flex: none; min-width: 44px; height: 36px; padding: 0 12px; border: 0; border-radius: var(--mk-r-pill); background: none; color: #fff; font: inherit; cursor: pointer; }
-  .vs a:hover, .vs-b:hover { background: var(--mk-neutro-700); }
-  .vs a[aria-current="page"], .vs-b[aria-pressed="true"] { background: #fff; color: var(--mk-neutro-900); }
-  .vs a:focus-visible, .vs-b:focus-visible { outline: var(--mk-foco-oscuro); outline-offset: 2px; }
+  .vs::-webkit-scrollbar { display: none; }
+  .vs a { display: inline-grid; place-items: center; flex: none; min-width: 44px; height: 36px; padding: 0 12px; border-radius: var(--mk-r-pill); color: #fff; }
+  .vs a:hover { background: var(--mk-neutro-700); }
+  .vs a[aria-current="page"] { background: #fff; color: var(--mk-neutro-900); }
+  .vs a:focus-visible { outline: var(--mk-foco-oscuro); outline-offset: 2px; }
   @media (max-width: 767px) { .vs { left: 50%; transform: translateX(-50%); bottom: 12px; } }
 </style>
-<script>
-  const b = document.querySelector('[data-vs-anotar]');
-  if (b) {
-    const set = (on) => { document.documentElement.classList.toggle('el-anotar', on); b.setAttribute('aria-pressed', String(on)); };
-    if (new URLSearchParams(location.search).has('estructura')) set(true);
-    b.addEventListener('click', () => set(b.getAttribute('aria-pressed') !== 'true'));
-  }
-</script>

@@ -7,17 +7,15 @@ Design System de Claude Design para validar el diseño antes de llevarlo a WordP
 - **V7 · Combinada** (`/v7`): hero rotativo de V5 con un botón amarillo por campaña, Planea tu visita y Agenda de Elementor,
   Cine Domo protagonista en Vive Maloka, Ven en grupo de V6 ordenado, Descubre de V6 en bloque tonal, Crea con Maloka de V4
   con más peso y Noticias de V6 sin fecha. Los textos del banner están en `src/data/campanas.json` (por validar).
-- **Visítanos** (`/visitanos`): horarios (reales), productos y tarifas por público (precios por validar), películas del
-  Cine Domo, cómo llegar, servicios, accesibilidad, experiencias y preguntas frecuentes. Datos en `src/data/visitanos.json`;
-  los enlaces del menú, el footer y Planea tu visita salen de `src/lib/rutas.js`.
-- **Agéndate** (`/agendate`): evento destacado, selector de día, filtros por tipo y tarjetas con sus funciones.
-  Contenido de ejemplo en `src/data/eventos.json`.
-- Todos los ítems del menú llevan a su página o, si aún no existe, a su sección en la home V7 (`src/lib/rutas.js`).
-- **Ven en grupo** (`/ven-en-grupo`), **Descubre** (`/descubre`), **Noticias** (`/noticias`) y **Crea con Maloka** (`/crea-con-maloka`): contenido de maloka.org
-  (cotizaciones y grupos, MPA, programas y proyectos, acerca de, sala de prensa). Datos en `src/data/`.
 - Variantes: `/v4` Editorial numerada · `/v5` Arcos del domo · `/v6` Panel de visita · `/elementor` lista para construir en WordPress + Elementor Pro
-- Guía de construcción en Elementor: `/elementor/guia` (fuente: `src/pages/elementor/guia.md`)
 - Prototipo anterior (home navy, Agéndate, Ven en grupo): `/legacy/`
+
+## Qué se publica
+
+Solo las versiones del home, en orden: V1 (`/legacy/`), V4, V5, V6, Elementor, V7, V8, V9 y V10 (lista en
+`src/data/variantes.json`). La barra flotante de cada versión salta entre ellas. Las páginas internas (Visítanos,
+Agéndate, Ven en grupo, Descubre, Noticias, Crea con Maloka) están ocultas en `src/ocultas/` y sus enlaces apuntan a
+`#`; para volver a publicarlas, ver `src/ocultas/README.md`.
 
 ## Comandos
 
@@ -47,7 +45,8 @@ src/
     elementor/   ElHeader · ElHero · ElPlanea · ElExperiencias · ElAgenda · ElGrupos · ElDescubre · ElCrea · ElNoticias
     sections/    HeroSlider · VisitPanel · PlaneaVisita · ViveMaloka · Agenda · VenEnGrupo · Descubre · CreaConMaloka · Noticias
   layouts/       Base.astro (SEO, Open Graph, JSON-LD Museum)
-  pages/         index (miniaturas) · v7 · v4 · v5 · v6 · elementor (+ elementor/guia.md)
+  pages/         index (miniaturas) · v4 · v5 · v6 · elementor · v7 · v8 · v9 · v10
+  ocultas/       páginas internas fuera de publicación por ahora
 public/legacy/   prototipo anterior, servido tal cual
 scripts/         screenshots.mjs (Playwright)
 ```
@@ -90,8 +89,7 @@ posición absoluta, todo el contenedor como enlace), `PLink` (Botón con estilo 
 contenedores flex/grid, widget Menú (mega menú), Loop Grid con plantilla de tarjeta, Filtro de taxonomía, Icon Box,
 Icon List y Formulario. Los tamaños cambian en escalones en los breakpoints de Elementor (1024 y 767; el menú en 1200,
 «Tablet extra»), sin `clamp()` (`src/styles/elementor.css`). El hero es fijo (sin slider) porque los carruseles de
-Elementor no traen botón de pausa. El botón **Estructura** de la barra inferior (o `?estructura` en la URL) marca cada
-bloque con su contenedor o widget, y la guía detalla ajustes del sitio, tipos de contenido, plantillas y cada sección.
+Elementor no traen botón de pausa. 
 
 ## De componente a Elementor (V4–V6)
 
