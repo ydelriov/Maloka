@@ -63,6 +63,27 @@
       "etiqueta": "V9",
       "nombre": "V9 · Bandas de color",
       "descripcion": "Cada sección con su fondo de la paleta, listas grandes separadas por líneas y fotos rectas."
+    },
+    {
+      "id": "v10",
+      "ruta": "v10/",
+      "etiqueta": "V10",
+      "nombre": "V10 · Noche y luz",
+      "descripcion": "Design System v3. Header noche en dos niveles, hero a sangre con el horario de hoy abajo a la derecha, agenda con filtros y «Más por explorar» en carrusel. Inspirada en louvre.fr."
+    },
+    {
+      "id": "v11",
+      "ruta": "v11/",
+      "etiqueta": "V11",
+      "nombre": "V11 · Bloques pastel",
+      "descripcion": "Design System v3. Hero partido con bloque amarillo, carrusel sobre noche y bloques salmón, menta y noche con animaciones de barrido. Inspirada en vangoghmuseum.nl."
+    },
+    {
+      "id": "v12",
+      "ruta": "v12/",
+      "etiqueta": "V12",
+      "nombre": "V12 · Explorar",
+      "descripcion": "Design System v3. Casi sin botones: carruseles de fotos con ↗, agenda en filas con fecha grande y Crea en un bloque cielo. Inspirada en nhm.ac.uk y museoreinasofia.es."
     }
   ]
 }

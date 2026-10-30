@@ -1,0 +1,36 @@
+---
+/* F · Etiquetas de filtro de la agenda (Hoy / Fin de semana): filtran los elementos [data-filtro] del contenedor
+   indicado con «objetivo». La activa va en noche con texto amarillo; aria-pressed para lectores de pantalla. */
+const { filtros = [], objetivo, tono = 'claro' } = Astro.props;
+---
+<div class:list={['nfl', `nfl--${tono}`]} role="group" aria-label="Filtrar programación" data-nfl={objetivo}>
+  {filtros.map((f, i) => <button type="button" class="nfl-b" aria-pressed={i === 0 ? 'true' : 'false'} data-f={f.id}>{f.label}</button>)}
+  <p class="sr-only" role="status" aria-live="polite" data-nfl-msg></p>
+</div>
+
+<style>
+  .nfl { display: flex; flex-wrap: wrap; gap: 8px; }
+  .nfl-b { min-height: 44px; padding: 0 18px; border: 2px solid currentColor; background: transparent; color: inherit; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
+  .nfl-b:hover { background: rgba(35, 27, 43, .08); }
+  .nfl--oscuro .nfl-b:hover { background: rgba(255, 255, 255, .12); }
+  .nfl-b[aria-pressed="true"] { background: var(--n-noche); color: var(--n-amarillo); border-color: var(--n-noche); }
+  @media (max-width: 767px) { .nfl { gap: 6px; } .nfl-b { padding: 0 12px; font-size: 14px; } }
+  .nfl--oscuro .nfl-b[aria-pressed="true"] { background: var(--n-amarillo); color: var(--n-noche); border-color: var(--n-amarillo); }
+</style>
+
+<script>
+  document.querySelectorAll('[data-nfl]').forEach((g) => {
+    const cont = document.getElementById(g.dataset.nfl);
+    const msg = g.querySelector('[data-nfl-msg]');
+    g.querySelectorAll('[data-f]').forEach((b) => b.addEventListener('click', () => {
+      g.querySelectorAll('[data-f]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      const f = b.dataset.f;
+      let n = 0;
+      cont.querySelectorAll('[data-filtro]').forEach((el) => {
+        const ok = f === 'todo' || el.dataset.filtro === f;
+        el.hidden = !ok; if (ok) n++;
+      });
+      msg.textContent = `${n} actividades: ${b.textContent}`;
+    }));
+  });
+</script>

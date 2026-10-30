@@ -1,15 +1,16 @@
 # Maloka · prototipo navegable de la home
 
-Prototipo responsive de la home de maloka.org en **nueve versiones** (V1 a V9), construido con el
+Prototipo responsive de la home de maloka.org en **doce versiones** (V1 a V12), construido con el
 Design System de Claude Design para validar el diseño antes de llevarlo a WordPress + Elementor.
 
 - Publicado: https://ydelriov.github.io/Maloka/
 
 ## Qué se publica
 
-Solo las versiones del home, en orden, de `/v1/` a `/v9/` (lista en `src/data/variantes.json`): V1 prototipo inicial
+Solo las versiones del home, en orden, de `/v1/` a `/v12/` (lista en `src/data/variantes.json`): V1 prototipo inicial
 (HTML estático en `public/v1/`), V2 editorial numerada, V3 arcos del domo, V4 panel de visita, V5 Elementor, V6 combinada,
-V7 galería a sangre, V8 paneles de color y V9 bandas de color. La barra flotante de todas las pantallas salta entre
+V7 galería a sangre, V8 paneles de color, V9 bandas de color, y V10 noche y luz, V11 bloques pastel y V12 explorar
+(Design System v3). La barra flotante de todas las pantallas salta entre
 ellas; en V1 se inserta con `node scripts/barra-v1.mjs`. Las páginas internas (Visítanos,
 Agéndate, Ven en grupo, Descubre, Noticias, Crea con Maloka) están ocultas en `src/ocultas/` y sus enlaces apuntan a
 `#`; para volver a publicarlas, ver `src/ocultas/README.md`.
@@ -61,6 +62,35 @@ Las secciones reciben `variante="v4" | "v5" | "v6"`: cambian la grilla y el trat
 - Sombras solo en lo que flota: header fijo, mega menú, panel del hero de V6 y tarjetas en hover.
 - Arco del domo: máximo uno por sección.
 - Foco visible: `3px solid #B897D6` (blanco sobre fondo oscuro).
+
+## Design System v3 «Noche y pastel» · V10, V11 y V12
+
+Tres propuestas de la home con el Design System v3: neutros (noche `#231B2B`, hueso `#F4F1EC`, blanco) en el 70 %,
+pasteles (amarillo `#FFE25C`, salmón `#F4A39A`, lavanda `#B4A5F5`, menta `#9FE8C8`, cielo `#9CCBF2`) en el 25 % y
+violeta solo en el logo y el foco. Siempre pastel sobre noche o noche sobre pastel, máximo dos pasteles por bloque,
+esquinas rectas y **un solo botón** («Compra tus entradas», en el header). El resto de las acciones usa las otras formas
+del sistema: enlace con flecha, enlace grande, fila que se llena de pastel, tarjeta con foto, bloque de color completo
+como enlace y etiquetas de filtro. Componentes en `src/components/n/`, estilos en `src/styles/noche.css` y contenido
+en `src/data/n/home.json`.
+
+| Ruta | Propuesta | Referencia | Cómo se arma en Elementor |
+|---|---|---|---|
+| `/v10` | Noche y luz | louvre.fr, museoreinasofia.es | Header noche en dos niveles; hero a sangre con el panel de horario de hoy abajo a la derecha; «No te lo pierdas» (una grande y tres) en hueso; agenda en noche con filtros; grupos en filas con relleno salmón; «Más por explorar» en Loop Carousel; Crea como un contenedor lavanda que es todo el enlace |
+| `/v11` | Bloques pastel | vangoghmuseum.nl | Hero partido (bloque amarillo con titular gigante + imagen con zoom lento); carrusel sobre noche; bloques salmón (grupos), menta (Descubre con cifras) y noche (Crea con filas); titulares con barrido al entrar |
+| `/v12` | Explorar | nhm.ac.uk, museoreinasofia.es | Casi sin botones: «No te lo pierdas» como carrusel de fotos grandes con ↗, «Esta semana» en filas con fecha grande y filtros, grupos en carrusel de tarjetas altas sobre noche, Descubre con cifras y filas, Crea en un bloque cielo con enlaces grandes |
+
+| Pieza | Elementor |
+|---|---|
+| `NHeader` (dos niveles + menú completo) | Theme Builder › Header: fila 1 con Búsqueda, enlace «Qué hay hoy», idioma (WPML/Polylang), Logo al centro y un Botón; fila 2 con el widget Menú; «Más» abre un Popup a pantalla completa con Nav Menu y acordeones en móvil |
+| `NHorario` (horario de hoy) | Contenedor noche en posición absoluta (abajo a la derecha) dentro del hero; el estado «Abierto ahora» va en un widget HTML con el script de hora de Bogotá |
+| `NHero` | Carrusel anidado con fundido y Efectos de movimiento › Entrada; en la variante partida, contenedor de 2 columnas con fondo amarillo |
+| `NCarrusel` + `NCardFoto` | Loop Carousel con una plantilla de Loop Item: imagen de fondo, superposición plana, título y icono ↗; todo el contenedor como enlace |
+| `NActividad` | Loop Grid de la agenda y noticias: fecha y categoría en posición absoluta sobre la foto |
+| `NFiltros` | Taxonomy Filter de Elementor Pro conectado al Loop Grid (Hoy / Fin de semana) |
+| `NFilas` | Contenedores con borde inferior de 2 px, todo el contenedor como enlace y color de fondo pastel en hover |
+| Bloque E (Crea en V10) | Contenedor de ancho completo con enlace y cambio de color de fondo en hover |
+| Aparición al hacer scroll | Efectos de movimiento › Animación de entrada («Fade In Up» y, para el barrido, CSS personalizado con `clip-path`) |
+| `NFooter` | Theme Builder › Footer con Formulario de un campo (línea inferior, sin caja) |
 
 ## Nueva dirección · V7, V8 y V9
 

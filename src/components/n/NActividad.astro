@@ -1,0 +1,32 @@
+---
+/* D · Tarjeta con imagen para agenda y noticias: fecha en bloque sobre la foto (arriba a la izquierda), etiqueta
+   pastel arriba a la derecha, título, una línea y meta. Toda la tarjeta es un enlace; la foto hace zoom en hover. */
+import { Picture } from 'astro:assets';
+import { img } from '../../lib/images.js';
+const { image, alt = '', dia, mes, categoria, color, titulo, texto, meta, href = '#', ratio = '1 / 1', fechaTono = 'blanco', sizes = '(max-width: 767px) 82vw, (max-width: 1024px) 45vw, 300px', nivel = 3 } = Astro.props;
+const H = `h${nivel}`;
+---
+<a class="nac" href={href}>
+  <span class="n-foto n-zoom nac-foto" style={`aspect-ratio:${ratio}`}>
+    <Picture src={img(image)} alt={alt} formats={['avif', 'webp']} widths={[342, 560, 800]} sizes={sizes} loading="lazy" decoding="async" />
+    {dia && <span class:list={['nac-fecha', `nac-fecha--${fechaTono}`]}><b class="t-num">{dia}</b><span>{mes}</span></span>}
+    {categoria && <span class:list={['n-tag', `n-tag--${color}`, 'nac-cat']}>{categoria}</span>}
+  </span>
+  <H class="nac-t">{titulo}</H>
+  {texto && <span class="nac-x">{texto}</span>}
+  {meta && <span class="nac-m">{meta}</span>}
+</a>
+
+<style>
+  .nac { display: flex; flex-direction: column; gap: 10px; color: inherit; min-width: 0; }
+  .nac-fecha { position: absolute; left: 0; top: 0; z-index: 1; display: grid; padding: 12px 16px; line-height: 1.05; }
+  .nac-fecha--blanco { background: #fff; color: var(--n-noche); }
+  .nac-fecha--noche { background: var(--n-noche); color: var(--n-amarillo); }
+  .nac-fecha b { font-size: var(--n-dato); font-weight: 700; }
+  .nac-fecha span { font-size: 13px; font-weight: 600; }
+  .nac-cat { position: absolute; right: 0; top: 0; z-index: 1; }
+  .nac-t { margin: 6px 0 0; font-size: 20px; line-height: 1.25; font-weight: 700; }
+  .nac-x { font-size: 15px; opacity: .85; }
+  .nac-m { font-size: 14px; font-weight: 600; }
+  .nac:hover .nac-t { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+</style>

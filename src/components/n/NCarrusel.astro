@@ -1,0 +1,40 @@
+---
+/* Carrusel horizontal (como «Más por explorar» de museoreinasofia.es): fila con scroll-snap que se arrastra con el
+   dedo o el trackpad, con flechas anterior/siguiente. Las tarjetas van en el slot como <li>. */
+import Icon from '../ui/Icon.astro';
+const { etiqueta = 'Carrusel', ancho = '30vw', tono = 'claro' } = Astro.props;
+---
+<div class:list={['nca', `nca--${tono}`]} style={`--nca-w:${ancho}`} data-nca>
+  <ul class="nca-pista" aria-label={etiqueta} tabindex="0" data-nca-pista><slot /></ul>
+  <div class="mk-w nca-ctrl">
+    <button type="button" class="nca-btn" aria-label="Anterior" data-nca-prev><Icon name="arrowl" /></button>
+    <button type="button" class="nca-btn" aria-label="Siguiente" data-nca-next><Icon name="arrow" /></button>
+  </div>
+</div>
+
+<style>
+  .nca-pista { display: grid; grid-auto-flow: column; grid-auto-columns: var(--nca-w); gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--mk-margen); padding-inline: max(var(--mk-margen), calc((100vw - 1280px) / 2)); padding-bottom: 4px; scrollbar-width: none; }
+  .nca-pista::-webkit-scrollbar { display: none; }
+  .nca-pista:focus-visible { outline-offset: -3px; }
+  .nca-pista > :global(li) { scroll-snap-align: start; }
+  .nca-ctrl { display: flex; justify-content: flex-end; gap: 8px; margin-top: 20px; }
+  .nca-btn { display: grid; place-items: center; width: 52px; height: 52px; padding: 0; border: 2px solid currentColor; border-radius: 50%; background: none; color: inherit; cursor: pointer; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
+  .nca--claro .nca-btn:hover { background: var(--n-noche); color: #fff; }
+  .nca--oscuro .nca-btn:hover { background: var(--n-amarillo); color: var(--n-noche); border-color: var(--n-amarillo); }
+  .nca-btn:disabled { opacity: .3; cursor: default; }
+  @media (max-width: 767px) { .nca-pista { grid-auto-columns: 82%; gap: 12px; } .nca-ctrl { display: none; } }
+</style>
+
+<script>
+  document.querySelectorAll('[data-nca]').forEach((root) => {
+    const pista = root.querySelector('[data-nca-pista]');
+    const prev = root.querySelector('[data-nca-prev]'), next = root.querySelector('[data-nca-next]');
+    const paso = () => (pista.querySelector('li')?.getBoundingClientRect().width || 300) + 20;
+    const estado = () => { prev.disabled = pista.scrollLeft < 8; next.disabled = pista.scrollLeft + pista.clientWidth >= pista.scrollWidth - 8; };
+    const suave = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    prev.addEventListener('click', () => pista.scrollBy({ left: -paso(), behavior: suave }));
+    next.addEventListener('click', () => pista.scrollBy({ left: paso(), behavior: suave }));
+    pista.addEventListener('scroll', estado, { passive: true });
+    estado();
+  });
+</script>

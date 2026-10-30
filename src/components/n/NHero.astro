@@ -1,0 +1,121 @@
+---
+/* Hero de V10–V12 con hero-slide-1.jpg y slider de 3 diapositivas (fundido 600 ms, 7 s, pausa; sin autoplay con
+   «reducir movimiento»). Solo la primera diapositiva lleva <h1>. El panel de horario va abajo a la derecha.
+   variante: «foto» (a sangre, texto abajo a la izquierda sobre velo plano) · «split» (bloque amarillo con titular
+   grande a la izquierda y la imagen a la derecha, como vangoghmuseum.nl). */
+import { Picture } from 'astro:assets';
+import d from '../../data/n/home.json';
+import Icon from '../ui/Icon.astro';
+import NHorario from './NHorario.astro';
+import { img } from '../../lib/images.js';
+const { variante = 'foto', colorBloque = 'amarillo' } = Astro.props;
+const h = d.hero;
+---
+<section class:list={['nhe', `nhe--${variante}`]} style={`--nhe-c:var(--n-${colorBloque})`} aria-roledescription="carrusel" aria-label="Destacados de Maloka" data-nslider>
+  <div class="nhe-media">
+    <Picture src={img(h.imagen)} alt="" formats={['avif', 'webp']} widths={[640, 1024, 1440, 1942]} sizes={variante === 'split' ? '(max-width: 1024px) 100vw, 50vw' : '100vw'} class="nhe-img" loading="eager" fetchpriority="high" decoding="async" />
+    {variante === 'foto' && <span class="nhe-velo" aria-hidden="true"></span>}
+  </div>
+  <div class="nhe-txt-w">
+    <div class:list={['nhe-txt', variante === 'foto' && 'mk-w']}>
+      <p class="nhe-ante">{h.antetitulo}</p>
+      <div class="nhe-slides">
+        {h.slides.map((s, i) => (
+          <div class:list={['nhe-slide', i === 0 && 'is-activa']} role="group" aria-roledescription="diapositiva" aria-label={`${i + 1} de ${h.slides.length}`} aria-hidden={i === 0 ? undefined : 'true'} data-slide>
+            {i === 0 ? <h1 class="nhe-t">{s.titulo}</h1> : <p class="nhe-t">{s.titulo}</p>}
+            <p class="nhe-x">{s.texto}</p>
+          </div>
+        ))}
+      </div>
+      <div class="nhe-ctrl">
+        <button type="button" class="nhe-pausa" aria-label="Pausar el carrusel" data-pausa><Icon name="pause" size="20" class="ic-pausa" /><Icon name="play" size="20" class="ic-play" /></button>
+        <div class="nhe-dots" role="group" aria-label="Elegir diapositiva">
+          {h.slides.map((_, i) => <button type="button" class="nhe-dot" aria-label={`Ir a la diapositiva ${i + 1}`} aria-current={i === 0 ? 'true' : undefined} data-ir={i}></button>)}
+        </div>
+      </div>
+    </div>
+  </div>
+  <NHorario class="nhe-horario" />
+  <p class="sr-only" aria-live="polite" data-anuncio></p>
+</section>
+
+<style>
+  .nhe { position: relative; overflow: hidden; background: var(--n-noche); color: #fff; }
+  .nhe-media { position: absolute; inset: 0; }
+  .nhe :global(picture), .nhe :global(.nhe-img) { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .nhe :global(.nhe-img) { object-fit: cover; object-position: 70% 50%; }
+  .nhe-velo { position: absolute; left: 0; right: 0; bottom: 0; height: 55%; background: var(--mk-velo); }
+  .nhe-txt { position: relative; display: flex; flex-direction: column; gap: 16px; }
+  .nhe-ante { font-size: 18px; font-weight: 600; color: var(--n-lavanda); }
+  .nhe-slides { display: grid; max-width: 640px; }
+  .nhe-slide { grid-area: 1 / 1; display: grid; gap: 14px; opacity: 0; visibility: hidden; transition: opacity 600ms var(--mk-ease), visibility 0s linear 600ms; }
+  .nhe-slide.is-activa { opacity: 1; visibility: visible; transition-delay: 0s; }
+  .nhe-t { margin: 0; font-size: var(--n-display); line-height: 1.05; font-weight: 700; letter-spacing: -0.025em; }
+  .nhe-x { font-size: var(--n-lead); line-height: 1.55; color: var(--n-texto2-osc); max-width: 520px; }
+  .nhe-ctrl { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .nhe-pausa { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1.5px solid currentColor; border-radius: 50%; background: none; color: inherit; cursor: pointer; }
+  .nhe :global(.ic-play) { display: none; }
+  .nhe.is-pausado :global(.ic-play) { display: block; }
+  .nhe.is-pausado :global(.ic-pausa) { display: none; }
+  .nhe-dots { display: flex; gap: 6px; }
+  .nhe-dot { width: 48px; height: 44px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; align-items: center; }
+  .nhe-dot::before { content: ""; height: 3px; background: currentColor; opacity: .35; transition: opacity var(--mk-t); }
+  .nhe-dot[aria-current="true"]::before { opacity: 1; }
+  .nhe :global(.nhe-horario) { position: absolute; right: 0; bottom: 0; z-index: 2; }
+
+  /* foto · a sangre */
+  .nhe--foto { height: calc(100svh - 136px); min-height: 640px; max-height: 860px; display: flex; align-items: flex-end; }
+  .nhe--foto .nhe-txt-w { position: relative; width: 100%; padding-bottom: 196px; }
+
+  /* split · bloque de color con titular grande + imagen */
+  .nhe--split { display: grid; grid-template-columns: 1fr 1fr; min-height: 760px; background: var(--nhe-c); color: var(--n-noche); }
+  .nhe--split .nhe-media { position: relative; grid-column: 2; grid-row: 1; }
+  .nhe--split .nhe-txt-w { grid-column: 1; grid-row: 1; display: flex; align-items: flex-end; padding: 64px var(--mk-margen) 72px max(var(--mk-margen), calc((100vw - 1280px) / 2)); }
+  .nhe--split .nhe-ante { color: var(--n-noche); }
+  .nhe--split .nhe-t { font-size: calc(var(--n-display) * 1.3); line-height: 1; }
+  .nhe--split .nhe-x { color: var(--n-noche); }
+  .nhe--split .nhe-slide.is-activa .nhe-t { animation: nhe-sube 900ms var(--mk-ease) both; }
+  .nhe--split :global(.nhe-img) { object-position: 75% 50%; animation: nhe-zoom 14s ease-out both; }
+  .nhe--split :focus-visible { outline: 3px solid var(--n-noche); }
+  @keyframes nhe-sube { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+  @keyframes nhe-zoom { from { transform: scale(1.08); } to { transform: none; } }
+
+  @media (max-width: 1024px) {
+    .nhe--foto { height: auto; min-height: 0; max-height: none; display: block; }
+    .nhe--foto .nhe-media { position: relative; height: 420px; }
+    .nhe--foto .nhe-velo { height: 100%; }
+    .nhe--foto .nhe-txt-w { position: absolute; left: 0; right: 0; top: 0; height: 420px; display: flex; align-items: flex-end; padding-bottom: 32px; }
+    .nhe :global(.nhe-horario) { position: relative; }
+    .nhe--split { grid-template-columns: 1fr; min-height: 0; }
+    .nhe--split .nhe-media { grid-column: 1; grid-row: 2; height: 380px; }
+    .nhe--split .nhe-txt-w { grid-row: 1; padding: 56px var(--mk-margen) 40px; }
+  }
+  @media (max-width: 767px) {
+    .nhe--foto .nhe-media, .nhe--foto .nhe-txt-w { height: 520px; }
+    .nhe :global(.nhe-img) { object-position: 78% 30%; }
+    .nhe--split .nhe-media { height: 280px; }
+    .nhe--split .nhe-t { font-size: 44px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .nhe--split .nhe-slide.is-activa .nhe-t, .nhe--split :global(.nhe-img) { animation: none; } }
+</style>
+
+<script>
+  document.querySelectorAll('[data-nslider]').forEach((root) => {
+    const slides = [...root.querySelectorAll('[data-slide]')];
+    const dots = [...root.querySelectorAll('[data-ir]')];
+    const pausa = root.querySelector('[data-pausa]');
+    const anuncio = root.querySelector('[data-anuncio]');
+    let actual = 0, timer = null, pausado = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mostrar = (n, anunciar = true) => {
+      actual = (n + slides.length) % slides.length;
+      slides.forEach((s, i) => { const on = i === actual; s.classList.toggle('is-activa', on); on ? s.removeAttribute('aria-hidden') : s.setAttribute('aria-hidden', 'true'); });
+      dots.forEach((d, i) => (i === actual ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current')));
+      if (anunciar) anuncio.textContent = `Diapositiva ${actual + 1} de ${slides.length}`;
+    };
+    const programar = () => { clearInterval(timer); if (!pausado) timer = setInterval(() => mostrar(actual + 1, false), 7000); };
+    const setPausa = (p) => { pausado = p; root.classList.toggle('is-pausado', p); pausa.setAttribute('aria-label', p ? 'Reproducir el carrusel' : 'Pausar el carrusel'); programar(); };
+    dots.forEach((d) => d.addEventListener('click', () => { mostrar(+d.dataset.ir); programar(); }));
+    pausa.addEventListener('click', () => setPausa(!pausado));
+    setPausa(pausado);
+  });
+</script>

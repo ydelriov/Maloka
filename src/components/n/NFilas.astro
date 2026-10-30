@@ -1,0 +1,36 @@
+---
+/* C · Filas de lista: cada fila es un enlace (icono, título, una línea y ↗) que se llena de un pastel en hover.
+   Sin botones. color: pastel del relleno. tono: «claro» (líneas noche) u «oscuro» (líneas blancas sobre noche). */
+import Icon from '../ui/Icon.astro';
+const { items = [], color = 'salmon', tono = 'claro', grande = false, nivel = 3 } = Astro.props;
+const H = `h${nivel}`;
+---
+<ul class:list={['nfi', `nfi--${tono}`, grande && 'nfi--grande']} style={`--nfi-c:var(--n-${color})`}>
+  {items.map((it, i) => (
+    <li data-rv style={`--d:${i}`}>
+      <a href={it.href || '#'} class:list={['nfi-a', !it.icono && 'nfi-a--sin']}>
+        {it.icono && <span class="nfi-ic"><Icon name={it.icono} size="28" /></span>}
+        <span class="nfi-txt"><H class="nfi-t">{it.titulo}</H>{it.texto && <span class="nfi-x">{it.texto}</span>}</span>
+        <Icon name="ext" size="28" class="nfi-fl" />
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .nfi { border-top: 2px solid currentColor; }
+  .nfi li { border-bottom: 2px solid currentColor; }
+  .nfi--oscuro, .nfi--oscuro li { border-color: rgba(255, 255, 255, .5); }
+  .nfi-a { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px; padding: 24px 16px; color: inherit; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
+  .nfi-a:hover, .nfi-a:focus-visible { background: var(--nfi-c); color: var(--n-noche); }
+  .nfi-a--sin { grid-template-columns: 1fr auto; }
+  .nfi-ic { display: grid; place-items: center; width: 56px; height: 56px; border: 2px solid currentColor; border-radius: 50%; }
+  .nfi-txt { display: grid; gap: 4px; }
+  .nfi-t { margin: 0; font-size: var(--n-sub); line-height: 1.2; font-weight: 700; }
+  .nfi--grande .nfi-t { font-size: var(--n-titulo); line-height: 1.1; }
+  .nfi-x { font-size: 16px; opacity: .85; }
+  .nfi :global(.nfi-fl) { transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .nfi-a:hover :global(.nfi-fl) { transform: translate(4px, -4px); }
+  @media (max-width: 767px) { .nfi-a { gap: 14px; padding: 18px 8px; } .nfi-ic { width: 44px; height: 44px; } }
+  @media (prefers-reduced-motion: reduce) { .nfi-a:hover :global(.nfi-fl) { transform: none; } }
+</style>

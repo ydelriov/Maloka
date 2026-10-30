@@ -1,0 +1,60 @@
+/* Design System v3 · Noche y pastel (V10–V12). Neutros noche/hueso/blanco como base, cinco pasteles como acento,
+   violeta solo en el logo y el foco. Esquinas rectas; solo el botón es píldora. Un botón por vista.
+   Breakpoints de Elementor: tablet ≤ 1024 · móvil ≤ 767. */
+.nn {
+  --n-display: 64px; --n-titulo: 40px; --n-dato: 36px; --n-sub: 24px; --n-lead: 18px;
+  --mk-seccion: 96px; --mk-margen: 80px;
+  --mk-foco: 3px solid var(--n-lavanda-osc);
+  background: var(--mk-hueso); color: var(--n-noche);
+}
+@media (max-width: 1024px) { .nn { --n-display: 48px; --n-titulo: 34px; --n-dato: 30px; --n-sub: 22px; --mk-seccion: 80px; --mk-margen: 40px; } }
+@media (max-width: 767px) { .nn { --n-display: 38px; --n-titulo: 28px; --n-dato: 26px; --n-sub: 20px; --n-lead: 16px; --mk-seccion: 64px; --mk-margen: 16px; } }
+
+.nn img, .nn picture { border-radius: 0; }
+.n-noche { background: var(--n-noche); color: #fff; }
+.n-noche :focus-visible { outline: 3px solid var(--n-lavanda); }
+.n-hueso { background: var(--mk-hueso); color: var(--n-noche); }
+.n-blanco { background: #fff; color: var(--n-noche); }
+.n-sec { padding-block: var(--mk-seccion); }
+
+.n-titulo { margin: 0; font-size: var(--n-titulo); line-height: 1.1; font-weight: 700; letter-spacing: -0.015em; }
+.n-display { margin: 0; font-size: var(--n-display); line-height: 1.05; font-weight: 700; letter-spacing: -0.025em; }
+.n-ante { font-size: 18px; font-weight: 600; color: var(--n-lavanda-osc); }
+.n-noche .n-ante { color: var(--n-lavanda); }
+.n-lead { font-size: var(--n-lead); line-height: 1.55; color: var(--n-texto2); max-width: 620px; }
+.n-noche .n-lead { color: var(--n-texto2-osc); }
+.n-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px 32px; flex-wrap: wrap; margin-bottom: 40px; }
+.n-head > div { display: grid; gap: 10px; }
+
+/* A · enlace con flecha */
+.n-a { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; align-self: flex-start; font-weight: 700; color: inherit; border-bottom: 2px solid currentColor; padding-bottom: 2px; }
+.n-a .mk-ic { transition: transform var(--mk-t-rapida) var(--mk-ease); }
+.n-a:hover .mk-ic { transform: translateX(4px); }
+/* B · enlace grande */
+.n-b { display: inline-flex; align-items: center; gap: 14px; font-size: var(--n-sub); font-weight: 700; line-height: 1.2; color: inherit; border-bottom: 3px solid currentColor; padding-bottom: 4px; }
+.n-b .mk-ic { width: 28px; height: 28px; transition: transform var(--mk-t-rapida) var(--mk-ease); }
+.n-b:hover .mk-ic { transform: translateX(6px); }
+/* Etiqueta pastel */
+.n-tag { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; font-size: 14px; font-weight: 700; color: var(--n-noche); white-space: nowrap; align-self: flex-start; justify-self: start; }
+.n-tag--cielo { background: var(--n-cielo); } .n-tag--lavanda { background: var(--n-lavanda); } .n-tag--menta { background: var(--n-menta); }
+.n-tag--salmon { background: var(--n-salmon); } .n-tag--amarillo { background: var(--n-amarillo); } .n-tag--blanco { background: #fff; }
+/* Contenido por validar */
+.n-ej { display: inline-block; margin-top: 16px; padding: 3px 10px; font-size: 12px; font-weight: 700; color: var(--mk-atencion); background: var(--mk-atencion-fondo); }
+
+/* Foto que llena su caja */
+.n-foto { position: relative; display: block; overflow: hidden; background: var(--n-carbon); }
+.n-foto picture, .n-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.n-zoom img { transition: transform 600ms var(--mk-ease); }
+a:hover .n-zoom img { transform: scale(1.05); }
+
+/* Aparición al hacer scroll (como en vangoghmuseum.nl) */
+.n-js [data-rv] { opacity: 0; transform: translateY(28px); transition: opacity 700ms var(--mk-ease), transform 700ms var(--mk-ease); transition-delay: calc(var(--d, 0) * 90ms); }
+.n-js [data-rv].is-in { opacity: 1; transform: none; }
+.n-js [data-rv="barrido"] { opacity: 1; transform: none; clip-path: inset(0 100% 0 0); transition: clip-path 900ms var(--mk-ease); }
+.n-js [data-rv="barrido"].is-in { clip-path: inset(0 0 0 0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .n-js [data-rv], .n-js [data-rv="barrido"] { opacity: 1; transform: none; clip-path: none; transition: none; }
+  a:hover .n-zoom img, .n-a:hover .mk-ic, .n-b:hover .mk-ic { transform: none; }
+}
+.nn [hidden] { display: none !important; }

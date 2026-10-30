@@ -28,6 +28,19 @@
   /* Amarillo · una sola vez por vista */
   --mk-amarillo-500: #FFE200;
 
+  /* Design System v3 · Noche y pastel (V10–V12): neutros 70 %, pasteles 25 %, violeta de marca 5 % */
+  --n-noche: #231B2B;
+  --n-carbon: #3A3242;
+  --n-linea: #4F4955;
+  --n-texto2: #4F4955;
+  --n-texto2-osc: #D9D3E0;
+  --n-amarillo: #FFE25C;
+  --n-salmon: #F4A39A;
+  --n-lavanda: #B4A5F5;
+  --n-lavanda-osc: #6B5BD6;
+  --n-menta: #9FE8C8;
+  --n-cielo: #9CCBF2;
+
   /* Nueva dirección (V8–V10): fondo hueso y tintes de la paleta de experiencias como protagonistas */
   --mk-hueso: #F4F1EC;
   --mk-amar-300: #FFED81;

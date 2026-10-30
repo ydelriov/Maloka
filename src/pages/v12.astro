@@ -1,0 +1,160 @@
+---
+/* V12 · Explorar (Design System v3 «Noche y pastel», inspirada en nhm.ac.uk y museoreinasofia.es).
+   Header blanco, hero a sangre con el horario, «No te lo pierdas» como carrusel de fotos grandes con ↗ (Cine Domo,
+   salas, laboratorios), «Esta semana» como filas con fecha grande y filtros, grupos en un carrusel de tarjetas altas
+   sobre noche, Descubre con cifras y filas, y Crea en un bloque cielo con enlaces grandes. Casi sin botones. */
+import Base from '../layouts/Base.astro';
+import NHeader from '../components/n/NHeader.astro';
+import NHero from '../components/n/NHero.astro';
+import NActividad from '../components/n/NActividad.astro';
+import NFiltros from '../components/n/NFiltros.astro';
+import NFilas from '../components/n/NFilas.astro';
+import NCarrusel from '../components/n/NCarrusel.astro';
+import NCardFoto from '../components/n/NCardFoto.astro';
+import NFooter from '../components/n/NFooter.astro';
+import Icon from '../components/ui/Icon.astro';
+import d from '../data/n/home.json';
+import { ruta } from '../lib/rutas.js';
+import { url } from '../lib/url.js';
+import '../styles/noche.css';
+const descubre = d.descubre.items.map((it) => ({ titulo: it.titulo, texto: it.texto, href: ruta(it.titulo) }));
+---
+<Base variante="v12" title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." precargarHero clase="nn">
+  <NHeader variante="blanco" inicio={url('v12/')} />
+  <main id="contenido">
+    <NHero variante="foto" />
+
+    <section class="n-sec n-blanco" aria-labelledby="v12-np">
+      <div class="mk-w"><div class="n-head"><div><p class="n-ante">Vive Maloka</p><h2 class="n-titulo" id="v12-np">{d.noTePierdas.titulo}</h2><p class="n-lead">{d.noTePierdas.texto}</p></div></div></div>
+      <NCarrusel etiqueta={d.noTePierdas.titulo} ancho="min(560px, 44vw)">
+        {d.noTePierdas.items.map((it) => (
+          <li class="v12-np">
+            <NCardFoto image={it.imagen} alt={it.alt} etiqueta={it.etiqueta} color={it.color} titulo={it.titulo} href={ruta(it.ruta)} ratio="4 / 3" sizes="(max-width: 767px) 82vw, 44vw" />
+            <p class="v12-np-x">{it.texto} <b>{it.meta}</b></p>
+          </li>
+        ))}
+      </NCarrusel>
+    </section>
+
+    <section class="n-sec n-hueso" aria-labelledby="v12-ag">
+      <div class="mk-w">
+        <div class="n-head">
+          <div><p class="n-ante">Agéndate</p><h2 class="n-titulo" id="v12-ag">{d.agenda.titulo}</h2></div>
+          <NFiltros filtros={d.agenda.filtros} objetivo="v12-ag-l" />
+        </div>
+        <ul class="v12-ag" id="v12-ag-l">
+          {d.agenda.items.map((a, i) => (
+            <li data-filtro={a.filtro} data-rv style={`--d:${i}`}>
+              <a class="v12-ag-a" href={ruta('Programación')} style={`--c:var(--n-${a.color})`}>
+                <span class="v12-ag-f"><b class="t-num">{a.dia}</b><span>{a.mes}</span></span>
+                <span class="v12-ag-t"><span class={`n-tag n-tag--${a.color}`}>{a.categoria}</span><h3>{a.titulo}</h3><span class="v12-ag-x">{a.texto}</span></span>
+                <span class="v12-ag-m"><span><Icon name="clock" size="18" />{a.hora}</span><span><Icon name="pin" size="18" />{a.lugar}</span><span><Icon name="ticket" size="18" />{a.costo}</span></span>
+                <Icon name="ext" size="28" class="v12-ag-ic" />
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div class="v12-pie"><a class="n-b" href={ruta(d.agenda.enlace)}>{d.agenda.enlace}<Icon name="arrow" /></a><span class="n-ej">Contenido de ejemplo · fechas por validar</span></div>
+      </div>
+    </section>
+
+    <section class="n-sec n-noche" aria-labelledby="v12-gr">
+      <div class="mk-w"><div class="n-head"><div><p class="n-ante">Ven en grupo</p><h2 class="n-titulo" id="v12-gr">Maloka se vive mejor en compañía.</h2><p class="n-lead">{d.grupos.texto}</p></div></div></div>
+      <NCarrusel etiqueta="Ven en grupo" ancho="min(340px, 26vw)" tono="oscuro">
+        {d.grupos.items.map((g) => <li><NCardFoto image={g.imagen} alt={g.alt} titulo={g.titulo} texto={g.texto} href={ruta(g.titulo)} ratio="3 / 4" recorte={g.recorte} sizes="(max-width: 767px) 82vw, 26vw" /></li>)}
+      </NCarrusel>
+    </section>
+
+    <section class="n-sec n-blanco" aria-labelledby="v12-de">
+      <div class="mk-w v12-de">
+        <div class="v12-de-i">
+          <p class="n-ante">Descubre Maloka</p>
+          <h2 class="n-titulo" id="v12-de">{d.descubre.texto}</h2>
+          <dl class="v12-cif">{d.descubre.cifras.map((c, i) => <div class={i ? 'v12-cif--b' : 'v12-cif--a'}><dd class="t-num">{c.valor}</dd><dt>{c.label}</dt></div>)}</dl>
+          <span class="n-ej">Cifras por validar</span>
+        </div>
+        <NFilas items={descubre} color="menta" />
+      </div>
+    </section>
+
+    <section class="n-sec v12-cielo" aria-labelledby="v12-cr">
+      <div class="mk-w v12-cr">
+        <div class="v12-cr-i">
+          <p class="n-ante v12-ante">Crea con Maloka · Para aliados</p>
+          <h2 class="n-display" id="v12-cr" data-rv="barrido">Transformemos una idea en una experiencia.</h2>
+          <p class="n-lead v12-lead">{d.crea.texto}</p>
+        </div>
+        <ul class="v12-cr-l">
+          {d.crea.items.map((t, i) => <li data-rv style={`--d:${i}`}><a class="n-b" href={ruta(t)}>{t}<Icon name="arrow" /></a></li>)}
+          <li data-rv style="--d:5"><a class="v12-cr-h" href={ruta(d.crea.enlace)}>{d.crea.enlace}<Icon name="arrow" size="20" /></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="n-sec n-hueso" aria-labelledby="v12-no">
+      <div class="mk-w">
+        <div class="n-head"><div><p class="n-ante">Lo último</p><h2 class="n-titulo" id="v12-no">{d.noticias.titulo}</h2></div><a class="n-a" href={ruta(d.noticias.enlace)}>{d.noticias.enlace}<Icon name="arrow" size="20" /></a></div>
+        <ul class="v12-no">
+          {d.noticias.items.map((n, i) => <li data-rv style={`--d:${i}`}><NActividad image={n.imagen} alt={n.alt} categoria={n.categoria} color={n.color} titulo={n.titulo} texto={n.texto} meta={`${n.dia} ${n.mes}`} href={ruta('Noticias')} ratio="3 / 2" sizes="(max-width: 767px) 100vw, 33vw" /></li>)}
+        </ul>
+        <span class="n-ej">Contenido de ejemplo</span>
+      </div>
+    </section>
+  </main>
+  <NFooter />
+</Base>
+
+<style>
+  .v12-np { display: grid; gap: 14px; align-content: start; }
+  .v12-np-x { font-size: 16px; color: var(--n-texto2); max-width: 46ch; }
+  .v12-np-x b { color: var(--n-noche); }
+
+  .v12-ag { border-top: 2px solid var(--n-noche); }
+  .v12-ag li { border-bottom: 2px solid var(--n-noche); }
+  .v12-ag-a { display: grid; grid-template-columns: 120px 1fr 260px auto; gap: 32px; align-items: center; padding: 28px 16px; color: inherit; transition: background-color var(--mk-t-rapida); }
+  .v12-ag-a:hover, .v12-ag-a:focus-visible { background: var(--c); }
+  .v12-ag-f { display: grid; line-height: 1; }
+  .v12-ag-f b { font-size: 64px; font-weight: 700; letter-spacing: -0.03em; }
+  .v12-ag-f span { font-weight: 600; margin-top: 6px; }
+  .v12-ag-t { display: grid; gap: 8px; }
+  .v12-ag-t h3 { margin: 0; font-size: var(--n-sub); line-height: 1.2; font-weight: 700; }
+  .v12-ag-x { color: var(--n-texto2); }
+  .v12-ag-m { display: grid; gap: 6px; font-size: 15px; font-weight: 600; }
+  .v12-ag-m span { display: inline-flex; align-items: center; gap: 8px; }
+  .v12-ag :global(.v12-ag-ic) { transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .v12-ag-a:hover :global(.v12-ag-ic) { transform: translate(4px, -4px); }
+  .v12-pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 40px; }
+  .v12-pie .n-ej { margin: 0; }
+
+  .v12-de { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
+  .v12-de-i { display: grid; gap: 16px; }
+  .v12-cif { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .v12-cif div { display: grid; gap: 4px; padding: 20px; color: var(--n-noche); }
+  .v12-cif--a { background: var(--n-menta); } .v12-cif--b { background: var(--n-amarillo); }
+  .v12-cif dd { margin: 0; font-size: var(--n-dato); font-weight: 700; line-height: 1; }
+  .v12-cif dt { font-weight: 600; font-size: 15px; }
+  .v12-cif + .n-ej { justify-self: start; margin-top: 0; }
+
+  .v12-cielo { background: var(--n-cielo); color: var(--n-noche); }
+  .v12-ante, .v12-lead { color: var(--n-noche); }
+  .v12-cr { display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: end; }
+  .v12-cr-i { display: grid; gap: 20px; }
+  .v12-cr-l { display: grid; gap: 22px; justify-items: start; }
+  .v12-cr-h { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; padding: 12px 18px; background: var(--n-noche); color: var(--n-amarillo); font-weight: 700; }
+  .v12-cr-h:hover { background: #000; }
+
+  .v12-no { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+
+  @media (max-width: 1024px) {
+    .v12-ag-a { grid-template-columns: 96px 1fr auto; }
+    .v12-ag-m { grid-column: 2; grid-row: 2; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+    .v12-ag-f b { font-size: 48px; }
+    .v12-de, .v12-cr { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 767px) {
+    .v12-ag-a { grid-template-columns: 64px 1fr; gap: 12px 16px; padding: 20px 4px; }
+    .v12-ag-f b { font-size: 38px; }
+    .v12-ag :global(.v12-ag-ic) { display: none; }
+    .v12-no { grid-template-columns: 1fr; }
+  }
+</style>

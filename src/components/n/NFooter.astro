@@ -1,0 +1,69 @@
+---
+/* Footer noche con suscripción (campo con línea inferior y «Suscribirme →») y columnas del mapa de sitio. */
+import data from '../../data/propuestas/home.json';
+import site from '../../data/site.json';
+import Logo from '../ui/Logo.astro';
+import Icon from '../ui/Icon.astro';
+import { ruta } from '../../lib/rutas.js';
+const f = data.footer;
+---
+<footer class="nf n-noche">
+  <div class="mk-w nf-in">
+    <div class="nf-top">
+      <p class="nf-grande">{f.titulo}</p>
+      <form class="nf-form" novalidate data-nf>
+        <label class="nf-l" for="nf-correo">Recibe la programación en tu correo</label>
+        <div class="nf-campo">
+          <input id="nf-correo" type="email" autocomplete="email" placeholder={f.placeholder} required aria-describedby="nf-msg" />
+          <button type="submit" class="nf-enviar">{f.enlace}<Icon name="arrow" size="20" /></button>
+        </div>
+        <p class="nf-msg" id="nf-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div class="nf-cols">
+      <div class="nf-marca">
+        <span class="nf-logo"><Logo size={44} /></span>
+        <p>{site.direccion}<br /><a href={`tel:${site.telefonoHref}`}>{site.telefono}</a></p>
+        <p>{site.horarios.semana.dias} {site.horarios.semana.texto}<br />{site.horarios.finde.dias} {site.horarios.finde.texto}</p>
+      </div>
+      {f.columnas.map((c) => <nav aria-label={c.titulo}><p class="nf-ct">{c.titulo}</p><ul>{c.links.map((l) => <li><a href={ruta(l)}>{l}</a></li>)}</ul></nav>)}
+    </div>
+    <div class="nf-legal"><span>© 2026 Corporación Maloka</span>{f.legal.map((l) => <a href="#">{l}</a>)}<span class="nf-redes">{f.redes.map((r) => <a href="#">{r}</a>)}</span></div>
+  </div>
+</footer>
+
+<style>
+  .nf { font-size: 14px; }
+  .nf a { color: var(--n-texto2-osc); }
+  .nf a:hover { color: var(--n-amarillo); }
+  .nf-in { display: grid; grid-template-columns: minmax(0, 1fr); gap: 56px; padding-block: 80px 32px; }
+  .nf-top { display: grid; grid-template-columns: 6fr 6fr; gap: 32px 64px; align-items: end; }
+  .nf-grande { font-size: var(--n-titulo); line-height: 1.1; font-weight: 700; color: var(--n-amarillo); }
+  .nf-form { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .nf-l { font-size: 16px; font-weight: 600; color: var(--n-lavanda); }
+  .nf-campo { display: flex; align-items: center; gap: 16px; border-bottom: 2px solid #fff; }
+  .nf-campo input { flex: 1; min-width: 0; height: 56px; padding: 0; border: 0; background: transparent; color: #fff; font: inherit; font-size: 18px; }
+  .nf-campo input::placeholder { color: var(--mk-neutro-400); }
+  .nf-enviar { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0; border: 0; background: none; color: #fff; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; }
+  .nf-enviar:hover { color: var(--n-amarillo); }
+  .nf-msg { min-height: 1.4em; font-weight: 600; }
+  .nf-cols { display: grid; grid-template-columns: 1.4fr repeat(5, minmax(0, 1fr)); gap: 24px; padding-top: 40px; border-top: 1px solid var(--n-linea); }
+  .nf-marca { display: grid; gap: 14px; align-content: start; color: var(--n-texto2-osc); }
+  .nf-logo { color: #fff; display: inline-flex; }
+  .nf-ct { font-weight: 700; color: #fff; margin-bottom: 10px; }
+  .nf-cols ul { display: grid; gap: 6px; }
+  .nf-legal { display: flex; flex-wrap: wrap; gap: 8px 24px; padding-top: 24px; border-top: 1px solid var(--n-linea); font-size: 13px; color: var(--n-texto2-osc); }
+  .nf-redes { display: flex; gap: 16px; margin-left: auto; }
+  @media (max-width: 1024px) { .nf-top { grid-template-columns: minmax(0, 1fr); } .nf-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); } .nf-marca { grid-column: 1 / -1; } }
+  @media (max-width: 767px) { .nf-cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .nf-cols a { overflow-wrap: anywhere; } .nf-redes { margin-left: 0; } .nf-in { padding-block: 56px 28px; } }
+</style>
+
+<script>
+  const form = document.querySelector('[data-nf]');
+  if (form) form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input'), msg = form.querySelector('.nf-msg');
+    if (!input.value || !input.checkValidity()) { input.setAttribute('aria-invalid', 'true'); msg.textContent = 'Escribe un correo válido.'; input.focus(); return; }
+    input.removeAttribute('aria-invalid'); msg.textContent = 'Prototipo: en la versión final aquí se confirmará tu suscripción.'; form.reset();
+  });
+</script>

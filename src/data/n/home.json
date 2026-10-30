@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "imagen": "hero-slide-1.jpg",
+    "alt": "Banner de Maloka: collage con un invitado, el domo y ondas de sonido.",
+    "antetitulo": "Centro interactivo de ciencia y tecnología · Bogotá",
+    "slides": [
+      { "titulo": "Atrévete a vivir la ciencia.", "texto": "Salas para tocar, un domo para mirar el universo y laboratorios para preguntar." },
+      { "titulo": "El universo, sobre tu cabeza.", "texto": "En el Cine Domo las estrellas y los planetas se proyectan sobre toda la cúpula." },
+      { "titulo": "Aquí está prohibido no tocar.", "texto": "En las salas interactivas las preguntas se responden con las manos." }
+    ]
+  },
+  "horario": {
+    "titulo": "Bienvenido a Maloka",
+    "enlaces": [ { "texto": "Prepara tu visita", "ruta": "Visítanos" }, { "texto": "Cómo llegar", "ruta": "Cómo llegar" } ]
+  },
+  "noTePierdas": {
+    "titulo": "No te lo pierdas",
+    "texto": "Lo que más disfrutan quienes nos visitan.",
+    "items": [
+      { "id": "domo", "etiqueta": "Cine Domo", "color": "cielo", "titulo": "Levanta la mirada.", "texto": "El universo proyectado sobre toda la cúpula. Funciones todos los días.", "meta": "Entrada al Cine Domo", "imagen": "cine-domo-cupula.jpg", "alt": "Planeta proyectado en la cúpula del Cine Domo", "ruta": "Ver funciones" },
+      { "id": "salas", "etiqueta": "Salas interactivas", "color": "lavanda", "titulo": "Aquí está prohibido no tocar.", "texto": "Toca, prueba, equivócate y vuelve a intentar.", "meta": "Incluido con tu entrada", "imagen": "sala-alta-tension.jpg", "alt": "Público frente a la jaula de Faraday en la sala Alta Tensión", "ruta": "Salas interactivas" },
+      { "id": "labs", "etiqueta": "Laboratorios", "color": "menta", "titulo": "Ponte la bata.", "texto": "Haz ciencia de verdad junto a nuestros mediadores.", "meta": "Costo adicional", "imagen": "laboratorio-microscopio.jpg", "alt": "Niñas de colegio observando por un microscopio", "ruta": "Laboratorios" },
+      { "id": "digital", "etiqueta": "Sala Digital", "color": "salmon", "titulo": "Mundos que responden.", "texto": "Entra a experiencias que reaccionan a tus movimientos.", "meta": "Incluido con tu entrada", "imagen": "sala-entorno-sostenible.jpg", "alt": "Sala interactiva de Maloka", "ruta": "Sala Digital", "fotoReutilizada": true }
+    ]
+  },
+  "agenda": {
+    "titulo": "Esta semana en Maloka",
+    "enlace": "Toda la programación",
+    "filtros": [ { "id": "todo", "label": "Toda la semana" }, { "id": "hoy", "label": "Hoy" }, { "id": "finde", "label": "Fin de semana" } ],
+    "items": [
+      { "dia": "26", "mes": "oct.", "hora": "10:00 a. m.", "filtro": "hoy", "categoria": "Cine Domo", "color": "cielo", "titulo": "Exploración del universo", "texto": "Un viaje por el sistema solar bajo la cúpula.", "lugar": "Cine Domo", "costo": "Incluido", "imagen": "cine-domo-cupula.jpg", "alt": "Planeta proyectado en la cúpula del Cine Domo" },
+      { "dia": "28", "mes": "oct.", "hora": "11:30 a. m.", "filtro": "todo", "categoria": "Taller", "color": "menta", "titulo": "Química de la cocina", "texto": "Experimentos con lo que hay en casa.", "lugar": "Laboratorio 2", "costo": "Costo adicional", "imagen": "laboratorio-familia.jpg", "alt": "Mediadora de Maloka con una familia en el laboratorio" },
+      { "dia": "31", "mes": "oct.", "hora": "2:00 p. m.", "filtro": "finde", "categoria": "Experiencia", "color": "lavanda", "titulo": "Ilusiones que engañan al cerebro", "texto": "Descubre por qué ves lo que no está.", "lugar": "Salas interactivas", "costo": "Incluido", "imagen": "publico-alta-tension.jpg", "alt": "Niños y familias reaccionando sorprendidos en una sala" },
+      { "dia": "01", "mes": "nov.", "hora": "10:30 a. m.", "filtro": "finde", "categoria": "Familiar", "color": "amarillo", "titulo": "Pequeños exploradores", "texto": "Primera infancia y familias.", "lugar": "Salas interactivas", "costo": "Incluido", "imagen": "sala-pequenos-exploradores.jpg", "alt": "Sala Pequeños Exploradores con mesas bajas y colores" }
+    ]
+  },
+  "grupos": {
+    "titulo": "Ven en grupo",
+    "texto": "Maloka se vive mejor en compañía. Organizamos tu visita con colegio, empresa, comunidad o para celebrar tu cumpleaños.",
+    "items": [
+      { "titulo": "Colegios y universidades", "texto": "Propuesta educativa, tarifas y reservas", "icono": "school", "imagen": "nino-lupa.jpg", "alt": "Niño de colegio observando una hoja con una lupa" },
+      { "titulo": "Cumpleaños", "texto": "Planes por edades para celebrar experimentando", "icono": "cake", "imagen": "nino-explorador.png", "alt": "Niño con gorro de fiesta y binoculares", "recorte": true },
+      { "titulo": "Empresas y eventos", "texto": "Espacios y experiencias para equipos", "icono": "building", "imagen": "sala-infinito.jpg", "alt": "Sala Infinito de Maloka con mesas para eventos" },
+      { "titulo": "Maloka Puertas Abiertas", "texto": "Acceso gratuito para comunidades", "icono": "heart", "imagen": "sala-pequenos-exploradores.jpg", "alt": "Sala Pequeños Exploradores de Maloka" }
+    ]
+  },
+  "descubre": {
+    "titulo": "Descubre Maloka",
+    "texto": "La ciencia también transforma territorios, comunidades e ideas.",
+    "cifras": [ { "valor": "+XX", "label": "personas impactadas" }, { "valor": "XX", "label": "territorios" } ],
+    "items": [
+      { "titulo": "Programas y proyectos", "texto": "Ciencia en escuelas, barrios y regiones", "imagen": "paramo.jpg", "alt": "Páramo con frailejones y una laguna" },
+      { "titulo": "Recursos educativos", "texto": "Materiales para el aula y la casa", "imagen": "laboratorio-sala.jpg", "alt": "Laboratorio de Maloka con mesas y bancos de colores" },
+      { "titulo": "Conoce Maloka", "texto": "Quiénes somos y lo que nos mueve", "imagen": "panoramica-maloka.jpg", "alt": "Panorámica del edificio de Maloka con su domo" },
+      { "titulo": "Noticias", "texto": "Lo último que pasa en Maloka", "imagen": "sala-tic.jpg", "alt": "Sala TIC de Maloka" }
+    ]
+  },
+  "crea": {
+    "titulo": "Crea con Maloka",
+    "texto": "Transformemos una idea en una experiencia. Creamos contenidos y soluciones que conectan ciencia, educación e innovación.",
+    "enlace": "Hablemos de tu proyecto",
+    "items": ["Patrocinios y alianzas", "Experiencias museográficas", "Acompañamiento pedagógico", "Investigación y consultoría", "Maloka viajera"]
+  },
+  "noticias": {
+    "titulo": "Noticias",
+    "enlace": "Ver todas",
+    "items": [
+      { "dia": "02", "mes": "oct. 2026", "categoria": "Detrás de escena", "color": "lavanda", "titulo": "Así se diseña una experiencia que hace preguntas", "texto": "Bocetos, prototipos y pruebas con visitantes.", "imagen": "sala-tic.jpg", "alt": "Sala TIC de Maloka con computadores" },
+      { "dia": "26", "mes": "sept. 2026", "categoria": "Cine Domo", "color": "cielo", "titulo": "Nueva función en el Cine Domo", "texto": "Un estreno para toda la familia.", "imagen": "campana-astronauta.jpg", "alt": "Pieza gráfica con una astronauta rodeada de mariposas y plantas" },
+      { "dia": "18", "mes": "sept. 2026", "categoria": "Educación", "color": "menta", "titulo": "Docentes que convierten el aula en laboratorio", "texto": "Historias de maestras y maestros.", "imagen": "laboratorio-familia.jpg", "alt": "Mediadora explicando un experimento a una familia" }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+---
+/* Panel de horario de hoy, abajo a la derecha del hero (como louvre.fr): fondo noche, etiqueta en lavanda,
+   estado de hoy, horas grandes y dos enlaces («Prepara tu visita», «Cómo llegar»). Sin botón: el botón está en el menú.
+   Se calcula con la hora de Bogotá; los festivos no se detectan. */
+import site from '../../data/site.json';
+import d from '../../data/n/home.json';
+import Icon from '../ui/Icon.astro';
+import { ruta } from '../../lib/rutas.js';
+const { class: cls = '' } = Astro.props;
+const s = site.horarios.semana;
+---
+<aside class:list={['nhr n-noche', cls]} aria-label="Horario de hoy" data-nhr data-semana={`${s.abre}-${s.cierra}`} data-finde={`${site.horarios.finde.abre}-${site.horarios.finde.cierra}`}>
+  <div class="nhr-hoy">
+    <p class="nhr-t">{d.horario.titulo}</p>
+    <p class="nhr-estado" data-nhr-estado><span class="nhr-dot" aria-hidden="true"></span><span data-nhr-txt>Hoy abrimos</span></p>
+    <p class="nhr-horas t-num"><span data-nhr-abre>11:00 a. m.</span><Icon name="arrow" size="20" /><span data-nhr-cierra>5:00 p. m.</span></p>
+    <p class="nhr-venta">{site.horarios.ventaHasta}</p>
+  </div>
+  <ul class="nhr-links">
+    {d.horario.enlaces.map((l) => <li><a href={ruta(l.ruta)}><span>{l.texto}</span><Icon name="arrow" size="20" /></a></li>)}
+  </ul>
+</aside>
+
+<style>
+  .nhr { display: grid; grid-template-columns: auto auto; gap: 24px 36px; padding: 28px 32px; }
+  .nhr-hoy { display: grid; gap: 6px; padding-right: 36px; border-right: 1px solid var(--n-linea); }
+  .nhr-t { font-size: 20px; font-weight: 600; color: var(--n-lavanda); }
+  .nhr-estado { display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--n-texto2-osc); }
+  .nhr-dot { width: 9px; height: 9px; background: var(--n-menta); }
+  .nhr[data-cerrado] .nhr-dot { background: var(--n-salmon); }
+  .nhr-horas { display: flex; align-items: center; gap: 12px; font-size: 28px; font-weight: 700; white-space: nowrap; }
+  .nhr-horas :global(.mk-ic) { color: var(--n-amarillo); }
+  .nhr-venta { font-size: 13px; color: var(--n-texto2-osc); }
+  .nhr-links { display: grid; align-content: center; gap: 4px; min-width: 210px; }
+  .nhr-links a { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 52px; border-bottom: 1px solid var(--n-linea); font-weight: 700; color: #fff; }
+  .nhr-links a:hover { color: var(--n-amarillo); }
+  .nhr-links a :global(.mk-ic) { transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .nhr-links a:hover :global(.mk-ic) { transform: translateX(4px); }
+  @media (max-width: 767px) {
+    .nhr { grid-template-columns: 1fr; padding: 24px 20px; gap: 16px; }
+    .nhr-hoy { padding-right: 0; border-right: 0; padding-bottom: 16px; border-bottom: 1px solid var(--n-linea); }
+    .nhr-horas { font-size: 24px; }
+  }
+</style>
+
+<script>
+  const fmt = (hm) => { const [h, m] = hm.split(':').map(Number); return `${((h + 11) % 12) + 1}:${String(m).padStart(2, '0')} ${h >= 12 ? 'p. m.' : 'a. m.'}`; };
+  const min = (hm) => { const [h, m] = hm.split(':').map(Number); return h * 60 + m; };
+  document.querySelectorAll('[data-nhr]').forEach((el) => {
+    const ahora = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Bogota' }));
+    const finde = ahora.getDay() === 0 || ahora.getDay() === 6;
+    const [abre, cierra] = (finde ? el.dataset.finde : el.dataset.semana).split('-');
+    const m = ahora.getHours() * 60 + ahora.getMinutes();
+    el.querySelector('[data-nhr-abre]').textContent = fmt(abre);
+    el.querySelector('[data-nhr-cierra]').textContent = fmt(cierra);
+    const txt = el.querySelector('[data-nhr-txt]');
+    if (m < min(abre)) txt.textContent = 'Hoy abrimos';
+    else if (m < min(cierra)) txt.textContent = 'Abierto ahora';
+    else { txt.textContent = 'Cerrado ahora · Así abrimos hoy'; el.setAttribute('data-cerrado', ''); }
+  });
+</script>

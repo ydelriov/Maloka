@@ -1,0 +1,168 @@
+---
+/* Header en dos niveles (como louvre.fr). Arriba: buscar, «Qué hay hoy», idioma, logo al centro y el único botón
+   («Compra tus entradas», amarillo). Abajo: las cinco secciones y «Más», que abre el menú completo.
+   variante: «noche» · «hueso» · «blanco». ≤ 1100 px: menú, logo y botón; el menú completo es un panel a pantalla
+   completa con acordeones, horario de hoy, trampa de foco y cierre con Esc.
+   También activa la aparición al hacer scroll ([data-rv]) de toda la página. */
+import nav from '../../data/nav.json';
+import site from '../../data/site.json';
+import Logo from '../ui/Logo.astro';
+import Icon from '../ui/Icon.astro';
+import { ruta } from '../../lib/rutas.js';
+const { variante = 'noche', inicio = '#', fijo = true } = Astro.props;
+---
+<header class:list={['nh', `nh--${variante}`, fijo && 'nh--fijo']} data-nh>
+  <div class="mk-w nh-1">
+    <div class="nh-izq">
+      <button type="button" class="nh-burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="n-menu" data-nm-abrir><Icon name="menu" /></button>
+      <button type="button" class="nh-util nh-desk" aria-label="Buscar"><Icon name="search" size="20" /><span>Buscar</span></button>
+      <a class="nh-util nh-desk" href={ruta('Agéndate')}><Icon name="cal" size="20" /><span>Qué hay hoy</span></a>
+      <a class="nh-util nh-desk" href="#" aria-label="Idioma: español. Cambiar a inglés"><span>ES</span><span class="nh-sep" aria-hidden="true">|</span><span>EN</span></a>
+    </div>
+    <a class="nh-logo" href={inicio} aria-label="Maloka, ir al inicio"><Logo size={46} /></a>
+    <div class="nh-der">
+      <a class="nh-btn" href={site.entradas.url} target="_blank" rel="noopener"><Icon name="ticket" size="20" /><span>{site.entradas.texto}</span><span class="sr-only"> (se abre en otra pestaña)</span></a>
+    </div>
+  </div>
+  <nav class="mk-w nh-2" aria-label="Principal">
+    <ul>
+      {nav.items.map((it) => <li><a href={ruta(it.label)}>{it.label}</a></li>)}
+      <li class="nh-mas-li"><button type="button" class="nh-mas" aria-expanded="false" aria-controls="n-menu" data-nm-abrir>Más<Icon name="menu" size="20" /></button></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="nm" id="n-menu" role="dialog" aria-modal="true" aria-label="Menú" hidden data-nm>
+  <div class="mk-w nm-top">
+    <a class="nm-logo" href={inicio} aria-label="Maloka, ir al inicio"><Logo size={38} /></a>
+    <button type="button" class="nh-burger nm-cerrar" aria-label="Cerrar menú" data-nm-cerrar><Icon name="close" /></button>
+  </div>
+  <div class="mk-w nm-body">
+    <div class="nm-cols">
+      {nav.items.map((it) => (
+        <div class="nm-col">
+          {it.links.length > 1 ? (
+            <>
+              <button type="button" class="nm-trig" aria-expanded="false" aria-controls={`nm-${it.id}`}>{it.label}<Icon name="down" class="nm-chev" /></button>
+              <ul class="nm-sub" id={`nm-${it.id}`}>{it.links.map((l) => <li><a href={ruta(l.label)}>{l.label}</a></li>)}</ul>
+            </>
+          ) : <a class="nm-trig" href={ruta(it.label)}>{it.label}</a>}
+        </div>
+      ))}
+    </div>
+    <div class="nm-hoy">
+      <p class="nm-hoy-t">Horarios</p>
+      <p><b>{site.horarios.semana.dias}</b> {site.horarios.semana.texto}</p>
+      <p><b>{site.horarios.finde.dias}</b> {site.horarios.finde.texto}</p>
+      <p class="nm-hoy-x">{site.horarios.ventaHasta}</p>
+      <p class="nm-hoy-x">{site.direccion} · {site.telefono}</p>
+    </div>
+  </div>
+  <div class="mk-w nm-cta"><a class="nh-btn nh-btn--bloque" href={site.entradas.url} target="_blank" rel="noopener">{site.entradas.texto}<span class="sr-only"> (se abre en otra pestaña)</span></a></div>
+</div>
+
+<style>
+  .nh { position: relative; z-index: 60; }
+  .nh--fijo { position: sticky; top: 0; }
+  .nh--noche { background: var(--n-noche); color: #fff; }
+  .nh--hueso { background: var(--mk-hueso); color: var(--n-noche); }
+  .nh--blanco { background: #fff; color: var(--n-noche); border-bottom: 1px solid var(--mk-neutro-200); }
+  .nh-1 { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 76px; }
+  .nh-izq { display: flex; align-items: center; gap: 28px; }
+  .nh-util { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0; border: 0; background: none; color: inherit; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+  .nh-util:hover span:not(.nh-sep) { text-decoration: underline; text-underline-offset: 5px; }
+  .nh-sep { opacity: .5; }
+  .nh-logo { display: inline-flex; color: inherit; justify-self: center; }
+  .nh-der { display: flex; justify-content: flex-end; }
+  .nh-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: var(--mk-r-pill); background: var(--n-amarillo); color: var(--n-noche); font-size: 15px; font-weight: 700; white-space: nowrap; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida), box-shadow var(--mk-t-rapida); }
+  .nh--noche .nh-btn:hover, .nm .nh-btn:hover { background: #fff; }
+  .nh--hueso .nh-btn, .nh--blanco .nh-btn { box-shadow: inset 0 0 0 2px var(--n-noche); }
+  .nh--hueso .nh-btn:hover, .nh--blanco .nh-btn:hover { background: var(--n-noche); color: #fff; }
+  .nh-btn--bloque { width: 100%; height: 52px; }
+  .nh-2 { border-top: 1px solid currentColor; border-color: color-mix(in srgb, currentColor 18%, transparent); }
+  .nh-2 ul { display: flex; justify-content: center; align-items: center; gap: 40px; height: 60px; }
+  .nh-2 a, .nh-mas { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0; border: 0; background: none; color: inherit; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; position: relative; }
+  .nh-2 a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 6px; height: 2px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform var(--mk-t) var(--mk-ease); }
+  .nh-2 a:hover::after { transform: scaleX(1); }
+  .nh-mas-li { padding-left: 40px; border-left: 1px solid; border-color: color-mix(in srgb, currentColor 30%, transparent); }
+  .nh-burger { display: none; width: 44px; height: 44px; place-items: center; padding: 0; border: 0; background: none; color: inherit; cursor: pointer; }
+
+  .nm { position: fixed; inset: 0; z-index: 300; display: flex; flex-direction: column; background: var(--n-noche); color: #fff; }
+  .nm[hidden] { display: none; }
+  .nm :focus-visible { outline: 3px solid var(--n-lavanda); }
+  .nm-top { display: flex; align-items: center; justify-content: space-between; height: 76px; flex: none; border-bottom: 1px solid var(--n-linea); }
+  .nm-logo { display: inline-flex; color: #fff; }
+  .nm-cerrar { display: grid; }
+  .nm-body { flex: 1; overflow-y: auto; display: grid; grid-template-columns: 8fr 4fr; gap: 40px 64px; padding-block: 40px; align-content: start; }
+  .nm-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; align-content: start; }
+  .nm-trig { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 48px; padding: 0 0 8px; border: 0; border-bottom: 2px solid var(--n-lavanda); background: none; color: var(--n-lavanda); font: inherit; font-size: 22px; font-weight: 700; text-align: left; cursor: default; }
+  .nm-trig :global(.nm-chev) { display: none; }
+  .nm-sub { display: grid; padding-top: 10px; }
+  .nm-sub a { display: flex; align-items: center; min-height: 40px; font-size: 16px; font-weight: 600; color: #fff; }
+  .nm-sub a:hover { color: var(--n-amarillo); }
+  .nm-hoy { display: grid; gap: 10px; align-content: start; padding: 28px; background: var(--n-carbon); font-size: 15px; }
+  .nm-hoy-t { font-size: 20px; font-weight: 600; color: var(--n-lavanda); }
+  .nm-hoy b { display: block; }
+  .nm-hoy-x { color: var(--n-texto2-osc); font-size: 14px; }
+  .nm-cta { display: none; flex: none; padding-block: 12px calc(12px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--n-linea); }
+
+  @media (max-width: 1100px) {
+    .nh-desk, .nh-2 { display: none; }
+    .nh-burger { display: grid; }
+    .nh-1 { height: 68px; grid-template-columns: 44px 1fr auto; gap: 12px; }
+    .nh-logo { justify-self: start; }
+    .nm-body { grid-template-columns: 1fr; padding-block: 16px 24px; gap: 24px; }
+    .nm-cols { grid-template-columns: 1fr; gap: 0; }
+    .nm-trig { cursor: pointer; border-bottom: 1px solid var(--n-linea); color: #fff; min-height: 60px; padding: 0; }
+    .nm-trig :global(.nm-chev) { display: block; transition: transform var(--mk-t-rapida); }
+    .nm-trig[aria-expanded="true"] :global(.nm-chev) { transform: rotate(180deg); }
+    .nm-sub[data-cerrado] { display: none; }
+    .nm-cta { display: block; }
+  }
+  @media (max-width: 399px) { .nh-btn:not(.nh-btn--bloque) { padding: 0 12px; font-size: 13px; } .nh-btn:not(.nh-btn--bloque) :global(.mk-ic) { display: none; } }
+</style>
+
+<script>
+  /* Aparición al hacer scroll */
+  document.documentElement.classList.add('n-js');
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px' }) : null;
+  document.querySelectorAll('[data-rv]').forEach((el) => (io ? io.observe(el) : el.classList.add('is-in')));
+
+  /* Menú completo */
+  const panel = document.querySelector('[data-nm]');
+  const abridores = [...document.querySelectorAll('[data-nm-abrir]')];
+  const cerrar = panel.querySelector('[data-nm-cerrar]');
+  const movil = window.matchMedia('(max-width: 1100px)');
+  let origen = null;
+  const fuera = () => [...document.body.children].filter((el) => el !== panel && el.tagName !== 'SCRIPT');
+  const enfocables = () => [...panel.querySelectorAll('a[href], button:not([disabled])')].filter((el) => el.offsetParent !== null);
+  const subs = [...panel.querySelectorAll('.nm-trig[aria-controls]')];
+  const plegar = () => subs.forEach((b) => { const ul = document.getElementById(b.getAttribute('aria-controls')); if (movil.matches) { b.setAttribute('aria-expanded', 'false'); ul.setAttribute('data-cerrado', ''); } else { b.setAttribute('aria-expanded', 'true'); ul.removeAttribute('data-cerrado'); } });
+  function abrir(e) {
+    origen = e.currentTarget; plegar();
+    panel.hidden = false; abridores.forEach((b) => b.setAttribute('aria-expanded', 'true'));
+    document.body.style.overflow = 'hidden'; fuera().forEach((el) => el.setAttribute('inert', ''));
+    cerrar.focus();
+  }
+  function cerrarMenu() {
+    panel.hidden = true; abridores.forEach((b) => b.setAttribute('aria-expanded', 'false'));
+    document.body.style.overflow = ''; fuera().forEach((el) => el.removeAttribute('inert'));
+    if (origen && origen.offsetParent !== null) origen.focus(); else abridores.find((b) => b.offsetParent !== null)?.focus();
+  }
+  abridores.forEach((b) => b.addEventListener('click', abrir));
+  cerrar.addEventListener('click', cerrarMenu);
+  panel.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { cerrarMenu(); return; }
+    if (e.key !== 'Tab') return;
+    const f = enfocables(), a = f[0], z = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); }
+    else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); }
+  });
+  subs.forEach((b) => b.addEventListener('click', () => {
+    if (!movil.matches) return;
+    const ul = document.getElementById(b.getAttribute('aria-controls'));
+    const abierto = b.getAttribute('aria-expanded') === 'true';
+    b.setAttribute('aria-expanded', String(!abierto));
+    abierto ? ul.setAttribute('data-cerrado', '') : ul.removeAttribute('data-cerrado');
+  }));
+</script>

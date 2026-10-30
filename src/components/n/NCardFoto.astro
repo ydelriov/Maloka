@@ -1,0 +1,39 @@
+---
+/* Tarjeta de foto alta con el título encima y ↗ (como museoreinasofia.es): la foto se oscurece con un velo plano y se
+   aclara en hover; toda la tarjeta es el enlace. Opcional: etiqueta pastel arriba y una línea de texto. */
+import { Picture } from 'astro:assets';
+import Icon from '../ui/Icon.astro';
+import { img } from '../../lib/images.js';
+const { image, alt = '', titulo, texto, etiqueta, color, href = '#', ratio = '4 / 5', sizes = '(max-width: 767px) 82vw, 30vw', recorte = false, nivel = 3 } = Astro.props;
+const H = `h${nivel}`;
+---
+<a class:list={['ncf', recorte && 'ncf--recorte']} href={href} style={`--ncf-r:${ratio}`}>
+  <span class="n-foto n-zoom ncf-foto">
+    <Picture src={img(image)} alt={alt} formats={['avif', 'webp']} widths={[342, 560, 800]} sizes={sizes} loading="lazy" decoding="async" />
+  </span>
+  <span class="ncf-velo" aria-hidden="true"></span>
+  {etiqueta && <span class:list={['n-tag', `n-tag--${color}`, 'ncf-tag']}>{etiqueta}</span>}
+  <span class="ncf-pie">
+    <span class="ncf-txt"><H class="ncf-t">{titulo}</H>{texto && <span class="ncf-x">{texto}</span>}</span>
+    <Icon name="ext" size="28" class="ncf-ic" />
+  </span>
+</a>
+
+<style>
+  .ncf { position: relative; display: block; aspect-ratio: var(--ncf-r); overflow: hidden; color: #fff; background: var(--n-noche); }
+  .ncf-foto { position: absolute; inset: 0; }
+  .ncf--recorte .ncf-foto { background: var(--n-amarillo); }
+  .ncf--recorte .ncf-foto :global(img) { object-fit: contain; object-position: center bottom; }
+  .ncf-velo { position: absolute; inset: 0; background: rgba(35, 27, 43, .42); transition: background-color var(--mk-t) var(--mk-ease); }
+  .ncf::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 55%; background: rgba(35, 27, 43, .45); pointer-events: none; }
+  .ncf:hover .ncf-velo { background: rgba(35, 27, 43, .12); }
+  .ncf-tag { position: absolute; left: 20px; top: 20px; z-index: 2; }
+  .ncf-pie { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; padding: 24px; }
+  .ncf-txt { display: grid; gap: 6px; }
+  .ncf-t { margin: 0; font-size: var(--n-sub); line-height: 1.2; font-weight: 700; }
+  .ncf-x { font-size: 15px; color: #F4F1EC; }
+  .ncf :global(.ncf-ic) { flex: none; transition: transform var(--mk-t) var(--mk-ease); }
+  .ncf:hover :global(.ncf-ic) { transform: translate(4px, -4px); }
+  .ncf:focus-visible { outline: 3px solid var(--n-lavanda-osc); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .ncf:hover :global(.ncf-ic) { transform: none; } }
+</style>
