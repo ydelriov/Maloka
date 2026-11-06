@@ -1,9 +1,9 @@
 ---
 /* V13 · Mezcla elegida (Design System v3 «Noche y pastel»), a partir de la revisión de V10, V11 y V12.
-   Header blanco de V12 con más contraste en el mega menú (panel hueso con línea noche), hero a sangre de V10 con el
+   Header blanco de V12, hero a sangre de V10 con el
    horario, «Imperdibles» de V10 (una grande y tres), agenda de V10 (foto con la fecha encima) sobre noche, «Ven en
    grupo» de V11 en bloque salmón, Descubre de V11 en menta con un mapa de los territorios a los que llega Maloka en
-   lugar de las cifras, Crea de V11 en noche con filas y noticias. Un solo botón: «Compra tus entradas». */
+   lugar de las cifras (mapa pequeño a la izquierda, enlaces a la derecha), Crea de V11 en noche con filas y noticias. Un solo botón: «Compra tus entradas». */
 import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import NHeader from '../components/n/NHeader.astro';
@@ -25,7 +25,7 @@ const crea = d.crea.items.map((t) => ({ titulo: t, href: ruta(t) }));
 const t = d.territorios;
 ---
 <Base variante="v13" title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." precargarHero clase="nn">
-  <NHeader variante="blanco" contraste inicio={url('v13/')} />
+  <NHeader variante="blanco" inicio={url('v13/')} />
   <main id="contenido">
     <NHero variante="foto" />
 
@@ -86,20 +86,18 @@ const t = d.territorios;
 
     <section class="n-sec v13-menta" aria-labelledby="v13-de">
       <div class="mk-w v13-de">
-        <div class="v13-de-head">
-          <div class="v13-col">
-            <p class="n-ante v13-ante">Descubre Maloka</p>
-            <h2 class="n-display" id="v13-de" data-rv="barrido">{t.titulo}</h2>
-          </div>
+        <div class="v13-col">
+          <p class="n-ante v13-ante">Descubre Maloka</p>
+          <h2 class="n-display" id="v13-de" data-rv="barrido">{t.titulo}</h2>
           <p class="n-lead v13-lead">{t.texto}</p>
+          <div class="v13-mapa"><NMapa items={t.items} sede={t.sede} /></div>
+          <span class="n-ej v13-ej">{t.nota}</span>
         </div>
-        <NMapa items={t.items} sede={t.sede} />
-        <span class="n-ej v13-ej">{t.nota}</span>
         <ul class="v13-de-l">
           {d.descubre.items.map((it, i) => (
             <li data-rv style={`--d:${i}`}>
               <a href={ruta(it.titulo)} class="v13-de-a">
-                <span class="n-foto n-zoom v13-de-f"><Picture src={img(it.imagen)} alt={it.alt} formats={['avif', 'webp']} widths={[342, 560]} sizes="(max-width: 767px) 45vw, 25vw" loading="lazy" /></span>
+                <span class="n-foto n-zoom v13-de-f"><Picture src={img(it.imagen)} alt={it.alt} formats={['avif', 'webp']} widths={[342, 560]} sizes="(max-width: 767px) 45vw, 28vw" loading="lazy" /></span>
                 <h3 class="v13-de-t">{it.titulo}<Icon name="arrow" size="20" /></h3>
                 <span class="v13-de-x">{it.texto}</span>
               </a>
@@ -167,10 +165,10 @@ const t = d.territorios;
   .v13-gr, .v13-cr { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
 
   /* Descubre: mapa de territorios en lugar de las cifras */
-  .v13-de { display: grid; gap: 48px; }
-  .v13-de-head { display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: end; }
-  .v13-ej { justify-self: start; margin-top: -24px; }
-  .v13-de-l { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px 24px; padding-top: 48px; border-top: 2px solid var(--n-noche); }
+  .v13-de { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
+  .v13-mapa { margin-top: 24px; padding-top: 24px; border-top: 2px solid var(--n-noche); }
+  .v13-ej { justify-self: start; margin-top: 0; }
+  .v13-de-l { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 24px; }
   .v13-de-a { display: grid; gap: 8px; color: inherit; }
   .v13-de-f { aspect-ratio: 4 / 3; margin-bottom: 8px; }
   .v13-de-t { margin: 0; font-size: var(--n-sub); line-height: 1.2; font-weight: 700; }
@@ -183,11 +181,9 @@ const t = d.territorios;
   .v13-no { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 
   @media (max-width: 1024px) {
-    .v13-np, .v13-gr, .v13-cr, .v13-de-head { grid-template-columns: 1fr; gap: 40px; }
-    .v13-de-head { gap: 16px; }
+    .v13-np, .v13-gr, .v13-cr, .v13-de { grid-template-columns: 1fr; gap: 40px; }
     .v13-np-g { min-height: 0; } .v13-np-gf { aspect-ratio: 16 / 10; min-height: 0; }
     .v13-ag { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .v13-de-l { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 767px) {
     .v13-np-c { grid-template-columns: 120px 1fr; gap: 14px; }
