@@ -12,7 +12,7 @@ const dibujo = [...deps.filter((d) => d.id !== 'sap' && d.id !== 'dc'), ...deps.
 const s = deps.find((d) => d.id === sede);
 const nombre = (id) => deps.find((d) => d.id === id)?.nombre ?? id;
 ---
-<div class="nma" data-nma>
+<div class="nma">
   <figure class="nma-fig">
     <svg class="nma-svg" viewBox={mapa.viewBox} role="img" aria-label={`${etiqueta}: ${items.map((t) => nombre(t.id)).join(', ')}.`}>
       {dibujo.map((d) => (
