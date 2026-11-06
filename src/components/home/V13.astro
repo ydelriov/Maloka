@@ -1,9 +1,10 @@
 ---
 /* V13 · Mezcla elegida (Design System v3 «Noche y pastel»), a partir de la revisión de V10, V11 y V12.
-   Header blanco de V12, hero a sangre de V10 con el
-   horario, «Imperdibles» de V10 (una grande y tres), agenda de V10 (foto con la fecha encima) sobre noche, «Ven en
-   grupo» de V11 en bloque salmón, Descubre de V11 en menta con un mapa de los territorios a los que llega Maloka en
-   lugar de las cifras (mapa pequeño a la izquierda, enlaces a la derecha), Crea de V11 en noche con filas y noticias. Un solo botón: «Compra tus entradas». */
+   Header blanco de V12 con el panel del menú en hueso, hero a sangre de V10 con el horario, «Imperdibles» de V10
+   (una grande y tres), agenda de V12 (filas con fecha grande) sobre blanco, «Ven en grupo» de V12 (carrusel de
+   tarjetas altas sobre noche), Descubre de V11 en menta con un mapa pequeño de los territorios a los que llega Maloka
+   a la izquierda y los enlaces a la derecha, Crea de V11 en noche con filas y noticias. Un solo botón: «Compra tus
+   entradas». */
 import { Picture } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import NHeader from '../../components/n/NHeader.astro';
@@ -12,6 +13,8 @@ import NActividad from '../../components/n/NActividad.astro';
 import NFiltros from '../../components/n/NFiltros.astro';
 import NFilas from '../../components/n/NFilas.astro';
 import NMapa from '../../components/n/NMapa.astro';
+import NCarrusel from '../../components/n/NCarrusel.astro';
+import NCardFoto from '../../components/n/NCardFoto.astro';
 import NFooter from '../../components/n/NFooter.astro';
 import Icon from '../../components/ui/Icon.astro';
 import d from '../../data/n/home.json';
@@ -23,12 +26,11 @@ import '../../styles/noche.css';
 const { grupo } = Astro.props;
 const pre = grupo ? `${grupo}/` : '';
 const [grande, ...chicas] = d.noTePierdas.items;
-const grupos = d.grupos.items.map((g) => ({ titulo: g.titulo, texto: g.texto, icono: g.icono, href: ruta(g.titulo) }));
 const crea = d.crea.items.map((t) => ({ titulo: t, href: ruta(t) }));
 const t = d.territorios;
 ---
 <Base variante="v13" grupo={grupo} title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." precargarHero clase="nn">
-  <NHeader variante="blanco" inicio={url(grupo ? pre : 'v13/')} />
+  <NHeader variante="blanco" panel="hueso" inicio={url(grupo ? pre : 'v13/')} />
   <main id="contenido">
     <NHero variante="foto" />
 
@@ -59,32 +61,33 @@ const t = d.territorios;
       </div>
     </section>
 
-    <section class="n-sec n-noche" aria-labelledby="v13-ag">
+    <section class="n-sec n-blanco" aria-labelledby="v13-ag">
       <div class="mk-w">
         <div class="n-head">
           <div><p class="n-ante">Agéndate</p><h2 class="n-titulo" id="v13-ag">{d.agenda.titulo}</h2></div>
-          <NFiltros filtros={d.agenda.filtros} objetivo="v13-ag-l" tono="oscuro" />
+          <NFiltros filtros={d.agenda.filtros} objetivo="v13-ag-l" />
         </div>
         <ul class="v13-ag" id="v13-ag-l">
           {d.agenda.items.map((a, i) => (
             <li data-filtro={a.filtro} data-rv style={`--d:${i}`}>
-              <NActividad image={a.imagen} alt={a.alt} dia={a.dia} mes={a.mes} categoria={a.categoria} color={a.color} titulo={a.titulo} texto={a.texto} meta={`${a.hora} · ${a.lugar} · ${a.costo}`} href={ruta('Programación')} ratio="4 / 5" />
+              <a class="v13-ag-a" href={ruta('Programación')} style={`--c:var(--n-${a.color})`}>
+                <span class="v13-ag-f"><b class="t-num">{a.dia}</b><span>{a.mes}</span></span>
+                <span class="v13-ag-t"><span class={`n-tag n-tag--${a.color}`}>{a.categoria}</span><h3>{a.titulo}</h3><span class="v13-ag-x">{a.texto}</span></span>
+                <span class="v13-ag-m"><span><Icon name="clock" size="18" />{a.hora}</span><span><Icon name="pin" size="18" />{a.lugar}</span><span><Icon name="ticket" size="18" />{a.costo}</span></span>
+                <Icon name="ext" size="28" class="v13-ag-ic" />
+              </a>
             </li>
           ))}
         </ul>
-        <div class="v13-pie"><a class="n-a" href={ruta(d.agenda.enlace)}>{d.agenda.enlace}<Icon name="arrow" size="20" /></a><span class="n-ej">Contenido de ejemplo · fechas por validar</span></div>
+        <div class="v13-pie"><a class="n-b" href={ruta(d.agenda.enlace)}>{d.agenda.enlace}<Icon name="arrow" /></a><span class="n-ej">Contenido de ejemplo · fechas por validar</span></div>
       </div>
     </section>
 
-    <section class="n-sec v13-salmon" aria-labelledby="v13-gr">
-      <div class="mk-w v13-gr">
-        <div class="v13-col">
-          <p class="n-ante v13-ante">Ven en grupo</p>
-          <h2 class="n-display" id="v13-gr" data-rv="barrido">Mejor en compañía.</h2>
-          <p class="n-lead v13-lead">{d.grupos.texto}</p>
-        </div>
-        <NFilas items={grupos} color="amarillo" />
-      </div>
+    <section class="n-sec n-noche" aria-labelledby="v13-gr">
+      <div class="mk-w"><div class="n-head"><div><p class="n-ante">Ven en grupo</p><h2 class="n-titulo" id="v13-gr">Maloka se vive mejor en compañía.</h2><p class="n-lead">{d.grupos.texto}</p></div></div></div>
+      <NCarrusel etiqueta="Ven en grupo" ancho="min(340px, 26vw)" tono="oscuro">
+        {d.grupos.items.map((g) => <li><NCardFoto image={g.imagen} alt={g.alt} titulo={g.titulo} texto={g.texto} href={ruta(g.titulo)} ratio="3 / 4" recorte={g.recorte} sizes="(max-width: 767px) 82vw, 26vw" /></li>)}
+      </NCarrusel>
     </section>
 
     <section class="n-sec v13-menta" aria-labelledby="v13-de">
@@ -154,18 +157,29 @@ const t = d.territorios;
   .v13-np-h3 { margin: 0; font-size: var(--n-sub); line-height: 1.2; font-weight: 700; }
   .v13-np-c:hover .v13-np-h3 { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 
-  /* Agenda (V10): foto con la fecha encima */
-  .v13-ag { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
-  .v13-ag :global(.nac-x), .v13-ag :global(.nac-m) { color: var(--n-texto2-osc); opacity: 1; }
+  /* Agenda (V12): filas con fecha grande */
+  .v13-ag { border-top: 2px solid var(--n-noche); }
+  .v13-ag li { border-bottom: 2px solid var(--n-noche); }
+  .v13-ag-a { display: grid; grid-template-columns: 120px 1fr 260px auto; gap: 32px; align-items: center; padding: 28px 16px; color: inherit; transition: background-color var(--mk-t-rapida); }
+  .v13-ag-a:hover, .v13-ag-a:focus-visible { background: var(--c); }
+  .v13-ag-f { display: grid; line-height: 1; }
+  .v13-ag-f b { font-size: 64px; font-weight: 700; letter-spacing: -0.03em; }
+  .v13-ag-f span { font-weight: 600; margin-top: 6px; }
+  .v13-ag-t { display: grid; gap: 8px; }
+  .v13-ag-t h3 { margin: 0; font-size: var(--n-sub); line-height: 1.2; font-weight: 700; }
+  .v13-ag-x { color: var(--n-texto2); }
+  .v13-ag-m { display: grid; gap: 6px; font-size: 15px; font-weight: 600; }
+  .v13-ag-m span { display: inline-flex; align-items: center; gap: 8px; }
+  .v13-ag :global(.v13-ag-ic) { transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .v13-ag-a:hover :global(.v13-ag-ic) { transform: translate(4px, -4px); }
   .v13-pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 40px; }
   .v13-pie .n-ej { margin: 0; }
 
   /* Bloques pastel (V11) */
-  .v13-salmon { background: var(--n-salmon); color: var(--n-noche); }
   .v13-menta { background: var(--n-menta); color: var(--n-noche); }
   .v13-ante, .v13-lead { color: var(--n-noche); }
   .v13-col { display: grid; gap: 16px; align-content: start; }
-  .v13-gr, .v13-cr { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
+  .v13-cr { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
 
   /* Descubre: mapa de territorios en lugar de las cifras */
   .v13-de { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
@@ -184,16 +198,19 @@ const t = d.territorios;
   .v13-no { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 
   @media (max-width: 1024px) {
-    .v13-np, .v13-gr, .v13-cr, .v13-de { grid-template-columns: 1fr; gap: 40px; }
+    .v13-np, .v13-cr, .v13-de { grid-template-columns: 1fr; gap: 40px; }
     .v13-np-g { min-height: 0; } .v13-np-gf { aspect-ratio: 16 / 10; min-height: 0; }
-    .v13-ag { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .v13-ag-a { grid-template-columns: 96px 1fr auto; }
+    .v13-ag-m { grid-column: 2; grid-row: 2; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+    .v13-ag-f b { font-size: 48px; }
   }
   @media (max-width: 767px) {
     .v13-np-c { grid-template-columns: 120px 1fr; gap: 14px; }
     .v13-np-gt { padding: 24px; }
     .v13-no { grid-template-columns: 1fr; }
-    .v13-ag { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 78%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: calc(-1 * var(--mk-margen)); padding-inline: var(--mk-margen); scroll-padding-inline: var(--mk-margen); scrollbar-width: none; }
-    .v13-ag > li { scroll-snap-align: start; }
+    .v13-ag-a { grid-template-columns: 64px 1fr; gap: 12px 16px; padding: 20px 4px; }
+    .v13-ag-f b { font-size: 38px; }
+    .v13-ag :global(.v13-ag-ic) { display: none; }
     .v13-de-l { gap: 24px 12px; }
   }
 </style>
