@@ -7,9 +7,13 @@ import mapa from '../../data/n/colombia.json';
 const { items = [], sede = 'dc', etiqueta = 'Mapa de Colombia con los territorios de Maloka' } = Astro.props;
 const prog = Object.fromEntries(items.map((t) => [t.id, t.programa]));
 const deps = mapa.departamentos;
-// San Andrés no cabe a escala en este mapa; Bogotá se dibuja al final para que quede encima de Cundinamarca
+// San Andrés y Providencia van ampliadas en un recuadro arriba a la izquierda (a escala no se verían);
+// Bogotá se dibuja al final para que quede encima de Cundinamarca
 const dibujo = [...deps.filter((d) => d.id !== 'sap' && d.id !== 'dc'), ...deps.filter((d) => d.id === 'dc')];
 const s = deps.find((d) => d.id === sede);
+const sap = deps.find((d) => d.id === 'sap');
+// Providencia no viene en el mapa base: contorno simplificado, a la misma escala del recuadro
+const providencia = 'm 0,0 3,-2.4 3.4,0.6 1.8,3.2 -0.4,3.8 -2.6,2.8 -3.2,-0.4 -2.2,-3.4 z';
 const nombre = (id) => deps.find((d) => d.id === id)?.nombre ?? id;
 ---
 <div class="nma">
@@ -18,6 +22,15 @@ const nombre = (id) => deps.find((d) => d.id === id)?.nombre ?? id;
       {dibujo.map((d) => (
         <path d={d.path} data-dep={d.id} class:list={['nma-dep', prog[d.id] && 'is-ok']}><title>{d.nombre}{prog[d.id] ? ` · ${prog[d.id]}` : ''}</title></path>
       ))}
+      {sap && (
+        <g class="nma-ins">
+          <rect x="20" y="20" width="150" height="200" />
+          <path d={sap.path} transform="translate(64 120) scale(13)" data-dep="sap" class:list={['nma-dep', prog.sap && 'is-ok']}><title>San Andrés{prog.sap ? ` · ${prog.sap}` : ''}</title></path>
+          <path d={providencia} transform="translate(118 72) scale(2.4)" data-dep="sap" class:list={['nma-dep', prog.sap && 'is-ok']}><title>Providencia{prog.sap ? ` · ${prog.sap}` : ''}</title></path>
+          <text x="32" y="198">San Andrés y</text>
+          <text x="32" y="214">Providencia</text>
+        </g>
+      )}
       {s && (
         <g class="nma-sede" transform={`translate(${s.cx} ${s.cy})`} aria-hidden="true">
           <circle r="16" class="nma-pulso" />
@@ -38,6 +51,9 @@ const nombre = (id) => deps.find((d) => d.id === id)?.nombre ?? id;
   .nma-dep { fill: rgba(255, 255, 255, .55); stroke: var(--n-noche); stroke-width: .8; stroke-linejoin: round; transition: fill var(--mk-t-rapida); }
   .nma-dep.is-ok { fill: var(--n-noche); stroke: var(--n-menta); }
   .nma-dep.is-ok:hover { fill: var(--n-amarillo); stroke: var(--n-noche); stroke-width: 1.4; }
+  .nma-ins rect { fill: none; stroke: var(--n-noche); stroke-width: 1.5; }
+  .nma-ins .nma-dep { vector-effect: non-scaling-stroke; }
+  .nma-ins text { font: 600 15px Montserrat, sans-serif; fill: var(--n-noche); }
   .nma-sede { fill: var(--n-amarillo); stroke: var(--n-noche); stroke-width: 2; pointer-events: none; }
   .nma-sede text { font: 700 24px Montserrat, sans-serif; fill: var(--n-noche); stroke: var(--n-menta); stroke-width: 6px; paint-order: stroke; }
   .nma-pulso { fill: none; stroke: var(--n-noche); stroke-width: 2; transform-origin: center; animation: nma-pulso 2.4s var(--mk-ease) infinite; }
