@@ -84,6 +84,13 @@
       "etiqueta": "V12",
       "nombre": "V12 · Explorar",
       "descripcion": "Design System v3. Casi sin botones: carruseles de fotos con ↗, agenda en filas con fecha grande y Crea en un bloque cielo. Inspirada en nhm.ac.uk y museoreinasofia.es."
+    },
+    {
+      "id": "v13",
+      "ruta": "v13/",
+      "etiqueta": "V13",
+      "nombre": "V13 · Mezcla elegida",
+      "descripcion": "Design System v3. Header blanco de V12 con mega menú contrastado, hero e Imperdibles de V10, agenda con foto y fecha, grupos y Crea de V11, y Descubre en menta con el mapa de territorios de Maloka."
     }
   ]
 }

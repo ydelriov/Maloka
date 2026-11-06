@@ -1,16 +1,16 @@
 # Maloka · prototipo navegable de la home
 
-Prototipo responsive de la home de maloka.org en **doce versiones** (V1 a V12), construido con el
+Prototipo responsive de la home de maloka.org en **trece versiones** (V1 a V13), construido con el
 Design System de Claude Design para validar el diseño antes de llevarlo a WordPress + Elementor.
 
 - Publicado: https://ydelriov.github.io/Maloka/
 
 ## Qué se publica
 
-Solo las versiones del home, en orden, de `/v1/` a `/v12/` (lista en `src/data/variantes.json`): V1 prototipo inicial
+Solo las versiones del home, en orden, de `/v1/` a `/v13/` (lista en `src/data/variantes.json`): V1 prototipo inicial
 (HTML estático en `public/v1/`), V2 editorial numerada, V3 arcos del domo, V4 panel de visita, V5 Elementor, V6 combinada,
-V7 galería a sangre, V8 paneles de color, V9 bandas de color, y V10 noche y luz, V11 bloques pastel y V12 explorar
-(Design System v3). La barra flotante de todas las pantallas salta entre
+V7 galería a sangre, V8 paneles de color, V9 bandas de color, y V10 noche y luz, V11 bloques pastel, V12 explorar
+y V13 mezcla elegida (Design System v3). La barra flotante de todas las pantallas salta entre
 ellas; en V1 se inserta con `node scripts/barra-v1.mjs`. Las páginas internas (Visítanos,
 Agéndate, Ven en grupo, Descubre, Noticias, Crea con Maloka) están ocultas en `src/ocultas/` y sus enlaces apuntan a
 `#`; para volver a publicarlas, ver `src/ocultas/README.md`.
@@ -141,3 +141,4 @@ Elementor no traen botón de pausa.
 Las etiquetas visibles «Por validar» y «Contenido de ejemplo» marcan: cifras de impacto, planes y espacios de
 grupos, detalles de servicios y accesibilidad, la agenda y las noticias. Los enlaces internos apuntan a `#` porque
 solo existe la home. La compra de entradas abre Tuboleta en otra pestaña.
+| `/v13` | Mezcla elegida | Revisión de V10–V12 | Header blanco de V12 con mega menú en hueso y línea noche (más contraste); hero a sangre e «Imperdibles» de V10; agenda de V10 (foto con la fecha encima); grupos de V11 en salmón; Descubre de V11 en menta con el mapa de territorios (`NMapa`, datos en `territorios` de `home.json`, mapa base @svg-maps/colombia CC BY 4.0) en lugar de las cifras; Crea de V11 en noche; noticias |

@@ -1,0 +1,80 @@
+---
+/* Mapa de Colombia por departamentos con los territorios a los que ha llegado Maloka (V13, en lugar de las cifras).
+   Los departamentos alcanzados van en noche; el resto, en blanco translúcido. Bogotá lleva el punto de la sede.
+   Al pasar el mouse (o el foco) por un territorio de la lista se ilumina en el mapa, y al revés.
+   Mapa base: @svg-maps/colombia (CC BY 4.0), en src/data/n/colombia.json. */
+import mapa from '../../data/n/colombia.json';
+const { items = [], sede = 'dc', etiqueta = 'Mapa de Colombia con los territorios de Maloka' } = Astro.props;
+const prog = Object.fromEntries(items.map((t) => [t.id, t.programa]));
+const deps = mapa.departamentos;
+// San Andrés no cabe a escala en este mapa; Bogotá se dibuja al final para que quede encima de Cundinamarca
+const dibujo = [...deps.filter((d) => d.id !== 'sap' && d.id !== 'dc'), ...deps.filter((d) => d.id === 'dc')];
+const s = deps.find((d) => d.id === sede);
+const nombre = (id) => deps.find((d) => d.id === id)?.nombre ?? id;
+---
+<div class="nma" data-nma>
+  <figure class="nma-fig">
+    <svg class="nma-svg" viewBox={mapa.viewBox} role="img" aria-label={`${etiqueta}: ${items.map((t) => nombre(t.id)).join(', ')}.`}>
+      {dibujo.map((d) => (
+        <path d={d.path} data-dep={d.id} class:list={['nma-dep', prog[d.id] && 'is-ok']}><title>{d.nombre}{prog[d.id] ? ` · ${prog[d.id]}` : ''}</title></path>
+      ))}
+      {s && (
+        <g class="nma-sede" transform={`translate(${s.cx} ${s.cy})`} aria-hidden="true">
+          <circle r="16" class="nma-pulso" />
+          <circle r="7" />
+          <text x="22" y="5">Maloka</text>
+        </g>
+      )}
+    </svg>
+    <figcaption class="nma-cap"><span><i class="nma-ley nma-ley--ok"></i>Territorios con presencia de Maloka</span><span><i class="nma-ley"></i>Por llegar</span></figcaption>
+  </figure>
+  <div class="nma-lista-w">
+    <p class="nma-total"><b class="t-num">{items.length}</b><span>departamentos con programas de Maloka</span></p>
+    <ul class="nma-lista">
+      {items.map((t) => <li data-dep={t.id} tabindex="0"><b>{nombre(t.id)}</b><span>{t.programa}</span></li>)}
+    </ul>
+  </div>
+</div>
+
+<style>
+  .nma { display: grid; grid-template-columns: 6fr 5fr; gap: 48px; align-items: center; }
+  .nma-fig { margin: 0; display: grid; gap: 12px; }
+  .nma-svg { width: 100%; height: auto; max-height: 700px; overflow: visible; }
+  .nma-dep { fill: rgba(255, 255, 255, .55); stroke: var(--n-noche); stroke-width: .8; stroke-linejoin: round; transition: fill var(--mk-t-rapida); }
+  .nma-dep.is-ok { fill: var(--n-noche); stroke: var(--n-menta); }
+  .nma-dep.is-ok:hover, .nma-dep.is-on { fill: var(--n-amarillo); stroke: var(--n-noche); stroke-width: 1.4; }
+  .nma-sede { fill: var(--n-amarillo); stroke: var(--n-noche); stroke-width: 2; pointer-events: none; }
+  .nma-sede text { font: 700 18px Montserrat, sans-serif; fill: var(--n-noche); stroke: var(--n-menta); stroke-width: 5px; paint-order: stroke; }
+  .nma-pulso { fill: none; stroke: var(--n-noche); stroke-width: 2; transform-origin: center; animation: nma-pulso 2.4s var(--mk-ease) infinite; }
+  @keyframes nma-pulso { from { transform: scale(.5); opacity: 1; } to { transform: scale(1.6); opacity: 0; } }
+  .nma-cap { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; font-weight: 600; }
+  .nma-cap span { display: inline-flex; align-items: center; gap: 10px; }
+  .nma-ley { width: 16px; height: 16px; background: rgba(255, 255, 255, .55); border: 1px solid var(--n-noche); }
+  .nma-ley--ok { background: var(--n-noche); }
+
+  .nma-lista-w { display: grid; gap: 20px; align-content: start; }
+  .nma-total { display: flex; align-items: flex-end; gap: 14px; padding-bottom: 20px; border-bottom: 2px solid var(--n-noche); }
+  .nma-total b { font-size: 96px; line-height: .85; font-weight: 700; letter-spacing: -0.03em; }
+  .nma-total span { font-weight: 600; max-width: 16ch; }
+  .nma-lista { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+  .nma-lista li { display: grid; gap: 2px; padding: 10px 8px; border-bottom: 1px solid rgba(35, 27, 43, .25); cursor: default; transition: background-color var(--mk-t-rapida); }
+  .nma-lista li:hover, .nma-lista li:focus-visible, .nma-lista li.is-on { background: var(--n-amarillo); }
+  .nma-lista li:focus-visible { outline: 3px solid var(--n-noche); outline-offset: 0; }
+  .nma-lista b { font-size: 16px; font-weight: 700; }
+  .nma-lista span { font-size: 14px; }
+
+  @media (max-width: 1024px) { .nma { grid-template-columns: 1fr; gap: 32px; } .nma-svg { max-height: 560px; } }
+  @media (max-width: 767px) { .nma-total b { font-size: 64px; } .nma-lista { gap: 0 12px; } .nma-lista b { font-size: 15px; } .nma-lista span { font-size: 13px; } }
+  @media (prefers-reduced-motion: reduce) { .nma-pulso { animation: none; } }
+</style>
+
+<script>
+  document.querySelectorAll('[data-nma]').forEach((m) => {
+    const marcar = (id, on) => m.querySelectorAll(`[data-dep="${id}"]`).forEach((el) => el.classList.toggle('is-on', on));
+    m.querySelectorAll('.nma-lista li, .nma-dep.is-ok').forEach((el) => {
+      const id = el.dataset.dep;
+      ['mouseenter', 'focus'].forEach((ev) => el.addEventListener(ev, () => marcar(id, true)));
+      ['mouseleave', 'blur'].forEach((ev) => el.addEventListener(ev, () => marcar(id, false)));
+    });
+  });
+</script>

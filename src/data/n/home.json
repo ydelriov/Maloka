@@ -69,5 +69,31 @@
       { "dia": "26", "mes": "sept. 2026", "categoria": "Cine Domo", "color": "cielo", "titulo": "Nueva función en el Cine Domo", "texto": "Un estreno para toda la familia.", "imagen": "campana-astronauta.jpg", "alt": "Pieza gráfica con una astronauta rodeada de mariposas y plantas" },
       { "dia": "18", "mes": "sept. 2026", "categoria": "Educación", "color": "menta", "titulo": "Docentes que convierten el aula en laboratorio", "texto": "Historias de maestras y maestros.", "imagen": "laboratorio-familia.jpg", "alt": "Mediadora explicando un experimento a una familia" }
     ]
+  },
+  "territorios": {
+    "titulo": "La ciencia transforma territorios.",
+    "texto": "Con Maloka viajera, programas en escuelas y proyectos con comunidades, la ciencia sale del domo y recorre el país.",
+    "sede": "dc",
+    "nota": "Territorios de ejemplo · por validar",
+    "items": [
+      { "id": "dc", "programa": "Sede Maloka" },
+      { "id": "cun", "programa": "Ciencia en escuelas" },
+      { "id": "boy", "programa": "Maloka viajera" },
+      { "id": "met", "programa": "Clubes de ciencia" },
+      { "id": "ant", "programa": "Maloka viajera" },
+      { "id": "atl", "programa": "Formación docente" },
+      { "id": "bol", "programa": "Maloka viajera" },
+      { "id": "lag", "programa": "Ciencia y comunidad" },
+      { "id": "cho", "programa": "Ciencia y comunidad" },
+      { "id": "vac", "programa": "Formación docente" },
+      { "id": "cau", "programa": "Clubes de ciencia" },
+      { "id": "nar", "programa": "Maloka viajera" },
+      { "id": "put", "programa": "Ciencia y territorio" },
+      { "id": "caq", "programa": "Ciencia y territorio" },
+      { "id": "ama", "programa": "Ciencia y territorio" },
+      { "id": "san", "programa": "Ciencia en escuelas" },
+      { "id": "tol", "programa": "Clubes de ciencia" },
+      { "id": "cas", "programa": "Maloka viajera" }
+    ]
   }
 }

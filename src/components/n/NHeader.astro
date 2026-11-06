@@ -4,16 +4,17 @@
    Escritorio (> 1200 px): cada sección abre un panel a ancho completo al pasar el mouse o con Enter/Espacio;
    Esc lo cierra y devuelve el foco. ≤ 1200 px: desplegable debajo del header con submenús en acordeón.
    Estilo DS v3: esquinas rectas, iconos en cuadros pastel, horario de hoy en un recuadro noche.
-   variante: «noche» · «hueso» · «blanco». También activa la aparición al hacer scroll ([data-rv]) de la página. */
+   variante: «noche» · «hueso» · «blanco». contraste (V13): el mega menú y el desplegable móvil van en hueso con una
+   línea noche arriba, para separarlos del header blanco. También activa la aparición al hacer scroll ([data-rv]) de la página. */
 import nav from '../../data/nav.json';
 import site from '../../data/site.json';
 import Logo from '../ui/Logo.astro';
 import Icon from '../ui/Icon.astro';
 import { ruta } from '../../lib/rutas.js';
-const { variante = 'noche', inicio = '#' } = Astro.props;
+const { variante = 'noche', inicio = '#', contraste = false } = Astro.props;
 const COLOR = { visitanos: 'amarillo', agendate: 'cielo', grupo: 'salmon', descubre: 'menta', crea: 'lavanda' };
 ---
-<header class:list={['nh', `nh--${variante}`]} data-nh>
+<header class:list={['nh', `nh--${variante}`, contraste && 'nh--contraste']} data-nh>
   <div class="mk-w nh-bar">
     <a class="nh-logo" href={inicio} aria-label="Maloka, ir al inicio"><Logo size={44} /></a>
 
@@ -137,6 +138,15 @@ const COLOR = { visitanos: 'amarillo', agendate: 'cielo', grupo: 'salmon', descu
   .nmm-h span { color: var(--n-texto2-osc); }
   .nmm-venta { font-size: 13px; color: var(--n-texto2-osc); }
   .nmm-card .n-a { color: var(--n-amarillo); }
+
+  /* Contraste (V13): panel en hueso con línea noche, distinto del header blanco */
+  .nh--contraste .nmm, .nh--contraste .nh-dd { background: var(--mk-hueso); border-top: 3px solid var(--n-noche); box-shadow: 0 24px 40px rgba(35, 27, 43, .22); }
+  .nh--contraste .nmm-intro { padding-right: 32px; border-right: 2px solid rgba(35, 27, 43, .16); align-self: stretch; }
+  .nh--contraste .nmm-link { background: #fff; }
+  .nh--contraste .nmm-link:hover { background: var(--c); }
+  .nh--contraste .nh-trig[aria-expanded="true"] { background: var(--n-noche); color: #fff; }
+  .nh--contraste .nh-trig[aria-expanded="true"]::after { transform: scaleX(0); }
+  .nh--contraste .nh-dd-list > li { border-color: rgba(35, 27, 43, .2); }
 
   /* Desplegable ≤ 1200 px */
   .nh-dd { position: absolute; left: 0; right: 0; top: 100%; max-height: calc(100dvh - 72px); overflow-y: auto; background: var(--nh-bg); color: var(--nh-tx); border-top: 1px solid var(--nh-ln); box-shadow: 0 16px 32px rgba(35, 27, 43, .14); padding-bottom: 24px; }
