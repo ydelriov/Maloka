@@ -4,7 +4,7 @@ Prototipo responsive de la home de maloka.org en **trece versiones** (V1 a V13),
 Design System de Claude Design para validar el diseño antes de llevarlo a WordPress + Elementor.
 
 - Publicado: https://ydelriov.github.io/Maloka/
-- Selección V10–V13 (sitio aparte con su propio índice y barra): https://ydelriov.github.io/Maloka/seleccion/
+- Solo V13 (sin índice ni barra de versiones): https://ydelriov.github.io/Maloka/seleccion/
 
 ## Qué se publica
 
@@ -44,7 +44,7 @@ src/
     elementor/   ElHeader · ElHero · ElPlanea · ElExperiencias · ElAgenda · ElGrupos · ElDescubre · ElCrea · ElNoticias
     sections/    HeroSlider · VisitPanel · PlaneaVisita · ViveMaloka · Agenda · VenEnGrupo · Descubre · CreaConMaloka · Noticias
   layouts/       Base.astro (SEO, Open Graph, JSON-LD Museum)
-  pages/         index (miniaturas) · v2 … v13 (V1 está en public/v1) · seleccion/ (índice y V10–V13 con su propia barra)
+  pages/         index (miniaturas) · v2 … v13 (V1 está en public/v1) · seleccion/ (solo V13, sin barra)
   components/home/ V10 · V11 · V12 · V13 (contenido de esas páginas; reciben grupo="seleccion")
   ocultas/       páginas internas fuera de publicación por ahora
 public/v1/       V1, prototipo inicial en HTML, servido tal cual

@@ -19,7 +19,7 @@ import { img } from '../../lib/images.js';
 import { ruta } from '../../lib/rutas.js';
 import { url } from '../../lib/url.js';
 import '../../styles/noche.css';
-// grupo: «seleccion» la publica en /seleccion/ con su propia barra de versiones (V10–V13)
+// grupo: «seleccion» la publica en /seleccion/ (hoy solo V13, sin barra de versiones)
 const { grupo } = Astro.props;
 const pre = grupo ? `${grupo}/` : '';
 const [grande, ...chicas] = d.noTePierdas.items;
@@ -28,7 +28,7 @@ const crea = d.crea.items.map((t) => ({ titulo: t, href: ruta(t) }));
 const t = d.territorios;
 ---
 <Base variante="v13" grupo={grupo} title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." precargarHero clase="nn">
-  <NHeader variante="blanco" inicio={url(`${pre}v13/`)} />
+  <NHeader variante="blanco" inicio={url(grupo ? pre : 'v13/')} />
   <main id="contenido">
     <NHero variante="foto" />
 

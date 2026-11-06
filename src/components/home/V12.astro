@@ -17,7 +17,7 @@ import d from '../../data/n/home.json';
 import { ruta } from '../../lib/rutas.js';
 import { url } from '../../lib/url.js';
 import '../../styles/noche.css';
-// grupo: «seleccion» la publica en /seleccion/ con su propia barra de versiones (V10–V13)
+// grupo: «seleccion» la publica en /seleccion/ (hoy solo V13, sin barra de versiones)
 const { grupo } = Astro.props;
 const pre = grupo ? `${grupo}/` : '';
 const descubre = d.descubre.items.map((it) => ({ titulo: it.titulo, texto: it.texto, href: ruta(it.titulo) }));
