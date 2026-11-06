@@ -1,0 +1,199 @@
+---
+/* V13 · Mezcla elegida (Design System v3 «Noche y pastel»), a partir de la revisión de V10, V11 y V12.
+   Header blanco de V12, hero a sangre de V10 con el
+   horario, «Imperdibles» de V10 (una grande y tres), agenda de V10 (foto con la fecha encima) sobre noche, «Ven en
+   grupo» de V11 en bloque salmón, Descubre de V11 en menta con un mapa de los territorios a los que llega Maloka en
+   lugar de las cifras (mapa pequeño a la izquierda, enlaces a la derecha), Crea de V11 en noche con filas y noticias. Un solo botón: «Compra tus entradas». */
+import { Picture } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import NHeader from '../../components/n/NHeader.astro';
+import NHero from '../../components/n/NHero.astro';
+import NActividad from '../../components/n/NActividad.astro';
+import NFiltros from '../../components/n/NFiltros.astro';
+import NFilas from '../../components/n/NFilas.astro';
+import NMapa from '../../components/n/NMapa.astro';
+import NFooter from '../../components/n/NFooter.astro';
+import Icon from '../../components/ui/Icon.astro';
+import d from '../../data/n/home.json';
+import { img } from '../../lib/images.js';
+import { ruta } from '../../lib/rutas.js';
+import { url } from '../../lib/url.js';
+import '../../styles/noche.css';
+// grupo: «seleccion» la publica en /seleccion/ con su propia barra de versiones (V10–V13)
+const { grupo } = Astro.props;
+const pre = grupo ? `${grupo}/` : '';
+const [grande, ...chicas] = d.noTePierdas.items;
+const grupos = d.grupos.items.map((g) => ({ titulo: g.titulo, texto: g.texto, icono: g.icono, href: ruta(g.titulo) }));
+const crea = d.crea.items.map((t) => ({ titulo: t, href: ruta(t) }));
+const t = d.territorios;
+---
+<Base variante="v13" grupo={grupo} title="Maloka · Centro interactivo de ciencia y tecnología en Bogotá" description="Atrévete a vivir la ciencia en Maloka, Bogotá: Cine Domo, salas interactivas, laboratorios, programación y visitas en grupo. Horarios, cómo llegar y compra de entradas." precargarHero clase="nn">
+  <NHeader variante="blanco" inicio={url(`${pre}v13/`)} />
+  <main id="contenido">
+    <NHero variante="foto" />
+
+    <section class="n-sec n-hueso" aria-labelledby="v13-np">
+      <div class="mk-w">
+        <div class="n-head"><div><p class="n-ante">Imperdibles</p><h2 class="n-titulo" id="v13-np">{d.noTePierdas.titulo}</h2><p class="n-lead">{d.noTePierdas.texto}</p></div></div>
+        <div class="v13-np">
+          <a class="v13-np-g" href={ruta(grande.ruta)} data-rv>
+            <span class="n-foto n-zoom v13-np-gf"><Picture src={img(grande.imagen)} alt={grande.alt} formats={['avif', 'webp']} widths={[560, 800, 1200]} sizes="(max-width: 1024px) 100vw, 60vw" loading="lazy" /></span>
+            <span class="v13-np-gt n-noche">
+              <span class={`n-tag n-tag--${grande.color}`}>{grande.etiqueta}</span>
+              <h3 class="v13-np-h">{grande.titulo}</h3>
+              <span class="v13-np-x">{grande.texto}</span>
+              <span class="v13-np-m">{grande.meta}<Icon name="arrow" size="20" /></span>
+            </span>
+          </a>
+          <ul class="v13-np-l">
+            {chicas.map((c, i) => (
+              <li data-rv style={`--d:${i + 1}`}>
+                <a class="v13-np-c" href={ruta(c.ruta)}>
+                  <span class="n-foto n-zoom v13-np-cf"><Picture src={img(c.imagen)} alt={c.alt} formats={['avif', 'webp']} widths={[342, 560]} sizes="(max-width: 767px) 40vw, 220px" loading="lazy" /></span>
+                  <span class="v13-np-ct"><span class={`n-tag n-tag--${c.color}`}>{c.etiqueta}</span><h3 class="v13-np-h3">{c.titulo}</h3><span class="v13-np-m">{c.meta}</span></span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="n-sec n-noche" aria-labelledby="v13-ag">
+      <div class="mk-w">
+        <div class="n-head">
+          <div><p class="n-ante">Agéndate</p><h2 class="n-titulo" id="v13-ag">{d.agenda.titulo}</h2></div>
+          <NFiltros filtros={d.agenda.filtros} objetivo="v13-ag-l" tono="oscuro" />
+        </div>
+        <ul class="v13-ag" id="v13-ag-l">
+          {d.agenda.items.map((a, i) => (
+            <li data-filtro={a.filtro} data-rv style={`--d:${i}`}>
+              <NActividad image={a.imagen} alt={a.alt} dia={a.dia} mes={a.mes} categoria={a.categoria} color={a.color} titulo={a.titulo} texto={a.texto} meta={`${a.hora} · ${a.lugar} · ${a.costo}`} href={ruta('Programación')} ratio="4 / 5" />
+            </li>
+          ))}
+        </ul>
+        <div class="v13-pie"><a class="n-a" href={ruta(d.agenda.enlace)}>{d.agenda.enlace}<Icon name="arrow" size="20" /></a><span class="n-ej">Contenido de ejemplo · fechas por validar</span></div>
+      </div>
+    </section>
+
+    <section class="n-sec v13-salmon" aria-labelledby="v13-gr">
+      <div class="mk-w v13-gr">
+        <div class="v13-col">
+          <p class="n-ante v13-ante">Ven en grupo</p>
+          <h2 class="n-display" id="v13-gr" data-rv="barrido">Mejor en compañía.</h2>
+          <p class="n-lead v13-lead">{d.grupos.texto}</p>
+        </div>
+        <NFilas items={grupos} color="amarillo" />
+      </div>
+    </section>
+
+    <section class="n-sec v13-menta" aria-labelledby="v13-de">
+      <div class="mk-w v13-de">
+        <div class="v13-col">
+          <p class="n-ante v13-ante">Descubre Maloka</p>
+          <h2 class="n-display" id="v13-de" data-rv="barrido">{t.titulo}</h2>
+          <p class="n-lead v13-lead">{t.texto}</p>
+          <div class="v13-mapa"><NMapa items={t.items} sede={t.sede} /></div>
+          <span class="n-ej v13-ej">{t.nota}</span>
+        </div>
+        <ul class="v13-de-l">
+          {d.descubre.items.map((it, i) => (
+            <li data-rv style={`--d:${i}`}>
+              <a href={ruta(it.titulo)} class="v13-de-a">
+                <span class="n-foto n-zoom v13-de-f"><Picture src={img(it.imagen)} alt={it.alt} formats={['avif', 'webp']} widths={[342, 560]} sizes="(max-width: 767px) 45vw, 28vw" loading="lazy" /></span>
+                <h3 class="v13-de-t">{it.titulo}<Icon name="arrow" size="20" /></h3>
+                <span class="v13-de-x">{it.texto}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="n-sec n-noche" aria-labelledby="v13-cr">
+      <div class="mk-w v13-cr">
+        <div class="v13-col">
+          <p class="n-ante">Para aliados</p>
+          <h2 class="n-titulo" id="v13-cr">{d.crea.titulo}</h2>
+          <p class="n-lead">{d.crea.texto}</p>
+          <a class="n-b v13-cr-b" href={ruta(d.crea.enlace)}>{d.crea.enlace}<Icon name="arrow" /></a>
+        </div>
+        <NFilas items={crea} color="lavanda" tono="oscuro" />
+      </div>
+    </section>
+
+    <section class="n-sec n-blanco" aria-labelledby="v13-no">
+      <div class="mk-w">
+        <div class="n-head"><div><p class="n-ante">Lo último</p><h2 class="n-titulo" id="v13-no">{d.noticias.titulo}</h2></div><a class="n-a" href={ruta(d.noticias.enlace)}>{d.noticias.enlace}<Icon name="arrow" size="20" /></a></div>
+        <ul class="v13-no">
+          {d.noticias.items.map((n, i) => <li data-rv style={`--d:${i}`}><NActividad image={n.imagen} alt={n.alt} categoria={n.categoria} color={n.color} titulo={n.titulo} texto={n.texto} meta={`${n.dia} ${n.mes}`} href={ruta('Noticias')} ratio="3 / 2" sizes="(max-width: 767px) 100vw, 33vw" /></li>)}
+        </ul>
+        <span class="n-ej">Contenido de ejemplo</span>
+      </div>
+    </section>
+  </main>
+  <NFooter />
+</Base>
+
+<style>
+  /* Imperdibles (V10) */
+  .v13-np { display: grid; grid-template-columns: 7fr 5fr; gap: 24px; }
+  .v13-np-g { display: grid; grid-template-rows: 1fr auto; color: inherit; min-height: 620px; }
+  .v13-np-gf { min-height: 360px; }
+  .v13-np-gt { display: grid; gap: 12px; padding: 32px; }
+  .v13-np-h { margin: 0; font-size: var(--n-titulo); line-height: 1.1; font-weight: 700; }
+  .v13-np-x { color: var(--n-texto2-osc); font-size: 17px; }
+  .v13-np-m { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; }
+  .v13-np-g .v13-np-m { color: var(--n-amarillo); }
+  .v13-np-g:hover .v13-np-m :global(.mk-ic) { transform: translateX(4px); }
+  .v13-np-l { display: grid; gap: 24px; align-content: start; }
+  .v13-np-c { display: grid; grid-template-columns: 200px 1fr; gap: 20px; align-items: center; color: inherit; padding-bottom: 24px; border-bottom: 2px solid var(--n-noche); }
+  .v13-np-l li:last-child .v13-np-c { border-bottom: 0; padding-bottom: 0; }
+  .v13-np-cf { aspect-ratio: 1; }
+  .v13-np-ct { display: grid; gap: 8px; }
+  .v13-np-h3 { margin: 0; font-size: var(--n-sub); line-height: 1.2; font-weight: 700; }
+  .v13-np-c:hover .v13-np-h3 { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+  /* Agenda (V10): foto con la fecha encima */
+  .v13-ag { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+  .v13-ag :global(.nac-x), .v13-ag :global(.nac-m) { color: var(--n-texto2-osc); opacity: 1; }
+  .v13-pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 40px; }
+  .v13-pie .n-ej { margin: 0; }
+
+  /* Bloques pastel (V11) */
+  .v13-salmon { background: var(--n-salmon); color: var(--n-noche); }
+  .v13-menta { background: var(--n-menta); color: var(--n-noche); }
+  .v13-ante, .v13-lead { color: var(--n-noche); }
+  .v13-col { display: grid; gap: 16px; align-content: start; }
+  .v13-gr, .v13-cr { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
+
+  /* Descubre: mapa de territorios en lugar de las cifras */
+  .v13-de { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
+  .v13-mapa { margin-top: 24px; padding-top: 24px; border-top: 2px solid var(--n-noche); }
+  .v13-ej { justify-self: start; margin-top: 0; }
+  .v13-de-l { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+  .v13-de-a { display: grid; gap: 8px; color: inherit; }
+  .v13-de-f { aspect-ratio: 4 / 3; margin-bottom: 8px; }
+  .v13-de-t { margin: 0; font-size: var(--n-sub); line-height: 1.2; font-weight: 700; }
+  .v13-de-t :global(.mk-ic) { display: inline-block; vertical-align: -3px; margin-left: 8px; transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .v13-de-a:hover .v13-de-t :global(.mk-ic) { transform: translateX(4px); }
+  .v13-de-x { font-size: 16px; }
+
+  .v13-cr-b { margin-top: 16px; align-self: start; justify-self: start; color: var(--n-amarillo); }
+
+  .v13-no { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+
+  @media (max-width: 1024px) {
+    .v13-np, .v13-gr, .v13-cr, .v13-de { grid-template-columns: 1fr; gap: 40px; }
+    .v13-np-g { min-height: 0; } .v13-np-gf { aspect-ratio: 16 / 10; min-height: 0; }
+    .v13-ag { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 767px) {
+    .v13-np-c { grid-template-columns: 120px 1fr; gap: 14px; }
+    .v13-np-gt { padding: 24px; }
+    .v13-no { grid-template-columns: 1fr; }
+    .v13-ag { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 78%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: calc(-1 * var(--mk-margen)); padding-inline: var(--mk-margen); scroll-padding-inline: var(--mk-margen); scrollbar-width: none; }
+    .v13-ag > li { scroll-snap-align: start; }
+    .v13-de-l { gap: 24px 12px; }
+  }
+</style>

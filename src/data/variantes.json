@@ -1,5 +1,12 @@
 {
   "nota": "Versiones del home en orden. Al agregar una, súmala aquí y vuelve a generar la barra de V1 (scripts/barra-v1.mjs).",
+  "grupos": {
+    "seleccion": {
+      "titulo": "Home de Maloka · selección V10–V13",
+      "texto": "Las cuatro versiones con el Design System v3 «Noche y pastel». La barra de abajo salta entre ellas.",
+      "items": ["v10", "v11", "v12", "v13"]
+    }
+  },
   "items": [
     {
       "id": "v1",
