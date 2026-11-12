@@ -3,7 +3,7 @@
    Header blanco de V12 con el panel del menú en hueso, hero a sangre de V10 con el horario, «Imperdibles» de V10
    (una grande y tres), agenda de V12 (filas con fecha grande) sobre blanco, «Ven en grupo» de V12 (carrusel de
    tarjetas altas sobre noche), Descubre de V11 en menta con un mapa pequeño de los territorios a los que llega Maloka
-   a la izquierda y los enlaces a la derecha, Crea de V11 en noche con filas y noticias. Un solo botón: «Compra tus
+   a la izquierda y los enlaces a la derecha, Crea de V11 en noche con filas y noticias. Modal de promoción con los combos de TuBoleta. Un solo botón: «Compra tus
    entradas». */
 import { Picture } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
@@ -16,6 +16,7 @@ import NMapa from '../../components/n/NMapa.astro';
 import NCarrusel from '../../components/n/NCarrusel.astro';
 import NCardFoto from '../../components/n/NCardFoto.astro';
 import NFooter from '../../components/n/NFooter.astro';
+import NPromo from '../../components/n/NPromo.astro';
 import Icon from '../../components/ui/Icon.astro';
 import d from '../../data/n/home.json';
 import { img } from '../../lib/images.js';
@@ -136,6 +137,7 @@ const t = d.territorios;
     </section>
   </main>
   <NFooter />
+  <NPromo />
 </Base>
 
 <style>

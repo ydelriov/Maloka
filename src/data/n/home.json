@@ -70,6 +70,16 @@
       { "dia": "18", "mes": "sept. 2026", "categoria": "Educación", "color": "menta", "titulo": "Docentes que convierten el aula en laboratorio", "texto": "Historias de maestras y maestros.", "imagen": "laboratorio-familia.jpg", "alt": "Mediadora explicando un experimento a una familia" }
     ]
   },
+  "promo": {
+    "antetitulo": "Promociones",
+    "titulo": "Combos para vivir Maloka",
+    "texto": "Compra tu combo en TuBoleta y prepárate para un día de ciencia.",
+    "nota": "Textos por validar · precios y condiciones en TuBoleta",
+    "items": [
+      { "etiqueta": "Combo familiar", "color": "amarillo", "titulo": "Combo familiar", "texto": "Un plan para venir en familia.", "imagenUrl": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/35c88792-691f-42f6-bef8-28eba1898913_43.jpg", "alt": "Combo familiar de Maloka", "url": "https://www.tuboleta.com/es/eventos/combo-familiar-1" },
+      { "etiqueta": "Combo Esfera", "color": "cielo", "titulo": "Esfera: un instante de vida", "texto": "El combo de Esfera, un instante de vida.", "imagenUrl": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/266aad39-4d10-452e-8473-1d2499e602c8_241.jpg", "alt": "Combo Esfera: un instante de vida", "url": "https://www.tuboleta.com/es/eventos/combo-esfera-un-instante-de-vida" }
+    ]
+  },
   "territorios": {
     "titulo": "La ciencia sale del domo.",
     "texto": "Con Maloka viajera, programas en escuelas y proyectos con comunidades, llevamos la ciencia a regiones de toda Colombia.",

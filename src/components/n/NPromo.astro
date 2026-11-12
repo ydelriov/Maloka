@@ -1,0 +1,98 @@
+---
+/* Modal de promoción (V13): dos combos de TuBoleta lado a lado; cada tarjeta es el enlace (abre en otra pestaña).
+   Las fotos vienen de TuBoleta (imagenUrl); si un combo no la trae, usa una foto local (imagen).
+   Se abre sola 1,5 s después de cargar la página, una vez por sesión; con ?promo en la URL se abre siempre.
+   Se cierra con la ×, con Esc o al hacer clic fuera. Usa <dialog>: el foco queda dentro mientras está abierta.
+   Sin botones rellenos (el único botón de la vista sigue siendo «Compra tus entradas»): tarjetas que son enlace.
+   En Elementor Pro: Plantillas › Popups, disparador «Al cargar la página» (1,5 s) y regla avanzada «Mostrar una vez
+   por sesión». El JSON importable está en elementor/popup-combos.json. */
+import { Picture } from 'astro:assets';
+import Icon from '../ui/Icon.astro';
+import d from '../../data/n/home.json';
+import { img } from '../../lib/images.js';
+const p = d.promo;
+---
+<dialog class="npr" aria-labelledby="npr-t" data-npr>
+  <div class="npr-in">
+    <button class="npr-x" type="button" aria-label="Cerrar promoción" data-npr-cerrar><Icon name="close" size="24" /></button>
+    <div class="npr-head">
+      <p class="npr-ante">{p.antetitulo}</p>
+      <h2 class="npr-t" id="npr-t">{p.titulo}</h2>
+      <p class="npr-x2">{p.texto}</p>
+    </div>
+    <ul class="npr-l">
+      {p.items.map((it) => (
+        <li>
+          <a class="npr-a" href={it.url} target="_blank" rel="noopener">
+            <span class="n-foto n-zoom npr-f">{it.imagenUrl ? <img src={it.imagenUrl} alt={it.alt} loading="lazy" decoding="async" /> : <Picture src={img(it.imagen)} alt={it.alt} formats={['avif', 'webp']} widths={[342, 560]} sizes="(max-width: 767px) 90vw, 360px" loading="lazy" />}</span>
+            <span class="npr-c">
+              <span class={`n-tag n-tag--${it.color}`}>{it.etiqueta}</span>
+              <h3 class="npr-h">{it.titulo}</h3>
+              <span class="npr-tx">{it.texto}</span>
+              <span class="npr-m">Comprar en TuBoleta<Icon name="ext" size="20" /><span class="sr-only"> (abre en una pestaña nueva)</span></span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <span class="n-ej npr-ej">{p.nota}</span>
+  </div>
+</dialog>
+
+<style>
+  .npr { width: min(880px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px); margin: auto; padding: 0; border: 0; border-radius: 0; background: var(--mk-hueso); color: var(--n-noche); box-shadow: 0 24px 64px rgba(20, 10, 31, .35); overflow: auto; }
+  .npr::backdrop { background: rgba(20, 10, 31, .6); }
+  .npr[open] { animation: npr-in 280ms var(--mk-ease); }
+  @keyframes npr-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  .npr :focus-visible { outline: 3px solid var(--n-lavanda-osc); outline-offset: 2px; }
+  .npr-in { position: relative; display: grid; gap: 28px; padding: 40px; }
+  .npr-x { position: absolute; top: 12px; right: 12px; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 2px solid var(--n-noche); background: none; color: inherit; cursor: pointer; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
+  .npr-x:hover { background: var(--n-noche); color: #fff; }
+  .npr-head { display: grid; gap: 8px; padding-right: 56px; }
+  .npr-ante { font-size: 16px; font-weight: 600; color: var(--n-lavanda-osc); }
+  .npr-t { margin: 0; font-size: var(--n-titulo); line-height: 1.1; font-weight: 700; letter-spacing: -0.015em; }
+  .npr-x2 { font-size: 17px; color: var(--n-texto2); }
+  .npr-l { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .npr-a { display: grid; height: 100%; background: #fff; color: inherit; transition: background-color var(--mk-t-rapida); }
+  .npr-a:hover { background: var(--n-amarillo); }
+  .npr-f { aspect-ratio: 16 / 10; }
+  .npr-c { display: grid; gap: 10px; align-content: start; padding: 20px 20px 24px; }
+  .npr-h { margin: 0; font-size: var(--n-sub); line-height: 1.2; font-weight: 700; }
+  .npr-tx { font-size: 15px; color: var(--n-texto2); }
+  .npr-m { display: inline-flex; align-items: center; gap: 8px; justify-self: start; margin-top: 6px; font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 2px; }
+  .npr-m :global(.mk-ic) { transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .npr-a:hover .npr-m :global(.mk-ic) { transform: translate(3px, -3px); }
+  .npr-ej { justify-self: start; margin-top: -8px; }
+  @media (max-width: 767px) {
+    .npr-in { padding: 24px 16px; gap: 20px; }
+    .npr-l { grid-template-columns: 1fr; gap: 16px; }
+    .npr-a { grid-template-columns: 112px 1fr; }
+    .npr-f { aspect-ratio: auto; min-height: 100%; }
+    .npr-c { padding: 14px; gap: 6px; }
+    .npr-tx { display: none; }
+    .npr-m { font-size: 14px; white-space: nowrap; margin-top: 2px; }
+    .npr-h { font-size: 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .npr[open] { animation: none; } }
+  :global(html.npr-abierta) { overflow: hidden; }
+</style>
+
+<script>
+  const dlg = document.querySelector('[data-npr]');
+  const CLAVE = 'maloka-promo-vista';
+  let vista = false;
+  try { vista = sessionStorage.getItem(CLAVE) === '1'; } catch { /* sin almacenamiento: se muestra igual */ }
+  const forzar = new URLSearchParams(location.search).has('promo');
+  const cerrar = () => dlg.close();
+  dlg.addEventListener('close', () => document.documentElement.classList.remove('npr-abierta'));
+  dlg.querySelector('[data-npr-cerrar]').addEventListener('click', cerrar);
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) cerrar(); }); // clic en el fondo
+  if (dlg.showModal && (forzar || !vista)) {
+    setTimeout(() => {
+      if (document.querySelector('dialog[open]')) return;
+      dlg.showModal();
+      document.documentElement.classList.add('npr-abierta');
+      try { sessionStorage.setItem(CLAVE, '1'); } catch { /* nada */ }
+    }, 1500);
+  }
+</script>

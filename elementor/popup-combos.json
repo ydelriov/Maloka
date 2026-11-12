@@ -1,0 +1,826 @@
+{
+ "title": "Popup · Combos TuBoleta (V13)",
+ "type": "popup",
+ "version": "0.4",
+ "page_settings": {
+  "width": {
+   "unit": "px",
+   "size": 880,
+   "sizes": []
+  },
+  "width_tablet": {
+   "unit": "%",
+   "size": 90,
+   "sizes": []
+  },
+  "width_mobile": {
+   "unit": "%",
+   "size": 92,
+   "sizes": []
+  },
+  "height_type": "auto",
+  "content_position": "top",
+  "horizontal_position": "center",
+  "vertical_position": "center",
+  "background_background": "classic",
+  "background_color": "#F4F1EC",
+  "border_radius": {
+   "unit": "px",
+   "top": "0",
+   "right": "0",
+   "bottom": "0",
+   "left": "0",
+   "isLinked": true
+  },
+  "box_shadow_box_shadow_type": "yes",
+  "box_shadow_box_shadow": {
+   "horizontal": 0,
+   "vertical": 24,
+   "blur": 64,
+   "spread": 0,
+   "color": "rgba(20,10,31,0.35)"
+  },
+  "overlay": "yes",
+  "overlay_background_background": "classic",
+  "overlay_background_color": "rgba(20,10,31,0.6)",
+  "close_button_position": "inside",
+  "close_button_vertical": {
+   "unit": "px",
+   "size": 12,
+   "sizes": []
+  },
+  "close_button_horizontal": {
+   "unit": "px",
+   "size": 12,
+   "sizes": []
+  },
+  "close_button_color": "#231B2B",
+  "close_button_hover_color": "#6B5BD6",
+  "icon_size": {
+   "unit": "px",
+   "size": 24,
+   "sizes": []
+  },
+  "entrance_animation": "fadeInUp",
+  "entrance_animation_duration": {
+   "unit": "s",
+   "size": 0.3,
+   "sizes": []
+  }
+ },
+ "content": [
+  {
+   "id": "666fbd52",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "container_type": "flex",
+    "content_width": "full",
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "28",
+     "row": "28",
+     "isLinked": true,
+     "unit": "px",
+     "size": 28
+    },
+    "flex_gap_mobile": {
+     "column": "20",
+     "row": "20",
+     "isLinked": true,
+     "unit": "px",
+     "size": 20
+    },
+    "padding": {
+     "unit": "px",
+     "top": "40",
+     "right": "40",
+     "bottom": "40",
+     "left": "40",
+     "isLinked": true
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "32",
+     "right": "32",
+     "bottom": "32",
+     "left": "32",
+     "isLinked": true
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "24",
+     "right": "16",
+     "bottom": "24",
+     "left": "16",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "273a9a6b",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "column",
+      "content_width": "full",
+      "flex_gap": {
+       "column": "8",
+       "row": "8",
+       "isLinked": true,
+       "unit": "px",
+       "size": 8
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "56",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "0",
+       "right": "48",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "afac21c4",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Promociones",
+        "header_size": "div",
+        "title_color": "#6B5BD6",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.4,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "12b0d94a",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Combos para vivir Maloka",
+        "header_size": "h2",
+        "title_color": "#231B2B",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 40,
+         "sizes": []
+        },
+        "typography_font_size_tablet": {
+         "unit": "px",
+         "size": 34,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 28,
+         "sizes": []
+        },
+        "typography_font_weight": "700",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.1,
+         "sizes": []
+        },
+        "typography_letter_spacing": {
+         "unit": "em",
+         "size": -0.015,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "01a4f8de",
+       "elType": "widget",
+       "widgetType": "text-editor",
+       "isInner": false,
+       "settings": {
+        "editor": "<p>Compra tu combo en TuBoleta y prepárate para un día de ciencia.</p>",
+        "text_color": "#4F4955",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 17,
+         "sizes": []
+        },
+        "typography_font_size_tablet": {
+         "unit": "px",
+         "size": 17,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.55,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      }
+     ]
+    },
+    {
+     "id": "8627a997",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "row",
+      "content_width": "full",
+      "flex_wrap": "nowrap",
+      "flex_direction_mobile": "column",
+      "flex_gap": {
+       "column": "24",
+       "row": "24",
+       "isLinked": true,
+       "unit": "px",
+       "size": 24
+      },
+      "flex_gap_mobile": {
+       "column": "16",
+       "row": "16",
+       "isLinked": true,
+       "unit": "px",
+       "size": 16
+      },
+      "flex_align_items": "stretch"
+     },
+     "elements": [
+      {
+       "id": "49c30c4c",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/combo-familiar-1",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "width": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "_flex_align_self": "stretch",
+        "overflow": "hidden",
+        "background_background": "classic",
+        "background_color": "#FFFFFF",
+        "background_hover_background": "classic",
+        "background_hover_color": "#FFE25C",
+        "background_hover_transition": {
+         "unit": "s",
+         "size": 0.2,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "77beeda7",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/35c88792-691f-42f6-bef8-28eba1898913_43.jpg",
+           "id": 0,
+           "alt": "Combo familiar de Maloka"
+          },
+          "image_size": "full",
+          "align": "center",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "height": {
+           "unit": "px",
+           "size": 240,
+           "sizes": []
+          },
+          "height_tablet": {
+           "unit": "px",
+           "size": 200,
+           "sizes": []
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 180,
+           "sizes": []
+          },
+          "object-fit": "cover",
+          "object-position": "center center"
+         },
+         "elements": []
+        },
+        {
+         "id": "a868adee",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "column",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "10",
+           "row": "10",
+           "isLinked": true,
+           "unit": "px",
+           "size": 10
+          },
+          "padding": {
+           "unit": "px",
+           "top": "20",
+           "right": "20",
+           "bottom": "24",
+           "left": "20",
+           "isLinked": false
+          },
+          "padding_mobile": {
+           "unit": "px",
+           "top": "16",
+           "right": "16",
+           "bottom": "20",
+           "left": "16",
+           "isLinked": false
+          },
+          "flex_align_items": "flex-start"
+         },
+         "elements": [
+          {
+           "id": "02c68359",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Combo familiar",
+            "header_size": "div",
+            "title_color": "#231B2B",
+            "_background_background": "classic",
+            "_background_color": "#FFE25C",
+            "_padding": {
+             "unit": "px",
+             "top": "5",
+             "right": "12",
+             "bottom": "5",
+             "left": "12",
+             "isLinked": false
+            },
+            "_element_width": "auto",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.4,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "88c7e2f3",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Combo familiar",
+            "header_size": "h3",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 24,
+             "sizes": []
+            },
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 22,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 20,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.2,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "5b35b016",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Un plan para venir en familia.</p>",
+            "text_color": "#4F4955",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 15,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.5,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "eefa57ae",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Comprar en TuBoleta ↗",
+            "header_size": "div",
+            "title_color": "#231B2B",
+            "_element_width": "auto",
+            "_padding": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "2",
+             "left": "0",
+             "isLinked": false
+            },
+            "_border_border": "solid",
+            "_border_width": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "2",
+             "left": "0",
+             "isLinked": false
+            },
+            "_border_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 16,
+             "sizes": []
+            },
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 16,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 15,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "068f5041",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/combo-esfera-un-instante-de-vida",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "width": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "_flex_align_self": "stretch",
+        "overflow": "hidden",
+        "background_background": "classic",
+        "background_color": "#FFFFFF",
+        "background_hover_background": "classic",
+        "background_hover_color": "#FFE25C",
+        "background_hover_transition": {
+         "unit": "s",
+         "size": 0.2,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "1f4c4750",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/266aad39-4d10-452e-8473-1d2499e602c8_241.jpg",
+           "id": 0,
+           "alt": "Combo Esfera: un instante de vida"
+          },
+          "image_size": "full",
+          "align": "center",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "height": {
+           "unit": "px",
+           "size": 240,
+           "sizes": []
+          },
+          "height_tablet": {
+           "unit": "px",
+           "size": 200,
+           "sizes": []
+          },
+          "height_mobile": {
+           "unit": "px",
+           "size": 180,
+           "sizes": []
+          },
+          "object-fit": "cover",
+          "object-position": "center center"
+         },
+         "elements": []
+        },
+        {
+         "id": "004666b3",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "column",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "10",
+           "row": "10",
+           "isLinked": true,
+           "unit": "px",
+           "size": 10
+          },
+          "padding": {
+           "unit": "px",
+           "top": "20",
+           "right": "20",
+           "bottom": "24",
+           "left": "20",
+           "isLinked": false
+          },
+          "padding_mobile": {
+           "unit": "px",
+           "top": "16",
+           "right": "16",
+           "bottom": "20",
+           "left": "16",
+           "isLinked": false
+          },
+          "flex_align_items": "flex-start"
+         },
+         "elements": [
+          {
+           "id": "9b2157af",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Combo Esfera",
+            "header_size": "div",
+            "title_color": "#231B2B",
+            "_background_background": "classic",
+            "_background_color": "#9CCBF2",
+            "_padding": {
+             "unit": "px",
+             "top": "5",
+             "right": "12",
+             "bottom": "5",
+             "left": "12",
+             "isLinked": false
+            },
+            "_element_width": "auto",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.4,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "788322ed",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Esfera: un instante de vida",
+            "header_size": "h3",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 24,
+             "sizes": []
+            },
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 22,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 20,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.2,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "b2e4f525",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>El combo de Esfera, un instante de vida.</p>",
+            "text_color": "#4F4955",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 15,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.5,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "d2ccc914",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Comprar en TuBoleta ↗",
+            "header_size": "div",
+            "title_color": "#231B2B",
+            "_element_width": "auto",
+            "_padding": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "2",
+             "left": "0",
+             "isLinked": false
+            },
+            "_border_border": "solid",
+            "_border_width": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "2",
+             "left": "0",
+             "isLinked": false
+            },
+            "_border_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 16,
+             "sizes": []
+            },
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 16,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 15,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
