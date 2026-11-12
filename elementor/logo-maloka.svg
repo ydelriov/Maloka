@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="260" viewBox="0 0 100 130" role="img" aria-label="Maloka">
+  <rect x="2" y="2" width="40" height="70" fill="none" stroke="#231B2B" stroke-width="4"/>
+  <text x="8" y="27" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="16" fill="#231B2B">M A</text>
+  <text x="9" y="47" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="16" fill="#231B2B">L O</text>
+  <text x="9" y="66" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="16" fill="#231B2B">K A</text>
+  <polygon points="2,72 42,72 42,88" fill="#231B2B"/>
+  <path d="M42 10 A58 58 0 0 1 42 126 Z" fill="none" stroke="#231B2B" stroke-width="4"/>
+</svg>

@@ -1,0 +1,326 @@
+{
+ "title": "Header · Maloka V13",
+ "type": "header",
+ "version": "0.4",
+ "page_settings": {},
+ "content": [
+  {
+   "id": "6dee6f39",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "container_type": "flex",
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1280,
+     "sizes": []
+    },
+    "flex_direction": "row",
+    "flex_direction_mobile": "row",
+    "flex_wrap": "nowrap",
+    "flex_align_items": "center",
+    "flex_justify_content": "space-between",
+    "flex_gap": {
+     "column": "32",
+     "row": "32",
+     "isLinked": true,
+     "unit": "px",
+     "size": 32
+    },
+    "flex_gap_tablet": {
+     "column": "16",
+     "row": "16",
+     "isLinked": true,
+     "unit": "px",
+     "size": 16
+    },
+    "flex_gap_mobile": {
+     "column": "8",
+     "row": "8",
+     "isLinked": true,
+     "unit": "px",
+     "size": 8
+    },
+    "min_height": {
+     "unit": "px",
+     "size": 80,
+     "sizes": []
+    },
+    "min_height_tablet": {
+     "unit": "px",
+     "size": 72,
+     "sizes": []
+    },
+    "min_height_mobile": {
+     "unit": "px",
+     "size": 72,
+     "sizes": []
+    },
+    "padding": {
+     "unit": "px",
+     "top": "0",
+     "right": "80",
+     "bottom": "0",
+     "left": "80",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "0",
+     "right": "40",
+     "bottom": "0",
+     "left": "40",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "0",
+     "right": "16",
+     "bottom": "0",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#FFFFFF",
+    "border_border": "solid",
+    "border_width": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "1",
+     "left": "0",
+     "isLinked": false
+    },
+    "border_color": "rgba(35,27,43,0.16)",
+    "html_tag": "header",
+    "sticky": "top",
+    "sticky_on": [
+     "desktop",
+     "tablet",
+     "mobile"
+    ],
+    "z_index": 100
+   },
+   "elements": [
+    {
+     "id": "79e95e0b",
+     "elType": "widget",
+     "widgetType": "theme-site-logo",
+     "isInner": false,
+     "settings": {
+      "width": {
+       "unit": "px",
+       "size": 34,
+       "sizes": []
+      },
+      "align": "left",
+      "_element_width": "auto"
+     },
+     "elements": []
+    },
+    {
+     "id": "fa5a02f9",
+     "elType": "widget",
+     "widgetType": "nav-menu",
+     "isInner": false,
+     "settings": {
+      "menu": "principal",
+      "layout": "horizontal",
+      "align_items": "left",
+      "pointer": "underline",
+      "animation_line": "fade",
+      "submenu_icon": {
+       "value": "fas fa-chevron-down",
+       "library": "fa-solid"
+      },
+      "dropdown": "tablet",
+      "toggle": "burger",
+      "full_width": "yes",
+      "text_align": "aside",
+      "toggle_align": "right",
+      "menu_typography_typography": "custom",
+      "menu_typography_font_size": {
+       "unit": "px",
+       "size": 15,
+       "sizes": []
+      },
+      "menu_typography_font_weight": "600",
+      "menu_typography_line_height": {
+       "unit": "em",
+       "size": 1.3,
+       "sizes": []
+      },
+      "menu_typography_font_family": "Montserrat",
+      "color_menu_item": "#231B2B",
+      "color_menu_item_hover": "#231B2B",
+      "pointer_color_menu_item_hover": "#231B2B",
+      "color_menu_item_active": "#231B2B",
+      "pointer_color_menu_item_active": "#231B2B",
+      "pointer_width": {
+       "unit": "px",
+       "size": 2,
+       "sizes": []
+      },
+      "padding_horizontal_menu_item": {
+       "unit": "px",
+       "size": 12,
+       "sizes": []
+      },
+      "padding_vertical_menu_item": {
+       "unit": "px",
+       "size": 10,
+       "sizes": []
+      },
+      "menu_space_between": {
+       "unit": "px",
+       "size": 4,
+       "sizes": []
+      },
+      "color_dropdown_item": "#231B2B",
+      "background_color_dropdown_item": "#F4F1EC",
+      "color_dropdown_item_hover": "#231B2B",
+      "background_color_dropdown_item_hover": "#FFE25C",
+      "dropdown_typography_typography": "custom",
+      "dropdown_typography_font_size": {
+       "unit": "px",
+       "size": 16,
+       "sizes": []
+      },
+      "dropdown_typography_font_weight": "700",
+      "dropdown_typography_line_height": {
+       "unit": "em",
+       "size": 1.3,
+       "sizes": []
+      },
+      "dropdown_typography_font_family": "Montserrat",
+      "padding_horizontal_dropdown_item": {
+       "unit": "px",
+       "size": 16,
+       "sizes": []
+      },
+      "padding_vertical_dropdown_item": {
+       "unit": "px",
+       "size": 14,
+       "sizes": []
+      },
+      "dropdown_border_border": "solid",
+      "dropdown_border_width": {
+       "unit": "px",
+       "top": "1",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "dropdown_border_color": "rgba(35,27,43,0.16)",
+      "toggle_color": "#231B2B",
+      "toggle_background_color": "rgba(0,0,0,0)",
+      "toggle_size": {
+       "unit": "px",
+       "size": 22,
+       "sizes": []
+      },
+      "toggle_border_width": {
+       "unit": "px",
+       "size": 2,
+       "sizes": []
+      },
+      "toggle_border_radius": {
+       "unit": "px",
+       "size": 0,
+       "sizes": []
+      },
+      "_flex_size": "grow"
+     },
+     "elements": []
+    },
+    {
+     "id": "c9dace8b",
+     "elType": "widget",
+     "widgetType": "button",
+     "isInner": false,
+     "settings": {
+      "text": "Compra tus entradas",
+      "link": {
+       "url": "https://www.tuboleta.com/es/venue/maloka",
+       "is_external": "on",
+       "nofollow": "",
+       "custom_attributes": ""
+      },
+      "selected_icon": {
+       "value": "fas fa-ticket-alt",
+       "library": "fa-solid"
+      },
+      "icon_align": "left",
+      "icon_indent": {
+       "unit": "px",
+       "size": 8,
+       "sizes": []
+      },
+      "align": "right",
+      "size": "sm",
+      "button_text_color": "#231B2B",
+      "background_color": "#FFE25C",
+      "hover_color": "#FFE25C",
+      "button_background_hover_color": "#231B2B",
+      "border_border": "solid",
+      "border_width": {
+       "unit": "px",
+       "top": "2",
+       "right": "2",
+       "bottom": "2",
+       "left": "2",
+       "isLinked": true
+      },
+      "border_color": "#231B2B",
+      "border_radius": {
+       "unit": "px",
+       "top": "999",
+       "right": "999",
+       "bottom": "999",
+       "left": "999",
+       "isLinked": true
+      },
+      "text_padding": {
+       "unit": "px",
+       "top": "12",
+       "right": "20",
+       "bottom": "12",
+       "left": "20",
+       "isLinked": false
+      },
+      "text_padding_mobile": {
+       "unit": "px",
+       "top": "10",
+       "right": "14",
+       "bottom": "10",
+       "left": "14",
+       "isLinked": false
+      },
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 15,
+       "sizes": []
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 14,
+       "sizes": []
+      },
+      "typography_font_weight": "700",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.2,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat",
+      "_element_width": "auto"
+     },
+     "elements": []
+    }
+   ]
+  }
+ ]
+}
