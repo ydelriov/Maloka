@@ -8,6 +8,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `menu-paneles-v13.json` | Los 4 paneles en hueso del mega menú (Visítanos, Ven en grupo, Descubre, Crea con Maloka) | Plantillas › Plantillas guardadas |
 | `logo-maloka.svg` / `.png` | Logo de las maquetas, por si el sitio aún no tiene uno | Apariencia › Personalizar › Identidad del sitio |
 | `popup-combos.json` | Modal de los combos de TuBoleta | Plantillas › Popups |
+| `visitanos-v13.json` | Página Visítanos completa (10 secciones) | Plantillas › Plantillas guardadas, y se inserta en la página Visítanos |
 
 ## Menú y header · paso a paso
 
@@ -105,3 +106,36 @@ que se llenan de amarillo `#FFE25C` en hover. En celular las tarjetas se apilan.
 
 El prototipo de la modal está en `src/components/n/NPromo.astro` y se ve en
 https://ydelriov.github.io/Maloka/seleccion/ (se abre sola; para verla de nuevo, agrega `?promo` a la URL).
+
+## visitanos-v13.json · Página Visítanos
+
+Es la misma estructura de la maqueta https://ydelriov.github.io/Maloka/seleccion/visitanos/, sección por sección,
+solo con contenedores y widgets nativos:
+
+| # | Sección | Contenedores y widgets |
+|---|---|---|
+| 1 | Cabecera | Título H1, texto y un contenedor noche con los horarios |
+| 2 | Anclas | Contenedor **fijo arriba** (Pro) con enlaces a `#horarios`, `#tarifas`… |
+| 3 | Horarios (`#horarios`) | Dos contenedores pastel + Lista de iconos |
+| 4 | Tarifas (`#tarifas`) | Tarjetas: contenedor-enlace a TuBoleta con Imagen, Encabezados y Listas de iconos |
+| 5 | Cine Domo | Filas de encabezados |
+| 6 | Cómo llegar (`#llegar`) | Widget **Pestañas** (TransMilenio, SITP, Carro y moto, Bicicleta) + **Google Maps** |
+| 7 | Servicios (`#servicios`) | Grilla de 2 columnas con **Caja de icono** |
+| 8 | Accesibilidad (`#accesibilidad`) | Lista de iconos y enlace a la subpágina |
+| 9 | Experiencias (`#experiencias`) | 4 tarjetas con imagen de fondo que llevan a `/visitanos/experiencias/` |
+| 10 | Preguntas (`#preguntas`) | Widget **Acordeón** con FAQ schema (ayuda en Google) |
+
+### Cómo importarla
+
+1. Crea la página **Visítanos** (slug `visitanos`) y ábrela con Elementor.
+2. Clic en el ícono de carpeta (Agregar plantilla) › **Importar** y sube `visitanos-v13.json`; luego **Insertar**.
+   Elementor descarga las 9 fotos a Medios (las de Maloka salen de GitHub Pages; las de los combos, de TuBoleta).
+3. En Ajustes de la página, plantilla **Elementor ancho completo** (el header y el footer los pone el Theme Builder).
+4. Revisa en el modo responsive de Elementor (tablet y celular) y publica.
+
+### Lo que hay que validar o completar
+- Precios: solo el recorrido tiene precio («Desde $42.700»). Los demás dicen «Precio en TuBoleta».
+- Enlaces: Combo familiar y Combo Esfera van a su evento en TuBoleta; los demás a la página de Maloka en TuBoleta.
+- Si el contenedor de anclas no queda fijo, actívalo en Avanzado › Efectos de movimiento › Fijo: Arriba (desplazamiento 80).
+- Más adelante, los planes pueden salir de un tipo de contenido «Planes» con **Loop Grid** y **Filtro de taxonomía**
+  (Pro), para que el equipo los actualice sin editar la página.

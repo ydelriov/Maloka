@@ -1,18 +1,19 @@
 ---
 /* Visítanos · propuesta con el Design System v3 de la V13 (publicada en /seleccion/visitanos/).
-   Página hub de la visita: lo urgente arriba (horario de hoy y tarifas) y lo práctico después.
-   1. Cabecera con el horario de hoy · 2. Barra de anclas fija · 3. Horarios (+ gratuidad y avisos)
-   4. Tarifas: planes con filtros, qué incluyen, para quién, duración, precio y «Comprar en TuBoleta ↗»
-   5. Cine Domo en cartelera · 6. Cómo llegar (pestañas + mapa) · 7. Servicios · 8. Accesibilidad
-   9. Experiencias (avance de la subpágina) · 10. Preguntas frecuentes.
+   Maqueta pensada para Elementor: cada bloque es un contenedor o un widget nativo, sin código a medida.
+   El JSON importable sale de esta misma estructura: elementor/visitanos-v13.json.
+   1. Cabecera (contenedor + headings; horario fijo en un contenedor noche)
+   2. Anclas (contenedor fijo arriba con enlaces a #id)
+   3. Horarios (contenedores pastel + icon-list)
+   4. Tarifas (grilla de tarjetas: contenedor-enlace con imagen, headings e icon-list)
+   5. Cine Domo (filas de headings) · 6. Cómo llegar (widget Pestañas + Google Maps)
+   7. Servicios (icon-box) · 8. Accesibilidad (icon-list) · 9. Experiencias (grilla de tarjetas)
+   10. Preguntas frecuentes (widget Acordeón con FAQ schema).
    Datos de maloka.org en src/data/visitanos.json (por validar: precios y vigencias cambian por temporada).
    Un solo botón: «Compra tus entradas» en el header; lo demás son enlaces, filas y tarjetas. */
 import { Picture } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import NHeader from '../../components/n/NHeader.astro';
-import NHorario from '../../components/n/NHorario.astro';
-import NFiltros from '../../components/n/NFiltros.astro';
-import NCarrusel from '../../components/n/NCarrusel.astro';
 import NCardFoto from '../../components/n/NCardFoto.astro';
 import NFooter from '../../components/n/NFooter.astro';
 import Icon from '../../components/ui/Icon.astro';
@@ -45,7 +46,13 @@ const ll = v.llegar;
           <h1 class="n-display" id="vi-h1">Visítanos</h1>
           <p class="n-lead">{v.hero.lead}</p>
         </div>
-        <NHorario grupo={G} class="vi-hoy" />
+        <aside class="vi-hoy n-noche" aria-label="Horarios">
+          <p class="vi-hoy-t">Horarios</p>
+          <p class="vi-hoy-h"><b>{site.horarios.semana.dias}</b><span class="t-num">{site.horarios.semana.texto}</span></p>
+          <p class="vi-hoy-h"><b>{site.horarios.finde.dias}</b><span class="t-num">{site.horarios.finde.texto}</span></p>
+          <p class="vi-hoy-v">{site.horarios.ventaHasta}</p>
+          <a class="n-a vi-hoy-a" href="#tarifas">Ver tarifas<Icon name="arrow" size="20" /></a>
+        </aside>
       </div>
     </section>
 
@@ -75,18 +82,16 @@ const ll = v.llegar;
       <div class="mk-w">
         <div class="n-head">
           <div><p class="n-ante">Tarifas y combos</p><h2 class="n-titulo" id="vi-ta">{prod.titulo}</h2><p class="n-lead">{prod.texto}</p></div>
-          <NFiltros filtros={prod.filtros} objetivo="vi-planes" etiqueta="Filtrar planes" unidad="planes" />
         </div>
         <ul class="vi-planes" id="vi-planes">
           {prod.items.map((p, i) => (
-            <li data-filtro={p.grupos} data-rv style={`--d:${i % 3}`}>
+            <li data-rv style={`--d:${i % 3}`}>
               <a class:list={['vi-plan', p.destacado && 'vi-plan--dest']} href={p.url} target="_blank" rel="noopener">
                 <span class="n-foto n-zoom vi-plan-f">
                   {p.imagenUrl ? <img src={p.imagenUrl} alt={p.alt} loading="lazy" decoding="async" /> : <Picture src={img(p.imagen)} alt={p.alt} formats={['avif', 'webp']} widths={[342, 560]} sizes="(max-width: 767px) 92vw, 30vw" loading="lazy" />}
-                  {p.destacado && <span class="vi-plan-dest">Combo</span>}
                 </span>
                 <span class="vi-plan-c">
-                  <span class={`n-tag n-tag--${COLOR[p.categoria] || 'lavanda'}`}>{p.categoriaLabel}</span>
+                  <span class="vi-plan-tags">{p.destacado && <span class="n-tag vi-tag-combo">Combo</span>}<span class={`n-tag n-tag--${COLOR[p.categoria] || 'lavanda'}`}>{p.categoriaLabel}</span></span>
                   <h3 class="vi-plan-t">{p.titulo}</h3>
                   <span class="vi-plan-x">{p.descripcion}</span>
                   <span class="vi-plan-k">Incluye</span>
@@ -139,7 +144,7 @@ const ll = v.llegar;
               {m.pasos && <ol class="vi-pan-l">{m.pasos.map((p) => <li>{p}</li>)}</ol>}
               {m.paraderos && <><p class="vi-plan-k">Paraderos</p><ul class="vi-pan-l vi-pan-l--ul">{m.paraderos.map((p) => <li>{p}</li>)}</ul></>}
               {m.rutas && <><p class="vi-plan-k">{m.rutasTitulo}</p><ul class="vi-rutas">{m.rutas.map((r) => <li>{r}</li>)}</ul></>}
-              {m.tarifas && <table class="vi-tab"><caption class="vi-plan-k">Tarifas del parqueadero</caption><tbody>{m.tarifas.map((t) => <tr><th scope="row">{t.tipo}</th><td>{t.minuto}</td><td>{t.plena}</td></tr>)}</tbody></table>}
+              {m.tarifas && <><p class="vi-plan-k">Tarifas del parqueadero</p><ul class="vi-pan-l vi-pan-l--ul">{m.tarifas.map((t) => <li><b>{t.tipo}:</b> {t.minuto} · {t.plena}</li>)}</ul></>}
             </div>
           ))}
           <p class="vi-fuente"><Icon name="help" size="18" /><span>{ll.fuente}</span></p>
@@ -193,10 +198,12 @@ const ll = v.llegar;
     <!-- 9 · Experiencias -->
     <section class="n-sec n-noche vi-sec" id="experiencias" aria-labelledby="vi-ex">
       <div class="mk-w"><div class="n-head"><div><p class="n-ante">Experiencias</p><h2 class="n-titulo" id="vi-ex">Lo que vas a vivir.</h2><p class="n-lead">Salas para tocar, un domo para mirar el universo y laboratorios para preguntar.</p></div><a class="n-a" href="#">Todas las experiencias<Icon name="arrow" size="20" /></a></div></div>
-      <NCarrusel etiqueta="Experiencias" ancho="min(340px, 26vw)" tono="oscuro">
-        {h.noTePierdas.items.map((it) => <li><NCardFoto image={it.imagen} alt={it.alt} etiqueta={it.etiqueta} color={it.color} titulo={it.titulo} texto={it.meta} href="#" ratio="3 / 4" sizes="(max-width: 767px) 82vw, 26vw" /></li>)}
-      </NCarrusel>
-      <div class="mk-w"><span class="n-ej">«Todas las experiencias» lleva a la subpágina propuesta</span></div>
+      <div class="mk-w">
+        <ul class="vi-ex">
+          {h.noTePierdas.items.map((it, i) => <li data-rv style={`--d:${i}`}><NCardFoto image={it.imagen} alt={it.alt} etiqueta={it.etiqueta} color={it.color} titulo={it.titulo} texto={it.meta} href="#" ratio="3 / 4" sizes="(max-width: 767px) 46vw, 23vw" /></li>)}
+        </ul>
+        <span class="n-ej">«Todas las experiencias» lleva a la subpágina propuesta</span>
+      </div>
     </section>
 
     <!-- 10 · Preguntas -->
@@ -229,6 +236,13 @@ const ll = v.llegar;
   .vi-migas { display: flex; gap: 8px; font-size: 14px; font-weight: 600; color: var(--n-texto2); }
   .vi-migas a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
   .vi-migas [aria-current] { color: var(--n-noche); }
+  .vi-hoy { display: grid; gap: 8px; min-width: 340px; padding: 28px 32px; }
+  .vi-hoy-t { font-size: 18px; font-weight: 600; color: var(--n-lavanda); }
+  .vi-hoy-h { display: grid; }
+  .vi-hoy-h b { font-size: 15px; }
+  .vi-hoy-h span { font-size: 24px; font-weight: 700; }
+  .vi-hoy-v { font-size: 13px; color: var(--n-texto2-osc); }
+  .vi-hoy-a { margin-top: 6px; color: var(--n-amarillo); }
 
   /* Anclas */
   .vi-anclas { position: sticky; top: 80px; z-index: 50; background: #fff; border-block: 1px solid rgba(35, 27, 43, .16); }
@@ -236,7 +250,7 @@ const ll = v.llegar;
   .vi-anclas ul::-webkit-scrollbar { display: none; }
   .vi-anclas a { position: relative; display: inline-flex; align-items: center; min-height: 56px; padding: 0 14px; font-size: 15px; font-weight: 600; color: var(--n-noche); white-space: nowrap; }
   .vi-anclas a::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: 0; height: 3px; background: var(--n-noche); transform: scaleX(0); transition: transform var(--mk-t-rapida) var(--mk-ease); }
-  .vi-anclas a:hover::after, .vi-anclas a[aria-current="true"]::after { transform: scaleX(1); }
+  .vi-anclas a:hover::after { transform: scaleX(1); }
   .vi-sec { scroll-margin-top: 136px; }
 
   /* Horarios */
@@ -252,11 +266,12 @@ const ll = v.llegar;
 
   /* Tarifas */
   .vi-planes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-  .vi-plan { display: grid; grid-template-rows: auto 1fr; height: 100%; background: #fff; color: inherit; transition: box-shadow var(--mk-t) var(--mk-ease); }
-  .vi-plan:hover { box-shadow: inset 0 0 0 3px var(--n-noche); }
+  .vi-plan { display: grid; grid-template-rows: auto 1fr; height: 100%; background: #fff; color: inherit; transition: background-color var(--mk-t) var(--mk-ease); }
+  .vi-plan:hover { background: #FFF3B0; }
   .vi-plan--dest { box-shadow: inset 0 0 0 3px var(--n-amarillo); }
   .vi-plan-f { aspect-ratio: 16 / 10; }
-  .vi-plan-dest { position: absolute; top: 16px; right: 16px; padding: 4px 12px; background: var(--n-noche); color: var(--n-amarillo); font-size: 13px; font-weight: 700; }
+  .vi-plan-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .vi-tag-combo { background: var(--n-noche); color: var(--n-amarillo); }
   .vi-plan-c { display: flex; flex-direction: column; gap: 8px; padding: 24px; }
   .vi-plan-t { margin: 4px 0 0; font-size: var(--n-sub); line-height: 1.2; font-weight: 700; }
   .vi-plan-x { color: var(--n-texto2); font-size: 15px; }
@@ -298,9 +313,6 @@ const ll = v.llegar;
   .vi-pan-l--ul { list-style: square; }
   .vi-rutas { display: flex; flex-wrap: wrap; gap: 8px; }
   .vi-rutas li { padding: 4px 10px; background: #fff; font-weight: 700; font-size: 14px; }
-  .vi-tab { width: 100%; border-collapse: collapse; font-size: 15px; }
-  .vi-tab caption { text-align: left; }
-  .vi-tab th, .vi-tab td { padding: 10px 8px; border-bottom: 1px solid rgba(35, 27, 43, .2); text-align: left; }
   .vi-mapa { position: sticky; top: 156px; aspect-ratio: 1; background: var(--mk-hueso); }
   .vi-mapa iframe { width: 100%; height: 100%; border: 0; }
 
@@ -322,6 +334,9 @@ const ll = v.llegar;
   .vi-ac .n-b { justify-self: start; margin-top: 8px; }
   .vi-ac .n-ej { justify-self: start; }
 
+  /* Experiencias */
+  .vi-ex { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-bottom: 8px; }
+
   /* Preguntas */
   .vi-pr { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
   .vi-pr .n-lead a { color: inherit; font-weight: 700; }
@@ -336,7 +351,7 @@ const ll = v.llegar;
 
   @media (max-width: 1024px) {
     .vi-hero-in, .vi-cd, .vi-ll, .vi-ac, .vi-pr { grid-template-columns: 1fr; gap: 32px; }
-    .vi-planes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .vi-planes, .vi-ex { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .vi-mapa { position: static; aspect-ratio: 16 / 10; }
     .vi-anclas { top: 72px; } .vi-sec { scroll-margin-top: 128px; }
   }
@@ -344,6 +359,8 @@ const ll = v.llegar;
     .vi-hero { padding-block: 32px 40px; }
     .vi-ho, .vi-planes, .vi-se { grid-template-columns: 1fr; }
     .vi-ho-b { padding: 24px; }
+    .vi-hoy { min-width: 0; padding: 24px; }
+    .vi-ex { gap: 12px; }
     .vi-plan-c { padding: 20px; }
     .vi-anclas a { min-height: 48px; padding: 0 10px; font-size: 14px; }
     .vi-anclas a::after { left: 10px; right: 10px; }
@@ -351,23 +368,7 @@ const ll = v.llegar;
 </style>
 
 <script>
-  /* Anclas: marca la sección visible */
-  const nav = document.querySelector('[data-vi-anclas]');
-  const links = [...nav.querySelectorAll('a')];
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((es) => es.forEach((e) => {
-      if (!e.isIntersecting) return;
-      links.forEach((a) => a.setAttribute('aria-current', String(a.hash === `#${e.target.id}`)));
-      links.find((a) => a.hash === `#${e.target.id}`)?.scrollIntoView({ block: 'nearest', inline: 'center' });
-    }), { rootMargin: '-40% 0px -55% 0px' });
-    links.forEach((a) => { const s = document.querySelector(a.hash); if (s) io.observe(s); });
-    /* Arriba de la primera sección no hay ninguna marcada */
-    const primera = document.querySelector(links[0].hash);
-    const limpiar = () => { if (primera.getBoundingClientRect().top > window.innerHeight * 0.45) links.forEach((a) => a.setAttribute('aria-current', 'false')); };
-    window.addEventListener('scroll', limpiar, { passive: true });
-  }
-
-  /* Pestañas de Cómo llegar (flechas ← → como en el patrón ARIA) */
+  /* Pestañas de Cómo llegar: en Elementor es el widget Pestañas, que ya trae este comportamiento */
   document.querySelectorAll('[data-vi-tabs]').forEach((tl) => {
     const tabs = [...tl.querySelectorAll('[role="tab"]')];
     const activar = (t) => {
