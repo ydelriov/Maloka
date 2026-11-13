@@ -31,6 +31,17 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 Con esto ya tienes el header blanco con el subrayado al pasar el mouse, los submenús como lista y la hamburguesa en
 tablet y celular.
 
+En tablet y celular el orden es el de la maqueta: logo a la izquierda y, a la derecha, el botón y la hamburguesa al
+final. El JSON ya lo trae así; si armas el header a mano o algo se desacomoda, estos son los ajustes (siempre con la
+vista de tablet o móvil activa en el editor):
+
+| Elemento | Ajuste en tablet y móvil |
+|---|---|
+| Logo | Avanzado › Diseño › Tamaño: **Crecer** (ocupa el espacio libre y empuja lo demás a la derecha) |
+| Menú de navegación | Avanzado › Diseño › Tamaño: **Ninguno** y Orden: **Último** (la hamburguesa queda al final) |
+| Contenedor | Diseño › Espacios: **8 px** |
+| Botón | Avanzado › CSS personalizado: oculta el ícono del boleto en celular (`@media (max-width: 767px) { selector .elementor-button-icon { display: none; } }`) |
+
 ### Paso 2 · Mega menú con los paneles en hueso
 
 El widget **Menú** (el nuevo, con mega menú) no usa los menús de WordPress: los ítems se escriben en el widget y

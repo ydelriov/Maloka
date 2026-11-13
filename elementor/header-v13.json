@@ -29,11 +29,11 @@
      "size": 32
     },
     "flex_gap_tablet": {
-     "column": "16",
-     "row": "16",
+     "column": "8",
+     "row": "8",
      "isLinked": true,
      "unit": "px",
-     "size": 16
+     "size": 8
     },
     "flex_gap_mobile": {
      "column": "8",
@@ -115,7 +115,9 @@
        "sizes": []
       },
       "align": "left",
-      "_element_width": "auto"
+      "_element_width": "auto",
+      "_flex_size_tablet": "grow",
+      "_flex_size_mobile": "grow"
      },
      "elements": []
     },
@@ -231,7 +233,11 @@
        "size": 0,
        "sizes": []
       },
-      "_flex_size": "grow"
+      "_flex_size": "grow",
+      "_flex_size_tablet": "none",
+      "_flex_size_mobile": "none",
+      "_flex_order_tablet": "end",
+      "_flex_order_mobile": "end"
      },
      "elements": []
     },
@@ -316,7 +322,8 @@
        "sizes": []
       },
       "typography_font_family": "Montserrat",
-      "_element_width": "auto"
+      "_element_width": "auto",
+      "custom_css": "@media (max-width: 767px) {\n  selector .elementor-button-icon { display: none; }\n}\n"
      },
      "elements": []
     }
