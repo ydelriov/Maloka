@@ -5,8 +5,9 @@
 import site from '../../data/site.json';
 import d from '../../data/n/home.json';
 import Icon from '../ui/Icon.astro';
-import { ruta } from '../../lib/rutas.js';
-const { class: cls = '' } = Astro.props;
+import { rutaPara } from '../../lib/rutas.js';
+const { class: cls = '', grupo } = Astro.props;
+const ruta = rutaPara(grupo);
 const s = site.horarios.semana;
 ---
 <aside class:list={['nhr n-noche', cls]} aria-label="Horario de hoy" data-nhr data-semana={`${s.abre}-${s.cierra}`} data-finde={`${site.horarios.finde.abre}-${site.horarios.finde.cierra}`}>

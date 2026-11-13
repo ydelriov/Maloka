@@ -1,0 +1,385 @@
+---
+/* Visítanos · propuesta con el Design System v3 de la V13 (publicada en /seleccion/visitanos/).
+   Página hub de la visita: lo urgente arriba (horario de hoy y tarifas) y lo práctico después.
+   1. Cabecera con el horario de hoy · 2. Barra de anclas fija · 3. Horarios (+ gratuidad y avisos)
+   4. Tarifas: planes con filtros, qué incluyen, para quién, duración, precio y «Comprar en TuBoleta ↗»
+   5. Cine Domo en cartelera · 6. Cómo llegar (pestañas + mapa) · 7. Servicios · 8. Accesibilidad
+   9. Experiencias (avance de la subpágina) · 10. Preguntas frecuentes.
+   Datos de maloka.org en src/data/visitanos.json (por validar: precios y vigencias cambian por temporada).
+   Un solo botón: «Compra tus entradas» en el header; lo demás son enlaces, filas y tarjetas. */
+import { Picture } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import NHeader from '../../components/n/NHeader.astro';
+import NHorario from '../../components/n/NHorario.astro';
+import NFiltros from '../../components/n/NFiltros.astro';
+import NCarrusel from '../../components/n/NCarrusel.astro';
+import NCardFoto from '../../components/n/NCardFoto.astro';
+import NFooter from '../../components/n/NFooter.astro';
+import Icon from '../../components/ui/Icon.astro';
+import v from '../../data/visitanos.json';
+import h from '../../data/n/home.json';
+import site from '../../data/site.json';
+import { img } from '../../lib/images.js';
+import { rutaPara } from '../../lib/rutas.js';
+import { url } from '../../lib/url.js';
+import '../../styles/noche.css';
+const G = 'seleccion';
+const ruta = rutaPara(G);
+const anclas = [
+  { id: 'horarios', label: 'Horarios' }, { id: 'tarifas', label: 'Tarifas' }, { id: 'llegar', label: 'Cómo llegar' },
+  { id: 'servicios', label: 'Servicios' }, { id: 'accesibilidad', label: 'Accesibilidad' },
+  { id: 'experiencias', label: 'Experiencias' }, { id: 'preguntas', label: 'Preguntas' }
+];
+const COLOR = { experiencia: 'lavanda', familiar: 'amarillo', taller: 'menta', cine: 'cielo' };
+const prod = v.productos;
+const ll = v.llegar;
+---
+<Base variante="visitanos" grupo={G} title="Visítanos · Horarios, tarifas y cómo llegar · Maloka" description="Horarios de Maloka en Bogotá: lunes a viernes de 11:00 a. m. a 5:00 p. m.; sábados, domingos y festivos de 9:30 a. m. a 6:00 p. m. Tarifas y combos, Cine Domo, cómo llegar, servicios, accesibilidad y preguntas frecuentes." clase="nn">
+  <NHeader variante="blanco" panel="hueso" grupo={G} inicio={url(`${G}/`)} />
+  <main id="contenido">
+    <!-- 1 · Cabecera -->
+    <section class="vi-hero n-hueso" aria-labelledby="vi-h1">
+      <div class="mk-w vi-hero-in">
+        <div class="vi-hero-t">
+          <nav class="vi-migas" aria-label="Ruta"><a href={url(`${G}/`)}>Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Visítanos</span></nav>
+          <h1 class="n-display" id="vi-h1">Visítanos</h1>
+          <p class="n-lead">{v.hero.lead}</p>
+        </div>
+        <NHorario grupo={G} class="vi-hoy" />
+      </div>
+    </section>
+
+    <!-- 2 · Anclas -->
+    <nav class="vi-anclas" aria-label="En esta página" data-vi-anclas>
+      <ul class="mk-w">{anclas.map((a) => <li><a href={`#${a.id}`}>{a.label}</a></li>)}</ul>
+    </nav>
+
+    <!-- 3 · Horarios -->
+    <section class="n-sec n-blanco vi-sec" id="horarios" aria-labelledby="vi-ho">
+      <div class="mk-w">
+        <div class="n-head"><div><p class="n-ante">Horarios</p><h2 class="n-titulo" id="vi-ho">¿Cuándo abrimos?</h2></div></div>
+        <div class="vi-ho">
+          <div class="vi-ho-b vi-ho-b--a"><p class="vi-ho-d">{site.horarios.semana.dias}</p><p class="vi-ho-h t-num">{site.horarios.semana.texto}</p></div>
+          <div class="vi-ho-b vi-ho-b--b"><p class="vi-ho-d">{site.horarios.finde.dias}</p><p class="vi-ho-h t-num">{site.horarios.finde.texto}</p></div>
+          <ul class="vi-ho-l">
+            <li><Icon name="ticket" size="22" /><span><b>{site.horarios.ventaHasta}</b> · Compra con anticipación: las entradas pueden agotarse en taquilla.</span></li>
+            <li><Icon name="heart" size="22" /><span>{v.gratis}</span></li>
+            {v.avisos.map((a) => <li class="vi-aviso"><Icon name="bolt" size="22" /><span><b>{a.fecha}:</b> {a.texto} <span class="n-ej">Aviso de ejemplo</span></span></li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · Tarifas -->
+    <section class="n-sec n-hueso vi-sec" id="tarifas" aria-labelledby="vi-ta">
+      <div class="mk-w">
+        <div class="n-head">
+          <div><p class="n-ante">Tarifas y combos</p><h2 class="n-titulo" id="vi-ta">{prod.titulo}</h2><p class="n-lead">{prod.texto}</p></div>
+          <NFiltros filtros={prod.filtros} objetivo="vi-planes" etiqueta="Filtrar planes" unidad="planes" />
+        </div>
+        <ul class="vi-planes" id="vi-planes">
+          {prod.items.map((p, i) => (
+            <li data-filtro={p.grupos} data-rv style={`--d:${i % 3}`}>
+              <a class:list={['vi-plan', p.destacado && 'vi-plan--dest']} href={p.url} target="_blank" rel="noopener">
+                <span class="n-foto n-zoom vi-plan-f">
+                  {p.imagenUrl ? <img src={p.imagenUrl} alt={p.alt} loading="lazy" decoding="async" /> : <Picture src={img(p.imagen)} alt={p.alt} formats={['avif', 'webp']} widths={[342, 560]} sizes="(max-width: 767px) 92vw, 30vw" loading="lazy" />}
+                  {p.destacado && <span class="vi-plan-dest">Combo</span>}
+                </span>
+                <span class="vi-plan-c">
+                  <span class={`n-tag n-tag--${COLOR[p.categoria] || 'lavanda'}`}>{p.categoriaLabel}</span>
+                  <h3 class="vi-plan-t">{p.titulo}</h3>
+                  <span class="vi-plan-x">{p.descripcion}</span>
+                  <span class="vi-plan-k">Incluye</span>
+                  <ul class="vi-plan-l">{p.incluye.map((x) => <li>{x}</li>)}</ul>
+                  <span class="vi-plan-k">Para quién</span>
+                  <ul class="vi-plan-l">{p.dirigido.map((x) => <li>{x}</li>)}</ul>
+                  {(p.duracion || p.aplica) && <span class="vi-plan-m">{p.duracion && <span><Icon name="clock" size="18" />{p.duracion}</span>}{p.aplica && <span><Icon name="cal" size="18" />{p.aplica}</span>}</span>}
+                  <span class="vi-plan-pie">
+                    <b class="vi-plan-p">{p.precio || 'Precio en TuBoleta'}</b>
+                    <span class="vi-plan-a">Comprar en TuBoleta<Icon name="ext" size="20" /><span class="sr-only"> (abre en una pestaña nueva)</span></span>
+                  </span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="vi-fuente"><Icon name="help" size="18" /><span>{prod.fuente}</span> <span class="n-ej">Precios por validar</span></p>
+      </div>
+    </section>
+
+    <!-- 5 · Cine Domo -->
+    <section class="n-sec n-noche" aria-labelledby="vi-cd">
+      <div class="mk-w vi-cd">
+        <div class="vi-col">
+          <p class="n-ante">Cine Domo</p>
+          <h2 class="n-titulo" id="vi-cd">{v.cartelera.titulo}</h2>
+          <p class="n-lead">{v.cartelera.texto}</p>
+          <a class="n-a vi-cd-a" href={ruta('Ver funciones')}>Ver funciones de hoy<Icon name="arrow" size="20" /></a>
+        </div>
+        <ul class="vi-cd-l">
+          {v.cartelera.items.map((c) => <li><b>{c.titulo}</b><span>{c.meta}</span></li>)}
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6 · Cómo llegar -->
+    <section class="n-sec n-blanco vi-sec" id="llegar" aria-labelledby="vi-ll">
+      <div class="mk-w vi-ll">
+        <div class="vi-col">
+          <p class="n-ante">Cómo llegar</p>
+          <h2 class="n-titulo" id="vi-ll">{ll.titulo}</h2>
+          <p class="n-lead">{ll.texto}</p>
+          <p class="vi-dir"><Icon name="pin" size="22" /><span><b>{site.direccion}</b><br /><a class="n-a" href={ll.mapa} target="_blank" rel="noopener">Abrir en Google Maps<Icon name="ext" size="18" /></a></span></p>
+          <div class="vi-tabs" role="tablist" aria-label="Cómo llegar" data-vi-tabs>
+            {ll.modos.map((m, i) => <button type="button" role="tab" id={`vi-tab-${m.id}`} aria-controls={`vi-pan-${m.id}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>{m.label}</button>)}
+          </div>
+          {ll.modos.map((m, i) => (
+            <div class="vi-pan" role="tabpanel" id={`vi-pan-${m.id}`} aria-labelledby={`vi-tab-${m.id}`} hidden={i !== 0}>
+              <h3 class="vi-pan-t">{m.titulo}</h3>
+              {m.pasos && <ol class="vi-pan-l">{m.pasos.map((p) => <li>{p}</li>)}</ol>}
+              {m.paraderos && <><p class="vi-plan-k">Paraderos</p><ul class="vi-pan-l vi-pan-l--ul">{m.paraderos.map((p) => <li>{p}</li>)}</ul></>}
+              {m.rutas && <><p class="vi-plan-k">{m.rutasTitulo}</p><ul class="vi-rutas">{m.rutas.map((r) => <li>{r}</li>)}</ul></>}
+              {m.tarifas && <table class="vi-tab"><caption class="vi-plan-k">Tarifas del parqueadero</caption><tbody>{m.tarifas.map((t) => <tr><th scope="row">{t.tipo}</th><td>{t.minuto}</td><td>{t.plena}</td></tr>)}</tbody></table>}
+            </div>
+          ))}
+          <p class="vi-fuente"><Icon name="help" size="18" /><span>{ll.fuente}</span></p>
+        </div>
+        <div class="vi-mapa"><iframe title="Mapa de Maloka en Google Maps" src={ll.embed} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      </div>
+    </section>
+
+    <!-- 7 · Servicios -->
+    <section class="n-sec n-hueso vi-sec" id="servicios" aria-labelledby="vi-se">
+      <div class="mk-w">
+        <div class="n-head"><div><p class="n-ante">Servicios</p><h2 class="n-titulo" id="vi-se">{v.servicios.titulo}</h2><p class="n-lead">{v.servicios.texto}</p></div></div>
+        <div class="vi-se">
+          {v.servicios.grupos.map((g) => (
+            <div class="vi-se-g">
+              <h3 class="vi-se-gt">{g.titulo}</h3>
+              <ul>
+                {g.items.map((s) => (
+                  <li class="vi-se-i">
+                    <span class="vi-se-ic"><Icon name={s.icono} size="24" /></span>
+                    <span class="vi-se-tx"><b>{s.titulo}</b>{s.etiqueta && <span class="n-tag n-tag--menta vi-se-tag">{s.etiqueta}</span>}<span>{s.texto}</span>{s.enlace && <a class="n-a" href="#llegar">{s.enlace.texto}<Icon name="arrow" size="18" /></a>}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 · Accesibilidad -->
+    <section class="n-sec vi-lavanda vi-sec" id="accesibilidad" aria-labelledby="vi-ac">
+      <div class="mk-w vi-ac">
+        <div class="vi-col">
+          <p class="n-ante vi-osc">Accesibilidad</p>
+          <h2 class="n-display" id="vi-ac" data-rv="barrido">{v.accesibilidad.titulo}</h2>
+        </div>
+        <div class="vi-col">
+          <p class="n-lead vi-osc">{v.accesibilidad.texto}</p>
+          <ul class="vi-ac-l">
+            <li><Icon name="access" size="22" />Acceso a salas, Cine Domo y laboratorios</li>
+            <li><Icon name="users" size="22" />Acompañamiento para grupos con necesidades específicas</li>
+            <li><Icon name="guide" size="22" />Guía digital gratuita en Bloomberg Connects</li>
+          </ul>
+          <a class="n-b" href="#">Conoce la guía de accesibilidad<Icon name="arrow" /></a>
+          <span class="n-ej">Contenido por validar · subpágina propuesta</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 · Experiencias -->
+    <section class="n-sec n-noche vi-sec" id="experiencias" aria-labelledby="vi-ex">
+      <div class="mk-w"><div class="n-head"><div><p class="n-ante">Experiencias</p><h2 class="n-titulo" id="vi-ex">Lo que vas a vivir.</h2><p class="n-lead">Salas para tocar, un domo para mirar el universo y laboratorios para preguntar.</p></div><a class="n-a" href="#">Todas las experiencias<Icon name="arrow" size="20" /></a></div></div>
+      <NCarrusel etiqueta="Experiencias" ancho="min(340px, 26vw)" tono="oscuro">
+        {h.noTePierdas.items.map((it) => <li><NCardFoto image={it.imagen} alt={it.alt} etiqueta={it.etiqueta} color={it.color} titulo={it.titulo} texto={it.meta} href="#" ratio="3 / 4" sizes="(max-width: 767px) 82vw, 26vw" /></li>)}
+      </NCarrusel>
+      <div class="mk-w"><span class="n-ej">«Todas las experiencias» lleva a la subpágina propuesta</span></div>
+    </section>
+
+    <!-- 10 · Preguntas -->
+    <section class="n-sec n-blanco vi-sec" id="preguntas" aria-labelledby="vi-pr">
+      <div class="mk-w vi-pr">
+        <div class="vi-col">
+          <p class="n-ante">Preguntas frecuentes</p>
+          <h2 class="n-titulo" id="vi-pr">Resolvemos tus dudas.</h2>
+          <p class="n-lead">¿No encuentras lo que buscas? Llámanos al <a href={`tel:${site.telefonoHref}`}>{site.telefono}</a>.</p>
+        </div>
+        <div class="vi-faq">
+          {v.preguntas.map((q, i) => (
+            <details class="vi-q" open={i === 0}>
+              <summary><span>{q.p}</span><Icon name="down" size="22" /></summary>
+              <p>{q.r}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+  <NFooter />
+</Base>
+
+<style>
+  /* Cabecera */
+  .vi-hero { padding-block: 56px 64px; }
+  .vi-hero-in { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: end; }
+  .vi-hero-t { display: grid; gap: 16px; }
+  .vi-migas { display: flex; gap: 8px; font-size: 14px; font-weight: 600; color: var(--n-texto2); }
+  .vi-migas a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  .vi-migas [aria-current] { color: var(--n-noche); }
+
+  /* Anclas */
+  .vi-anclas { position: sticky; top: 80px; z-index: 50; background: #fff; border-block: 1px solid rgba(35, 27, 43, .16); }
+  .vi-anclas ul { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+  .vi-anclas ul::-webkit-scrollbar { display: none; }
+  .vi-anclas a { position: relative; display: inline-flex; align-items: center; min-height: 56px; padding: 0 14px; font-size: 15px; font-weight: 600; color: var(--n-noche); white-space: nowrap; }
+  .vi-anclas a::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: 0; height: 3px; background: var(--n-noche); transform: scaleX(0); transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .vi-anclas a:hover::after, .vi-anclas a[aria-current="true"]::after { transform: scaleX(1); }
+  .vi-sec { scroll-margin-top: 136px; }
+
+  /* Horarios */
+  .vi-ho { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .vi-ho-b { display: grid; gap: 8px; padding: 32px; color: var(--n-noche); }
+  .vi-ho-b--a { background: var(--n-amarillo); } .vi-ho-b--b { background: var(--n-cielo); }
+  .vi-ho-d { font-size: 18px; font-weight: 600; }
+  .vi-ho-h { font-size: var(--n-titulo); line-height: 1.1; font-weight: 700; letter-spacing: -0.015em; }
+  .vi-ho-l { grid-column: 1 / -1; display: grid; gap: 0; border-top: 2px solid var(--n-noche); }
+  .vi-ho-l li { display: flex; gap: 14px; align-items: flex-start; padding: 18px 4px; border-bottom: 1px solid rgba(35, 27, 43, .2); font-size: 17px; }
+  .vi-ho-l :global(.mk-ic) { flex: none; margin-top: 2px; }
+  .vi-aviso .n-ej { margin: 0 0 0 8px; }
+
+  /* Tarifas */
+  .vi-planes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .vi-plan { display: grid; grid-template-rows: auto 1fr; height: 100%; background: #fff; color: inherit; transition: box-shadow var(--mk-t) var(--mk-ease); }
+  .vi-plan:hover { box-shadow: inset 0 0 0 3px var(--n-noche); }
+  .vi-plan--dest { box-shadow: inset 0 0 0 3px var(--n-amarillo); }
+  .vi-plan-f { aspect-ratio: 16 / 10; }
+  .vi-plan-dest { position: absolute; top: 16px; right: 16px; padding: 4px 12px; background: var(--n-noche); color: var(--n-amarillo); font-size: 13px; font-weight: 700; }
+  .vi-plan-c { display: flex; flex-direction: column; gap: 8px; padding: 24px; }
+  .vi-plan-t { margin: 4px 0 0; font-size: var(--n-sub); line-height: 1.2; font-weight: 700; }
+  .vi-plan-x { color: var(--n-texto2); font-size: 15px; }
+  .vi-plan-k { margin-top: 8px; font-size: 13px; font-weight: 700; color: var(--n-lavanda-osc); }
+  .vi-plan-l { display: grid; gap: 4px; font-size: 15px; }
+  .vi-plan-l li { position: relative; padding-left: 16px; }
+  .vi-plan-l li::before { content: ""; position: absolute; left: 0; top: .6em; width: 6px; height: 6px; background: var(--n-noche); }
+  .vi-plan-m { display: grid; gap: 6px; margin-top: 8px; font-size: 14px; font-weight: 600; }
+  .vi-plan-m span { display: inline-flex; gap: 8px; align-items: center; }
+  .vi-plan-pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 20px; border-top: 2px solid var(--n-noche); }
+  .vi-plan-l + .vi-plan-pie, .vi-plan-m + .vi-plan-pie { margin-top: auto; }
+  .vi-plan-p { font-size: 20px; font-weight: 700; }
+  .vi-plan-a { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 2px; }
+  .vi-plan:hover .vi-plan-a :global(.mk-ic) { transform: translate(3px, -3px); }
+  .vi-plan-a :global(.mk-ic) { transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .vi-fuente { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; margin-top: 24px; font-size: 14px; color: var(--n-texto2); }
+  .vi-fuente .n-ej { margin: 0; }
+
+  /* Cine Domo */
+  .vi-col { display: grid; gap: 16px; align-content: start; }
+  .vi-cd { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
+  .vi-cd-a { margin-top: 8px; color: var(--n-amarillo); }
+  .vi-cd-l { border-top: 2px solid rgba(255, 255, 255, .5); }
+  .vi-cd-l li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; padding: 22px 4px; border-bottom: 2px solid rgba(255, 255, 255, .5); }
+  .vi-cd-l b { font-size: var(--n-sub); }
+  .vi-cd-l span { color: var(--n-texto2-osc); align-self: center; }
+
+  /* Cómo llegar */
+  .vi-ll { display: grid; grid-template-columns: 6fr 6fr; gap: 56px; align-items: start; }
+  .vi-dir { display: flex; gap: 12px; font-size: 17px; }
+  .vi-dir :global(.mk-ic) { flex: none; margin-top: 2px; }
+  .vi-dir .n-a { margin-top: 6px; }
+  .vi-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .vi-tabs button { min-height: 44px; padding: 0 16px; border: 2px solid var(--n-noche); background: transparent; color: var(--n-noche); font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+  .vi-tabs button[aria-selected="true"] { background: var(--n-noche); color: var(--n-amarillo); }
+  .vi-pan { display: grid; gap: 10px; padding: 24px; background: var(--mk-hueso); }
+  .vi-pan-t { margin: 0; font-size: var(--n-sub); font-weight: 700; }
+  .vi-pan-l { display: grid; gap: 8px; padding-left: 20px; list-style: decimal; }
+  .vi-pan-l--ul { list-style: square; }
+  .vi-rutas { display: flex; flex-wrap: wrap; gap: 8px; }
+  .vi-rutas li { padding: 4px 10px; background: #fff; font-weight: 700; font-size: 14px; }
+  .vi-tab { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .vi-tab caption { text-align: left; }
+  .vi-tab th, .vi-tab td { padding: 10px 8px; border-bottom: 1px solid rgba(35, 27, 43, .2); text-align: left; }
+  .vi-mapa { position: sticky; top: 156px; aspect-ratio: 1; background: var(--mk-hueso); }
+  .vi-mapa iframe { width: 100%; height: 100%; border: 0; }
+
+  /* Servicios */
+  .vi-se { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 48px; }
+  .vi-se-gt { margin: 0 0 8px; padding-bottom: 12px; border-bottom: 2px solid var(--n-noche); font-size: var(--n-sub); font-weight: 700; }
+  .vi-se-i { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid rgba(35, 27, 43, .2); }
+  .vi-se-ic { display: grid; place-items: center; flex: none; width: 48px; height: 48px; background: var(--n-menta); }
+  .vi-se-tx { display: grid; gap: 4px; justify-items: start; font-size: 15px; }
+  .vi-se-tx b { font-size: 17px; }
+  .vi-se-tag { height: 26px; font-size: 13px; }
+
+  /* Accesibilidad */
+  .vi-lavanda { background: var(--n-lavanda); color: var(--n-noche); }
+  .vi-osc { color: var(--n-noche); }
+  .vi-ac { display: grid; grid-template-columns: 6fr 6fr; gap: 64px; align-items: start; }
+  .vi-ac-l { display: grid; border-top: 2px solid var(--n-noche); }
+  .vi-ac-l li { display: flex; gap: 12px; align-items: center; padding: 16px 4px; border-bottom: 2px solid var(--n-noche); font-weight: 600; }
+  .vi-ac .n-b { justify-self: start; margin-top: 8px; }
+  .vi-ac .n-ej { justify-self: start; }
+
+  /* Preguntas */
+  .vi-pr { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
+  .vi-pr .n-lead a { color: inherit; font-weight: 700; }
+  .vi-faq { border-top: 2px solid var(--n-noche); }
+  .vi-q { border-bottom: 2px solid var(--n-noche); }
+  .vi-q summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4px; font-size: 19px; font-weight: 700; cursor: pointer; list-style: none; }
+  .vi-q summary::-webkit-details-marker { display: none; }
+  .vi-q summary:hover { background: var(--n-amarillo); }
+  .vi-q summary :global(.mk-ic) { flex: none; transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .vi-q[open] summary :global(.mk-ic) { transform: rotate(180deg); }
+  .vi-q p { padding: 0 4px 22px; font-size: 17px; line-height: 1.6; color: var(--n-texto2); max-width: 62ch; }
+
+  @media (max-width: 1024px) {
+    .vi-hero-in, .vi-cd, .vi-ll, .vi-ac, .vi-pr { grid-template-columns: 1fr; gap: 32px; }
+    .vi-planes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .vi-mapa { position: static; aspect-ratio: 16 / 10; }
+    .vi-anclas { top: 72px; } .vi-sec { scroll-margin-top: 128px; }
+  }
+  @media (max-width: 767px) {
+    .vi-hero { padding-block: 32px 40px; }
+    .vi-ho, .vi-planes, .vi-se { grid-template-columns: 1fr; }
+    .vi-ho-b { padding: 24px; }
+    .vi-plan-c { padding: 20px; }
+    .vi-anclas a { min-height: 48px; padding: 0 10px; font-size: 14px; }
+    .vi-anclas a::after { left: 10px; right: 10px; }
+  }
+</style>
+
+<script>
+  /* Anclas: marca la sección visible */
+  const nav = document.querySelector('[data-vi-anclas]');
+  const links = [...nav.querySelectorAll('a')];
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => {
+      if (!e.isIntersecting) return;
+      links.forEach((a) => a.setAttribute('aria-current', String(a.hash === `#${e.target.id}`)));
+      links.find((a) => a.hash === `#${e.target.id}`)?.scrollIntoView({ block: 'nearest', inline: 'center' });
+    }), { rootMargin: '-40% 0px -55% 0px' });
+    links.forEach((a) => { const s = document.querySelector(a.hash); if (s) io.observe(s); });
+    /* Arriba de la primera sección no hay ninguna marcada */
+    const primera = document.querySelector(links[0].hash);
+    const limpiar = () => { if (primera.getBoundingClientRect().top > window.innerHeight * 0.45) links.forEach((a) => a.setAttribute('aria-current', 'false')); };
+    window.addEventListener('scroll', limpiar, { passive: true });
+  }
+
+  /* Pestañas de Cómo llegar (flechas ← → como en el patrón ARIA) */
+  document.querySelectorAll('[data-vi-tabs]').forEach((tl) => {
+    const tabs = [...tl.querySelectorAll('[role="tab"]')];
+    const activar = (t) => {
+      tabs.forEach((x) => { const on = x === t; x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+      t.focus();
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => activar(t));
+      t.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') activar(tabs[(i + 1) % tabs.length]);
+        if (e.key === 'ArrowLeft') activar(tabs[(i - 1 + tabs.length) % tabs.length]);
+      });
+    });
+  });
+</script>

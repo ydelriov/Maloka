@@ -8,7 +8,7 @@ import d from '../../data/n/home.json';
 import Icon from '../ui/Icon.astro';
 import NHorario from './NHorario.astro';
 import { img } from '../../lib/images.js';
-const { variante = 'foto', colorBloque = 'amarillo' } = Astro.props;
+const { variante = 'foto', colorBloque = 'amarillo', grupo } = Astro.props;
 const h = d.hero;
 ---
 <section class:list={['nhe', `nhe--${variante}`]} style={`--nhe-c:var(--n-${colorBloque})`} aria-roledescription="carrusel" aria-label="Destacados de Maloka" data-nslider>
@@ -35,7 +35,7 @@ const h = d.hero;
       </div>
     </div>
   </div>
-  <NHorario class="nhe-horario" />
+  <NHorario class="nhe-horario" grupo={grupo} />
   <p class="sr-only" aria-live="polite" data-anuncio></p>
 </section>
 

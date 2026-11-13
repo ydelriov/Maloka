@@ -1,9 +1,9 @@
 ---
-/* F · Etiquetas de filtro de la agenda (Hoy / Fin de semana): filtran los elementos [data-filtro] del contenedor
+/* F · Etiquetas de filtro de la agenda (Hoy / Fin de semana): filtran los elementos [data-filtro] (uno o varios grupos separados por espacio) del contenedor
    indicado con «objetivo». La activa va en noche con texto amarillo; aria-pressed para lectores de pantalla. */
-const { filtros = [], objetivo, tono = 'claro' } = Astro.props;
+const { filtros = [], objetivo, tono = 'claro', etiqueta = 'Filtrar programación', unidad = 'actividades' } = Astro.props;
 ---
-<div class:list={['nfl', `nfl--${tono}`]} role="group" aria-label="Filtrar programación" data-nfl={objetivo}>
+<div class:list={['nfl', `nfl--${tono}`]} role="group" aria-label={etiqueta} data-nfl={objetivo} data-unidad={unidad}>
   {filtros.map((f, i) => <button type="button" class="nfl-b" aria-pressed={i === 0 ? 'true' : 'false'} data-f={f.id}>{f.label}</button>)}
   <p class="sr-only" role="status" aria-live="polite" data-nfl-msg></p>
 </div>
@@ -27,10 +27,10 @@ const { filtros = [], objetivo, tono = 'claro' } = Astro.props;
       const f = b.dataset.f;
       let n = 0;
       cont.querySelectorAll('[data-filtro]').forEach((el) => {
-        const ok = f === 'todo' || el.dataset.filtro === f;
+        const ok = f === 'todo' || el.dataset.filtro.split(' ').includes(f);
         el.hidden = !ok; if (ok) n++;
       });
-      msg.textContent = `${n} actividades: ${b.textContent}`;
+      msg.textContent = `${n} ${g.dataset.unidad}: ${b.textContent}`;
     }));
   });
 </script>

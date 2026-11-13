@@ -9,8 +9,9 @@ import nav from '../../data/nav.json';
 import site from '../../data/site.json';
 import Logo from '../ui/Logo.astro';
 import Icon from '../ui/Icon.astro';
-import { ruta } from '../../lib/rutas.js';
-const { variante = 'noche', inicio = '#', panel } = Astro.props;
+import { rutaPara } from '../../lib/rutas.js';
+const { variante = 'noche', inicio = '#', panel, grupo } = Astro.props;
+const ruta = rutaPara(grupo);
 const COLOR = { visitanos: 'amarillo', agendate: 'cielo', grupo: 'salmon', descubre: 'menta', crea: 'lavanda' };
 ---
 <header class:list={['nh', `nh--${variante}`, panel && `nh--panel-${panel}`]} data-nh>

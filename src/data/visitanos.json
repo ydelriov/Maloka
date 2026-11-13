@@ -76,7 +76,8 @@
           "Recorrido libre por las salas interactivas"
         ],
         "duracion": "2 a 3 horas",
-        "precio": "Desde $42.700"
+        "precio": "Desde $42.700",
+        "url": "https://www.tuboleta.com/es/venue/maloka"
       },
       {
         "id": "tardes",
@@ -94,7 +95,8 @@
         "incluye": [
           "Recorrido por las salas interactivas",
           "Acceso después de la 1:00 p. m."
-        ]
+        ],
+        "url": "https://www.tuboleta.com/es/venue/maloka"
       },
       {
         "id": "familiar",
@@ -115,7 +117,30 @@
           "Una proyección en el Cine Domo"
         ],
         "duracion": "4 horas aproximadamente",
-        "aplica": "Fines de semana, festivos y temporadas de vacaciones"
+        "aplica": "Fines de semana, festivos y temporadas de vacaciones",
+        "url": "https://www.tuboleta.com/es/eventos/combo-familiar-1",
+        "imagenUrl": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/35c88792-691f-42f6-bef8-28eba1898913_43.jpg"
+      },
+      {
+        "id": "esfera",
+        "grupos": "familia domo",
+        "titulo": "Combo Esfera: un instante de vida",
+        "categoria": "cine",
+        "categoriaLabel": "Combo · Cine Domo",
+        "destacado": true,
+        "imagen": "cine-domo-cupula.jpg",
+        "alt": "Planeta proyectado en la cúpula del Cine Domo",
+        "imagenUrl": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/266aad39-4d10-452e-8473-1d2499e602c8_241.jpg",
+        "descripcion": "El combo con la película Esfera: un instante de vida en el Cine Domo.",
+        "dirigido": [
+          "Todo público"
+        ],
+        "incluye": [
+          "Función de Esfera: un instante de vida en el Cine Domo",
+          "Detalle del combo en TuBoleta"
+        ],
+        "url": "https://www.tuboleta.com/es/eventos/combo-esfera-un-instante-de-vida",
+        "porValidar": true
       },
       {
         "id": "bio",
@@ -132,7 +157,8 @@
         "incluye": [
           "Recorrido libre por las salas interactivas",
           "Taller en el laboratorio Bio (1 hora aproximadamente)"
-        ]
+        ],
+        "url": "https://www.tuboleta.com/es/venue/maloka"
       },
       {
         "id": "rover",
@@ -150,7 +176,8 @@
         "incluye": [
           "Recorrido libre por las salas interactivas",
           "Taller en el laboratorio TIC (1 hora aproximadamente)"
-        ]
+        ],
+        "url": "https://www.tuboleta.com/es/venue/maloka"
       },
       {
         "id": "domo",
@@ -167,7 +194,8 @@
         "incluye": [
           "Una proyección en el Cine Domo"
         ],
-        "duracion": "30 a 40 minutos"
+        "duracion": "30 a 40 minutos",
+        "url": "https://www.tuboleta.com/es/venue/maloka"
       }
     ]
   },
@@ -402,5 +430,6 @@
       "fecha": "3 de noviembre",
       "texto": "Cierre temprano a las 12:00 m."
     }
-  ]
+  ],
+  "gratis": "Entran gratis al recorrido exploratorio los menores de 4 años y los adultos mayores."
 }
