@@ -116,8 +116,7 @@
       },
       "align": "left",
       "_element_width": "auto",
-      "_flex_size_tablet": "grow",
-      "_flex_size_mobile": "grow"
+      "custom_css": "@media (max-width: 1024px) {\n  selector { flex-grow: 1; }\n}\n"
      },
      "elements": []
     },
@@ -234,10 +233,9 @@
        "sizes": []
       },
       "_flex_size": "grow",
-      "_flex_size_tablet": "none",
-      "_flex_size_mobile": "none",
       "_flex_order_tablet": "end",
-      "_flex_order_mobile": "end"
+      "_flex_order_mobile": "end",
+      "custom_css": "@media (max-width: 1024px) {\n  selector { flex-grow: 0; }\n}\n"
      },
      "elements": []
     },
@@ -323,7 +321,7 @@
       },
       "typography_font_family": "Montserrat",
       "_element_width": "auto",
-      "custom_css": "@media (max-width: 767px) {\n  selector .elementor-button-icon { display: none; }\n}\n"
+      "custom_css": "selector { flex-shrink: 0; }\nselector .elementor-button { white-space: nowrap; }\n@media (max-width: 767px) {\n  selector .elementor-button-icon { display: none; }\n}\n"
      },
      "elements": []
     }

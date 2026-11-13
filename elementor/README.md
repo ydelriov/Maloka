@@ -35,12 +35,14 @@ En tablet y celular el orden es el de la maqueta: logo a la izquierda y, a la de
 final. El JSON ya lo trae así; si armas el header a mano o algo se desacomoda, estos son los ajustes (siempre con la
 vista de tablet o móvil activa en el editor):
 
-| Elemento | Ajuste en tablet y móvil |
+| Elemento | Ajuste |
 |---|---|
-| Logo | Avanzado › Diseño › Tamaño: **Crecer** (ocupa el espacio libre y empuja lo demás a la derecha) |
-| Menú de navegación | Avanzado › Diseño › Tamaño: **Ninguno** y Orden: **Último** (la hamburguesa queda al final) |
-| Contenedor | Diseño › Espacios: **8 px** |
-| Botón | Avanzado › CSS personalizado: oculta el ícono del boleto en celular (`@media (max-width: 767px) { selector .elementor-button-icon { display: none; } }`) |
+| Logo | Avanzado › CSS personalizado: `@media (max-width: 1024px) { selector { flex-grow: 1; } }` (ocupa el espacio libre y empuja lo demás a la derecha) |
+| Menú de navegación | Avanzado › Diseño › Orden: **Último** en tablet y móvil, y CSS personalizado: `@media (max-width: 1024px) { selector { flex-grow: 0; } }` |
+| Contenedor | Diseño › Espacios: **8 px** en tablet y móvil |
+| Botón | CSS personalizado: `selector { flex-shrink: 0; } selector .elementor-button { white-space: nowrap; }` y, para ocultar el boleto en celular, `@media (max-width: 767px) { selector .elementor-button-icon { display: none; } }` |
+
+El tamaño (crecer) se hace con CSS porque el control «Tamaño» por dispositivo no siempre se aplica al importar.
 
 ### Paso 2 · Mega menú con los paneles en hueso
 
