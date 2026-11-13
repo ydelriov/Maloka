@@ -8,7 +8,7 @@
  },
  "content": [
   {
-   "id": "973516cb",
+   "id": "747dd63c",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -21,40 +21,40 @@
     },
     "flex_direction": "column",
     "flex_gap": {
-     "column": "40",
-     "row": "40",
+     "column": "10",
+     "row": "10",
      "isLinked": true,
      "unit": "px",
-     "size": 40
+     "size": 10
     },
     "flex_gap_mobile": {
-     "column": "28",
-     "row": "28",
+     "column": "8",
+     "row": "8",
      "isLinked": true,
      "unit": "px",
-     "size": 28
+     "size": 8
     },
     "padding": {
      "unit": "px",
-     "top": "56",
+     "top": "32",
      "right": "80",
-     "bottom": "56",
+     "bottom": "36",
      "left": "80",
      "isLinked": false
     },
     "padding_tablet": {
      "unit": "px",
-     "top": "48",
+     "top": "28",
      "right": "40",
-     "bottom": "48",
+     "bottom": "28",
      "left": "40",
      "isLinked": false
     },
     "padding_mobile": {
      "unit": "px",
-     "top": "32",
+     "top": "24",
      "right": "16",
-     "bottom": "40",
+     "bottom": "28",
      "left": "16",
      "isLinked": false
     },
@@ -63,428 +63,190 @@
    },
    "elements": [
     {
-     "id": "c57bab28",
-     "elType": "container",
-     "isInner": true,
+     "id": "07978134",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
      "settings": {
-      "container_type": "flex",
-      "flex_direction": "row",
-      "content_width": "full",
-      "flex_wrap": "nowrap",
-      "flex_direction_tablet": "column",
-      "flex_direction_mobile": "column",
-      "flex_gap": {
-       "column": "48",
-       "row": "48",
-       "isLinked": true,
-       "unit": "px",
-       "size": 48
+      "title": "Inicio / Visítanos",
+      "header_size": "div",
+      "title_color": "#4F4955",
+      "link": {
+       "url": "/",
+       "is_external": "",
+       "nofollow": "",
+       "custom_attributes": ""
       },
-      "flex_gap_tablet": {
-       "column": "32",
-       "row": "32",
-       "isLinked": true,
+      "typography_typography": "custom",
+      "typography_font_size": {
        "unit": "px",
-       "size": 32
+       "size": 14,
+       "sizes": []
       },
-      "flex_align_items": "flex-end",
-      "flex_align_items_tablet": "flex-start",
-      "flex_justify_content": "space-between"
+      "typography_font_weight": "600",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.4,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
      },
-     "elements": [
-      {
-       "id": "65130b47",
-       "elType": "container",
-       "isInner": true,
-       "settings": {
-        "container_type": "flex",
-        "flex_direction": "column",
-        "content_width": "full",
-        "flex_gap": {
-         "column": "16",
-         "row": "16",
-         "isLinked": true,
-         "unit": "px",
-         "size": 16
-        },
-        "width": {
-         "unit": "%",
-         "size": 60,
-         "sizes": []
-        },
-        "width_tablet": {
-         "unit": "%",
-         "size": 100,
-         "sizes": []
-        },
-        "width_mobile": {
-         "unit": "%",
-         "size": 100,
-         "sizes": []
-        }
-       },
-       "elements": [
-        {
-         "id": "a22711a6",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Inicio / Visítanos",
-          "header_size": "div",
-          "title_color": "#4F4955",
-          "link": {
-           "url": "/",
-           "is_external": "",
-           "nofollow": "",
-           "custom_attributes": ""
-          },
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 14,
-           "sizes": []
-          },
-          "typography_font_weight": "600",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.4,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        },
-        {
-         "id": "15ddc7e8",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Visítanos",
-          "header_size": "h1",
-          "title_color": "#231B2B",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 64,
-           "sizes": []
-          },
-          "typography_font_size_tablet": {
-           "unit": "px",
-           "size": 48,
-           "sizes": []
-          },
-          "typography_font_size_mobile": {
-           "unit": "px",
-           "size": 38,
-           "sizes": []
-          },
-          "typography_font_weight": "700",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.05,
-           "sizes": []
-          },
-          "typography_letter_spacing": {
-           "unit": "em",
-           "size": -0.025,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        },
-        {
-         "id": "0cadb4f7",
-         "elType": "widget",
-         "widgetType": "text-editor",
-         "isInner": false,
-         "settings": {
-          "editor": "<p>Horarios, tarifas y todo lo que necesitas para vivir Maloka. Compra tus entradas en línea y llega listo para explorar.</p>",
-          "text_color": "#4F4955",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 18,
-           "sizes": []
-          },
-          "typography_font_size_mobile": {
-           "unit": "px",
-           "size": 16,
-           "sizes": []
-          },
-          "typography_font_weight": "400",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.55,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        }
-       ]
+     "elements": []
+    },
+    {
+     "id": "b3a92f4e",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Visítanos",
+      "header_size": "h1",
+      "title_color": "#231B2B",
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 40,
+       "sizes": []
       },
-      {
-       "id": "8c13c9b0",
-       "elType": "container",
-       "isInner": true,
-       "settings": {
-        "container_type": "flex",
-        "flex_direction": "column",
-        "content_width": "full",
-        "flex_gap": {
-         "column": "6",
-         "row": "6",
-         "isLinked": true,
-         "unit": "px",
-         "size": 6
+      "typography_font_size_tablet": {
+       "unit": "px",
+       "size": 34,
+       "sizes": []
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 28,
+       "sizes": []
+      },
+      "typography_font_weight": "700",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.1,
+       "sizes": []
+      },
+      "typography_letter_spacing": {
+       "unit": "em",
+       "size": -0.015,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
+     },
+     "elements": []
+    },
+    {
+     "id": "a0f60fff",
+     "elType": "widget",
+     "widgetType": "text-editor",
+     "isInner": false,
+     "settings": {
+      "editor": "<p>Horarios, tarifas y todo lo que necesitas para vivir Maloka. Compra tus entradas en línea y llega listo para explorar.</p>",
+      "text_color": "#4F4955",
+      "_element_width": "initial",
+      "_element_custom_width": {
+       "unit": "px",
+       "size": 640,
+       "sizes": []
+      },
+      "_element_custom_width_mobile": {
+       "unit": "%",
+       "size": 100,
+       "sizes": []
+      },
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 16,
+       "sizes": []
+      },
+      "typography_font_weight": "400",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.5,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
+     },
+     "elements": []
+    },
+    {
+     "id": "9eb8106d",
+     "elType": "widget",
+     "widgetType": "icon-list",
+     "isInner": false,
+     "settings": {
+      "view": "inline",
+      "icon_list": [
+       {
+        "_id": "d3jccgg",
+        "text": "Lunes a viernes 11:00 a. m. – 5:00 p. m.",
+        "selected_icon": {
+         "value": "far fa-clock",
+         "library": "fa-regular"
         },
-        "width": {
-         "unit": "%",
-         "size": 34,
-         "sizes": []
-        },
-        "width_tablet": {
-         "unit": "%",
-         "size": 60,
-         "sizes": []
-        },
-        "width_mobile": {
-         "unit": "%",
-         "size": 100,
-         "sizes": []
-        },
-        "padding": {
-         "unit": "px",
-         "top": "28",
-         "right": "32",
-         "bottom": "28",
-         "left": "32",
-         "isLinked": false
-        },
-        "padding_mobile": {
-         "unit": "px",
-         "top": "24",
-         "right": "24",
-         "bottom": "24",
-         "left": "24",
-         "isLinked": true
-        },
-        "background_background": "classic",
-        "background_color": "#231B2B",
-        "flex_align_items": "flex-start"
-       },
-       "elements": [
-        {
-         "id": "b451266d",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Horarios",
-          "header_size": "div",
-          "title_color": "#B4A5F5",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 18,
-           "sizes": []
-          },
-          "typography_font_weight": "600",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.4,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        },
-        {
-         "id": "03190003",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Lunes a viernes",
-          "header_size": "div",
-          "title_color": "#FFFFFF",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 15,
-           "sizes": []
-          },
-          "typography_font_weight": "700",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.4,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        },
-        {
-         "id": "af802eba",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "11:00 a. m. – 5:00 p. m.",
-          "header_size": "div",
-          "title_color": "#FFFFFF",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 24,
-           "sizes": []
-          },
-          "typography_font_weight": "700",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.2,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        },
-        {
-         "id": "c2c4a862",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Sábados, domingos y festivos",
-          "header_size": "div",
-          "title_color": "#FFFFFF",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 15,
-           "sizes": []
-          },
-          "typography_font_weight": "700",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.4,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        },
-        {
-         "id": "abf21c42",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "9:30 a. m. – 6:00 p. m.",
-          "header_size": "div",
-          "title_color": "#FFFFFF",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 24,
-           "sizes": []
-          },
-          "typography_font_weight": "700",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.2,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        },
-        {
-         "id": "cb59fdf4",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Venta de entradas hasta las 4:00 p. m.",
-          "header_size": "div",
-          "title_color": "#D9D3E0",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 13,
-           "sizes": []
-          },
-          "typography_font_weight": "400",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.4,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        },
-        {
-         "id": "006bbff7",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Ver tarifas →",
-          "header_size": "div",
-          "title_color": "#FFE25C",
-          "link": {
-           "url": "#tarifas",
-           "is_external": "",
-           "nofollow": "",
-           "custom_attributes": ""
-          },
-          "_element_width": "auto",
-          "_padding": {
-           "unit": "px",
-           "top": "0",
-           "right": "0",
-           "bottom": "2",
-           "left": "0",
-           "isLinked": false
-          },
-          "_border_border": "solid",
-          "_border_width": {
-           "unit": "px",
-           "top": "0",
-           "right": "0",
-           "bottom": "2",
-           "left": "0",
-           "isLinked": false
-          },
-          "_border_color": "#FFE25C",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 16,
-           "sizes": []
-          },
-          "typography_font_weight": "700",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.3,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
+        "link": {
+         "url": ""
         }
-       ]
-      }
-     ]
+       },
+       {
+        "_id": "x9fcni7",
+        "text": "Sábados, domingos y festivos 9:30 a. m. – 6:00 p. m.",
+        "selected_icon": {
+         "value": "far fa-calendar-alt",
+         "library": "fa-regular"
+        },
+        "link": {
+         "url": ""
+        }
+       },
+       {
+        "_id": "m57xx1w",
+        "text": "Venta de entradas hasta las 4:00 p. m.",
+        "selected_icon": {
+         "value": "fas fa-ticket-alt",
+         "library": "fa-solid"
+        },
+        "link": {
+         "url": ""
+        }
+       }
+      ],
+      "icon_color": "#231B2B",
+      "text_color": "#231B2B",
+      "icon_size": {
+       "unit": "px",
+       "size": 16,
+       "sizes": []
+      },
+      "space_between": {
+       "unit": "px",
+       "size": 24,
+       "sizes": []
+      },
+      "text_indent": {
+       "unit": "px",
+       "size": 6,
+       "sizes": []
+      },
+      "icon_typography_typography": "custom",
+      "icon_typography_font_size": {
+       "unit": "px",
+       "size": 14,
+       "sizes": []
+      },
+      "icon_typography_font_weight": "600",
+      "icon_typography_line_height": {
+       "unit": "em",
+       "size": 1.5,
+       "sizes": []
+      },
+      "icon_typography_font_family": "Montserrat"
+     },
+     "elements": []
     }
    ]
   },
   {
-   "id": "20206ab9",
+   "id": "be080b7c",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -554,7 +316,7 @@
    },
    "elements": [
     {
-     "id": "fff9ff43",
+     "id": "ac25c13e",
      "elType": "widget",
      "widgetType": "heading",
      "isInner": false,
@@ -606,7 +368,7 @@
      "elements": []
     },
     {
-     "id": "75108388",
+     "id": "67a8bfef",
      "elType": "widget",
      "widgetType": "heading",
      "isInner": false,
@@ -658,7 +420,7 @@
      "elements": []
     },
     {
-     "id": "cc89556a",
+     "id": "fe11c9fd",
      "elType": "widget",
      "widgetType": "heading",
      "isInner": false,
@@ -710,7 +472,7 @@
      "elements": []
     },
     {
-     "id": "162b1260",
+     "id": "211127be",
      "elType": "widget",
      "widgetType": "heading",
      "isInner": false,
@@ -762,7 +524,7 @@
      "elements": []
     },
     {
-     "id": "9b769b29",
+     "id": "a54991b4",
      "elType": "widget",
      "widgetType": "heading",
      "isInner": false,
@@ -814,7 +576,7 @@
      "elements": []
     },
     {
-     "id": "61cbd353",
+     "id": "d2b7cfb1",
      "elType": "widget",
      "widgetType": "heading",
      "isInner": false,
@@ -866,7 +628,7 @@
      "elements": []
     },
     {
-     "id": "af53c579",
+     "id": "e97b39d0",
      "elType": "widget",
      "widgetType": "heading",
      "isInner": false,
@@ -920,7 +682,7 @@
    ]
   },
   {
-   "id": "9a0151ab",
+   "id": "654af3b6",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -976,7 +738,7 @@
    },
    "elements": [
     {
-     "id": "a543e6ea",
+     "id": "57a79e09",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -993,7 +755,7 @@
      },
      "elements": [
       {
-       "id": "7beb5a5b",
+       "id": "10a09b6a",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -1023,7 +785,7 @@
        "elements": []
       },
       {
-       "id": "8af38a99",
+       "id": "b7d694ee",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -1065,7 +827,7 @@
      ]
     },
     {
-     "id": "39e8929c",
+     "id": "365a5f1c",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1091,7 +853,7 @@
      },
      "elements": [
       {
-       "id": "d818cdf0",
+       "id": "0b61ba51",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1136,7 +898,7 @@
        },
        "elements": [
         {
-         "id": "f3d8d96c",
+         "id": "4fc14a5d",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1161,7 +923,7 @@
          "elements": []
         },
         {
-         "id": "32bbbd4f",
+         "id": "08e5db10",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1182,7 +944,7 @@
           },
           "typography_font_size_mobile": {
            "unit": "px",
-           "size": 28,
+           "size": 24,
            "sizes": []
           },
           "typography_font_weight": "700",
@@ -1203,7 +965,7 @@
        ]
       },
       {
-       "id": "6b5107b9",
+       "id": "30df535d",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1248,7 +1010,7 @@
        },
        "elements": [
         {
-         "id": "c54571c8",
+         "id": "32552c84",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1273,7 +1035,7 @@
          "elements": []
         },
         {
-         "id": "93352858",
+         "id": "55bc5305",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1294,7 +1056,7 @@
           },
           "typography_font_size_mobile": {
            "unit": "px",
-           "size": 28,
+           "size": 24,
            "sizes": []
           },
           "typography_font_weight": "700",
@@ -1317,7 +1079,7 @@
      ]
     },
     {
-     "id": "9a613ef7",
+     "id": "faafe0dd",
      "elType": "widget",
      "widgetType": "divider",
      "isInner": false,
@@ -1343,14 +1105,14 @@
      "elements": []
     },
     {
-     "id": "3846c7e4",
+     "id": "b0a3dcf6",
      "elType": "widget",
      "widgetType": "icon-list",
      "isInner": false,
      "settings": {
       "icon_list": [
        {
-        "_id": "ghri4ps",
+        "_id": "a76y7de",
         "text": "Venta de entradas hasta las 4:00 p. m. · Compra con anticipación: las entradas pueden agotarse en taquilla.",
         "selected_icon": {
          "value": "fas fa-ticket-alt",
@@ -1361,7 +1123,7 @@
         }
        },
        {
-        "_id": "0erir30",
+        "_id": "q9bvc1k",
         "text": "Entran gratis al recorrido exploratorio los menores de 4 años y los adultos mayores.",
         "selected_icon": {
          "value": "far fa-heart",
@@ -1417,7 +1179,7 @@
    ]
   },
   {
-   "id": "0a6220ee",
+   "id": "61467758",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -1473,7 +1235,7 @@
    },
    "elements": [
     {
-     "id": "cedc87de",
+     "id": "f9da0e37",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1490,7 +1252,7 @@
      },
      "elements": [
       {
-       "id": "eee4eb65",
+       "id": "96ed7c4a",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -1520,7 +1282,7 @@
        "elements": []
       },
       {
-       "id": "f51c0635",
+       "id": "e021a49f",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -1560,7 +1322,7 @@
        "elements": []
       },
       {
-       "id": "09fba60f",
+       "id": "9da65f6b",
        "elType": "widget",
        "widgetType": "text-editor",
        "isInner": false,
@@ -1591,7 +1353,7 @@
      ]
     },
     {
-     "id": "9f0e7761",
+     "id": "7487d6fe",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1617,7 +1379,7 @@
      },
      "elements": [
       {
-       "id": "b092ebbf",
+       "id": "c53a99dc",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1660,7 +1422,7 @@
        },
        "elements": [
         {
-         "id": "51d0bba4",
+         "id": "9bda3d46",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -1694,7 +1456,7 @@
          "elements": []
         },
         {
-         "id": "ce350d15",
+         "id": "11d1a611",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -1729,7 +1491,7 @@
          },
          "elements": [
           {
-           "id": "d4254964",
+           "id": "bcd7d6f1",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -1747,7 +1509,7 @@
            },
            "elements": [
             {
-             "id": "4fa50f00",
+             "id": "4ae8fc84",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -1785,7 +1547,7 @@
            ]
           },
           {
-           "id": "8aa7340f",
+           "id": "2cef9817",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -1820,7 +1582,7 @@
            "elements": []
           },
           {
-           "id": "3f9f1dc2",
+           "id": "4ba5b5e8",
            "elType": "widget",
            "widgetType": "text-editor",
            "isInner": false,
@@ -1844,7 +1606,7 @@
            "elements": []
           },
           {
-           "id": "71e710fb",
+           "id": "4c4f45b1",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -1869,14 +1631,14 @@
            "elements": []
           },
           {
-           "id": "c4b18311",
+           "id": "4cedd6ac",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "vdnaqz6",
+              "_id": "y181d2n",
               "text": "Recorrido libre por las salas interactivas",
               "selected_icon": {
                "value": "fas fa-square",
@@ -1922,7 +1684,7 @@
            "elements": []
           },
           {
-           "id": "63fd6c49",
+           "id": "37ae74b3",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -1947,14 +1709,14 @@
            "elements": []
           },
           {
-           "id": "3026c069",
+           "id": "a5a01a07",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "bg8buaj",
+              "_id": "a73qpr8",
               "text": "Entrada paga desde los 4 años",
               "selected_icon": {
                "value": "fas fa-square",
@@ -1965,7 +1727,7 @@
               }
              },
              {
-              "_id": "8vqdvgc",
+              "_id": "xiiv0ic",
               "text": "Gratis para menores de 4 años y adultos mayores",
               "selected_icon": {
                "value": "fas fa-square",
@@ -2011,14 +1773,14 @@
            "elements": []
           },
           {
-           "id": "4e0ec33c",
+           "id": "ac4fb3a1",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "5dq7am5",
+              "_id": "njrijmd",
               "text": "2 a 3 horas",
               "selected_icon": {
                "value": "far fa-clock",
@@ -2064,7 +1826,7 @@
            "elements": []
           },
           {
-           "id": "7cf4688e",
+           "id": "927185b4",
            "elType": "widget",
            "widgetType": "divider",
            "isInner": false,
@@ -2090,7 +1852,7 @@
            "elements": []
           },
           {
-           "id": "7b9068b7",
+           "id": "1580a5ae",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -2115,7 +1877,7 @@
            "elements": []
           },
           {
-           "id": "8e8708f1",
+           "id": "d872fcf4",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -2163,7 +1925,7 @@
        ]
       },
       {
-       "id": "e402abf3",
+       "id": "92bb72f2",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2206,7 +1968,7 @@
        },
        "elements": [
         {
-         "id": "2c4a63db",
+         "id": "664e1c3d",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -2240,7 +2002,7 @@
          "elements": []
         },
         {
-         "id": "14c2c17d",
+         "id": "f8522614",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -2275,7 +2037,7 @@
          },
          "elements": [
           {
-           "id": "231b4119",
+           "id": "fd826dea",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -2293,7 +2055,7 @@
            },
            "elements": [
             {
-             "id": "72f7b458",
+             "id": "60fa1f30",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -2331,7 +2093,7 @@
            ]
           },
           {
-           "id": "d66d5584",
+           "id": "674dddf7",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -2366,7 +2128,7 @@
            "elements": []
           },
           {
-           "id": "70415e45",
+           "id": "fc1def1a",
            "elType": "widget",
            "widgetType": "text-editor",
            "isInner": false,
@@ -2390,7 +2152,7 @@
            "elements": []
           },
           {
-           "id": "74358b0f",
+           "id": "b9c7baff",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -2415,14 +2177,14 @@
            "elements": []
           },
           {
-           "id": "b19b38c1",
+           "id": "6008c080",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "p2ycjrt",
+              "_id": "lywc4sp",
               "text": "Recorrido por las salas interactivas",
               "selected_icon": {
                "value": "fas fa-square",
@@ -2433,7 +2195,7 @@
               }
              },
              {
-              "_id": "4oaoffp",
+              "_id": "xtmwclc",
               "text": "Acceso después de la 1:00 p. m.",
               "selected_icon": {
                "value": "fas fa-square",
@@ -2479,7 +2241,7 @@
            "elements": []
           },
           {
-           "id": "8a6984f6",
+           "id": "8e9cde95",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -2504,14 +2266,14 @@
            "elements": []
           },
           {
-           "id": "cbd43108",
+           "id": "14beba97",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "gr37ks9",
+              "_id": "vfwczvg",
               "text": "Entrada paga desde los 4 años",
               "selected_icon": {
                "value": "fas fa-square",
@@ -2522,7 +2284,7 @@
               }
              },
              {
-              "_id": "tui1r62",
+              "_id": "zdstf84",
               "text": "Gratis para menores de 4 años y adultos mayores",
               "selected_icon": {
                "value": "fas fa-square",
@@ -2568,7 +2330,7 @@
            "elements": []
           },
           {
-           "id": "3448aed5",
+           "id": "bb24ab68",
            "elType": "widget",
            "widgetType": "divider",
            "isInner": false,
@@ -2594,7 +2356,7 @@
            "elements": []
           },
           {
-           "id": "b2f71e66",
+           "id": "de6765a5",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -2619,7 +2381,7 @@
            "elements": []
           },
           {
-           "id": "ad899a69",
+           "id": "e4e1a01a",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -2667,7 +2429,7 @@
        ]
       },
       {
-       "id": "7bbe7b4f",
+       "id": "f4c754a6",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2720,7 +2482,7 @@
        },
        "elements": [
         {
-         "id": "3bd0927e",
+         "id": "0d3f9fff",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -2754,7 +2516,7 @@
          "elements": []
         },
         {
-         "id": "e3816671",
+         "id": "2a385bdd",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -2789,7 +2551,7 @@
          },
          "elements": [
           {
-           "id": "4d304873",
+           "id": "9baccad2",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -2807,7 +2569,7 @@
            },
            "elements": [
             {
-             "id": "441bd689",
+             "id": "bb28b0d3",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -2843,7 +2605,7 @@
              "elements": []
             },
             {
-             "id": "941c35fc",
+             "id": "e08f7578",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -2881,7 +2643,7 @@
            ]
           },
           {
-           "id": "fcebbb7f",
+           "id": "8a3656bb",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -2916,7 +2678,7 @@
            "elements": []
           },
           {
-           "id": "7e901a9b",
+           "id": "8716a118",
            "elType": "widget",
            "widgetType": "text-editor",
            "isInner": false,
@@ -2940,7 +2702,7 @@
            "elements": []
           },
           {
-           "id": "e36a0c51",
+           "id": "02950e31",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -2965,14 +2727,14 @@
            "elements": []
           },
           {
-           "id": "c43a435f",
+           "id": "efdf9f3b",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "nzukw1a",
+              "_id": "7xnbq41",
               "text": "Recorrido exploratorio",
               "selected_icon": {
                "value": "fas fa-square",
@@ -2983,7 +2745,7 @@
               }
              },
              {
-              "_id": "zjg1a4u",
+              "_id": "22spzrb",
               "text": "Una proyección en el Cine Domo",
               "selected_icon": {
                "value": "fas fa-square",
@@ -3029,7 +2791,7 @@
            "elements": []
           },
           {
-           "id": "2f59e074",
+           "id": "1d8de5bd",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -3054,14 +2816,14 @@
            "elements": []
           },
           {
-           "id": "500f1a1e",
+           "id": "39f2a56b",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "psmqep4",
+              "_id": "68wcadi",
               "text": "Mayores de 4 años",
               "selected_icon": {
                "value": "fas fa-square",
@@ -3072,7 +2834,7 @@
               }
              },
              {
-              "_id": "tokw0ba",
+              "_id": "vgnsjby",
               "text": "Válido para 4 personas",
               "selected_icon": {
                "value": "fas fa-square",
@@ -3118,14 +2880,14 @@
            "elements": []
           },
           {
-           "id": "d67d5533",
+           "id": "4ae69fdb",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "kx1acx9",
+              "_id": "ugwmrfx",
               "text": "4 horas aproximadamente",
               "selected_icon": {
                "value": "far fa-clock",
@@ -3136,7 +2898,7 @@
               }
              },
              {
-              "_id": "2bsivq5",
+              "_id": "dt34xm2",
               "text": "Fines de semana, festivos y temporadas de vacaciones",
               "selected_icon": {
                "value": "far fa-calendar-alt",
@@ -3182,7 +2944,7 @@
            "elements": []
           },
           {
-           "id": "f3145ca9",
+           "id": "9134f503",
            "elType": "widget",
            "widgetType": "divider",
            "isInner": false,
@@ -3208,7 +2970,7 @@
            "elements": []
           },
           {
-           "id": "cfbb680a",
+           "id": "adf3fc5d",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -3233,7 +2995,7 @@
            "elements": []
           },
           {
-           "id": "889243e3",
+           "id": "af8816ce",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -3281,7 +3043,7 @@
        ]
       },
       {
-       "id": "6bc75f5e",
+       "id": "5f198a33",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3334,7 +3096,7 @@
        },
        "elements": [
         {
-         "id": "d16c02bd",
+         "id": "efb0b3b5",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -3368,7 +3130,7 @@
          "elements": []
         },
         {
-         "id": "ecf4775f",
+         "id": "ad8ac615",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -3403,7 +3165,7 @@
          },
          "elements": [
           {
-           "id": "d209f07a",
+           "id": "60e1d1a9",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -3421,7 +3183,7 @@
            },
            "elements": [
             {
-             "id": "352d4ab5",
+             "id": "726cd6fd",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -3457,7 +3219,7 @@
              "elements": []
             },
             {
-             "id": "d5716620",
+             "id": "61930c99",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -3495,7 +3257,7 @@
            ]
           },
           {
-           "id": "1af2db71",
+           "id": "bf3bec27",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -3530,7 +3292,7 @@
            "elements": []
           },
           {
-           "id": "b5a37402",
+           "id": "0e752777",
            "elType": "widget",
            "widgetType": "text-editor",
            "isInner": false,
@@ -3554,7 +3316,7 @@
            "elements": []
           },
           {
-           "id": "3d327072",
+           "id": "368b41cc",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -3579,14 +3341,14 @@
            "elements": []
           },
           {
-           "id": "f9babfd7",
+           "id": "c23932f4",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "y7239aj",
+              "_id": "0o9smvh",
               "text": "Función de Esfera: un instante de vida en el Cine Domo",
               "selected_icon": {
                "value": "fas fa-square",
@@ -3597,7 +3359,7 @@
               }
              },
              {
-              "_id": "8gd3v10",
+              "_id": "dntkksc",
               "text": "Detalle del combo en TuBoleta",
               "selected_icon": {
                "value": "fas fa-square",
@@ -3643,7 +3405,7 @@
            "elements": []
           },
           {
-           "id": "c2fb0fc3",
+           "id": "cb35c859",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -3668,14 +3430,14 @@
            "elements": []
           },
           {
-           "id": "96db4069",
+           "id": "eaf885ee",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "vt0oqo2",
+              "_id": "wlftsxe",
               "text": "Todo público",
               "selected_icon": {
                "value": "fas fa-square",
@@ -3721,7 +3483,7 @@
            "elements": []
           },
           {
-           "id": "9232edd9",
+           "id": "f9a07356",
            "elType": "widget",
            "widgetType": "divider",
            "isInner": false,
@@ -3747,7 +3509,7 @@
            "elements": []
           },
           {
-           "id": "4ee57967",
+           "id": "b57969f7",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -3772,7 +3534,7 @@
            "elements": []
           },
           {
-           "id": "a66a635f",
+           "id": "98870bfe",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -3820,7 +3582,7 @@
        ]
       },
       {
-       "id": "6eef8c5c",
+       "id": "4f8aa9ac",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3863,7 +3625,7 @@
        },
        "elements": [
         {
-         "id": "339184c3",
+         "id": "e033d8b9",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -3897,7 +3659,7 @@
          "elements": []
         },
         {
-         "id": "8aea1632",
+         "id": "65d6ebaa",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -3932,7 +3694,7 @@
          },
          "elements": [
           {
-           "id": "96e9ba50",
+           "id": "d575b4fb",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -3950,7 +3712,7 @@
            },
            "elements": [
             {
-             "id": "02ccc21f",
+             "id": "2ffeefce",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -3988,7 +3750,7 @@
            ]
           },
           {
-           "id": "db83241a",
+           "id": "88fec2a9",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -4023,7 +3785,7 @@
            "elements": []
           },
           {
-           "id": "8926f0b8",
+           "id": "8b2a7987",
            "elType": "widget",
            "widgetType": "text-editor",
            "isInner": false,
@@ -4047,7 +3809,7 @@
            "elements": []
           },
           {
-           "id": "678f67dd",
+           "id": "7820d760",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -4072,14 +3834,14 @@
            "elements": []
           },
           {
-           "id": "d2639fcf",
+           "id": "b1d5462e",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "rv1bayl",
+              "_id": "y1lsgze",
               "text": "Recorrido libre por las salas interactivas",
               "selected_icon": {
                "value": "fas fa-square",
@@ -4090,7 +3852,7 @@
               }
              },
              {
-              "_id": "hf79m0d",
+              "_id": "q7j14d1",
               "text": "Taller en el laboratorio Bio (1 hora aproximadamente)",
               "selected_icon": {
                "value": "fas fa-square",
@@ -4136,7 +3898,7 @@
            "elements": []
           },
           {
-           "id": "d2b71aac",
+           "id": "d1e474cb",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -4161,14 +3923,14 @@
            "elements": []
           },
           {
-           "id": "3f20bdcd",
+           "id": "bc79bf0f",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "imgokuv",
+              "_id": "h44mfe7",
               "text": "Mayores de 7 años",
               "selected_icon": {
                "value": "fas fa-square",
@@ -4214,7 +3976,7 @@
            "elements": []
           },
           {
-           "id": "8589371d",
+           "id": "6fa599f1",
            "elType": "widget",
            "widgetType": "divider",
            "isInner": false,
@@ -4240,7 +4002,7 @@
            "elements": []
           },
           {
-           "id": "efce8765",
+           "id": "51ea65bf",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -4265,7 +4027,7 @@
            "elements": []
           },
           {
-           "id": "ff904590",
+           "id": "1779476c",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -4313,7 +4075,7 @@
        ]
       },
       {
-       "id": "afb5a8b9",
+       "id": "c750b197",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -4356,7 +4118,7 @@
        },
        "elements": [
         {
-         "id": "f53a77ad",
+         "id": "eb3cd855",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -4390,7 +4152,7 @@
          "elements": []
         },
         {
-         "id": "cb051629",
+         "id": "80cf34b9",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -4425,7 +4187,7 @@
          },
          "elements": [
           {
-           "id": "6e0a07e2",
+           "id": "024aa72a",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -4443,7 +4205,7 @@
            },
            "elements": [
             {
-             "id": "c0b356f3",
+             "id": "2c292a46",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -4481,7 +4243,7 @@
            ]
           },
           {
-           "id": "7840b3a8",
+           "id": "1d8e52c5",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -4516,7 +4278,7 @@
            "elements": []
           },
           {
-           "id": "ae6e9d5a",
+           "id": "b8448d97",
            "elType": "widget",
            "widgetType": "text-editor",
            "isInner": false,
@@ -4540,7 +4302,7 @@
            "elements": []
           },
           {
-           "id": "a9d67512",
+           "id": "8e8ecce7",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -4565,14 +4327,14 @@
            "elements": []
           },
           {
-           "id": "4663cf04",
+           "id": "2d756a79",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "dz345u2",
+              "_id": "cbceh4o",
               "text": "Recorrido libre por las salas interactivas",
               "selected_icon": {
                "value": "fas fa-square",
@@ -4583,7 +4345,7 @@
               }
              },
              {
-              "_id": "iwvrin0",
+              "_id": "yef6kpo",
               "text": "Taller en el laboratorio TIC (1 hora aproximadamente)",
               "selected_icon": {
                "value": "fas fa-square",
@@ -4629,7 +4391,7 @@
            "elements": []
           },
           {
-           "id": "16903fcd",
+           "id": "2f15bfcb",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -4654,14 +4416,14 @@
            "elements": []
           },
           {
-           "id": "48729336",
+           "id": "b618f472",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "1gl8ji0",
+              "_id": "xi3qwd5",
               "text": "Mayores de 7 años",
               "selected_icon": {
                "value": "fas fa-square",
@@ -4672,7 +4434,7 @@
               }
              },
              {
-              "_id": "j20s4rt",
+              "_id": "xqos5d8",
               "text": "Niñas y niños con adultos",
               "selected_icon": {
                "value": "fas fa-square",
@@ -4718,7 +4480,7 @@
            "elements": []
           },
           {
-           "id": "43ea0113",
+           "id": "285fae82",
            "elType": "widget",
            "widgetType": "divider",
            "isInner": false,
@@ -4744,7 +4506,7 @@
            "elements": []
           },
           {
-           "id": "a3e1040d",
+           "id": "95f57935",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -4769,7 +4531,7 @@
            "elements": []
           },
           {
-           "id": "df362090",
+           "id": "857d1147",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -4817,7 +4579,7 @@
        ]
       },
       {
-       "id": "46ab97e7",
+       "id": "f034ff06",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -4860,7 +4622,7 @@
        },
        "elements": [
         {
-         "id": "729433ee",
+         "id": "0a0b3622",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -4894,7 +4656,7 @@
          "elements": []
         },
         {
-         "id": "232998e9",
+         "id": "c6b5ed50",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -4929,7 +4691,7 @@
          },
          "elements": [
           {
-           "id": "6ee781e9",
+           "id": "c5076038",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -4947,7 +4709,7 @@
            },
            "elements": [
             {
-             "id": "d78ba780",
+             "id": "e976fa7b",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -4985,7 +4747,7 @@
            ]
           },
           {
-           "id": "b665b562",
+           "id": "b9557f47",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -5020,7 +4782,7 @@
            "elements": []
           },
           {
-           "id": "c5febf01",
+           "id": "35ad3e00",
            "elType": "widget",
            "widgetType": "text-editor",
            "isInner": false,
@@ -5044,7 +4806,7 @@
            "elements": []
           },
           {
-           "id": "0b93c33d",
+           "id": "937089ba",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -5069,14 +4831,14 @@
            "elements": []
           },
           {
-           "id": "2d210e65",
+           "id": "9877b5c1",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "poegfgg",
+              "_id": "r479sif",
               "text": "Una proyección en el Cine Domo",
               "selected_icon": {
                "value": "fas fa-square",
@@ -5122,7 +4884,7 @@
            "elements": []
           },
           {
-           "id": "b82d0857",
+           "id": "7ec77cc8",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -5147,14 +4909,14 @@
            "elements": []
           },
           {
-           "id": "3c952502",
+           "id": "7d4c04e4",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "8otpqoq",
+              "_id": "ur6rpii",
               "text": "Según la película: hay funciones para todo público",
               "selected_icon": {
                "value": "fas fa-square",
@@ -5200,14 +4962,14 @@
            "elements": []
           },
           {
-           "id": "8c187911",
+           "id": "abde8a79",
            "elType": "widget",
            "widgetType": "icon-list",
            "isInner": false,
            "settings": {
             "icon_list": [
              {
-              "_id": "5gqqzhf",
+              "_id": "2kkwsjh",
               "text": "30 a 40 minutos",
               "selected_icon": {
                "value": "far fa-clock",
@@ -5253,7 +5015,7 @@
            "elements": []
           },
           {
-           "id": "6fad4dd9",
+           "id": "0afcf959",
            "elType": "widget",
            "widgetType": "divider",
            "isInner": false,
@@ -5279,7 +5041,7 @@
            "elements": []
           },
           {
-           "id": "f319e7ce",
+           "id": "2282a229",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -5304,7 +5066,7 @@
            "elements": []
           },
           {
-           "id": "5b55338c",
+           "id": "1e3e5833",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -5354,7 +5116,7 @@
      ]
     },
     {
-     "id": "595d43c2",
+     "id": "82d26e96",
      "elType": "widget",
      "widgetType": "text-editor",
      "isInner": false,
@@ -5380,7 +5142,7 @@
    ]
   },
   {
-   "id": "ccd70976",
+   "id": "f3c88671",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -5435,7 +5197,7 @@
    },
    "elements": [
     {
-     "id": "d7bef68e",
+     "id": "29abaa93",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -5463,7 +5225,7 @@
      },
      "elements": [
       {
-       "id": "f3825c97",
+       "id": "ac6706b0",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -5495,7 +5257,7 @@
        },
        "elements": [
         {
-         "id": "3842aa19",
+         "id": "a382425b",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -5525,7 +5287,7 @@
          "elements": []
         },
         {
-         "id": "2e4891c9",
+         "id": "23de284d",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -5565,7 +5327,7 @@
          "elements": []
         },
         {
-         "id": "6d94d8f1",
+         "id": "3feb829a",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -5594,7 +5356,7 @@
          "elements": []
         },
         {
-         "id": "a79c65a3",
+         "id": "8aaf5004",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -5646,7 +5408,7 @@
        ]
       },
       {
-       "id": "17972920",
+       "id": "d3e78a00",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -5678,7 +5440,7 @@
        },
        "elements": [
         {
-         "id": "e6549b52",
+         "id": "7afb1a18",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -5698,7 +5460,7 @@
          },
          "elements": [
           {
-           "id": "ff9cc55e",
+           "id": "5397c4b0",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -5736,7 +5498,7 @@
            },
            "elements": [
             {
-             "id": "3b956b4d",
+             "id": "2511351c",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -5771,7 +5533,7 @@
              "elements": []
             },
             {
-             "id": "5965f6b2",
+             "id": "a4a087eb",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -5798,7 +5560,7 @@
            ]
           },
           {
-           "id": "78d5d600",
+           "id": "f23d6c3c",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -5836,7 +5598,7 @@
            },
            "elements": [
             {
-             "id": "9b9e8e22",
+             "id": "783e38eb",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -5871,7 +5633,7 @@
              "elements": []
             },
             {
-             "id": "11db2cf3",
+             "id": "c51ac51c",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -5898,7 +5660,7 @@
            ]
           },
           {
-           "id": "ed4547c2",
+           "id": "9cbdc7f8",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -5936,7 +5698,7 @@
            },
            "elements": [
             {
-             "id": "d55a46dc",
+             "id": "c89ba88e",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -5971,7 +5733,7 @@
              "elements": []
             },
             {
-             "id": "eb123353",
+             "id": "90a67102",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -5998,7 +5760,7 @@
            ]
           },
           {
-           "id": "ff480584",
+           "id": "8010f1dd",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -6036,7 +5798,7 @@
            },
            "elements": [
             {
-             "id": "e12a895e",
+             "id": "a4c9c3c4",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -6071,7 +5833,7 @@
              "elements": []
             },
             {
-             "id": "09d33a76",
+             "id": "e99c34a2",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -6106,7 +5868,7 @@
    ]
   },
   {
-   "id": "8cf6f63d",
+   "id": "8ef1adf5",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -6162,7 +5924,7 @@
    },
    "elements": [
     {
-     "id": "9d058fe3",
+     "id": "1d0eccc7",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -6190,7 +5952,7 @@
      },
      "elements": [
       {
-       "id": "eafae5cf",
+       "id": "545ecfc8",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -6222,7 +5984,7 @@
        },
        "elements": [
         {
-         "id": "c2210559",
+         "id": "d7add9a9",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -6252,7 +6014,7 @@
          "elements": []
         },
         {
-         "id": "c2a55952",
+         "id": "edcbd142",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -6292,7 +6054,7 @@
          "elements": []
         },
         {
-         "id": "4c4db08c",
+         "id": "b8591b5a",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -6321,14 +6083,14 @@
          "elements": []
         },
         {
-         "id": "2763ba25",
+         "id": "92b8c8d8",
          "elType": "widget",
          "widgetType": "icon-list",
          "isInner": false,
          "settings": {
           "icon_list": [
            {
-            "_id": "fj0bs5n",
+            "_id": "avg9a0a",
             "text": "Carrera 68D #24A-51, Bogotá",
             "selected_icon": {
              "value": "fas fa-map-marker-alt",
@@ -6374,7 +6136,7 @@
          "elements": []
         },
         {
-         "id": "c5a79288",
+         "id": "7b1695ac",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -6424,29 +6186,29 @@
          "elements": []
         },
         {
-         "id": "c70cd265",
+         "id": "1b11738a",
          "elType": "widget",
          "widgetType": "tabs",
          "isInner": false,
          "settings": {
           "tabs": [
            {
-            "_id": "x7uedva",
+            "_id": "hoc3kw1",
             "tab_title": "TransMilenio",
             "tab_content": "<p><strong>Estación El Tiempo – Maloka</strong></p><ol><li>Toma una ruta troncal por la Calle 26 hacia la zona K.</li><li>Bájate en la estación El Tiempo – Maloka.</li><li>Sal de la estación y camina hacia el suroccidente hasta Maloka.</li></ol><p><strong>Rutas troncales:</strong> K16 · K23 · K43 · K54 · K86</p>"
            },
            {
-            "_id": "qbg5d0x",
+            "_id": "dtw3l4l",
             "tab_title": "SITP",
             "tab_content": "<p><strong>Rutas zonales del SITP</strong></p><p><strong>Paraderos</strong></p><ul><li>Calle 26 con Carrera 68D – Estación El Tiempo – Maloka</li><li>Av. La Esperanza (Calle 24) con Carrera 69 – Maloka</li></ul><p><strong>Rutas:</strong> 291 · Terminal Norte – Makro – Tierra Buena · C27 · La Estancia – Normandía · C115 · C135 · 603B · Z8</p>"
            },
            {
-            "_id": "ost1t6n",
+            "_id": "m5afy1i",
             "tab_title": "Carro y moto",
             "tab_content": "<p><strong>Parqueadero de Maloka</strong></p><ol><li>El parqueadero está al respaldo del centro interactivo.</li><li>La entrada es por la Calle 25.</li><li>Tiene espacios para carros, motos y bicicletas.</li><li>Visitantes de Maloka: 1 hora gratis.</li></ol><p><strong>Tarifas del parqueadero</strong></p><ul><li>Carro: $130 por minuto · $27.000 tarifa plena hasta 12 horas</li><li>Moto: $90 por minuto · $15.000 tarifa plena hasta 12 horas</li></ul>"
            },
            {
-            "_id": "6u5pc2p",
+            "_id": "5v9ydt4",
             "tab_title": "Bicicleta",
             "tab_content": "<p><strong>Llega en bicicleta</strong></p><ol><li>El parqueadero de Maloka tiene espacios para bicicletas.</li><li>Entra por la Calle 25, al respaldo del centro interactivo.</li></ol>"
            }
@@ -6492,7 +6254,7 @@
          "elements": []
         },
         {
-         "id": "22a32a77",
+         "id": "87c7111e",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -6518,7 +6280,7 @@
        ]
       },
       {
-       "id": "7e09071a",
+       "id": "77cd1eab",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -6550,7 +6312,7 @@
        },
        "elements": [
         {
-         "id": "5d8ae3f9",
+         "id": "fd2e6251",
          "elType": "widget",
          "widgetType": "google_maps",
          "isInner": false,
@@ -6586,7 +6348,7 @@
    ]
   },
   {
-   "id": "349accb2",
+   "id": "de9c07cd",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -6642,7 +6404,7 @@
    },
    "elements": [
     {
-     "id": "8dde5929",
+     "id": "4f2fc01d",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -6659,7 +6421,7 @@
      },
      "elements": [
       {
-       "id": "5b2b067b",
+       "id": "9703bb0f",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -6689,7 +6451,7 @@
        "elements": []
       },
       {
-       "id": "c46479bb",
+       "id": "5bccdaa2",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -6729,7 +6491,7 @@
        "elements": []
       },
       {
-       "id": "e121b986",
+       "id": "47cb52bb",
        "elType": "widget",
        "widgetType": "text-editor",
        "isInner": false,
@@ -6760,7 +6522,7 @@
      ]
     },
     {
-     "id": "33e90c8d",
+     "id": "1b955527",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -6805,7 +6567,7 @@
      },
      "elements": [
       {
-       "id": "e91f9742",
+       "id": "51dc3b25",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -6822,7 +6584,7 @@
        },
        "elements": [
         {
-         "id": "eb095a75",
+         "id": "c01a7e7e",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -6857,7 +6619,7 @@
          "elements": []
         },
         {
-         "id": "f0ba1011",
+         "id": "8f1fb869",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -6883,7 +6645,7 @@
          "elements": []
         },
         {
-         "id": "7d17aae6",
+         "id": "37e83725",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -6963,7 +6725,7 @@
          "elements": []
         },
         {
-         "id": "2d3c4db5",
+         "id": "d3784170",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -6989,7 +6751,7 @@
          "elements": []
         },
         {
-         "id": "9ec84d74",
+         "id": "3f978906",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -7069,7 +6831,7 @@
          "elements": []
         },
         {
-         "id": "c8af5234",
+         "id": "326273c2",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -7097,7 +6859,7 @@
        ]
       },
       {
-       "id": "a144573e",
+       "id": "619b8120",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -7114,7 +6876,7 @@
        },
        "elements": [
         {
-         "id": "7d8936d3",
+         "id": "95bf1d09",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -7149,7 +6911,7 @@
          "elements": []
         },
         {
-         "id": "31810d1e",
+         "id": "378e2029",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -7175,7 +6937,7 @@
          "elements": []
         },
         {
-         "id": "992a9d98",
+         "id": "6ae0a2c3",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -7255,7 +7017,7 @@
          "elements": []
         },
         {
-         "id": "075dc7bc",
+         "id": "907ddab6",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -7281,7 +7043,7 @@
          "elements": []
         },
         {
-         "id": "d6f22f37",
+         "id": "6ba380fb",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -7361,7 +7123,7 @@
          "elements": []
         },
         {
-         "id": "bc73746c",
+         "id": "71715362",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -7387,7 +7149,7 @@
          "elements": []
         },
         {
-         "id": "03576725",
+         "id": "2a610178",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -7467,7 +7229,7 @@
          "elements": []
         },
         {
-         "id": "8f62df29",
+         "id": "4e947408",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -7493,7 +7255,7 @@
          "elements": []
         },
         {
-         "id": "f2613dc4",
+         "id": "70abc261",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -7573,7 +7335,7 @@
          "elements": []
         },
         {
-         "id": "399cdc20",
+         "id": "fa1876a9",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -7601,7 +7363,7 @@
        ]
       },
       {
-       "id": "6acc01f9",
+       "id": "3b9c648d",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -7618,7 +7380,7 @@
        },
        "elements": [
         {
-         "id": "cd00b9fc",
+         "id": "1111d593",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -7653,7 +7415,7 @@
          "elements": []
         },
         {
-         "id": "439f795c",
+         "id": "75add9c6",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -7679,7 +7441,7 @@
          "elements": []
         },
         {
-         "id": "a4c30d80",
+         "id": "000685c5",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -7759,7 +7521,7 @@
          "elements": []
         },
         {
-         "id": "d88f31fc",
+         "id": "94b7ca7d",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -7785,7 +7547,7 @@
          "elements": []
         },
         {
-         "id": "492fece8",
+         "id": "92ced396",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -7865,7 +7627,7 @@
          "elements": []
         },
         {
-         "id": "79c94c5f",
+         "id": "4198cc78",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -7891,7 +7653,7 @@
          "elements": []
         },
         {
-         "id": "f4074367",
+         "id": "b46c266e",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -7971,7 +7733,7 @@
          "elements": []
         },
         {
-         "id": "327d68d3",
+         "id": "c6cebaf8",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -7999,7 +7761,7 @@
        ]
       },
       {
-       "id": "28839d2c",
+       "id": "84e758bb",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8016,7 +7778,7 @@
        },
        "elements": [
         {
-         "id": "1c84f319",
+         "id": "63dcf5ee",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -8051,7 +7813,7 @@
          "elements": []
         },
         {
-         "id": "0b4fe825",
+         "id": "9a627094",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -8077,7 +7839,7 @@
          "elements": []
         },
         {
-         "id": "dbf1d522",
+         "id": "ea8b9cf2",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -8157,7 +7919,7 @@
          "elements": []
         },
         {
-         "id": "cad4c230",
+         "id": "3cde2f78",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -8189,7 +7951,7 @@
    ]
   },
   {
-   "id": "9573fd7b",
+   "id": "4ad38e2c",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -8245,7 +8007,7 @@
    },
    "elements": [
     {
-     "id": "161d5f39",
+     "id": "6f659d87",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -8273,7 +8035,7 @@
      },
      "elements": [
       {
-       "id": "e0772d88",
+       "id": "69c31360",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8305,7 +8067,7 @@
        },
        "elements": [
         {
-         "id": "2e91a373",
+         "id": "1db409fb",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -8335,7 +8097,7 @@
          "elements": []
         },
         {
-         "id": "abb0b00f",
+         "id": "7c11d71b",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -8377,7 +8139,7 @@
        ]
       },
       {
-       "id": "1f76cf9c",
+       "id": "12796b23",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8409,7 +8171,7 @@
        },
        "elements": [
         {
-         "id": "9fb6c4bd",
+         "id": "44605690",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -8438,14 +8200,14 @@
          "elements": []
         },
         {
-         "id": "00c9b797",
+         "id": "11000a28",
          "elType": "widget",
          "widgetType": "icon-list",
          "isInner": false,
          "settings": {
           "icon_list": [
            {
-            "_id": "xvpmg7w",
+            "_id": "be3zwb7",
             "text": "Acceso a salas, Cine Domo y laboratorios",
             "selected_icon": {
              "value": "fas fa-universal-access",
@@ -8456,7 +8218,7 @@
             }
            },
            {
-            "_id": "xgkdmp6",
+            "_id": "uwje9oa",
             "text": "Acompañamiento para grupos con necesidades específicas",
             "selected_icon": {
              "value": "fas fa-users",
@@ -8467,7 +8229,7 @@
             }
            },
            {
-            "_id": "aa0ze5n",
+            "_id": "ir703qu",
             "text": "Guía digital gratuita en Bloomberg Connects",
             "selected_icon": {
              "value": "fas fa-mobile-alt",
@@ -8521,7 +8283,7 @@
          "elements": []
         },
         {
-         "id": "8af686f2",
+         "id": "7bd04cfa",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -8577,7 +8339,7 @@
    ]
   },
   {
-   "id": "3f0368ac",
+   "id": "97eb96eb",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -8633,7 +8395,7 @@
    },
    "elements": [
     {
-     "id": "cdab4dd5",
+     "id": "f35de195",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -8655,7 +8417,7 @@
      },
      "elements": [
       {
-       "id": "1c7dbfe9",
+       "id": "f5d00e58",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8682,7 +8444,7 @@
        },
        "elements": [
         {
-         "id": "cfc1f453",
+         "id": "f2174c24",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -8712,7 +8474,7 @@
          "elements": []
         },
         {
-         "id": "a9fc4574",
+         "id": "ae52efdf",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -8752,7 +8514,7 @@
          "elements": []
         },
         {
-         "id": "fd5cbe7c",
+         "id": "471798dc",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -8783,7 +8545,7 @@
        ]
       },
       {
-       "id": "9edabad0",
+       "id": "5042ec2e",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -8835,7 +8597,7 @@
      ]
     },
     {
-     "id": "b32315cf",
+     "id": "482785ad",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -8860,7 +8622,7 @@
      },
      "elements": [
       {
-       "id": "209aca2d",
+       "id": "aacfc233",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -8937,7 +8699,7 @@
        },
        "elements": [
         {
-         "id": "c3fb268d",
+         "id": "df2db046",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -8973,7 +8735,7 @@
          "elements": []
         },
         {
-         "id": "be12a3e6",
+         "id": "1091d242",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -8990,7 +8752,7 @@
          },
          "elements": [
           {
-           "id": "ecec9b38",
+           "id": "b795632a",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -9025,7 +8787,7 @@
            "elements": []
           },
           {
-           "id": "ae97caf0",
+           "id": "c15577cf",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -9054,7 +8816,7 @@
        ]
       },
       {
-       "id": "93591b10",
+       "id": "a1d44da9",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -9131,7 +8893,7 @@
        },
        "elements": [
         {
-         "id": "a484ae5e",
+         "id": "c1c0a511",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -9167,7 +8929,7 @@
          "elements": []
         },
         {
-         "id": "4e1fc237",
+         "id": "c337a936",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -9184,7 +8946,7 @@
          },
          "elements": [
           {
-           "id": "91babf4f",
+           "id": "a566464b",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -9219,7 +8981,7 @@
            "elements": []
           },
           {
-           "id": "b583f517",
+           "id": "7b2fb2e4",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -9248,7 +9010,7 @@
        ]
       },
       {
-       "id": "2a2e12f4",
+       "id": "83209874",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -9325,7 +9087,7 @@
        },
        "elements": [
         {
-         "id": "f4a873e3",
+         "id": "82fda367",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -9361,7 +9123,7 @@
          "elements": []
         },
         {
-         "id": "fdc30448",
+         "id": "5c5bae52",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -9378,7 +9140,7 @@
          },
          "elements": [
           {
-           "id": "fc20b963",
+           "id": "aadb2128",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -9413,7 +9175,7 @@
            "elements": []
           },
           {
-           "id": "5c8da3a6",
+           "id": "105b5b83",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -9442,7 +9204,7 @@
        ]
       },
       {
-       "id": "6bae083f",
+       "id": "2367fab2",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -9519,7 +9281,7 @@
        },
        "elements": [
         {
-         "id": "35f3a3d8",
+         "id": "7481cd67",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -9555,7 +9317,7 @@
          "elements": []
         },
         {
-         "id": "b7241292",
+         "id": "343bc6c5",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -9572,7 +9334,7 @@
          },
          "elements": [
           {
-           "id": "bd8e1b15",
+           "id": "0d5bd8ba",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -9607,7 +9369,7 @@
            "elements": []
           },
           {
-           "id": "7db76fa6",
+           "id": "7b757644",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -9640,7 +9402,7 @@
    ]
   },
   {
-   "id": "8b63f662",
+   "id": "b1e955c1",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -9696,7 +9458,7 @@
    },
    "elements": [
     {
-     "id": "000cd55f",
+     "id": "5fa1f0f8",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -9724,7 +9486,7 @@
      },
      "elements": [
       {
-       "id": "16922c59",
+       "id": "88326605",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -9756,7 +9518,7 @@
        },
        "elements": [
         {
-         "id": "effb302f",
+         "id": "9a788d6a",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -9786,7 +9548,7 @@
          "elements": []
         },
         {
-         "id": "96a3059d",
+         "id": "d2c827a9",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -9826,7 +9588,7 @@
          "elements": []
         },
         {
-         "id": "d64759bc",
+         "id": "852a2938",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -9857,7 +9619,7 @@
        ]
       },
       {
-       "id": "f4a5d5d1",
+       "id": "5739ef4e",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -9889,39 +9651,39 @@
        },
        "elements": [
         {
-         "id": "b2e4aaa6",
+         "id": "da8fcae5",
          "elType": "widget",
          "widgetType": "accordion",
          "isInner": false,
          "settings": {
           "tabs": [
            {
-            "_id": "6zsu7f1",
+            "_id": "thbnq4z",
             "tab_title": "¿Cuál es el horario de Maloka?",
             "tab_content": "<p>De lunes a viernes de 11:00 a. m. a 5:00 p. m. Sábados, domingos y festivos de 9:30 a. m. a 6:00 p. m.</p>"
            },
            {
-            "_id": "0tjamwp",
+            "_id": "zt29bo6",
             "tab_title": "¿Hasta qué hora puedo comprar entradas?",
             "tab_content": "<p>La venta de entradas cierra a las 4:00 p. m.</p>"
            },
            {
-            "_id": "rko4rx9",
+            "_id": "jt06u3q",
             "tab_title": "¿Desde qué edad se paga la entrada?",
             "tab_content": "<p>La entrada es paga desde los 4 años. Los menores de 4 años y los adultos mayores entran gratis al recorrido exploratorio.</p>"
            },
            {
-            "_id": "pw6mo2q",
+            "_id": "mcd9q5x",
             "tab_title": "¿Cuánto dura la visita?",
             "tab_content": "<p>El recorrido exploratorio dura de 2 a 3 horas. Con una función del Cine Domo, unas 4 horas.</p>"
            },
            {
-            "_id": "7uqrymj",
+            "_id": "wu9f9h3",
             "tab_title": "¿Dónde compro las entradas?",
             "tab_content": "<p>En línea en Tuboleta. Compra con anticipación: las entradas pueden agotarse en taquilla.</p>"
            },
            {
-            "_id": "7a6esqn",
+            "_id": "rfvahu2",
             "tab_title": "¿Hay guía para recorrer Maloka?",
             "tab_content": "<p>Sí. La guía digital es gratuita y se usa desde el celular con la aplicación Bloomberg Connects.</p>"
            }

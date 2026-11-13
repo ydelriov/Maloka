@@ -114,7 +114,7 @@ solo con contenedores y widgets nativos:
 
 | # | Sección | Contenedores y widgets |
 |---|---|---|
-| 1 | Cabecera | Título H1, texto y un contenedor noche con los horarios |
+| 1 | Cabecera | Compacta: migas, título H1, texto y el horario en una línea (Lista de iconos en línea) |
 | 2 | Anclas | Contenedor **fijo arriba** (Pro) con enlaces a `#horarios`, `#tarifas`… |
 | 3 | Horarios (`#horarios`) | Dos contenedores pastel + Lista de iconos |
 | 4 | Tarifas (`#tarifas`) | Tarjetas: contenedor-enlace a TuBoleta con Imagen, Encabezados y Listas de iconos |

@@ -2,7 +2,7 @@
 /* Visítanos · propuesta con el Design System v3 de la V13 (publicada en /seleccion/visitanos/).
    Maqueta pensada para Elementor: cada bloque es un contenedor o un widget nativo, sin código a medida.
    El JSON importable sale de esta misma estructura: elementor/visitanos-v13.json.
-   1. Cabecera (contenedor + headings; horario fijo en un contenedor noche)
+   1. Cabecera compacta (migas, H1, texto y el horario en una línea con Lista de iconos en línea)
    2. Anclas (contenedor fijo arriba con enlaces a #id)
    3. Horarios (contenedores pastel + icon-list)
    4. Tarifas (grilla de tarjetas: contenedor-enlace con imagen, headings e icon-list)
@@ -41,18 +41,14 @@ const ll = v.llegar;
     <!-- 1 · Cabecera -->
     <section class="vi-hero n-hueso" aria-labelledby="vi-h1">
       <div class="mk-w vi-hero-in">
-        <div class="vi-hero-t">
-          <nav class="vi-migas" aria-label="Ruta"><a href={url(`${G}/`)}>Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Visítanos</span></nav>
-          <h1 class="n-display" id="vi-h1">Visítanos</h1>
-          <p class="n-lead">{v.hero.lead}</p>
-        </div>
-        <aside class="vi-hoy n-noche" aria-label="Horarios">
-          <p class="vi-hoy-t">Horarios</p>
-          <p class="vi-hoy-h"><b>{site.horarios.semana.dias}</b><span class="t-num">{site.horarios.semana.texto}</span></p>
-          <p class="vi-hoy-h"><b>{site.horarios.finde.dias}</b><span class="t-num">{site.horarios.finde.texto}</span></p>
-          <p class="vi-hoy-v">{site.horarios.ventaHasta}</p>
-          <a class="n-a vi-hoy-a" href="#tarifas">Ver tarifas<Icon name="arrow" size="20" /></a>
-        </aside>
+        <nav class="vi-migas" aria-label="Ruta"><a href={url(`${G}/`)}>Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Visítanos</span></nav>
+        <h1 class="vi-h1" id="vi-h1">Visítanos</h1>
+        <p class="vi-lead">{v.hero.lead}</p>
+        <ul class="vi-hoy" aria-label="Horarios">
+          <li><Icon name="clock" size="18" /><b>{site.horarios.semana.dias}</b> {site.horarios.semana.texto}</li>
+          <li><b>{site.horarios.finde.dias}</b> {site.horarios.finde.texto}</li>
+          <li>{site.horarios.ventaHasta}</li>
+        </ul>
       </div>
     </section>
 
@@ -230,19 +226,17 @@ const ll = v.llegar;
 
 <style>
   /* Cabecera */
-  .vi-hero { padding-block: 56px 64px; }
-  .vi-hero-in { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: end; }
-  .vi-hero-t { display: grid; gap: 16px; }
+  .vi-hero { padding-block: 32px 36px; }
+  .vi-hero-in { display: grid; gap: 10px; justify-items: start; }
   .vi-migas { display: flex; gap: 8px; font-size: 14px; font-weight: 600; color: var(--n-texto2); }
   .vi-migas a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
   .vi-migas [aria-current] { color: var(--n-noche); }
-  .vi-hoy { display: grid; gap: 8px; min-width: 340px; padding: 28px 32px; }
-  .vi-hoy-t { font-size: 18px; font-weight: 600; color: var(--n-lavanda); }
-  .vi-hoy-h { display: grid; }
-  .vi-hoy-h b { font-size: 15px; }
-  .vi-hoy-h span { font-size: 24px; font-weight: 700; }
-  .vi-hoy-v { font-size: 13px; color: var(--n-texto2-osc); }
-  .vi-hoy-a { margin-top: 6px; color: var(--n-amarillo); }
+  .vi-h1 { margin: 0; font-size: var(--n-titulo); line-height: 1.1; font-weight: 700; letter-spacing: -0.015em; }
+  .vi-lead { font-size: 16px; line-height: 1.5; color: var(--n-texto2); max-width: 640px; }
+  .vi-hoy { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 0; margin-top: 6px; font-size: 14px; }
+  .vi-hoy li { display: inline-flex; align-items: center; gap: 6px; }
+  .vi-hoy li + li::before { content: "·"; margin: 0 10px; color: var(--n-texto2); }
+  .vi-hoy b { font-weight: 700; }
 
   /* Anclas */
   .vi-anclas { position: sticky; top: 80px; z-index: 50; background: #fff; border-block: 1px solid rgba(35, 27, 43, .16); }
@@ -350,16 +344,20 @@ const ll = v.llegar;
   .vi-q p { padding: 0 4px 22px; font-size: 17px; line-height: 1.6; color: var(--n-texto2); max-width: 62ch; }
 
   @media (max-width: 1024px) {
-    .vi-hero-in, .vi-cd, .vi-ll, .vi-ac, .vi-pr { grid-template-columns: 1fr; gap: 32px; }
+    .vi-cd, .vi-ll, .vi-ac, .vi-pr { grid-template-columns: 1fr; gap: 32px; }
     .vi-planes, .vi-ex { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .vi-mapa { position: static; aspect-ratio: 16 / 10; }
     .vi-anclas { top: 72px; } .vi-sec { scroll-margin-top: 128px; }
   }
   @media (max-width: 767px) {
-    .vi-hero { padding-block: 32px 40px; }
+    .vi-hero { padding-block: 24px 28px; }
+    .vi-hoy { display: grid; gap: 4px; }
+    .vi-hoy li { display: block; }
+    .vi-hoy li :global(.mk-ic) { display: none; }
+    .vi-ho-h { font-size: 24px; }
+    .vi-hoy li + li::before { content: none; }
     .vi-ho, .vi-planes, .vi-se { grid-template-columns: 1fr; }
     .vi-ho-b { padding: 24px; }
-    .vi-hoy { min-width: 0; padding: 24px; }
     .vi-ex { gap: 12px; }
     .vi-plan-c { padding: 20px; }
     .vi-anclas a { min-height: 48px; padding: 0 10px; font-size: 14px; }
