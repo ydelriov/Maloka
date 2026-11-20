@@ -1,0 +1,31 @@
+<script>
+(function () {
+  /* Carrusel del hero: fundido de 600 ms cada 7 s, botón de pausa y una rayita por diapositiva.
+     Sirve con 1, 2 o 3 diapositivas (contenedores con la clase mk-slide). Sin autoplay si el visitante pidió «reducir movimiento». */
+  if (document.body.classList.contains('elementor-editor-active')) return;
+  document.querySelectorAll('.mk-slider').forEach(function (root) {
+    var slides = [].slice.call(root.querySelectorAll(':scope > .mk-slide'));
+    var ctrl = root.querySelector('.mk-ctrl');
+    if (!ctrl || slides.length < 2 || root.dataset.mkListo) return;
+    root.dataset.mkListo = '1';
+    var dotsBox = ctrl.querySelector('.mk-dots'), pausa = ctrl.querySelector('.mk-pausa'), anuncio = root.querySelector('.mk-anuncio');
+    root.setAttribute('role', 'region'); root.setAttribute('aria-roledescription', 'carrusel'); root.setAttribute('aria-label', 'Destacados de Maloka');
+    var dots = slides.map(function (s, i) {
+      s.setAttribute('role', 'group'); s.setAttribute('aria-roledescription', 'diapositiva'); s.setAttribute('aria-label', (i + 1) + ' de ' + slides.length);
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'mk-dot'; b.setAttribute('aria-label', 'Ir a la diapositiva ' + (i + 1));
+      b.addEventListener('click', function () { mostrar(i, true); programar(); }); dotsBox.appendChild(b); return b;
+    });
+    var actual = 0, timer = null, pausado = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function mostrar(n, anunciar) {
+      actual = (n + slides.length) % slides.length;
+      slides.forEach(function (s, i) { var on = i === actual; s.classList.toggle('is-activa', on); if (on) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true'); });
+      dots.forEach(function (d, i) { if (i === actual) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); });
+      if (anunciar) anuncio.textContent = 'Diapositiva ' + (actual + 1) + ' de ' + slides.length;
+    }
+    function programar() { clearInterval(timer); if (!pausado) timer = setInterval(function () { mostrar(actual + 1, false); }, 7000); }
+    function setPausa(p) { pausado = p; root.classList.toggle('is-pausado', p); pausa.setAttribute('aria-label', p ? 'Reproducir el carrusel' : 'Pausar el carrusel'); programar(); }
+    pausa.addEventListener('click', function () { setPausa(!pausado); });
+    ctrl.hidden = false; mostrar(0, false); setPausa(pausado);
+  });
+})();
+</script>

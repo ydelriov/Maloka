@@ -190,6 +190,17 @@ Para quitar una diapositiva, bórrala (con una sola, los controles se ocultan). 
 El estado «Hoy abrimos / Abierto ahora / Cerrado ahora» y las horas van en un widget **HTML** con un script corto.
 Si cambia el horario, edita `data-semana` y `data-finde` en ese widget (formato 24 h) y el texto «Venta de entradas…».
 
+### Si las diapositivas salen una debajo de otra en el sitio publicado
+
+El acomodo (una encima de otra, con fundido) va en el CSS personalizado de **Hero · carrusel** y el movimiento en el
+script del widget **Controles del carrusel**. Algunos servidores quitan el `<script>` de los widgets HTML al importar.
+Si pasa eso:
+
+1. Revisa que **Hero · carrusel › Avanzado › CSS personalizado** tenga el CSS (viene en el JSON).
+2. Agrega el script como código del sitio: **Elementor › Custom Elements › Code › Agregar nuevo**, pega
+   `hero-carrusel-codigo.html`, ubicación **Final del body (</body>)**, condición **Página de inicio**, y publica.
+   El script no se inicia dos veces aunque también esté en el widget.
+
 ### Cómo importarlo
 
 1. Plantillas › Plantillas guardadas › **Importar plantillas** y sube `hero-inicio-v13.json`.
