@@ -169,22 +169,26 @@ solo con contenedores y widgets nativos:
 
 ## hero-inicio-v13.json · Hero de la home
 
-Igual al hero de https://ydelriov.github.io/Maloka/seleccion/: foto a sangre (`hero-slide-1.jpg`), velo plano
-`rgba(20,10,31,.6)` en la mitad de abajo, antetítulo en lavanda, H1 «Atrévete a vivir la ciencia.» y el recuadro noche
-«Bienvenido a Maloka» abajo a la derecha con el estado de hoy (hora de Bogotá) y dos enlaces.
+Carrusel de hasta 3 diapositivas como el de https://ydelriov.github.io/Maloka/seleccion/: cada una con su foto a sangre,
+velo plano `rgba(20,10,31,.6)` en la mitad de abajo, antetítulo en lavanda, titular y texto. Cambia con fundido de
+600 ms cada 7 s, con botón de pausa y una rayita por diapositiva (obligatorio por accesibilidad: lo que se mueve solo
+se tiene que poder pausar). Abajo a la derecha, el recuadro noche «Bienvenido a Maloka» con el estado de hoy.
 
 | Contenedor | Qué hace |
 |---|---|
 | Hero · Inicio V13 | Envoltura noche, `position: relative` para que el horario flote |
-| Hero · foto | Imagen de fondo + velo (degradado con corte duro al 45 %, o sea una banda plana). Alto: pantalla menos el header, entre 640 y 860 px; 420 px en tablet y 520 px en celular, con el velo sobre toda la foto |
-| Hero · texto | Ancho 1280, márgenes 80 / 40 / 16 y 196 px abajo en escritorio para dejar sitio al horario |
+| Hero · carrusel (clase `mk-slider`) | Apila las diapositivas una encima de otra en el sitio publicado |
+| Diapositiva 1, 2 y 3 (clase `mk-slide`) | Foto de fondo + velo (degradado con corte duro al 45 %, una banda plana). Alto: pantalla menos el header, entre 640 y 860 px; 420 px en tablet y 520 px en celular, con el velo sobre toda la foto. Solo la 1 lleva H1; las otras, el mismo estilo en un `p` |
+| Controles del carrusel (widget HTML, no borrar) | Botón de pausa, rayitas y el script. Las rayitas se crean solas según cuántas diapositivas haya |
 | Hero · horario de hoy | En escritorio, posición absoluta abajo a la derecha; en tablet y celular, bloque noche debajo de la foto |
+
+**En el editor las tres diapositivas se ven una debajo de otra** para poder cambiar fotos y textos; el fundido solo
+funciona en el sitio publicado (o en la vista previa). Para cambiar una foto: Diapositiva › Estilo › Fondo › Imagen.
+Para quitar una diapositiva, bórrala (con una sola, los controles se ocultan). Para agregar, duplica una y deja la clase
+`mk-slide` en Avanzado › Clases CSS (sin `is-activa`, que solo lleva la primera). Máximo 3.
 
 El estado «Hoy abrimos / Abierto ahora / Cerrado ahora» y las horas van en un widget **HTML** con un script corto.
 Si cambia el horario, edita `data-semana` y `data-finde` en ese widget (formato 24 h) y el texto «Venta de entradas…».
-
-La maqueta tiene tres frases que rotan con botón de pausa. Aquí va solo la primera, fija: es la que lleva el H1 y evita
-un carrusel automático sin pausa. Si se quiere rotar, se cambia el H1 por un Carrusel anidado más adelante.
 
 ### Cómo importarlo
 
@@ -193,5 +197,5 @@ un carrusel automático sin pausa. Si se quiere rotar, se cambia el H1 por un Ca
 3. Ajustes de la página (engranaje) › **General** › **Estructura de la página: Elementor Full Width** (Elementor ancho
    completo) y **Ocultar título** activado. La plantilla ya los trae; si Elementor pregunta al insertar si quieres aplicar
    los ajustes de la plantilla, di que sí. No uses «Elementor Canvas»: quita también el header y el footer.
-4. Si la foto no aparece, súbela a Medios (`public/elementor/img/hero-slide-1.jpg`) y elígela en Hero · foto › Estilo ›
-   Fondo.
+4. Si las fotos no aparecen, súbelas a Medios (`public/elementor/img/`: `hero-slide-1.jpg`, `cine-domo-cupula.jpg`,
+   `sala-alta-tension.jpg`) y elígelas en cada Diapositiva › Estilo › Fondo.
