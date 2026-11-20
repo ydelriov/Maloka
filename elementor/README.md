@@ -9,6 +9,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `logo-maloka.svg` / `.png` | Logo de las maquetas, por si el sitio aún no tiene uno | Apariencia › Personalizar › Identidad del sitio |
 | `popup-combos.json` | Modal de los combos de TuBoleta | Plantillas › Popups |
 | `visitanos-v13.json` | Página Visítanos completa (10 secciones) | Plantillas › Plantillas guardadas, y se inserta en la página Visítanos |
+| `hero-inicio-v13.json` | Hero de la home: foto a sangre con velo, titular y el horario de hoy | Plantillas › Plantillas guardadas, y se inserta en la página Inicio |
 
 ## Regla de las plantillas: padding 0 por defecto
 
@@ -165,3 +166,30 @@ solo con contenedores y widgets nativos:
 - Si el contenedor de anclas no queda fijo, actívalo en Avanzado › Efectos de movimiento › Fijo: Arriba (desplazamiento 80).
 - Más adelante, los planes pueden salir de un tipo de contenido «Planes» con **Loop Grid** y **Filtro de taxonomía**
   (Pro), para que el equipo los actualice sin editar la página.
+
+## hero-inicio-v13.json · Hero de la home
+
+Igual al hero de https://ydelriov.github.io/Maloka/seleccion/: foto a sangre (`hero-slide-1.jpg`), velo plano
+`rgba(20,10,31,.6)` en la mitad de abajo, antetítulo en lavanda, H1 «Atrévete a vivir la ciencia.» y el recuadro noche
+«Bienvenido a Maloka» abajo a la derecha con el estado de hoy (hora de Bogotá) y dos enlaces.
+
+| Contenedor | Qué hace |
+|---|---|
+| Hero · Inicio V13 | Envoltura noche, `position: relative` para que el horario flote |
+| Hero · foto | Imagen de fondo + velo (degradado con corte duro al 45 %, o sea una banda plana). Alto: pantalla menos el header, entre 640 y 860 px; 420 px en tablet y 520 px en celular, con el velo sobre toda la foto |
+| Hero · texto | Ancho 1280, márgenes 80 / 40 / 16 y 196 px abajo en escritorio para dejar sitio al horario |
+| Hero · horario de hoy | En escritorio, posición absoluta abajo a la derecha; en tablet y celular, bloque noche debajo de la foto |
+
+El estado «Hoy abrimos / Abierto ahora / Cerrado ahora» y las horas van en un widget **HTML** con un script corto.
+Si cambia el horario, edita `data-semana` y `data-finde` en ese widget (formato 24 h) y el texto «Venta de entradas…».
+
+La maqueta tiene tres frases que rotan con botón de pausa. Aquí va solo la primera, fija: es la que lleva el H1 y evita
+un carrusel automático sin pausa. Si se quiere rotar, se cambia el H1 por un Carrusel anidado más adelante.
+
+### Cómo importarlo
+
+1. Plantillas › Plantillas guardadas › **Importar plantillas** y sube `hero-inicio-v13.json`.
+2. Abre la página **Inicio** con Elementor › ícono de carpeta › **Mis plantillas** › «Hero · Inicio V13» › **Insertar**.
+3. Ajustes de la página (engranaje): **Diseño de página: Elementor ancho completo** y **Ocultar título** activado.
+4. Si la foto no aparece, súbela a Medios (`public/elementor/img/hero-slide-1.jpg`) y elígela en Hero · foto › Estilo ›
+   Fondo.
