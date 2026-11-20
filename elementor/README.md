@@ -10,6 +10,19 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `popup-combos.json` | Modal de los combos de TuBoleta | Plantillas › Popups |
 | `visitanos-v13.json` | Página Visítanos completa (10 secciones) | Plantillas › Plantillas guardadas, y se inserta en la página Visítanos |
 
+## Regla de las plantillas: padding 0 por defecto
+
+Si un contenedor no trae padding, Elementor le pone el «Container Padding» de Ajustes del sitio (10 px). Por eso
+**todos los contenedores de estos JSON llevan padding explícito**: el que necesita el diseño o, si no necesita, `0`
+en los cuatro lados. Al crear o editar una plantilla, corre:
+
+```
+node scripts/elementor-padding.mjs
+```
+
+Pone `0` en cada contenedor que no tenga padding propio y no toca los que ya lo tienen (se puede correr varias veces).
+Para lo que se arme a mano en Elementor, deja también **Ajustes del sitio › Diseño › Container Padding** en `0`.
+
 ## Menú y header · paso a paso
 
 ### Antes de importar
