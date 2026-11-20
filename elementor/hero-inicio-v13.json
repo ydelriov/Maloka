@@ -1,8 +1,11 @@
 {
  "title": "Hero · Inicio V13",
- "type": "container",
+ "type": "page",
  "version": "0.4",
- "page_settings": {},
+ "page_settings": {
+  "hide_title": "yes",
+  "template": "elementor_header_footer"
+ },
  "content": [
   {
    "id": "21096efc",

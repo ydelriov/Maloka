@@ -190,6 +190,8 @@ un carrusel automático sin pausa. Si se quiere rotar, se cambia el H1 por un Ca
 
 1. Plantillas › Plantillas guardadas › **Importar plantillas** y sube `hero-inicio-v13.json`.
 2. Abre la página **Inicio** con Elementor › ícono de carpeta › **Mis plantillas** › «Hero · Inicio V13» › **Insertar**.
-3. Ajustes de la página (engranaje): **Diseño de página: Elementor ancho completo** y **Ocultar título** activado.
+3. Ajustes de la página (engranaje) › **General** › **Estructura de la página: Elementor Full Width** (Elementor ancho
+   completo) y **Ocultar título** activado. La plantilla ya los trae; si Elementor pregunta al insertar si quieres aplicar
+   los ajustes de la plantilla, di que sí. No uses «Elementor Canvas»: quita también el header y el footer.
 4. Si la foto no aparece, súbela a Medios (`public/elementor/img/hero-slide-1.jpg`) y elígela en Hero · foto › Estilo ›
    Fondo.
