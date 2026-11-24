@@ -122,6 +122,7 @@ más de ~12 en un solo archivo.
 | 1 | 1 | Cabecera | Compacta: migas, título H1, texto y el horario en una línea (Lista de iconos en línea) |
 | 1 | 2 | Anclas | Contenedor **fijo arriba** (Pro) con enlaces a `#horarios`, `#tarifas`… |
 | 1 | 3 | Horarios (`#horarios`) | Dos contenedores pastel + Lista de iconos (venta, cambio de horario y beneficios) |
+| 1 | 3b | Guía digital | Franja menta que es todo el enlace a la guía de Maloka en **Bloomberg Connects** (ícono, título, texto y «Abrir la guía de Maloka ↗») |
 | 1 | 4 | Planes y tarifas (`#tarifas`) | 3 pasos de color + grupos **Entradas** (4 columnas) y **Combos** (5 columnas). Cada tarjeta es un contenedor-enlace a TuBoleta con la imagen cuadrada de maloka.org, datos y precio |
 | 2 | 5 | Funciones (`#funciones`) | **Cine Domo** (5 afiches cuadrados en 5 columnas) y **Conciertos y artes escénicas** (tarjeta horizontal) |
 | 3 | 6 | Cómo llegar (`#llegar`) | Widget **Pestañas** (TransMilenio, SITP, Carro y moto, Bicicleta) + **Google Maps** |

@@ -5,6 +5,7 @@
    1. Cabecera compacta (migas, H1 y texto; el horario va justo debajo, en la sección Horarios)
    2. Anclas (contenedor fijo arriba con enlaces a #id)
    3. Horarios (contenedores pastel + icon-list)
+   3b. Guía digital: franja menta que enlaza a la guía de Maloka en Bloomberg Connects (contenedor-enlace)
    4. Planes y tarifas (3 pasos + grupos Entradas y Combos: tarjetas con imagen cuadrada de maloka.org, datos, precio)
    5. Funciones: Cine Domo y Conciertos y artes escénicas (afiches cuadrados de maloka.org) · 6. Cómo llegar (widget Pestañas + Google Maps)
    7. Servicios (icon-box) · 8. Accesibilidad (icon-list) · 9. Experiencias (grilla de tarjetas)
@@ -62,6 +63,21 @@ const ll = v.llegar;
           </ul>
         </div>
       </div>
+    </section>
+
+    <!-- 3b · Guía digital (Bloomberg Connects) -->
+    <section class="vi-guia" aria-labelledby="vi-gu">
+      <a class="vi-guia-a" href={v.guia.url} target="_blank" rel="noopener">
+        <span class="mk-w vi-guia-in">
+          <span class="vi-guia-ic" aria-hidden="true"><Icon name="guide" size="40" /></span>
+          <span class="vi-guia-t">
+            <span class="vi-guia-ante">{v.guia.ante} · Bloomberg Connects</span>
+            <h2 class="vi-guia-h" id="vi-gu">{v.guia.titulo}</h2>
+            <span class="vi-guia-x">{v.guia.texto}</span>
+          </span>
+          <span class="n-b vi-guia-b">{v.guia.enlace}<Icon name="ext" /><span class="sr-only"> (abre en una pestaña nueva)</span></span>
+        </span>
+      </a>
     </section>
 
     <!-- 4 · Planes y tarifas -->
@@ -174,7 +190,7 @@ const ll = v.llegar;
                 {g.items.map((s) => (
                   <li class="vi-se-i">
                     <span class="vi-se-ic"><Icon name={s.icono} size="24" /></span>
-                    <span class="vi-se-tx"><b>{s.titulo}</b>{s.etiqueta && <span class="n-tag n-tag--menta vi-se-tag">{s.etiqueta}</span>}<span>{s.texto}</span>{s.enlace && <a class="n-a" href="#llegar">{s.enlace.texto}<Icon name="arrow" size="18" /></a>}</span>
+                    <span class="vi-se-tx"><b>{s.titulo}</b>{s.etiqueta && <span class="n-tag n-tag--menta vi-se-tag">{s.etiqueta}</span>}<span>{s.texto}</span>{s.enlace && (s.enlace.externo ? <a class="n-a" href={s.enlace.href} target="_blank" rel="noopener">{s.enlace.texto}<Icon name="ext" size="18" /></a> : <a class="n-a" href="#llegar">{s.enlace.texto}<Icon name="arrow" size="18" /></a>)}</span>
                   </li>
                 ))}
               </ul>
@@ -227,7 +243,7 @@ const ll = v.llegar;
           {v.preguntas.map((q, i) => (
             <details class="vi-q" open={i === 0}>
               <summary><span>{q.p}</span><Icon name="down" size="22" /></summary>
-              <p>{q.r}</p>
+              <p>{q.r}{q.enlace && <> <a href={q.enlace.url} target="_blank" rel="noopener">{q.enlace.texto} ↗</a></>}</p>
             </details>
           ))}
         </div>
@@ -266,6 +282,19 @@ const ll = v.llegar;
   .vi-ho-l li { display: flex; gap: 14px; align-items: flex-start; padding: 18px 4px; border-bottom: 1px solid rgba(35, 27, 43, .2); font-size: 17px; }
   .vi-ho-l :global(.mk-ic) { flex: none; margin-top: 2px; }
   .vi-aviso .n-ej { margin: 0 0 0 8px; }
+
+  /* Guía digital */
+  .vi-guia-a { display: block; padding-block: 40px; background: var(--n-menta); color: var(--n-noche); transition: background-color var(--mk-t) var(--mk-ease); }
+  .vi-guia-a:hover { background: var(--n-amarillo); }
+  .vi-guia-in { display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center; }
+  .vi-guia-ic { display: grid; place-items: center; width: 80px; height: 80px; background: var(--n-noche); color: var(--n-menta); }
+  .vi-guia-ic :global(.mk-ic) { width: 40px; height: 40px; }
+  .vi-guia-t { display: grid; gap: 6px; }
+  .vi-guia-ante { font-size: 15px; font-weight: 700; }
+  .vi-guia-h { margin: 0; font-size: var(--n-titulo); line-height: 1.1; font-weight: 700; letter-spacing: -0.015em; }
+  .vi-guia-x { font-size: 17px; max-width: 60ch; }
+  .vi-guia-a:hover .vi-guia-b :global(.mk-ic) { transform: translate(4px, -4px); }
+  .vi-q p a { color: var(--n-noche); font-weight: 700; }
 
   /* Planes */
   .vi-pasos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-bottom: 56px; }
@@ -378,6 +407,8 @@ const ll = v.llegar;
 
   @media (max-width: 1024px) {
     .vi-ll, .vi-ac, .vi-pr { grid-template-columns: 1fr; gap: 32px; }
+    .vi-guia-in { grid-template-columns: auto 1fr; }
+    .vi-guia-b { grid-column: 2; justify-self: start; }
     .vi-planes, .vi-planes--5, .vi-ex { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .vi-planes--5 { gap: 24px; }
     .vi-fun { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -387,6 +418,10 @@ const ll = v.llegar;
   }
   @media (max-width: 767px) {
     .vi-hero { padding-block: 24px 28px; }
+    .vi-guia-in { grid-template-columns: 1fr; gap: 16px; }
+    .vi-guia-ic { width: 56px; height: 56px; }
+    .vi-guia-ic :global(.mk-ic) { width: 28px; height: 28px; }
+    .vi-guia-b { grid-column: auto; }
     .vi-ho-h { font-size: 24px; }
     .vi-ho, .vi-se, .vi-pasos { grid-template-columns: 1fr; }
     .vi-planes, .vi-planes--5 { grid-template-columns: 1fr; gap: 12px; }
