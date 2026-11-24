@@ -5,6 +5,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | Archivo | Qué es | Se importa en |
 |---|---|---|
 | `header-v13.json` | Header: logo, menú y botón «Compra tus entradas» | Plantillas › Theme Builder › Header |
+| `footer-v13.json` | Footer con la información de maloka.org: boletín, redes, Maloka, horarios, ubicación, Corporación Maloka, certificaciones y NIT | Plantillas › Theme Builder › Footer |
 | `menu-paneles-v13.json` | Los 4 paneles en hueso del mega menú (Visítanos, Ven en grupo, Descubre, Crea con Maloka) | Plantillas › Plantillas guardadas |
 | `logo-maloka.svg` / `.png` | Logo de las maquetas, por si el sitio aún no tiene uno | Apariencia › Personalizar › Identidad del sitio |
 | `popup-combos.json` | Modal de los combos de TuBoleta | Plantillas › Popups |
@@ -143,3 +144,17 @@ más de ~12 en un solo archivo.
 - Si el contenedor de anclas no queda fijo, actívalo en Avanzado › Efectos de movimiento › Fijo: Arriba (desplazamiento 80).
 - Más adelante, los planes y las funciones pueden salir de tipos de contenido con **Loop Grid** (Pro), para que el
   equipo los actualice sin editar la página.
+
+## footer-v13.json · Footer
+
+Con la información del footer de maloka.org (noviembre de 2026):
+
+- Arriba: «Que la curiosidad no se detenga.», enlace **Suscríbete al boletín de Maloka** (formulario de ipzmarketing) y
+  **Síguenos en** con TikTok, Instagram, Facebook, YouTube, LinkedIn y el canal de WhatsApp (Lista de iconos en línea).
+- Grilla de 5 columnas (2 en tablet, 1 en celular): logo blanco y certificaciones ICONTEC ISO 9001 e IQNet; Maloka;
+  Horarios; Ubicación (dirección con enlace a Google Maps, teléfono y «¿Cómo llegar?»); Corporación Maloka.
+- Abajo: NIT 830.040.745-0, © 2026 Corporación Maloka y Tratamiento de datos.
+
+**Cómo importarlo:** Plantillas › Theme Builder › Footer › **Importar** › `footer-v13.json`, ábrelo, revisa y **Publicar**
+con la condición **Todo el sitio**. «¿Cómo llegar?» apunta a `/visitanos/#llegar`; los demás enlaces van a las páginas
+actuales de maloka.org.

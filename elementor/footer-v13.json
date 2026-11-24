@@ -1,0 +1,1374 @@
+{
+ "title": "Footer · Maloka V13",
+ "type": "footer",
+ "version": "0.4",
+ "page_settings": {},
+ "content": [
+  {
+   "id": "ab3a61b9",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "container_type": "flex",
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1280,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "56",
+     "row": "56",
+     "isLinked": true,
+     "unit": "px",
+     "size": 56
+    },
+    "flex_gap_mobile": {
+     "column": "40",
+     "row": "40",
+     "isLinked": true,
+     "unit": "px",
+     "size": 40
+    },
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "80",
+     "bottom": "32",
+     "left": "80",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "40",
+     "bottom": "28",
+     "left": "40",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "28",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#231B2B",
+    "html_tag": "footer"
+   },
+   "elements": [
+    {
+     "id": "d3f3ebd0",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "row",
+      "content_width": "full",
+      "flex_wrap": "nowrap",
+      "flex_direction_tablet": "column",
+      "flex_direction_mobile": "column",
+      "flex_gap": {
+       "column": "64",
+       "row": "64",
+       "isLinked": true,
+       "unit": "px",
+       "size": 64
+      },
+      "flex_gap_tablet": {
+       "column": "32",
+       "row": "32",
+       "isLinked": true,
+       "unit": "px",
+       "size": 32
+      },
+      "flex_align_items": "flex-end",
+      "flex_align_items_tablet": "flex-start"
+     },
+     "elements": [
+      {
+       "id": "4ed26b2e",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "width": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "270d8a58",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Que la curiosidad no se detenga.",
+          "header_size": "p",
+          "title_color": "#FFE25C",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 40,
+           "sizes": []
+          },
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 34,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 28,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.1,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "2059d213",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "14",
+         "row": "14",
+         "isLinked": true,
+         "unit": "px",
+         "size": 14
+        },
+        "flex_align_items": "flex-start",
+        "width": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "bb9f2dea",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Suscríbete al boletín de Maloka →",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "link": {
+           "url": "https://maloka.ipzmarketing.com/f/57LlRORGSBE",
+           "is_external": "on",
+           "nofollow": "",
+           "custom_attributes": ""
+          },
+          "_element_width": "auto",
+          "_padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "4",
+           "left": "0",
+           "isLinked": false
+          },
+          "_border_border": "solid",
+          "_border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "3",
+           "left": "0",
+           "isLinked": false
+          },
+          "_border_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 24,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 20,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.2,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "f2267c6c",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Síguenos en",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "e4970b56",
+         "elType": "widget",
+         "widgetType": "icon-list",
+         "isInner": false,
+         "settings": {
+          "view": "inline",
+          "icon_list": [
+           {
+            "_id": "fuxzzox",
+            "text": "TikTok",
+            "selected_icon": {
+             "value": "fab fa-tiktok",
+             "library": "fa-brands"
+            },
+            "link": {
+             "url": "https://www.tiktok.com/@malokabogota",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "568zfii",
+            "text": "Instagram",
+            "selected_icon": {
+             "value": "fab fa-instagram",
+             "library": "fa-brands"
+            },
+            "link": {
+             "url": "https://www.instagram.com/malokabogota/",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "o10kaq8",
+            "text": "Facebook",
+            "selected_icon": {
+             "value": "fab fa-facebook-f",
+             "library": "fa-brands"
+            },
+            "link": {
+             "url": "https://www.facebook.com/MalokaBogota",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "lmz39gb",
+            "text": "YouTube",
+            "selected_icon": {
+             "value": "fab fa-youtube",
+             "library": "fa-brands"
+            },
+            "link": {
+             "url": "https://www.youtube.com/user/MalokaCyT",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "xvf6s8b",
+            "text": "LinkedIn",
+            "selected_icon": {
+             "value": "fab fa-linkedin-in",
+             "library": "fa-brands"
+            },
+            "link": {
+             "url": "https://co.linkedin.com/company/maloka",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "abiw4iq",
+            "text": "WhatsApp",
+            "selected_icon": {
+             "value": "fab fa-whatsapp",
+             "library": "fa-brands"
+            },
+            "link": {
+             "url": "https://whatsapp.com/channel/0029Vb7tRJWHQbS6fZEvA733",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           }
+          ],
+          "text_color": "#FFFFFF",
+          "text_color_hover": "#FFE25C",
+          "icon_color": "#FFFFFF",
+          "icon_color_hover": "#FFE25C",
+          "icon_size": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "text_indent": {
+           "unit": "px",
+           "size": 8,
+           "sizes": []
+          },
+          "space_between": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "icon_typography_typography": "custom",
+          "icon_typography_font_size": {
+           "unit": "px",
+           "size": 15,
+           "sizes": []
+          },
+          "icon_typography_font_weight": "400",
+          "icon_typography_line_height": {
+           "unit": "em",
+           "size": 1.5,
+           "sizes": []
+          },
+          "icon_typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "dd5c91c7",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "grid",
+      "content_width": "full",
+      "grid_columns_grid": {
+       "unit": "custom",
+       "size": "1fr 1fr 1.2fr 1.2fr 1.3fr",
+       "sizes": []
+      },
+      "grid_columns_grid_tablet": {
+       "unit": "fr",
+       "size": 2,
+       "sizes": []
+      },
+      "grid_columns_grid_mobile": {
+       "unit": "fr",
+       "size": 1,
+       "sizes": []
+      },
+      "grid_rows_grid": {
+       "unit": "fr",
+       "size": 1,
+       "sizes": []
+      },
+      "grid_rows_grid_tablet": {
+       "unit": "fr",
+       "size": 3,
+       "sizes": []
+      },
+      "grid_rows_grid_mobile": {
+       "unit": "fr",
+       "size": 5,
+       "sizes": []
+      },
+      "grid_auto_flow": "row",
+      "grid_gaps": {
+       "column": "32",
+       "row": "32",
+       "isLinked": true,
+       "unit": "px",
+       "size": 32
+      },
+      "grid_gaps_mobile": {
+       "column": "28",
+       "row": "28",
+       "isLinked": true,
+       "unit": "px",
+       "size": 28
+      },
+      "grid_align_items": "start",
+      "padding": {
+       "unit": "px",
+       "top": "40",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "border_border": "solid",
+      "border_width": {
+       "unit": "px",
+       "top": "1",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "border_color": "#4F4955"
+     },
+     "elements": [
+      {
+       "id": "8176fa76",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "24",
+         "row": "24",
+         "isLinked": true,
+         "unit": "px",
+         "size": 24
+        }
+       },
+       "elements": [
+        {
+         "id": "743ff8af",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://maloka.org/wp-content/uploads/2025/04/Logo-Maloka-Version-relleno-blanco.png",
+           "id": 0,
+           "alt": "Maloka"
+          },
+          "image_size": "full",
+          "align": "left",
+          "caption_source": "none",
+          "link_to": "custom",
+          "link": {
+           "url": "/",
+           "is_external": "",
+           "nofollow": "",
+           "custom_attributes": ""
+          },
+          "width": {
+           "unit": "px",
+           "size": 64,
+           "sizes": []
+          }
+         },
+         "elements": []
+        },
+        {
+         "id": "24d280f6",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "row",
+          "flex_direction_mobile": "row",
+          "flex_wrap": "wrap",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "16",
+           "row": "16",
+           "isLinked": true,
+           "unit": "px",
+           "size": 16
+          },
+          "flex_align_items": "center"
+         },
+         "elements": [
+          {
+           "id": "2baa38af",
+           "elType": "widget",
+           "widgetType": "image",
+           "isInner": false,
+           "settings": {
+            "image": {
+             "url": "https://ydelriov.github.io/Maloka/elementor/img/certificado-icontec.png",
+             "id": 0,
+             "alt": "Certificado ICONTEC ISO 9001 de Maloka, SC-2001728"
+            },
+            "image_size": "full",
+            "caption_source": "none",
+            "link_to": "none",
+            "width": {
+             "unit": "px",
+             "size": 44,
+             "sizes": []
+            },
+            "_element_width": "auto"
+           },
+           "elements": []
+          },
+          {
+           "id": "a08a5f3f",
+           "elType": "widget",
+           "widgetType": "image",
+           "isInner": false,
+           "settings": {
+            "image": {
+             "url": "https://ydelriov.github.io/Maloka/elementor/img/certificado-iqnet.png",
+             "id": 0,
+             "alt": "Certificación IQNet"
+            },
+            "image_size": "full",
+            "caption_source": "none",
+            "link_to": "none",
+            "width": {
+             "unit": "px",
+             "size": 56,
+             "sizes": []
+            },
+            "_element_width": "auto"
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "7a830ab0",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "12",
+         "row": "12",
+         "isLinked": true,
+         "unit": "px",
+         "size": 12
+        }
+       },
+       "elements": [
+        {
+         "id": "d0ff4cb6",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Maloka",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "8cc43272",
+         "elType": "widget",
+         "widgetType": "icon-list",
+         "isInner": false,
+         "settings": {
+          "view": "traditional",
+          "icon_list": [
+           {
+            "_id": "3dipc9f",
+            "text": "¿Qué es Maloka?",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/acerca-de/",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "dax15yn",
+            "text": "Prensa",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/sala-de-prensa/",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "xbpoqjg",
+            "text": "Trabaja con nosotros",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/trabaja-nosotros",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "4xek463",
+            "text": "Preguntas frecuentes",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/resolvemos-aqui-todas-tus-dudas-acerca-de-maloka",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "vheoz9i",
+            "text": "Contacto",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/encuentra-aqui-todas-las-formas-de-contacto-maloka/",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           }
+          ],
+          "text_color": "#D9D3E0",
+          "text_color_hover": "#FFE25C",
+          "icon_color": "#FFFFFF",
+          "icon_color_hover": "#FFE25C",
+          "icon_size": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "text_indent": {
+           "unit": "px",
+           "size": 8,
+           "sizes": []
+          },
+          "space_between": {
+           "unit": "px",
+           "size": 8,
+           "sizes": []
+          },
+          "icon_typography_typography": "custom",
+          "icon_typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "icon_typography_font_weight": "400",
+          "icon_typography_line_height": {
+           "unit": "em",
+           "size": 1.5,
+           "sizes": []
+          },
+          "icon_typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "abac299e",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "4",
+         "row": "4",
+         "isLinked": true,
+         "unit": "px",
+         "size": 4
+        }
+       },
+       "elements": [
+        {
+         "id": "e4d4414b",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Horarios",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "8ea91c78",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Lunes a viernes",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "600",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "5b669e68",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "11:00 a. m. a 5:00 p. m.",
+          "header_size": "div",
+          "title_color": "#D9D3E0",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "e92624c4",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Sábados, domingos y festivos",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "600",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "717aa399",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "9:30 a. m. a 6:00 p. m.",
+          "header_size": "div",
+          "title_color": "#D9D3E0",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "64c6bdb9",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "La venta de entradas está disponible hasta las 4:00 p. m.",
+          "header_size": "div",
+          "title_color": "#D9D3E0",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 13,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "bfb03105",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "12",
+         "row": "12",
+         "isLinked": true,
+         "unit": "px",
+         "size": 12
+        }
+       },
+       "elements": [
+        {
+         "id": "f4b28fed",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Ubicación",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "ba815907",
+         "elType": "widget",
+         "widgetType": "icon-list",
+         "isInner": false,
+         "settings": {
+          "view": "traditional",
+          "icon_list": [
+           {
+            "_id": "5hv2t2p",
+            "text": "Cra. 68D # 24A - 51, Bogotá, Colombia",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maps.app.goo.gl/k6GpMLEKizb7Uf6Y7",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "tny0ggl",
+            "text": "Teléfono: +57 (601) 427 2707",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "tel:+576014272707",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           }
+          ],
+          "text_color": "#D9D3E0",
+          "text_color_hover": "#FFE25C",
+          "icon_color": "#FFFFFF",
+          "icon_color_hover": "#FFE25C",
+          "icon_size": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "text_indent": {
+           "unit": "px",
+           "size": 8,
+           "sizes": []
+          },
+          "space_between": {
+           "unit": "px",
+           "size": 8,
+           "sizes": []
+          },
+          "icon_typography_typography": "custom",
+          "icon_typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "icon_typography_font_weight": "400",
+          "icon_typography_line_height": {
+           "unit": "em",
+           "size": 1.5,
+           "sizes": []
+          },
+          "icon_typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "cf522079",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "¿Cómo llegar? →",
+          "header_size": "#FFE25C",
+          "title_color": "#FFFFFF",
+          "link": {
+           "url": "/visitanos/#llegar",
+           "is_external": "",
+           "nofollow": "",
+           "custom_attributes": ""
+          },
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "49a0e9ab",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "12",
+         "row": "12",
+         "isLinked": true,
+         "unit": "px",
+         "size": 12
+        }
+       },
+       "elements": [
+        {
+         "id": "05dbebdb",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Corporación Maloka",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "6b67c8a4",
+         "elType": "widget",
+         "widgetType": "icon-list",
+         "isInner": false,
+         "settings": {
+          "view": "traditional",
+          "icon_list": [
+           {
+            "_id": "mk7x7vz",
+            "text": "Informes de gestión",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/informes-de-gestion",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "lexc7px",
+            "text": "Sistema Integrado de Gestión",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/sistema-integrado-de-gestion",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "68mzd27",
+            "text": "Intranet",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "http://intranet.maloka.org/",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "mgwemud",
+            "text": "Junta Directiva",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/junta-directiva/",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "3kql6e9",
+            "text": "Contratación",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/contratacion",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "ohskfmx",
+            "text": "PQRSF",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://forms.gle/iPLFZxvPBK9UqYjJA",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "1fdvw8r",
+            "text": "ESAL",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/esal",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "bf3crx5",
+            "text": "Registro de proveedores",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://docs.google.com/forms/d/e/1FAIpQLSd7E3X6LplIo857p7fMVeWIKH9iTN2laRzKQm2ncDGJqciuvQ/viewform",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           }
+          ],
+          "text_color": "#D9D3E0",
+          "text_color_hover": "#FFE25C",
+          "icon_color": "#FFFFFF",
+          "icon_color_hover": "#FFE25C",
+          "icon_size": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "text_indent": {
+           "unit": "px",
+           "size": 8,
+           "sizes": []
+          },
+          "space_between": {
+           "unit": "px",
+           "size": 8,
+           "sizes": []
+          },
+          "icon_typography_typography": "custom",
+          "icon_typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "icon_typography_font_weight": "400",
+          "icon_typography_line_height": {
+           "unit": "em",
+           "size": 1.5,
+           "sizes": []
+          },
+          "icon_typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a0b4f9aa",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "content_width": "full",
+      "flex_gap": {
+       "column": "24",
+       "row": "8",
+       "isLinked": false,
+       "unit": "px",
+       "size": 24
+      },
+      "padding": {
+       "unit": "px",
+       "top": "24",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "border_border": "solid",
+      "border_width": {
+       "unit": "px",
+       "top": "1",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "border_color": "#4F4955"
+     },
+     "elements": [
+      {
+       "id": "743befd1",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "NIT Maloka 830.040.745-0",
+        "header_size": "div",
+        "title_color": "#D9D3E0",
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 13,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "62d33f33",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "© 2026 Corporación Maloka",
+        "header_size": "div",
+        "title_color": "#D9D3E0",
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 13,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "9b8074fd",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Tratamiento de datos",
+        "header_size": "div",
+        "title_color": "#D9D3E0",
+        "link": {
+         "url": "https://maloka.org/tratamiento-de-datos/",
+         "is_external": "",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 13,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
