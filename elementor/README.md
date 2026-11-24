@@ -14,6 +14,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `acf-horarios.json` + `horarios-snippet.php` | Horarios en un solo lugar (página de inicio) para menú, home, Visítanos y footer | ACF › Importar y Code Snippets |
 | `evento-single-v13.json` | Ficha de cada evento (plantilla del Theme Builder para Eventos) | Plantillas › Theme Builder › Entrada individual |
 | `noticia-single-v13.json` + `noticias-snippet.php` | Página de cada noticia (plantilla del Theme Builder para Entradas) y tiempo de lectura | Theme Builder › Entrada individual · Code Snippets |
+| `hero-inicio-v13.json` | El hero de Inicio tal como está en pruebas.maloka.org (carrusel propio, horario y un botón por frase) | Se inserta arriba en la home |
 | `hero-campanas-v13.json` | Banner de la home: tres frases sobre la foto, cada una con su botón | Plantillas › Importar, y se inserta arriba en la home |
 | `agenda-snippet.php` | Ordena la agenda por fecha, oculta los eventos pasados y formatea las fechas | Plugin Code Snippets |
 | `visitanos-v13-parte1.json`, `-parte2.json`, `-parte3.json` | Página Visítanos en 3 partes (10 secciones) | Se insertan en orden en la página Visítanos |
@@ -435,6 +436,14 @@ frase**, para llevar a la acción del momento:
 Cuando haya una campaña (una promoción, un episodio del podcast, el boletín), se cambia la frase y el botón de una de
 las diapositivas: «Comprar entradas 2x1», «Escuchar en Spotify», «Suscríbete al boletín». El botón siempre dice la
 acción, nunca «Ver más».
+
+### En pruebas.maloka.org
+
+La home usa el carrusel propio del hero (tres diapositivas con su foto, puntos y pausa), no el widget Slides: a cada
+«Diapositiva N · texto» se le agregó un widget **Botón** («Botón de la frase»): amarillo `#FFE25C`, texto noche, 56 px
+de alto, icono a la izquierda y flecha a la derecha (↗ si abre TuBoleta en otra pestaña). Para cambiar el texto o el
+enlace se edita ese botón. Exportado en `hero-inicio-v13.json`. Además, los controles del carrusel quedan alineados
+con el texto (`max(80px, (100% - 1280px) / 2)`) y sin el fondo rosado que les ponía el tema al hacer clic.
 
 ### Cómo se actualiza en Elementor
 `hero-campanas-v13.json` es un widget **Slides** (Elementor Pro) con las tres frases sobre la misma foto: cada ítem
