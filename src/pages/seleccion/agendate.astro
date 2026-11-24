@@ -13,7 +13,7 @@ import NHeader from '../../components/n/NHeader.astro';
 import NFiltros from '../../components/n/NFiltros.astro';
 import NFooter from '../../components/n/NFooter.astro';
 import Icon from '../../components/ui/Icon.astro';
-import { agenda as a, tipo, proximos, pasados as todosPasados, dia, mes, sem, rango, cta, filtros } from '../../lib/agenda.js';
+import { agenda as a, tipo, proximos, pasados as todosPasados, dia, mes, sem, rango, cta, filtros, ficha } from '../../lib/agenda.js';
 import { rutaPara } from '../../lib/rutas.js';
 import { url } from '../../lib/url.js';
 import '../../styles/noche.css';
@@ -47,11 +47,11 @@ const lista = proximos.filter((e) => e !== destacado);
         <div id="ag-lista">
           {destacado && (
             <article class="ag-dest" data-filtro={destacado.tipo}>
-              <a class="ag-dest-f n-foto" href={destacado.url}><img src={destacado.afiche} alt={`Afiche de ${destacado.titulo}`} width="1080" height="1440" loading="eager" /></a>
+              <a class="ag-dest-f n-foto" href={ficha(destacado, url)}><img src={destacado.afiche} alt={`Afiche de ${destacado.titulo}`} width="1080" height="1440" loading="eager" /></a>
               <div class="ag-dest-c">
                 <p class="ag-dest-fecha"><b class="t-num">{rango(destacado)}</b><span>{mes(destacado.fecha)}</span></p>
                 <span class={`n-tag n-tag--${tipo[destacado.tipo].color}`}>{tipo[destacado.tipo].label}</span>
-                <h3 class="ag-dest-t"><a href={destacado.url}>{destacado.titulo}</a></h3>
+                <h3 class="ag-dest-t"><a href={ficha(destacado, url)}>{destacado.titulo}</a></h3>
                 <p class="ag-dest-x">{destacado.descripcion || destacado.resumen}</p>
                 <ul class="ag-meta">
                   <li><Icon name="clock" size="20" />{destacado.horario}</li>
@@ -60,7 +60,7 @@ const lista = proximos.filter((e) => e !== destacado);
                 </ul>
                 <div class="ag-dest-acc">
                   {cta(destacado) && <a class="n-b" href={destacado.enlace} target="_blank" rel="noopener">{cta(destacado)}<Icon name="ext" /><span class="sr-only"> (abre en una pestaña nueva)</span></a>}
-                  <a class="n-a" href={destacado.url}>Más información<Icon name="arrow" size="20" /></a>
+                  <a class="n-a" href={ficha(destacado, url)}>Más información<Icon name="arrow" size="20" /></a>
                 </div>
               </div>
             </article>
@@ -71,10 +71,10 @@ const lista = proximos.filter((e) => e !== destacado);
               <li data-filtro={e.tipo} data-rv style={`--d:${i}`}>
                 <article class="ag-fila" style={`--c:var(--n-${tipo[e.tipo].color})`}>
                   <p class:list={['ag-fecha', e.fechaFin && 'ag-fecha--r']}><b class="t-num">{rango(e)}</b><span>{mes(e.fecha)}</span><small>{sem(e.fecha)}</small></p>
-                  <a class="ag-fila-f n-foto" href={e.url} tabindex="-1" aria-hidden="true"><img src={e.afiche} alt="" width="1080" height="1440" loading="lazy" /></a>
+                  <a class="ag-fila-f n-foto" href={ficha(e, url)} tabindex="-1" aria-hidden="true"><img src={e.afiche} alt="" width="1080" height="1440" loading="lazy" /></a>
                   <div class="ag-fila-c">
                     <span class={`n-tag n-tag--${tipo[e.tipo].color}`}>{tipo[e.tipo].label}</span>
-                    <h3 class="ag-fila-t"><a href={e.url}>{e.titulo}</a></h3>
+                    <h3 class="ag-fila-t"><a href={ficha(e, url)}>{e.titulo}</a></h3>
                     <p class="ag-fila-x">{e.resumen}</p>
                     <p class="ag-fila-m"><span><Icon name="clock" size="18" />{e.horario}</span><span><Icon name="pin" size="18" />{e.lugar}</span></p>
                     {e.descripcion && (
@@ -108,7 +108,7 @@ const lista = proximos.filter((e) => e !== destacado);
               <li class="ag-pas">
                 <p class="ag-pas-f t-num">{dia(e.fecha)} {mes(e.fecha)}</p>
                 <span class="ag-pas-tag">{tipo[e.tipo].label}</span>
-                <h3 class="ag-pas-t">{e.url ? <a href={e.url}>{e.titulo}</a> : e.titulo}</h3>
+                <h3 class="ag-pas-t"><a href={ficha(e, url)}>{e.titulo}</a></h3>
                 <p class="ag-pas-x">{e.resumen}</p>
               </li>
             ))}

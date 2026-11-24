@@ -11,6 +11,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `popup-combos.json` | Modal de los combos de TuBoleta | Plantillas › Popups |
 | `acf-evento.json` | Campos de cada evento (tipo de contenido «eventos»): fecha, horario, lugar, acceso, enlace, destacado | ACF › Herramientas › Importar |
 | `acf-horarios.json` + `horarios-snippet.php` | Horarios en un solo lugar (página de inicio) para menú, home, Visítanos y footer | ACF › Importar y Code Snippets |
+| `evento-single-v13.json` | Ficha de cada evento (plantilla del Theme Builder para Eventos) | Plantillas › Theme Builder › Entrada individual |
 | `agenda-snippet.php` | Ordena la agenda por fecha, oculta los eventos pasados y formatea las fechas | Plugin Code Snippets |
 | `visitanos-v13-parte1.json`, `-parte2.json`, `-parte3.json` | Página Visítanos en 3 partes (10 secciones) | Se insertan en orden en la página Visítanos |
 
@@ -256,3 +257,28 @@ El horario aparece en el panel del menú (Visítanos), en Visítanos y en el foo
 
 Cuando cambie el horario, o haya un cierre especial, solo se edita la página de inicio › «Horarios de Maloka».
 En la maqueta pasa igual: todo sale de `src/data/site.json`.
+
+## Ficha del evento (Theme Builder)
+
+Maqueta: por ejemplo https://ydelriov.github.io/Maloka/seleccion/agendate/la-otra-forma-proyeccion-y-taller-de-escombros/
+
+Hoy la página de cada evento en maloka.org es solo el texto con emojis. Con **una sola plantilla** del Theme Builder,
+todos los eventos (los de hoy y los que se creen después) se ven así, sin diseñar cada uno:
+
+| Parte | Qué muestra | De dónde sale |
+|---|---|---|
+| Migas | Inicio / Agéndate / título | Título del evento (etiqueta dinámica) |
+| Cabecera (hueso) | Afiche, tipo, título, resumen | Imagen destacada · `[evento_tipo]` · Título · Extracto |
+| Recuadro de datos | Fecha, horario, lugar, acceso | `[evento_fecha_larga]` · `[evento_campo campo="horario"]` · `[evento_campo campo="lugar"]` · `[evento_acceso]` |
+| Acciones | «Inscríbete» / «Compra tu entrada» y «Agregar a Google Calendar» | `[evento_boton]` · `[evento_calendario]` (widget Shortcode) |
+| Sobre el evento | El texto completo | Contenido del evento (widget Contenido de la entrada) |
+| Ten en cuenta (menta) | Aviso según el acceso, entrada y venta de entradas, «Cómo llegar» | `[evento_nota]` · `[maloka_venta]` |
+| Otros próximos eventos | 3 eventos | Loop Grid «Evento · texto» con Query ID `proximos_eventos` |
+
+### Cómo instalarla
+1. Tener activos `agenda-snippet.php` y `horarios-snippet.php` (Code Snippets) y los campos de `acf-evento.json`.
+2. Plantillas › Theme Builder › **Entrada individual** › Importar › `evento-single-v13.json`.
+3. Ábrela y, en la sección «Otros próximos eventos», reemplaza el texto de ayuda por un **Loop Grid** con la plantilla
+   «Evento · texto», fuente Eventos, Query ID `proximos_eventos`, 3 columnas y 3 por página.
+4. **Publicar** con la condición **Eventos › Todos** (o «Todos los Eventos»).
+5. Abre cualquier evento para revisar: si un dato no aparece, revisa que el evento tenga llenos sus «Datos del evento».
