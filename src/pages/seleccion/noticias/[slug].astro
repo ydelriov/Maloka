@@ -12,6 +12,7 @@ import NFooter from '../../../components/n/NFooter.astro';
 import Icon from '../../../components/ui/Icon.astro';
 import { noticias as n, slugNoticia, categoria, fechaLarga } from '../../../lib/noticias.js';
 import { url } from '../../../lib/url.js';
+import iconos from '../../../data/n/redes-iconos.json';
 import '../../../styles/noche.css';
 
 export function getStaticPaths() {
@@ -27,10 +28,10 @@ const enlace = it.url; // en WordPress, el enlace propio de la entrada
 const t = encodeURIComponent(it.titulo);
 const u = encodeURIComponent(enlace);
 const compartir = [
-  { nombre: 'WhatsApp', href: `https://wa.me/?text=${t}%20${u}` },
-  { nombre: 'Facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${u}` },
-  { nombre: 'X', href: `https://x.com/intent/post?text=${t}&url=${u}` },
-  { nombre: 'LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${u}` },
+  { nombre: 'WhatsApp', icono: 'whatsapp', href: `https://wa.me/?text=${t}%20${u}` },
+  { nombre: 'Facebook', icono: 'facebook-f', href: `https://www.facebook.com/sharer/sharer.php?u=${u}` },
+  { nombre: 'X', icono: 'x-twitter', href: `https://x.com/intent/post?text=${t}&url=${u}` },
+  { nombre: 'LinkedIn', icono: 'linkedin-in', href: `https://www.linkedin.com/sharing/share-offsite/?url=${u}` },
 ];
 ---
 <Base variante="noticia" grupo={G} title={`${it.titulo} · Noticias · Maloka`} description={it.resumen} clase="nn">
@@ -45,7 +46,7 @@ const compartir = [
               <p class="nt-meta">{cat && <span class={`n-tag n-tag--${cat.color}`}>{cat.label}</span>}<time datetime={it.fecha}>{fechaLarga(it.fecha)}</time><span>· {it.lectura} min de lectura</span></p>
               <h1 class="nt-h1">{it.titulo}</h1>
               <p class="nt-lead">{it.resumen}</p>
-              <div class="nt-comp" aria-label="Compartir"><span>Compartir</span>{compartir.map((c) => <a href={c.href} target="_blank" rel="noopener">{c.nombre}<span class="sr-only"> (abre en una pestaña nueva)</span></a>)}</div>
+              <div class="nt-comp" aria-label="Compartir"><span>Compartir</span>{compartir.map((c) => <a href={c.href} target="_blank" rel="noopener" title={`Compartir en ${c.nombre}`} aria-label={`Compartir en ${c.nombre} (abre en una pestaña nueva)`}><svg viewBox={iconos[c.icono].viewBox} width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d={iconos[c.icono].d} /></svg></a>)}</div>
             </div>
             <figure class="nt-img"><img src={it.imagen} alt="" width="1080" height="1080" /></figure>
           </div>
@@ -57,7 +58,7 @@ const compartir = [
           <div class="nt-cuerpo" set:html={it.contenido} />
           <div class="nt-pie">
             <a class="n-a" href={url(`${G}/noticias/`)}><Icon name="arrowl" size="18" />Volver a noticias</a>
-            <div class="nt-comp" aria-label="Compartir"><span>Compartir</span>{compartir.map((c) => <a href={c.href} target="_blank" rel="noopener">{c.nombre}<span class="sr-only"> (abre en una pestaña nueva)</span></a>)}</div>
+            <div class="nt-comp" aria-label="Compartir"><span>Compartir</span>{compartir.map((c) => <a href={c.href} target="_blank" rel="noopener" title={`Compartir en ${c.nombre}`} aria-label={`Compartir en ${c.nombre} (abre en una pestaña nueva)`}><svg viewBox={iconos[c.icono].viewBox} width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d={iconos[c.icono].d} /></svg></a>)}</div>
           </div>
         </div>
       </div>
@@ -87,7 +88,8 @@ const compartir = [
   .nt-img img { width: 100%; height: 100%; object-fit: cover; }
   .nt-comp { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; }
   .nt-comp > span { margin-right: 4px; }
-  .nt-comp a { display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px; border: 2px solid var(--n-noche); color: var(--n-noche); }
+  .nt-comp a { display: grid; place-items: center; width: 44px; height: 44px; border: 2px solid var(--n-noche); color: var(--n-noche); transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
+  .nt-comp svg { width: 20px; height: 20px; }
   .nt-comp a:hover { background: var(--n-noche); color: var(--n-amarillo); }
 
   /* Cuerpo: columna de lectura */
