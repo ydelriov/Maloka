@@ -107,8 +107,8 @@ que se llenan de amarillo `#FFE25C` en hover. En celular las tarjetas se apilan.
 - Si las imágenes no se importan (el servidor no alcanza tuboleta.com), descárgalas, súbelas a Medios y cámbialas en
   cada tarjeta.
 
-El prototipo de la modal está en `src/components/n/NPromo.astro` y se ve en
-https://ydelriov.github.io/Maloka/seleccion/ (se abre sola; para verla de nuevo, agrega `?promo` a la URL).
+La modal se quitó de la maqueta de la V13; el componente sigue en `src/components/n/NPromo.astro` por si se
+necesita otra vez.
 
 ## visitanos-v13-parte1/2/3.json · Página Visítanos
 
