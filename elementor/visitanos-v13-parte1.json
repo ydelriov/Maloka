@@ -1,0 +1,5839 @@
+{
+ "title": "Visítanos V13 · parte 1 · Cabecera, anclas, horarios y planes",
+ "type": "container",
+ "version": "0.4",
+ "page_settings": {},
+ "content": [
+  {
+   "id": "0d24d600",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "container_type": "flex",
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1280,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "10",
+     "row": "10",
+     "isLinked": true,
+     "unit": "px",
+     "size": 10
+    },
+    "flex_gap_mobile": {
+     "column": "8",
+     "row": "8",
+     "isLinked": true,
+     "unit": "px",
+     "size": 8
+    },
+    "padding": {
+     "unit": "px",
+     "top": "32",
+     "right": "80",
+     "bottom": "36",
+     "left": "80",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "28",
+     "right": "40",
+     "bottom": "28",
+     "left": "40",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "24",
+     "right": "16",
+     "bottom": "28",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#F4F1EC"
+   },
+   "elements": [
+    {
+     "id": "f203d1b4",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Inicio / Visítanos",
+      "header_size": "div",
+      "title_color": "#4F4955",
+      "link": {
+       "url": "/",
+       "is_external": "",
+       "nofollow": "",
+       "custom_attributes": ""
+      },
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 14,
+       "sizes": []
+      },
+      "typography_font_weight": "600",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.4,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
+     },
+     "elements": []
+    },
+    {
+     "id": "fca70052",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Visítanos",
+      "header_size": "h1",
+      "title_color": "#231B2B",
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 40,
+       "sizes": []
+      },
+      "typography_font_size_tablet": {
+       "unit": "px",
+       "size": 34,
+       "sizes": []
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 28,
+       "sizes": []
+      },
+      "typography_font_weight": "700",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.1,
+       "sizes": []
+      },
+      "typography_letter_spacing": {
+       "unit": "em",
+       "size": -0.015,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
+     },
+     "elements": []
+    },
+    {
+     "id": "8734b8f9",
+     "elType": "widget",
+     "widgetType": "text-editor",
+     "isInner": false,
+     "settings": {
+      "editor": "<p>Horarios, tarifas y todo lo que necesitas para vivir Maloka. Compra tus entradas en línea y llega listo para explorar.</p>",
+      "text_color": "#4F4955",
+      "_element_width": "initial",
+      "_element_custom_width": {
+       "unit": "px",
+       "size": 640,
+       "sizes": []
+      },
+      "_element_custom_width_mobile": {
+       "unit": "%",
+       "size": 100,
+       "sizes": []
+      },
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 16,
+       "sizes": []
+      },
+      "typography_font_weight": "400",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.5,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
+     },
+     "elements": []
+    },
+    {
+     "id": "6bbb896e",
+     "elType": "widget",
+     "widgetType": "icon-list",
+     "isInner": false,
+     "settings": {
+      "view": "inline",
+      "icon_list": [
+       {
+        "_id": "kz4ue8c",
+        "text": "Lunes a viernes 11:00 a. m. – 5:00 p. m.",
+        "selected_icon": {
+         "value": "far fa-clock",
+         "library": "fa-regular"
+        },
+        "link": {
+         "url": ""
+        }
+       },
+       {
+        "_id": "pmlnnb2",
+        "text": "Sábados, domingos y festivos 9:30 a. m. – 6:00 p. m.",
+        "selected_icon": {
+         "value": "far fa-calendar-alt",
+         "library": "fa-regular"
+        },
+        "link": {
+         "url": ""
+        }
+       },
+       {
+        "_id": "76oewf0",
+        "text": "Venta de entradas hasta las 4:00 p. m.",
+        "selected_icon": {
+         "value": "fas fa-ticket-alt",
+         "library": "fa-solid"
+        },
+        "link": {
+         "url": ""
+        }
+       }
+      ],
+      "icon_color": "#231B2B",
+      "text_color": "#231B2B",
+      "icon_size": {
+       "unit": "px",
+       "size": 16,
+       "sizes": []
+      },
+      "space_between": {
+       "unit": "px",
+       "size": 24,
+       "sizes": []
+      },
+      "text_indent": {
+       "unit": "px",
+       "size": 6,
+       "sizes": []
+      },
+      "icon_typography_typography": "custom",
+      "icon_typography_font_size": {
+       "unit": "px",
+       "size": 14,
+       "sizes": []
+      },
+      "icon_typography_font_weight": "600",
+      "icon_typography_line_height": {
+       "unit": "em",
+       "size": 1.5,
+       "sizes": []
+      },
+      "icon_typography_font_family": "Montserrat"
+     },
+     "elements": []
+    }
+   ]
+  },
+  {
+   "id": "af4daf7e",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "container_type": "flex",
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1280,
+     "sizes": []
+    },
+    "flex_direction": "row",
+    "flex_wrap": "wrap",
+    "flex_gap": {
+     "column": "4",
+     "row": "0",
+     "isLinked": false,
+     "unit": "px",
+     "size": 4
+    },
+    "padding": {
+     "unit": "px",
+     "top": "0",
+     "right": "80",
+     "bottom": "0",
+     "left": "80",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "0",
+     "right": "40",
+     "bottom": "0",
+     "left": "40",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "0",
+     "right": "12",
+     "bottom": "0",
+     "left": "12",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#FFFFFF",
+    "border_border": "solid",
+    "border_width": {
+     "unit": "px",
+     "top": "1",
+     "right": "0",
+     "bottom": "1",
+     "left": "0",
+     "isLinked": false
+    },
+    "border_color": "rgba(35,27,43,0.16)",
+    "sticky": "top",
+    "sticky_on": [
+     "desktop",
+     "tablet",
+     "mobile"
+    ],
+    "sticky_offset": 80,
+    "sticky_offset_tablet": 72,
+    "sticky_offset_mobile": 72,
+    "z_index": 50,
+    "html_tag": "nav"
+   },
+   "elements": [
+    {
+     "id": "dc0f240b",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Horarios",
+      "header_size": "div",
+      "title_color": "#231B2B",
+      "link": {
+       "url": "#horarios",
+       "is_external": "",
+       "nofollow": "",
+       "custom_attributes": ""
+      },
+      "_padding": {
+       "unit": "px",
+       "top": "18",
+       "right": "14",
+       "bottom": "18",
+       "left": "14",
+       "isLinked": false
+      },
+      "_padding_mobile": {
+       "unit": "px",
+       "top": "12",
+       "right": "8",
+       "bottom": "12",
+       "left": "8",
+       "isLinked": false
+      },
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 15,
+       "sizes": []
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 14,
+       "sizes": []
+      },
+      "typography_font_weight": "600",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.3,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
+     },
+     "elements": []
+    },
+    {
+     "id": "6790dad3",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Tarifas",
+      "header_size": "div",
+      "title_color": "#231B2B",
+      "link": {
+       "url": "#tarifas",
+       "is_external": "",
+       "nofollow": "",
+       "custom_attributes": ""
+      },
+      "_padding": {
+       "unit": "px",
+       "top": "18",
+       "right": "14",
+       "bottom": "18",
+       "left": "14",
+       "isLinked": false
+      },
+      "_padding_mobile": {
+       "unit": "px",
+       "top": "12",
+       "right": "8",
+       "bottom": "12",
+       "left": "8",
+       "isLinked": false
+      },
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 15,
+       "sizes": []
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 14,
+       "sizes": []
+      },
+      "typography_font_weight": "600",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.3,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
+     },
+     "elements": []
+    },
+    {
+     "id": "4579d31b",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Cómo llegar",
+      "header_size": "div",
+      "title_color": "#231B2B",
+      "link": {
+       "url": "#llegar",
+       "is_external": "",
+       "nofollow": "",
+       "custom_attributes": ""
+      },
+      "_padding": {
+       "unit": "px",
+       "top": "18",
+       "right": "14",
+       "bottom": "18",
+       "left": "14",
+       "isLinked": false
+      },
+      "_padding_mobile": {
+       "unit": "px",
+       "top": "12",
+       "right": "8",
+       "bottom": "12",
+       "left": "8",
+       "isLinked": false
+      },
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 15,
+       "sizes": []
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 14,
+       "sizes": []
+      },
+      "typography_font_weight": "600",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.3,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
+     },
+     "elements": []
+    },
+    {
+     "id": "a0a5923b",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Servicios",
+      "header_size": "div",
+      "title_color": "#231B2B",
+      "link": {
+       "url": "#servicios",
+       "is_external": "",
+       "nofollow": "",
+       "custom_attributes": ""
+      },
+      "_padding": {
+       "unit": "px",
+       "top": "18",
+       "right": "14",
+       "bottom": "18",
+       "left": "14",
+       "isLinked": false
+      },
+      "_padding_mobile": {
+       "unit": "px",
+       "top": "12",
+       "right": "8",
+       "bottom": "12",
+       "left": "8",
+       "isLinked": false
+      },
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 15,
+       "sizes": []
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 14,
+       "sizes": []
+      },
+      "typography_font_weight": "600",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.3,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
+     },
+     "elements": []
+    },
+    {
+     "id": "04069f1e",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Accesibilidad",
+      "header_size": "div",
+      "title_color": "#231B2B",
+      "link": {
+       "url": "#accesibilidad",
+       "is_external": "",
+       "nofollow": "",
+       "custom_attributes": ""
+      },
+      "_padding": {
+       "unit": "px",
+       "top": "18",
+       "right": "14",
+       "bottom": "18",
+       "left": "14",
+       "isLinked": false
+      },
+      "_padding_mobile": {
+       "unit": "px",
+       "top": "12",
+       "right": "8",
+       "bottom": "12",
+       "left": "8",
+       "isLinked": false
+      },
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 15,
+       "sizes": []
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 14,
+       "sizes": []
+      },
+      "typography_font_weight": "600",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.3,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
+     },
+     "elements": []
+    },
+    {
+     "id": "c2da8d5a",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Experiencias",
+      "header_size": "div",
+      "title_color": "#231B2B",
+      "link": {
+       "url": "#experiencias",
+       "is_external": "",
+       "nofollow": "",
+       "custom_attributes": ""
+      },
+      "_padding": {
+       "unit": "px",
+       "top": "18",
+       "right": "14",
+       "bottom": "18",
+       "left": "14",
+       "isLinked": false
+      },
+      "_padding_mobile": {
+       "unit": "px",
+       "top": "12",
+       "right": "8",
+       "bottom": "12",
+       "left": "8",
+       "isLinked": false
+      },
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 15,
+       "sizes": []
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 14,
+       "sizes": []
+      },
+      "typography_font_weight": "600",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.3,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
+     },
+     "elements": []
+    },
+    {
+     "id": "3dc8613c",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Preguntas",
+      "header_size": "div",
+      "title_color": "#231B2B",
+      "link": {
+       "url": "#preguntas",
+       "is_external": "",
+       "nofollow": "",
+       "custom_attributes": ""
+      },
+      "_padding": {
+       "unit": "px",
+       "top": "18",
+       "right": "14",
+       "bottom": "18",
+       "left": "14",
+       "isLinked": false
+      },
+      "_padding_mobile": {
+       "unit": "px",
+       "top": "12",
+       "right": "8",
+       "bottom": "12",
+       "left": "8",
+       "isLinked": false
+      },
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 15,
+       "sizes": []
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 14,
+       "sizes": []
+      },
+      "typography_font_weight": "600",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.3,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
+     },
+     "elements": []
+    }
+   ]
+  },
+  {
+   "id": "50eb27e4",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "container_type": "flex",
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1280,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "32",
+     "row": "32",
+     "isLinked": true,
+     "unit": "px",
+     "size": 32
+    },
+    "flex_gap_mobile": {
+     "column": "28",
+     "row": "28",
+     "isLinked": true,
+     "unit": "px",
+     "size": 28
+    },
+    "padding": {
+     "unit": "px",
+     "top": "96",
+     "right": "80",
+     "bottom": "96",
+     "left": "80",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "80",
+     "right": "40",
+     "bottom": "80",
+     "left": "40",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "64",
+     "right": "16",
+     "bottom": "64",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#FFFFFF",
+    "_element_id": "horarios"
+   },
+   "elements": [
+    {
+     "id": "d51cffc5",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "column",
+      "content_width": "full",
+      "flex_gap": {
+       "column": "10",
+       "row": "10",
+       "isLinked": true,
+       "unit": "px",
+       "size": 10
+      }
+     },
+     "elements": [
+      {
+       "id": "029734bd",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Horarios",
+        "header_size": "div",
+        "title_color": "#6B5BD6",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 18,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.4,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "84617865",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "¿Cuándo abrimos?",
+        "header_size": "h2",
+        "title_color": "#231B2B",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 40,
+         "sizes": []
+        },
+        "typography_font_size_tablet": {
+         "unit": "px",
+         "size": 34,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 28,
+         "sizes": []
+        },
+        "typography_font_weight": "700",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.1,
+         "sizes": []
+        },
+        "typography_letter_spacing": {
+         "unit": "em",
+         "size": -0.015,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      }
+     ]
+    },
+    {
+     "id": "49481e16",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "row",
+      "content_width": "full",
+      "flex_wrap": "nowrap",
+      "flex_direction_mobile": "column",
+      "flex_gap": {
+       "column": "24",
+       "row": "24",
+       "isLinked": true,
+       "unit": "px",
+       "size": 24
+      },
+      "flex_gap_mobile": {
+       "column": "16",
+       "row": "16",
+       "isLinked": true,
+       "unit": "px",
+       "size": 16
+      }
+     },
+     "elements": [
+      {
+       "id": "fc945fa8",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "8",
+         "row": "8",
+         "isLinked": true,
+         "unit": "px",
+         "size": 8
+        },
+        "width": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "padding": {
+         "unit": "px",
+         "top": "32",
+         "right": "32",
+         "bottom": "32",
+         "left": "32",
+         "isLinked": true
+        },
+        "padding_mobile": {
+         "unit": "px",
+         "top": "24",
+         "right": "24",
+         "bottom": "24",
+         "left": "24",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "#FFE25C"
+       },
+       "elements": [
+        {
+         "id": "d50879cc",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Lunes a viernes",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 18,
+           "sizes": []
+          },
+          "typography_font_weight": "600",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "c9a1ce0d",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "11:00 a. m. – 5:00 p. m.",
+          "header_size": "p",
+          "title_color": "#231B2B",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 40,
+           "sizes": []
+          },
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 34,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 24,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.1,
+           "sizes": []
+          },
+          "typography_letter_spacing": {
+           "unit": "em",
+           "size": -0.015,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "ab53da07",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "8",
+         "row": "8",
+         "isLinked": true,
+         "unit": "px",
+         "size": 8
+        },
+        "width": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "padding": {
+         "unit": "px",
+         "top": "32",
+         "right": "32",
+         "bottom": "32",
+         "left": "32",
+         "isLinked": true
+        },
+        "padding_mobile": {
+         "unit": "px",
+         "top": "24",
+         "right": "24",
+         "bottom": "24",
+         "left": "24",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "#9CCBF2"
+       },
+       "elements": [
+        {
+         "id": "25022d8a",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Sábados, domingos y festivos",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 18,
+           "sizes": []
+          },
+          "typography_font_weight": "600",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "25019838",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "9:30 a. m. – 6:00 p. m.",
+          "header_size": "p",
+          "title_color": "#231B2B",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 40,
+           "sizes": []
+          },
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 34,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 24,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.1,
+           "sizes": []
+          },
+          "typography_letter_spacing": {
+           "unit": "em",
+           "size": -0.015,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "48c457c5",
+     "elType": "widget",
+     "widgetType": "divider",
+     "isInner": false,
+     "settings": {
+      "style": "solid",
+      "weight": {
+       "unit": "px",
+       "size": 2,
+       "sizes": []
+      },
+      "color": "#231B2B",
+      "width": {
+       "unit": "%",
+       "size": 100,
+       "sizes": []
+      },
+      "gap": {
+       "unit": "px",
+       "size": 0,
+       "sizes": []
+      }
+     },
+     "elements": []
+    },
+    {
+     "id": "a717b850",
+     "elType": "widget",
+     "widgetType": "icon-list",
+     "isInner": false,
+     "settings": {
+      "icon_list": [
+       {
+        "_id": "xpa1zd7",
+        "text": "Venta de entradas hasta las 4:00 p. m. · Compra con anticipación: las entradas pueden agotarse en taquilla.",
+        "selected_icon": {
+         "value": "fas fa-ticket-alt",
+         "library": "fa-solid"
+        },
+        "link": {
+         "url": ""
+        }
+       },
+       {
+        "_id": "6r4er15",
+        "text": "Cambio de horario · 26 de noviembre: Cerrado todo el día.",
+        "selected_icon": {
+         "value": "fas fa-bolt",
+         "library": "fa-solid"
+        },
+        "link": {
+         "url": ""
+        }
+       },
+       {
+        "_id": "poc3iu0",
+        "text": "Menores de 4 años: entran gratis al recorrido exploratorio.",
+        "selected_icon": {
+         "value": "far fa-heart",
+         "library": "fa-regular"
+        },
+        "link": {
+         "url": ""
+        }
+       },
+       {
+        "_id": "qavs0dz",
+        "text": "Mayores de 60 años: entran gratis al recorrido exploratorio.",
+        "selected_icon": {
+         "value": "far fa-heart",
+         "library": "fa-regular"
+        },
+        "link": {
+         "url": ""
+        }
+       },
+       {
+        "_id": "r3mnq2k",
+        "text": "Estudiantes: descuento en el recorrido presentando el carné vigente en taquilla.",
+        "selected_icon": {
+         "value": "far fa-heart",
+         "library": "fa-regular"
+        },
+        "link": {
+         "url": ""
+        }
+       },
+       {
+        "_id": "f005mhy",
+        "text": "Personas con discapacidad: recorrido gratis con un acompañante y 25 % de descuento en el cine ($14.700), con certificado médico en taquilla.",
+        "selected_icon": {
+         "value": "far fa-heart",
+         "library": "fa-regular"
+        },
+        "link": {
+         "url": ""
+        }
+       }
+      ],
+      "view": "traditional",
+      "icon_color": "#231B2B",
+      "text_color": "#231B2B",
+      "icon_size": {
+       "unit": "px",
+       "size": 20,
+       "sizes": []
+      },
+      "space_between": {
+       "unit": "px",
+       "size": 28,
+       "sizes": []
+      },
+      "text_indent": {
+       "unit": "px",
+       "size": 10,
+       "sizes": []
+      },
+      "icon_typography_typography": "custom",
+      "icon_typography_font_size": {
+       "unit": "px",
+       "size": 17,
+       "sizes": []
+      },
+      "icon_typography_font_weight": "400",
+      "icon_typography_line_height": {
+       "unit": "em",
+       "size": 1.5,
+       "sizes": []
+      },
+      "icon_typography_font_family": "Montserrat",
+      "divider": "yes",
+      "divider_style": "solid",
+      "divider_weight": {
+       "unit": "px",
+       "size": 1,
+       "sizes": []
+      },
+      "divider_color": "rgba(35,27,43,0.25)"
+     },
+     "elements": []
+    }
+   ]
+  },
+  {
+   "id": "6ede4cc6",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "container_type": "flex",
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1280,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "24",
+     "row": "24",
+     "isLinked": true,
+     "unit": "px",
+     "size": 24
+    },
+    "flex_gap_mobile": {
+     "column": "28",
+     "row": "28",
+     "isLinked": true,
+     "unit": "px",
+     "size": 28
+    },
+    "padding": {
+     "unit": "px",
+     "top": "96",
+     "right": "80",
+     "bottom": "96",
+     "left": "80",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "80",
+     "right": "40",
+     "bottom": "80",
+     "left": "40",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "64",
+     "right": "16",
+     "bottom": "64",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#F4F1EC",
+    "_element_id": "tarifas"
+   },
+   "elements": [
+    {
+     "id": "07d4162f",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "column",
+      "content_width": "full",
+      "flex_gap": {
+       "column": "10",
+       "row": "10",
+       "isLinked": true,
+       "unit": "px",
+       "size": 10
+      }
+     },
+     "elements": [
+      {
+       "id": "9ec7deaa",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Planes y tarifas",
+        "header_size": "div",
+        "title_color": "#6B5BD6",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 18,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.4,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "7157973e",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Arma tu plan.",
+        "header_size": "h2",
+        "title_color": "#231B2B",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 40,
+         "sizes": []
+        },
+        "typography_font_size_tablet": {
+         "unit": "px",
+         "size": 34,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 28,
+         "sizes": []
+        },
+        "typography_font_weight": "700",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.1,
+         "sizes": []
+        },
+        "typography_letter_spacing": {
+         "unit": "em",
+         "size": -0.015,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "5bdb248c",
+       "elType": "widget",
+       "widgetType": "text-editor",
+       "isInner": false,
+       "settings": {
+        "editor": "<p>Elige cómo quieres vivir Maloka. Compra en línea antes de venir: en taquilla las entradas pueden agotarse.</p>",
+        "text_color": "#4F4955",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 18,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.55,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      }
+     ]
+    },
+    {
+     "id": "87e0b3c5",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "row",
+      "content_width": "full",
+      "flex_wrap": "nowrap",
+      "flex_direction_mobile": "column",
+      "flex_gap": {
+       "column": "0",
+       "row": "0",
+       "isLinked": true,
+       "unit": "px",
+       "size": 0
+      }
+     },
+     "elements": [
+      {
+       "id": "b591a585",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "row",
+        "flex_direction_mobile": "row",
+        "flex_wrap": "nowrap",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "16",
+         "row": "16",
+         "isLinked": true,
+         "unit": "px",
+         "size": 16
+        },
+        "flex_align_items": "flex-start",
+        "padding": {
+         "unit": "px",
+         "top": "20",
+         "right": "24",
+         "bottom": "20",
+         "left": "24",
+         "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#FFE25C",
+        "width": {
+         "unit": "%",
+         "size": 33.33,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "03e7dfe3",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "1",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "_element_width": "auto",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 40,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "e266ebdd",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "column",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "2",
+           "row": "2",
+           "isLinked": true,
+           "unit": "px",
+           "size": 2
+          },
+          "width": {
+           "unit": "%",
+           "size": 80,
+           "sizes": []
+          },
+          "width_mobile": {
+           "unit": "%",
+           "size": 80,
+           "sizes": []
+          },
+          "_flex_size": "grow"
+         },
+         "elements": [
+          {
+           "id": "b7954753",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Recorrido exploratorio",
+            "header_size": "div",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 18,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "0d817247",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Explora las salas a tu ritmo.</p>",
+            "text_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 15,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "b3939560",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "row",
+        "flex_direction_mobile": "row",
+        "flex_wrap": "nowrap",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "16",
+         "row": "16",
+         "isLinked": true,
+         "unit": "px",
+         "size": 16
+        },
+        "flex_align_items": "flex-start",
+        "padding": {
+         "unit": "px",
+         "top": "20",
+         "right": "24",
+         "bottom": "20",
+         "left": "24",
+         "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#9FE8C8",
+        "width": {
+         "unit": "%",
+         "size": 33.33,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "7b23e135",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "2",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "_element_width": "auto",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 40,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "47434811",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "column",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "2",
+           "row": "2",
+           "isLinked": true,
+           "unit": "px",
+           "size": 2
+          },
+          "width": {
+           "unit": "%",
+           "size": 80,
+           "sizes": []
+          },
+          "width_mobile": {
+           "unit": "%",
+           "size": 80,
+           "sizes": []
+          },
+          "_flex_size": "grow"
+         },
+         "elements": [
+          {
+           "id": "33542373",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "+ Taller en laboratorio",
+            "header_size": "div",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 18,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "688b2b21",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Pequeños Inventores, Bio o Inventores, según la edad.</p>",
+            "text_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 15,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "19431f47",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "row",
+        "flex_direction_mobile": "row",
+        "flex_wrap": "nowrap",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "16",
+         "row": "16",
+         "isLinked": true,
+         "unit": "px",
+         "size": 16
+        },
+        "flex_align_items": "flex-start",
+        "padding": {
+         "unit": "px",
+         "top": "20",
+         "right": "24",
+         "bottom": "20",
+         "left": "24",
+         "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#9CCBF2",
+        "width": {
+         "unit": "%",
+         "size": 33.33,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "9e7acdb0",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "3",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "_element_width": "auto",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 40,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "ef7810ad",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "column",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "2",
+           "row": "2",
+           "isLinked": true,
+           "unit": "px",
+           "size": 2
+          },
+          "width": {
+           "unit": "%",
+           "size": 80,
+           "sizes": []
+          },
+          "width_mobile": {
+           "unit": "%",
+           "size": 80,
+           "sizes": []
+          },
+          "_flex_size": "grow"
+         },
+         "elements": [
+          {
+           "id": "68183d42",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "+ Proyección en el Cine Domo",
+            "header_size": "div",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 18,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "53fe66b7",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Cierra con una experiencia inmersiva.</p>",
+            "text_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 15,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "72de3686",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "content_width": "full",
+      "flex_align_items": "baseline",
+      "flex_gap": {
+       "column": "16",
+       "row": "4",
+       "isLinked": false,
+       "unit": "px",
+       "size": 16
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "12",
+       "left": "0",
+       "isLinked": false
+      },
+      "border_border": "solid",
+      "border_width": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "2",
+       "left": "0",
+       "isLinked": false
+      },
+      "border_color": "#231B2B"
+     },
+     "elements": [
+      {
+       "id": "284ddce3",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Entradas",
+        "header_size": "h3",
+        "title_color": "#231B2B",
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 24,
+         "sizes": []
+        },
+        "typography_font_size_tablet": {
+         "unit": "px",
+         "size": 22,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 20,
+         "sizes": []
+        },
+        "typography_font_weight": "700",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.2,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "867ba4d9",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Para recorrer Maloka a tu ritmo.",
+        "header_size": "div",
+        "title_color": "#4F4955",
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.4,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      }
+     ]
+    },
+    {
+     "id": "2ec3049e",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "content_width": "full",
+      "flex_gap": {
+       "column": "24",
+       "row": "24",
+       "isLinked": true,
+       "unit": "px",
+       "size": 24
+      },
+      "flex_gap_mobile": {
+       "column": "12",
+       "row": "12",
+       "isLinked": true,
+       "unit": "px",
+       "size": 12
+      },
+      "flex_align_items": "stretch",
+      "margin": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "32",
+       "left": "0",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "97bf187d",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/entrada-recorrido-exploratorio",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "width": {
+         "unit": "%",
+         "size": 23.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "_flex_align_self": "stretch",
+        "overflow": "hidden",
+        "background_background": "classic",
+        "background_color": "#FFFFFF",
+        "background_hover_background": "classic",
+        "background_hover_color": "#FFF3B0",
+        "background_hover_transition": {
+         "unit": "s",
+         "size": 0.2,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "73c65760",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/3e20cfb5-bda5-49ed-b932-d59565866cbe.jpg",
+           "id": 0,
+           "alt": "Pieza del Recorrido exploratorio: niño con un telescopio"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "height": {
+           "unit": "px",
+           "size": "",
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "39a6ed9d",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "column",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "8",
+           "row": "8",
+           "isLinked": true,
+           "unit": "px",
+           "size": 8
+          },
+          "padding": {
+           "unit": "px",
+           "top": "20",
+           "right": "20",
+           "bottom": "20",
+           "left": "20",
+           "isLinked": true
+          },
+          "padding_mobile": {
+           "unit": "px",
+           "top": "14",
+           "right": "14",
+           "bottom": "14",
+           "left": "14",
+           "isLinked": true
+          },
+          "flex_align_items": "flex-start",
+          "_flex_size": "grow"
+         },
+         "elements": [
+          {
+           "id": "569d9112",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Recorrido exploratorio",
+            "header_size": "h4",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 20,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 17,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.2,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "c80adcea",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Incluye",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "2be258b3",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Recorrido libre por salas de ciencia, naturaleza, sociedad y emociones</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "c09822d6",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Edades",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "1899f34a",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Paga desde los 4 años</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "1cdbda4b",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Duración",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "2423815d",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>2 a 3 horas</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "57a0711d",
+           "elType": "widget",
+           "widgetType": "divider",
+           "isInner": false,
+           "settings": {
+            "style": "solid",
+            "weight": {
+             "unit": "px",
+             "size": 2,
+             "sizes": []
+            },
+            "color": "#231B2B",
+            "width": {
+             "unit": "%",
+             "size": 100,
+             "sizes": []
+            },
+            "gap": {
+             "unit": "px",
+             "size": 4,
+             "sizes": []
+            }
+           },
+           "elements": []
+          },
+          {
+           "id": "bce44e92",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "container_type": "flex",
+            "flex_direction": "row",
+            "flex_direction_mobile": "row",
+            "flex_wrap": "wrap",
+            "content_width": "full",
+            "flex_justify_content": "space-between",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "column": "10",
+             "row": "10",
+             "isLinked": true,
+             "unit": "px",
+             "size": 10
+            }
+           },
+           "elements": [
+            {
+             "id": "502aba4d",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "$49.000",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 22,
+               "sizes": []
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 18,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.2,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            },
+            {
+             "id": "5575e0a7",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "Comprar ↗",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "_element_width": "auto",
+              "_padding": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_border": "solid",
+              "_border_width": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 16,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.3,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "b6c28a8c",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/tardes-maloka-1",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "width": {
+         "unit": "%",
+         "size": 23.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "_flex_align_self": "stretch",
+        "overflow": "hidden",
+        "background_background": "classic",
+        "background_color": "#FFFFFF",
+        "background_hover_background": "classic",
+        "background_hover_color": "#FFF3B0",
+        "background_hover_transition": {
+         "unit": "s",
+         "size": 0.2,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "59931afb",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/0e4ce459-7dc4-4629-a575-268fb1b6701f.jpg",
+           "id": 0,
+           "alt": "Pieza de Tardes Maloka: niño con casco de astronauta"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "height": {
+           "unit": "px",
+           "size": "",
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "463b3b88",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "column",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "8",
+           "row": "8",
+           "isLinked": true,
+           "unit": "px",
+           "size": 8
+          },
+          "padding": {
+           "unit": "px",
+           "top": "20",
+           "right": "20",
+           "bottom": "20",
+           "left": "20",
+           "isLinked": true
+          },
+          "padding_mobile": {
+           "unit": "px",
+           "top": "14",
+           "right": "14",
+           "bottom": "14",
+           "left": "14",
+           "isLinked": true
+          },
+          "flex_align_items": "flex-start",
+          "_flex_size": "grow"
+         },
+         "elements": [
+          {
+           "id": "61d2b9f4",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Tardes Maloka",
+            "header_size": "h4",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 20,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 17,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.2,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "cd415c6a",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Incluye",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "4dcf7e61",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Recorrido por las salas interactivas</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "ee72eac0",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Horario",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "516be208",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Ingreso después de la 1:00 p. m.</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "588ba023",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Edades",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "74875bf1",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Paga desde los 4 años</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "71ba81f4",
+           "elType": "widget",
+           "widgetType": "divider",
+           "isInner": false,
+           "settings": {
+            "style": "solid",
+            "weight": {
+             "unit": "px",
+             "size": 2,
+             "sizes": []
+            },
+            "color": "#231B2B",
+            "width": {
+             "unit": "%",
+             "size": 100,
+             "sizes": []
+            },
+            "gap": {
+             "unit": "px",
+             "size": 4,
+             "sizes": []
+            }
+           },
+           "elements": []
+          },
+          {
+           "id": "06d3a308",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "container_type": "flex",
+            "flex_direction": "row",
+            "flex_direction_mobile": "row",
+            "flex_wrap": "wrap",
+            "content_width": "full",
+            "flex_justify_content": "space-between",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "column": "10",
+             "row": "10",
+             "isLinked": true,
+             "unit": "px",
+             "size": 10
+            }
+           },
+           "elements": [
+            {
+             "id": "c4c919ce",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "$44.100",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 22,
+               "sizes": []
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 18,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.2,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            },
+            {
+             "id": "5a94d548",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "Comprar ↗",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "_element_width": "auto",
+              "_padding": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_border": "solid",
+              "_border_width": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 16,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.3,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "028aeb0c",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/laboratorios-4",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "width": {
+         "unit": "%",
+         "size": 23.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "_flex_align_self": "stretch",
+        "overflow": "hidden",
+        "background_background": "classic",
+        "background_color": "#FFFFFF",
+        "background_hover_background": "classic",
+        "background_hover_color": "#FFF3B0",
+        "background_hover_transition": {
+         "unit": "s",
+         "size": 0.2,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "6778a8a8",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/bfc6d528-6adc-4f8d-9235-ca56baa98acd.jpg",
+           "id": 0,
+           "alt": "Pieza de Laboratorios Maloka: niña con un microscopio"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "height": {
+           "unit": "px",
+           "size": "",
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "8c773d28",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "column",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "8",
+           "row": "8",
+           "isLinked": true,
+           "unit": "px",
+           "size": 8
+          },
+          "padding": {
+           "unit": "px",
+           "top": "20",
+           "right": "20",
+           "bottom": "20",
+           "left": "20",
+           "isLinked": true
+          },
+          "padding_mobile": {
+           "unit": "px",
+           "top": "14",
+           "right": "14",
+           "bottom": "14",
+           "left": "14",
+           "isLinked": true
+          },
+          "flex_align_items": "flex-start",
+          "_flex_size": "grow"
+         },
+         "elements": [
+          {
+           "id": "2c86d636",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Laboratorio Pequeños Inventores",
+            "header_size": "h4",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 20,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 17,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.2,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "0905c0c6",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Incluye",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "9edee6e8",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Entrada exclusiva al laboratorio</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "a3bae711",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Edades",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "67bef1e2",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>4 a 7 años</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "fa1df6d8",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Duración",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "8098fdc2",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>1 hora</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "53be1f73",
+           "elType": "widget",
+           "widgetType": "divider",
+           "isInner": false,
+           "settings": {
+            "style": "solid",
+            "weight": {
+             "unit": "px",
+             "size": 2,
+             "sizes": []
+            },
+            "color": "#231B2B",
+            "width": {
+             "unit": "%",
+             "size": 100,
+             "sizes": []
+            },
+            "gap": {
+             "unit": "px",
+             "size": 4,
+             "sizes": []
+            }
+           },
+           "elements": []
+          },
+          {
+           "id": "789f532a",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "container_type": "flex",
+            "flex_direction": "row",
+            "flex_direction_mobile": "row",
+            "flex_wrap": "wrap",
+            "content_width": "full",
+            "flex_justify_content": "space-between",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "column": "10",
+             "row": "10",
+             "isLinked": true,
+             "unit": "px",
+             "size": 10
+            }
+           },
+           "elements": [
+            {
+             "id": "a8d4a481",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "$28.000",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 22,
+               "sizes": []
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 18,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.2,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            },
+            {
+             "id": "fc62c0cb",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "Comprar ↗",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "_element_width": "auto",
+              "_padding": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_border": "solid",
+              "_border_width": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 16,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.3,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "41506b29",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "14",
+         "row": "14",
+         "isLinked": true,
+         "unit": "px",
+         "size": 14
+        },
+        "width": {
+         "unit": "%",
+         "size": 23.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "_flex_align_self": "stretch",
+        "flex_justify_content": "flex-end",
+        "flex_align_items": "flex-start",
+        "padding": {
+         "unit": "px",
+         "top": "24",
+         "right": "24",
+         "bottom": "24",
+         "left": "24",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "#231B2B"
+       },
+       "elements": [
+        {
+         "id": "b66f5342",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "¿Vienes seguido o quieres regalar Maloka?",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 20,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.25,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "0b2417de",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Membresía Maloka ↗",
+          "header_size": "div",
+          "title_color": "#FFE25C",
+          "link": {
+           "url": "https://maloka.checkout.tuboleta.com/selection/membership?productId=10230319426155",
+           "is_external": "on",
+           "nofollow": "",
+           "custom_attributes": ""
+          },
+          "_element_width": "auto",
+          "_padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "2",
+           "left": "0",
+           "isLinked": false
+          },
+          "_border_border": "solid",
+          "_border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "2",
+           "left": "0",
+           "isLinked": false
+          },
+          "_border_color": "#FFE25C",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.3,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "28989ba5",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Bono regalo ↗",
+          "header_size": "div",
+          "title_color": "#FFE25C",
+          "link": {
+           "url": "https://maloka.checkout.tuboleta.com/selection/service?productId=10230319426154",
+           "is_external": "on",
+           "nofollow": "",
+           "custom_attributes": ""
+          },
+          "_element_width": "auto",
+          "_padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "2",
+           "left": "0",
+           "isLinked": false
+          },
+          "_border_border": "solid",
+          "_border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "2",
+           "left": "0",
+           "isLinked": false
+          },
+          "_border_color": "#FFE25C",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.3,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "c29f6fe4",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "content_width": "full",
+      "flex_align_items": "baseline",
+      "flex_gap": {
+       "column": "16",
+       "row": "4",
+       "isLinked": false,
+       "unit": "px",
+       "size": 16
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "12",
+       "left": "0",
+       "isLinked": false
+      },
+      "border_border": "solid",
+      "border_width": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "2",
+       "left": "0",
+       "isLinked": false
+      },
+      "border_color": "#231B2B"
+     },
+     "elements": [
+      {
+       "id": "779e6640",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Combos",
+        "header_size": "h3",
+        "title_color": "#231B2B",
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 24,
+         "sizes": []
+        },
+        "typography_font_size_tablet": {
+         "unit": "px",
+         "size": 22,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 20,
+         "sizes": []
+        },
+        "typography_font_weight": "700",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.2,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "1298e3de",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Más de una experiencia con descuento incluido.",
+        "header_size": "div",
+        "title_color": "#4F4955",
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.4,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      }
+     ]
+    },
+    {
+     "id": "86265017",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "content_width": "full",
+      "flex_gap": {
+       "column": "16",
+       "row": "16",
+       "isLinked": true,
+       "unit": "px",
+       "size": 16
+      },
+      "flex_gap_mobile": {
+       "column": "12",
+       "row": "12",
+       "isLinked": true,
+       "unit": "px",
+       "size": 12
+      },
+      "flex_align_items": "stretch",
+      "margin": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "32",
+       "left": "0",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "5cd5ed28",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/combo-familiar-1",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "width": {
+         "unit": "%",
+         "size": 18.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "_flex_align_self": "stretch",
+        "overflow": "hidden",
+        "background_background": "classic",
+        "background_color": "#FFFFFF",
+        "background_hover_background": "classic",
+        "background_hover_color": "#FFF3B0",
+        "background_hover_transition": {
+         "unit": "s",
+         "size": 0.2,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "40d58f82",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/266aad39-4d10-452e-8473-1d2499e602c8_19.jpg",
+           "id": 0,
+           "alt": "Pieza del Combo familiar: familia en la sala de dinosaurios"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "height": {
+           "unit": "px",
+           "size": "",
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "f909147b",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "column",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "8",
+           "row": "8",
+           "isLinked": true,
+           "unit": "px",
+           "size": 8
+          },
+          "padding": {
+           "unit": "px",
+           "top": "16",
+           "right": "16",
+           "bottom": "16",
+           "left": "16",
+           "isLinked": true
+          },
+          "padding_mobile": {
+           "unit": "px",
+           "top": "14",
+           "right": "14",
+           "bottom": "14",
+           "left": "14",
+           "isLinked": true
+          },
+          "flex_align_items": "flex-start",
+          "_flex_size": "grow"
+         },
+         "elements": [
+          {
+           "id": "135febb3",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Ahorras $43.800",
+            "header_size": "div",
+            "title_color": "#231B2B",
+            "_background_background": "classic",
+            "_background_color": "#9FE8C8",
+            "_padding": {
+             "unit": "px",
+             "top": "5",
+             "right": "12",
+             "bottom": "5",
+             "left": "12",
+             "isLinked": false
+            },
+            "_element_width": "auto",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.4,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "58764270",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Combo familiar",
+            "header_size": "h4",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 18,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 17,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.2,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "e0dc6724",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Incluye",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "fadf6c37",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Recorrido exploratorio y proyección en el Cine Domo</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "decd19fc",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Para",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "d88a12b4",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>4 personas mayores de 4 años</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "0386fcf2",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Aplica",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "ce1525b5",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Fines de semana, festivos y vacaciones</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "ffa550c7",
+           "elType": "widget",
+           "widgetType": "divider",
+           "isInner": false,
+           "settings": {
+            "style": "solid",
+            "weight": {
+             "unit": "px",
+             "size": 2,
+             "sizes": []
+            },
+            "color": "#231B2B",
+            "width": {
+             "unit": "%",
+             "size": 100,
+             "sizes": []
+            },
+            "gap": {
+             "unit": "px",
+             "size": 4,
+             "sizes": []
+            }
+           },
+           "elements": []
+          },
+          {
+           "id": "8ef0e8ac",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "container_type": "flex",
+            "flex_direction": "row",
+            "flex_direction_mobile": "row",
+            "flex_wrap": "wrap",
+            "content_width": "full",
+            "flex_justify_content": "space-between",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "column": "10",
+             "row": "10",
+             "isLinked": true,
+             "unit": "px",
+             "size": 10
+            }
+           },
+           "elements": [
+            {
+             "id": "81bfff47",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "$173.000",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 22,
+               "sizes": []
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 18,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.2,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            },
+            {
+             "id": "74fc3219",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "Comprar ↗",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "_element_width": "auto",
+              "_padding": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_border": "solid",
+              "_border_width": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 16,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.3,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "06905ee4",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/combo-bio-1",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "width": {
+         "unit": "%",
+         "size": 18.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "_flex_align_self": "stretch",
+        "overflow": "hidden",
+        "background_background": "classic",
+        "background_color": "#FFFFFF",
+        "background_hover_background": "classic",
+        "background_hover_color": "#FFF3B0",
+        "background_hover_transition": {
+         "unit": "s",
+         "size": 0.2,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "5a5b0e5c",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/c3f7b3ac-6e08-40c8-9950-5b667b5af360.jpg",
+           "id": 0,
+           "alt": "Pieza del Combo Bio"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "height": {
+           "unit": "px",
+           "size": "",
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "dca7248f",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "column",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "8",
+           "row": "8",
+           "isLinked": true,
+           "unit": "px",
+           "size": 8
+          },
+          "padding": {
+           "unit": "px",
+           "top": "16",
+           "right": "16",
+           "bottom": "16",
+           "left": "16",
+           "isLinked": true
+          },
+          "padding_mobile": {
+           "unit": "px",
+           "top": "14",
+           "right": "14",
+           "bottom": "14",
+           "left": "14",
+           "isLinked": true
+          },
+          "flex_align_items": "flex-start",
+          "_flex_size": "grow"
+         },
+         "elements": [
+          {
+           "id": "113a6f3e",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Combo Bio",
+            "header_size": "h4",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 18,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 17,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.2,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "2aff768b",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Incluye",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "4fa15bcb",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Recorrido exploratorio y taller en el laboratorio Bio</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "ec882572",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Edades",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "c8bdded3",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>7 a 9 años</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "674a4af5",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Duración",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "87216239",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>4 horas</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "fcc5029b",
+           "elType": "widget",
+           "widgetType": "divider",
+           "isInner": false,
+           "settings": {
+            "style": "solid",
+            "weight": {
+             "unit": "px",
+             "size": 2,
+             "sizes": []
+            },
+            "color": "#231B2B",
+            "width": {
+             "unit": "%",
+             "size": 100,
+             "sizes": []
+            },
+            "gap": {
+             "unit": "px",
+             "size": 4,
+             "sizes": []
+            }
+           },
+           "elements": []
+          },
+          {
+           "id": "75578588",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "container_type": "flex",
+            "flex_direction": "row",
+            "flex_direction_mobile": "row",
+            "flex_wrap": "wrap",
+            "content_width": "full",
+            "flex_justify_content": "space-between",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "column": "10",
+             "row": "10",
+             "isLinked": true,
+             "unit": "px",
+             "size": 10
+            }
+           },
+           "elements": [
+            {
+             "id": "7b589ae7",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "$60.200",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 22,
+               "sizes": []
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 18,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.2,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            },
+            {
+             "id": "94d52443",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "Comprar ↗",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "_element_width": "auto",
+              "_padding": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_border": "solid",
+              "_border_width": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 16,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.3,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "0317c906",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/combo-inventores-1",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "width": {
+         "unit": "%",
+         "size": 18.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "_flex_align_self": "stretch",
+        "overflow": "hidden",
+        "background_background": "classic",
+        "background_color": "#FFFFFF",
+        "background_hover_background": "classic",
+        "background_hover_color": "#FFF3B0",
+        "background_hover_transition": {
+         "unit": "s",
+         "size": 0.2,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "05e6a919",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/14fd8b36-a148-4bda-b657-1c57b401fc78.jpg",
+           "id": 0,
+           "alt": "Pieza del Combo Inventores"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "height": {
+           "unit": "px",
+           "size": "",
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "247988be",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "column",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "8",
+           "row": "8",
+           "isLinked": true,
+           "unit": "px",
+           "size": 8
+          },
+          "padding": {
+           "unit": "px",
+           "top": "16",
+           "right": "16",
+           "bottom": "16",
+           "left": "16",
+           "isLinked": true
+          },
+          "padding_mobile": {
+           "unit": "px",
+           "top": "14",
+           "right": "14",
+           "bottom": "14",
+           "left": "14",
+           "isLinked": true
+          },
+          "flex_align_items": "flex-start",
+          "_flex_size": "grow"
+         },
+         "elements": [
+          {
+           "id": "73f230fc",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Combo Inventores",
+            "header_size": "h4",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 18,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 17,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.2,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "1438664e",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Incluye",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "94aee363",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Recorrido exploratorio y taller en el laboratorio Inventores</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "2b7c045f",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Edades",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "7db10f57",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Mayores de 9 años</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "37d75c33",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Duración",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "61d86239",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>4 horas</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "5ce4e588",
+           "elType": "widget",
+           "widgetType": "divider",
+           "isInner": false,
+           "settings": {
+            "style": "solid",
+            "weight": {
+             "unit": "px",
+             "size": 2,
+             "sizes": []
+            },
+            "color": "#231B2B",
+            "width": {
+             "unit": "%",
+             "size": 100,
+             "sizes": []
+            },
+            "gap": {
+             "unit": "px",
+             "size": 4,
+             "sizes": []
+            }
+           },
+           "elements": []
+          },
+          {
+           "id": "e5069806",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "container_type": "flex",
+            "flex_direction": "row",
+            "flex_direction_mobile": "row",
+            "flex_wrap": "wrap",
+            "content_width": "full",
+            "flex_justify_content": "space-between",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "column": "10",
+             "row": "10",
+             "isLinked": true,
+             "unit": "px",
+             "size": 10
+            }
+           },
+           "elements": [
+            {
+             "id": "407a6e84",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "$60.200",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 22,
+               "sizes": []
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 18,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.2,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            },
+            {
+             "id": "f9807213",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "Comprar ↗",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "_element_width": "auto",
+              "_padding": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_border": "solid",
+              "_border_width": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 16,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.3,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "10b453b4",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/combo-mision-rover",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "width": {
+         "unit": "%",
+         "size": 18.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "_flex_align_self": "stretch",
+        "overflow": "hidden",
+        "background_background": "classic",
+        "background_color": "#FFFFFF",
+        "background_hover_background": "classic",
+        "background_hover_color": "#FFF3B0",
+        "background_hover_transition": {
+         "unit": "s",
+         "size": 0.2,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "e6d30f3b",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/ef78c464-ab29-4c6e-9fa6-6e039a84d20c_58.jpg",
+           "id": 0,
+           "alt": "Pieza del Combo Misión Rover: robot en Marte"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "height": {
+           "unit": "px",
+           "size": "",
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "ce321470",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "column",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "8",
+           "row": "8",
+           "isLinked": true,
+           "unit": "px",
+           "size": 8
+          },
+          "padding": {
+           "unit": "px",
+           "top": "16",
+           "right": "16",
+           "bottom": "16",
+           "left": "16",
+           "isLinked": true
+          },
+          "padding_mobile": {
+           "unit": "px",
+           "top": "14",
+           "right": "14",
+           "bottom": "14",
+           "left": "14",
+           "isLinked": true
+          },
+          "flex_align_items": "flex-start",
+          "_flex_size": "grow"
+         },
+         "elements": [
+          {
+           "id": "e75e9a0c",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Combo Misión Rover",
+            "header_size": "h4",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 18,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 17,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.2,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "d43cc1e2",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Incluye",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "d6d41f26",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Recorrido exploratorio y taller en el laboratorio TIC</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "48219dbf",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Edades",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "a0881667",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Mayores de 7 años</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "787a55d5",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Duración",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "33989f2b",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Recorrido de 2 a 3 horas y laboratorio de 1 hora</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "3379ab29",
+           "elType": "widget",
+           "widgetType": "divider",
+           "isInner": false,
+           "settings": {
+            "style": "solid",
+            "weight": {
+             "unit": "px",
+             "size": 2,
+             "sizes": []
+            },
+            "color": "#231B2B",
+            "width": {
+             "unit": "%",
+             "size": 100,
+             "sizes": []
+            },
+            "gap": {
+             "unit": "px",
+             "size": 4,
+             "sizes": []
+            }
+           },
+           "elements": []
+          },
+          {
+           "id": "b39022c7",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "container_type": "flex",
+            "flex_direction": "row",
+            "flex_direction_mobile": "row",
+            "flex_wrap": "wrap",
+            "content_width": "full",
+            "flex_justify_content": "space-between",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "column": "10",
+             "row": "10",
+             "isLinked": true,
+             "unit": "px",
+             "size": 10
+            }
+           },
+           "elements": [
+            {
+             "id": "5c63ac2d",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "$60.200",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 22,
+               "sizes": []
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 18,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.2,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            },
+            {
+             "id": "45e985eb",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "Comprar ↗",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "_element_width": "auto",
+              "_padding": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_border": "solid",
+              "_border_width": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 16,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.3,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "770f32b1",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/combo-yubarta",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "width": {
+         "unit": "%",
+         "size": 18.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "_flex_align_self": "stretch",
+        "overflow": "hidden",
+        "background_background": "classic",
+        "background_color": "#FFFFFF",
+        "background_hover_background": "classic",
+        "background_hover_color": "#FFF3B0",
+        "background_hover_transition": {
+         "unit": "s",
+         "size": 0.2,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "9f187785",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/69cd1e87-8851-4457-b052-12ed6f68db90_15.jpg",
+           "id": 0,
+           "alt": "Pieza del Combo Yubarta: joven con gafas de realidad virtual"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "height": {
+           "unit": "px",
+           "size": "",
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "44a9fa1e",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "column",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "8",
+           "row": "8",
+           "isLinked": true,
+           "unit": "px",
+           "size": 8
+          },
+          "padding": {
+           "unit": "px",
+           "top": "16",
+           "right": "16",
+           "bottom": "16",
+           "left": "16",
+           "isLinked": true
+          },
+          "padding_mobile": {
+           "unit": "px",
+           "top": "14",
+           "right": "14",
+           "bottom": "14",
+           "left": "14",
+           "isLinked": true
+          },
+          "flex_align_items": "flex-start",
+          "_flex_size": "grow"
+         },
+         "elements": [
+          {
+           "id": "11c833f1",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Combo Yubarta",
+            "header_size": "h4",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 18,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 17,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.2,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "e138502f",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Incluye",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "361de750",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Recorrido exploratorio y experiencia de realidad virtual</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "3b2744cc",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Edades",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "f1c770fa",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Mayores de 10 años</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "4efe61b3",
+           "elType": "widget",
+           "widgetType": "heading",
+           "isInner": false,
+           "settings": {
+            "title": "Duración",
+            "header_size": "div",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 12,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "c21df7d4",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p>Recorrido de 2 a 3 horas y VR de 7 minutos</p>",
+            "text_color": "#231B2B",
+            "_margin": {
+             "unit": "px",
+             "top": "-6",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "typography_typography": "custom",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 14,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.45,
+             "sizes": []
+            },
+            "typography_font_family": "Montserrat"
+           },
+           "elements": []
+          },
+          {
+           "id": "16218fad",
+           "elType": "widget",
+           "widgetType": "divider",
+           "isInner": false,
+           "settings": {
+            "style": "solid",
+            "weight": {
+             "unit": "px",
+             "size": 2,
+             "sizes": []
+            },
+            "color": "#231B2B",
+            "width": {
+             "unit": "%",
+             "size": 100,
+             "sizes": []
+            },
+            "gap": {
+             "unit": "px",
+             "size": 4,
+             "sizes": []
+            }
+           },
+           "elements": []
+          },
+          {
+           "id": "713b94b9",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "container_type": "flex",
+            "flex_direction": "row",
+            "flex_direction_mobile": "row",
+            "flex_wrap": "wrap",
+            "content_width": "full",
+            "flex_justify_content": "space-between",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "column": "10",
+             "row": "10",
+             "isLinked": true,
+             "unit": "px",
+             "size": 10
+            }
+           },
+           "elements": [
+            {
+             "id": "bd7d9b88",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "$56.000",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 22,
+               "sizes": []
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 18,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.2,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            },
+            {
+             "id": "4b62a46c",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "Comprar ↗",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "_element_width": "auto",
+              "_padding": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_border": "solid",
+              "_border_width": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "2",
+               "left": "0",
+               "isLinked": false
+              },
+              "_border_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 16,
+               "sizes": []
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.3,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "0c3755f6",
+     "elType": "widget",
+     "widgetType": "text-editor",
+     "isInner": false,
+     "settings": {
+      "editor": "<p>Planes, fotos y precios de maloka.org/horarios-y-tarifas (noviembre de 2026). Los precios pueden cambiar: confírmalos en TuBoleta.</p>",
+      "text_color": "#4F4955",
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 14,
+       "sizes": []
+      },
+      "typography_font_weight": "400",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.5,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
+     },
+     "elements": []
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1667 @@
+{
+ "title": "Visítanos V13 · parte 2 · Cine Domo y Sala Digital",
+ "type": "container",
+ "version": "0.4",
+ "page_settings": {},
+ "content": [
+  {
+   "id": "d69eaee5",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "container_type": "flex",
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1280,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "40",
+     "row": "40",
+     "isLinked": true,
+     "unit": "px",
+     "size": 40
+    },
+    "flex_gap_mobile": {
+     "column": "28",
+     "row": "28",
+     "isLinked": true,
+     "unit": "px",
+     "size": 28
+    },
+    "padding": {
+     "unit": "px",
+     "top": "96",
+     "right": "80",
+     "bottom": "96",
+     "left": "80",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "80",
+     "right": "40",
+     "bottom": "80",
+     "left": "40",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "64",
+     "right": "16",
+     "bottom": "64",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#231B2B"
+   },
+   "elements": [
+    {
+     "id": "d4566f16",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "column",
+      "content_width": "full",
+      "flex_gap": {
+       "column": "10",
+       "row": "10",
+       "isLinked": true,
+       "unit": "px",
+       "size": 10
+      }
+     },
+     "elements": [
+      {
+       "id": "62c69457",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Funciones",
+        "header_size": "div",
+        "title_color": "#B4A5F5",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 18,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.4,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "150e16fb",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Cine Domo y Sala Digital.",
+        "header_size": "h2",
+        "title_color": "#FFFFFF",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 40,
+         "sizes": []
+        },
+        "typography_font_size_tablet": {
+         "unit": "px",
+         "size": 34,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 28,
+         "sizes": []
+        },
+        "typography_font_weight": "700",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.1,
+         "sizes": []
+        },
+        "typography_letter_spacing": {
+         "unit": "em",
+         "size": -0.015,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "b5198c85",
+       "elType": "widget",
+       "widgetType": "text-editor",
+       "isInner": false,
+       "settings": {
+        "editor": "<p>Funciones proyectadas en toda la cúpula y en la Sala Digital. Cada entrada cuesta $19.600.</p>",
+        "text_color": "#D9D3E0",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 18,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.55,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      }
+     ]
+    },
+    {
+     "id": "e6f597dc",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "content_width": "full",
+      "flex_gap": {
+       "column": "20",
+       "row": "32",
+       "isLinked": false,
+       "unit": "px",
+       "size": 20
+      },
+      "flex_gap_mobile": {
+       "column": "12",
+       "row": "24",
+       "isLinked": false,
+       "unit": "px",
+       "size": 12
+      }
+     },
+     "elements": [
+      {
+       "id": "e8b9abfe",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "8",
+         "row": "8",
+         "isLinked": true,
+         "unit": "px",
+         "size": 8
+        },
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/cine-domo-esfera-un-instante-de-vida",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "flex_align_items": "flex-start",
+        "width": {
+         "unit": "%",
+         "size": 18.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 31,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 47,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "5229ba33",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/fc8dfc51-bfbf-4c3c-92c8-ae8bd19690bf_5.jpg",
+           "id": 0,
+           "alt": "Afiche de Esfera: un instante de vida"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "4bd0a138",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Cine Domo",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "_background_background": "classic",
+          "_background_color": "#9CCBF2",
+          "_padding": {
+           "unit": "px",
+           "top": "5",
+           "right": "12",
+           "bottom": "5",
+           "left": "12",
+           "isLinked": false
+          },
+          "_element_width": "auto",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "552ef0c4",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Esfera: un instante de vida",
+          "header_size": "h3",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 18,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.25,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "e6b14f53",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Documental · 30 min · Todo público",
+          "header_size": "div",
+          "title_color": "#D9D3E0",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "ca944dfd",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "8",
+         "row": "8",
+         "isLinked": true,
+         "unit": "px",
+         "size": 8
+        },
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/cine-domo-migrantes-climaticos",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "flex_align_items": "flex-start",
+        "width": {
+         "unit": "%",
+         "size": 18.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 31,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 47,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "deb57334",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://maloka.org/wp-content/uploads/2026/04/500_Migrantes.jpg",
+           "id": 0,
+           "alt": "Afiche de Migrantes climáticos"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "343a0804",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Cine Domo",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "_background_background": "classic",
+          "_background_color": "#9CCBF2",
+          "_padding": {
+           "unit": "px",
+           "top": "5",
+           "right": "12",
+           "bottom": "5",
+           "left": "12",
+           "isLinked": false
+          },
+          "_element_width": "auto",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "ac4bd820",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Migrantes climáticos",
+          "header_size": "h3",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 18,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.25,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "f8631d69",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Documental ambiental · 20 min · Todo público",
+          "header_size": "div",
+          "title_color": "#D9D3E0",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "1f73cba1",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "8",
+         "row": "8",
+         "isLinked": true,
+         "unit": "px",
+         "size": 8
+        },
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/cine-domo-biosfera-oscura",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "flex_align_items": "flex-start",
+        "width": {
+         "unit": "%",
+         "size": 18.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 31,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 47,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "eabcddda",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://maloka.org/wp-content/uploads/2026/02/500_Biosfera-Oscura.jpg",
+           "id": 0,
+           "alt": "Afiche de Biosfera oscura"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "54f17751",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Cine Domo",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "_background_background": "classic",
+          "_background_color": "#9CCBF2",
+          "_padding": {
+           "unit": "px",
+           "top": "5",
+           "right": "12",
+           "bottom": "5",
+           "left": "12",
+           "isLinked": false
+          },
+          "_element_width": "auto",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "13ea45a4",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Biosfera oscura",
+          "header_size": "h3",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 18,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.25,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "f3bd46a0",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Exploración · 27 min · Todo público",
+          "header_size": "div",
+          "title_color": "#D9D3E0",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "e8571d4d",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "8",
+         "row": "8",
+         "isLinked": true,
+         "unit": "px",
+         "size": 8
+        },
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/cine-domo-el-increible-sistema-solar-0",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "flex_align_items": "flex-start",
+        "width": {
+         "unit": "%",
+         "size": 18.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 31,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 47,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "0b701ed6",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/2347c074-fb9d-4a99-a3b9-369749007fed.jpg",
+           "id": 0,
+           "alt": "Afiche de El increíble sistema solar"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "5e62da09",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Cine Domo",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "_background_background": "classic",
+          "_background_color": "#9CCBF2",
+          "_padding": {
+           "unit": "px",
+           "top": "5",
+           "right": "12",
+           "bottom": "5",
+           "left": "12",
+           "isLinked": false
+          },
+          "_element_width": "auto",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "32bc35b6",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "El increíble sistema solar",
+          "header_size": "h3",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 18,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.25,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "4b4bc6ba",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Documental educativo · 20 min · Todo público",
+          "header_size": "div",
+          "title_color": "#D9D3E0",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "d4712861",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "8",
+         "row": "8",
+         "isLinked": true,
+         "unit": "px",
+         "size": 8
+        },
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/cine-domo-tunka-1",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "flex_align_items": "flex-start",
+        "width": {
+         "unit": "%",
+         "size": 18.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 31,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 47,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "ee73ea47",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/6a4c9c68-b758-4e9c-a557-49eb8df2498c.jpg",
+           "id": 0,
+           "alt": "Afiche de Tunka"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "489eb2bb",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Cine Domo",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "_background_background": "classic",
+          "_background_color": "#9CCBF2",
+          "_padding": {
+           "unit": "px",
+           "top": "5",
+           "right": "12",
+           "bottom": "5",
+           "left": "12",
+           "isLinked": false
+          },
+          "_element_width": "auto",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "01804e50",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Tunka",
+          "header_size": "h3",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 18,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.25,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "9be50734",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Animada · 40 min · Todo público",
+          "header_size": "div",
+          "title_color": "#D9D3E0",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "d7b8208d",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "8",
+         "row": "8",
+         "isLinked": true,
+         "unit": "px",
+         "size": 8
+        },
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/show-laser-fantasia-musical",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "flex_align_items": "flex-start",
+        "width": {
+         "unit": "%",
+         "size": 18.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 31,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 47,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "38c947d6",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/470ded48-5b77-4aa6-8a4a-207787b78b13_1.jpg",
+           "id": 0,
+           "alt": "Afiche de Show láser: Fantasía musical"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "f4ac4c19",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Cine Domo",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "_background_background": "classic",
+          "_background_color": "#9CCBF2",
+          "_padding": {
+           "unit": "px",
+           "top": "5",
+           "right": "12",
+           "bottom": "5",
+           "left": "12",
+           "isLinked": false
+          },
+          "_element_width": "auto",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "dee1003c",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Show láser: Fantasía musical",
+          "header_size": "h3",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 18,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.25,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "084d7abd",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Animado · 40 min · Mayores de 4 años",
+          "header_size": "div",
+          "title_color": "#D9D3E0",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "1431b156",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "8",
+         "row": "8",
+         "isLinked": true,
+         "unit": "px",
+         "size": 8
+        },
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/show-laser-leyendas-del-rock-0",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "flex_align_items": "flex-start",
+        "width": {
+         "unit": "%",
+         "size": 18.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 31,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 47,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "d1c9f2d7",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/ec0b8ecb-aafe-4401-826d-618a0f44679f.jpg",
+           "id": 0,
+           "alt": "Afiche de Show láser: Leyendas del rock en español"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "3572531d",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Cine Domo",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "_background_background": "classic",
+          "_background_color": "#9CCBF2",
+          "_padding": {
+           "unit": "px",
+           "top": "5",
+           "right": "12",
+           "bottom": "5",
+           "left": "12",
+           "isLinked": false
+          },
+          "_element_width": "auto",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "c5190a27",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Show láser: Leyendas del rock en español",
+          "header_size": "h3",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 18,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.25,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "f98d9d2d",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Alternativo · 50 min · Mayores de 8 años",
+          "header_size": "div",
+          "title_color": "#D9D3E0",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "3aace008",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "8",
+         "row": "8",
+         "isLinked": true,
+         "unit": "px",
+         "size": 8
+        },
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/show-laser-leyendas-del-rock-0",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "flex_align_items": "flex-start",
+        "width": {
+         "unit": "%",
+         "size": 18.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 31,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 47,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "e36cd043",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/45d609c4-d527-4605-aa0c-dc41d1b2900a_1.jpg",
+           "id": 0,
+           "alt": "Afiche de Show láser: Tributo a ABBA"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "7d17606b",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Cine Domo",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "_background_background": "classic",
+          "_background_color": "#9CCBF2",
+          "_padding": {
+           "unit": "px",
+           "top": "5",
+           "right": "12",
+           "bottom": "5",
+           "left": "12",
+           "isLinked": false
+          },
+          "_element_width": "auto",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "71a947ca",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Show láser: Tributo a ABBA",
+          "header_size": "h3",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 18,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.25,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "93fd5cae",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Alternativo · Mayores de 16 años",
+          "header_size": "div",
+          "title_color": "#D9D3E0",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "caa9de0c",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "8",
+         "row": "8",
+         "isLinked": true,
+         "unit": "px",
+         "size": 8
+        },
+        "html_tag": "a",
+        "link": {
+         "url": "https://www.tuboleta.com/es/eventos/sala-digital-una-jungla-de-locura",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "flex_align_items": "flex-start",
+        "width": {
+         "unit": "%",
+         "size": 18.5,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 31,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 47,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "577d8f00",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/88e5eafb-5f75-4edb-a780-a7d7c2a6b10c.jpg",
+           "id": 0,
+           "alt": "Afiche de Una jungla de locura 2"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "hover_animation": "grow"
+         },
+         "elements": []
+        },
+        {
+         "id": "f125c485",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Sala Digital",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "_background_background": "classic",
+          "_background_color": "#F4A39A",
+          "_padding": {
+           "unit": "px",
+           "top": "5",
+           "right": "12",
+           "bottom": "5",
+           "left": "12",
+           "isLinked": false
+          },
+          "_element_width": "auto",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "26e7eb50",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Una jungla de locura 2",
+          "header_size": "h3",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 18,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.25,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "695bb8b3",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Animada · 90 min · Todo público",
+          "header_size": "div",
+          "title_color": "#D9D3E0",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "71e9002b",
+     "elType": "widget",
+     "widgetType": "icon-list",
+     "isInner": false,
+     "settings": {
+      "icon_list": [
+       {
+        "_id": "ett4dtm",
+        "text": "Los shows láser no son aptos para personas fotosensibles: tienen luces intermitentes y efectos visuales intensos.",
+        "selected_icon": {
+         "value": "fas fa-bolt",
+         "library": "fa-solid"
+        },
+        "link": {
+         "url": ""
+        }
+       }
+      ],
+      "view": "traditional",
+      "icon_color": "#FFE25C",
+      "text_color": "#D9D3E0",
+      "icon_size": {
+       "unit": "px",
+       "size": 18,
+       "sizes": []
+      },
+      "space_between": {
+       "unit": "px",
+       "size": 6,
+       "sizes": []
+      },
+      "text_indent": {
+       "unit": "px",
+       "size": 10,
+       "sizes": []
+      },
+      "icon_typography_typography": "custom",
+      "icon_typography_font_size": {
+       "unit": "px",
+       "size": 14,
+       "sizes": []
+      },
+      "icon_typography_font_weight": "400",
+      "icon_typography_line_height": {
+       "unit": "em",
+       "size": 1.5,
+       "sizes": []
+      },
+      "icon_typography_font_family": "Montserrat"
+     },
+     "elements": []
+    }
+   ]
+  }
+ ]
+}

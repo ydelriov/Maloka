@@ -427,9 +427,302 @@
   ],
   "avisos": [
     {
-      "fecha": "3 de noviembre",
-      "texto": "Cierre temprano a las 12:00 m."
+      "fecha": "26 de noviembre",
+      "texto": "Cerrado todo el día."
     }
   ],
-  "gratis": "Entran gratis al recorrido exploratorio los menores de 4 años y los adultos mayores."
+  "gratis": "Entran gratis al recorrido exploratorio los menores de 4 años y los adultos mayores.",
+  "planes": {
+    "titulo": "Arma tu plan.",
+    "texto": "Elige cómo quieres vivir Maloka. Compra en línea antes de venir: en taquilla las entradas pueden agotarse.",
+    "pasos": [
+      {
+        "n": "1",
+        "titulo": "Recorrido exploratorio",
+        "texto": "Explora las salas a tu ritmo."
+      },
+      {
+        "n": "2",
+        "titulo": "+ Taller en laboratorio",
+        "texto": "Pequeños Inventores, Bio o Inventores, según la edad."
+      },
+      {
+        "n": "3",
+        "titulo": "+ Proyección en el Cine Domo",
+        "texto": "Cierra con una experiencia inmersiva."
+      }
+    ],
+    "fuente": "Planes, fotos y precios de maloka.org/horarios-y-tarifas (noviembre de 2026). Los precios pueden cambiar: confírmalos en TuBoleta.",
+    "grupos": [
+      {
+        "id": "entradas",
+        "titulo": "Entradas",
+        "texto": "Para recorrer Maloka a tu ritmo.",
+        "items": [
+          {
+            "titulo": "Recorrido exploratorio",
+            "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/3e20cfb5-bda5-49ed-b932-d59565866cbe.jpg",
+            "alt": "Pieza del Recorrido exploratorio: niño con un telescopio",
+            "url": "https://www.tuboleta.com/es/eventos/entrada-recorrido-exploratorio",
+            "precio": "$49.000",
+            "datos": [
+              [
+                "Incluye",
+                "Recorrido libre por salas de ciencia, naturaleza, sociedad y emociones"
+              ],
+              [
+                "Edades",
+                "Paga desde los 4 años"
+              ],
+              [
+                "Duración",
+                "2 a 3 horas"
+              ]
+            ]
+          },
+          {
+            "titulo": "Tardes Maloka",
+            "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/0e4ce459-7dc4-4629-a575-268fb1b6701f.jpg",
+            "alt": "Pieza de Tardes Maloka: niño con casco de astronauta",
+            "url": "https://www.tuboleta.com/es/eventos/tardes-maloka-1",
+            "precio": "$44.100",
+            "datos": [
+              [
+                "Incluye",
+                "Recorrido por las salas interactivas"
+              ],
+              [
+                "Horario",
+                "Ingreso después de la 1:00 p. m."
+              ],
+              [
+                "Edades",
+                "Paga desde los 4 años"
+              ]
+            ]
+          },
+          {
+            "titulo": "Laboratorio Pequeños Inventores",
+            "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/bfc6d528-6adc-4f8d-9235-ca56baa98acd.jpg",
+            "alt": "Pieza de Laboratorios Maloka: niña con un microscopio",
+            "url": "https://www.tuboleta.com/es/eventos/laboratorios-4",
+            "precio": "$28.000",
+            "datos": [
+              [
+                "Incluye",
+                "Entrada exclusiva al laboratorio"
+              ],
+              [
+                "Edades",
+                "4 a 7 años"
+              ],
+              [
+                "Duración",
+                "1 hora"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "combos",
+        "titulo": "Combos",
+        "texto": "Más de una experiencia con descuento incluido.",
+        "items": [
+          {
+            "titulo": "Combo familiar",
+            "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/266aad39-4d10-452e-8473-1d2499e602c8_19.jpg",
+            "alt": "Pieza del Combo familiar: familia en la sala de dinosaurios",
+            "url": "https://www.tuboleta.com/es/eventos/combo-familiar-1",
+            "precio": "$173.000",
+            "ahorro": "Ahorras $43.800",
+            "datos": [
+              [
+                "Incluye",
+                "Recorrido exploratorio y proyección en el Cine Domo"
+              ],
+              [
+                "Para",
+                "4 personas mayores de 4 años"
+              ],
+              [
+                "Aplica",
+                "Fines de semana, festivos y vacaciones"
+              ]
+            ]
+          },
+          {
+            "titulo": "Combo Bio",
+            "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/c3f7b3ac-6e08-40c8-9950-5b667b5af360.jpg",
+            "alt": "Pieza del Combo Bio",
+            "url": "https://www.tuboleta.com/es/eventos/combo-bio-1",
+            "precio": "$60.200",
+            "datos": [
+              [
+                "Incluye",
+                "Recorrido exploratorio y taller en el laboratorio Bio"
+              ],
+              [
+                "Edades",
+                "7 a 9 años"
+              ],
+              [
+                "Duración",
+                "4 horas"
+              ]
+            ]
+          },
+          {
+            "titulo": "Combo Inventores",
+            "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/14fd8b36-a148-4bda-b657-1c57b401fc78.jpg",
+            "alt": "Pieza del Combo Inventores",
+            "url": "https://www.tuboleta.com/es/eventos/combo-inventores-1",
+            "precio": "$60.200",
+            "datos": [
+              [
+                "Incluye",
+                "Recorrido exploratorio y taller en el laboratorio Inventores"
+              ],
+              [
+                "Edades",
+                "Mayores de 9 años"
+              ],
+              [
+                "Duración",
+                "4 horas"
+              ]
+            ]
+          },
+          {
+            "titulo": "Combo Misión Rover",
+            "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/ef78c464-ab29-4c6e-9fa6-6e039a84d20c_58.jpg",
+            "alt": "Pieza del Combo Misión Rover: robot en Marte",
+            "url": "https://www.tuboleta.com/es/eventos/combo-mision-rover",
+            "precio": "$60.200",
+            "datos": [
+              [
+                "Incluye",
+                "Recorrido exploratorio y taller en el laboratorio TIC"
+              ],
+              [
+                "Edades",
+                "Mayores de 7 años"
+              ],
+              [
+                "Duración",
+                "Recorrido de 2 a 3 horas y laboratorio de 1 hora"
+              ]
+            ]
+          },
+          {
+            "titulo": "Combo Yubarta",
+            "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/69cd1e87-8851-4457-b052-12ed6f68db90_15.jpg",
+            "alt": "Pieza del Combo Yubarta: joven con gafas de realidad virtual",
+            "url": "https://www.tuboleta.com/es/eventos/combo-yubarta",
+            "precio": "$56.000",
+            "datos": [
+              [
+                "Incluye",
+                "Recorrido exploratorio y experiencia de realidad virtual"
+              ],
+              [
+                "Edades",
+                "Mayores de 10 años"
+              ],
+              [
+                "Duración",
+                "Recorrido de 2 a 3 horas y VR de 7 minutos"
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "texto": "Membresía Maloka",
+        "url": "https://maloka.checkout.tuboleta.com/selection/membership?productId=10230319426155"
+      },
+      {
+        "texto": "Bono regalo",
+        "url": "https://maloka.checkout.tuboleta.com/selection/service?productId=10230319426154"
+      }
+    ]
+  },
+  "funciones": {
+    "titulo": "Cine Domo y Sala Digital.",
+    "texto": "Funciones proyectadas en toda la cúpula y en la Sala Digital. Cada entrada cuesta $19.600.",
+    "items": [
+      {
+        "titulo": "Esfera: un instante de vida",
+        "sala": "Cine Domo",
+        "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/fc8dfc51-bfbf-4c3c-92c8-ae8bd19690bf_5.jpg",
+        "url": "https://www.tuboleta.com/es/eventos/cine-domo-esfera-un-instante-de-vida",
+        "meta": "Documental · 30 min · Todo público"
+      },
+      {
+        "titulo": "Migrantes climáticos",
+        "sala": "Cine Domo",
+        "imagen": "https://maloka.org/wp-content/uploads/2026/04/500_Migrantes.jpg",
+        "url": "https://www.tuboleta.com/es/eventos/cine-domo-migrantes-climaticos",
+        "meta": "Documental ambiental · 20 min · Todo público"
+      },
+      {
+        "titulo": "Biosfera oscura",
+        "sala": "Cine Domo",
+        "imagen": "https://maloka.org/wp-content/uploads/2026/02/500_Biosfera-Oscura.jpg",
+        "url": "https://www.tuboleta.com/es/eventos/cine-domo-biosfera-oscura",
+        "meta": "Exploración · 27 min · Todo público"
+      },
+      {
+        "titulo": "El increíble sistema solar",
+        "sala": "Cine Domo",
+        "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/2347c074-fb9d-4a99-a3b9-369749007fed.jpg",
+        "url": "https://www.tuboleta.com/es/eventos/cine-domo-el-increible-sistema-solar-0",
+        "meta": "Documental educativo · 20 min · Todo público"
+      },
+      {
+        "titulo": "Tunka",
+        "sala": "Cine Domo",
+        "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/6a4c9c68-b758-4e9c-a557-49eb8df2498c.jpg",
+        "url": "https://www.tuboleta.com/es/eventos/cine-domo-tunka-1",
+        "meta": "Animada · 40 min · Todo público"
+      },
+      {
+        "titulo": "Show láser: Fantasía musical",
+        "sala": "Cine Domo",
+        "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/470ded48-5b77-4aa6-8a4a-207787b78b13_1.jpg",
+        "url": "https://www.tuboleta.com/es/eventos/show-laser-fantasia-musical",
+        "meta": "Animado · 40 min · Mayores de 4 años"
+      },
+      {
+        "titulo": "Show láser: Leyendas del rock en español",
+        "sala": "Cine Domo",
+        "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/ec0b8ecb-aafe-4401-826d-618a0f44679f.jpg",
+        "url": "https://www.tuboleta.com/es/eventos/show-laser-leyendas-del-rock-0",
+        "meta": "Alternativo · 50 min · Mayores de 8 años"
+      },
+      {
+        "titulo": "Show láser: Tributo a ABBA",
+        "sala": "Cine Domo",
+        "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/45d609c4-d527-4605-aa0c-dc41d1b2900a_1.jpg",
+        "url": "https://www.tuboleta.com/es/eventos/show-laser-leyendas-del-rock-0",
+        "meta": "Alternativo · Mayores de 16 años"
+      },
+      {
+        "titulo": "Una jungla de locura 2",
+        "sala": "Sala Digital",
+        "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/88e5eafb-5f75-4edb-a780-a7d7c2a6b10c.jpg",
+        "url": "https://www.tuboleta.com/es/eventos/sala-digital-una-jungla-de-locura",
+        "meta": "Animada · 90 min · Todo público"
+      }
+    ],
+    "aviso": "Los shows láser no son aptos para personas fotosensibles: tienen luces intermitentes y efectos visuales intensos."
+  },
+  "beneficios": [
+    "Menores de 4 años: entran gratis al recorrido exploratorio.",
+    "Mayores de 60 años: entran gratis al recorrido exploratorio.",
+    "Estudiantes: descuento en el recorrido presentando el carné vigente en taquilla.",
+    "Personas con discapacidad: recorrido gratis con un acompañante y 25 % de descuento en el cine ($14.700), con certificado médico en taquilla."
+  ]
 }
