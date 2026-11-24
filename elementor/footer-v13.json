@@ -5,7 +5,7 @@
  "page_settings": {},
  "content": [
   {
-   "id": "ab3a61b9",
+   "id": "dc2e3bbf",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -61,7 +61,7 @@
    },
    "elements": [
     {
-     "id": "d3f3ebd0",
+     "id": "758e08cd",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -90,7 +90,7 @@
      },
      "elements": [
       {
-       "id": "4ed26b2e",
+       "id": "7c80e58d",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -115,7 +115,7 @@
        },
        "elements": [
         {
-         "id": "270d8a58",
+         "id": "c7435ad0",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -152,7 +152,7 @@
        ]
       },
       {
-       "id": "2059d213",
+       "id": "6801e206",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -185,7 +185,7 @@
        },
        "elements": [
         {
-         "id": "bb9f2dea",
+         "id": "5f5cf4e3",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -240,7 +240,7 @@
          "elements": []
         },
         {
-         "id": "f2267c6c",
+         "id": "a744da0c",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -265,17 +265,15 @@
          "elements": []
         },
         {
-         "id": "e4970b56",
+         "id": "f2ce241b",
          "elType": "widget",
-         "widgetType": "icon-list",
+         "widgetType": "social-icons",
          "isInner": false,
          "settings": {
-          "view": "inline",
-          "icon_list": [
+          "social_icon_list": [
            {
-            "_id": "fuxzzox",
-            "text": "TikTok",
-            "selected_icon": {
+            "_id": "i5guvot",
+            "social_icon": {
              "value": "fab fa-tiktok",
              "library": "fa-brands"
             },
@@ -284,12 +282,12 @@
              "is_external": "on",
              "nofollow": "",
              "custom_attributes": ""
-            }
+            },
+            "text": "TikTok"
            },
            {
-            "_id": "568zfii",
-            "text": "Instagram",
-            "selected_icon": {
+            "_id": "skp32s6",
+            "social_icon": {
              "value": "fab fa-instagram",
              "library": "fa-brands"
             },
@@ -298,12 +296,12 @@
              "is_external": "on",
              "nofollow": "",
              "custom_attributes": ""
-            }
+            },
+            "text": "Instagram"
            },
            {
-            "_id": "o10kaq8",
-            "text": "Facebook",
-            "selected_icon": {
+            "_id": "grtlro1",
+            "social_icon": {
              "value": "fab fa-facebook-f",
              "library": "fa-brands"
             },
@@ -312,12 +310,12 @@
              "is_external": "on",
              "nofollow": "",
              "custom_attributes": ""
-            }
+            },
+            "text": "Facebook"
            },
            {
-            "_id": "lmz39gb",
-            "text": "YouTube",
-            "selected_icon": {
+            "_id": "qjutw7y",
+            "social_icon": {
              "value": "fab fa-youtube",
              "library": "fa-brands"
             },
@@ -326,12 +324,12 @@
              "is_external": "on",
              "nofollow": "",
              "custom_attributes": ""
-            }
+            },
+            "text": "YouTube"
            },
            {
-            "_id": "xvf6s8b",
-            "text": "LinkedIn",
-            "selected_icon": {
+            "_id": "cx7wjkp",
+            "social_icon": {
              "value": "fab fa-linkedin-in",
              "library": "fa-brands"
             },
@@ -340,12 +338,12 @@
              "is_external": "on",
              "nofollow": "",
              "custom_attributes": ""
-            }
+            },
+            "text": "LinkedIn"
            },
            {
-            "_id": "abiw4iq",
-            "text": "WhatsApp",
-            "selected_icon": {
+            "_id": "zqpo7wd",
+            "social_icon": {
              "value": "fab fa-whatsapp",
              "library": "fa-brands"
             },
@@ -354,41 +352,51 @@
              "is_external": "on",
              "nofollow": "",
              "custom_attributes": ""
-            }
+            },
+            "text": "WhatsApp"
            }
           ],
-          "text_color": "#FFFFFF",
-          "text_color_hover": "#FFE25C",
-          "icon_color": "#FFFFFF",
-          "icon_color_hover": "#FFE25C",
+          "shape": "square",
+          "align": "left",
+          "icon_color": "custom",
+          "icon_primary_color": "rgba(0,0,0,0)",
+          "icon_secondary_color": "#FFFFFF",
+          "hover_primary_color": "#FFE25C",
+          "hover_secondary_color": "#231B2B",
           "icon_size": {
            "unit": "px",
-           "size": 16,
+           "size": 20,
            "sizes": []
           },
-          "text_indent": {
+          "icon_padding": {
+           "unit": "em",
+           "size": 0.6,
+           "sizes": []
+          },
+          "icon_spacing": {
            "unit": "px",
            "size": 8,
            "sizes": []
           },
-          "space_between": {
+          "image_border_border": "solid",
+          "image_border_width": {
            "unit": "px",
-           "size": 16,
-           "sizes": []
+           "top": "2",
+           "right": "2",
+           "bottom": "2",
+           "left": "2",
+           "isLinked": true
           },
-          "icon_typography_typography": "custom",
-          "icon_typography_font_size": {
+          "image_border_color": "rgba(255,255,255,0.5)",
+          "hover_border_color": "#FFE25C",
+          "border_radius": {
            "unit": "px",
-           "size": 15,
-           "sizes": []
-          },
-          "icon_typography_font_weight": "400",
-          "icon_typography_line_height": {
-           "unit": "em",
-           "size": 1.5,
-           "sizes": []
-          },
-          "icon_typography_font_family": "Montserrat"
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
          },
          "elements": []
         }
@@ -397,7 +405,7 @@
      ]
     },
     {
-     "id": "dd5c91c7",
+     "id": "f454b321",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -470,7 +478,7 @@
      },
      "elements": [
       {
-       "id": "8176fa76",
+       "id": "de31a37e",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -487,7 +495,7 @@
        },
        "elements": [
         {
-         "id": "743ff8af",
+         "id": "2c87b0d3",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -516,7 +524,7 @@
          "elements": []
         },
         {
-         "id": "24d280f6",
+         "id": "80e26c1c",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -536,7 +544,7 @@
          },
          "elements": [
           {
-           "id": "2baa38af",
+           "id": "ee2e0476",
            "elType": "widget",
            "widgetType": "image",
            "isInner": false,
@@ -559,7 +567,7 @@
            "elements": []
           },
           {
-           "id": "a08a5f3f",
+           "id": "10ef45e0",
            "elType": "widget",
            "widgetType": "image",
            "isInner": false,
@@ -586,7 +594,7 @@
        ]
       },
       {
-       "id": "7a830ab0",
+       "id": "308bd1d5",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -603,7 +611,7 @@
        },
        "elements": [
         {
-         "id": "d0ff4cb6",
+         "id": "520a8284",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -628,7 +636,7 @@
          "elements": []
         },
         {
-         "id": "8cc43272",
+         "id": "70d5e1eb",
          "elType": "widget",
          "widgetType": "icon-list",
          "isInner": false,
@@ -636,7 +644,7 @@
           "view": "traditional",
           "icon_list": [
            {
-            "_id": "3dipc9f",
+            "_id": "509wpr2",
             "text": "¿Qué es Maloka?",
             "selected_icon": {
              "value": "",
@@ -650,7 +658,7 @@
             }
            },
            {
-            "_id": "dax15yn",
+            "_id": "1qbnfpz",
             "text": "Prensa",
             "selected_icon": {
              "value": "",
@@ -664,7 +672,7 @@
             }
            },
            {
-            "_id": "xbpoqjg",
+            "_id": "46018la",
             "text": "Trabaja con nosotros",
             "selected_icon": {
              "value": "",
@@ -678,7 +686,7 @@
             }
            },
            {
-            "_id": "4xek463",
+            "_id": "wqluugg",
             "text": "Preguntas frecuentes",
             "selected_icon": {
              "value": "",
@@ -692,7 +700,7 @@
             }
            },
            {
-            "_id": "vheoz9i",
+            "_id": "nakgm7h",
             "text": "Contacto",
             "selected_icon": {
              "value": "",
@@ -744,7 +752,7 @@
        ]
       },
       {
-       "id": "abac299e",
+       "id": "55591fd3",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -761,7 +769,7 @@
        },
        "elements": [
         {
-         "id": "e4d4414b",
+         "id": "1b31984f",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -786,7 +794,7 @@
          "elements": []
         },
         {
-         "id": "8ea91c78",
+         "id": "61a57f78",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -811,7 +819,7 @@
          "elements": []
         },
         {
-         "id": "5b669e68",
+         "id": "10a7e117",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -836,7 +844,7 @@
          "elements": []
         },
         {
-         "id": "e92624c4",
+         "id": "04d286ea",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -861,7 +869,7 @@
          "elements": []
         },
         {
-         "id": "717aa399",
+         "id": "7693ebeb",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -886,7 +894,7 @@
          "elements": []
         },
         {
-         "id": "64c6bdb9",
+         "id": "2059faa4",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -913,7 +921,7 @@
        ]
       },
       {
-       "id": "bfb03105",
+       "id": "514459a4",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -930,7 +938,7 @@
        },
        "elements": [
         {
-         "id": "f4b28fed",
+         "id": "9c42dd04",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -955,7 +963,7 @@
          "elements": []
         },
         {
-         "id": "ba815907",
+         "id": "4c815caa",
          "elType": "widget",
          "widgetType": "icon-list",
          "isInner": false,
@@ -963,7 +971,7 @@
           "view": "traditional",
           "icon_list": [
            {
-            "_id": "5hv2t2p",
+            "_id": "wt11v5k",
             "text": "Cra. 68D # 24A - 51, Bogotá, Colombia",
             "selected_icon": {
              "value": "",
@@ -977,7 +985,7 @@
             }
            },
            {
-            "_id": "tny0ggl",
+            "_id": "l8ze6ro",
             "text": "Teléfono: +57 (601) 427 2707",
             "selected_icon": {
              "value": "",
@@ -1027,7 +1035,7 @@
          "elements": []
         },
         {
-         "id": "cf522079",
+         "id": "f1b8b704",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1060,7 +1068,7 @@
        ]
       },
       {
-       "id": "49a0e9ab",
+       "id": "a9438b49",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1077,7 +1085,7 @@
        },
        "elements": [
         {
-         "id": "05dbebdb",
+         "id": "c37a272a",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1102,7 +1110,7 @@
          "elements": []
         },
         {
-         "id": "6b67c8a4",
+         "id": "4cfc15c8",
          "elType": "widget",
          "widgetType": "icon-list",
          "isInner": false,
@@ -1110,7 +1118,7 @@
           "view": "traditional",
           "icon_list": [
            {
-            "_id": "mk7x7vz",
+            "_id": "74gpkho",
             "text": "Informes de gestión",
             "selected_icon": {
              "value": "",
@@ -1124,7 +1132,7 @@
             }
            },
            {
-            "_id": "lexc7px",
+            "_id": "ybdxvho",
             "text": "Sistema Integrado de Gestión",
             "selected_icon": {
              "value": "",
@@ -1138,7 +1146,7 @@
             }
            },
            {
-            "_id": "68mzd27",
+            "_id": "ss3jak4",
             "text": "Intranet",
             "selected_icon": {
              "value": "",
@@ -1152,7 +1160,7 @@
             }
            },
            {
-            "_id": "mgwemud",
+            "_id": "26nh0dy",
             "text": "Junta Directiva",
             "selected_icon": {
              "value": "",
@@ -1166,7 +1174,7 @@
             }
            },
            {
-            "_id": "3kql6e9",
+            "_id": "3t95la4",
             "text": "Contratación",
             "selected_icon": {
              "value": "",
@@ -1180,7 +1188,7 @@
             }
            },
            {
-            "_id": "ohskfmx",
+            "_id": "b3ordf5",
             "text": "PQRSF",
             "selected_icon": {
              "value": "",
@@ -1194,7 +1202,7 @@
             }
            },
            {
-            "_id": "1fdvw8r",
+            "_id": "gkcgvtb",
             "text": "ESAL",
             "selected_icon": {
              "value": "",
@@ -1208,7 +1216,7 @@
             }
            },
            {
-            "_id": "bf3crx5",
+            "_id": "d5lff6r",
             "text": "Registro de proveedores",
             "selected_icon": {
              "value": "",
@@ -1262,7 +1270,7 @@
      ]
     },
     {
-     "id": "a0b4f9aa",
+     "id": "58070de7",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1298,7 +1306,7 @@
      },
      "elements": [
       {
-       "id": "743befd1",
+       "id": "e4905772",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -1319,7 +1327,7 @@
        "elements": []
       },
       {
-       "id": "62d33f33",
+       "id": "0588d162",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -1340,7 +1348,7 @@
        "elements": []
       },
       {
-       "id": "9b8074fd",
+       "id": "b1287d35",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,

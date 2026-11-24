@@ -1,10 +1,12 @@
 ---
 /* Footer noche con la información real de maloka.org (src/data/n/footer.json): frase grande, enlace al boletín y
    redes; columnas Maloka, Horarios, Ubicación y Corporación Maloka; certificaciones ICONTEC e IQNet; NIT.
+   Redes con los iconos de Font Awesome 5 (src/data/n/redes-iconos.json), los mismos del widget Iconos sociales.
    Pensado para Elementor (Theme Builder › Footer): encabezados, listas de enlaces, Iconos sociales e Imagen;
    el JSON importable es elementor/footer-v13.json.
    grupo: dentro de /seleccion/, «¿Cómo llegar?» lleva a la página Visítanos del grupo. */
 import f from '../../data/n/footer.json';
+import iconos from '../../data/n/redes-iconos.json';
 import Logo from '../ui/Logo.astro';
 import Icon from '../ui/Icon.astro';
 import { rutaPara } from '../../lib/rutas.js';
@@ -22,7 +24,7 @@ const ext = (u) => /^https?:/.test(u);
         <a class="n-b nf-bol" href={f.boletin.url} target="_blank" rel="noopener">{f.boletin.texto}<Icon name="arrow" /></a>
         <div class="nf-redes">
           <p class="nf-ct">{f.redesTitulo}</p>
-          <ul>{f.redes.map((r) => <li><a href={r.url} target="_blank" rel="noopener">{r.nombre}</a></li>)}</ul>
+          <ul>{f.redes.map((r) => <li><a href={r.url} target="_blank" rel="noopener" aria-label={`${r.nombre} (abre en una pestaña nueva)`} title={r.nombre}><svg viewBox={iconos[r.icono].viewBox} width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d={iconos[r.icono].d} /></svg></a></li>)}</ul>
         </div>
       </div>
     </div>
@@ -76,7 +78,8 @@ const ext = (u) => /^https?:/.test(u);
   .nf .nf-bol { color: #fff; }
   .nf .nf-bol:hover { color: var(--n-amarillo); }
   .nf-redes ul { display: flex; flex-wrap: wrap; gap: 8px; }
-  .nf-redes a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border: 2px solid rgba(255, 255, 255, .5); font-weight: 600; color: #fff; }
+  .nf-redes a { display: grid; place-items: center; width: 48px; height: 48px; border: 2px solid rgba(255, 255, 255, .5); color: #fff; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida), border-color var(--mk-t-rapida); }
+  .nf-redes svg { width: 22px; height: 22px; }
   .nf-redes a:hover { border-color: var(--n-amarillo); background: var(--n-amarillo); color: var(--n-noche); }
   .nf-cols { display: grid; grid-template-columns: 1fr 1fr 1.2fr 1.2fr 1.3fr; gap: 32px; padding-top: 40px; border-top: 1px solid var(--n-linea); }
   .nf-marca { display: grid; gap: 24px; align-content: start; }

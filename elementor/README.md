@@ -150,7 +150,7 @@ más de ~12 en un solo archivo.
 Con la información del footer de maloka.org (noviembre de 2026):
 
 - Arriba: «Que la curiosidad no se detenga.», enlace **Suscríbete al boletín de Maloka** (formulario de ipzmarketing) y
-  **Síguenos en** con TikTok, Instagram, Facebook, YouTube, LinkedIn y el canal de WhatsApp (Lista de iconos en línea).
+  **Síguenos en** con los iconos de TikTok, Instagram, Facebook, YouTube, LinkedIn y el canal de WhatsApp (widget Iconos sociales).
 - Grilla de 5 columnas (2 en tablet, 1 en celular): logo blanco y certificaciones ICONTEC ISO 9001 e IQNet; Maloka;
   Horarios; Ubicación (dirección con enlace a Google Maps, teléfono y «¿Cómo llegar?»); Corporación Maloka.
 - Abajo: NIT 830.040.745-0, © 2026 Corporación Maloka y Tratamiento de datos.
