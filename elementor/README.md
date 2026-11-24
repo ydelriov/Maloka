@@ -6,6 +6,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 |---|---|---|
 | `header-v13.json` | Header: logo, menú y botón «Compra tus entradas» | Plantillas › Theme Builder › Header |
 | `footer-v13.json` | Footer con la información de maloka.org: boletín, redes, Maloka, horarios, ubicación, Corporación Maloka, certificaciones y NIT | Plantillas › Theme Builder › Footer |
+| `header-v13-megamenu.json` | Header ya armado con el widget Menú (mega menú) y sus 4 paneles, exportado de pruebas.maloka.org | Plantillas › Theme Builder › Header (reemplaza los pasos 1 y 2 de abajo) |
 | `menu-paneles-v13.json` | Los 4 paneles en hueso del mega menú (Visítanos, Ven en grupo, Descubre, Crea con Maloka) | Plantillas › Plantillas guardadas |
 | `logo-maloka.svg` / `.png` | Logo de las maquetas, por si el sitio aún no tiene uno | Apariencia › Personalizar › Identidad del sitio |
 | `popup-combos.json` | Modal de los combos de TuBoleta | Plantillas › Popups |
@@ -60,6 +61,18 @@ cada uno tiene su propio contenedor desplegable. Por eso los paneles vienen apar
    - Indicador: subrayado de 2 px `#231B2B`.
    - Contenedor del desplegable: sin relleno (el panel ya trae el suyo) y sin borde.
 7. Borra el widget **Menú de navegación** (el del paso 1) y **Publicar**.
+
+### Ajustes que necesitó el mega menú (ya incluidos en `header-v13-megamenu.json`)
+
+- **El breakpoint de tablet del sitio es 1200 px**, no 1024: todo el CSS personalizado del header y del hero usa
+  `max-width: 1200px` / `min-width: 1201px`. Con 1024, entre 1025 y 1200 px el recuadro de horario del hero tapaba el título.
+- **Desplegable (escritorio):** el widget lo abre justo debajo de sí mismo (px 59), no del header (80 px). Se baja con
+  `top: calc(100% + 21px)` y un puente invisible de 21 px para que no se cierre al bajar el mouse.
+- **Sin marco:** cada contenedor del desplegable traía el relleno de 10 px y fondo blanco del Kit; ahora va en 0 y
+  transparente, y el panel sin sombra, a todo el ancho como en la maqueta.
+- **Menú móvil:** Ajustes del menú › Distancia del desplegable = 26 px (header de 72 px en tablet y celular), para que
+  no tape el logo ni el botón.
+- Logo a 48 px y sin el espaciado de palabras de 4 px en los ítems.
 
 ### Cómo revisar
 
