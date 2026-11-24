@@ -1,0 +1,62 @@
+{
+  "fuente": "Información del footer de maloka.org (noviembre de 2026).",
+  "titulo": "Que la curiosidad no se detenga.",
+  "boletin": { "texto": "Suscríbete al boletín de Maloka", "url": "https://maloka.ipzmarketing.com/f/57LlRORGSBE" },
+  "redesTitulo": "Síguenos en",
+  "redes": [
+    { "nombre": "TikTok", "icono": "tiktok", "url": "https://www.tiktok.com/@malokabogota" },
+    { "nombre": "Instagram", "icono": "instagram", "url": "https://www.instagram.com/malokabogota/" },
+    { "nombre": "Facebook", "icono": "facebook-f", "url": "https://www.facebook.com/MalokaBogota" },
+    { "nombre": "YouTube", "icono": "youtube", "url": "https://www.youtube.com/user/MalokaCyT" },
+    { "nombre": "LinkedIn", "icono": "linkedin-in", "url": "https://co.linkedin.com/company/maloka" },
+    { "nombre": "WhatsApp", "icono": "whatsapp", "url": "https://whatsapp.com/channel/0029Vb7tRJWHQbS6fZEvA733" }
+  ],
+  "maloka": {
+    "titulo": "Maloka",
+    "links": [
+      { "texto": "¿Qué es Maloka?", "url": "https://maloka.org/acerca-de/" },
+      { "texto": "Prensa", "url": "https://maloka.org/sala-de-prensa/" },
+      { "texto": "Trabaja con nosotros", "url": "https://maloka.org/trabaja-nosotros" },
+      { "texto": "Preguntas frecuentes", "url": "https://maloka.org/resolvemos-aqui-todas-tus-dudas-acerca-de-maloka" },
+      { "texto": "Contacto", "url": "https://maloka.org/encuentra-aqui-todas-las-formas-de-contacto-maloka/" }
+    ]
+  },
+  "horarios": {
+    "titulo": "Horarios",
+    "items": [
+      { "dias": "Lunes a viernes", "horas": "11:00 a. m. a 5:00 p. m." },
+      { "dias": "Sábados, domingos y festivos", "horas": "9:30 a. m. a 6:00 p. m." }
+    ],
+    "venta": "La venta de entradas está disponible hasta las 4:00 p. m."
+  },
+  "ubicacion": {
+    "titulo": "Ubicación",
+    "direccion": "Cra. 68D # 24A - 51, Bogotá, Colombia",
+    "mapa": "https://maps.app.goo.gl/k6GpMLEKizb7Uf6Y7",
+    "telefono": "+57 (601) 427 2707",
+    "telefonoHref": "+576014272707",
+    "llegar": "¿Cómo llegar?"
+  },
+  "corporacion": {
+    "titulo": "Corporación Maloka",
+    "links": [
+      { "texto": "Informes de gestión", "url": "https://maloka.org/informes-de-gestion" },
+      { "texto": "Sistema Integrado de Gestión", "url": "https://maloka.org/sistema-integrado-de-gestion" },
+      { "texto": "Intranet", "url": "http://intranet.maloka.org/" },
+      { "texto": "Junta Directiva", "url": "https://maloka.org/junta-directiva/" },
+      { "texto": "Contratación", "url": "https://maloka.org/contratacion" },
+      { "texto": "PQRSF", "url": "https://forms.gle/iPLFZxvPBK9UqYjJA" },
+      { "texto": "ESAL", "url": "https://maloka.org/esal" },
+      { "texto": "Registro de proveedores", "url": "https://docs.google.com/forms/d/e/1FAIpQLSd7E3X6LplIo857p7fMVeWIKH9iTN2laRzKQm2ncDGJqciuvQ/viewform" }
+    ]
+  },
+  "certificados": [
+    { "imagen": "certificado-icontec.png", "alt": "Certificado ICONTEC ISO 9001 de Maloka, SC-2001728", "ancho": 44, "alto": 80 },
+    { "imagen": "certificado-iqnet.png", "alt": "Certificación IQNet", "ancho": 56, "alto": 56 }
+  ],
+  "legal": {
+    "nit": "NIT Maloka 830.040.745-0",
+    "copy": "© 2026 Corporación Maloka",
+    "links": [ { "texto": "Tratamiento de datos", "url": "https://maloka.org/tratamiento-de-datos/" } ]
+  }
+}

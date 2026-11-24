@@ -2,134 +2,131 @@
  "title": "Footer · Maloka V13",
  "type": "footer",
  "version": "0.4",
- "page_settings": [],
+ "page_settings": {},
  "content": [
   {
-   "id": "a9a8430",
+   "id": "dc2e3bbf",
    "elType": "container",
+   "isInner": false,
    "settings": {
-    "_title": "Footer · Maloka V13",
-    "content_width": "full",
+    "container_type": "flex",
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1280,
+     "sizes": []
+    },
     "flex_direction": "column",
+    "flex_gap": {
+     "column": "56",
+     "row": "56",
+     "isLinked": true,
+     "unit": "px",
+     "size": 56
+    },
+    "flex_gap_mobile": {
+     "column": "40",
+     "row": "40",
+     "isLinked": true,
+     "unit": "px",
+     "size": 40
+    },
     "padding": {
      "unit": "px",
      "top": "80",
-     "right": "0",
+     "right": "80",
      "bottom": "32",
-     "left": "0",
+     "left": "80",
      "isLinked": false
     },
-    "html_tag": "footer",
-    "background_background": "classic",
-    "background_color": "#231B2B",
+    "padding_tablet": {
+     "unit": "px",
+     "top": "64",
+     "right": "40",
+     "bottom": "28",
+     "left": "40",
+     "isLinked": false
+    },
     "padding_mobile": {
      "unit": "px",
      "top": "56",
-     "right": "0",
+     "right": "16",
      "bottom": "28",
-     "left": "0",
+     "left": "16",
      "isLinked": false
     },
-    "flex_gap": {
-     "column": "0",
-     "row": "0",
-     "isLinked": true,
-     "unit": "px",
-     "size": 0
-    },
-    "custom_css": "selector :focus-visible { outline: 3px solid #B4A5F5; outline-offset: 2px; }\n"
+    "background_background": "classic",
+    "background_color": "#231B2B",
+    "html_tag": "footer"
    },
    "elements": [
     {
-     "id": "95bc117",
+     "id": "758e08cd",
      "elType": "container",
+     "isInner": true,
      "settings": {
-      "_title": "Footer · contenido",
-      "content_width": "boxed",
-      "flex_direction": "column",
-      "padding": {
-       "unit": "px",
-       "top": "0",
-       "right": "80",
-       "bottom": "0",
-       "left": "80",
-       "isLinked": false
-      },
-      "boxed_width": {
-       "unit": "px",
-       "size": 1280,
-       "sizes": []
-      },
+      "container_type": "flex",
+      "flex_direction": "row",
+      "content_width": "full",
+      "flex_wrap": "nowrap",
+      "flex_direction_tablet": "column",
+      "flex_direction_mobile": "column",
       "flex_gap": {
-       "column": "56",
-       "row": "56",
+       "column": "64",
+       "row": "64",
        "isLinked": true,
        "unit": "px",
-       "size": 56
+       "size": 64
       },
-      "padding_tablet": {
+      "flex_gap_tablet": {
+       "column": "32",
+       "row": "32",
+       "isLinked": true,
        "unit": "px",
-       "top": "0",
-       "right": "40",
-       "bottom": "0",
-       "left": "40",
-       "isLinked": false
+       "size": 32
       },
-      "padding_mobile": {
-       "unit": "px",
-       "top": "0",
-       "right": "16",
-       "bottom": "0",
-       "left": "16",
-       "isLinked": false
-      }
+      "flex_align_items": "flex-end",
+      "flex_align_items_tablet": "flex-start"
      },
      "elements": [
       {
-       "id": "6490fd4",
+       "id": "7c80e58d",
        "elType": "container",
+       "isInner": true,
        "settings": {
-        "_title": "Footer · suscripción",
+        "container_type": "flex",
+        "flex_direction": "column",
         "content_width": "full",
-        "flex_direction": "row",
-        "padding": {
-         "unit": "px",
-         "top": "0",
-         "right": "0",
-         "bottom": "0",
-         "left": "0",
-         "isLinked": false
+        "width": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
         },
-        "flex_direction_tablet": "column",
-        "flex_align_items": "flex-end",
-        "flex_align_items_tablet": "stretch",
-        "flex_gap": {
-         "column": "64",
-         "row": "32",
-         "isLinked": false,
-         "unit": "px",
-         "size": 64
+        "width_tablet": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
         }
        },
        "elements": [
         {
-         "id": "1cc62be",
+         "id": "c7435ad0",
          "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
          "settings": {
           "title": "Que la curiosidad no se detenga.",
           "header_size": "p",
           "title_color": "#FFE25C",
           "typography_typography": "custom",
-          "typography_font_family": "Montserrat",
           "typography_font_size": {
            "unit": "px",
            "size": 40,
-           "sizes": []
-          },
-          "typography_font_weight": "700",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.1,
            "sizes": []
           },
           "typography_font_size_tablet": {
@@ -142,1026 +139,770 @@
            "size": 28,
            "sizes": []
           },
-          "custom_css": "selector { flex: 1 1 0; min-width: 280px; }\n"
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.1,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
          },
-         "elements": [],
-         "widgetType": "heading"
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "6801e206",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "14",
+         "row": "14",
+         "isLinked": true,
+         "unit": "px",
+         "size": 14
+        },
+        "flex_align_items": "flex-start",
+        "width": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "5f5cf4e3",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Suscríbete al boletín de Maloka →",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "link": {
+           "url": "https://maloka.ipzmarketing.com/f/57LlRORGSBE",
+           "is_external": "on",
+           "nofollow": "",
+           "custom_attributes": ""
+          },
+          "_element_width": "auto",
+          "_padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "4",
+           "left": "0",
+           "isLinked": false
+          },
+          "_border_border": "solid",
+          "_border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "3",
+           "left": "0",
+           "isLinked": false
+          },
+          "_border_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 24,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 20,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.2,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
         },
         {
-         "id": "c393fd0",
-         "elType": "container",
+         "id": "a744da0c",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
          "settings": {
-          "_title": "Formulario",
-          "content_width": "full",
-          "flex_direction": "column",
-          "padding": {
+          "title": "Síguenos en",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "f2ce241b",
+         "elType": "widget",
+         "widgetType": "social-icons",
+         "isInner": false,
+         "settings": {
+          "social_icon_list": [
+           {
+            "_id": "i5guvot",
+            "social_icon": {
+             "value": "fab fa-tiktok",
+             "library": "fa-brands"
+            },
+            "link": {
+             "url": "https://www.tiktok.com/@malokabogota",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            },
+            "text": "TikTok"
+           },
+           {
+            "_id": "skp32s6",
+            "social_icon": {
+             "value": "fab fa-instagram",
+             "library": "fa-brands"
+            },
+            "link": {
+             "url": "https://www.instagram.com/malokabogota/",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            },
+            "text": "Instagram"
+           },
+           {
+            "_id": "grtlro1",
+            "social_icon": {
+             "value": "fab fa-facebook-f",
+             "library": "fa-brands"
+            },
+            "link": {
+             "url": "https://www.facebook.com/MalokaBogota",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            },
+            "text": "Facebook"
+           },
+           {
+            "_id": "qjutw7y",
+            "social_icon": {
+             "value": "fab fa-youtube",
+             "library": "fa-brands"
+            },
+            "link": {
+             "url": "https://www.youtube.com/user/MalokaCyT",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            },
+            "text": "YouTube"
+           },
+           {
+            "_id": "cx7wjkp",
+            "social_icon": {
+             "value": "fab fa-linkedin-in",
+             "library": "fa-brands"
+            },
+            "link": {
+             "url": "https://co.linkedin.com/company/maloka",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            },
+            "text": "LinkedIn"
+           },
+           {
+            "_id": "zqpo7wd",
+            "social_icon": {
+             "value": "fab fa-whatsapp",
+             "library": "fa-brands"
+            },
+            "link": {
+             "url": "https://whatsapp.com/channel/0029Vb7tRJWHQbS6fZEvA733",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            },
+            "text": "WhatsApp"
+           }
+          ],
+          "shape": "square",
+          "align": "left",
+          "icon_color": "custom",
+          "icon_primary_color": "rgba(0,0,0,0)",
+          "icon_secondary_color": "#FFFFFF",
+          "hover_primary_color": "#FFE25C",
+          "hover_secondary_color": "#231B2B",
+          "icon_size": {
+           "unit": "px",
+           "size": 20,
+           "sizes": []
+          },
+          "icon_padding": {
+           "unit": "em",
+           "size": 0.6,
+           "sizes": []
+          },
+          "icon_spacing": {
+           "unit": "px",
+           "size": 8,
+           "sizes": []
+          },
+          "image_border_border": "solid",
+          "image_border_width": {
+           "unit": "px",
+           "top": "2",
+           "right": "2",
+           "bottom": "2",
+           "left": "2",
+           "isLinked": true
+          },
+          "image_border_color": "rgba(255,255,255,0.5)",
+          "hover_border_color": "#FFE25C",
+          "border_radius": {
            "unit": "px",
            "top": "0",
            "right": "0",
            "bottom": "0",
            "left": "0",
-           "isLinked": false
-          },
-          "custom_css": "selector { flex: 1 1 0; min-width: 280px; }\n"
-         },
-         "elements": [
-          {
-           "id": "783646b",
-           "elType": "widget",
-           "settings": {
-            "form_name": "Suscripción a la programación",
-            "form_fields": [
-             {
-              "_id": "0324aac",
-              "custom_id": "correo",
-              "field_type": "email",
-              "field_label": "Recibe la programación en tu correo",
-              "placeholder": "Tu correo electrónico",
-              "required": "true",
-              "width": "100"
-             }
-            ],
-            "show_labels": "yes",
-            "input_size": "md",
-            "button_text": "Suscribirme",
-            "button_width": "",
-            "button_align": "end",
-            "selected_button_icon": {
-             "value": "fas fa-arrow-right",
-             "library": "fa-solid"
-            },
-            "button_icon_align": "row-reverse",
-            "button_icon_indent": {
-             "unit": "px",
-             "size": 8,
-             "sizes": []
-            },
-            "submit_actions": [
-             "save-to-database"
-            ],
-            "success_message": "¡Listo! Te escribiremos con la programación de Maloka.",
-            "error_message": "No pudimos guardar tu correo. Inténtalo de nuevo.",
-            "required_field_message": "Escribe tu correo.",
-            "invalid_message": "Escribe un correo válido.",
-            "custom_messages": "yes",
-            "label_color": "#B4A5F5",
-            "label_typography_typography": "custom",
-            "label_typography_font_family": "Montserrat",
-            "label_typography_font_size": {
-             "unit": "px",
-             "size": 16,
-             "sizes": []
-            },
-            "label_typography_font_weight": "600",
-            "label_typography_line_height": {
-             "unit": "em",
-             "size": 1.3,
-             "sizes": []
-            },
-            "field_text_color": "#FFFFFF",
-            "field_typography_typography": "custom",
-            "field_typography_font_family": "Montserrat",
-            "field_typography_font_size": {
-             "unit": "px",
-             "size": 18,
-             "sizes": []
-            },
-            "field_typography_font_weight": "400",
-            "field_typography_line_height": {
-             "unit": "em",
-             "size": 1.3,
-             "sizes": []
-            },
-            "field_background_color": "rgba(0,0,0,0)",
-            "field_border_color": "#FFFFFF",
-            "field_border_width": {
-             "unit": "px",
-             "top": "0",
-             "right": "0",
-             "bottom": "2",
-             "left": "0",
-             "isLinked": false
-            },
-            "field_border_radius": {
-             "unit": "px",
-             "top": "0",
-             "right": "0",
-             "bottom": "0",
-             "left": "0",
-             "isLinked": false
-            },
-            "button_background_color": "rgba(0,0,0,0)",
-            "button_text_color": "#FFFFFF",
-            "button_background_hover_color": "rgba(0,0,0,0)",
-            "button_hover_color": "#FFE25C",
-            "button_typography_typography": "custom",
-            "button_typography_font_family": "Montserrat",
-            "button_typography_font_size": {
-             "unit": "px",
-             "size": 16,
-             "sizes": []
-            },
-            "button_typography_font_weight": "700",
-            "button_typography_line_height": {
-             "unit": "em",
-             "size": 1.2,
-             "sizes": []
-            },
-            "button_border_radius": {
-             "unit": "px",
-             "top": "0",
-             "right": "0",
-             "bottom": "0",
-             "left": "0",
-             "isLinked": false
-            },
-            "button_text_padding": {
-             "unit": "px",
-             "top": "0",
-             "right": "0",
-             "bottom": "0",
-             "left": "0",
-             "isLinked": false
-            },
-            "custom_css": "/* Campo con línea inferior y «Suscribirme →» en la misma línea, como en el prototipo */\nselector .elementor-form-fields-wrapper { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; margin: 0 !important; border-bottom: 2px solid #fff; }\nselector .elementor-field-group { padding: 0 !important; margin: 0 !important; width: auto !important; }\nselector .elementor-field-group-correo { grid-column: 1 / -1; grid-row: 1; display: grid; gap: 10px; }\nselector .elementor-field-group-correo .elementor-field-label { margin-bottom: 0; }\nselector .elementor-field-group-correo .elementor-field { height: 56px; padding: 0 140px 0 0 !important; border: 0 !important; background: transparent !important; box-shadow: none !important; }\nselector .elementor-field::placeholder { color: #9A93A3; opacity: 1; }\nselector .e-form__buttons, selector .elementor-field-type-submit { grid-column: 2; grid-row: 1; align-self: end; height: 56px; display: flex; align-items: center; }\nselector .elementor-button { min-height: 44px; padding: 0 !important; }\nselector .elementor-button-icon { transition: transform .15s; }\nselector .elementor-button:hover .elementor-button-icon { transform: translateX(4px); }\nselector .elementor-field:focus-visible, selector .elementor-button:focus-visible { outline: 3px solid #B4A5F5; outline-offset: 2px; }\nselector .elementor-message { color: #fff; font: 600 14px Montserrat, sans-serif; margin-top: 10px; }\nselector .elementor-message::before { display: none; }\n@media (max-width: 767px) { selector .elementor-field-group-correo .elementor-field { padding-right: 120px !important; } }\n"
-           },
-           "elements": [],
-           "widgetType": "form"
+           "isLinked": true
           }
-         ],
-         "isInner": true
+         },
+         "elements": []
         }
-       ],
-       "isInner": true
+       ]
+      }
+     ]
+    },
+    {
+     "id": "f454b321",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "grid",
+      "content_width": "full",
+      "grid_columns_grid": {
+       "unit": "custom",
+       "size": "1fr 1fr 1.2fr 1.2fr 1.3fr",
+       "sizes": []
       },
+      "grid_columns_grid_tablet": {
+       "unit": "fr",
+       "size": 2,
+       "sizes": []
+      },
+      "grid_columns_grid_mobile": {
+       "unit": "fr",
+       "size": 1,
+       "sizes": []
+      },
+      "grid_rows_grid": {
+       "unit": "fr",
+       "size": 1,
+       "sizes": []
+      },
+      "grid_rows_grid_tablet": {
+       "unit": "fr",
+       "size": 3,
+       "sizes": []
+      },
+      "grid_rows_grid_mobile": {
+       "unit": "fr",
+       "size": 5,
+       "sizes": []
+      },
+      "grid_auto_flow": "row",
+      "grid_gaps": {
+       "column": "32",
+       "row": "32",
+       "isLinked": true,
+       "unit": "px",
+       "size": 32
+      },
+      "grid_gaps_mobile": {
+       "column": "28",
+       "row": "28",
+       "isLinked": true,
+       "unit": "px",
+       "size": 28
+      },
+      "grid_align_items": "start",
+      "padding": {
+       "unit": "px",
+       "top": "40",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "border_border": "solid",
+      "border_width": {
+       "unit": "px",
+       "top": "1",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "border_color": "#4F4955"
+     },
+     "elements": [
       {
-       "id": "576eb8e",
+       "id": "de31a37e",
        "elType": "container",
+       "isInner": true,
        "settings": {
-        "_title": "Footer · mapa del sitio",
+        "container_type": "flex",
+        "flex_direction": "column",
         "content_width": "full",
-        "flex_direction": "row",
-        "padding": {
-         "unit": "px",
-         "top": "40",
-         "right": "0",
-         "bottom": "0",
-         "left": "0",
-         "isLinked": false
-        },
-        "flex_direction_mobile": "row",
-        "flex_wrap": "wrap",
         "flex_gap": {
          "column": "24",
          "row": "24",
          "isLinked": true,
          "unit": "px",
          "size": 24
-        },
-        "border_border": "solid",
-        "border_width": {
-         "unit": "px",
-         "top": "1",
-         "right": "0",
-         "bottom": "0",
-         "left": "0",
-         "isLinked": false
-        },
-        "border_color": "rgba(255,255,255,0.18)",
-        "custom_css": "selector > .mk-ft-marca { flex: 1.4 1 0; min-width: 0; }\nselector > .mk-ft-col { flex: 1 1 0; min-width: 0; }\n@media (max-width: 1024px) { selector > .mk-ft-marca { flex-basis: 100%; } selector > .mk-ft-col { flex: 0 0 calc((100% - 48px) / 3); } }\n@media (max-width: 767px) { selector > .mk-ft-col { flex: 0 0 calc((100% - 24px) / 2); } selector a { overflow-wrap: anywhere; } }\n"
+        }
        },
        "elements": [
         {
-         "id": "0b13a02",
-         "elType": "container",
+         "id": "2c87b0d3",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
          "settings": {
-          "_title": "Footer · marca y contacto",
-          "content_width": "full",
-          "flex_direction": "column",
-          "padding": {
-           "unit": "px",
-           "top": "0",
-           "right": "0",
-           "bottom": "0",
-           "left": "0",
-           "isLinked": false
+          "image": {
+           "url": "https://maloka.org/wp-content/uploads/2025/04/Logo-Maloka-Version-relleno-blanco.png",
+           "id": 0,
+           "alt": "Maloka"
           },
+          "image_size": "full",
+          "align": "left",
+          "caption_source": "none",
+          "link_to": "custom",
+          "link": {
+           "url": "/",
+           "is_external": "",
+           "nofollow": "",
+           "custom_attributes": ""
+          },
+          "width": {
+           "unit": "px",
+           "size": 64,
+           "sizes": []
+          }
+         },
+         "elements": []
+        },
+        {
+         "id": "80e26c1c",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "row",
+          "flex_direction_mobile": "row",
+          "flex_wrap": "wrap",
+          "content_width": "full",
           "flex_gap": {
-           "column": "14",
-           "row": "14",
+           "column": "16",
+           "row": "16",
            "isLinked": true,
            "unit": "px",
-           "size": 14
+           "size": 16
           },
-          "css_classes": "mk-ft-marca"
+          "flex_align_items": "center"
          },
          "elements": [
           {
-           "id": "240f16a",
+           "id": "ee2e0476",
            "elType": "widget",
+           "widgetType": "image",
+           "isInner": false,
            "settings": {
+            "image": {
+             "url": "https://ydelriov.github.io/Maloka/elementor/img/certificado-icontec.png",
+             "id": 0,
+             "alt": "Certificado ICONTEC ISO 9001 de Maloka, SC-2001728"
+            },
+            "image_size": "full",
+            "caption_source": "none",
+            "link_to": "none",
             "width": {
              "unit": "px",
-             "size": 52,
+             "size": 44,
              "sizes": []
             },
-            "align": "left",
-            "link_to": "custom",
-            "link": {
-             "url": "/",
-             "is_external": "",
-             "nofollow": "",
-             "custom_attributes": ""
-            },
-            "__dynamic__": {
-             "image": "[elementor-tag id=\"\" name=\"site-logo\" settings=\"%7B%7D\"]"
-            },
-            "custom_css": "/* El logo del sitio es morado: aquí va en blanco */\nselector img { filter: brightness(0) invert(1); width: 52px; height: auto; }\n"
+            "_element_width": "auto"
            },
-           "elements": [],
-           "widgetType": "theme-site-logo"
+           "elements": []
           },
           {
-           "id": "af11bab",
+           "id": "10ef45e0",
            "elType": "widget",
+           "widgetType": "image",
+           "isInner": false,
            "settings": {
-            "editor": "<p>Carrera 68D #24A-51, Bogotá<br><a href=\"tel:+576014272707\">(+57) 601 427 2707</a></p><p>Lunes a viernes 11:00 a. m. – 5:00 p. m.<br>Sábados, domingos y festivos 9:30 a. m. – 6:00 p. m.</p>",
-            "text_color": "#D9D3E0",
-            "typography_typography": "custom",
-            "typography_font_family": "Montserrat",
-            "typography_font_size": {
+            "image": {
+             "url": "https://ydelriov.github.io/Maloka/elementor/img/certificado-iqnet.png",
+             "id": 0,
+             "alt": "Certificación IQNet"
+            },
+            "image_size": "full",
+            "caption_source": "none",
+            "link_to": "none",
+            "width": {
              "unit": "px",
-             "size": 14,
+             "size": 56,
              "sizes": []
             },
-            "typography_font_weight": "400",
-            "typography_line_height": {
-             "unit": "em",
-             "size": 1.55,
-             "sizes": []
-            },
-            "custom_css": "selector p { margin: 0 0 14px; }\nselector p:last-child { margin: 0; }\nselector a { color: #D9D3E0; }\nselector a:hover { color: #FFE25C; }\n"
+            "_element_width": "auto"
            },
-           "elements": [],
-           "widgetType": "text-editor"
+           "elements": []
           }
-         ],
-         "isInner": true
-        },
-        {
-         "id": "c1f194d",
-         "elType": "container",
-         "settings": {
-          "_title": "Footer · Visítanos",
-          "content_width": "full",
-          "flex_direction": "column",
-          "padding": {
-           "unit": "px",
-           "top": "0",
-           "right": "0",
-           "bottom": "0",
-           "left": "0",
-           "isLinked": false
-          },
-          "html_tag": "nav",
-          "flex_gap": {
-           "column": "10",
-           "row": "10",
-           "isLinked": true,
-           "unit": "px",
-           "size": 10
-          },
-          "css_classes": "mk-ft-col"
-         },
-         "elements": [
-          {
-           "id": "23813fa",
-           "elType": "widget",
-           "settings": {
-            "title": "Visítanos",
-            "header_size": "p",
-            "title_color": "#FFFFFF",
-            "link": {
-             "url": "/visitanos/",
-             "is_external": "",
-             "nofollow": "",
-             "custom_attributes": ""
-            },
-            "typography_typography": "custom",
-            "typography_font_family": "Montserrat",
-            "typography_font_size": {
-             "unit": "px",
-             "size": 14,
-             "sizes": []
-            },
-            "typography_font_weight": "700",
-            "typography_line_height": {
-             "unit": "em",
-             "size": 1.4,
-             "sizes": []
-            },
-            "custom_css": "selector a:hover { color: #FFE25C; }\n"
-           },
-           "elements": [],
-           "widgetType": "heading"
-          },
-          {
-           "id": "b6258a8",
-           "elType": "widget",
-           "settings": {
-            "icon_list": [
-             {
-              "_id": "f344baf",
-              "text": "Horarios y tarifas",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/visitanos/#horarios",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             },
-             {
-              "_id": "1cc919f",
-              "text": "Cómo llegar",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/visitanos/#llegar",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             },
-             {
-              "_id": "8903a9c",
-              "text": "Servicios",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/visitanos/#servicios",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             },
-             {
-              "_id": "3b57663",
-              "text": "Accesibilidad",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/visitanos/#accesibilidad",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             }
-            ],
-            "space_between": {
-             "unit": "px",
-             "size": 6,
-             "sizes": []
-            },
-            "text_color": "#D9D3E0",
-            "text_color_hover": "#FFE25C",
-            "text_indent": {
-             "unit": "px",
-             "size": 0,
-             "sizes": []
-            },
-            "icon_typography_typography": "custom",
-            "icon_typography_font_family": "Montserrat",
-            "icon_typography_font_size": {
-             "unit": "px",
-             "size": 14,
-             "sizes": []
-            },
-            "icon_typography_font_weight": "400",
-            "icon_typography_line_height": {
-             "unit": "em",
-             "size": 1.45,
-             "sizes": []
-            },
-            "custom_css": "selector .elementor-icon-list-icon { display: none; }\n"
-           },
-           "elements": [],
-           "widgetType": "icon-list"
-          }
-         ],
-         "isInner": true
-        },
-        {
-         "id": "087a442",
-         "elType": "container",
-         "settings": {
-          "_title": "Footer · Agéndate",
-          "content_width": "full",
-          "flex_direction": "column",
-          "padding": {
-           "unit": "px",
-           "top": "0",
-           "right": "0",
-           "bottom": "0",
-           "left": "0",
-           "isLinked": false
-          },
-          "html_tag": "nav",
-          "flex_gap": {
-           "column": "10",
-           "row": "10",
-           "isLinked": true,
-           "unit": "px",
-           "size": 10
-          },
-          "css_classes": "mk-ft-col"
-         },
-         "elements": [
-          {
-           "id": "23bc471",
-           "elType": "widget",
-           "settings": {
-            "title": "Agéndate",
-            "header_size": "p",
-            "title_color": "#FFFFFF",
-            "link": {
-             "url": "/agendate/",
-             "is_external": "",
-             "nofollow": "",
-             "custom_attributes": ""
-            },
-            "typography_typography": "custom",
-            "typography_font_family": "Montserrat",
-            "typography_font_size": {
-             "unit": "px",
-             "size": 14,
-             "sizes": []
-            },
-            "typography_font_weight": "700",
-            "typography_line_height": {
-             "unit": "em",
-             "size": 1.4,
-             "sizes": []
-            },
-            "custom_css": "selector a:hover { color: #FFE25C; }\n"
-           },
-           "elements": [],
-           "widgetType": "heading"
-          },
-          {
-           "id": "bd9b945",
-           "elType": "widget",
-           "settings": {
-            "icon_list": [
-             {
-              "_id": "25bc160",
-              "text": "Programación",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/agendate/",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             },
-             {
-              "_id": "fb51a50",
-              "text": "Cine Domo",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/agendate/#programacion",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             }
-            ],
-            "space_between": {
-             "unit": "px",
-             "size": 6,
-             "sizes": []
-            },
-            "text_color": "#D9D3E0",
-            "text_color_hover": "#FFE25C",
-            "text_indent": {
-             "unit": "px",
-             "size": 0,
-             "sizes": []
-            },
-            "icon_typography_typography": "custom",
-            "icon_typography_font_family": "Montserrat",
-            "icon_typography_font_size": {
-             "unit": "px",
-             "size": 14,
-             "sizes": []
-            },
-            "icon_typography_font_weight": "400",
-            "icon_typography_line_height": {
-             "unit": "em",
-             "size": 1.45,
-             "sizes": []
-            },
-            "custom_css": "selector .elementor-icon-list-icon { display: none; }\n"
-           },
-           "elements": [],
-           "widgetType": "icon-list"
-          }
-         ],
-         "isInner": true
-        },
-        {
-         "id": "729fce1",
-         "elType": "container",
-         "settings": {
-          "_title": "Footer · Ven en grupo",
-          "content_width": "full",
-          "flex_direction": "column",
-          "padding": {
-           "unit": "px",
-           "top": "0",
-           "right": "0",
-           "bottom": "0",
-           "left": "0",
-           "isLinked": false
-          },
-          "html_tag": "nav",
-          "flex_gap": {
-           "column": "10",
-           "row": "10",
-           "isLinked": true,
-           "unit": "px",
-           "size": 10
-          },
-          "css_classes": "mk-ft-col"
-         },
-         "elements": [
-          {
-           "id": "a983c10",
-           "elType": "widget",
-           "settings": {
-            "title": "Ven en grupo",
-            "header_size": "p",
-            "title_color": "#FFFFFF",
-            "link": {
-             "url": "/ven-en-grupo/",
-             "is_external": "",
-             "nofollow": "",
-             "custom_attributes": ""
-            },
-            "typography_typography": "custom",
-            "typography_font_family": "Montserrat",
-            "typography_font_size": {
-             "unit": "px",
-             "size": 14,
-             "sizes": []
-            },
-            "typography_font_weight": "700",
-            "typography_line_height": {
-             "unit": "em",
-             "size": 1.4,
-             "sizes": []
-            },
-            "custom_css": "selector a:hover { color: #FFE25C; }\n"
-           },
-           "elements": [],
-           "widgetType": "heading"
-          },
-          {
-           "id": "bb7cd90",
-           "elType": "widget",
-           "settings": {
-            "icon_list": [
-             {
-              "_id": "0f849d9",
-              "text": "Colegios y universidades",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/ven-en-grupo/#colegios",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             },
-             {
-              "_id": "22f6cf6",
-              "text": "Cumpleaños",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/ven-en-grupo/#cumpleanos",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             },
-             {
-              "_id": "3b2de7d",
-              "text": "Empresas y eventos",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/ven-en-grupo/#empresas",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             },
-             {
-              "_id": "892120d",
-              "text": "MPA",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/ven-en-grupo/#mpa",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             }
-            ],
-            "space_between": {
-             "unit": "px",
-             "size": 6,
-             "sizes": []
-            },
-            "text_color": "#D9D3E0",
-            "text_color_hover": "#FFE25C",
-            "text_indent": {
-             "unit": "px",
-             "size": 0,
-             "sizes": []
-            },
-            "icon_typography_typography": "custom",
-            "icon_typography_font_family": "Montserrat",
-            "icon_typography_font_size": {
-             "unit": "px",
-             "size": 14,
-             "sizes": []
-            },
-            "icon_typography_font_weight": "400",
-            "icon_typography_line_height": {
-             "unit": "em",
-             "size": 1.45,
-             "sizes": []
-            },
-            "custom_css": "selector .elementor-icon-list-icon { display: none; }\n"
-           },
-           "elements": [],
-           "widgetType": "icon-list"
-          }
-         ],
-         "isInner": true
-        },
-        {
-         "id": "17d625f",
-         "elType": "container",
-         "settings": {
-          "_title": "Footer · Descubre",
-          "content_width": "full",
-          "flex_direction": "column",
-          "padding": {
-           "unit": "px",
-           "top": "0",
-           "right": "0",
-           "bottom": "0",
-           "left": "0",
-           "isLinked": false
-          },
-          "html_tag": "nav",
-          "flex_gap": {
-           "column": "10",
-           "row": "10",
-           "isLinked": true,
-           "unit": "px",
-           "size": 10
-          },
-          "css_classes": "mk-ft-col"
-         },
-         "elements": [
-          {
-           "id": "86ac7bc",
-           "elType": "widget",
-           "settings": {
-            "title": "Descubre",
-            "header_size": "p",
-            "title_color": "#FFFFFF",
-            "link": {
-             "url": "/descubre/",
-             "is_external": "",
-             "nofollow": "",
-             "custom_attributes": ""
-            },
-            "typography_typography": "custom",
-            "typography_font_family": "Montserrat",
-            "typography_font_size": {
-             "unit": "px",
-             "size": 14,
-             "sizes": []
-            },
-            "typography_font_weight": "700",
-            "typography_line_height": {
-             "unit": "em",
-             "size": 1.4,
-             "sizes": []
-            },
-            "custom_css": "selector a:hover { color: #FFE25C; }\n"
-           },
-           "elements": [],
-           "widgetType": "heading"
-          },
-          {
-           "id": "97d42fd",
-           "elType": "widget",
-           "settings": {
-            "icon_list": [
-             {
-              "_id": "699e317",
-              "text": "Programas y proyectos",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/descubre/#programas",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             },
-             {
-              "_id": "347639e",
-              "text": "Recursos educativos",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/descubre/#recursos",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             },
-             {
-              "_id": "ff10614",
-              "text": "Noticias",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/noticias/",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             }
-            ],
-            "space_between": {
-             "unit": "px",
-             "size": 6,
-             "sizes": []
-            },
-            "text_color": "#D9D3E0",
-            "text_color_hover": "#FFE25C",
-            "text_indent": {
-             "unit": "px",
-             "size": 0,
-             "sizes": []
-            },
-            "icon_typography_typography": "custom",
-            "icon_typography_font_family": "Montserrat",
-            "icon_typography_font_size": {
-             "unit": "px",
-             "size": 14,
-             "sizes": []
-            },
-            "icon_typography_font_weight": "400",
-            "icon_typography_line_height": {
-             "unit": "em",
-             "size": 1.45,
-             "sizes": []
-            },
-            "custom_css": "selector .elementor-icon-list-icon { display: none; }\n"
-           },
-           "elements": [],
-           "widgetType": "icon-list"
-          }
-         ],
-         "isInner": true
-        },
-        {
-         "id": "672774f",
-         "elType": "container",
-         "settings": {
-          "_title": "Footer · Crea con Maloka",
-          "content_width": "full",
-          "flex_direction": "column",
-          "padding": {
-           "unit": "px",
-           "top": "0",
-           "right": "0",
-           "bottom": "0",
-           "left": "0",
-           "isLinked": false
-          },
-          "html_tag": "nav",
-          "flex_gap": {
-           "column": "10",
-           "row": "10",
-           "isLinked": true,
-           "unit": "px",
-           "size": 10
-          },
-          "css_classes": "mk-ft-col"
-         },
-         "elements": [
-          {
-           "id": "1e3ef5d",
-           "elType": "widget",
-           "settings": {
-            "title": "Crea con Maloka",
-            "header_size": "p",
-            "title_color": "#FFFFFF",
-            "link": {
-             "url": "/crea-con-maloka/",
-             "is_external": "",
-             "nofollow": "",
-             "custom_attributes": ""
-            },
-            "typography_typography": "custom",
-            "typography_font_family": "Montserrat",
-            "typography_font_size": {
-             "unit": "px",
-             "size": 14,
-             "sizes": []
-            },
-            "typography_font_weight": "700",
-            "typography_line_height": {
-             "unit": "em",
-             "size": 1.4,
-             "sizes": []
-            },
-            "custom_css": "selector a:hover { color: #FFE25C; }\n"
-           },
-           "elements": [],
-           "widgetType": "heading"
-          },
-          {
-           "id": "e33e474",
-           "elType": "widget",
-           "settings": {
-            "icon_list": [
-             {
-              "_id": "0536bc6",
-              "text": "Patrocinios y alianzas",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/crea-con-maloka/#patrocinios",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             },
-             {
-              "_id": "c52ef76",
-              "text": "Experiencias museográficas",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/crea-con-maloka/#museografia",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             },
-             {
-              "_id": "f096dbb",
-              "text": "Maloka viajera",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "/crea-con-maloka/#viajera",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             }
-            ],
-            "space_between": {
-             "unit": "px",
-             "size": 6,
-             "sizes": []
-            },
-            "text_color": "#D9D3E0",
-            "text_color_hover": "#FFE25C",
-            "text_indent": {
-             "unit": "px",
-             "size": 0,
-             "sizes": []
-            },
-            "icon_typography_typography": "custom",
-            "icon_typography_font_family": "Montserrat",
-            "icon_typography_font_size": {
-             "unit": "px",
-             "size": 14,
-             "sizes": []
-            },
-            "icon_typography_font_weight": "400",
-            "icon_typography_line_height": {
-             "unit": "em",
-             "size": 1.45,
-             "sizes": []
-            },
-            "custom_css": "selector .elementor-icon-list-icon { display: none; }\n"
-           },
-           "elements": [],
-           "widgetType": "icon-list"
-          }
-         ],
-         "isInner": true
+         ]
         }
-       ],
-       "isInner": true
+       ]
       },
       {
-       "id": "6a951ca",
+       "id": "308bd1d5",
        "elType": "container",
+       "isInner": true,
        "settings": {
-        "_title": "Footer · legal",
+        "container_type": "flex",
+        "flex_direction": "column",
         "content_width": "full",
-        "flex_direction": "row",
-        "padding": {
-         "unit": "px",
-         "top": "24",
-         "right": "0",
-         "bottom": "0",
-         "left": "0",
-         "isLinked": false
-        },
-        "flex_direction_mobile": "row",
-        "flex_wrap": "wrap",
-        "flex_align_items": "center",
         "flex_gap": {
-         "column": "24",
-         "row": "8",
-         "isLinked": false,
+         "column": "12",
+         "row": "12",
+         "isLinked": true,
          "unit": "px",
-         "size": 24
-        },
-        "border_border": "solid",
-        "border_width": {
-         "unit": "px",
-         "top": "1",
-         "right": "0",
-         "bottom": "0",
-         "left": "0",
-         "isLinked": false
-        },
-        "border_color": "rgba(255,255,255,0.18)",
-        "custom_css": "selector > .elementor-widget { width: auto; }\n"
+         "size": 12
+        }
        },
        "elements": [
         {
-         "id": "32d0bdb",
+         "id": "520a8284",
          "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
          "settings": {
-          "title": "© 2026 Corporación Maloka",
-          "header_size": "span",
+          "title": "Maloka",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "70d5e1eb",
+         "elType": "widget",
+         "widgetType": "icon-list",
+         "isInner": false,
+         "settings": {
+          "view": "traditional",
+          "icon_list": [
+           {
+            "_id": "509wpr2",
+            "text": "¿Qué es Maloka?",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/acerca-de/",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "1qbnfpz",
+            "text": "Prensa",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/sala-de-prensa/",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "46018la",
+            "text": "Trabaja con nosotros",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/trabaja-nosotros",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "wqluugg",
+            "text": "Preguntas frecuentes",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/resolvemos-aqui-todas-tus-dudas-acerca-de-maloka",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "nakgm7h",
+            "text": "Contacto",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/encuentra-aqui-todas-las-formas-de-contacto-maloka/",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           }
+          ],
+          "text_color": "#D9D3E0",
+          "text_color_hover": "#FFE25C",
+          "icon_color": "#FFFFFF",
+          "icon_color_hover": "#FFE25C",
+          "icon_size": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "text_indent": {
+           "unit": "px",
+           "size": 8,
+           "sizes": []
+          },
+          "space_between": {
+           "unit": "px",
+           "size": 8,
+           "sizes": []
+          },
+          "icon_typography_typography": "custom",
+          "icon_typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "icon_typography_font_weight": "400",
+          "icon_typography_line_height": {
+           "unit": "em",
+           "size": 1.5,
+           "sizes": []
+          },
+          "icon_typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "55591fd3",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "4",
+         "row": "4",
+         "isLinked": true,
+         "unit": "px",
+         "size": 4
+        }
+       },
+       "elements": [
+        {
+         "id": "1b31984f",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Horarios",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "61a57f78",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Lunes a viernes",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "600",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "10a7e117",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "11:00 a. m. a 5:00 p. m.",
+          "header_size": "div",
           "title_color": "#D9D3E0",
           "typography_typography": "custom",
-          "typography_font_family": "Montserrat",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "04d286ea",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Sábados, domingos y festivos",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "600",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "7693ebeb",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "9:30 a. m. a 6:00 p. m.",
+          "header_size": "div",
+          "title_color": "#D9D3E0",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "2059faa4",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "La venta de entradas está disponible hasta las 4:00 p. m.",
+          "header_size": "div",
+          "title_color": "#D9D3E0",
+          "typography_typography": "custom",
           "typography_font_size": {
            "unit": "px",
            "size": 13,
@@ -1172,212 +913,470 @@
            "unit": "em",
            "size": 1.4,
            "sizes": []
-          }
+          },
+          "typography_font_family": "Montserrat"
          },
-         "elements": [],
-         "widgetType": "heading"
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "514459a4",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "12",
+         "row": "12",
+         "isLinked": true,
+         "unit": "px",
+         "size": 12
+        }
+       },
+       "elements": [
+        {
+         "id": "9c42dd04",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Ubicación",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
         },
         {
-         "id": "5d69bd8",
+         "id": "4c815caa",
          "elType": "widget",
+         "widgetType": "icon-list",
+         "isInner": false,
          "settings": {
+          "view": "traditional",
           "icon_list": [
            {
-            "_id": "34b7ad5",
-            "text": "Política de privacidad",
+            "_id": "wt11v5k",
+            "text": "Cra. 68D # 24A - 51, Bogotá, Colombia",
             "selected_icon": {
              "value": "",
              "library": ""
             },
             "link": {
-             "url": "#",
-             "is_external": "",
+             "url": "https://maps.app.goo.gl/k6GpMLEKizb7Uf6Y7",
+             "is_external": "on",
              "nofollow": "",
              "custom_attributes": ""
             }
            },
            {
-            "_id": "548f285",
-            "text": "Tratamiento de datos",
+            "_id": "l8ze6ro",
+            "text": "Teléfono: +57 (601) 427 2707",
             "selected_icon": {
              "value": "",
              "library": ""
             },
             "link": {
-             "url": "#",
-             "is_external": "",
-             "nofollow": "",
-             "custom_attributes": ""
-            }
-           },
-           {
-            "_id": "6456284",
-            "text": "PQRSF",
-            "selected_icon": {
-             "value": "",
-             "library": ""
-            },
-            "link": {
-             "url": "#",
+             "url": "tel:+576014272707",
              "is_external": "",
              "nofollow": "",
              "custom_attributes": ""
             }
            }
           ],
-          "space_between": {
-           "unit": "px",
-           "size": 24,
-           "sizes": []
-          },
           "text_color": "#D9D3E0",
           "text_color_hover": "#FFE25C",
+          "icon_color": "#FFFFFF",
+          "icon_color_hover": "#FFE25C",
+          "icon_size": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
           "text_indent": {
            "unit": "px",
-           "size": 0,
+           "size": 8,
+           "sizes": []
+          },
+          "space_between": {
+           "unit": "px",
+           "size": 8,
            "sizes": []
           },
           "icon_typography_typography": "custom",
-          "icon_typography_font_family": "Montserrat",
           "icon_typography_font_size": {
            "unit": "px",
-           "size": 13,
+           "size": 14,
            "sizes": []
           },
           "icon_typography_font_weight": "400",
           "icon_typography_line_height": {
            "unit": "em",
-           "size": 1.45,
+           "size": 1.5,
            "sizes": []
           },
-          "custom_css": "selector .elementor-icon-list-icon { display: none; }\n",
-          "view": "inline"
+          "icon_typography_font_family": "Montserrat"
          },
-         "elements": [],
-         "widgetType": "icon-list"
+         "elements": []
         },
         {
-         "id": "378876e",
-         "elType": "container",
+         "id": "f1b8b704",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
          "settings": {
-          "_title": "Redes",
-          "content_width": "full",
-          "flex_direction": "column",
-          "padding": {
-           "unit": "px",
-           "top": "0",
-           "right": "0",
-           "bottom": "0",
-           "left": "0",
-           "isLinked": false
+          "title": "¿Cómo llegar? →",
+          "header_size": "#FFE25C",
+          "title_color": "#FFFFFF",
+          "link": {
+           "url": "/visitanos/#llegar",
+           "is_external": "",
+           "nofollow": "",
+           "custom_attributes": ""
           },
-          "custom_css": "selector { margin-left: auto; width: auto; --width: auto; }\n@media (max-width: 767px) { selector { margin-left: 0; } }\n"
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
          },
-         "elements": [
-          {
-           "id": "b956629",
-           "elType": "widget",
-           "settings": {
-            "icon_list": [
-             {
-              "_id": "98cb994",
-              "text": "Instagram",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "#",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             },
-             {
-              "_id": "f482468",
-              "text": "YouTube",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "#",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             },
-             {
-              "_id": "3f1ec63",
-              "text": "TikTok",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "#",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             },
-             {
-              "_id": "35d8560",
-              "text": "Facebook",
-              "selected_icon": {
-               "value": "",
-               "library": ""
-              },
-              "link": {
-               "url": "#",
-               "is_external": "",
-               "nofollow": "",
-               "custom_attributes": ""
-              }
-             }
-            ],
-            "space_between": {
-             "unit": "px",
-             "size": 24,
-             "sizes": []
-            },
-            "text_color": "#D9D3E0",
-            "text_color_hover": "#FFE25C",
-            "text_indent": {
-             "unit": "px",
-             "size": 0,
-             "sizes": []
-            },
-            "icon_typography_typography": "custom",
-            "icon_typography_font_family": "Montserrat",
-            "icon_typography_font_size": {
-             "unit": "px",
-             "size": 13,
-             "sizes": []
-            },
-            "icon_typography_font_weight": "400",
-            "icon_typography_line_height": {
-             "unit": "em",
-             "size": 1.45,
-             "sizes": []
-            },
-            "custom_css": "selector .elementor-icon-list-icon { display: none; }\n",
-            "view": "inline"
-           },
-           "elements": [],
-           "widgetType": "icon-list"
-          }
-         ],
-         "isInner": true
+         "elements": []
         }
-       ],
-       "isInner": true
+       ]
+      },
+      {
+       "id": "a9438b49",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "12",
+         "row": "12",
+         "isLinked": true,
+         "unit": "px",
+         "size": 12
+        }
+       },
+       "elements": [
+        {
+         "id": "c37a272a",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Corporación Maloka",
+          "header_size": "div",
+          "title_color": "#FFFFFF",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat"
+         },
+         "elements": []
+        },
+        {
+         "id": "4cfc15c8",
+         "elType": "widget",
+         "widgetType": "icon-list",
+         "isInner": false,
+         "settings": {
+          "view": "traditional",
+          "icon_list": [
+           {
+            "_id": "74gpkho",
+            "text": "Informes de gestión",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/informes-de-gestion",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "ybdxvho",
+            "text": "Sistema Integrado de Gestión",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/sistema-integrado-de-gestion",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "ss3jak4",
+            "text": "Intranet",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "http://intranet.maloka.org/",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "26nh0dy",
+            "text": "Junta Directiva",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/junta-directiva/",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "3t95la4",
+            "text": "Contratación",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/contratacion",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "b3ordf5",
+            "text": "PQRSF",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://forms.gle/iPLFZxvPBK9UqYjJA",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "gkcgvtb",
+            "text": "ESAL",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://maloka.org/esal",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           },
+           {
+            "_id": "d5lff6r",
+            "text": "Registro de proveedores",
+            "selected_icon": {
+             "value": "",
+             "library": ""
+            },
+            "link": {
+             "url": "https://docs.google.com/forms/d/e/1FAIpQLSd7E3X6LplIo857p7fMVeWIKH9iTN2laRzKQm2ncDGJqciuvQ/viewform",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            }
+           }
+          ],
+          "text_color": "#D9D3E0",
+          "text_color_hover": "#FFE25C",
+          "icon_color": "#FFFFFF",
+          "icon_color_hover": "#FFE25C",
+          "icon_size": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          },
+          "text_indent": {
+           "unit": "px",
+           "size": 8,
+           "sizes": []
+          },
+          "space_between": {
+           "unit": "px",
+           "size": 8,
+           "sizes": []
+          },
+          "icon_typography_typography": "custom",
+          "icon_typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "icon_typography_font_weight": "400",
+          "icon_typography_line_height": {
+           "unit": "em",
+           "size": 1.5,
+           "sizes": []
+          },
+          "icon_typography_font_family": "Montserrat"
+         },
+         "elements": []
+        }
+       ]
       }
-     ],
-     "isInner": true
+     ]
+    },
+    {
+     "id": "58070de7",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "content_width": "full",
+      "flex_gap": {
+       "column": "24",
+       "row": "8",
+       "isLinked": false,
+       "unit": "px",
+       "size": 24
+      },
+      "padding": {
+       "unit": "px",
+       "top": "24",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "border_border": "solid",
+      "border_width": {
+       "unit": "px",
+       "top": "1",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "border_color": "#4F4955"
+     },
+     "elements": [
+      {
+       "id": "e4905772",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "NIT Maloka 830.040.745-0",
+        "header_size": "div",
+        "title_color": "#D9D3E0",
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 13,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "0588d162",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "© 2026 Corporación Maloka",
+        "header_size": "div",
+        "title_color": "#D9D3E0",
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 13,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "b1287d35",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Tratamiento de datos",
+        "header_size": "div",
+        "title_color": "#D9D3E0",
+        "link": {
+         "url": "https://maloka.org/tratamiento-de-datos/",
+         "is_external": "",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 13,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      }
+     ]
     }
-   ],
-   "isInner": false
+   ]
   }
  ]
 }

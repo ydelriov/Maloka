@@ -1,17 +1,16 @@
 ---
 /* Visítanos · propuesta con el Design System v3 de la V13 (publicada en /seleccion/visitanos/).
    Maqueta pensada para Elementor: cada bloque es un contenedor o un widget nativo, sin código a medida.
-   El JSON importable sale de esta misma estructura: elementor/visitanos-v13.json.
+   El JSON importable sale de esta misma estructura: elementor/visitanos-v13-parte1/2/3.json.
    1. Cabecera compacta (migas, H1, texto y el horario en una línea con Lista de iconos en línea)
    2. Anclas (contenedor fijo arriba con enlaces a #id)
    3. Horarios (contenedores pastel + icon-list)
-   4. Tarifas (grilla de tarjetas: contenedor-enlace con imagen, headings e icon-list)
-   5. Cine Domo (filas de headings) · 6. Cómo llegar (widget Pestañas + Google Maps)
+   4. Planes y tarifas (3 pasos + grupos Entradas y Combos: tarjetas con imagen cuadrada de maloka.org, datos, precio)
+   5. Cine Domo y Sala Digital (grilla de afiches cuadrados) · 6. Cómo llegar (widget Pestañas + Google Maps)
    7. Servicios (icon-box) · 8. Accesibilidad (icon-list) · 9. Experiencias (grilla de tarjetas)
    10. Preguntas frecuentes (widget Acordeón con FAQ schema).
    Datos de maloka.org en src/data/visitanos.json (por validar: precios y vigencias cambian por temporada).
    Un solo botón: «Compra tus entradas» en el header; lo demás son enlaces, filas y tarjetas. */
-import { Picture } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import NHeader from '../../components/n/NHeader.astro';
 import NCardFoto from '../../components/n/NCardFoto.astro';
@@ -20,7 +19,6 @@ import Icon from '../../components/ui/Icon.astro';
 import v from '../../data/visitanos.json';
 import h from '../../data/n/home.json';
 import site from '../../data/site.json';
-import { img } from '../../lib/images.js';
 import { rutaPara } from '../../lib/rutas.js';
 import { url } from '../../lib/url.js';
 import '../../styles/noche.css';
@@ -31,8 +29,6 @@ const anclas = [
   { id: 'servicios', label: 'Servicios' }, { id: 'accesibilidad', label: 'Accesibilidad' },
   { id: 'experiencias', label: 'Experiencias' }, { id: 'preguntas', label: 'Preguntas' }
 ];
-const COLOR = { experiencia: 'lavanda', familiar: 'amarillo', taller: 'menta', cine: 'cielo' };
-const prod = v.productos;
 const ll = v.llegar;
 ---
 <Base variante="visitanos" grupo={G} title="Visítanos · Horarios, tarifas y cómo llegar · Maloka" description="Horarios de Maloka en Bogotá: lunes a viernes de 11:00 a. m. a 5:00 p. m.; sábados, domingos y festivos de 9:30 a. m. a 6:00 p. m. Tarifas y combos, Cine Domo, cómo llegar, servicios, accesibilidad y preguntas frecuentes." clase="nn">
@@ -66,60 +62,70 @@ const ll = v.llegar;
           <div class="vi-ho-b vi-ho-b--b"><p class="vi-ho-d">{site.horarios.finde.dias}</p><p class="vi-ho-h t-num">{site.horarios.finde.texto}</p></div>
           <ul class="vi-ho-l">
             <li><Icon name="ticket" size="22" /><span><b>{site.horarios.ventaHasta}</b> · Compra con anticipación: las entradas pueden agotarse en taquilla.</span></li>
-            <li><Icon name="heart" size="22" /><span>{v.gratis}</span></li>
-            {v.avisos.map((a) => <li class="vi-aviso"><Icon name="bolt" size="22" /><span><b>{a.fecha}:</b> {a.texto} <span class="n-ej">Aviso de ejemplo</span></span></li>)}
+            {v.avisos.map((a) => <li class="vi-aviso"><Icon name="bolt" size="22" /><span><b>Cambio de horario · {a.fecha}:</b> {a.texto}</span></li>)}
+            {v.beneficios.map((b) => <li><Icon name="heart" size="22" /><span>{b}</span></li>)}
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- 4 · Tarifas -->
+    <!-- 4 · Planes y tarifas -->
     <section class="n-sec n-hueso vi-sec" id="tarifas" aria-labelledby="vi-ta">
       <div class="mk-w">
-        <div class="n-head">
-          <div><p class="n-ante">Tarifas y combos</p><h2 class="n-titulo" id="vi-ta">{prod.titulo}</h2><p class="n-lead">{prod.texto}</p></div>
-        </div>
-        <ul class="vi-planes" id="vi-planes">
-          {prod.items.map((p, i) => (
-            <li data-rv style={`--d:${i % 3}`}>
-              <a class:list={['vi-plan', p.destacado && 'vi-plan--dest']} href={p.url} target="_blank" rel="noopener">
-                <span class="n-foto n-zoom vi-plan-f">
-                  {p.imagenUrl ? <img src={p.imagenUrl} alt={p.alt} loading="lazy" decoding="async" /> : <Picture src={img(p.imagen)} alt={p.alt} formats={['avif', 'webp']} widths={[342, 560]} sizes="(max-width: 767px) 92vw, 30vw" loading="lazy" />}
-                </span>
-                <span class="vi-plan-c">
-                  <span class="vi-plan-tags">{p.destacado && <span class="n-tag vi-tag-combo">Combo</span>}<span class={`n-tag n-tag--${COLOR[p.categoria] || 'lavanda'}`}>{p.categoriaLabel}</span></span>
-                  <h3 class="vi-plan-t">{p.titulo}</h3>
-                  <span class="vi-plan-x">{p.descripcion}</span>
-                  <span class="vi-plan-k">Incluye</span>
-                  <ul class="vi-plan-l">{p.incluye.map((x) => <li>{x}</li>)}</ul>
-                  <span class="vi-plan-k">Para quién</span>
-                  <ul class="vi-plan-l">{p.dirigido.map((x) => <li>{x}</li>)}</ul>
-                  {(p.duracion || p.aplica) && <span class="vi-plan-m">{p.duracion && <span><Icon name="clock" size="18" />{p.duracion}</span>}{p.aplica && <span><Icon name="cal" size="18" />{p.aplica}</span>}</span>}
-                  <span class="vi-plan-pie">
-                    <b class="vi-plan-p">{p.precio || 'Precio en TuBoleta'}</b>
-                    <span class="vi-plan-a">Comprar en TuBoleta<Icon name="ext" size="20" /><span class="sr-only"> (abre en una pestaña nueva)</span></span>
-                  </span>
-                </span>
+        <div class="n-head"><div><p class="n-ante">Planes y tarifas</p><h2 class="n-titulo" id="vi-ta">{v.planes.titulo}</h2><p class="n-lead">{v.planes.texto}</p></div></div>
+        <ol class="vi-pasos">
+          {v.planes.pasos.map((p, i) => <li class={`vi-paso vi-paso--${i}`}><b class="vi-paso-n t-num">{p.n}</b><span><b>{p.titulo}</b><span>{p.texto}</span></span></li>)}
+        </ol>
+        {v.planes.grupos.map((g) => (
+          <div class="vi-grupo">
+            <div class="vi-grupo-h"><h3>{g.titulo}</h3><p>{g.texto}</p></div>
+            <ul class:list={['vi-planes', `vi-planes--${g.items.length + (g.id === 'entradas' ? 1 : 0)}`]}>
+              {g.items.map((p, i) => (
+                <li data-rv style={`--d:${i % 4}`}>
+                  <a class="vi-plan" href={p.url} target="_blank" rel="noopener">
+                    <span class="vi-plan-f"><img src={p.imagen} alt={p.alt} width="500" height="500" loading="lazy" decoding="async" /></span>
+                    <span class="vi-plan-c">
+                      {p.ahorro && <span class="n-tag n-tag--menta vi-plan-ahorro">{p.ahorro}</span>}
+                      <h4 class="vi-plan-t">{p.titulo}</h4>
+                      <dl class="vi-plan-d">{p.datos.map(([k, x]) => <div><dt>{k}</dt><dd>{x}</dd></div>)}</dl>
+                      <span class="vi-plan-pie">
+                        <span class="vi-plan-precio"><b class="t-num">{p.precio}</b></span>
+                        <span class="vi-plan-a">Comprar<Icon name="ext" size="18" /><span class="sr-only"> {p.titulo} en TuBoleta (abre en una pestaña nueva)</span></span>
+                      </span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+              {g.id === 'entradas' && (
+                <li class="vi-extra n-noche">
+                  <p class="vi-extra-t">¿Vienes seguido o quieres regalar Maloka?</p>
+                  {v.planes.extras.map((x) => <a class="n-a" href={x.url} target="_blank" rel="noopener">{x.texto}<Icon name="ext" size="18" /></a>)}
+                </li>
+              )}
+            </ul>
+          </div>
+        ))}
+        <p class="vi-fuente"><Icon name="help" size="18" /><span>{v.planes.fuente}</span></p>
+      </div>
+    </section>
+
+    <!-- 5 · Cine Domo y Sala Digital -->
+    <section class="n-sec n-noche vi-sec" id="funciones" aria-labelledby="vi-cd">
+      <div class="mk-w">
+        <div class="n-head"><div><p class="n-ante">Funciones</p><h2 class="n-titulo" id="vi-cd">{v.funciones.titulo}</h2><p class="n-lead">{v.funciones.texto}</p></div></div>
+        <ul class="vi-fun">
+          {v.funciones.items.map((f, i) => (
+            <li data-rv style={`--d:${i % 5}`}>
+              <a class="vi-fun-a" href={f.url} target="_blank" rel="noopener">
+                <span class="vi-plan-f"><img src={f.imagen} alt={`Afiche de ${f.titulo}`} width="500" height="500" loading="lazy" decoding="async" /></span>
+                <span class={`n-tag n-tag--${f.sala === 'Sala Digital' ? 'salmon' : 'cielo'}`}>{f.sala}</span>
+                <h3 class="vi-fun-t">{f.titulo}</h3>
+                <span class="vi-fun-m">{f.meta}</span>
               </a>
             </li>
           ))}
         </ul>
-        <p class="vi-fuente"><Icon name="help" size="18" /><span>{prod.fuente}</span> <span class="n-ej">Precios por validar</span></p>
-      </div>
-    </section>
-
-    <!-- 5 · Cine Domo -->
-    <section class="n-sec n-noche" aria-labelledby="vi-cd">
-      <div class="mk-w vi-cd">
-        <div class="vi-col">
-          <p class="n-ante">Cine Domo</p>
-          <h2 class="n-titulo" id="vi-cd">{v.cartelera.titulo}</h2>
-          <p class="n-lead">{v.cartelera.texto}</p>
-          <a class="n-a vi-cd-a" href={ruta('Ver funciones')}>Ver funciones de hoy<Icon name="arrow" size="20" /></a>
-        </div>
-        <ul class="vi-cd-l">
-          {v.cartelera.items.map((c) => <li><b>{c.titulo}</b><span>{c.meta}</span></li>)}
-        </ul>
+        <p class="vi-fun-av"><Icon name="bolt" size="18" /><span>{v.funciones.aviso}</span></p>
       </div>
     </section>
 
@@ -221,7 +227,7 @@ const ll = v.llegar;
       </div>
     </section>
   </main>
-  <NFooter />
+  <NFooter grupo={G} />
 </Base>
 
 <style>
@@ -258,40 +264,53 @@ const ll = v.llegar;
   .vi-ho-l :global(.mk-ic) { flex: none; margin-top: 2px; }
   .vi-aviso .n-ej { margin: 0 0 0 8px; }
 
-  /* Tarifas */
-  .vi-planes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  /* Planes */
+  .vi-pasos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-bottom: 56px; }
+  .vi-paso { display: flex; gap: 16px; align-items: flex-start; padding: 20px 24px; color: var(--n-noche); }
+  .vi-paso--0 { background: var(--n-amarillo); } .vi-paso--1 { background: var(--n-menta); } .vi-paso--2 { background: var(--n-cielo); }
+  .vi-paso-n { font-size: 40px; line-height: 1; font-weight: 700; }
+  .vi-paso > span { display: grid; gap: 2px; font-size: 15px; }
+  .vi-paso > span b { font-size: 18px; }
+  .vi-grupo + .vi-grupo { margin-top: 56px; }
+  .vi-grupo-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--n-noche); }
+  .vi-grupo-h h3 { margin: 0; font-size: var(--n-sub); font-weight: 700; }
+  .vi-grupo-h p { color: var(--n-texto2); }
+  .vi-planes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+  .vi-planes--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+  .vi-planes--5 .vi-plan-c { padding: 16px; }
+  .vi-planes--5 .vi-plan-t { font-size: 18px; }
+  .vi-plan-ahorro { height: 26px; font-size: 12px; padding: 0 8px; }
   .vi-plan { display: grid; grid-template-rows: auto 1fr; height: 100%; background: #fff; color: inherit; transition: background-color var(--mk-t) var(--mk-ease); }
   .vi-plan:hover { background: #FFF3B0; }
-  .vi-plan--dest { box-shadow: inset 0 0 0 3px var(--n-amarillo); }
-  .vi-plan-f { aspect-ratio: 16 / 10; }
-  .vi-plan-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .vi-tag-combo { background: var(--n-noche); color: var(--n-amarillo); }
-  .vi-plan-c { display: flex; flex-direction: column; gap: 8px; padding: 24px; }
-  .vi-plan-t { margin: 4px 0 0; font-size: var(--n-sub); line-height: 1.2; font-weight: 700; }
-  .vi-plan-x { color: var(--n-texto2); font-size: 15px; }
-  .vi-plan-k { margin-top: 8px; font-size: 13px; font-weight: 700; color: var(--n-lavanda-osc); }
-  .vi-plan-l { display: grid; gap: 4px; font-size: 15px; }
-  .vi-plan-l li { position: relative; padding-left: 16px; }
-  .vi-plan-l li::before { content: ""; position: absolute; left: 0; top: .6em; width: 6px; height: 6px; background: var(--n-noche); }
-  .vi-plan-m { display: grid; gap: 6px; margin-top: 8px; font-size: 14px; font-weight: 600; }
-  .vi-plan-m span { display: inline-flex; gap: 8px; align-items: center; }
-  .vi-plan-pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 20px; border-top: 2px solid var(--n-noche); }
-  .vi-plan-l + .vi-plan-pie, .vi-plan-m + .vi-plan-pie { margin-top: auto; }
-  .vi-plan-p { font-size: 20px; font-weight: 700; }
+  .vi-plan-f { display: block; aspect-ratio: 1; overflow: hidden; background: var(--n-carbon); }
+  .vi-plan-f img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--mk-ease); }
+  a:hover .vi-plan-f img { transform: scale(1.04); }
+  .vi-plan-c { display: flex; flex-direction: column; gap: 12px; padding: 20px; }
+  .vi-plan-t { margin: 0; font-size: 20px; line-height: 1.2; font-weight: 700; }
+  .vi-plan-d { display: grid; gap: 8px; font-size: 14px; }
+  .vi-plan-d dt { font-size: 12px; font-weight: 700; color: var(--n-lavanda-osc); }
+  .vi-plan-d dd { margin: 0; }
+  .vi-plan-pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; padding-top: 14px; border-top: 2px solid var(--n-noche); }
+  .vi-plan-precio { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .vi-plan-precio b { font-size: 22px; font-weight: 700; }
   .vi-plan-a { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 2px; }
-  .vi-plan:hover .vi-plan-a :global(.mk-ic) { transform: translate(3px, -3px); }
   .vi-plan-a :global(.mk-ic) { transition: transform var(--mk-t-rapida) var(--mk-ease); }
-  .vi-fuente { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; margin-top: 24px; font-size: 14px; color: var(--n-texto2); }
-  .vi-fuente .n-ej { margin: 0; }
+  .vi-plan:hover .vi-plan-a :global(.mk-ic) { transform: translate(3px, -3px); }
+  .vi-extra { display: grid; align-content: end; justify-items: start; gap: 14px; padding: 24px; }
+  .vi-extra-t { font-size: 20px; font-weight: 700; line-height: 1.25; }
+  .vi-extra .n-a { color: var(--n-amarillo); }
+  .vi-fuente { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; margin-top: 32px; font-size: 14px; color: var(--n-texto2); }
 
-  /* Cine Domo */
+  /* Funciones */
   .vi-col { display: grid; gap: 16px; align-content: start; }
-  .vi-cd { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
-  .vi-cd-a { margin-top: 8px; color: var(--n-amarillo); }
-  .vi-cd-l { border-top: 2px solid rgba(255, 255, 255, .5); }
-  .vi-cd-l li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; padding: 22px 4px; border-bottom: 2px solid rgba(255, 255, 255, .5); }
-  .vi-cd-l b { font-size: var(--n-sub); }
-  .vi-cd-l span { color: var(--n-texto2-osc); align-self: center; }
+  .vi-fun { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 32px 20px; }
+  .vi-fun-a { display: grid; gap: 8px; align-content: start; justify-items: start; color: #fff; }
+  .vi-fun-a .vi-plan-f { width: 100%; margin-bottom: 6px; }
+  .vi-fun-t { margin: 0; font-size: 18px; line-height: 1.25; font-weight: 700; }
+  .vi-fun-a:hover .vi-fun-t { color: var(--n-amarillo); }
+  .vi-fun-m { font-size: 14px; color: var(--n-texto2-osc); }
+  .vi-fun-av { display: flex; gap: 8px; margin-top: 32px; font-size: 14px; color: var(--n-texto2-osc); }
+  .vi-fun-av :global(.mk-ic) { flex: none; color: var(--n-amarillo); }
 
   /* Cómo llegar */
   .vi-ll { display: grid; grid-template-columns: 6fr 6fr; gap: 56px; align-items: start; }
@@ -344,8 +363,10 @@ const ll = v.llegar;
   .vi-q p { padding: 0 4px 22px; font-size: 17px; line-height: 1.6; color: var(--n-texto2); max-width: 62ch; }
 
   @media (max-width: 1024px) {
-    .vi-cd, .vi-ll, .vi-ac, .vi-pr { grid-template-columns: 1fr; gap: 32px; }
-    .vi-planes, .vi-ex { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .vi-ll, .vi-ac, .vi-pr { grid-template-columns: 1fr; gap: 32px; }
+    .vi-planes, .vi-planes--5, .vi-ex { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .vi-planes--5 { gap: 24px; }
+    .vi-fun { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .vi-mapa { position: static; aspect-ratio: 16 / 10; }
     .vi-anclas { top: 72px; } .vi-sec { scroll-margin-top: 128px; }
   }
@@ -356,7 +377,16 @@ const ll = v.llegar;
     .vi-hoy li :global(.mk-ic) { display: none; }
     .vi-ho-h { font-size: 24px; }
     .vi-hoy li + li::before { content: none; }
-    .vi-ho, .vi-planes, .vi-se { grid-template-columns: 1fr; }
+    .vi-ho, .vi-se, .vi-pasos { grid-template-columns: 1fr; }
+    .vi-planes, .vi-planes--5 { grid-template-columns: 1fr; gap: 12px; }
+    .vi-plan { grid-template-columns: 128px 1fr; grid-template-rows: none; }
+    .vi-plan-f { aspect-ratio: 1; align-self: start; }
+    .vi-plan-c, .vi-planes--5 .vi-plan-c { padding: 14px; gap: 8px; }
+    .vi-plan-t { font-size: 17px; }
+    .vi-plan-d div:nth-child(n+2) { display: none; }
+    .vi-plan-precio b { font-size: 18px; }
+    .vi-fun { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 12px; }
+    .vi-fun-t { font-size: 16px; }
     .vi-ho-b { padding: 24px; }
     .vi-ex { gap: 12px; }
     .vi-plan-c { padding: 20px; }

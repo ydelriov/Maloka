@@ -23,13 +23,13 @@ const RUTAS = {
   'Salas interactivas': 'visitanos/#experiencias',
   'Laboratorios': 'visitanos/#experiencias',
   'Sala Digital': 'visitanos/#experiencias',
-  'Ver funciones': 'agendate/#programacion',
+  'Ver funciones': 'visitanos/#funciones',
   'Toda la programación': 'agendate/',
   'Ver todas': 'noticias/',
   // Agéndate
   'Agéndate': 'agendate/',
   'Programación': 'agendate/',
-  'Cine Domo': 'agendate/#programacion',
+  'Cine Domo': 'visitanos/#funciones',
   // Ven en grupo
   'Ven en grupo': 'ven-en-grupo/',
   'Colegios y universidades': 'ven-en-grupo/#colegios',
@@ -59,7 +59,7 @@ export const ruta = (label) => (MOSTRAR_PAGINAS && RUTAS[label] ? url(RUTAS[labe
 /** Enlace a una página interna por su ruta (p. ej. «agendate/»); «#» mientras estén ocultas. */
 export const pagina = (path) => (MOSTRAR_PAGINAS ? url(path) : '#');
 
-/** Para un grupo publicado (p. ej. «seleccion»): los enlaces de Visítanos van a su página dentro del grupo
- *  (/seleccion/visitanos/…); el resto sigue como `ruta`. Sin grupo, es igual a `ruta`. */
+/** Para un grupo publicado (p. ej. «seleccion»): los enlaces de Visítanos y Agéndate van a sus páginas dentro del
+ *  grupo (/seleccion/visitanos/…, /seleccion/agendate/…); el resto sigue como `ruta`. Sin grupo, es igual a `ruta`. */
 export const rutaPara = (grupo) => (label) =>
-  grupo && RUTAS[label]?.startsWith('visitanos/') ? url(`${grupo}/${RUTAS[label]}`) : ruta(label);
+  grupo && /^(visitanos|agendate)\//.test(RUTAS[label] || '') ? url(`${grupo}/${RUTAS[label]}`) : ruta(label);

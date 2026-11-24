@@ -1,0 +1,220 @@
+[
+ {
+  "key": "group_maloka_evento",
+  "title": "Datos del evento",
+  "description": "Campos de la agenda de Maloka (Agéndate) en el tipo de contenido «eventos».",
+  "fields": [
+   {
+    "key": "field_maloka_evento_fecha",
+    "label": "Fecha",
+    "name": "fecha",
+    "aria-label": "",
+    "type": "date_picker",
+    "instructions": "Día del evento. Si dura varios días, es el primero.",
+    "required": 1,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "33",
+     "class": "",
+     "id": ""
+    },
+    "display_format": "d/m/Y",
+    "return_format": "d/m/Y",
+    "first_day": 1
+   },
+   {
+    "key": "field_maloka_evento_fecha_fin",
+    "label": "Fecha final",
+    "name": "fecha_fin",
+    "aria-label": "",
+    "type": "date_picker",
+    "instructions": "Solo si el evento dura varios días.",
+    "required": 0,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "33",
+     "class": "",
+     "id": ""
+    },
+    "display_format": "d/m/Y",
+    "return_format": "d/m/Y",
+    "first_day": 1
+   },
+   {
+    "key": "field_maloka_evento_horario",
+    "label": "Horario",
+    "name": "horario",
+    "aria-label": "",
+    "type": "text",
+    "instructions": "Como se lee: «4:00 p. m.» o «9:00 a. m. a 5:00 p. m.».",
+    "required": 1,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "34",
+     "class": "",
+     "id": ""
+    },
+    "default_value": "",
+    "placeholder": "4:00 p. m.",
+    "maxlength": 80
+   },
+   {
+    "key": "field_maloka_evento_lugar",
+    "label": "Lugar",
+    "name": "lugar",
+    "aria-label": "",
+    "type": "select",
+    "instructions": "",
+    "required": 1,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "50",
+     "class": "",
+     "id": ""
+    },
+    "choices": {
+     "Cine Domo": "Cine Domo",
+     "Sala Digital": "Sala Digital",
+     "Laboratorio Bio": "Laboratorio Bio",
+     "Laboratorio Inventores": "Laboratorio Inventores",
+     "Laboratorio TIC": "Laboratorio TIC",
+     "Aulas Múltiples": "Aulas Múltiples",
+     "Huerta Uaque": "Huerta Uaque",
+     "Salas interactivas": "Salas interactivas",
+     "Maloka (todas las instalaciones)": "Maloka (todas las instalaciones)",
+     "Fuera de Maloka": "Fuera de Maloka"
+    },
+    "default_value": "Sala Digital",
+    "return_format": "value",
+    "multiple": 0,
+    "allow_null": 0,
+    "ui": 0,
+    "ajax": 0,
+    "placeholder": ""
+   },
+   {
+    "key": "field_maloka_evento_lugar_detalle",
+    "label": "Detalle del lugar",
+    "name": "lugar_detalle",
+    "aria-label": "",
+    "type": "text",
+    "instructions": "Opcional. Dirección si es fuera de Maloka.",
+    "required": 0,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "50",
+     "class": "",
+     "id": ""
+    },
+    "default_value": "",
+    "placeholder": "",
+    "maxlength": 120
+   },
+   {
+    "key": "field_maloka_evento_acceso",
+    "label": "Acceso",
+    "name": "acceso",
+    "aria-label": "",
+    "type": "radio",
+    "instructions": "",
+    "required": 1,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "50",
+     "class": "",
+     "id": ""
+    },
+    "choices": {
+     "inscripcion": "Gratis con inscripción",
+     "gratis": "Entrada libre",
+     "pago": "Evento pago"
+    },
+    "default_value": "inscripcion",
+    "return_format": "label",
+    "layout": "horizontal",
+    "allow_null": 0,
+    "other_choice": 0,
+    "save_other_choice": 0
+   },
+   {
+    "key": "field_maloka_evento_valor",
+    "label": "Valor",
+    "name": "valor",
+    "aria-label": "",
+    "type": "text",
+    "instructions": "Solo para eventos pagos. Ej.: $25.000",
+    "required": 0,
+    "conditional_logic": [
+     [
+      {
+       "field": "field_maloka_evento_acceso",
+       "operator": "==",
+       "value": "pago"
+      }
+     ]
+    ],
+    "wrapper": {
+     "width": "50",
+     "class": "",
+     "id": ""
+    },
+    "placeholder": "$25.000",
+    "maxlength": 40
+   },
+   {
+    "key": "field_maloka_evento_enlace",
+    "label": "Enlace de inscripción o compra",
+    "name": "enlace",
+    "aria-label": "",
+    "type": "url",
+    "instructions": "Formulario de inscripción o evento en TuBoleta. Déjalo vacío si es entrada libre.",
+    "required": 0,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "70",
+     "class": "",
+     "id": ""
+    },
+    "default_value": "",
+    "placeholder": "https://"
+   },
+   {
+    "key": "field_maloka_evento_destacado",
+    "label": "Destacar en Agéndate",
+    "name": "destacado",
+    "aria-label": "",
+    "type": "true_false",
+    "instructions": "El evento destacado sale grande arriba de la lista.",
+    "required": 0,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "30",
+     "class": "",
+     "id": ""
+    },
+    "message": "Sí, destacar",
+    "default_value": 0,
+    "ui": 1,
+    "ui_on_text": "",
+    "ui_off_text": ""
+   }
+  ],
+  "location": [
+   [
+    {
+     "param": "post_type",
+     "operator": "==",
+     "value": "eventos"
+    }
+   ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "show_in_rest": 0
+ }
+]
