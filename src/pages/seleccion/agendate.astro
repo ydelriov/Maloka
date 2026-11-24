@@ -1,0 +1,240 @@
+---
+/* Agéndate · propuesta con el Design System v3 de la V13 (publicada en /seleccion/agendate/).
+   Pensada para que el equipo la actualice desde WordPress sin tocar el diseño: cada evento es una entrada en la
+   categoría «Eventos» con campos ACF (fecha, horario, lugar, acceso, enlace) y una subcategoría por tipo.
+   En Elementor Pro todo es nativo: Loop Grid (con Query ID para mostrar solo los próximos, ordenados por fecha),
+   Filtro de taxonomía, Loop Item con etiquetas dinámicas de ACF. Guía completa en elementor/README.md.
+   1. Cabecera compacta · 2. Próximos eventos: filtro por tipo, evento destacado y filas con fecha grande
+   3. Eventos recientes (los que ya pasaron, en gris) · 4. Todos los días en Maloka. El boletín va en la cabecera y en el footer.
+   Aquí los próximos y los pasados se calculan con la fecha del día en que se construye el sitio. */
+import Base from '../../layouts/Base.astro';
+import NHeader from '../../components/n/NHeader.astro';
+import NFiltros from '../../components/n/NFiltros.astro';
+import NFooter from '../../components/n/NFooter.astro';
+import Icon from '../../components/ui/Icon.astro';
+import a from '../../data/n/agenda.json';
+import { rutaPara } from '../../lib/rutas.js';
+import { url } from '../../lib/url.js';
+import '../../styles/noche.css';
+const G = 'seleccion';
+const ruta = rutaPara(G);
+const hoy = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Bogota' }); // AAAA-MM-DD
+const tipo = Object.fromEntries(a.tipos.map((t) => [t.id, t]));
+const fin = (e) => e.fechaFin || e.fecha;
+const proximos = a.eventos.filter((e) => fin(e) >= hoy).sort((x, y) => x.fecha.localeCompare(y.fecha));
+const pasados = a.eventos.filter((e) => fin(e) < hoy).sort((x, y) => y.fecha.localeCompare(x.fecha)).slice(0, 6);
+const destacado = proximos.find((e) => e.destacado) || proximos[0];
+const lista = proximos.filter((e) => e !== destacado);
+const f = (iso, o) => new Date(`${iso}T12:00:00`).toLocaleDateString('es-CO', o);
+const dia = (iso) => f(iso, { day: 'numeric' });
+const mes = (iso) => f(iso, { month: 'short' }).replace('.', '');
+const sem = (iso) => f(iso, { weekday: 'short' }).replace('.', '');
+const rango = (e) => (e.fechaFin ? `${dia(e.fecha)}–${dia(e.fechaFin)}` : dia(e.fecha));
+const cta = (e) => (e.acceso === 'pago' ? 'Compra tu entrada' : e.acceso === 'inscripcion' ? 'Inscríbete' : null);
+const filtros = [{ id: 'todo', label: 'Todos' }, ...a.tipos.map((t) => ({ id: t.id, label: t.label }))];
+---
+<Base variante="agendate" grupo={G} title="Agéndate · Talleres, charlas, cine y eventos · Maloka" description="Agenda de Maloka en Bogotá: talleres, charlas de ciencia, cine, artes escénicas y encuentros. Muchos eventos son gratis con inscripción previa." clase="nn">
+  <NHeader variante="blanco" panel="hueso" grupo={G} inicio={url(`${G}/`)} />
+  <main id="contenido">
+    <!-- 1 · Cabecera -->
+    <section class="ag-hero n-hueso" aria-labelledby="ag-h1">
+      <div class="mk-w ag-hero-in">
+        <nav class="ag-migas" aria-label="Ruta"><a href={url(`${G}/`)}>Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Agéndate</span></nav>
+        <h1 class="ag-h1" id="ag-h1">{a.hero.titulo}</h1>
+        <p class="ag-lead">{a.hero.texto}</p>
+        <a class="n-a ag-bol" href={a.boletin.url} target="_blank" rel="noopener">{a.boletin.texto.replace('.', '')}: {a.boletin.enlace.toLowerCase()}<Icon name="ext" size="18" /></a>
+      </div>
+    </section>
+
+    <!-- 2 · Próximos eventos -->
+    <section class="n-sec n-blanco ag-sec" id="programacion" aria-labelledby="ag-pr">
+      <div class="mk-w">
+        <div class="n-head">
+          <div><p class="n-ante">Programación</p><h2 class="n-titulo" id="ag-pr">Próximos eventos</h2></div>
+          <NFiltros filtros={filtros} objetivo="ag-lista" etiqueta="Filtrar por tipo de evento" unidad="eventos" />
+        </div>
+
+        <div id="ag-lista">
+          {destacado && (
+            <article class="ag-dest" data-filtro={destacado.tipo}>
+              <a class="ag-dest-f n-foto" href={destacado.url}><img src={destacado.afiche} alt={`Afiche de ${destacado.titulo}`} width="1080" height="1440" loading="eager" /></a>
+              <div class="ag-dest-c">
+                <p class="ag-dest-fecha"><b class="t-num">{rango(destacado)}</b><span>{mes(destacado.fecha)}</span></p>
+                <span class={`n-tag n-tag--${tipo[destacado.tipo].color}`}>{tipo[destacado.tipo].label}</span>
+                <h3 class="ag-dest-t"><a href={destacado.url}>{destacado.titulo}</a></h3>
+                <p class="ag-dest-x">{destacado.resumen}</p>
+                <ul class="ag-meta">
+                  <li><Icon name="clock" size="20" />{destacado.horario}</li>
+                  <li><Icon name="pin" size="20" />{destacado.lugar}</li>
+                  <li><Icon name="ticket" size="20" />{a.acceso[destacado.acceso]}{destacado.valor && ` · ${destacado.valor}`}</li>
+                </ul>
+                <div class="ag-dest-acc">
+                  {cta(destacado) && <a class="n-b" href={destacado.enlace} target="_blank" rel="noopener">{cta(destacado)}<Icon name="ext" /><span class="sr-only"> (abre en una pestaña nueva)</span></a>}
+                  <a class="n-a" href={destacado.url}>Más información<Icon name="arrow" size="20" /></a>
+                </div>
+              </div>
+            </article>
+          )}
+
+          <ul class="ag-filas">
+            {lista.map((e, i) => (
+              <li data-filtro={e.tipo} data-rv style={`--d:${i}`}>
+                <article class="ag-fila" style={`--c:var(--n-${tipo[e.tipo].color})`}>
+                  <p class="ag-fecha"><b class="t-num">{rango(e)}</b><span>{mes(e.fecha)}</span><small>{sem(e.fecha)}</small></p>
+                  <a class="ag-fila-f n-foto" href={e.url} tabindex="-1" aria-hidden="true"><img src={e.afiche} alt="" width="1080" height="1440" loading="lazy" /></a>
+                  <div class="ag-fila-c">
+                    <span class={`n-tag n-tag--${tipo[e.tipo].color}`}>{tipo[e.tipo].label}</span>
+                    <h3 class="ag-fila-t"><a href={e.url}>{e.titulo}</a></h3>
+                    <p class="ag-fila-m"><span><Icon name="clock" size="18" />{e.horario}</span><span><Icon name="pin" size="18" />{e.lugar}</span></p>
+                  </div>
+                  <div class="ag-fila-acc">
+                    <span class="ag-acceso">{a.acceso[e.acceso]}{e.valor && ` · ${e.valor}`}</span>
+                    {cta(e) && <a class="n-a" href={e.enlace} target="_blank" rel="noopener">{cta(e)}<Icon name="ext" size="18" /><span class="sr-only"> {e.titulo} (abre en una pestaña nueva)</span></a>}
+                  </div>
+                </article>
+              </li>
+            ))}
+          </ul>
+          <p class="ag-vacio" data-ag-vacio hidden>No hay eventos de este tipo por ahora. Mira <button type="button" class="ag-todos" data-ag-todos>todos los eventos</button>.</p>
+        </div>
+        <span class="n-ej">Eventos reales de maloka.org · en WordPress cada uno es una entrada que el equipo crea</span>
+      </div>
+    </section>
+
+    <!-- 3 · Eventos recientes -->
+    {pasados.length > 0 && (
+      <section class="n-sec n-hueso" aria-labelledby="ag-pa">
+        <div class="mk-w">
+          <div class="n-head"><div><p class="n-ante">Ya pasaron</p><h2 class="n-titulo" id="ag-pa">Eventos recientes</h2><p class="n-lead">Los eventos salen solos de «Próximos» al terminar su fecha.</p></div></div>
+          <ul class="ag-pasados">
+            {pasados.map((e) => (
+              <li class="ag-pas">
+                <p class="ag-pas-f t-num">{dia(e.fecha)} {mes(e.fecha)}</p>
+                <span class="ag-pas-tag">{tipo[e.tipo].label}</span>
+                <h3 class="ag-pas-t">{e.url ? <a href={e.url}>{e.titulo}</a> : e.titulo}</h3>
+                <p class="ag-pas-x">{e.resumen}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )}
+
+    <!-- 4 · Todos los días -->
+    <section class="n-sec n-noche" aria-labelledby="ag-td">
+      <div class="mk-w ag-td">
+        <div class="ag-col">
+          <p class="n-ante">Todos los días</p>
+          <h2 class="n-titulo" id="ag-td">{a.permanente.titulo}</h2>
+          <p class="n-lead">{a.permanente.texto}</p>
+        </div>
+        <ul class="ag-td-l">
+          {a.permanente.items.map((p) => (
+            <li><a class="ag-td-a" href={url(`${G}/${p.ruta}`)} style={`--c:var(--n-${p.color})`}><span><b>{p.titulo}</b><span>{p.texto}</span></span><Icon name="arrow" size="24" /></a></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+  </main>
+  <NFooter grupo={G} />
+</Base>
+
+<style>
+  .ag-hero { padding-block: 32px 36px; }
+  .ag-hero-in { display: grid; gap: 10px; justify-items: start; }
+  .ag-migas { display: flex; gap: 8px; font-size: 14px; font-weight: 600; color: var(--n-texto2); }
+  .ag-migas a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  .ag-migas [aria-current] { color: var(--n-noche); }
+  .ag-h1 { margin: 0; font-size: var(--n-titulo); line-height: 1.1; font-weight: 700; letter-spacing: -0.015em; }
+  .ag-lead { font-size: 16px; line-height: 1.5; color: var(--n-texto2); max-width: 640px; }
+  .ag-sec { scroll-margin-top: 96px; }
+
+  /* Destacado */
+  .ag-dest { display: grid; grid-template-columns: 4fr 8fr; gap: 48px; align-items: center; padding: 32px; margin-bottom: 40px; background: var(--mk-hueso); }
+  .ag-dest-f { aspect-ratio: 3 / 4; }
+  .ag-dest-c { display: grid; gap: 14px; justify-items: start; }
+  .ag-dest-fecha { display: flex; align-items: baseline; gap: 10px; line-height: 1; }
+  .ag-dest-fecha b { font-size: 72px; font-weight: 700; letter-spacing: -0.03em; }
+  .ag-dest-fecha span { font-size: 24px; font-weight: 700; }
+  .ag-dest-t { margin: 0; font-size: var(--n-titulo); line-height: 1.1; font-weight: 700; }
+  .ag-dest-t a { color: inherit; }
+  .ag-dest-t a:hover { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
+  .ag-dest-x { font-size: 18px; line-height: 1.55; color: var(--n-texto2); max-width: 56ch; }
+  .ag-meta { display: grid; gap: 8px; font-size: 16px; font-weight: 600; }
+  .ag-meta li { display: flex; align-items: center; gap: 10px; }
+  .ag-dest-acc { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; margin-top: 8px; }
+
+  /* Filas */
+  .ag-filas { border-top: 2px solid var(--n-noche); }
+  .ag-filas > li { border-bottom: 2px solid var(--n-noche); }
+  .ag-fila { display: grid; grid-template-columns: 110px 96px 1fr 220px; gap: 28px; align-items: center; padding: 24px 16px; transition: background-color var(--mk-t-rapida); }
+  .ag-fila:hover { background: color-mix(in srgb, var(--c) 45%, #fff); }
+  .ag-fecha { display: grid; line-height: 1; }
+  .ag-fecha b { font-size: 56px; font-weight: 700; letter-spacing: -0.03em; }
+  .ag-fecha span { font-size: 18px; font-weight: 700; margin-top: 6px; }
+  .ag-fecha small { font-size: 14px; color: var(--n-texto2); margin-top: 4px; }
+  .ag-fila-f { aspect-ratio: 3 / 4; }
+  .ag-fila-c { display: grid; gap: 8px; justify-items: start; }
+  .ag-fila-t { margin: 0; font-size: var(--n-sub); line-height: 1.2; font-weight: 700; }
+  .ag-fila-t a { color: inherit; }
+  .ag-fila-t a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .ag-fila-m { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 15px; font-weight: 600; }
+  .ag-fila-m span { display: inline-flex; align-items: center; gap: 6px; }
+  .ag-fila-acc { display: grid; gap: 10px; justify-items: start; }
+  .ag-acceso { font-size: 14px; font-weight: 700; padding: 4px 10px; background: var(--n-noche); color: var(--n-amarillo); }
+  .ag-vacio { padding: 32px 0; font-size: 17px; }
+  .ag-todos { padding: 0; border: 0; background: none; font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; }
+
+  /* Recientes */
+  .ag-pasados { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 32px; border-top: 2px solid rgba(35, 27, 43, .3); }
+  .ag-pas { display: grid; gap: 6px; align-content: start; padding: 20px 0; border-bottom: 1px solid rgba(35, 27, 43, .2); color: var(--n-texto2); }
+  .ag-pas-f { font-size: 15px; font-weight: 700; }
+  .ag-pas-tag { justify-self: start; font-size: 12px; font-weight: 700; padding: 2px 8px; border: 1px solid currentColor; }
+  .ag-pas-t { margin: 0; font-size: 18px; line-height: 1.25; font-weight: 700; color: var(--n-noche); }
+  .ag-pas-t a { color: inherit; }
+  .ag-pas-x { font-size: 14px; }
+
+  /* Todos los días */
+  .ag-col { display: grid; gap: 16px; align-content: start; }
+  .ag-td { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
+  .ag-td-l { border-top: 2px solid rgba(255, 255, 255, .5); }
+  .ag-td-l li { border-bottom: 2px solid rgba(255, 255, 255, .5); }
+  .ag-td-a { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 24px 16px; color: #fff; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
+  .ag-td-a > span { display: grid; gap: 4px; }
+  .ag-td-a b { font-size: var(--n-sub); }
+  .ag-td-a > span span { color: var(--n-texto2-osc); }
+  .ag-td-a:hover { background: var(--c); color: var(--n-noche); }
+  .ag-td-a:hover > span span { color: var(--n-noche); }
+
+  .ag-bol { margin-top: 4px; font-size: 15px; }
+
+  @media (max-width: 1024px) {
+    .ag-dest { grid-template-columns: 5fr 7fr; gap: 32px; padding: 24px; }
+    .ag-dest-fecha b { font-size: 56px; }
+    .ag-fila { grid-template-columns: 88px 80px 1fr; }
+    .ag-fila-acc { grid-column: 3; }
+    .ag-pasados { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ag-td { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 767px) {
+    .ag-hero { padding-block: 24px 28px; }
+    .ag-dest { grid-template-columns: 1fr; padding: 16px; gap: 20px; }
+    .ag-dest-f { aspect-ratio: 4 / 5; }
+    .ag-dest-fecha b { font-size: 48px; }
+    .ag-fila { grid-template-columns: 64px 1fr; gap: 12px 16px; padding: 20px 4px; }
+    .ag-fila-f { display: none; }
+    .ag-fila-c, .ag-fila-acc { grid-column: 2; }
+    .ag-fecha b { font-size: 36px; }
+    .ag-pasados { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  /* Mensaje cuando el filtro no deja ningún evento (en Elementor: «Mensaje sin resultados» del Loop Grid) */
+  const lista = document.getElementById('ag-lista');
+  const vacio = lista.querySelector('[data-ag-vacio]');
+  const revisar = () => { vacio.hidden = [...lista.querySelectorAll('[data-filtro]')].some((el) => !el.hidden); };
+  document.querySelectorAll('[data-nfl="ag-lista"] [data-f]').forEach((b) => b.addEventListener('click', () => setTimeout(revisar)));
+  lista.querySelector('[data-ag-todos]').addEventListener('click', () => document.querySelector('[data-nfl="ag-lista"] [data-f="todo"]').click());
+</script>
