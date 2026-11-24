@@ -364,6 +364,6 @@ campaña con su **imagen de fondo**, **título**, **descripción**, **texto del 
 campaña se edita ese ítem; para agregar o quitar, se duplica o borra un ítem. El horario de hoy va en su propio
 contenedor debajo del banner.
 
-Lo que el widget Slides no trae y la maqueta sí: la etiqueta de tipo (en Elementor va al inicio de la descripción:
-«Promoción · …»), las pestañas con el nombre de cada campaña (Slides usa puntos) y el botón de pausa (Slides se
-pausa al pasar el mouse o al tocarlo).
+El texto va centrado verticalmente (Slides › Posición vertical: Centro), sin etiqueta de tipo. Lo que el widget
+Slides no trae y la maqueta sí: las pestañas con el nombre de cada campaña (Slides usa puntos) y el botón de pausa
+(Slides se pausa al pasar el mouse o al tocarlo).

@@ -35,7 +35,6 @@ const destino = (c) => c.url || ruta(c.ruta);
       <div class="nhe-slides">
         {slides.map((s, i) => (
           <div class:list={['nhe-slide', i === 0 && 'is-activa']} role="group" aria-roledescription="diapositiva" aria-label={`${i + 1} de ${slides.length}${s.tipo ? `: ${s.tipo}` : ''}`} aria-hidden={i === 0 ? undefined : 'true'} data-slide>
-            {s.tipo && <span class="nhe-tipo">{s.tipo}</span>}
             {i === 0 ? <h1 class="nhe-t">{s.titulo}</h1> : <p class="nhe-t">{s.titulo}</p>}
             <p class="nhe-x">{s.texto}</p>
             {s.cta && (
@@ -87,10 +86,14 @@ const destino = (c) => c.url || ruta(c.ruta);
   /* Campañas (V13) */
   .nhe-capa { position: absolute; inset: 0; opacity: 0; transition: opacity 600ms var(--mk-ease); }
   .nhe--campanas .nhe-velo { top: 0; height: auto; background: rgba(20, 10, 31, .38); }
-  .nhe--campanas .nhe-slide { align-content: end; }
+  .nhe--campanas .nhe-slide { align-content: center; }
+  @media (min-width: 1025px) {
+    .nhe--campanas.nhe--foto { align-items: center; }
+    .nhe--campanas.nhe--foto .nhe-txt-w { padding-block: 40px 196px; }
+  }
+  @media (max-width: 1024px) { .nhe--campanas.nhe--foto .nhe-txt-w { align-items: center; padding-block: 24px; } }
   .nhe-capa.is-activa { opacity: 1; }
   .nhe-capa--contener :global(.nhe-img) { object-fit: contain; object-position: 85% 40%; padding: 48px 0 220px; }
-  .nhe-tipo { justify-self: start; padding: 4px 12px; background: var(--n-amarillo); color: var(--n-noche); font-size: 14px; font-weight: 700; }
   .nhe-cta { display: inline-flex; align-items: center; gap: 10px; justify-self: start; min-height: 56px; margin-top: 8px; padding: 0 24px; background: var(--n-amarillo); color: var(--n-noche); font-size: 18px; font-weight: 700; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
   .nhe-cta:hover { background: #fff; }
   .nhe-cta :global(.mk-ic:last-of-type) { transition: transform var(--mk-t-rapida) var(--mk-ease); }

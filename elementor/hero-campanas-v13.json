@@ -5,7 +5,7 @@
  "page_settings": {},
  "content": [
   {
-   "id": "c3e17927",
+   "id": "b28ed205",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -25,16 +25,16 @@
    },
    "elements": [
     {
-     "id": "30136782",
+     "id": "88f79a76",
      "elType": "widget",
      "widgetType": "slides",
      "isInner": false,
      "settings": {
       "slides": [
        {
-        "_id": "grasgvr",
+        "_id": "4drdw93",
         "heading": "2x1 en Maloka este 25 y 27 de noviembre.",
-        "description": "Promoción · Recorrido Exploratorio por $49.000 para dos personas con el código Maloka2x1, en línea o en taquilla.",
+        "description": "Recorrido Exploratorio por $49.000 para dos personas con el código Maloka2x1, en línea o en taquilla.",
         "button_text": "Comprar entradas 2x1",
         "link": {
          "url": "https://maloka.checkout.tuboleta.com/list/partnerAdvantage?code=Maloka2x1",
@@ -54,9 +54,9 @@
         "background_overlay_color": "rgba(20,10,31,0.38)"
        },
        {
-        "_id": "6c8ujtd",
+        "_id": "13c6bh9",
         "heading": "Noviembre en Maloka.",
-        "description": "Agenda · Cine ambiental, talleres ecológicos, Noche de Museos y teatro para todas las edades.",
+        "description": "Cine ambiental, talleres ecológicos, Noche de Museos y teatro para todas las edades.",
         "button_text": "Ver la programación",
         "link": {
          "url": "/agendate/",
@@ -76,9 +76,9 @@
         "background_overlay_color": "rgba(20,10,31,0.38)"
        },
        {
-        "_id": "snhex2e",
+        "_id": "39hs615",
         "heading": "La Maloka: todo tiene su ciencia.",
-        "description": "Podcast · Escucha «Tonalidades humanas», el último episodio de la temporada, sobre la genética del color de la piel.",
+        "description": "Escucha «Tonalidades humanas», el último episodio de la temporada, sobre la genética del color de la piel.",
         "button_text": "Escuchar en Spotify",
         "link": {
          "url": "https://open.spotify.com/episode/2UP73QswKPyTR8sbBByvlF",
@@ -98,9 +98,9 @@
         "background_overlay_color": "rgba(20,10,31,0.38)"
        },
        {
-        "_id": "of43abl",
+        "_id": "2dbw9po",
         "heading": "Que no se te pase nada.",
-        "description": "Boletín · Recibe cada mes la agenda, las novedades y los descuentos de Maloka en tu correo.",
+        "description": "Recibe cada mes la agenda, las novedades y los descuentos de Maloka en tu correo.",
         "button_text": "Suscríbete al boletín",
         "link": {
          "url": "https://maloka.ipzmarketing.com/f/57LlRORGSBE",
@@ -145,7 +145,7 @@
       "transition_speed": 600,
       "content_animation": "fadeInUp",
       "slides_horizontal_position": "left",
-      "slides_vertical_position": "bottom",
+      "slides_vertical_position": "middle",
       "slides_text_align": "left",
       "content_max_width": {
        "unit": "%",
