@@ -9,11 +9,13 @@
  *    - evento_destacado   → el próximo evento marcado «Destacar en Agéndate» (poner «Entradas por página» = 1)
  *    - proximos_eventos   → los eventos que no han terminado, del más cercano al más lejano, sin el destacado
  *    - eventos_pasados    → los que ya pasaron, del más reciente al más antiguo
+ *    - proximos_home      → la agenda de la home: los 3 eventos más cercanos que no han terminado (incluye el destacado)
  * 2. Shortcodes para la tarjeta (Loop Item), con la fecha en español:
- *    [evento_dias]               → «28» o «28–29»
+ *    [evento_dias]               → «28» o «28–29» (el rango va en <span class="maloka-rango">)
  *    [evento_fecha formato="M"]  → «nov.» (cualquier formato de fecha de PHP: j, D, l, F…)
  *    [evento_acceso]             → «Gratis con inscripción» o «Evento pago · $25.000»
  *    [evento_boton]              → «Inscríbete» / «Compra tu entrada» / vacío si es entrada libre
+ *    [evento_descripcion]        → «Ver descripción» desplegable (<details>) con el texto completo del evento
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -43,10 +45,19 @@ function maloka_meta_proximos() {
 	);
 }
 
-/** ID del próximo evento destacado (o 0). */
+/**
+ * ID del próximo evento destacado (o 0).
+ * La consulta interna va marcada con «maloka_interno»: mientras Elementor arma un Loop Grid, sus Query ID se disparan
+ * en todas las consultas, también en esta, y sin la marca se llamaría a sí misma sin fin.
+ */
 function maloka_id_destacado() {
+	static $id = null;
+	if ( null !== $id ) {
+		return $id;
+	}
 	$ids = get_posts(
 		array(
+			'maloka_interno' => true,
 			'post_type'      => 'eventos',
 			'posts_per_page' => 1,
 			'fields'         => 'ids',
@@ -60,12 +71,16 @@ function maloka_id_destacado() {
 			),
 		)
 	);
-	return $ids ? (int) $ids[0] : 0;
+	$id = $ids ? (int) $ids[0] : 0;
+	return $id;
 }
 
 add_action(
 	'elementor/query/evento_destacado',
 	function ( $query ) {
+		if ( $query->get( 'maloka_interno' ) ) {
+			return;
+		}
 		$id = maloka_id_destacado();
 		$query->set( 'post__in', $id ? array( $id ) : array( 0 ) );
 		$query->set( 'posts_per_page', 1 );
@@ -75,6 +90,9 @@ add_action(
 add_action(
 	'elementor/query/proximos_eventos',
 	function ( $query ) {
+		if ( $query->get( 'maloka_interno' ) ) {
+			return;
+		}
 		$query->set( 'meta_query', maloka_meta_proximos() );
 		$query->set( 'meta_key', 'fecha' );
 		$query->set( 'orderby', 'meta_value_num' );
@@ -87,8 +105,25 @@ add_action(
 );
 
 add_action(
+	'elementor/query/proximos_home',
+	function ( $query ) {
+		if ( $query->get( 'maloka_interno' ) ) {
+			return;
+		}
+		$query->set( 'meta_query', maloka_meta_proximos() );
+		$query->set( 'meta_key', 'fecha' );
+		$query->set( 'orderby', 'meta_value_num' );
+		$query->set( 'order', 'ASC' );
+		$query->set( 'posts_per_page', 3 );
+	}
+);
+
+add_action(
 	'elementor/query/eventos_pasados',
 	function ( $query ) {
+		if ( $query->get( 'maloka_interno' ) ) {
+			return;
+		}
 		$query->set(
 			'meta_query',
 			array( array( 'key' => 'fecha', 'value' => maloka_hoy(), 'compare' => '<', 'type' => 'NUMERIC' ) )
@@ -128,7 +163,8 @@ add_shortcode(
 		}
 		$texto = wp_date( 'j', $ini );
 		if ( $fin && $fin > $ini ) {
-			$texto .= '–' . wp_date( 'j', $fin );
+			// Rango de días: va en un span para mostrarlo más pequeño («28–29» no cabe al tamaño de un solo día)
+			return '<span class="maloka-rango">' . esc_html( $texto . '–' . wp_date( 'j', $fin ) ) . '</span>';
 		}
 		return esc_html( $texto );
 	}
@@ -166,5 +202,17 @@ add_shortcode(
 			esc_url( $enlace ),
 			esc_html( $texto )
 		);
+	}
+);
+
+add_shortcode(
+	'evento_descripcion',
+	function () {
+		$contenido = get_post_field( 'post_content', get_the_ID() );
+		if ( ! trim( wp_strip_all_tags( $contenido ) ) ) {
+			return '';
+		}
+		return '<details class="maloka-evento-desc"><summary>Ver descripción</summary><div>'
+			. wpautop( wp_kses_post( strip_shortcodes( $contenido ) ) ) . '</div></details>';
 	}
 );

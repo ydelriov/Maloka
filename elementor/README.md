@@ -12,6 +12,9 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `acf-evento.json` | Campos de cada evento (tipo de contenido «eventos»): fecha, horario, lugar, acceso, enlace, destacado | ACF › Herramientas › Importar |
 | `agenda-snippet.php` | Ordena la agenda por fecha, oculta los eventos pasados y formatea las fechas | Plugin Code Snippets |
 | `visitanos-v13-parte1.json`, `-parte2.json`, `-parte3.json` | Página Visítanos en 3 partes (10 secciones) | Se insertan en orden en la página Visítanos |
+| `loop-evento.json`, `loop-evento-destacado.json`, `loop-evento-texto.json`, `loop-evento-pasado.json` | Loop Items de la agenda: fila de Agéndate, destacado, fila de solo texto (home) y evento reciente | Plantillas › Theme Builder › Loop Item (tipo de contenido Eventos) |
+| `agendate-v13.json` | Página Agéndate conectada a los eventos: filtro, destacado, próximos, recientes y «Todos los días» | Se inserta en la página Agéndate |
+| `home-v13-agenda.json` | Sección «Próximos eventos» de la home: los 3 eventos más cercanos | Reemplaza la sección Agenda de Inicio |
 | `home-v13-secciones.json` | Las 6 secciones de la home debajo del hero (Imperdibles, Agenda, Ven en grupo, Descubre con mapa, Crea, Noticias) | Plantillas › Plantillas guardadas, y se inserta en Inicio debajo del hero |
 
 ## Menú y header · paso a paso
@@ -157,7 +160,7 @@ Sin `--medios`, las fotos apuntan a GitHub Pages; con `--medios archivo.json` us
 | # | Sección | Contenedores y widgets |
 |---|---|---|
 | 1 | Imperdibles (hueso) | Contenedor-enlace grande con foto de fondo + tres filas con foto cuadrada |
-| 2 | Agenda (blanco) | Filtros (HTML con script) y 4 filas-enlace: fecha grande, etiqueta, título y Lista de iconos |
+| 2 | Agenda (blanco) | **Reemplazada por `home-v13-agenda.json`** (Loop Grid conectado a los eventos). La versión estática de este archivo queda solo como referencia |
 | 3 | Ven en grupo (noche) | Pista con scroll horizontal (clase `mk-carrusel`) y flechas (HTML con script) |
 | 4 | Descubre (menta) | Mapa de territorios (HTML con el SVG) y 4 tarjetas-enlace en 2 columnas |
 | 5 | Crea con Maloka (noche) | Enlace grande amarillo y 5 filas-enlace que se llenan de lavanda |
@@ -260,3 +263,25 @@ sumar los mismos campos ACF.
 6. **Publicar.** Aparece en Agéndate en su lugar por fecha y sale de «Próximos» solo cuando termina.
 
 Para los eventos que ya existen basta con abrir cada uno, llenar «Datos del evento» y asignarle su tipo.
+
+### Así quedó en pruebas.maloka.org
+
+Las plantillas se generan con `python3 scripts/elementor-agenda.py` (lee `src/data/n/agenda.json`).
+
+- **Tipo de contenido y taxonomía** creados con ACF (Eventos `eventos` y Tipos de evento `tipo_evento`, con Cine,
+  Talleres, Charlas, Artes escénicas y Encuentros), grupo «Datos del evento» importado de `acf-evento.json` (se agregó
+  el lugar «Cine Digital») y los 9 eventos de la maqueta cargados con su afiche, extracto, campos y tipo.
+- **Code Snippets** con `agenda-snippet.php` («Agenda de Maloka (Agéndate)»). Cambios frente a la guía:
+  - Query ID nuevo **`proximos_home`**: la home muestra los **3** eventos más cercanos, incluido el destacado
+    (`proximos_eventos` lo excluye porque en Agéndate va arriba en grande).
+  - Shortcode **`[evento_descripcion]`**: «Ver descripción» con `<details>`, en lugar del Acordeón anidado (el
+    experimento de elementos anidados no está activo en el sitio).
+  - `[evento_dias]` pone los rangos («28–29») en `<span class="maloka-rango">` para mostrarlos más pequeños.
+  - La consulta interna del destacado va marcada con `maloka_interno`: sin eso, los Query ID se llamaban a sí mismos
+    sin fin y la página se caía por memoria.
+- **Loop Items:** «Evento · fila (Agéndate)», «Evento · destacado (Agéndate)», «Evento · texto (home)» y
+  «Evento · reciente (Agéndate)». El color de la etiqueta y del hover sale de la clase `tipo_evento-<slug>` que
+  WordPress pone en cada ítem (CSS en los ajustes de cada Loop Item).
+- **Agéndate** (`/agendate/`) e **Inicio** (sección `#agenda`) usan esas plantillas con el Filtro de taxonomía.
+- Al importar a mano, los Loop Grid traen `@loop:<nombre>` en la plantilla: elige la Loop Item correspondiente.
+

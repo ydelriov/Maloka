@@ -1,0 +1,1578 @@
+{
+ "title": "Agéndate · V13",
+ "type": "page",
+ "version": "0.4",
+ "page_settings": {
+  "hide_title": "yes",
+  "template": "elementor_header_footer",
+  "custom_css": "/* Agéndate · comunes */\na.e-con { text-decoration: none; }\na.e-con:focus-visible { outline: 3px solid #6B5BD6; outline-offset: 3px; }\n.e-loop-item + .e-loop-item { margin-top: 0; }\n"
+ },
+ "content": [
+  {
+   "id": "6565dbf",
+   "elType": "container",
+   "settings": {
+    "_title": "Agéndate · cabecera",
+    "content_width": "full",
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "32",
+     "right": "0",
+     "bottom": "36",
+     "left": "0",
+     "isLinked": false
+    },
+    "html_tag": "section",
+    "background_background": "classic",
+    "background_color": "#F4F1EC",
+    "padding_mobile": {
+     "unit": "px",
+     "top": "24",
+     "right": "0",
+     "bottom": "28",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "0a05978",
+     "elType": "container",
+     "settings": {
+      "_title": "Cabecera · contenido",
+      "content_width": "boxed",
+      "flex_direction": "column",
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "80",
+       "bottom": "0",
+       "left": "80",
+       "isLinked": false
+      },
+      "boxed_width": {
+       "unit": "px",
+       "size": 1280,
+       "sizes": []
+      },
+      "flex_gap": {
+       "column": "10",
+       "row": "10",
+       "isLinked": true,
+       "unit": "px",
+       "size": 10
+      },
+      "flex_align_items": "flex-start",
+      "padding_tablet": {
+       "unit": "px",
+       "top": "0",
+       "right": "40",
+       "bottom": "0",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "0",
+       "right": "16",
+       "bottom": "0",
+       "left": "16",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "0760608",
+       "elType": "widget",
+       "settings": {
+        "editor": "<p><a href=\"/\">Inicio</a> <span aria-hidden=\"true\">/</span> <span aria-current=\"page\">Agéndate</span></p>",
+        "text_color": "#4F4955",
+        "typography_typography": "custom",
+        "typography_font_family": "Montserrat",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.4,
+         "sizes": []
+        },
+        "custom_css": "selector p { margin: 0; font-weight: 600; }\nselector a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }\nselector [aria-current] { color: #231B2B; }\n",
+        "html_tag": "nav"
+       },
+       "elements": [],
+       "widgetType": "text-editor"
+      },
+      {
+       "id": "8335ba7",
+       "elType": "widget",
+       "settings": {
+        "title": "Agéndate",
+        "header_size": "h1",
+        "title_color": "#231B2B",
+        "typography_typography": "custom",
+        "typography_font_family": "Montserrat",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 40,
+         "sizes": []
+        },
+        "typography_font_weight": "700",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.1,
+         "sizes": []
+        },
+        "typography_font_size_tablet": {
+         "unit": "px",
+         "size": 34,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 28,
+         "sizes": []
+        },
+        "typography_letter_spacing": {
+         "unit": "em",
+         "size": -0.015,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "widgetType": "heading"
+      },
+      {
+       "id": "3ae8ade",
+       "elType": "widget",
+       "settings": {
+        "editor": "<p>Talleres, charlas, cine, teatro y encuentros en Maloka. Muchos son gratis con inscripción previa: los cupos son limitados.</p>",
+        "text_color": "#4F4955",
+        "typography_typography": "custom",
+        "typography_font_family": "Montserrat",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.5,
+         "sizes": []
+        },
+        "custom_css": "selector p { margin: 0; }\n",
+        "_element_width": "initial",
+        "_element_custom_width": {
+         "unit": "px",
+         "size": 640,
+         "sizes": []
+        },
+        "_element_custom_width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "widgetType": "text-editor"
+      },
+      {
+       "id": "33ca5a5",
+       "elType": "widget",
+       "settings": {
+        "title": "Recibe la agenda de Maloka en tu correo cada mes: suscríbete al boletín ↗",
+        "header_size": "span",
+        "title_color": "#231B2B",
+        "typography_typography": "custom",
+        "typography_font_family": "Montserrat",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "700",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.3,
+         "sizes": []
+        },
+        "custom_css": "selector .elementor-heading-title { border-bottom: 2px solid currentColor; padding-bottom: 2px; }\nselector a { color: inherit; }\n",
+        "link": {
+         "url": "https://maloka.ipzmarketing.com/f/57LlRORGSBE",
+         "is_external": "on",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "_element_width": "auto"
+       },
+       "elements": [],
+       "widgetType": "heading"
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "ff419bf",
+   "elType": "container",
+   "settings": {
+    "_title": "Agéndate · próximos eventos",
+    "content_width": "full",
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "96",
+     "right": "0",
+     "bottom": "96",
+     "left": "0",
+     "isLinked": false
+    },
+    "html_tag": "section",
+    "background_background": "classic",
+    "background_color": "#FFFFFF",
+    "padding_tablet": {
+     "unit": "px",
+     "top": "80",
+     "right": "0",
+     "bottom": "80",
+     "left": "0",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "64",
+     "right": "0",
+     "bottom": "64",
+     "left": "0",
+     "isLinked": false
+    },
+    "flex_gap": {
+     "column": "0",
+     "row": "0",
+     "isLinked": true,
+     "unit": "px",
+     "size": 0
+    },
+    "custom_css": "selector { scroll-margin-top: 96px; }\n",
+    "_element_id": "programacion"
+   },
+   "elements": [
+    {
+     "id": "2d0ed61",
+     "elType": "container",
+     "settings": {
+      "_title": "Agéndate · próximos eventos · contenido",
+      "content_width": "boxed",
+      "flex_direction": "column",
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "80",
+       "bottom": "0",
+       "left": "80",
+       "isLinked": false
+      },
+      "boxed_width": {
+       "unit": "px",
+       "size": 1280,
+       "sizes": []
+      },
+      "flex_gap": {
+       "column": "40",
+       "row": "40",
+       "isLinked": true,
+       "unit": "px",
+       "size": 40
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "0",
+       "right": "40",
+       "bottom": "0",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "0",
+       "right": "16",
+       "bottom": "0",
+       "left": "16",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "ffd2db0",
+       "elType": "container",
+       "settings": {
+        "_title": "Encabezado",
+        "content_width": "full",
+        "flex_direction": "row",
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "flex_wrap": "wrap",
+        "flex_justify_content": "space-between",
+        "flex_align_items": "flex-end",
+        "flex_gap": {
+         "column": "32",
+         "row": "16",
+         "isLinked": false,
+         "unit": "px",
+         "size": 32
+        }
+       },
+       "elements": [
+        {
+         "id": "f05373e",
+         "elType": "container",
+         "settings": {
+          "_title": "Encabezado · textos",
+          "content_width": "full",
+          "flex_direction": "column",
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "flex_gap": {
+           "column": "10",
+           "row": "10",
+           "isLinked": true,
+           "unit": "px",
+           "size": 10
+          },
+          "custom_css": "selector { flex: 1 1 420px; }\n"
+         },
+         "elements": [
+          {
+           "id": "4efbd72",
+           "elType": "widget",
+           "settings": {
+            "title": "Programación",
+            "header_size": "p",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 18,
+             "sizes": []
+            },
+            "typography_font_weight": "600",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 16,
+             "sizes": []
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "9890cb0",
+           "elType": "widget",
+           "settings": {
+            "title": "Próximos eventos",
+            "header_size": "h2",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 40,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.1,
+             "sizes": []
+            },
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 34,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 28,
+             "sizes": []
+            },
+            "typography_letter_spacing": {
+             "unit": "em",
+             "size": -0.015,
+             "sizes": []
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "d127497",
+         "elType": "container",
+         "settings": {
+          "_title": "Filtro",
+          "content_width": "full",
+          "flex_direction": "column",
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "custom_css": "selector { --width: auto; width: auto; }\n"
+         },
+         "elements": [
+          {
+           "id": "213ad27",
+           "elType": "widget",
+           "settings": {
+            "selected_element": "a9e4c01",
+            "taxonomy": "tipo_evento",
+            "show_first_item": "yes",
+            "first_item_title": "Todos",
+            "multiple_selection": "",
+            "taxonomy_filter_typography_typography": "custom",
+            "taxonomy_filter_typography_font_family": "Montserrat",
+            "taxonomy_filter_typography_font_size": {
+             "unit": "px",
+             "size": 15,
+             "sizes": []
+            },
+            "taxonomy_filter_typography_font_weight": "600",
+            "taxonomy_filter_typography_line_height": {
+             "unit": "em",
+             "size": 1,
+             "sizes": []
+            },
+            "taxonomy_filter_items_space_between": {
+             "unit": "px",
+             "size": 8,
+             "sizes": []
+            },
+            "taxonomy_filter_normal_text_color": "#231B2B",
+            "taxonomy_filter_normal_background_background": "classic",
+            "taxonomy_filter_normal_background_color": "rgba(0,0,0,0)",
+            "taxonomy_filter_normal_border_border": "solid",
+            "taxonomy_filter_normal_border_width": {
+             "unit": "px",
+             "top": "2",
+             "right": "2",
+             "bottom": "2",
+             "left": "2",
+             "isLinked": false
+            },
+            "taxonomy_filter_normal_border_color": "#231B2B",
+            "taxonomy_filter_hover_text_color": "#231B2B",
+            "taxonomy_filter_hover_background_background": "classic",
+            "taxonomy_filter_hover_background_color": "rgba(35,27,43,0.08)",
+            "taxonomy_filter_active_text_color": "#FFE25C",
+            "taxonomy_filter_active_background_background": "classic",
+            "taxonomy_filter_active_background_color": "#231B2B",
+            "taxonomy_filter_active_border_border": "solid",
+            "taxonomy_filter_active_border_width": {
+             "unit": "px",
+             "top": "2",
+             "right": "2",
+             "bottom": "2",
+             "left": "2",
+             "isLinked": false
+            },
+            "taxonomy_filter_active_border_color": "#231B2B",
+            "taxonomy_filter_border_radius": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "taxonomy_filter_padding": {
+             "unit": "px",
+             "top": "12",
+             "right": "18",
+             "bottom": "12",
+             "left": "18",
+             "isLinked": false
+            },
+            "custom_css": "selector { --width: auto; width: auto; }\nselector button, selector a { min-height: 44px; }\n"
+           },
+           "elements": [],
+           "widgetType": "taxonomy-filter"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "9a42d9b",
+       "elType": "container",
+       "settings": {
+        "_title": "Destacado",
+        "content_width": "full",
+        "flex_direction": "column",
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "9a0800d",
+         "elType": "widget",
+         "settings": {
+          "_skin": "post",
+          "template_id": "@loop:evento-destacado",
+          "columns": 1,
+          "columns_tablet": 1,
+          "columns_mobile": 1,
+          "posts_per_page": 1,
+          "post_query_post_type": "eventos",
+          "post_query_query_id": "evento_destacado",
+          "pagination_type": "",
+          "column_gap": {
+           "unit": "px",
+           "size": 32,
+           "sizes": []
+          },
+          "row_gap": {
+           "unit": "px",
+           "size": 0,
+           "sizes": []
+          },
+          "row_gap_tablet": {
+           "unit": "px",
+           "size": 0,
+           "sizes": []
+          },
+          "row_gap_mobile": {
+           "unit": "px",
+           "size": 0,
+           "sizes": []
+          },
+          "nothing_found_message_text": "",
+          "nothing_found_message_color": "#4F4955",
+          "nothing_found_message_typography_typography": "custom",
+          "nothing_found_message_typography_font_family": "Montserrat",
+          "nothing_found_message_typography_font_size": {
+           "unit": "px",
+           "size": 17,
+           "sizes": []
+          },
+          "nothing_found_message_typography_font_weight": "400",
+          "nothing_found_message_typography_line_height": {
+           "unit": "em",
+           "size": 1.5,
+           "sizes": []
+          }
+         },
+         "elements": [],
+         "widgetType": "loop-grid"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "7974372",
+       "elType": "container",
+       "settings": {
+        "_title": "Lista",
+        "content_width": "full",
+        "flex_direction": "column",
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "2",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "border_color": "#231B2B"
+       },
+       "elements": [
+        {
+         "id": "a9e4c01",
+         "elType": "widget",
+         "settings": {
+          "_skin": "post",
+          "template_id": "@loop:evento",
+          "columns": 1,
+          "columns_tablet": 1,
+          "columns_mobile": 1,
+          "posts_per_page": 20,
+          "post_query_post_type": "eventos",
+          "post_query_query_id": "proximos_eventos",
+          "pagination_type": "",
+          "column_gap": {
+           "unit": "px",
+           "size": 32,
+           "sizes": []
+          },
+          "row_gap": {
+           "unit": "px",
+           "size": 0,
+           "sizes": []
+          },
+          "row_gap_tablet": {
+           "unit": "px",
+           "size": 0,
+           "sizes": []
+          },
+          "row_gap_mobile": {
+           "unit": "px",
+           "size": 0,
+           "sizes": []
+          },
+          "nothing_found_message_text": "No hay eventos de este tipo por ahora.",
+          "nothing_found_message_color": "#4F4955",
+          "nothing_found_message_typography_typography": "custom",
+          "nothing_found_message_typography_font_family": "Montserrat",
+          "nothing_found_message_typography_font_size": {
+           "unit": "px",
+           "size": 17,
+           "sizes": []
+          },
+          "nothing_found_message_typography_font_weight": "400",
+          "nothing_found_message_typography_line_height": {
+           "unit": "em",
+           "size": 1.5,
+           "sizes": []
+          }
+         },
+         "elements": [],
+         "widgetType": "loop-grid"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "d00bdaa",
+   "elType": "container",
+   "settings": {
+    "_title": "Agéndate · eventos recientes",
+    "content_width": "full",
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "96",
+     "right": "0",
+     "bottom": "96",
+     "left": "0",
+     "isLinked": false
+    },
+    "html_tag": "section",
+    "background_background": "classic",
+    "background_color": "#F4F1EC",
+    "padding_tablet": {
+     "unit": "px",
+     "top": "80",
+     "right": "0",
+     "bottom": "80",
+     "left": "0",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "64",
+     "right": "0",
+     "bottom": "64",
+     "left": "0",
+     "isLinked": false
+    },
+    "flex_gap": {
+     "column": "0",
+     "row": "0",
+     "isLinked": true,
+     "unit": "px",
+     "size": 0
+    }
+   },
+   "elements": [
+    {
+     "id": "9b9900f",
+     "elType": "container",
+     "settings": {
+      "_title": "Agéndate · eventos recientes · contenido",
+      "content_width": "boxed",
+      "flex_direction": "column",
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "80",
+       "bottom": "0",
+       "left": "80",
+       "isLinked": false
+      },
+      "boxed_width": {
+       "unit": "px",
+       "size": 1280,
+       "sizes": []
+      },
+      "flex_gap": {
+       "column": "40",
+       "row": "40",
+       "isLinked": true,
+       "unit": "px",
+       "size": 40
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "0",
+       "right": "40",
+       "bottom": "0",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "0",
+       "right": "16",
+       "bottom": "0",
+       "left": "16",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "fdb8343",
+       "elType": "container",
+       "settings": {
+        "_title": "Encabezado",
+        "content_width": "full",
+        "flex_direction": "row",
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "flex_wrap": "wrap",
+        "flex_justify_content": "space-between",
+        "flex_align_items": "flex-end",
+        "flex_gap": {
+         "column": "32",
+         "row": "16",
+         "isLinked": false,
+         "unit": "px",
+         "size": 32
+        }
+       },
+       "elements": [
+        {
+         "id": "ee5ff68",
+         "elType": "container",
+         "settings": {
+          "_title": "Encabezado · textos",
+          "content_width": "full",
+          "flex_direction": "column",
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "flex_gap": {
+           "column": "10",
+           "row": "10",
+           "isLinked": true,
+           "unit": "px",
+           "size": 10
+          },
+          "custom_css": "selector { flex: 1 1 420px; }\n"
+         },
+         "elements": [
+          {
+           "id": "8aec131",
+           "elType": "widget",
+           "settings": {
+            "title": "Ya pasaron",
+            "header_size": "p",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 18,
+             "sizes": []
+            },
+            "typography_font_weight": "600",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 16,
+             "sizes": []
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "f46eeed",
+           "elType": "widget",
+           "settings": {
+            "title": "Eventos recientes",
+            "header_size": "h2",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 40,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.1,
+             "sizes": []
+            },
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 34,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 28,
+             "sizes": []
+            },
+            "typography_letter_spacing": {
+             "unit": "em",
+             "size": -0.015,
+             "sizes": []
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "e136276",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>Los eventos salen solos de «Próximos» al terminar su fecha.</p>",
+            "text_color": "#4F4955",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 18,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.55,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 16,
+             "sizes": []
+            },
+            "custom_css": "selector p { margin: 0; }\n"
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "d178d4a",
+       "elType": "container",
+       "settings": {
+        "_title": "Recientes",
+        "content_width": "full",
+        "flex_direction": "column",
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "2",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "border_color": "rgba(35,27,43,0.3)"
+       },
+       "elements": [
+        {
+         "id": "612efd6",
+         "elType": "widget",
+         "settings": {
+          "_skin": "post",
+          "template_id": "@loop:evento-pasado",
+          "columns": 3,
+          "columns_tablet": 2,
+          "columns_mobile": 1,
+          "posts_per_page": 6,
+          "post_query_post_type": "eventos",
+          "post_query_query_id": "eventos_pasados",
+          "pagination_type": "",
+          "column_gap": {
+           "unit": "px",
+           "size": 32,
+           "sizes": []
+          },
+          "row_gap": {
+           "unit": "px",
+           "size": 0,
+           "sizes": []
+          },
+          "row_gap_tablet": {
+           "unit": "px",
+           "size": 0,
+           "sizes": []
+          },
+          "row_gap_mobile": {
+           "unit": "px",
+           "size": 0,
+           "sizes": []
+          },
+          "nothing_found_message_text": "",
+          "nothing_found_message_color": "#4F4955",
+          "nothing_found_message_typography_typography": "custom",
+          "nothing_found_message_typography_font_family": "Montserrat",
+          "nothing_found_message_typography_font_size": {
+           "unit": "px",
+           "size": 17,
+           "sizes": []
+          },
+          "nothing_found_message_typography_font_weight": "400",
+          "nothing_found_message_typography_line_height": {
+           "unit": "em",
+           "size": 1.5,
+           "sizes": []
+          }
+         },
+         "elements": [],
+         "widgetType": "loop-grid"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "e709b1e",
+   "elType": "container",
+   "settings": {
+    "_title": "Agéndate · todos los días",
+    "content_width": "full",
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "96",
+     "right": "0",
+     "bottom": "96",
+     "left": "0",
+     "isLinked": false
+    },
+    "html_tag": "section",
+    "background_background": "classic",
+    "background_color": "#FFFFFF",
+    "padding_tablet": {
+     "unit": "px",
+     "top": "80",
+     "right": "0",
+     "bottom": "80",
+     "left": "0",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "64",
+     "right": "0",
+     "bottom": "64",
+     "left": "0",
+     "isLinked": false
+    },
+    "flex_gap": {
+     "column": "0",
+     "row": "0",
+     "isLinked": true,
+     "unit": "px",
+     "size": 0
+    }
+   },
+   "elements": [
+    {
+     "id": "52de460",
+     "elType": "container",
+     "settings": {
+      "_title": "Agéndate · todos los días · contenido",
+      "content_width": "boxed",
+      "flex_direction": "column",
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "80",
+       "bottom": "0",
+       "left": "80",
+       "isLinked": false
+      },
+      "boxed_width": {
+       "unit": "px",
+       "size": 1280,
+       "sizes": []
+      },
+      "flex_gap": {
+       "column": "40",
+       "row": "40",
+       "isLinked": true,
+       "unit": "px",
+       "size": 40
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "0",
+       "right": "40",
+       "bottom": "0",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "0",
+       "right": "16",
+       "bottom": "0",
+       "left": "16",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "63a3f25",
+       "elType": "container",
+       "settings": {
+        "_title": "Encabezado",
+        "content_width": "full",
+        "flex_direction": "row",
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "flex_wrap": "wrap",
+        "flex_justify_content": "space-between",
+        "flex_align_items": "flex-end",
+        "flex_gap": {
+         "column": "32",
+         "row": "16",
+         "isLinked": false,
+         "unit": "px",
+         "size": 32
+        }
+       },
+       "elements": [
+        {
+         "id": "c25312a",
+         "elType": "container",
+         "settings": {
+          "_title": "Encabezado · textos",
+          "content_width": "full",
+          "flex_direction": "column",
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "flex_gap": {
+           "column": "10",
+           "row": "10",
+           "isLinked": true,
+           "unit": "px",
+           "size": 10
+          },
+          "custom_css": "selector { flex: 1 1 420px; }\n"
+         },
+         "elements": [
+          {
+           "id": "40e49da",
+           "elType": "widget",
+           "settings": {
+            "title": "Todos los días",
+            "header_size": "p",
+            "title_color": "#6B5BD6",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 18,
+             "sizes": []
+            },
+            "typography_font_weight": "600",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 16,
+             "sizes": []
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "c006e6a",
+           "elType": "widget",
+           "settings": {
+            "title": "Todos los días en Maloka.",
+            "header_size": "h2",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 40,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.1,
+             "sizes": []
+            },
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 34,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 28,
+             "sizes": []
+            },
+            "typography_letter_spacing": {
+             "unit": "em",
+             "size": -0.015,
+             "sizes": []
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "1741602",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>Además de la agenda, cada día hay funciones en el Cine Domo y talleres en los laboratorios que puedes comprar en línea.</p>",
+            "text_color": "#4F4955",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 18,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.55,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 16,
+             "sizes": []
+            },
+            "custom_css": "selector p { margin: 0; }\n"
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "be608dd",
+       "elType": "container",
+       "settings": {
+        "_title": "Bloques",
+        "content_width": "full",
+        "flex_direction": "row",
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "flex_direction_tablet": "column",
+        "flex_gap": {
+         "column": "24",
+         "row": "24",
+         "isLinked": true,
+         "unit": "px",
+         "size": 24
+        },
+        "flex_gap_tablet": {
+         "column": "12",
+         "row": "12",
+         "isLinked": true,
+         "unit": "px",
+         "size": 12
+        }
+       },
+       "elements": [
+        {
+         "id": "b0b6cf9",
+         "elType": "container",
+         "settings": {
+          "_title": "Bloque · Funciones en el Cine Domo",
+          "content_width": "full",
+          "flex_direction": "column",
+          "padding": {
+           "unit": "px",
+           "top": "28",
+           "right": "28",
+           "bottom": "28",
+           "left": "28",
+           "isLinked": false
+          },
+          "html_tag": "a",
+          "link": {
+           "url": "/visitanos/#funciones",
+           "is_external": "",
+           "nofollow": "",
+           "custom_attributes": ""
+          },
+          "flex_gap": {
+           "column": "10",
+           "row": "10",
+           "isLinked": true,
+           "unit": "px",
+           "size": 10
+          },
+          "padding_tablet": {
+           "unit": "px",
+           "top": "22",
+           "right": "22",
+           "bottom": "22",
+           "left": "22",
+           "isLinked": false
+          },
+          "min_height": {
+           "unit": "px",
+           "size": 220,
+           "sizes": []
+          },
+          "min_height_tablet": {
+           "unit": "px",
+           "size": 0,
+           "sizes": []
+          },
+          "background_background": "classic",
+          "background_color": "#9CCBF2",
+          "custom_css": "selector { flex: 1 1 0; transition: background-color .15s; }\nselector:hover { background-color: #231B2B; }\nselector:hover .elementor-heading-title, selector:hover .elementor-widget-text-editor { color: #fff !important; }\nselector:hover .elementor-icon { color: #9CCBF2 !important; transform: translateX(6px); }\nselector:hover .elementor-icon svg { fill: #9CCBF2 !important; }\n@media (max-width: 1024px) { selector { flex-basis: 100%; } }\n"
+         },
+         "elements": [
+          {
+           "id": "fa8a9fd",
+           "elType": "widget",
+           "settings": {
+            "title": "Funciones en el Cine Domo",
+            "header_size": "span",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 24,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.2,
+             "sizes": []
+            },
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 22,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 20,
+             "sizes": []
+            },
+            "custom_css": "selector .elementor-heading-title { transition: color .15s; }\n"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "6373f00",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>Documentales, animadas y shows láser en toda la cúpula.</p>",
+            "text_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 16,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.5,
+             "sizes": []
+            },
+            "custom_css": "selector p { margin: 0; }\nselector { transition: color .15s; }\n"
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          },
+          {
+           "id": "3a41f14",
+           "elType": "widget",
+           "settings": {
+            "selected_icon": {
+             "value": "fas fa-arrow-right",
+             "library": "fa-solid"
+            },
+            "primary_color": "#231B2B",
+            "size": {
+             "unit": "px",
+             "size": 28,
+             "sizes": []
+            },
+            "custom_css": "selector { align-self: flex-end; margin-top: auto; }\nselector .elementor-icon { transition: transform .15s, color .15s; }\n"
+           },
+           "elements": [],
+           "widgetType": "icon"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "3bb80f5",
+         "elType": "container",
+         "settings": {
+          "_title": "Bloque · Laboratorios",
+          "content_width": "full",
+          "flex_direction": "column",
+          "padding": {
+           "unit": "px",
+           "top": "28",
+           "right": "28",
+           "bottom": "28",
+           "left": "28",
+           "isLinked": false
+          },
+          "html_tag": "a",
+          "link": {
+           "url": "/visitanos/#tarifas",
+           "is_external": "",
+           "nofollow": "",
+           "custom_attributes": ""
+          },
+          "flex_gap": {
+           "column": "10",
+           "row": "10",
+           "isLinked": true,
+           "unit": "px",
+           "size": 10
+          },
+          "padding_tablet": {
+           "unit": "px",
+           "top": "22",
+           "right": "22",
+           "bottom": "22",
+           "left": "22",
+           "isLinked": false
+          },
+          "min_height": {
+           "unit": "px",
+           "size": 220,
+           "sizes": []
+          },
+          "min_height_tablet": {
+           "unit": "px",
+           "size": 0,
+           "sizes": []
+          },
+          "background_background": "classic",
+          "background_color": "#9FE8C8",
+          "custom_css": "selector { flex: 1 1 0; transition: background-color .15s; }\nselector:hover { background-color: #231B2B; }\nselector:hover .elementor-heading-title, selector:hover .elementor-widget-text-editor { color: #fff !important; }\nselector:hover .elementor-icon { color: #9FE8C8 !important; transform: translateX(6px); }\nselector:hover .elementor-icon svg { fill: #9FE8C8 !important; }\n@media (max-width: 1024px) { selector { flex-basis: 100%; } }\n"
+         },
+         "elements": [
+          {
+           "id": "16b2f11",
+           "elType": "widget",
+           "settings": {
+            "title": "Laboratorios",
+            "header_size": "span",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 24,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.2,
+             "sizes": []
+            },
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 22,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 20,
+             "sizes": []
+            },
+            "custom_css": "selector .elementor-heading-title { transition: color .15s; }\n"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "4e75c48",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>Pequeños Inventores, Bio e Inventores, según la edad.</p>",
+            "text_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 16,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.5,
+             "sizes": []
+            },
+            "custom_css": "selector p { margin: 0; }\nselector { transition: color .15s; }\n"
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          },
+          {
+           "id": "175ac36",
+           "elType": "widget",
+           "settings": {
+            "selected_icon": {
+             "value": "fas fa-arrow-right",
+             "library": "fa-solid"
+            },
+            "primary_color": "#231B2B",
+            "size": {
+             "unit": "px",
+             "size": 28,
+             "sizes": []
+            },
+            "custom_css": "selector { align-self: flex-end; margin-top: auto; }\nselector .elementor-icon { transition: transform .15s, color .15s; }\n"
+           },
+           "elements": [],
+           "widgetType": "icon"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ]
+}
