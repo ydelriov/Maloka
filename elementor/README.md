@@ -20,6 +20,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `visitanos-v13-parte1.json`, `-parte2.json`, `-parte3.json` | Página Visítanos en 3 partes (10 secciones) | Se insertan en orden en la página Visítanos |
 | `loop-evento.json`, `loop-evento-destacado.json`, `loop-evento-texto.json`, `loop-evento-pasado.json` | Loop Items de la agenda: fila de Agéndate, destacado, fila de solo texto (home) y evento reciente | Plantillas › Theme Builder › Loop Item (tipo de contenido Eventos) |
 | `agendate-v13.json` | Página Agéndate conectada a los eventos: filtro, destacado, próximos, recientes y «Todos los días» | Se inserta en la página Agéndate |
+| `noticias-v13.json` · `loop-noticia-grande.json` | Página Noticias (filtro, la más reciente en grande, «Cargar más», para medios) y su tarjeta grande | Se inserta en la página Noticias · Theme Builder › Loop Item |
 | `loop-noticia.json` · `home-v13-noticias.json` | Tarjeta de noticia (Loop Item de Entradas) y sección «Noticias» de la home con las 3 últimas | Theme Builder › Loop Item · reemplaza la sección Noticias de Inicio |
 | `home-v13-agenda.json` | Sección «Próximos eventos» de la home: los 3 eventos más cercanos | Reemplaza la sección Agenda de Inicio |
 | `home-v13-secciones.json` | Las 6 secciones de la home debajo del hero (Imperdibles, Agenda, Ven en grupo, Descubre con mapa, Crea, Noticias) | Plantillas › Plantillas guardadas, y se inserta en Inicio debajo del hero |
@@ -397,8 +398,18 @@ a la página Noticias.
 la sala de prensa de maloka.org importadas con su fecha, categoría, imagen destacada, extracto y texto (meta
 `_maloka_fuente` con la URL original); Loop Item «Noticia · tarjeta» (`loop-noticia.json`) y la sección `#noticias` de
 Inicio (`home-v13-noticias.json`), generados con `python3 scripts/elementor-noticias.py`. El color de la categoría sale
-de la clase `category-<slug>` de cada entrada. Pendiente: la página Noticias (`/noticias/`, a donde lleva «Ver todas»)
-y la plantilla de cada noticia.
+de la clase `category-<slug>` de cada entrada. La página Noticias también está hecha (ver abajo); falta la plantilla de cada noticia.
+
+### Así quedó la página Noticias en pruebas.maloka.org
+
+`/noticias/` (generada con `python3 scripts/elementor-noticias.py` → `noticias-v13.json` y `loop-noticia-grande.json`):
+- Cabecera hueso (migas, H1 y texto), **Filtro de taxonomía** de Categorías alineado a la izquierda («Sin categoría», la
+  de las entradas antiguas, se oculta con CSS) y un solo **Loop Grid** de Entradas: 3 columnas (2 en tablet, 1 en
+  celular), 7 por página y **«Cargar más noticias»** (Ajax).
+- La más reciente sale en grande con la opción **Plantilla alterna** del Loop Grid: plantilla «Noticia · grande»,
+  posición 1, ocupa 3 columnas, «mostrar una vez» y **sin** «posición estática» (con ella la primera noticia salía
+  repetida). Así el filtro también pone en grande la más reciente de cada categoría.
+- Bloque lavanda «Para medios» con el correo de prensa y la Trivia de la semana.
 
 ### Página de cada noticia (Theme Builder)
 

@@ -345,8 +345,8 @@ def filtro(objetivo, todos='Todos'):
                   taxonomy_filter_active_text_color=AMARILLO, taxonomy_filter_active_background_background='classic',
                   taxonomy_filter_active_background_color=NOCHE, taxonomy_filter_active_border_border='solid',
                   taxonomy_filter_active_border_width=caja(2), taxonomy_filter_active_border_color=NOCHE,
-                  taxonomy_filter_border_radius=caja(0), taxonomy_filter_padding=caja(12, 18),
-                  custom_css='selector { --width: auto; width: auto; }\nselector button, selector a { min-height: 44px; }\n')
+                  taxonomy_filter_border_radius=caja(0), taxonomy_filter_padding=caja(0, 18),
+                  custom_css='selector { --width: auto; width: auto; }\nselector .e-filter-item { min-height: 44px; display: inline-flex; align-items: center; box-sizing: border-box; }\n')
 
 
 def loop_grid(plantilla, query_id, por_pagina, columnas=1, vacio='', col_tab=None, col_mov=1, gap_filas=0, idx=None):

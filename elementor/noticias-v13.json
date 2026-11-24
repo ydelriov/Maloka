@@ -1,0 +1,885 @@
+{
+ "title": "Noticias · V13",
+ "type": "page",
+ "version": "0.4",
+ "page_settings": {
+  "hide_title": "yes",
+  "template": "elementor_header_footer",
+  "custom_css": "a.e-con { text-decoration: none; }\na.e-con:focus-visible { outline: 3px solid #6B5BD6; outline-offset: 3px; }\n"
+ },
+ "content": [
+  {
+   "id": "263bb56",
+   "elType": "container",
+   "settings": {
+    "_title": "Noticias · cabecera",
+    "content_width": "full",
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "32",
+     "right": "0",
+     "bottom": "36",
+     "left": "0",
+     "isLinked": false
+    },
+    "html_tag": "section",
+    "background_background": "classic",
+    "background_color": "#F4F1EC",
+    "padding_mobile": {
+     "unit": "px",
+     "top": "24",
+     "right": "0",
+     "bottom": "28",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "1edab5c",
+     "elType": "container",
+     "settings": {
+      "_title": "Cabecera · contenido",
+      "content_width": "boxed",
+      "flex_direction": "column",
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "80",
+       "bottom": "0",
+       "left": "80",
+       "isLinked": false
+      },
+      "boxed_width": {
+       "unit": "px",
+       "size": 1280,
+       "sizes": []
+      },
+      "flex_gap": {
+       "column": "10",
+       "row": "10",
+       "isLinked": true,
+       "unit": "px",
+       "size": 10
+      },
+      "flex_align_items": "flex-start",
+      "padding_tablet": {
+       "unit": "px",
+       "top": "0",
+       "right": "40",
+       "bottom": "0",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "0",
+       "right": "16",
+       "bottom": "0",
+       "left": "16",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "9e3d6fd",
+       "elType": "widget",
+       "settings": {
+        "editor": "<p><a href=\"/\">Inicio</a> <span aria-hidden=\"true\">/</span> <span aria-current=\"page\">Noticias</span></p>",
+        "text_color": "#4F4955",
+        "typography_typography": "custom",
+        "typography_font_family": "Montserrat",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.4,
+         "sizes": []
+        },
+        "html_tag": "nav",
+        "custom_css": "selector p { margin: 0; }\nselector a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }\nselector [aria-current] { color: #231B2B; }\n"
+       },
+       "elements": [],
+       "widgetType": "text-editor"
+      },
+      {
+       "id": "c4cffea",
+       "elType": "widget",
+       "settings": {
+        "title": "Noticias",
+        "header_size": "h1",
+        "title_color": "#231B2B",
+        "typography_typography": "custom",
+        "typography_font_family": "Montserrat",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 40,
+         "sizes": []
+        },
+        "typography_font_weight": "700",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.1,
+         "sizes": []
+        },
+        "typography_font_size_tablet": {
+         "unit": "px",
+         "size": 34,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 28,
+         "sizes": []
+        },
+        "typography_letter_spacing": {
+         "unit": "em",
+         "size": -0.015,
+         "sizes": []
+        }
+       },
+       "elements": [],
+       "widgetType": "heading"
+      },
+      {
+       "id": "cf5d8ad",
+       "elType": "widget",
+       "settings": {
+        "editor": "<p>Lo que pasa en Maloka: programación, ciencia, alianzas y comunicados de prensa.</p>",
+        "text_color": "#4F4955",
+        "typography_typography": "custom",
+        "typography_font_family": "Montserrat",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.5,
+         "sizes": []
+        },
+        "_element_width": "initial",
+        "_element_custom_width": {
+         "unit": "px",
+         "size": 640,
+         "sizes": []
+        },
+        "_element_custom_width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "custom_css": "selector p { margin: 0; }\n"
+       },
+       "elements": [],
+       "widgetType": "text-editor"
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "b447ca0",
+   "elType": "container",
+   "settings": {
+    "_title": "Noticias · lista",
+    "content_width": "full",
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "64",
+     "right": "0",
+     "bottom": "96",
+     "left": "0",
+     "isLinked": false
+    },
+    "html_tag": "section",
+    "background_background": "classic",
+    "background_color": "#FFFFFF",
+    "padding_tablet": {
+     "unit": "px",
+     "top": "56",
+     "right": "0",
+     "bottom": "80",
+     "left": "0",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "40",
+     "right": "0",
+     "bottom": "64",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "d5c64d0",
+     "elType": "container",
+     "settings": {
+      "_title": "Noticias · todas",
+      "content_width": "boxed",
+      "flex_direction": "column",
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "80",
+       "bottom": "0",
+       "left": "80",
+       "isLinked": false
+      },
+      "boxed_width": {
+       "unit": "px",
+       "size": 1280,
+       "sizes": []
+      },
+      "flex_gap": {
+       "column": "32",
+       "row": "32",
+       "isLinked": true,
+       "unit": "px",
+       "size": 32
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "0",
+       "right": "40",
+       "bottom": "0",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "0",
+       "right": "16",
+       "bottom": "0",
+       "left": "16",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "8218255",
+       "elType": "container",
+       "settings": {
+        "_title": "Filtro",
+        "content_width": "full",
+        "flex_direction": "column",
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "ca7a6ac",
+         "elType": "widget",
+         "settings": {
+          "selected_element": "c3d1a07",
+          "taxonomy": "category",
+          "show_first_item": "yes",
+          "first_item_title": "Todas",
+          "multiple_selection": "",
+          "taxonomy_filter_typography_typography": "custom",
+          "taxonomy_filter_typography_font_family": "Montserrat",
+          "taxonomy_filter_typography_font_size": {
+           "unit": "px",
+           "size": 15,
+           "sizes": []
+          },
+          "taxonomy_filter_typography_font_weight": "600",
+          "taxonomy_filter_typography_line_height": {
+           "unit": "em",
+           "size": 1,
+           "sizes": []
+          },
+          "taxonomy_filter_items_space_between": {
+           "unit": "px",
+           "size": 8,
+           "sizes": []
+          },
+          "taxonomy_filter_normal_text_color": "#231B2B",
+          "taxonomy_filter_normal_background_background": "classic",
+          "taxonomy_filter_normal_background_color": "rgba(0,0,0,0)",
+          "taxonomy_filter_normal_border_border": "solid",
+          "taxonomy_filter_normal_border_width": {
+           "unit": "px",
+           "top": "2",
+           "right": "2",
+           "bottom": "2",
+           "left": "2",
+           "isLinked": false
+          },
+          "taxonomy_filter_normal_border_color": "#231B2B",
+          "taxonomy_filter_hover_text_color": "#231B2B",
+          "taxonomy_filter_hover_background_background": "classic",
+          "taxonomy_filter_hover_background_color": "rgba(35,27,43,0.08)",
+          "taxonomy_filter_active_text_color": "#FFE25C",
+          "taxonomy_filter_active_background_background": "classic",
+          "taxonomy_filter_active_background_color": "#231B2B",
+          "taxonomy_filter_active_border_border": "solid",
+          "taxonomy_filter_active_border_width": {
+           "unit": "px",
+           "top": "2",
+           "right": "2",
+           "bottom": "2",
+           "left": "2",
+           "isLinked": false
+          },
+          "taxonomy_filter_active_border_color": "#231B2B",
+          "taxonomy_filter_border_radius": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "taxonomy_filter_padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "18",
+           "bottom": "0",
+           "left": "18",
+           "isLinked": false
+          },
+          "custom_css": "selector .e-filter-item { min-height: 44px; display: inline-flex; align-items: center; box-sizing: border-box; }\n/* «Sin categoría» (entradas antiguas) no se ofrece como filtro */\nselector [data-filter=\"sin-categoria\"] { display: none !important; }\nselector .e-filter { justify-content: flex-start; }\n"
+         },
+         "elements": [],
+         "widgetType": "taxonomy-filter"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "c3d1a07",
+       "elType": "widget",
+       "settings": {
+        "_skin": "post",
+        "template_id": "@loop:noticia",
+        "columns": 3,
+        "columns_tablet": 2,
+        "columns_mobile": 1,
+        "posts_per_page": 7,
+        "post_query_post_type": "post",
+        "equal_height": "yes",
+        "column_gap": {
+         "unit": "px",
+         "size": 24,
+         "sizes": []
+        },
+        "row_gap": {
+         "unit": "px",
+         "size": 32,
+         "sizes": []
+        },
+        "row_gap_tablet": {
+         "unit": "px",
+         "size": 32,
+         "sizes": []
+        },
+        "row_gap_mobile": {
+         "unit": "px",
+         "size": 20,
+         "sizes": []
+        },
+        "alternate_template": "yes",
+        "alternate_templates": [
+         {
+          "_id": "68e7bd1",
+          "template_id": "@loop:noticia-grande",
+          "repeat_template": 1,
+          "show_once": "yes",
+          "column_span": "3",
+          "static_position": ""
+         }
+        ],
+        "pagination_type": "load_more_on_click",
+        "pagination_load_type": "ajax",
+        "text": "Cargar más noticias",
+        "selected_icon": {
+         "value": "fas fa-chevron-down",
+         "library": "fa-solid"
+        },
+        "icon_align": "row-reverse",
+        "load_more_button_align": "center",
+        "load_more_spacing": {
+         "unit": "px",
+         "size": 40,
+         "sizes": []
+        },
+        "button_text_color": "#231B2B",
+        "background_background": "classic",
+        "background_color": "rgba(0,0,0,0)",
+        "button_background_hover_background": "classic",
+        "button_background_hover_color": "#231B2B",
+        "button_hover_color": "#FFE25C",
+        "border_border": "solid",
+        "border_width": {
+         "unit": "px",
+         "top": "2",
+         "right": "2",
+         "bottom": "2",
+         "left": "2",
+         "isLinked": false
+        },
+        "border_color": "#231B2B",
+        "border_radius": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "text_padding": {
+         "unit": "px",
+         "top": "14",
+         "right": "24",
+         "bottom": "14",
+         "left": "24",
+         "isLinked": false
+        },
+        "load_more_no_posts_message_switcher": "yes",
+        "load_more_no_posts_custom_message": "Ya viste todas las noticias.",
+        "nothing_found_message_text": "No hay noticias de esta categoría por ahora.",
+        "custom_css": "/* La más reciente ocupa toda la fila en cualquier número de columnas */\nselector .e-loop-item:first-child { grid-column: 1 / -1 !important; }\nselector .e-load-more-anchor + .e-loop__load-more .elementor-button, selector .e-loop__load-more .elementor-button { font: 700 16px/1.2 Montserrat, sans-serif; min-height: 52px; display: inline-flex; align-items: center; gap: 8px; }\n"
+       },
+       "elements": [],
+       "widgetType": "loop-grid"
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "93d90dc",
+   "elType": "container",
+   "settings": {
+    "_title": "Noticias · para medios",
+    "content_width": "full",
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "72",
+     "right": "0",
+     "bottom": "72",
+     "left": "0",
+     "isLinked": false
+    },
+    "html_tag": "section",
+    "background_background": "classic",
+    "background_color": "#B4A5F5",
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "0",
+     "bottom": "56",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "e4d4602",
+     "elType": "container",
+     "settings": {
+      "_title": "Para medios · contenido",
+      "content_width": "boxed",
+      "flex_direction": "row",
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "80",
+       "bottom": "0",
+       "left": "80",
+       "isLinked": false
+      },
+      "boxed_width": {
+       "unit": "px",
+       "size": 1280,
+       "sizes": []
+      },
+      "flex_wrap": "wrap",
+      "flex_justify_content": "space-between",
+      "flex_align_items": "flex-end",
+      "flex_gap": {
+       "column": "48",
+       "row": "24",
+       "isLinked": false,
+       "unit": "px",
+       "size": 48
+      },
+      "padding_tablet": {
+       "unit": "px",
+       "top": "0",
+       "right": "40",
+       "bottom": "0",
+       "left": "40",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "0",
+       "right": "16",
+       "bottom": "0",
+       "left": "16",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "86c6127",
+       "elType": "container",
+       "settings": {
+        "_title": "Textos",
+        "content_width": "full",
+        "flex_direction": "column",
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "flex_gap": {
+         "column": "10",
+         "row": "10",
+         "isLinked": true,
+         "unit": "px",
+         "size": 10
+        },
+        "custom_css": "selector { flex: 1 1 420px; }\n"
+       },
+       "elements": [
+        {
+         "id": "73e566a",
+         "elType": "widget",
+         "settings": {
+          "title": "Para medios",
+          "header_size": "p",
+          "title_color": "#231B2B",
+          "typography_typography": "custom",
+          "typography_font_family": "Montserrat",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 18,
+           "sizes": []
+          },
+          "typography_font_weight": "600",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.3,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 16,
+           "sizes": []
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "0eeb83e",
+         "elType": "widget",
+         "settings": {
+          "title": "¿Eres periodista?",
+          "header_size": "h2",
+          "title_color": "#231B2B",
+          "typography_typography": "custom",
+          "typography_font_family": "Montserrat",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 40,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.1,
+           "sizes": []
+          },
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 34,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 28,
+           "sizes": []
+          },
+          "typography_letter_spacing": {
+           "unit": "em",
+           "size": -0.015,
+           "sizes": []
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "83d65eb",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Si quieres recibir nuestros comunicados o agendar entrevistas, escríbenos.</p>",
+          "text_color": "#231B2B",
+          "typography_typography": "custom",
+          "typography_font_family": "Montserrat",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 17,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.5,
+           "sizes": []
+          },
+          "custom_css": "selector p { margin: 0; max-width: 52ch; }\n"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a5e0dd1",
+       "elType": "container",
+       "settings": {
+        "_title": "Acciones",
+        "content_width": "full",
+        "flex_direction": "column",
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "flex_gap": {
+         "column": "16",
+         "row": "16",
+         "isLinked": true,
+         "unit": "px",
+         "size": 16
+        },
+        "flex_align_items": "flex-start"
+       },
+       "elements": [
+        {
+         "id": "bd947a1",
+         "elType": "container",
+         "settings": {
+          "_title": "Correo",
+          "content_width": "full",
+          "flex_direction": "row",
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "4",
+           "left": "0",
+           "isLinked": false
+          },
+          "html_tag": "a",
+          "link": {
+           "url": "mailto:nvelasco@maloka.org",
+           "is_external": "",
+           "nofollow": "",
+           "custom_attributes": ""
+          },
+          "flex_direction_mobile": "row",
+          "flex_align_items": "center",
+          "flex_gap": {
+           "column": "14",
+           "row": "14",
+           "isLinked": true,
+           "unit": "px",
+           "size": 14
+          },
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "3",
+           "left": "0",
+           "isLinked": false
+          },
+          "border_color": "#231B2B",
+          "custom_css": "selector { --width: auto; width: auto; }\nselector:hover .elementor-heading-title { color: #6B5BD6 !important; }\n"
+         },
+         "elements": [
+          {
+           "id": "252a4c5",
+           "elType": "widget",
+           "settings": {
+            "title": "nvelasco@maloka.org",
+            "header_size": "span",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 24,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.2,
+             "sizes": []
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 18,
+             "sizes": []
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "4baa7a8",
+           "elType": "widget",
+           "settings": {
+            "selected_icon": {
+             "value": "far fa-envelope",
+             "library": "fa-regular"
+            },
+            "primary_color": "#231B2B",
+            "size": {
+             "unit": "px",
+             "size": 24,
+             "sizes": []
+            }
+           },
+           "elements": [],
+           "widgetType": "icon"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "35eed3d",
+         "elType": "container",
+         "settings": {
+          "_title": "Trivia",
+          "content_width": "full",
+          "flex_direction": "row",
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "2",
+           "left": "0",
+           "isLinked": false
+          },
+          "html_tag": "a",
+          "link": {
+           "url": "https://maloka.org/trivia-de-la-semana/",
+           "is_external": "",
+           "nofollow": "",
+           "custom_attributes": ""
+          },
+          "flex_direction_mobile": "row",
+          "flex_align_items": "center",
+          "flex_gap": {
+           "column": "8",
+           "row": "8",
+           "isLinked": true,
+           "unit": "px",
+           "size": 8
+          },
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "2",
+           "left": "0",
+           "isLinked": false
+          },
+          "border_color": "#231B2B",
+          "custom_css": "selector { --width: auto; width: auto; }\n"
+         },
+         "elements": [
+          {
+           "id": "f338d6c",
+           "elType": "widget",
+           "settings": {
+            "title": "Trivia de la semana",
+            "header_size": "span",
+            "title_color": "#231B2B",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 16,
+             "sizes": []
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+             "unit": "em",
+             "size": 1.3,
+             "sizes": []
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "1a43b8f",
+           "elType": "widget",
+           "settings": {
+            "selected_icon": {
+             "value": "fas fa-arrow-right",
+             "library": "fa-solid"
+            },
+            "primary_color": "#231B2B",
+            "size": {
+             "unit": "px",
+             "size": 16,
+             "sizes": []
+            }
+           },
+           "elements": [],
+           "widgetType": "icon"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ]
+}
