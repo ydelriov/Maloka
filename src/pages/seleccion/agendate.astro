@@ -6,32 +6,22 @@
    Filtro de taxonomía, Loop Item con etiquetas dinámicas de ACF. Guía completa en elementor/README.md.
    1. Cabecera compacta · 2. Próximos eventos: filtro por tipo, evento destacado y filas con fecha grande
    3. Eventos recientes (los que ya pasaron, en gris) · 4. Todos los días en Maloka. El boletín va en la cabecera y en el footer.
-   Aquí los próximos y los pasados se calculan con la fecha del día en que se construye el sitio. */
+   Mismos eventos y tipos que la agenda de la home (src/lib/agenda.js): allá solo texto; aquí con afiche, resumen y
+   «Ver descripción» (en Elementor: Acordeón anidado con el contenido del evento dentro del Loop Item). */
 import Base from '../../layouts/Base.astro';
 import NHeader from '../../components/n/NHeader.astro';
 import NFiltros from '../../components/n/NFiltros.astro';
 import NFooter from '../../components/n/NFooter.astro';
 import Icon from '../../components/ui/Icon.astro';
-import a from '../../data/n/agenda.json';
+import { agenda as a, tipo, proximos, pasados as todosPasados, dia, mes, sem, rango, cta, filtros } from '../../lib/agenda.js';
 import { rutaPara } from '../../lib/rutas.js';
 import { url } from '../../lib/url.js';
 import '../../styles/noche.css';
 const G = 'seleccion';
 const ruta = rutaPara(G);
-const hoy = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Bogota' }); // AAAA-MM-DD
-const tipo = Object.fromEntries(a.tipos.map((t) => [t.id, t]));
-const fin = (e) => e.fechaFin || e.fecha;
-const proximos = a.eventos.filter((e) => fin(e) >= hoy).sort((x, y) => x.fecha.localeCompare(y.fecha));
-const pasados = a.eventos.filter((e) => fin(e) < hoy).sort((x, y) => y.fecha.localeCompare(x.fecha)).slice(0, 6);
+const pasados = todosPasados.slice(0, 6);
 const destacado = proximos.find((e) => e.destacado) || proximos[0];
 const lista = proximos.filter((e) => e !== destacado);
-const f = (iso, o) => new Date(`${iso}T12:00:00`).toLocaleDateString('es-CO', o);
-const dia = (iso) => f(iso, { day: 'numeric' });
-const mes = (iso) => f(iso, { month: 'short' }).replace('.', '');
-const sem = (iso) => f(iso, { weekday: 'short' }).replace('.', '');
-const rango = (e) => (e.fechaFin ? `${dia(e.fecha)}–${dia(e.fechaFin)}` : dia(e.fecha));
-const cta = (e) => (e.acceso === 'pago' ? 'Compra tu entrada' : e.acceso === 'inscripcion' ? 'Inscríbete' : null);
-const filtros = [{ id: 'todo', label: 'Todos' }, ...a.tipos.map((t) => ({ id: t.id, label: t.label }))];
 ---
 <Base variante="agendate" grupo={G} title="Agéndate · Talleres, charlas, cine y eventos · Maloka" description="Agenda de Maloka en Bogotá: talleres, charlas de ciencia, cine, artes escénicas y encuentros. Muchos eventos son gratis con inscripción previa." clase="nn">
   <NHeader variante="blanco" panel="hueso" grupo={G} inicio={url(`${G}/`)} />
@@ -62,7 +52,7 @@ const filtros = [{ id: 'todo', label: 'Todos' }, ...a.tipos.map((t) => ({ id: t.
                 <p class="ag-dest-fecha"><b class="t-num">{rango(destacado)}</b><span>{mes(destacado.fecha)}</span></p>
                 <span class={`n-tag n-tag--${tipo[destacado.tipo].color}`}>{tipo[destacado.tipo].label}</span>
                 <h3 class="ag-dest-t"><a href={destacado.url}>{destacado.titulo}</a></h3>
-                <p class="ag-dest-x">{destacado.resumen}</p>
+                <p class="ag-dest-x">{destacado.descripcion || destacado.resumen}</p>
                 <ul class="ag-meta">
                   <li><Icon name="clock" size="20" />{destacado.horario}</li>
                   <li><Icon name="pin" size="20" />{destacado.lugar}</li>
@@ -80,12 +70,19 @@ const filtros = [{ id: 'todo', label: 'Todos' }, ...a.tipos.map((t) => ({ id: t.
             {lista.map((e, i) => (
               <li data-filtro={e.tipo} data-rv style={`--d:${i}`}>
                 <article class="ag-fila" style={`--c:var(--n-${tipo[e.tipo].color})`}>
-                  <p class="ag-fecha"><b class="t-num">{rango(e)}</b><span>{mes(e.fecha)}</span><small>{sem(e.fecha)}</small></p>
+                  <p class:list={['ag-fecha', e.fechaFin && 'ag-fecha--r']}><b class="t-num">{rango(e)}</b><span>{mes(e.fecha)}</span><small>{sem(e.fecha)}</small></p>
                   <a class="ag-fila-f n-foto" href={e.url} tabindex="-1" aria-hidden="true"><img src={e.afiche} alt="" width="1080" height="1440" loading="lazy" /></a>
                   <div class="ag-fila-c">
                     <span class={`n-tag n-tag--${tipo[e.tipo].color}`}>{tipo[e.tipo].label}</span>
                     <h3 class="ag-fila-t"><a href={e.url}>{e.titulo}</a></h3>
+                    <p class="ag-fila-x">{e.resumen}</p>
                     <p class="ag-fila-m"><span><Icon name="clock" size="18" />{e.horario}</span><span><Icon name="pin" size="18" />{e.lugar}</span></p>
+                    {e.descripcion && (
+                      <details class="ag-desc">
+                        <summary>Ver descripción<Icon name="down" size="18" /></summary>
+                        <p>{e.descripcion}</p>
+                      </details>
+                    )}
                   </div>
                   <div class="ag-fila-acc">
                     <span class="ag-acceso">{a.acceso[e.acceso]}{e.valor && ` · ${e.valor}`}</span>
@@ -163,10 +160,12 @@ const filtros = [{ id: 'todo', label: 'Todos' }, ...a.tipos.map((t) => ({ id: t.
   /* Filas */
   .ag-filas { border-top: 2px solid var(--n-noche); }
   .ag-filas > li { border-bottom: 2px solid var(--n-noche); }
-  .ag-fila { display: grid; grid-template-columns: 110px 96px 1fr 220px; gap: 28px; align-items: center; padding: 24px 16px; transition: background-color var(--mk-t-rapida); }
+  .ag-fila { display: grid; grid-template-columns: 110px 120px 1fr 220px; gap: 28px; align-items: start; padding: 24px 16px; transition: background-color var(--mk-t-rapida); }
   .ag-fila:hover { background: color-mix(in srgb, var(--c) 45%, #fff); }
   .ag-fecha { display: grid; line-height: 1; }
   .ag-fecha b { font-size: 56px; font-weight: 700; letter-spacing: -0.03em; }
+  .ag-fecha b { white-space: nowrap; }
+  .ag-fecha--r b { font-size: 40px; }
   .ag-fecha span { font-size: 18px; font-weight: 700; margin-top: 6px; }
   .ag-fecha small { font-size: 14px; color: var(--n-texto2); margin-top: 4px; }
   .ag-fila-f { aspect-ratio: 3 / 4; }
@@ -174,6 +173,13 @@ const filtros = [{ id: 'todo', label: 'Todos' }, ...a.tipos.map((t) => ({ id: t.
   .ag-fila-t { margin: 0; font-size: var(--n-sub); line-height: 1.2; font-weight: 700; }
   .ag-fila-t a { color: inherit; }
   .ag-fila-t a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .ag-fila-x { font-size: 15px; line-height: 1.5; color: var(--n-texto2); max-width: 62ch; }
+  .ag-desc { margin-top: 2px; }
+  .ag-desc summary { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; cursor: pointer; list-style: none; border-bottom: 2px solid currentColor; padding-bottom: 1px; }
+  .ag-desc summary::-webkit-details-marker { display: none; }
+  .ag-desc summary :global(.mk-ic) { transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .ag-desc[open] summary :global(.mk-ic) { transform: rotate(180deg); }
+  .ag-desc p { margin-top: 10px; font-size: 15px; line-height: 1.6; max-width: 64ch; }
   .ag-fila-m { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 15px; font-weight: 600; }
   .ag-fila-m span { display: inline-flex; align-items: center; gap: 6px; }
   .ag-fila-acc { display: grid; gap: 10px; justify-items: start; }
