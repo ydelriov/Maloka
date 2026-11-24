@@ -6,15 +6,31 @@
     "slides": [
       {
         "titulo": "Atrévete a vivir la ciencia.",
-        "texto": "Salas para tocar, un domo para mirar el universo y laboratorios para preguntar."
+        "texto": "Salas para tocar, un domo para mirar el universo y laboratorios para preguntar.",
+        "cta": {
+          "texto": "Compra tus entradas",
+          "url": "https://www.tuboleta.com/es/venue/maloka",
+          "icono": "ticket",
+          "externo": true
+        }
       },
       {
         "titulo": "El universo, sobre tu cabeza.",
-        "texto": "En el Cine Domo las estrellas y los planetas se proyectan sobre toda la cúpula."
+        "texto": "En el Cine Domo las estrellas y los planetas se proyectan sobre toda la cúpula.",
+        "cta": {
+          "texto": "Ver funciones del Cine Domo",
+          "ruta": "Ver funciones",
+          "icono": "dome"
+        }
       },
       {
         "titulo": "Aquí está prohibido no tocar.",
-        "texto": "En las salas interactivas las preguntas se responden con las manos."
+        "texto": "En las salas interactivas las preguntas se responden con las manos.",
+        "cta": {
+          "texto": "Conoce las experiencias",
+          "ruta": "Experiencias",
+          "icono": "compass"
+        }
       }
     ],
     "campanas": [

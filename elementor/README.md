@@ -13,7 +13,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `acf-horarios.json` + `horarios-snippet.php` | Horarios en un solo lugar (página de inicio) para menú, home, Visítanos y footer | ACF › Importar y Code Snippets |
 | `evento-single-v13.json` | Ficha de cada evento (plantilla del Theme Builder para Eventos) | Plantillas › Theme Builder › Entrada individual |
 | `noticia-single-v13.json` + `noticias-snippet.php` | Página de cada noticia (plantilla del Theme Builder para Entradas) y tiempo de lectura | Theme Builder › Entrada individual · Code Snippets |
-| `hero-campanas-v13.json` | Banner de la home con una campaña por diapositiva y su llamado a la acción | Plantillas › Importar, y se inserta arriba en la home |
+| `hero-campanas-v13.json` | Banner de la home: tres frases sobre la foto, cada una con su botón | Plantillas › Importar, y se inserta arriba en la home |
 | `agenda-snippet.php` | Ordena la agenda por fecha, oculta los eventos pasados y formatea las fechas | Plugin Code Snippets |
 | `visitanos-v13-parte1.json`, `-parte2.json`, `-parte3.json` | Página Visítanos en 3 partes (10 secciones) | Se insertan en orden en la página Visítanos |
 
@@ -337,33 +337,25 @@ Maqueta: por ejemplo https://ydelriov.github.io/Maloka/seleccion/noticias/llega-
 5. Revisa una entrada larga: los subtítulos (H2/H3), listas, enlaces e imágenes del texto toman el estilo del widget
    Contenido de la entrada; ajusta en Estilo si alguna entrada vieja trae estilos propios.
 
-## Banner de campañas (home)
+## Banner de la home (con botón)
 
-Maqueta: https://ydelriov.github.io/Maloka/seleccion/ (las pestañas 01–04 de abajo cambian de campaña).
+Maqueta: https://ydelriov.github.io/Maloka/seleccion/
 
-Cada diapositiva del banner es **una campaña** con un solo llamado a la acción claro:
+El banner de siempre (una foto de Maloka y tres frases que rotan, con puntos y pausa) suma **un botón amarillo por
+frase**, para llevar a la acción del momento:
 
-| Tipo | Ejemplo | Llamado a la acción |
+| Frase | Botón | Lleva a |
 |---|---|---|
-| Promoción | 2x1 en Maloka (banner actual de maloka.org) | «Comprar entradas 2x1» → TuBoleta |
-| Agenda | Noviembre en Maloka (banner actual) | «Ver la programación» → Agéndate |
-| Podcast | La Maloka: «Tonalidades humanas» | «Escuchar en Spotify» |
-| Boletín | Recibe la agenda en tu correo | «Suscríbete al boletín» |
+| Atrévete a vivir la ciencia. | Compra tus entradas | TuBoleta |
+| El universo, sobre tu cabeza. | Ver funciones del Cine Domo | Visítanos › Funciones |
+| Aquí está prohibido no tocar. | Conoce las experiencias | Visítanos › Experiencias |
 
-Reglas para que se vea bien:
-- **Una idea y un botón por diapositiva.** El texto del botón dice la acción («Comprar», «Escuchar», «Suscribirse»),
-  nunca «Ver más» o «Clic aquí».
-- **Imagen sin texto incrustado**, de 1920 × 1080, con el lado izquierdo libre (el título y el botón van ahí y se leen
-  sobre un velo plano). Si la pieza es cuadrada (como la del podcast), se muestra completa a la derecha sobre noche.
-- Máximo **4 campañas**: con más, nadie llega a ver la última.
-- El orden importa: la primera es la que más se ve (la venta de entradas o la promoción vigente).
+Cuando haya una campaña (una promoción, un episodio del podcast, el boletín), se cambia la frase y el botón de una de
+las diapositivas: «Comprar entradas 2x1», «Escuchar en Spotify», «Suscríbete al boletín». El botón siempre dice la
+acción, nunca «Ver más».
 
 ### Cómo se actualiza en Elementor
-`hero-campanas-v13.json` es un widget **Slides** (Elementor Pro): en el editor, cada ítem de la lista «Slides» es una
-campaña con su **imagen de fondo**, **título**, **descripción**, **texto del botón** y **enlace**. Para cambiar una
-campaña se edita ese ítem; para agregar o quitar, se duplica o borra un ítem. El horario de hoy va en su propio
-contenedor debajo del banner.
-
-El texto va centrado verticalmente (Slides › Posición vertical: Centro), sin etiqueta de tipo. Lo que el widget
-Slides no trae y la maqueta sí: las pestañas con el nombre de cada campaña (Slides usa puntos) y el botón de pausa
-(Slides se pausa al pasar el mouse o al tocarlo).
+`hero-campanas-v13.json` es un widget **Slides** (Elementor Pro) con las tres frases sobre la misma foto: cada ítem
+tiene **título**, **descripción**, **texto del botón** y **enlace**. Para cambiar una frase o su botón se edita ese
+ítem. El horario de hoy va en su propio contenedor debajo del banner. Slides usa puntos y se pausa al pasar el mouse
+o al tocarlo (no trae botón de pausa).

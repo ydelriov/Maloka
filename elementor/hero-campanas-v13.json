@@ -1,11 +1,11 @@
 {
- "title": "Banner de campañas · home (Maloka V13)",
+ "title": "Banner · home (Maloka V13)",
  "type": "container",
  "version": "0.4",
  "page_settings": {},
  "content": [
   {
-   "id": "b28ed205",
+   "id": "8bb5c1ce",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -25,85 +25,19 @@
    },
    "elements": [
     {
-     "id": "88f79a76",
+     "id": "659d5f0d",
      "elType": "widget",
      "widgetType": "slides",
      "isInner": false,
      "settings": {
       "slides": [
        {
-        "_id": "4drdw93",
-        "heading": "2x1 en Maloka este 25 y 27 de noviembre.",
-        "description": "Recorrido Exploratorio por $49.000 para dos personas con el código Maloka2x1, en línea o en taquilla.",
-        "button_text": "Comprar entradas 2x1",
+        "_id": "j2rifj2",
+        "heading": "Atrévete a vivir la ciencia.",
+        "description": "Salas para tocar, un domo para mirar el universo y laboratorios para preguntar.",
+        "button_text": "Compra tus entradas",
         "link": {
-         "url": "https://maloka.checkout.tuboleta.com/list/partnerAdvantage?code=Maloka2x1",
-         "is_external": "on",
-         "nofollow": "",
-         "custom_attributes": ""
-        },
-        "link_click": "button",
-        "background_color": "#231B2B",
-        "background_image": {
-         "url": "https://maloka.org/wp-content/uploads/2025/12/anuncio-maloka-banner-portada-3.jpg",
-         "id": 0,
-         "alt": "2x1 en Maloka este 25 y 27 de noviembre."
-        },
-        "background_size": "cover",
-        "background_overlay": "yes",
-        "background_overlay_color": "rgba(20,10,31,0.38)"
-       },
-       {
-        "_id": "13c6bh9",
-        "heading": "Noviembre en Maloka.",
-        "description": "Cine ambiental, talleres ecológicos, Noche de Museos y teatro para todas las edades.",
-        "button_text": "Ver la programación",
-        "link": {
-         "url": "/agendate/",
-         "is_external": "",
-         "nofollow": "",
-         "custom_attributes": ""
-        },
-        "link_click": "button",
-        "background_color": "#231B2B",
-        "background_image": {
-         "url": "https://maloka.org/wp-content/uploads/2026/11/1920_Web-Agenda.jpg",
-         "id": 0,
-         "alt": "Noviembre en Maloka."
-        },
-        "background_size": "cover",
-        "background_overlay": "yes",
-        "background_overlay_color": "rgba(20,10,31,0.38)"
-       },
-       {
-        "_id": "39hs615",
-        "heading": "La Maloka: todo tiene su ciencia.",
-        "description": "Escucha «Tonalidades humanas», el último episodio de la temporada, sobre la genética del color de la piel.",
-        "button_text": "Escuchar en Spotify",
-        "link": {
-         "url": "https://open.spotify.com/episode/2UP73QswKPyTR8sbBByvlF",
-         "is_external": "on",
-         "nofollow": "",
-         "custom_attributes": ""
-        },
-        "link_click": "button",
-        "background_color": "#231B2B",
-        "background_image": {
-         "url": "https://maloka.org/wp-content/uploads/2026/10/PE-100.jpg",
-         "id": 0,
-         "alt": "La Maloka: todo tiene su ciencia."
-        },
-        "background_size": "contain",
-        "background_overlay": "yes",
-        "background_overlay_color": "rgba(20,10,31,0.38)"
-       },
-       {
-        "_id": "2dbw9po",
-        "heading": "Que no se te pase nada.",
-        "description": "Recibe cada mes la agenda, las novedades y los descuentos de Maloka en tu correo.",
-        "button_text": "Suscríbete al boletín",
-        "link": {
-         "url": "https://maloka.ipzmarketing.com/f/57LlRORGSBE",
+         "url": "https://www.tuboleta.com/es/venue/maloka",
          "is_external": "on",
          "nofollow": "",
          "custom_attributes": ""
@@ -113,11 +47,55 @@
         "background_image": {
          "url": "https://ydelriov.github.io/Maloka/elementor/img/hero-slide-1.jpg",
          "id": 0,
-         "alt": "Que no se te pase nada."
+         "alt": "Atrévete a vivir la ciencia."
         },
         "background_size": "cover",
         "background_overlay": "yes",
-        "background_overlay_color": "rgba(20,10,31,0.38)"
+        "background_overlay_color": "rgba(20,10,31,0.45)"
+       },
+       {
+        "_id": "yzf906x",
+        "heading": "El universo, sobre tu cabeza.",
+        "description": "En el Cine Domo las estrellas y los planetas se proyectan sobre toda la cúpula.",
+        "button_text": "Ver funciones del Cine Domo",
+        "link": {
+         "url": "/visitanos/#funciones",
+         "is_external": "",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "link_click": "button",
+        "background_color": "#231B2B",
+        "background_image": {
+         "url": "https://ydelriov.github.io/Maloka/elementor/img/hero-slide-1.jpg",
+         "id": 0,
+         "alt": "El universo, sobre tu cabeza."
+        },
+        "background_size": "cover",
+        "background_overlay": "yes",
+        "background_overlay_color": "rgba(20,10,31,0.45)"
+       },
+       {
+        "_id": "jxhhbrr",
+        "heading": "Aquí está prohibido no tocar.",
+        "description": "En las salas interactivas las preguntas se responden con las manos.",
+        "button_text": "Conoce las experiencias",
+        "link": {
+         "url": "/visitanos/#experiencias",
+         "is_external": "",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "link_click": "button",
+        "background_color": "#231B2B",
+        "background_image": {
+         "url": "https://ydelriov.github.io/Maloka/elementor/img/hero-slide-1.jpg",
+         "id": 0,
+         "alt": "Aquí está prohibido no tocar."
+        },
+        "background_size": "cover",
+        "background_overlay": "yes",
+        "background_overlay_color": "rgba(20,10,31,0.45)"
        }
       ],
       "slides_height": {
@@ -145,7 +123,7 @@
       "transition_speed": 600,
       "content_animation": "fadeInUp",
       "slides_horizontal_position": "left",
-      "slides_vertical_position": "middle",
+      "slides_vertical_position": "bottom",
       "slides_text_align": "left",
       "content_max_width": {
        "unit": "%",
