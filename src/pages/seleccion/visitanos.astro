@@ -6,7 +6,7 @@
    2. Anclas (contenedor fijo arriba con enlaces a #id)
    3. Horarios (contenedores pastel + icon-list)
    4. Planes y tarifas (3 pasos + grupos Entradas y Combos: tarjetas con imagen cuadrada de maloka.org, datos, precio)
-   5. Funciones como en maloka.org: Cine Domo, Conciertos y artes escénicas, Sala Digital (afiches cuadrados) · 6. Cómo llegar (widget Pestañas + Google Maps)
+   5. Funciones: Cine Domo y Conciertos y artes escénicas (afiches cuadrados de maloka.org) · 6. Cómo llegar (widget Pestañas + Google Maps)
    7. Servicios (icon-box) · 8. Accesibilidad (icon-list) · 9. Experiencias (grilla de tarjetas)
    10. Preguntas frecuentes (widget Acordeón con FAQ schema).
    Datos de maloka.org en src/data/visitanos.json (por validar: precios y vigencias cambian por temporada).
@@ -317,7 +317,7 @@ const ll = v.llegar;
   .vi-col { display: grid; gap: 16px; align-content: start; }
   .vi-fun { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 32px 20px; }
   .vi-fun-g + .vi-fun-g, .vi-fun-par { margin-top: 48px; }
-  .vi-fun-par { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .vi-fun-par { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 32px; }
   .vi-fun-par .vi-fun-g { margin-top: 0; }
   .vi-fun-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid rgba(255, 255, 255, .5); }
   .vi-fun-h h3 { margin: 0; font-size: var(--n-sub); font-weight: 700; }
@@ -390,7 +390,7 @@ const ll = v.llegar;
     .vi-planes, .vi-planes--5, .vi-ex { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .vi-planes--5 { gap: 24px; }
     .vi-fun { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .vi-fun-par { grid-template-columns: 1fr; }
+    .vi-fun-par { grid-auto-flow: row; }
     .vi-mapa { position: static; aspect-ratio: 16 / 10; }
     .vi-anclas { top: 72px; } .vi-sec { scroll-margin-top: 128px; }
   }

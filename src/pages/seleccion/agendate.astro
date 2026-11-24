@@ -197,7 +197,7 @@ const lista = proximos.filter((e) => e !== destacado);
   .ag-pas-x { font-size: 14px; }
 
   /* Todos los días */
-  .ag-td-l { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .ag-td-l { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 24px; }
   .ag-td-a { display: grid; grid-template-rows: auto 1fr auto; gap: 10px; min-height: 220px; height: 100%; padding: 28px; background: var(--c); color: var(--n-noche); transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
   .ag-td-a b { font-size: var(--n-sub); line-height: 1.2; }
   .ag-td-a span { font-size: 16px; }
@@ -211,7 +211,7 @@ const lista = proximos.filter((e) => e !== destacado);
     .ag-fila { grid-template-columns: 88px 80px 1fr; }
     .ag-fila-acc { grid-column: 3; }
     .ag-pasados { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .ag-td-l { grid-template-columns: 1fr; gap: 12px; }
+    .ag-td-l { grid-auto-flow: row; gap: 12px; }
     .ag-td-a { min-height: 0; padding: 22px; }
   }
   @media (max-width: 767px) {

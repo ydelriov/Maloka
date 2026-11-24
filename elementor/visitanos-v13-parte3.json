@@ -5,7 +5,7 @@
  "page_settings": {},
  "content": [
   {
-   "id": "f35b8747",
+   "id": "db979ad3",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -61,7 +61,7 @@
    },
    "elements": [
     {
-     "id": "fd79ec24",
+     "id": "ed2dffb2",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -89,7 +89,7 @@
      },
      "elements": [
       {
-       "id": "0f5563a1",
+       "id": "da2050b3",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -121,7 +121,7 @@
        },
        "elements": [
         {
-         "id": "fcac56a7",
+         "id": "997efe7f",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -151,7 +151,7 @@
          "elements": []
         },
         {
-         "id": "a8df0a6e",
+         "id": "8e55c804",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -191,7 +191,7 @@
          "elements": []
         },
         {
-         "id": "17cd3f6c",
+         "id": "12880813",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -220,14 +220,14 @@
          "elements": []
         },
         {
-         "id": "9322bc8c",
+         "id": "b8aaac3d",
          "elType": "widget",
          "widgetType": "icon-list",
          "isInner": false,
          "settings": {
           "icon_list": [
            {
-            "_id": "i81ifj4",
+            "_id": "vk5fn7p",
             "text": "Carrera 68D #24A-51, Bogotá",
             "selected_icon": {
              "value": "fas fa-map-marker-alt",
@@ -273,7 +273,7 @@
          "elements": []
         },
         {
-         "id": "daec063c",
+         "id": "58fd1a23",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -323,29 +323,29 @@
          "elements": []
         },
         {
-         "id": "6dea00d0",
+         "id": "acd3bc2c",
          "elType": "widget",
          "widgetType": "tabs",
          "isInner": false,
          "settings": {
           "tabs": [
            {
-            "_id": "w176h6h",
+            "_id": "3bfq1jn",
             "tab_title": "TransMilenio",
             "tab_content": "<p><strong>Estación El Tiempo – Maloka</strong></p><ol><li>Toma una ruta troncal por la Calle 26 hacia la zona K.</li><li>Bájate en la estación El Tiempo – Maloka.</li><li>Sal de la estación y camina hacia el suroccidente hasta Maloka.</li></ol><p><strong>Rutas troncales:</strong> K16 · K23 · K43 · K54 · K86</p>"
            },
            {
-            "_id": "t58bfh2",
+            "_id": "f0y5yx3",
             "tab_title": "SITP",
             "tab_content": "<p><strong>Rutas zonales del SITP</strong></p><p><strong>Paraderos</strong></p><ul><li>Calle 26 con Carrera 68D – Estación El Tiempo – Maloka</li><li>Av. La Esperanza (Calle 24) con Carrera 69 – Maloka</li></ul><p><strong>Rutas:</strong> 291 · Terminal Norte – Makro – Tierra Buena · C27 · La Estancia – Normandía · C115 · C135 · 603B · Z8</p>"
            },
            {
-            "_id": "jaeiars",
+            "_id": "c7t1s15",
             "tab_title": "Carro y moto",
             "tab_content": "<p><strong>Parqueadero de Maloka</strong></p><ol><li>El parqueadero está al respaldo del centro interactivo.</li><li>La entrada es por la Calle 25.</li><li>Tiene espacios para carros, motos y bicicletas.</li><li>Visitantes de Maloka: 1 hora gratis.</li></ol><p><strong>Tarifas del parqueadero</strong></p><ul><li>Carro: $130 por minuto · $27.000 tarifa plena hasta 12 horas</li><li>Moto: $90 por minuto · $15.000 tarifa plena hasta 12 horas</li></ul>"
            },
            {
-            "_id": "3rkke4l",
+            "_id": "sr47kaj",
             "tab_title": "Bicicleta",
             "tab_content": "<p><strong>Llega en bicicleta</strong></p><ol><li>El parqueadero de Maloka tiene espacios para bicicletas.</li><li>Entra por la Calle 25, al respaldo del centro interactivo.</li></ol>"
            }
@@ -391,7 +391,7 @@
          "elements": []
         },
         {
-         "id": "637e7106",
+         "id": "7b54f748",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -417,7 +417,7 @@
        ]
       },
       {
-       "id": "4d5159de",
+       "id": "d2b503ee",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -449,7 +449,7 @@
        },
        "elements": [
         {
-         "id": "60438da7",
+         "id": "bd50f56d",
          "elType": "widget",
          "widgetType": "google_maps",
          "isInner": false,
@@ -485,7 +485,7 @@
    ]
   },
   {
-   "id": "4208b0a2",
+   "id": "8a8ceed0",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -541,7 +541,7 @@
    },
    "elements": [
     {
-     "id": "3e34cd62",
+     "id": "8b3e88b9",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -558,7 +558,7 @@
      },
      "elements": [
       {
-       "id": "c8da060b",
+       "id": "70b31351",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -588,7 +588,7 @@
        "elements": []
       },
       {
-       "id": "c284b2d6",
+       "id": "2de240e0",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -628,7 +628,7 @@
        "elements": []
       },
       {
-       "id": "9f244466",
+       "id": "0e39a372",
        "elType": "widget",
        "widgetType": "text-editor",
        "isInner": false,
@@ -659,7 +659,7 @@
      ]
     },
     {
-     "id": "0da914a4",
+     "id": "25906035",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -704,7 +704,7 @@
      },
      "elements": [
       {
-       "id": "6b365bb4",
+       "id": "835ae0cb",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -721,7 +721,7 @@
        },
        "elements": [
         {
-         "id": "720d396f",
+         "id": "1b886354",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -756,7 +756,7 @@
          "elements": []
         },
         {
-         "id": "c5411d34",
+         "id": "5b10686b",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -782,7 +782,7 @@
          "elements": []
         },
         {
-         "id": "9e0ebd2a",
+         "id": "4ce80357",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -862,7 +862,7 @@
          "elements": []
         },
         {
-         "id": "c1c947f6",
+         "id": "a28b3e54",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -888,7 +888,7 @@
          "elements": []
         },
         {
-         "id": "e267e880",
+         "id": "b4cbe7ab",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -968,7 +968,7 @@
          "elements": []
         },
         {
-         "id": "6e9b9c52",
+         "id": "6be126c7",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -996,7 +996,7 @@
        ]
       },
       {
-       "id": "25de3be9",
+       "id": "7550283e",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1013,7 +1013,7 @@
        },
        "elements": [
         {
-         "id": "bb28e10a",
+         "id": "8ba002bd",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1048,7 +1048,7 @@
          "elements": []
         },
         {
-         "id": "c16bf63d",
+         "id": "45089108",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -1074,7 +1074,7 @@
          "elements": []
         },
         {
-         "id": "9babb7a0",
+         "id": "ab5a7bcb",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -1154,7 +1154,7 @@
          "elements": []
         },
         {
-         "id": "d25f8931",
+         "id": "850e275f",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -1180,7 +1180,7 @@
          "elements": []
         },
         {
-         "id": "ead83efe",
+         "id": "f5a14c99",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -1260,7 +1260,7 @@
          "elements": []
         },
         {
-         "id": "c444437f",
+         "id": "337c7346",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -1286,7 +1286,7 @@
          "elements": []
         },
         {
-         "id": "8378fe46",
+         "id": "851939e4",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -1366,7 +1366,7 @@
          "elements": []
         },
         {
-         "id": "eb55373e",
+         "id": "c5da6d67",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -1392,7 +1392,7 @@
          "elements": []
         },
         {
-         "id": "c4027217",
+         "id": "f879620e",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -1472,7 +1472,7 @@
          "elements": []
         },
         {
-         "id": "7e8b41de",
+         "id": "7c9d63c7",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -1500,7 +1500,7 @@
        ]
       },
       {
-       "id": "3bcaa9f6",
+       "id": "5c473bd8",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1517,7 +1517,7 @@
        },
        "elements": [
         {
-         "id": "29ff92c7",
+         "id": "087978a8",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1552,7 +1552,7 @@
          "elements": []
         },
         {
-         "id": "372f2c1f",
+         "id": "f4c0dec1",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -1578,7 +1578,7 @@
          "elements": []
         },
         {
-         "id": "5ebe08f0",
+         "id": "45df2c76",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -1658,7 +1658,7 @@
          "elements": []
         },
         {
-         "id": "c4ac9a0c",
+         "id": "df07ff6e",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -1684,7 +1684,7 @@
          "elements": []
         },
         {
-         "id": "49fdcf1f",
+         "id": "3d0f4d02",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -1764,7 +1764,7 @@
          "elements": []
         },
         {
-         "id": "13251598",
+         "id": "542aa70f",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -1790,7 +1790,7 @@
          "elements": []
         },
         {
-         "id": "0ddd656c",
+         "id": "9b7b2e7e",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -1870,7 +1870,7 @@
          "elements": []
         },
         {
-         "id": "884c62ae",
+         "id": "4b431874",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -1898,7 +1898,7 @@
        ]
       },
       {
-       "id": "479e143b",
+       "id": "d81fabeb",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1915,7 +1915,7 @@
        },
        "elements": [
         {
-         "id": "b4bc7ebc",
+         "id": "892c6d08",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1950,7 +1950,7 @@
          "elements": []
         },
         {
-         "id": "1349108d",
+         "id": "4c275221",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -1976,7 +1976,7 @@
          "elements": []
         },
         {
-         "id": "ac66b5ca",
+         "id": "fc69f17c",
          "elType": "widget",
          "widgetType": "icon-box",
          "isInner": false,
@@ -2056,7 +2056,7 @@
          "elements": []
         },
         {
-         "id": "2eb69cab",
+         "id": "de4cebcb",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -2088,7 +2088,7 @@
    ]
   },
   {
-   "id": "f967a731",
+   "id": "d75588f4",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -2144,7 +2144,7 @@
    },
    "elements": [
     {
-     "id": "3e191a2e",
+     "id": "c7d65b32",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -2172,7 +2172,7 @@
      },
      "elements": [
       {
-       "id": "286e406b",
+       "id": "eb3b742a",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2204,7 +2204,7 @@
        },
        "elements": [
         {
-         "id": "63daef97",
+         "id": "69f68ef5",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2234,7 +2234,7 @@
          "elements": []
         },
         {
-         "id": "07534cfc",
+         "id": "c24f1185",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2276,7 +2276,7 @@
        ]
       },
       {
-       "id": "a327871c",
+       "id": "a4660fcb",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2308,7 +2308,7 @@
        },
        "elements": [
         {
-         "id": "17518ea4",
+         "id": "c44c17e8",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -2337,14 +2337,14 @@
          "elements": []
         },
         {
-         "id": "77c8379f",
+         "id": "02260356",
          "elType": "widget",
          "widgetType": "icon-list",
          "isInner": false,
          "settings": {
           "icon_list": [
            {
-            "_id": "3wd79g0",
+            "_id": "i8308r2",
             "text": "Acceso a salas, Cine Domo y laboratorios",
             "selected_icon": {
              "value": "fas fa-universal-access",
@@ -2355,7 +2355,7 @@
             }
            },
            {
-            "_id": "ja192an",
+            "_id": "uaqcgn0",
             "text": "Acompañamiento para grupos con necesidades específicas",
             "selected_icon": {
              "value": "fas fa-users",
@@ -2366,7 +2366,7 @@
             }
            },
            {
-            "_id": "dm6ui2c",
+            "_id": "j56s62i",
             "text": "Guía digital gratuita en Bloomberg Connects",
             "selected_icon": {
              "value": "fas fa-mobile-alt",
@@ -2420,7 +2420,7 @@
          "elements": []
         },
         {
-         "id": "fe560f0e",
+         "id": "a3c4d5a7",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2476,7 +2476,7 @@
    ]
   },
   {
-   "id": "419ee54b",
+   "id": "26cafa63",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -2532,7 +2532,7 @@
    },
    "elements": [
     {
-     "id": "e6f04284",
+     "id": "e4337af7",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -2554,7 +2554,7 @@
      },
      "elements": [
       {
-       "id": "dc99472e",
+       "id": "5f24f12c",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2581,7 +2581,7 @@
        },
        "elements": [
         {
-         "id": "9805cde9",
+         "id": "7afae036",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2611,7 +2611,7 @@
          "elements": []
         },
         {
-         "id": "3b6aea98",
+         "id": "8b33227f",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2651,7 +2651,7 @@
          "elements": []
         },
         {
-         "id": "eeda8f62",
+         "id": "083f663f",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -2682,7 +2682,7 @@
        ]
       },
       {
-       "id": "34403b7e",
+       "id": "fc2953e1",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -2734,7 +2734,7 @@
      ]
     },
     {
-     "id": "d56541b6",
+     "id": "d9105ec5",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -2759,7 +2759,7 @@
      },
      "elements": [
       {
-       "id": "f8a8382c",
+       "id": "b2108ce9",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2836,7 +2836,7 @@
        },
        "elements": [
         {
-         "id": "f57cd8dc",
+         "id": "662c290c",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2872,7 +2872,7 @@
          "elements": []
         },
         {
-         "id": "481c811b",
+         "id": "adbdb7a3",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -2889,7 +2889,7 @@
          },
          "elements": [
           {
-           "id": "195ca9ef",
+           "id": "b332bd8d",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -2924,7 +2924,7 @@
            "elements": []
           },
           {
-           "id": "5fbe9f61",
+           "id": "fde9b1be",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -2953,7 +2953,7 @@
        ]
       },
       {
-       "id": "3d0b8868",
+       "id": "844e1d49",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3030,7 +3030,7 @@
        },
        "elements": [
         {
-         "id": "e1594584",
+         "id": "bca66957",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3066,7 +3066,7 @@
          "elements": []
         },
         {
-         "id": "1d5c4936",
+         "id": "1592824e",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -3083,7 +3083,7 @@
          },
          "elements": [
           {
-           "id": "b83eaf9b",
+           "id": "06e27562",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -3118,7 +3118,7 @@
            "elements": []
           },
           {
-           "id": "c6b12f9e",
+           "id": "a31331c1",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -3147,7 +3147,7 @@
        ]
       },
       {
-       "id": "8958a529",
+       "id": "f7eecd79",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3224,7 +3224,7 @@
        },
        "elements": [
         {
-         "id": "7d6908e4",
+         "id": "7e3a3449",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3260,7 +3260,7 @@
          "elements": []
         },
         {
-         "id": "4f6f8e46",
+         "id": "b94e230a",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -3277,7 +3277,7 @@
          },
          "elements": [
           {
-           "id": "5bbdf0af",
+           "id": "b3675a82",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -3312,7 +3312,7 @@
            "elements": []
           },
           {
-           "id": "43f1755b",
+           "id": "c318f214",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -3341,7 +3341,7 @@
        ]
       },
       {
-       "id": "6505abae",
+       "id": "2f64846c",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3418,7 +3418,7 @@
        },
        "elements": [
         {
-         "id": "0de4b744",
+         "id": "c4b44ea9",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3454,7 +3454,7 @@
          "elements": []
         },
         {
-         "id": "3b825a92",
+         "id": "9851508c",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -3471,7 +3471,7 @@
          },
          "elements": [
           {
-           "id": "f43e8117",
+           "id": "da4e274f",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -3506,7 +3506,7 @@
            "elements": []
           },
           {
-           "id": "d349b95e",
+           "id": "87a9e5b8",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -3539,7 +3539,7 @@
    ]
   },
   {
-   "id": "ec339539",
+   "id": "e8c82bc2",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -3595,7 +3595,7 @@
    },
    "elements": [
     {
-     "id": "155e4ca8",
+     "id": "02a41f49",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -3623,7 +3623,7 @@
      },
      "elements": [
       {
-       "id": "e2b611bb",
+       "id": "5453385e",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3655,7 +3655,7 @@
        },
        "elements": [
         {
-         "id": "8d428ebc",
+         "id": "601d4a3a",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3685,7 +3685,7 @@
          "elements": []
         },
         {
-         "id": "37b9f1d0",
+         "id": "0c7c0635",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3725,7 +3725,7 @@
          "elements": []
         },
         {
-         "id": "52891e7a",
+         "id": "a74784ee",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -3756,7 +3756,7 @@
        ]
       },
       {
-       "id": "3c1e5eaa",
+       "id": "2b6c663d",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3788,39 +3788,39 @@
        },
        "elements": [
         {
-         "id": "78bef98c",
+         "id": "29c10f1f",
          "elType": "widget",
          "widgetType": "accordion",
          "isInner": false,
          "settings": {
           "tabs": [
            {
-            "_id": "xjmyuu7",
+            "_id": "qhw54na",
             "tab_title": "¿Cuál es el horario de Maloka?",
             "tab_content": "<p>De lunes a viernes de 11:00 a. m. a 5:00 p. m. Sábados, domingos y festivos de 9:30 a. m. a 6:00 p. m.</p>"
            },
            {
-            "_id": "f7ryl9e",
+            "_id": "k6iwijb",
             "tab_title": "¿Hasta qué hora puedo comprar entradas?",
             "tab_content": "<p>La venta de entradas cierra a las 4:00 p. m.</p>"
            },
            {
-            "_id": "qzrbh0j",
+            "_id": "3gc8mqk",
             "tab_title": "¿Desde qué edad se paga la entrada?",
             "tab_content": "<p>La entrada es paga desde los 4 años. Los menores de 4 años y los adultos mayores entran gratis al recorrido exploratorio.</p>"
            },
            {
-            "_id": "h0kdfkr",
+            "_id": "utfmal2",
             "tab_title": "¿Cuánto dura la visita?",
             "tab_content": "<p>El recorrido exploratorio dura de 2 a 3 horas. Con una función del Cine Domo, unas 4 horas.</p>"
            },
            {
-            "_id": "nivik6f",
+            "_id": "oxsra69",
             "tab_title": "¿Dónde compro las entradas?",
             "tab_content": "<p>En línea en Tuboleta. Compra con anticipación: las entradas pueden agotarse en taquilla.</p>"
            },
            {
-            "_id": "sozsp7o",
+            "_id": "cdy49de",
             "tab_title": "¿Hay guía para recorrer Maloka?",
             "tab_content": "<p>Sí. La guía digital es gratuita y se usa desde el celular con la aplicación Bloomberg Connects.</p>"
            }

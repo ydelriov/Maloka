@@ -650,7 +650,7 @@
     ]
   },
   "funciones": {
-    "titulo": "Cine Domo, artes escénicas y Sala Digital.",
+    "titulo": "Cine Domo y artes escénicas.",
     "texto": "Lo que está en cartelera en maloka.org. Compra cada función en TuBoleta.",
     "grupos": [
       {
@@ -684,28 +684,10 @@
             "meta": "Documental educativo · 20 min · Todo público"
           },
           {
-            "titulo": "Tunka",
-            "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/6a4c9c68-b758-4e9c-a557-49eb8df2498c.jpg",
-            "url": "https://www.tuboleta.com/es/eventos/cine-domo-tunka-1",
-            "meta": "Animada · 40 min · Todo público"
-          },
-          {
             "titulo": "Show láser: Fantasía musical",
             "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/470ded48-5b77-4aa6-8a4a-207787b78b13_1.jpg",
             "url": "https://www.tuboleta.com/es/eventos/show-laser-fantasia-musical",
             "meta": "Animado · 40 min · Mayores de 4 años"
-          },
-          {
-            "titulo": "Show láser: Leyendas del rock en español",
-            "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/ec0b8ecb-aafe-4401-826d-618a0f44679f.jpg",
-            "url": "https://www.tuboleta.com/es/eventos/show-laser-leyendas-del-rock-0",
-            "meta": "Alternativo · 50 min · Mayores de 8 años"
-          },
-          {
-            "titulo": "Show láser: Tributo a ABBA",
-            "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/45d609c4-d527-4605-aa0c-dc41d1b2900a_1.jpg",
-            "url": "https://www.tuboleta.com/es/eventos/show-laser-leyendas-del-rock-0",
-            "meta": "Alternativo · Mayores de 16 años"
           }
         ]
       },
@@ -720,20 +702,6 @@
             "imagen": "https://maloka.org/wp-content/uploads/2026/10/1080-22_11.jpg",
             "url": "https://www.tuboleta.com/es/eventos/ratos-el-tejido-del-tiempo-4",
             "meta": "Teatro de títeres y clown · Sáb. 28 de noviembre · 11:00 a. m. · Desde los 2 años"
-          }
-        ]
-      },
-      {
-        "id": "sala-digital",
-        "titulo": "Sala Digital",
-        "texto": "Películas para toda la familia · $19.600",
-        "color": "lavanda",
-        "items": [
-          {
-            "titulo": "Una jungla de locura 2",
-            "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/88e5eafb-5f75-4edb-a780-a7d7c2a6b10c.jpg",
-            "url": "https://www.tuboleta.com/es/eventos/sala-digital-una-jungla-de-locura",
-            "meta": "Animada · 90 min · Todo público"
           }
         ]
       }

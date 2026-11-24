@@ -5,7 +5,7 @@
  "page_settings": {},
  "content": [
   {
-   "id": "57c38b89",
+   "id": "de931d65",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -61,7 +61,7 @@
    },
    "elements": [
     {
-     "id": "8f1a04f6",
+     "id": "41eabd5d",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -78,7 +78,7 @@
      },
      "elements": [
       {
-       "id": "f150eb43",
+       "id": "8d74d994",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -108,12 +108,12 @@
        "elements": []
       },
       {
-       "id": "c2a27637",
+       "id": "0a328245",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
        "settings": {
-        "title": "Cine Domo, artes escénicas y Sala Digital.",
+        "title": "Cine Domo y artes escénicas.",
         "header_size": "h2",
         "title_color": "#FFFFFF",
         "typography_typography": "custom",
@@ -148,7 +148,7 @@
        "elements": []
       },
       {
-       "id": "20d7ad6b",
+       "id": "0a8ccd71",
        "elType": "widget",
        "widgetType": "text-editor",
        "isInner": false,
@@ -179,7 +179,7 @@
      ]
     },
     {
-     "id": "32fc25c9",
+     "id": "4fc553a2",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -216,7 +216,7 @@
      },
      "elements": [
       {
-       "id": "3033296b",
+       "id": "b87361ee",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -252,7 +252,7 @@
        "elements": []
       },
       {
-       "id": "49be3c30",
+       "id": "69362fbd",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -280,7 +280,7 @@
      ]
     },
     {
-     "id": "9a550214",
+     "id": "997219a8",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -305,7 +305,7 @@
      },
      "elements": [
       {
-       "id": "c8fa4820",
+       "id": "440165db",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -345,7 +345,7 @@
        },
        "elements": [
         {
-         "id": "97e1ca37",
+         "id": "b7d862a5",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -368,7 +368,7 @@
          "elements": []
         },
         {
-         "id": "f7a2e97b",
+         "id": "83b3df24",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -404,7 +404,7 @@
          "elements": []
         },
         {
-         "id": "c764a8f9",
+         "id": "9b19ff89",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -434,7 +434,7 @@
          "elements": []
         },
         {
-         "id": "ff8092f1",
+         "id": "c15e5f3a",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -461,7 +461,7 @@
        ]
       },
       {
-       "id": "e7ed3d28",
+       "id": "d5f89ea4",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -501,7 +501,7 @@
        },
        "elements": [
         {
-         "id": "82151853",
+         "id": "8633b791",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -524,7 +524,7 @@
          "elements": []
         },
         {
-         "id": "a12c339f",
+         "id": "98713261",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -560,7 +560,7 @@
          "elements": []
         },
         {
-         "id": "43ad9022",
+         "id": "e73c8cd3",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -590,7 +590,7 @@
          "elements": []
         },
         {
-         "id": "23e80882",
+         "id": "ec9451da",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -617,7 +617,7 @@
        ]
       },
       {
-       "id": "108618b9",
+       "id": "71a7d497",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -657,7 +657,7 @@
        },
        "elements": [
         {
-         "id": "c961a21f",
+         "id": "eab1722b",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -680,7 +680,7 @@
          "elements": []
         },
         {
-         "id": "ab447f36",
+         "id": "fcb68b6e",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -716,7 +716,7 @@
          "elements": []
         },
         {
-         "id": "712a6482",
+         "id": "b9cecd15",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -746,7 +746,7 @@
          "elements": []
         },
         {
-         "id": "1c0385d7",
+         "id": "b6bd4c63",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -773,7 +773,7 @@
        ]
       },
       {
-       "id": "025f0505",
+       "id": "f2ddd3c3",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -813,7 +813,7 @@
        },
        "elements": [
         {
-         "id": "21040847",
+         "id": "6fa2658b",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -836,7 +836,7 @@
          "elements": []
         },
         {
-         "id": "f0d2f19a",
+         "id": "bbfec92d",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -872,7 +872,7 @@
          "elements": []
         },
         {
-         "id": "d495e69f",
+         "id": "5f41eba6",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -902,7 +902,7 @@
          "elements": []
         },
         {
-         "id": "2e40b4e3",
+         "id": "657ce025",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -929,163 +929,7 @@
        ]
       },
       {
-       "id": "b2be6a94",
-       "elType": "container",
-       "isInner": true,
-       "settings": {
-        "container_type": "flex",
-        "flex_direction": "column",
-        "content_width": "full",
-        "flex_gap": {
-         "column": "8",
-         "row": "8",
-         "isLinked": true,
-         "unit": "px",
-         "size": 8
-        },
-        "html_tag": "a",
-        "link": {
-         "url": "https://www.tuboleta.com/es/eventos/cine-domo-tunka-1",
-         "is_external": "on",
-         "nofollow": "",
-         "custom_attributes": ""
-        },
-        "flex_align_items": "flex-start",
-        "width": {
-         "unit": "%",
-         "size": 18.5,
-         "sizes": []
-        },
-        "width_tablet": {
-         "unit": "%",
-         "size": 31,
-         "sizes": []
-        },
-        "width_mobile": {
-         "unit": "%",
-         "size": 47,
-         "sizes": []
-        }
-       },
-       "elements": [
-        {
-         "id": "293eadbf",
-         "elType": "widget",
-         "widgetType": "image",
-         "isInner": false,
-         "settings": {
-          "image": {
-           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/6a4c9c68-b758-4e9c-a557-49eb8df2498c.jpg",
-           "id": 0,
-           "alt": "Afiche de Tunka"
-          },
-          "image_size": "full",
-          "caption_source": "none",
-          "link_to": "none",
-          "width": {
-           "unit": "%",
-           "size": 100,
-           "sizes": []
-          },
-          "hover_animation": "grow"
-         },
-         "elements": []
-        },
-        {
-         "id": "4c4f9305",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Cine Domo",
-          "header_size": "div",
-          "title_color": "#231B2B",
-          "_background_background": "classic",
-          "_background_color": "#9CCBF2",
-          "_padding": {
-           "unit": "px",
-           "top": "5",
-           "right": "12",
-           "bottom": "5",
-           "left": "12",
-           "isLinked": false
-          },
-          "_element_width": "auto",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 14,
-           "sizes": []
-          },
-          "typography_font_weight": "700",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.4,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        },
-        {
-         "id": "6708e4e6",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Tunka",
-          "header_size": "h4",
-          "title_color": "#FFFFFF",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 18,
-           "sizes": []
-          },
-          "typography_font_size_mobile": {
-           "unit": "px",
-           "size": 16,
-           "sizes": []
-          },
-          "typography_font_weight": "700",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.25,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        },
-        {
-         "id": "d31bd609",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Animada · 40 min · Todo público",
-          "header_size": "div",
-          "title_color": "#D9D3E0",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 14,
-           "sizes": []
-          },
-          "typography_font_weight": "400",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.4,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        }
-       ]
-      },
-      {
-       "id": "70d062b1",
+       "id": "504d1849",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1125,7 +969,7 @@
        },
        "elements": [
         {
-         "id": "34d48a23",
+         "id": "93910b3c",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -1148,7 +992,7 @@
          "elements": []
         },
         {
-         "id": "684de43a",
+         "id": "852b194c",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1184,7 +1028,7 @@
          "elements": []
         },
         {
-         "id": "e40766a2",
+         "id": "7ddfdf47",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1214,7 +1058,7 @@
          "elements": []
         },
         {
-         "id": "5c5bb841",
+         "id": "bcec3f00",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1239,323 +1083,11 @@
          "elements": []
         }
        ]
-      },
-      {
-       "id": "6a585ebc",
-       "elType": "container",
-       "isInner": true,
-       "settings": {
-        "container_type": "flex",
-        "flex_direction": "column",
-        "content_width": "full",
-        "flex_gap": {
-         "column": "8",
-         "row": "8",
-         "isLinked": true,
-         "unit": "px",
-         "size": 8
-        },
-        "html_tag": "a",
-        "link": {
-         "url": "https://www.tuboleta.com/es/eventos/show-laser-leyendas-del-rock-0",
-         "is_external": "on",
-         "nofollow": "",
-         "custom_attributes": ""
-        },
-        "flex_align_items": "flex-start",
-        "width": {
-         "unit": "%",
-         "size": 18.5,
-         "sizes": []
-        },
-        "width_tablet": {
-         "unit": "%",
-         "size": 31,
-         "sizes": []
-        },
-        "width_mobile": {
-         "unit": "%",
-         "size": 47,
-         "sizes": []
-        }
-       },
-       "elements": [
-        {
-         "id": "4b118db2",
-         "elType": "widget",
-         "widgetType": "image",
-         "isInner": false,
-         "settings": {
-          "image": {
-           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/ec0b8ecb-aafe-4401-826d-618a0f44679f.jpg",
-           "id": 0,
-           "alt": "Afiche de Show láser: Leyendas del rock en español"
-          },
-          "image_size": "full",
-          "caption_source": "none",
-          "link_to": "none",
-          "width": {
-           "unit": "%",
-           "size": 100,
-           "sizes": []
-          },
-          "hover_animation": "grow"
-         },
-         "elements": []
-        },
-        {
-         "id": "e8553f0c",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Cine Domo",
-          "header_size": "div",
-          "title_color": "#231B2B",
-          "_background_background": "classic",
-          "_background_color": "#9CCBF2",
-          "_padding": {
-           "unit": "px",
-           "top": "5",
-           "right": "12",
-           "bottom": "5",
-           "left": "12",
-           "isLinked": false
-          },
-          "_element_width": "auto",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 14,
-           "sizes": []
-          },
-          "typography_font_weight": "700",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.4,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        },
-        {
-         "id": "fe1b3452",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Show láser: Leyendas del rock en español",
-          "header_size": "h4",
-          "title_color": "#FFFFFF",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 18,
-           "sizes": []
-          },
-          "typography_font_size_mobile": {
-           "unit": "px",
-           "size": 16,
-           "sizes": []
-          },
-          "typography_font_weight": "700",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.25,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        },
-        {
-         "id": "4e53cd3c",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Alternativo · 50 min · Mayores de 8 años",
-          "header_size": "div",
-          "title_color": "#D9D3E0",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 14,
-           "sizes": []
-          },
-          "typography_font_weight": "400",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.4,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        }
-       ]
-      },
-      {
-       "id": "0c2bdc77",
-       "elType": "container",
-       "isInner": true,
-       "settings": {
-        "container_type": "flex",
-        "flex_direction": "column",
-        "content_width": "full",
-        "flex_gap": {
-         "column": "8",
-         "row": "8",
-         "isLinked": true,
-         "unit": "px",
-         "size": 8
-        },
-        "html_tag": "a",
-        "link": {
-         "url": "https://www.tuboleta.com/es/eventos/show-laser-leyendas-del-rock-0",
-         "is_external": "on",
-         "nofollow": "",
-         "custom_attributes": ""
-        },
-        "flex_align_items": "flex-start",
-        "width": {
-         "unit": "%",
-         "size": 18.5,
-         "sizes": []
-        },
-        "width_tablet": {
-         "unit": "%",
-         "size": 31,
-         "sizes": []
-        },
-        "width_mobile": {
-         "unit": "%",
-         "size": 47,
-         "sizes": []
-        }
-       },
-       "elements": [
-        {
-         "id": "7419c1f1",
-         "elType": "widget",
-         "widgetType": "image",
-         "isInner": false,
-         "settings": {
-          "image": {
-           "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/45d609c4-d527-4605-aa0c-dc41d1b2900a_1.jpg",
-           "id": 0,
-           "alt": "Afiche de Show láser: Tributo a ABBA"
-          },
-          "image_size": "full",
-          "caption_source": "none",
-          "link_to": "none",
-          "width": {
-           "unit": "%",
-           "size": 100,
-           "sizes": []
-          },
-          "hover_animation": "grow"
-         },
-         "elements": []
-        },
-        {
-         "id": "c36125a6",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Cine Domo",
-          "header_size": "div",
-          "title_color": "#231B2B",
-          "_background_background": "classic",
-          "_background_color": "#9CCBF2",
-          "_padding": {
-           "unit": "px",
-           "top": "5",
-           "right": "12",
-           "bottom": "5",
-           "left": "12",
-           "isLinked": false
-          },
-          "_element_width": "auto",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 14,
-           "sizes": []
-          },
-          "typography_font_weight": "700",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.4,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        },
-        {
-         "id": "5f20a371",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Show láser: Tributo a ABBA",
-          "header_size": "h4",
-          "title_color": "#FFFFFF",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 18,
-           "sizes": []
-          },
-          "typography_font_size_mobile": {
-           "unit": "px",
-           "size": 16,
-           "sizes": []
-          },
-          "typography_font_weight": "700",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.25,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        },
-        {
-         "id": "89866d2a",
-         "elType": "widget",
-         "widgetType": "heading",
-         "isInner": false,
-         "settings": {
-          "title": "Alternativo · Mayores de 16 años",
-          "header_size": "div",
-          "title_color": "#D9D3E0",
-          "typography_typography": "custom",
-          "typography_font_size": {
-           "unit": "px",
-           "size": 14,
-           "sizes": []
-          },
-          "typography_font_weight": "400",
-          "typography_line_height": {
-           "unit": "em",
-           "size": 1.4,
-           "sizes": []
-          },
-          "typography_font_family": "Montserrat"
-         },
-         "elements": []
-        }
-       ]
       }
      ]
     },
     {
-     "id": "2a0a44d2",
+     "id": "c7d31fe4",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1583,7 +1115,7 @@
      },
      "elements": [
       {
-       "id": "17f6b823",
+       "id": "e54fa725",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1599,7 +1131,7 @@
         },
         "width": {
          "unit": "%",
-         "size": 48,
+         "size": 100,
          "sizes": []
         },
         "width_tablet": {
@@ -1615,7 +1147,7 @@
        },
        "elements": [
         {
-         "id": "57b9f313",
+         "id": "abec7ec6",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -1652,7 +1184,7 @@
          },
          "elements": [
           {
-           "id": "d9f9c9c7",
+           "id": "92d607d5",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -1688,7 +1220,7 @@
            "elements": []
           },
           {
-           "id": "db1b28e6",
+           "id": "1ba95f2b",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -1716,7 +1248,7 @@
          ]
         },
         {
-         "id": "47b6f265",
+         "id": "a1609a52",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -1750,7 +1282,7 @@
          },
          "elements": [
           {
-           "id": "130eb370",
+           "id": "fc855958",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -1770,7 +1302,7 @@
            },
            "elements": [
             {
-             "id": "9d154f07",
+             "id": "747e5052",
              "elType": "widget",
              "widgetType": "image",
              "isInner": false,
@@ -1795,7 +1327,7 @@
            ]
           },
           {
-           "id": "2ef544a4",
+           "id": "416a0892",
            "elType": "container",
            "isInner": true,
            "settings": {
@@ -1823,7 +1355,7 @@
            },
            "elements": [
             {
-             "id": "94ff8e81",
+             "id": "01788673",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -1859,7 +1391,7 @@
              "elements": []
             },
             {
-             "id": "c1068f72",
+             "id": "36932fdb",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -1889,7 +1421,7 @@
              "elements": []
             },
             {
-             "id": "cc3db76e",
+             "id": "35de097e",
              "elType": "widget",
              "widgetType": "heading",
              "isInner": false,
@@ -1918,355 +1450,18 @@
          ]
         }
        ]
-      },
-      {
-       "id": "8d82d778",
-       "elType": "container",
-       "isInner": true,
-       "settings": {
-        "container_type": "flex",
-        "flex_direction": "column",
-        "content_width": "full",
-        "flex_gap": {
-         "column": "20",
-         "row": "20",
-         "isLinked": true,
-         "unit": "px",
-         "size": 20
-        },
-        "width": {
-         "unit": "%",
-         "size": 48,
-         "sizes": []
-        },
-        "width_tablet": {
-         "unit": "%",
-         "size": 100,
-         "sizes": []
-        },
-        "width_mobile": {
-         "unit": "%",
-         "size": 100,
-         "sizes": []
-        }
-       },
-       "elements": [
-        {
-         "id": "0e253eb2",
-         "elType": "container",
-         "isInner": true,
-         "settings": {
-          "container_type": "flex",
-          "flex_direction": "row",
-          "flex_wrap": "wrap",
-          "content_width": "full",
-          "flex_align_items": "baseline",
-          "flex_gap": {
-           "column": "16",
-           "row": "4",
-           "isLinked": false,
-           "unit": "px",
-           "size": 16
-          },
-          "padding": {
-           "unit": "px",
-           "top": "0",
-           "right": "0",
-           "bottom": "12",
-           "left": "0",
-           "isLinked": false
-          },
-          "border_border": "solid",
-          "border_width": {
-           "unit": "px",
-           "top": "0",
-           "right": "0",
-           "bottom": "2",
-           "left": "0",
-           "isLinked": false
-          },
-          "border_color": "rgba(255,255,255,0.5)"
-         },
-         "elements": [
-          {
-           "id": "ffb0e973",
-           "elType": "widget",
-           "widgetType": "heading",
-           "isInner": false,
-           "settings": {
-            "title": "Sala Digital",
-            "header_size": "h3",
-            "title_color": "#FFFFFF",
-            "_element_width": "auto",
-            "typography_typography": "custom",
-            "typography_font_size": {
-             "unit": "px",
-             "size": 24,
-             "sizes": []
-            },
-            "typography_font_size_tablet": {
-             "unit": "px",
-             "size": 22,
-             "sizes": []
-            },
-            "typography_font_size_mobile": {
-             "unit": "px",
-             "size": 20,
-             "sizes": []
-            },
-            "typography_font_weight": "700",
-            "typography_line_height": {
-             "unit": "em",
-             "size": 1.2,
-             "sizes": []
-            },
-            "typography_font_family": "Montserrat"
-           },
-           "elements": []
-          },
-          {
-           "id": "beb25bbb",
-           "elType": "widget",
-           "widgetType": "heading",
-           "isInner": false,
-           "settings": {
-            "title": "Películas para toda la familia · $19.600",
-            "header_size": "div",
-            "title_color": "#D9D3E0",
-            "_element_width": "auto",
-            "typography_typography": "custom",
-            "typography_font_size": {
-             "unit": "px",
-             "size": 16,
-             "sizes": []
-            },
-            "typography_font_weight": "400",
-            "typography_line_height": {
-             "unit": "em",
-             "size": 1.4,
-             "sizes": []
-            },
-            "typography_font_family": "Montserrat"
-           },
-           "elements": []
-          }
-         ]
-        },
-        {
-         "id": "8cbc8b77",
-         "elType": "container",
-         "isInner": true,
-         "settings": {
-          "container_type": "flex",
-          "flex_direction": "row",
-          "flex_direction_mobile": "row",
-          "flex_wrap": "nowrap",
-          "content_width": "full",
-          "flex_gap": {
-           "column": "20",
-           "row": "20",
-           "isLinked": true,
-           "unit": "px",
-           "size": 20
-          },
-          "flex_gap_mobile": {
-           "column": "14",
-           "row": "14",
-           "isLinked": true,
-           "unit": "px",
-           "size": 14
-          },
-          "flex_align_items": "center",
-          "html_tag": "a",
-          "link": {
-           "url": "https://www.tuboleta.com/es/eventos/sala-digital-una-jungla-de-locura",
-           "is_external": "on",
-           "nofollow": "",
-           "custom_attributes": ""
-          }
-         },
-         "elements": [
-          {
-           "id": "23fec937",
-           "elType": "container",
-           "isInner": true,
-           "settings": {
-            "container_type": "flex",
-            "flex_direction": "column",
-            "content_width": "full",
-            "width": {
-             "unit": "%",
-             "size": 36,
-             "sizes": []
-            },
-            "width_mobile": {
-             "unit": "%",
-             "size": 34,
-             "sizes": []
-            }
-           },
-           "elements": [
-            {
-             "id": "c77adc0a",
-             "elType": "widget",
-             "widgetType": "image",
-             "isInner": false,
-             "settings": {
-              "image": {
-               "url": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/88e5eafb-5f75-4edb-a780-a7d7c2a6b10c.jpg",
-               "id": 0,
-               "alt": "Afiche de Una jungla de locura 2"
-              },
-              "image_size": "full",
-              "caption_source": "none",
-              "link_to": "none",
-              "width": {
-               "unit": "%",
-               "size": 100,
-               "sizes": []
-              },
-              "hover_animation": "grow"
-             },
-             "elements": []
-            }
-           ]
-          },
-          {
-           "id": "fe601324",
-           "elType": "container",
-           "isInner": true,
-           "settings": {
-            "container_type": "flex",
-            "flex_direction": "column",
-            "content_width": "full",
-            "flex_gap": {
-             "column": "8",
-             "row": "8",
-             "isLinked": true,
-             "unit": "px",
-             "size": 8
-            },
-            "flex_align_items": "flex-start",
-            "width": {
-             "unit": "%",
-             "size": 60,
-             "sizes": []
-            },
-            "width_mobile": {
-             "unit": "%",
-             "size": 62,
-             "sizes": []
-            }
-           },
-           "elements": [
-            {
-             "id": "099fa562",
-             "elType": "widget",
-             "widgetType": "heading",
-             "isInner": false,
-             "settings": {
-              "title": "Sala Digital",
-              "header_size": "div",
-              "title_color": "#231B2B",
-              "_background_background": "classic",
-              "_background_color": "#B4A5F5",
-              "_padding": {
-               "unit": "px",
-               "top": "5",
-               "right": "12",
-               "bottom": "5",
-               "left": "12",
-               "isLinked": false
-              },
-              "_element_width": "auto",
-              "typography_typography": "custom",
-              "typography_font_size": {
-               "unit": "px",
-               "size": 14,
-               "sizes": []
-              },
-              "typography_font_weight": "700",
-              "typography_line_height": {
-               "unit": "em",
-               "size": 1.4,
-               "sizes": []
-              },
-              "typography_font_family": "Montserrat"
-             },
-             "elements": []
-            },
-            {
-             "id": "edb80927",
-             "elType": "widget",
-             "widgetType": "heading",
-             "isInner": false,
-             "settings": {
-              "title": "Una jungla de locura 2",
-              "header_size": "h4",
-              "title_color": "#FFFFFF",
-              "typography_typography": "custom",
-              "typography_font_size": {
-               "unit": "px",
-               "size": 24,
-               "sizes": []
-              },
-              "typography_font_size_mobile": {
-               "unit": "px",
-               "size": 16,
-               "sizes": []
-              },
-              "typography_font_weight": "700",
-              "typography_line_height": {
-               "unit": "em",
-               "size": 1.25,
-               "sizes": []
-              },
-              "typography_font_family": "Montserrat"
-             },
-             "elements": []
-            },
-            {
-             "id": "3bd0344a",
-             "elType": "widget",
-             "widgetType": "heading",
-             "isInner": false,
-             "settings": {
-              "title": "Animada · 90 min · Todo público",
-              "header_size": "div",
-              "title_color": "#D9D3E0",
-              "typography_typography": "custom",
-              "typography_font_size": {
-               "unit": "px",
-               "size": 14,
-               "sizes": []
-              },
-              "typography_font_weight": "400",
-              "typography_line_height": {
-               "unit": "em",
-               "size": 1.4,
-               "sizes": []
-              },
-              "typography_font_family": "Montserrat"
-             },
-             "elements": []
-            }
-           ]
-          }
-         ]
-        }
-       ]
       }
      ]
     },
     {
-     "id": "756c32e3",
+     "id": "6567e781",
      "elType": "widget",
      "widgetType": "icon-list",
      "isInner": false,
      "settings": {
       "icon_list": [
        {
-        "_id": "crcjz2i",
+        "_id": "xdxt94m",
         "text": "Los shows láser no son aptos para personas fotosensibles: tienen luces intermitentes y efectos visuales intensos.",
         "selected_icon": {
          "value": "fas fa-bolt",

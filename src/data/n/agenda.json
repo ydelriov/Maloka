@@ -154,19 +154,13 @@
  ],
  "permanente": {
   "titulo": "Todos los días en Maloka.",
-  "texto": "Además de la agenda, cada día hay funciones y talleres que puedes comprar en línea.",
+  "texto": "Además de la agenda, cada día hay funciones en el Cine Domo y talleres en los laboratorios que puedes comprar en línea.",
   "items": [
    {
     "titulo": "Funciones en el Cine Domo",
     "texto": "Documentales, animadas y shows láser en toda la cúpula.",
     "ruta": "visitanos/#funciones",
     "color": "cielo"
-   },
-   {
-    "titulo": "Sala Digital",
-    "texto": "Películas para toda la familia.",
-    "ruta": "visitanos/#funciones",
-    "color": "salmon"
    },
    {
     "titulo": "Laboratorios",
