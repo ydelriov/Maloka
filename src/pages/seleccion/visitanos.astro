@@ -172,7 +172,7 @@ const ll = v.llegar;
               {m.tarifas && <><p class="vi-plan-k">Tarifas del parqueadero</p><ul class="vi-pan-l vi-pan-l--ul">{m.tarifas.map((t) => <li><b>{t.tipo}:</b> {t.minuto} · {t.plena}</li>)}</ul></>}
             </div>
           ))}
-          <p class="vi-fuente"><Icon name="help" size="18" /><span>{ll.fuente}</span></p>
+          <p class="vi-fuente"><Icon name="info" size="18" /><span>{ll.fuente}</span></p>
         </div>
         <div class="vi-mapa"><iframe title="Mapa de Maloka en Google Maps" src={ll.embed} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       </div>
