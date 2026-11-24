@@ -1,0 +1,165 @@
+[
+ {
+  "key": "group_maloka_horarios",
+  "title": "Horarios de Maloka",
+  "description": "Único lugar donde se cambian los horarios: los usan el menú, la home, Visítanos y el footer.",
+  "fields": [
+   {
+    "key": "field_maloka_horarios_semana_dias",
+    "label": "Días entre semana",
+    "name": "semana_dias",
+    "aria-label": "",
+    "type": "text",
+    "instructions": "",
+    "required": 1,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "40",
+     "class": "",
+     "id": ""
+    },
+    "default_value": "Lunes a viernes"
+   },
+   {
+    "key": "field_maloka_horarios_semana_abre",
+    "label": "Abre",
+    "name": "semana_abre",
+    "aria-label": "",
+    "type": "time_picker",
+    "instructions": "",
+    "required": 1,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "30",
+     "class": "",
+     "id": ""
+    },
+    "display_format": "g:i a",
+    "return_format": "H:i",
+    "default_value": "11:00:00"
+   },
+   {
+    "key": "field_maloka_horarios_semana_cierra",
+    "label": "Cierra",
+    "name": "semana_cierra",
+    "aria-label": "",
+    "type": "time_picker",
+    "instructions": "",
+    "required": 1,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "30",
+     "class": "",
+     "id": ""
+    },
+    "display_format": "g:i a",
+    "return_format": "H:i",
+    "default_value": "17:00:00"
+   },
+   {
+    "key": "field_maloka_horarios_finde_dias",
+    "label": "Días de fin de semana",
+    "name": "finde_dias",
+    "aria-label": "",
+    "type": "text",
+    "instructions": "",
+    "required": 1,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "40",
+     "class": "",
+     "id": ""
+    },
+    "default_value": "Sábados, domingos y festivos"
+   },
+   {
+    "key": "field_maloka_horarios_finde_abre",
+    "label": "Abre",
+    "name": "finde_abre",
+    "aria-label": "",
+    "type": "time_picker",
+    "instructions": "",
+    "required": 1,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "30",
+     "class": "",
+     "id": ""
+    },
+    "display_format": "g:i a",
+    "return_format": "H:i",
+    "default_value": "09:30:00"
+   },
+   {
+    "key": "field_maloka_horarios_finde_cierra",
+    "label": "Cierra",
+    "name": "finde_cierra",
+    "aria-label": "",
+    "type": "time_picker",
+    "instructions": "",
+    "required": 1,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "30",
+     "class": "",
+     "id": ""
+    },
+    "display_format": "g:i a",
+    "return_format": "H:i",
+    "default_value": "18:00:00"
+   },
+   {
+    "key": "field_maloka_horarios_venta_hasta",
+    "label": "Venta de entradas hasta",
+    "name": "venta_hasta",
+    "aria-label": "",
+    "type": "time_picker",
+    "instructions": "",
+    "required": 1,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "40",
+     "class": "",
+     "id": ""
+    },
+    "display_format": "g:i a",
+    "return_format": "H:i",
+    "default_value": "16:00:00"
+   },
+   {
+    "key": "field_maloka_horarios_aviso",
+    "label": "Aviso de cambio de horario",
+    "name": "aviso",
+    "aria-label": "",
+    "type": "text",
+    "instructions": "Opcional. Ej.: «26 de noviembre: cerrado todo el día». Déjalo vacío cuando pase.",
+    "required": 0,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "60",
+     "class": "",
+     "id": ""
+    },
+    "default_value": "",
+    "maxlength": 140
+   }
+  ],
+  "location": [
+   [
+    {
+     "param": "page_type",
+     "operator": "==",
+     "value": "front_page"
+    }
+   ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "show_in_rest": 0
+ }
+]

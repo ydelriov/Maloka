@@ -352,8 +352,7 @@
           {
             "titulo": "Food Hall",
             "icono": "food",
-            "texto": "Un nuevo espacio de comida.",
-            "etiqueta": "Próximamente"
+            "texto": "Un nuevo espacio de comida."
           }
         ]
       },
@@ -394,16 +393,6 @@
     "texto": "Queremos que todas las personas puedan vivir la ciencia. Aquí encontrarás cómo es el acceso a las salas, al Cine Domo y a los laboratorios."
   },
   "preguntas": [
-    {
-      "p": "¿Cuál es el horario de Maloka?",
-      "r": "De lunes a viernes de 11:00 a. m. a 5:00 p. m. Sábados, domingos y festivos de 9:30 a. m. a 6:00 p. m.",
-      "real": true
-    },
-    {
-      "p": "¿Hasta qué hora puedo comprar entradas?",
-      "r": "La venta de entradas cierra a las 4:00 p. m.",
-      "real": true
-    },
     {
       "p": "¿Desde qué edad se paga la entrada?",
       "r": "La entrada es paga desde los 4 años. Los menores de 4 años y los adultos mayores entran gratis al recorrido exploratorio.",

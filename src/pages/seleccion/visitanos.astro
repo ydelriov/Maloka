@@ -2,7 +2,7 @@
 /* Visítanos · propuesta con el Design System v3 de la V13 (publicada en /seleccion/visitanos/).
    Maqueta pensada para Elementor: cada bloque es un contenedor o un widget nativo, sin código a medida.
    El JSON importable sale de esta misma estructura: elementor/visitanos-v13-parte1/2/3.json.
-   1. Cabecera compacta (migas, H1, texto y el horario en una línea con Lista de iconos en línea)
+   1. Cabecera compacta (migas, H1 y texto; el horario va justo debajo, en la sección Horarios)
    2. Anclas (contenedor fijo arriba con enlaces a #id)
    3. Horarios (contenedores pastel + icon-list)
    4. Planes y tarifas (3 pasos + grupos Entradas y Combos: tarjetas con imagen cuadrada de maloka.org, datos, precio)
@@ -40,11 +40,6 @@ const ll = v.llegar;
         <nav class="vi-migas" aria-label="Ruta"><a href={url(`${G}/`)}>Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Visítanos</span></nav>
         <h1 class="vi-h1" id="vi-h1">Visítanos</h1>
         <p class="vi-lead">{v.hero.lead}</p>
-        <ul class="vi-hoy" aria-label="Horarios">
-          <li><Icon name="clock" size="18" /><b>{site.horarios.semana.dias}</b> {site.horarios.semana.texto}</li>
-          <li><b>{site.horarios.finde.dias}</b> {site.horarios.finde.texto}</li>
-          <li>{site.horarios.ventaHasta}</li>
-        </ul>
       </div>
     </section>
 
@@ -251,10 +246,6 @@ const ll = v.llegar;
   .vi-migas [aria-current] { color: var(--n-noche); }
   .vi-h1 { margin: 0; font-size: var(--n-titulo); line-height: 1.1; font-weight: 700; letter-spacing: -0.015em; }
   .vi-lead { font-size: 16px; line-height: 1.5; color: var(--n-texto2); max-width: 640px; }
-  .vi-hoy { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 0; margin-top: 6px; font-size: 14px; }
-  .vi-hoy li { display: inline-flex; align-items: center; gap: 6px; }
-  .vi-hoy li + li::before { content: "·"; margin: 0 10px; color: var(--n-texto2); }
-  .vi-hoy b { font-weight: 700; }
 
   /* Anclas */
   .vi-anclas { position: sticky; top: 80px; z-index: 50; background: #fff; border-block: 1px solid rgba(35, 27, 43, .16); }
@@ -396,11 +387,7 @@ const ll = v.llegar;
   }
   @media (max-width: 767px) {
     .vi-hero { padding-block: 24px 28px; }
-    .vi-hoy { display: grid; gap: 4px; }
-    .vi-hoy li { display: block; }
-    .vi-hoy li :global(.mk-ic) { display: none; }
     .vi-ho-h { font-size: 24px; }
-    .vi-hoy li + li::before { content: none; }
     .vi-ho, .vi-se, .vi-pasos { grid-template-columns: 1fr; }
     .vi-planes, .vi-planes--5 { grid-template-columns: 1fr; gap: 12px; }
     .vi-plan { grid-template-columns: 128px 1fr; grid-template-rows: none; }

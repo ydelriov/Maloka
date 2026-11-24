@@ -10,6 +10,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `logo-maloka.svg` / `.png` | Logo de las maquetas, por si el sitio aún no tiene uno | Apariencia › Personalizar › Identidad del sitio |
 | `popup-combos.json` | Modal de los combos de TuBoleta | Plantillas › Popups |
 | `acf-evento.json` | Campos de cada evento (tipo de contenido «eventos»): fecha, horario, lugar, acceso, enlace, destacado | ACF › Herramientas › Importar |
+| `acf-horarios.json` + `horarios-snippet.php` | Horarios en un solo lugar (página de inicio) para menú, home, Visítanos y footer | ACF › Importar y Code Snippets |
 | `agenda-snippet.php` | Ordena la agenda por fecha, oculta los eventos pasados y formatea las fechas | Plugin Code Snippets |
 | `visitanos-v13-parte1.json`, `-parte2.json`, `-parte3.json` | Página Visítanos en 3 partes (10 secciones) | Se insertan en orden en la página Visítanos |
 
@@ -238,3 +239,19 @@ sumar los mismos campos ACF.
 6. **Publicar.** Aparece en Agéndate en su lugar por fecha y sale de «Próximos» solo cuando termina.
 
 Para los eventos que ya existen basta con abrir cada uno, llenar «Datos del evento» y asignarle su tipo.
+
+## Horarios en un solo lugar
+
+El horario aparece en el panel del menú (Visítanos), en Visítanos y en el footer. Para que **se cambie una sola vez**:
+
+1. ACF › Herramientas › Importar › `acf-horarios.json`. Aparece el grupo **«Horarios de Maloka»** al editar la
+   **página de inicio**: días, hora de apertura y cierre entre semana y fin de semana, venta de entradas hasta, y un
+   aviso opcional de cambio de horario.
+2. Code Snippets › pega `horarios-snippet.php` › Ejecutar en todo el sitio › Activar.
+3. Listo: `header`/`menu-paneles`, `footer-v13.json` y `visitanos-v13-parte1.json` ya traen esos textos conectados con la
+   etiqueta dinámica **Shortcode** (`[maloka_horario dia="semana"]`, `[maloka_dias dia="finde"]`, `[maloka_venta]`,
+   `[maloka_aviso]`). Si no aparece el valor, en el widget haz clic en el ícono de etiquetas dinámicas › Shortcode y
+   escribe el shortcode.
+
+Cuando cambie el horario, o haya un cierre especial, solo se edita la página de inicio › «Horarios de Maloka».
+En la maqueta pasa igual: todo sale de `src/data/site.json`.
