@@ -9,7 +9,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `menu-paneles-v13.json` | Los 4 paneles en hueso del mega menú (Visítanos, Ven en grupo, Descubre, Crea con Maloka) | Plantillas › Plantillas guardadas |
 | `logo-maloka.svg` / `.png` | Logo de las maquetas, por si el sitio aún no tiene uno | Apariencia › Personalizar › Identidad del sitio |
 | `popup-combos.json` | Modal de los combos de TuBoleta | Plantillas › Popups |
-| `acf-evento.json` | Campos de cada evento de la agenda (fecha, horario, lugar, acceso, enlace, destacado) | ACF › Herramientas › Importar |
+| `acf-evento.json` | Campos de cada evento (tipo de contenido «eventos»): fecha, horario, lugar, acceso, enlace, destacado | ACF › Herramientas › Importar |
 | `agenda-snippet.php` | Ordena la agenda por fecha, oculta los eventos pasados y formatea las fechas | Plugin Code Snippets |
 | `visitanos-v13-parte1.json`, `-parte2.json`, `-parte3.json` | Página Visítanos en 3 partes (10 secciones) | Se insertan en orden en la página Visítanos |
 
@@ -165,12 +165,12 @@ actuales de maloka.org.
 
 Maqueta: https://ydelriov.github.io/Maloka/seleccion/agendate/
 
-**Hoy en maloka.org** cada evento es una entrada en la categoría Eventos con la fecha, la hora y el lugar escritos
-dentro del texto, y la agenda es un Loop Grid que solo muestra el afiche. Por eso no se puede ordenar por fecha,
+**Hoy en maloka.org** cada evento es un contenido del tipo **«eventos»** (menú Eventos del escritorio) con la fecha,
+la hora y el lugar escritos dentro del texto, sin campos ni categorías, y la agenda es un Loop Grid que solo muestra el afiche. Por eso no se puede ordenar por fecha,
 filtrar por tipo ni sacar los eventos que ya pasaron: hay que hacerlo a mano.
 
-**La propuesta** mantiene lo que el equipo ya hace (crear una entrada en Eventos con su afiche), pero con campos
-para la fecha, el horario, el lugar y el acceso. Con eso la página, sola:
+**La propuesta** mantiene lo que el equipo ya hace (crear un evento en el menú Eventos, con su afiche), pero con
+campos para la fecha, el horario, el lugar y el acceso, y un tipo de evento. Con eso la página, sola:
 - muestra solo los próximos eventos, del más cercano al más lejano;
 - saca de «Próximos» cada evento al día siguiente de terminar y lo pasa a «Eventos recientes»;
 - filtra por tipo (Cine, Talleres, Charlas, Artes escénicas, Encuentros);
@@ -180,24 +180,24 @@ para la fecha, el horario, el lugar y el acceso. Con eso la página, sola:
 ### Configuración (una sola vez)
 
 1. **Plugins:** instala **Advanced Custom Fields** (ACF, gratis) y **Code Snippets** (gratis).
-2. **Tipos de evento:** en Entradas › Categorías, crea dentro de **Eventos** las subcategorías **Cine**, **Talleres**,
-   **Charlas**, **Artes escénicas** y **Encuentros**. Revisa que el slug de la categoría padre sea `eventos`
-   (si es otro, cámbialo también en `acf-evento.json` y en `agenda-snippet.php`).
+2. **Tipos de evento:** ACF › Taxonomías › Añadir nueva: nombre «Tipos de evento», singular «Tipo de evento»,
+   clave `tipo_evento`, tipo de contenido **eventos**, jerárquica. Luego, en Eventos › Tipos de evento, crea
+   **Cine**, **Talleres**, **Charlas**, **Artes escénicas** y **Encuentros**.
 3. **Campos:** ACF › Herramientas › Importar grupos de campos › sube `acf-evento.json`. Aparece el grupo
-   «Datos del evento» en todas las entradas de la categoría Eventos.
+   «Datos del evento» en todos los eventos (el archivo usa el tipo de contenido `eventos`, el que ya existe).
 4. **Código:** Fragmentos (Code Snippets) › Añadir nuevo › pega `agenda-snippet.php` (sin la primera línea `<?php`
    si el plugin ya la pone), «Ejecutar en todo el sitio» › Guardar y activar.
 
 ### La tarjeta del evento (Loop Item)
 
-Plantillas › Theme Builder › **Loop Item** › Agregar nuevo · tipo de contenido **Entradas**. Una fila (como en la
+Plantillas › Theme Builder › **Loop Item** › Agregar nuevo · tipo de contenido **Eventos**. Una fila (como en la
 maqueta) con un contenedor-enlace a la entrada y, dentro:
 
 | Columna | Widget y contenido dinámico |
 |---|---|
 | Fecha (110 px) | Encabezado con Shortcode `[evento_dias]` (56 px, 700) · Encabezado `[evento_fecha formato="M"]` (18 px, 700) · Encabezado `[evento_fecha formato="D"]` (14 px) |
 | Afiche (96 px, 3:4) | Imagen destacada |
-| Información | Términos de la entrada (subcategoría, como etiqueta de color) · Título de la entrada (24 px, 700) · Lista de iconos con **Campo ACF** `horario` (reloj) y `lugar` (pin) |
+| Información | Términos (taxonomía Tipos de evento, como etiqueta de color) · Título (24 px, 700) · Lista de iconos con **Campo ACF** `horario` (reloj) y `lugar` (pin) |
 | Acceso (220 px) | Encabezado `[evento_acceso]` (fondo noche, texto amarillo) · Shortcode `[evento_boton]` |
 
 Línea inferior de 2 px noche en el contenedor; en celular, fecha a la izquierda y el resto apilado (sin afiche).
@@ -209,23 +209,23 @@ horario, lugar, acceso y botón a la derecha, sobre fondo hueso.
 | Sección | Widget | Ajustes |
 |---|---|---|
 | Cabecera | Encabezado H1, texto y enlace al boletín | Igual que Visítanos |
-| Filtro | **Filtro de taxonomía** | Conectado al Loop Grid de próximos; taxonomía Categorías, solo las 5 subcategorías de Eventos |
-| Destacado | **Loop Grid** con «Evento destacado» | Consulta: Entradas, categoría Eventos · **Query ID `evento_destacado`** · 1 por página |
-| Próximos | **Loop Grid** con la tarjeta | 1 columna · categoría Eventos · **Query ID `proximos_eventos`** · 20 por página · mensaje sin resultados: «No hay eventos de este tipo por ahora» |
-| Recientes | **Loop Grid** (tarjeta simple, sin afiche) | 3 columnas · **Query ID `eventos_pasados`** · 6 por página |
+| Filtro | **Filtro de taxonomía** | Conectado al Loop Grid de próximos; taxonomía **Tipos de evento** |
+| Destacado | **Loop Grid** con «Evento destacado» | Consulta: fuente **Eventos** · **Query ID `evento_destacado`** · 1 por página |
+| Próximos | **Loop Grid** con la tarjeta | 1 columna · fuente Eventos · **Query ID `proximos_eventos`** · 20 por página · mensaje sin resultados: «No hay eventos de este tipo por ahora» |
+| Recientes | **Loop Grid** (tarjeta simple, sin afiche) | 3 columnas · fuente Eventos · **Query ID `eventos_pasados`** · 6 por página |
 | Todos los días | Filas de enlaces a Visítanos (`#funciones`, `#tarifas`) | Fijo |
 
-La entrada completa de cada evento usa la plantilla de entrada individual que ya tienen (Theme Builder › Single);
-se le pueden sumar los mismos campos ACF.
+La página de cada evento usa la plantilla individual de Eventos que ya tienen (Theme Builder › Single); se le pueden
+sumar los mismos campos ACF.
 
 ### Cómo publica el equipo un evento
 
-1. Entradas › **Añadir nueva**.
+1. Eventos › **Añadir nuevo** (igual que hoy).
 2. Título, texto completo y **Extracto** (una o dos líneas: sale en la agenda).
 3. **Imagen destacada:** el afiche vertical (1080 × 1440).
-4. Categorías: **Eventos** y su tipo (por ejemplo, Talleres).
+4. **Tipo de evento** (por ejemplo, Talleres).
 5. «Datos del evento»: fecha, horario, lugar, acceso, valor si es pago, enlace de inscripción o de TuBoleta, y
    «Destacar» si debe salir grande.
 6. **Publicar.** Aparece en Agéndate en su lugar por fecha y sale de «Próximos» solo cuando termina.
 
-Para los eventos que ya existen basta con abrir cada entrada, llenar «Datos del evento» y asignarle su tipo.
+Para los eventos que ya existen basta con abrir cada uno, llenar «Datos del evento» y asignarle su tipo.

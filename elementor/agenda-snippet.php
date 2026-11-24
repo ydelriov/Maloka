@@ -2,7 +2,8 @@
 /**
  * Agenda de Maloka (Agéndate) · pegar en el plugin «Code Snippets» como snippet PHP que se ejecuta en todo el sitio.
  *
- * Usa los campos ACF del grupo «Datos del evento» (elementor/acf-evento.json) en las entradas de la categoría Eventos.
+ * Usa los campos ACF del grupo «Datos del evento» (elementor/acf-evento.json) en el tipo de contenido «eventos»,
+ * el mismo que maloka.org ya usa para su agenda. El tipo de evento es la taxonomía «tipo_evento».
  *
  * 1. Query ID para los Loop Grid de Elementor Pro (Consulta › Query ID):
  *    - evento_destacado   → el próximo evento marcado «Destacar en Agéndate» (poner «Entradas por página» = 1)
@@ -46,8 +47,7 @@ function maloka_meta_proximos() {
 function maloka_id_destacado() {
 	$ids = get_posts(
 		array(
-			'post_type'      => 'post',
-			'category_name'  => 'eventos',
+			'post_type'      => 'eventos',
 			'posts_per_page' => 1,
 			'fields'         => 'ids',
 			'meta_key'       => 'fecha',

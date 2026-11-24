@@ -1,7 +1,7 @@
 ---
 /* Agéndate · propuesta con el Design System v3 de la V13 (publicada en /seleccion/agendate/).
-   Pensada para que el equipo la actualice desde WordPress sin tocar el diseño: cada evento es una entrada en la
-   categoría «Eventos» con campos ACF (fecha, horario, lugar, acceso, enlace) y una subcategoría por tipo.
+   Pensada para que el equipo la actualice desde WordPress sin tocar el diseño: cada evento es un «evento» (el tipo
+   de contenido que maloka.org ya usa) con campos ACF (fecha, horario, lugar, acceso, enlace) y un tipo de evento.
    En Elementor Pro todo es nativo: Loop Grid (con Query ID para mostrar solo los próximos, ordenados por fecha),
    Filtro de taxonomía, Loop Item con etiquetas dinámicas de ACF. Guía completa en elementor/README.md.
    1. Cabecera compacta · 2. Próximos eventos: filtro por tipo, evento destacado y filas con fecha grande
@@ -97,7 +97,7 @@ const filtros = [{ id: 'todo', label: 'Todos' }, ...a.tipos.map((t) => ({ id: t.
           </ul>
           <p class="ag-vacio" data-ag-vacio hidden>No hay eventos de este tipo por ahora. Mira <button type="button" class="ag-todos" data-ag-todos>todos los eventos</button>.</p>
         </div>
-        <span class="n-ej">Eventos reales de maloka.org · en WordPress cada uno es una entrada que el equipo crea</span>
+        <span class="n-ej">Eventos reales de maloka.org · en WordPress cada uno es un «evento» que el equipo crea</span>
       </div>
     </section>
 

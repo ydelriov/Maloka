@@ -2,7 +2,7 @@
  {
   "key": "group_maloka_evento",
   "title": "Datos del evento",
-  "description": "Campos de la agenda de Maloka (Agéndate).",
+  "description": "Campos de la agenda de Maloka (Agéndate) en el tipo de contenido «eventos».",
   "fields": [
    {
     "key": "field_maloka_evento_fecha",
@@ -202,9 +202,9 @@
   "location": [
    [
     {
-     "param": "post_category",
+     "param": "post_type",
      "operator": "==",
-     "value": "category:eventos"
+     "value": "eventos"
     }
    ]
   ],
