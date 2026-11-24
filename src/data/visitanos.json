@@ -229,7 +229,7 @@
     "titulo": "Cómo llegar.",
     "texto": "Estamos sobre la Calle 26, junto a la estación El Tiempo – Maloka de TransMilenio.",
     "mapa": "https://www.google.com/maps/search/?api=1&query=Maloka%2C%20Carrera%2068D%20%2324A-51%2C%20Bogot%C3%A1",
-    "fuente": "Información de maloka.org/como-llegar. Las rutas cambian: confírmalas en la app de TransMilenio el día de tu visita.",
+    "fuente": "Las rutas y paradas de TransMilenio y el SITP pueden cambiar. Antes de salir, revisa tu recorrido en TransMiApp o en Google Maps.",
     "modos": [
       {
         "id": "transmilenio",

@@ -1,0 +1,1406 @@
+{
+    "title": "Hero · Inicio V13 (con botón por frase)",
+    "type": "container",
+    "version": "0.4",
+    "page_settings": [],
+    "content": [
+        {
+            "id": "39aaafe3",
+            "elType": "container",
+            "settings": {
+                "_title": "Hero · Inicio V13",
+                "content_width": "full",
+                "flex_direction": "column",
+                "flex_gap": {
+                    "column": "0",
+                    "row": "0",
+                    "isLinked": true,
+                    "unit": "px",
+                    "size": 0
+                },
+                "background_background": "classic",
+                "background_color": "#231B2B",
+                "padding": {
+                    "unit": "px",
+                    "top": "0",
+                    "right": "0",
+                    "bottom": "0",
+                    "left": "0",
+                    "isLinked": false
+                },
+                "custom_css": "selector { position: relative; overflow: hidden; }\n"
+            },
+            "elements": [
+                {
+                    "id": "57e212f5",
+                    "elType": "container",
+                    "settings": {
+                        "_title": "Hero · carrusel (máximo 3 diapositivas)",
+                        "content_width": "full",
+                        "flex_direction": "column",
+                        "flex_gap": {
+                            "column": "0",
+                            "row": "0",
+                            "isLinked": true,
+                            "unit": "px",
+                            "size": 0
+                        },
+                        "padding": {
+                            "unit": "px",
+                            "top": "0",
+                            "right": "0",
+                            "bottom": "0",
+                            "left": "0",
+                            "isLinked": false
+                        },
+                        "custom_css": "selector { position: relative; }\nbody:not(.elementor-editor-active) selector { display: grid !important; }\nbody:not(.elementor-editor-active) selector > .mk-slide { grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity 600ms ease, visibility 0s linear 600ms; }\nbody:not(.elementor-editor-active) selector > .mk-slide.is-activa { opacity: 1; visibility: visible; transition-delay: 0s; }\nbody:not(.elementor-editor-active) selector > .elementor-widget-html { grid-area: 1 / 1; align-self: end; z-index: 2; pointer-events: none; }\n",
+                        "flex_justify_content": "space-evenly",
+                        "css_classes": "mk-slider"
+                    },
+                    "elements": [
+                        {
+                            "id": "756c7386",
+                            "elType": "container",
+                            "settings": {
+                                "_title": "Diapositiva 1",
+                                "content_width": "full",
+                                "flex_direction": "column",
+                                "flex_justify_content": "flex-end",
+                                "min_height": {
+                                    "unit": "px",
+                                    "size": 760,
+                                    "sizes": []
+                                },
+                                "min_height_tablet": {
+                                    "unit": "px",
+                                    "size": 420,
+                                    "sizes": []
+                                },
+                                "min_height_mobile": {
+                                    "unit": "px",
+                                    "size": 520,
+                                    "sizes": []
+                                },
+                                "background_background": "classic",
+                                "background_color": "#231B2B",
+                                "background_image": {
+                                    "id": 150,
+                                    "url": "https://pruebas.maloka.org/wp-content/uploads/2026/11/hero-slide-1.jpg",
+                                    "alt": "",
+                                    "source": "library",
+                                    "size": ""
+                                },
+                                "background_position": "initial",
+                                "background_xpos": {
+                                    "unit": "%",
+                                    "size": 70,
+                                    "sizes": []
+                                },
+                                "background_ypos": {
+                                    "unit": "%",
+                                    "size": 50,
+                                    "sizes": []
+                                },
+                                "background_position_mobile": "initial",
+                                "background_xpos_mobile": {
+                                    "unit": "%",
+                                    "size": 78,
+                                    "sizes": []
+                                },
+                                "background_ypos_mobile": {
+                                    "unit": "%",
+                                    "size": 30,
+                                    "sizes": []
+                                },
+                                "background_size": "cover",
+                                "background_repeat": "no-repeat",
+                                "background_overlay_background": "gradient",
+                                "background_overlay_color": "rgba(20,10,31,0)",
+                                "background_overlay_color_stop": {
+                                    "unit": "%",
+                                    "size": 45,
+                                    "sizes": []
+                                },
+                                "background_overlay_color_b": "rgba(20,10,31,0.6)",
+                                "background_overlay_color_b_stop": {
+                                    "unit": "%",
+                                    "size": 45,
+                                    "sizes": []
+                                },
+                                "padding": {
+                                    "unit": "px",
+                                    "top": "0",
+                                    "right": "0",
+                                    "bottom": "0",
+                                    "left": "0",
+                                    "isLinked": false
+                                },
+                                "custom_css": "/* Velo: banda plana en la mitad de abajo; en tablet y celular, sobre toda la foto */\n@media (max-width: 1200px) {\n  selector::before { background: rgba(20,10,31,.6) !important; opacity: 1 !important; }\n}\n@media (min-width: 1201px) {\n  selector { min-height: clamp(640px, calc(100svh - 80px), 860px); }\n}\n",
+                                "css_classes": "mk-slide is-activa"
+                            },
+                            "elements": [
+                                {
+                                    "id": "694a33b6",
+                                    "elType": "container",
+                                    "settings": {
+                                        "_title": "Diapositiva 1 · texto",
+                                        "boxed_width": {
+                                            "unit": "px",
+                                            "size": 1280,
+                                            "sizes": []
+                                        },
+                                        "flex_direction": "column",
+                                        "flex_align_items": "flex-start",
+                                        "flex_gap": {
+                                            "column": "14",
+                                            "row": "14",
+                                            "isLinked": true,
+                                            "unit": "px",
+                                            "size": 14
+                                        },
+                                        "padding": {
+                                            "unit": "px",
+                                            "top": "0",
+                                            "right": "80",
+                                            "bottom": "264",
+                                            "left": "80",
+                                            "isLinked": false
+                                        },
+                                        "padding_tablet": {
+                                            "unit": "px",
+                                            "top": "0",
+                                            "right": "40",
+                                            "bottom": "100",
+                                            "left": "40",
+                                            "isLinked": false
+                                        },
+                                        "padding_mobile": {
+                                            "unit": "px",
+                                            "top": "0",
+                                            "right": "16",
+                                            "bottom": "100",
+                                            "left": "16",
+                                            "isLinked": false
+                                        }
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "d8b5ef4",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Centro interactivo de ciencia y tecnología · Bogotá",
+                                                "header_size": "p",
+                                                "title_color": "#B4A5F5",
+                                                "typography_typography": "custom",
+                                                "typography_font_family": "Montserrat",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_weight": "600",
+                                                "typography_line_height": {
+                                                    "unit": "em",
+                                                    "size": 1.3,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_mobile": {
+                                                    "unit": "px",
+                                                    "size": 16,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "18b3484d",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Atrévete a vivir la ciencia.",
+                                                "header_size": "h1",
+                                                "title_color": "#FFFFFF",
+                                                "typography_typography": "custom",
+                                                "typography_font_family": "Montserrat",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 64,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_weight": "700",
+                                                "typography_line_height": {
+                                                    "unit": "em",
+                                                    "size": 1.05,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_tablet": {
+                                                    "unit": "px",
+                                                    "size": 48,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_mobile": {
+                                                    "unit": "px",
+                                                    "size": 38,
+                                                    "sizes": []
+                                                },
+                                                "typography_letter_spacing": {
+                                                    "unit": "em",
+                                                    "size": -0.025,
+                                                    "sizes": []
+                                                },
+                                                "_element_width": "initial",
+                                                "_element_custom_width": {
+                                                    "unit": "px",
+                                                    "size": 640,
+                                                    "sizes": []
+                                                },
+                                                "_element_custom_width_mobile": {
+                                                    "unit": "%",
+                                                    "size": 100,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "13c9be3b",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>Salas para tocar, un domo para mirar el universo y laboratorios para preguntar.</p>",
+                                                "text_color": "#D9D3E0",
+                                                "typography_typography": "custom",
+                                                "typography_font_family": "Montserrat",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_weight": "400",
+                                                "typography_line_height": {
+                                                    "unit": "em",
+                                                    "size": 1.55,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_mobile": {
+                                                    "unit": "px",
+                                                    "size": 16,
+                                                    "sizes": []
+                                                },
+                                                "_element_width": "initial",
+                                                "_element_custom_width": {
+                                                    "unit": "px",
+                                                    "size": 520,
+                                                    "sizes": []
+                                                },
+                                                "_element_custom_width_mobile": {
+                                                    "unit": "%",
+                                                    "size": 100,
+                                                    "sizes": []
+                                                },
+                                                "custom_css": "selector p { margin: 0; }\n"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        },
+                                        {
+                                            "id": "652ed1d",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "_title": "Botón de la frase",
+                                                "text": "Compra tus entradas",
+                                                "link": {
+                                                    "url": "https://www.tuboleta.com/es/venue/maloka",
+                                                    "is_external": "on",
+                                                    "nofollow": "",
+                                                    "custom_attributes": ""
+                                                },
+                                                "selected_icon": {
+                                                    "value": "fas fa-ticket-alt",
+                                                    "library": "fa-solid"
+                                                },
+                                                "icon_align": "row",
+                                                "icon_indent": {
+                                                    "unit": "px",
+                                                    "size": 10,
+                                                    "sizes": []
+                                                },
+                                                "background_color": "#FFE25C",
+                                                "button_text_color": "#231B2B",
+                                                "hover_color": "#231B2B",
+                                                "button_background_hover_color": "#FFFFFF",
+                                                "border_radius": {
+                                                    "unit": "px",
+                                                    "top": "0",
+                                                    "right": "0",
+                                                    "bottom": "0",
+                                                    "left": "0",
+                                                    "isLinked": true
+                                                },
+                                                "typography_typography": "custom",
+                                                "typography_font_family": "Montserrat",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_mobile": {
+                                                    "unit": "px",
+                                                    "size": 16,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_weight": "700",
+                                                "typography_line_height": {
+                                                    "unit": "em",
+                                                    "size": 1.2,
+                                                    "sizes": []
+                                                },
+                                                "_margin": {
+                                                    "unit": "px",
+                                                    "top": "8",
+                                                    "right": "0",
+                                                    "bottom": "0",
+                                                    "left": "0",
+                                                    "isLinked": false
+                                                },
+                                                "custom_css": "selector .elementor-button { display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 24px; border-radius: 0; transition: background-color .15s, color .15s; }\nselector .elementor-button:hover, selector .elementor-button:focus { background-color: #FFFFFF; color: #231B2B; }\nselector .elementor-button:focus-visible { outline: 3px solid #FFFFFF; outline-offset: 3px; }\nselector .elementor-button-content-wrapper { align-items: center; }\nselector .elementor-button-text::after { content: \"↗\"; display: inline-block; margin-left: 10px; transition: transform .15s; }\nselector .elementor-button:hover .elementor-button-text::after { transform: translate(3px, -3px); }\n@media (max-width: 767px) { selector .elementor-button { min-height: 50px; padding: 0 18px; } }\nselector .mk-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }\n"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "button"
+                                        }
+                                    ],
+                                    "isInner": true
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "3e4fb263",
+                            "elType": "container",
+                            "settings": {
+                                "_title": "Diapositiva 2",
+                                "content_width": "full",
+                                "flex_direction": "column",
+                                "flex_justify_content": "flex-end",
+                                "min_height": {
+                                    "unit": "px",
+                                    "size": 760,
+                                    "sizes": []
+                                },
+                                "min_height_tablet": {
+                                    "unit": "px",
+                                    "size": 420,
+                                    "sizes": []
+                                },
+                                "min_height_mobile": {
+                                    "unit": "px",
+                                    "size": 520,
+                                    "sizes": []
+                                },
+                                "background_background": "classic",
+                                "background_color": "#231B2B",
+                                "background_image": {
+                                    "id": 160,
+                                    "url": "https://pruebas.maloka.org/wp-content/uploads/2026/11/Banner_22_11.jpg",
+                                    "alt": "",
+                                    "source": "library",
+                                    "size": ""
+                                },
+                                "background_position": "initial",
+                                "background_xpos": {
+                                    "unit": "%",
+                                    "size": 50,
+                                    "sizes": []
+                                },
+                                "background_ypos": {
+                                    "unit": "%",
+                                    "size": 50,
+                                    "sizes": []
+                                },
+                                "background_position_mobile": "initial",
+                                "background_xpos_mobile": {
+                                    "unit": "%",
+                                    "size": 50,
+                                    "sizes": []
+                                },
+                                "background_ypos_mobile": {
+                                    "unit": "%",
+                                    "size": 40,
+                                    "sizes": []
+                                },
+                                "background_size": "cover",
+                                "background_repeat": "no-repeat",
+                                "background_overlay_background": "gradient",
+                                "background_overlay_color": "rgba(20,10,31,0)",
+                                "background_overlay_color_stop": {
+                                    "unit": "%",
+                                    "size": 45,
+                                    "sizes": []
+                                },
+                                "background_overlay_color_b": "rgba(20,10,31,0.6)",
+                                "background_overlay_color_b_stop": {
+                                    "unit": "%",
+                                    "size": 45,
+                                    "sizes": []
+                                },
+                                "padding": {
+                                    "unit": "px",
+                                    "top": "0",
+                                    "right": "0",
+                                    "bottom": "0",
+                                    "left": "0",
+                                    "isLinked": false
+                                },
+                                "custom_css": "/* Velo: banda plana en la mitad de abajo; en tablet y celular, sobre toda la foto */\n@media (max-width: 1200px) {\n  selector::before { background: rgba(20,10,31,.6) !important; opacity: 1 !important; }\n}\n@media (min-width: 1201px) {\n  selector { min-height: clamp(640px, calc(100svh - 80px), 860px); }\n}\n",
+                                "css_classes": "mk-slide"
+                            },
+                            "elements": [
+                                {
+                                    "id": "2dfc2e48",
+                                    "elType": "container",
+                                    "settings": {
+                                        "_title": "Diapositiva 2 · texto",
+                                        "boxed_width": {
+                                            "unit": "px",
+                                            "size": 1280,
+                                            "sizes": []
+                                        },
+                                        "flex_direction": "column",
+                                        "flex_align_items": "flex-start",
+                                        "flex_gap": {
+                                            "column": "14",
+                                            "row": "14",
+                                            "isLinked": true,
+                                            "unit": "px",
+                                            "size": 14
+                                        },
+                                        "padding": {
+                                            "unit": "px",
+                                            "top": "0",
+                                            "right": "80",
+                                            "bottom": "264",
+                                            "left": "80",
+                                            "isLinked": false
+                                        },
+                                        "padding_tablet": {
+                                            "unit": "px",
+                                            "top": "0",
+                                            "right": "40",
+                                            "bottom": "100",
+                                            "left": "40",
+                                            "isLinked": false
+                                        },
+                                        "padding_mobile": {
+                                            "unit": "px",
+                                            "top": "0",
+                                            "right": "16",
+                                            "bottom": "100",
+                                            "left": "16",
+                                            "isLinked": false
+                                        }
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "778f22bd",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Centro interactivo de ciencia y tecnología · Bogotá",
+                                                "header_size": "p",
+                                                "title_color": "#B4A5F5",
+                                                "typography_typography": "custom",
+                                                "typography_font_family": "Montserrat",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_weight": "600",
+                                                "typography_line_height": {
+                                                    "unit": "em",
+                                                    "size": 1.3,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_mobile": {
+                                                    "unit": "px",
+                                                    "size": 16,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "673127a3",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "El universo, sobre tu cabeza.",
+                                                "header_size": "p",
+                                                "title_color": "#FFFFFF",
+                                                "typography_typography": "custom",
+                                                "typography_font_family": "Montserrat",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 64,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_weight": "700",
+                                                "typography_line_height": {
+                                                    "unit": "em",
+                                                    "size": 1.05,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_tablet": {
+                                                    "unit": "px",
+                                                    "size": 48,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_mobile": {
+                                                    "unit": "px",
+                                                    "size": 38,
+                                                    "sizes": []
+                                                },
+                                                "typography_letter_spacing": {
+                                                    "unit": "em",
+                                                    "size": -0.025,
+                                                    "sizes": []
+                                                },
+                                                "_element_width": "initial",
+                                                "_element_custom_width": {
+                                                    "unit": "px",
+                                                    "size": 640,
+                                                    "sizes": []
+                                                },
+                                                "_element_custom_width_mobile": {
+                                                    "unit": "%",
+                                                    "size": 100,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "1f08e5ab",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>En el Cine Domo las estrellas y los planetas se proyectan sobre toda la cúpula.</p>",
+                                                "text_color": "#D9D3E0",
+                                                "typography_typography": "custom",
+                                                "typography_font_family": "Montserrat",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_weight": "400",
+                                                "typography_line_height": {
+                                                    "unit": "em",
+                                                    "size": 1.55,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_mobile": {
+                                                    "unit": "px",
+                                                    "size": 16,
+                                                    "sizes": []
+                                                },
+                                                "_element_width": "initial",
+                                                "_element_custom_width": {
+                                                    "unit": "px",
+                                                    "size": 520,
+                                                    "sizes": []
+                                                },
+                                                "_element_custom_width_mobile": {
+                                                    "unit": "%",
+                                                    "size": 100,
+                                                    "sizes": []
+                                                },
+                                                "custom_css": "selector p { margin: 0; }\n"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        },
+                                        {
+                                            "id": "ce45d49",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "_title": "Botón de la frase",
+                                                "text": "Ver funciones del Cine Domo",
+                                                "link": {
+                                                    "url": "/visitanos/#funciones",
+                                                    "is_external": "",
+                                                    "nofollow": "",
+                                                    "custom_attributes": ""
+                                                },
+                                                "selected_icon": {
+                                                    "value": "fas fa-globe-americas",
+                                                    "library": "fa-solid"
+                                                },
+                                                "icon_align": "row",
+                                                "icon_indent": {
+                                                    "unit": "px",
+                                                    "size": 10,
+                                                    "sizes": []
+                                                },
+                                                "background_color": "#FFE25C",
+                                                "button_text_color": "#231B2B",
+                                                "hover_color": "#231B2B",
+                                                "button_background_hover_color": "#FFFFFF",
+                                                "border_radius": {
+                                                    "unit": "px",
+                                                    "top": "0",
+                                                    "right": "0",
+                                                    "bottom": "0",
+                                                    "left": "0",
+                                                    "isLinked": true
+                                                },
+                                                "typography_typography": "custom",
+                                                "typography_font_family": "Montserrat",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_mobile": {
+                                                    "unit": "px",
+                                                    "size": 16,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_weight": "700",
+                                                "typography_line_height": {
+                                                    "unit": "em",
+                                                    "size": 1.2,
+                                                    "sizes": []
+                                                },
+                                                "_margin": {
+                                                    "unit": "px",
+                                                    "top": "8",
+                                                    "right": "0",
+                                                    "bottom": "0",
+                                                    "left": "0",
+                                                    "isLinked": false
+                                                },
+                                                "custom_css": "selector .elementor-button { display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 24px; border-radius: 0; transition: background-color .15s, color .15s; }\nselector .elementor-button:hover, selector .elementor-button:focus { background-color: #FFFFFF; color: #231B2B; }\nselector .elementor-button:focus-visible { outline: 3px solid #FFFFFF; outline-offset: 3px; }\nselector .elementor-button-content-wrapper { align-items: center; }\nselector .elementor-button-text::after { content: \"→\"; display: inline-block; margin-left: 10px; transition: transform .15s; }\nselector .elementor-button:hover .elementor-button-text::after { transform: translateX(4px); }\n@media (max-width: 767px) { selector .elementor-button { min-height: 50px; padding: 0 18px; } }\n"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "button"
+                                        }
+                                    ],
+                                    "isInner": true
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "a328366",
+                            "elType": "container",
+                            "settings": {
+                                "_title": "Diapositiva 3",
+                                "content_width": "full",
+                                "flex_direction": "column",
+                                "flex_justify_content": "flex-end",
+                                "min_height": {
+                                    "unit": "px",
+                                    "size": 760,
+                                    "sizes": []
+                                },
+                                "min_height_tablet": {
+                                    "unit": "px",
+                                    "size": 420,
+                                    "sizes": []
+                                },
+                                "min_height_mobile": {
+                                    "unit": "px",
+                                    "size": 520,
+                                    "sizes": []
+                                },
+                                "background_background": "classic",
+                                "background_color": "#231B2B",
+                                "background_image": {
+                                    "id": 161,
+                                    "url": "https://pruebas.maloka.org/wp-content/uploads/2026/11/Combo-Madres_Banner.jpg",
+                                    "alt": "",
+                                    "source": "library",
+                                    "size": ""
+                                },
+                                "background_position": "initial",
+                                "background_xpos": {
+                                    "unit": "%",
+                                    "size": 50,
+                                    "sizes": []
+                                },
+                                "background_ypos": {
+                                    "unit": "%",
+                                    "size": 50,
+                                    "sizes": []
+                                },
+                                "background_position_mobile": "initial",
+                                "background_xpos_mobile": {
+                                    "unit": "%",
+                                    "size": 50,
+                                    "sizes": []
+                                },
+                                "background_ypos_mobile": {
+                                    "unit": "%",
+                                    "size": 40,
+                                    "sizes": []
+                                },
+                                "background_size": "cover",
+                                "background_repeat": "no-repeat",
+                                "background_overlay_background": "gradient",
+                                "background_overlay_color": "rgba(20,10,31,0)",
+                                "background_overlay_color_stop": {
+                                    "unit": "%",
+                                    "size": 45,
+                                    "sizes": []
+                                },
+                                "background_overlay_color_b": "rgba(20,10,31,0.6)",
+                                "background_overlay_color_b_stop": {
+                                    "unit": "%",
+                                    "size": 45,
+                                    "sizes": []
+                                },
+                                "padding": {
+                                    "unit": "px",
+                                    "top": "0",
+                                    "right": "0",
+                                    "bottom": "0",
+                                    "left": "0",
+                                    "isLinked": false
+                                },
+                                "custom_css": "/* Velo: banda plana en la mitad de abajo; en tablet y celular, sobre toda la foto */\n@media (max-width: 1200px) {\n  selector::before { background: rgba(20,10,31,.6) !important; opacity: 1 !important; }\n}\n@media (min-width: 1201px) {\n  selector { min-height: clamp(640px, calc(100svh - 80px), 860px); }\n}\n",
+                                "css_classes": "mk-slide"
+                            },
+                            "elements": [
+                                {
+                                    "id": "16ff8cc1",
+                                    "elType": "container",
+                                    "settings": {
+                                        "_title": "Diapositiva 3 · texto",
+                                        "boxed_width": {
+                                            "unit": "px",
+                                            "size": 1280,
+                                            "sizes": []
+                                        },
+                                        "flex_direction": "column",
+                                        "flex_align_items": "flex-start",
+                                        "flex_gap": {
+                                            "column": "14",
+                                            "row": "14",
+                                            "isLinked": true,
+                                            "unit": "px",
+                                            "size": 14
+                                        },
+                                        "padding": {
+                                            "unit": "px",
+                                            "top": "0",
+                                            "right": "80",
+                                            "bottom": "264",
+                                            "left": "80",
+                                            "isLinked": false
+                                        },
+                                        "padding_tablet": {
+                                            "unit": "px",
+                                            "top": "0",
+                                            "right": "40",
+                                            "bottom": "100",
+                                            "left": "40",
+                                            "isLinked": false
+                                        },
+                                        "padding_mobile": {
+                                            "unit": "px",
+                                            "top": "0",
+                                            "right": "16",
+                                            "bottom": "100",
+                                            "left": "16",
+                                            "isLinked": false
+                                        }
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "19f62932",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Centro interactivo de ciencia y tecnología · Bogotá",
+                                                "header_size": "p",
+                                                "title_color": "#B4A5F5",
+                                                "typography_typography": "custom",
+                                                "typography_font_family": "Montserrat",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_weight": "600",
+                                                "typography_line_height": {
+                                                    "unit": "em",
+                                                    "size": 1.3,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_mobile": {
+                                                    "unit": "px",
+                                                    "size": 16,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "16b3a9fd",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Aquí está prohibido no tocar.",
+                                                "header_size": "p",
+                                                "title_color": "#FFFFFF",
+                                                "typography_typography": "custom",
+                                                "typography_font_family": "Montserrat",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 64,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_weight": "700",
+                                                "typography_line_height": {
+                                                    "unit": "em",
+                                                    "size": 1.05,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_tablet": {
+                                                    "unit": "px",
+                                                    "size": 48,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_mobile": {
+                                                    "unit": "px",
+                                                    "size": 38,
+                                                    "sizes": []
+                                                },
+                                                "typography_letter_spacing": {
+                                                    "unit": "em",
+                                                    "size": -0.025,
+                                                    "sizes": []
+                                                },
+                                                "_element_width": "initial",
+                                                "_element_custom_width": {
+                                                    "unit": "px",
+                                                    "size": 640,
+                                                    "sizes": []
+                                                },
+                                                "_element_custom_width_mobile": {
+                                                    "unit": "%",
+                                                    "size": 100,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "73287a96",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>En las salas interactivas las preguntas se responden con las manos.</p>",
+                                                "text_color": "#D9D3E0",
+                                                "typography_typography": "custom",
+                                                "typography_font_family": "Montserrat",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_weight": "400",
+                                                "typography_line_height": {
+                                                    "unit": "em",
+                                                    "size": 1.55,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_mobile": {
+                                                    "unit": "px",
+                                                    "size": 16,
+                                                    "sizes": []
+                                                },
+                                                "_element_width": "initial",
+                                                "_element_custom_width": {
+                                                    "unit": "px",
+                                                    "size": 520,
+                                                    "sizes": []
+                                                },
+                                                "_element_custom_width_mobile": {
+                                                    "unit": "%",
+                                                    "size": 100,
+                                                    "sizes": []
+                                                },
+                                                "custom_css": "selector p { margin: 0; }\n"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        },
+                                        {
+                                            "id": "128812c",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "_title": "Botón de la frase",
+                                                "text": "Conoce las experiencias",
+                                                "link": {
+                                                    "url": "/visitanos/#experiencias",
+                                                    "is_external": "",
+                                                    "nofollow": "",
+                                                    "custom_attributes": ""
+                                                },
+                                                "selected_icon": {
+                                                    "value": "far fa-compass",
+                                                    "library": "fa-regular"
+                                                },
+                                                "icon_align": "row",
+                                                "icon_indent": {
+                                                    "unit": "px",
+                                                    "size": 10,
+                                                    "sizes": []
+                                                },
+                                                "background_color": "#FFE25C",
+                                                "button_text_color": "#231B2B",
+                                                "hover_color": "#231B2B",
+                                                "button_background_hover_color": "#FFFFFF",
+                                                "border_radius": {
+                                                    "unit": "px",
+                                                    "top": "0",
+                                                    "right": "0",
+                                                    "bottom": "0",
+                                                    "left": "0",
+                                                    "isLinked": true
+                                                },
+                                                "typography_typography": "custom",
+                                                "typography_font_family": "Montserrat",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_size_mobile": {
+                                                    "unit": "px",
+                                                    "size": 16,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_weight": "700",
+                                                "typography_line_height": {
+                                                    "unit": "em",
+                                                    "size": 1.2,
+                                                    "sizes": []
+                                                },
+                                                "_margin": {
+                                                    "unit": "px",
+                                                    "top": "8",
+                                                    "right": "0",
+                                                    "bottom": "0",
+                                                    "left": "0",
+                                                    "isLinked": false
+                                                },
+                                                "custom_css": "selector .elementor-button { display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 24px; border-radius: 0; transition: background-color .15s, color .15s; }\nselector .elementor-button:hover, selector .elementor-button:focus { background-color: #FFFFFF; color: #231B2B; }\nselector .elementor-button:focus-visible { outline: 3px solid #FFFFFF; outline-offset: 3px; }\nselector .elementor-button-content-wrapper { align-items: center; }\nselector .elementor-button-text::after { content: \"→\"; display: inline-block; margin-left: 10px; transition: transform .15s; }\nselector .elementor-button:hover .elementor-button-text::after { transform: translateX(4px); }\n@media (max-width: 767px) { selector .elementor-button { min-height: 50px; padding: 0 18px; } }\n"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "button"
+                                        }
+                                    ],
+                                    "isInner": true
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "5266fce5",
+                            "elType": "widget",
+                            "settings": {
+                                "_title": "Controles del carrusel (no borrar)",
+                                "html": "<div class=\"mk-ctrl\" hidden>\n  <button type=\"button\" class=\"mk-pausa\" aria-label=\"Pausar el carrusel\">\n    <svg class=\"mk-ic-pausa\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><rect x=\"6\" y=\"5\" width=\"4\" height=\"14\"/><rect x=\"14\" y=\"5\" width=\"4\" height=\"14\"/></svg>\n    <svg class=\"mk-ic-play\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M7 5v14l12-7z\"/></svg>\n  </button>\n  <div class=\"mk-dots\" role=\"group\" aria-label=\"Elegir diapositiva\"></div>\n</div>\n<p class=\"mk-anuncio\" aria-live=\"polite\"></p>\n<style>\n/* Solo en el sitio publicado: en el editor las diapositivas se ven una debajo de otra para poder editarlas */\nbody:not(.elementor-editor-active) .mk-slider { display: grid !important; }\nbody:not(.elementor-editor-active) .mk-slider > .mk-slide { grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity 600ms ease, visibility 0s linear 600ms; }\nbody:not(.elementor-editor-active) .mk-slider > .mk-slide.is-activa { opacity: 1; visibility: visible; transition-delay: 0s; }\n.mk-slider > .elementor-widget-html { grid-area: 1 / 1; align-self: end; z-index: 2; pointer-events: none; }\n.mk-ctrl { display: flex; align-items: center; gap: 12px; pointer-events: auto; color: #fff;\n  margin: 0 0 196px max(80px, calc((100% - 1280px) / 2)); }\n.mk-ctrl[hidden] { display: none; }\n.mk-pausa { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1.5px solid currentColor; border-radius: 50%; background: none; color: inherit; cursor: pointer; }\n.mk-ic-play { display: none; }\n/* Sin el fondo de los botones del tema */\n.mk-ctrl .mk-pausa, .mk-ctrl .mk-pausa:hover, .mk-ctrl .mk-pausa:focus, .mk-ctrl .mk-dot, .mk-ctrl .mk-dot:hover, .mk-ctrl .mk-dot:focus { background: none !important; color: #fff !important; box-shadow: none; }\n.mk-ctrl .mk-dot:hover::before { opacity: .7; }\n.mk-slider.is-pausado .mk-ic-play { display: block; }\n.mk-slider.is-pausado .mk-ic-pausa { display: none; }\n.mk-dots { display: flex; gap: 6px; }\n.mk-dot { width: 48px; height: 44px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; align-items: center; color: inherit; }\n.mk-dot::before { content: \"\"; height: 3px; background: currentColor; opacity: .35; transition: opacity 300ms; }\n.mk-dot[aria-current=\"true\"]::before { opacity: 1; }\n.mk-pausa:focus-visible, .mk-dot:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }\n.mk-anuncio { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); margin: 0; }\n@media (max-width: 1200px) { .mk-ctrl { margin: 0 0 32px 40px; } }\n@media (max-width: 767px) { .mk-ctrl { margin: 0 0 32px 16px; } }\n</style>\n<script>\n(function () {\n  /* Carrusel del hero: fundido de 600 ms cada 7 s, botón de pausa y una rayita por diapositiva.\n     Sirve con 1, 2 o 3 diapositivas (contenedores con la clase mk-slide). Sin autoplay si el visitante pidió «reducir movimiento». */\n  if (document.body.classList.contains('elementor-editor-active')) return;\n  document.querySelectorAll('.mk-slider').forEach(function (root) {\n    var slides = [].slice.call(root.querySelectorAll(':scope > .mk-slide'));\n    var ctrl = root.querySelector('.mk-ctrl');\n    if (!ctrl || slides.length < 2) return;\n    var dotsBox = ctrl.querySelector('.mk-dots'), pausa = ctrl.querySelector('.mk-pausa'), anuncio = root.querySelector('.mk-anuncio');\n    root.setAttribute('role', 'region'); root.setAttribute('aria-roledescription', 'carrusel'); root.setAttribute('aria-label', 'Destacados de Maloka');\n    var dots = slides.map(function (s, i) {\n      s.setAttribute('role', 'group'); s.setAttribute('aria-roledescription', 'diapositiva'); s.setAttribute('aria-label', (i + 1) + ' de ' + slides.length);\n      var b = document.createElement('button'); b.type = 'button'; b.className = 'mk-dot'; b.setAttribute('aria-label', 'Ir a la diapositiva ' + (i + 1));\n      b.addEventListener('click', function () { mostrar(i, true); programar(); }); dotsBox.appendChild(b); return b;\n    });\n    var actual = 0, timer = null, pausado = window.matchMedia('(prefers-reduced-motion: reduce)').matches;\n    function mostrar(n, anunciar) {\n      actual = (n + slides.length) % slides.length;\n      slides.forEach(function (s, i) { var on = i === actual; s.classList.toggle('is-activa', on); if (on) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true'); });\n      dots.forEach(function (d, i) { if (i === actual) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); });\n      if (anunciar) anuncio.textContent = 'Diapositiva ' + (actual + 1) + ' de ' + slides.length;\n    }\n    function programar() { clearInterval(timer); if (!pausado) timer = setInterval(function () { mostrar(actual + 1, false); }, 7000); }\n    function setPausa(p) { pausado = p; root.classList.toggle('is-pausado', p); pausa.setAttribute('aria-label', p ? 'Reproducir el carrusel' : 'Pausar el carrusel'); programar(); }\n    pausa.addEventListener('click', function () { setPausa(!pausado); });\n    ctrl.hidden = false; mostrar(0, false); setPausa(pausado);\n  });\n})();\n</script>\n"
+                            },
+                            "elements": [],
+                            "widgetType": "html"
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "6ad18d09",
+                    "elType": "container",
+                    "settings": {
+                        "_title": "Hero · horario de hoy",
+                        "content_width": "full",
+                        "html_tag": "aside",
+                        "flex_direction": "row",
+                        "flex_direction_mobile": "column",
+                        "flex_align_items": "stretch",
+                        "flex_gap": {
+                            "column": "36",
+                            "row": "16",
+                            "isLinked": false,
+                            "unit": "px",
+                            "size": 36
+                        },
+                        "background_background": "classic",
+                        "background_color": "#231B2B",
+                        "padding": {
+                            "unit": "px",
+                            "top": "28",
+                            "right": "32",
+                            "bottom": "28",
+                            "left": "32",
+                            "isLinked": false
+                        },
+                        "padding_mobile": {
+                            "unit": "px",
+                            "top": "24",
+                            "right": "20",
+                            "bottom": "24",
+                            "left": "20",
+                            "isLinked": false
+                        },
+                        "custom_css": "/* En escritorio flota abajo a la derecha de la foto */\n@media (min-width: 1201px) {\n  selector { position: absolute; right: 0; bottom: 0; z-index: 2; width: auto; }\n}\n",
+                        "css_classes": "mk-hero-horario"
+                    },
+                    "elements": [
+                        {
+                            "id": "6cbdea31",
+                            "elType": "container",
+                            "settings": {
+                                "_title": "Horario · hoy",
+                                "content_width": "full",
+                                "flex_direction": "column",
+                                "flex_gap": {
+                                    "column": "6",
+                                    "row": "6",
+                                    "isLinked": true,
+                                    "unit": "px",
+                                    "size": 6
+                                },
+                                "padding": {
+                                    "unit": "px",
+                                    "top": "0",
+                                    "right": "36",
+                                    "bottom": "0",
+                                    "left": "0",
+                                    "isLinked": false
+                                },
+                                "padding_mobile": {
+                                    "unit": "px",
+                                    "top": "0",
+                                    "right": "0",
+                                    "bottom": "16",
+                                    "left": "0",
+                                    "isLinked": false
+                                },
+                                "border_border": "solid",
+                                "border_width": {
+                                    "unit": "px",
+                                    "top": "0",
+                                    "right": "1",
+                                    "bottom": "0",
+                                    "left": "0",
+                                    "isLinked": false
+                                },
+                                "border_width_mobile": {
+                                    "unit": "px",
+                                    "top": "0",
+                                    "right": "0",
+                                    "bottom": "1",
+                                    "left": "0",
+                                    "isLinked": false
+                                },
+                                "border_color": "#4F4955"
+                            },
+                            "elements": [
+                                {
+                                    "id": "3675be52",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "Bienvenido a Maloka",
+                                        "header_size": "p",
+                                        "title_color": "#B4A5F5",
+                                        "typography_typography": "custom",
+                                        "typography_font_family": "Montserrat",
+                                        "typography_font_size": {
+                                            "unit": "px",
+                                            "size": 20,
+                                            "sizes": []
+                                        },
+                                        "typography_font_weight": "600",
+                                        "typography_line_height": {
+                                            "unit": "em",
+                                            "size": 1.3,
+                                            "sizes": []
+                                        }
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "69482e6b",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "html": "<div class=\"mk-hoy\" data-semana=\"11:00-17:00\" data-finde=\"09:30-18:00\">\n  <p class=\"mk-hoy-estado\"><span class=\"mk-hoy-dot\" aria-hidden=\"true\"></span><span data-txt>Hoy abrimos</span></p>\n  <p class=\"mk-hoy-horas\"><span data-abre>11:00 a. m.</span><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg><span data-cierra>5:00 p. m.</span></p>\n</div>\n<style>\n.mk-hoy p { margin: 0; }\n.mk-hoy { display: grid; gap: 6px; font-family: Montserrat, sans-serif; color: #fff; }\n.mk-hoy-estado { display: flex; align-items: center; gap: 8px; font-size: 15px; color: #D9D3E0; }\n.mk-hoy-dot { width: 9px; height: 9px; background: #9FE8C8; }\n.mk-hoy[data-cerrado] .mk-hoy-dot { background: #F4A39A; }\n.mk-hoy-horas { display: flex; align-items: center; gap: 12px; font-size: 28px; font-weight: 700; white-space: nowrap; }\n.mk-hoy-horas svg { color: #FFE25C; flex: none; }\n@media (max-width: 767px) { .mk-hoy-horas { font-size: 24px; } }\n</style>\n<script>\n(function () {\n  /* Horario de hoy con la hora de Bogotá. Los festivos no se detectan: cambia data-semana y data-finde si cambia el horario. */\n  var fmt = function (hm) { var p = hm.split(':').map(Number); return ((p[0] + 11) % 12 + 1) + ':' + String(p[1]).padStart(2, '0') + (p[0] >= 12 ? ' p. m.' : ' a. m.'); };\n  var min = function (hm) { var p = hm.split(':').map(Number); return p[0] * 60 + p[1]; };\n  document.querySelectorAll('.mk-hoy').forEach(function (el) {\n    var ahora = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Bogota' }));\n    var finde = ahora.getDay() === 0 || ahora.getDay() === 6;\n    var h = (finde ? el.dataset.finde : el.dataset.semana).split('-');\n    var m = ahora.getHours() * 60 + ahora.getMinutes();\n    el.querySelector('[data-abre]').textContent = fmt(h[0]);\n    el.querySelector('[data-cierra]').textContent = fmt(h[1]);\n    var txt = el.querySelector('[data-txt]');\n    if (m < min(h[0])) txt.textContent = 'Hoy abrimos';\n    else if (m < min(h[1])) txt.textContent = 'Abierto ahora';\n    else { txt.textContent = 'Cerrado ahora · Así abrimos hoy'; el.setAttribute('data-cerrado', ''); }\n  });\n})();\n</script>\n"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "html"
+                                },
+                                {
+                                    "id": "5be7f84c",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "Venta de entradas hasta las 4:00 p. m.",
+                                        "header_size": "p",
+                                        "title_color": "#D9D3E0",
+                                        "typography_typography": "custom",
+                                        "typography_font_family": "Montserrat",
+                                        "typography_font_size": {
+                                            "unit": "px",
+                                            "size": 13,
+                                            "sizes": []
+                                        },
+                                        "typography_font_weight": "400",
+                                        "typography_line_height": {
+                                            "unit": "em",
+                                            "size": 1.4,
+                                            "sizes": []
+                                        }
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "6ab2df6c",
+                            "elType": "container",
+                            "settings": {
+                                "_title": "Horario · enlaces",
+                                "content_width": "full",
+                                "flex_direction": "column",
+                                "flex_justify_content": "center",
+                                "flex_gap": {
+                                    "column": "4",
+                                    "row": "4",
+                                    "isLinked": true,
+                                    "unit": "px",
+                                    "size": 4
+                                },
+                                "width": {
+                                    "unit": "px",
+                                    "size": 210,
+                                    "sizes": []
+                                },
+                                "width_mobile": {
+                                    "unit": "%",
+                                    "size": 100,
+                                    "sizes": []
+                                },
+                                "padding": {
+                                    "unit": "px",
+                                    "top": "0",
+                                    "right": "0",
+                                    "bottom": "0",
+                                    "left": "0",
+                                    "isLinked": false
+                                }
+                            },
+                            "elements": [
+                                {
+                                    "id": "570dba55",
+                                    "elType": "container",
+                                    "settings": {
+                                        "_title": "Enlace · Prepara tu visita",
+                                        "content_width": "full",
+                                        "html_tag": "a",
+                                        "link": {
+                                            "url": "/visitanos/",
+                                            "is_external": "",
+                                            "nofollow": "",
+                                            "custom_attributes": ""
+                                        },
+                                        "flex_direction": "row",
+                                        "flex_direction_mobile": "row",
+                                        "flex_justify_content": "space-between",
+                                        "flex_align_items": "center",
+                                        "flex_gap": {
+                                            "column": "16",
+                                            "row": "16",
+                                            "isLinked": true,
+                                            "unit": "px",
+                                            "size": 16
+                                        },
+                                        "min_height": {
+                                            "unit": "px",
+                                            "size": 52,
+                                            "sizes": []
+                                        },
+                                        "padding": {
+                                            "unit": "px",
+                                            "top": "0",
+                                            "right": "0",
+                                            "bottom": "0",
+                                            "left": "0",
+                                            "isLinked": false
+                                        },
+                                        "border_border": "solid",
+                                        "border_width": {
+                                            "unit": "px",
+                                            "top": "0",
+                                            "right": "0",
+                                            "bottom": "1",
+                                            "left": "0",
+                                            "isLinked": false
+                                        },
+                                        "border_color": "#4F4955",
+                                        "custom_css": "selector:hover .elementor-heading-title, selector:hover .elementor-icon { color: #FFE25C; }\nselector:hover .elementor-icon svg { fill: #FFE25C; }\nselector .elementor-icon { transition: transform .15s; }\nselector:hover .elementor-icon { transform: translateX(4px); }\n"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "482d64b3",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Prepara tu visita",
+                                                "header_size": "span",
+                                                "title_color": "#FFFFFF",
+                                                "typography_typography": "custom",
+                                                "typography_font_family": "Montserrat",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 16,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_weight": "700",
+                                                "typography_line_height": {
+                                                    "unit": "em",
+                                                    "size": 1.3,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "2f97c17d",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "selected_icon": {
+                                                    "value": "fas fa-arrow-right",
+                                                    "library": "fa-solid"
+                                                },
+                                                "primary_color": "#FFFFFF",
+                                                "size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "icon"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "29c80152",
+                                    "elType": "container",
+                                    "settings": {
+                                        "_title": "Enlace · Cómo llegar",
+                                        "content_width": "full",
+                                        "html_tag": "a",
+                                        "link": {
+                                            "url": "/visitanos/#llegar",
+                                            "is_external": "",
+                                            "nofollow": "",
+                                            "custom_attributes": ""
+                                        },
+                                        "flex_direction": "row",
+                                        "flex_direction_mobile": "row",
+                                        "flex_justify_content": "space-between",
+                                        "flex_align_items": "center",
+                                        "flex_gap": {
+                                            "column": "16",
+                                            "row": "16",
+                                            "isLinked": true,
+                                            "unit": "px",
+                                            "size": 16
+                                        },
+                                        "min_height": {
+                                            "unit": "px",
+                                            "size": 52,
+                                            "sizes": []
+                                        },
+                                        "padding": {
+                                            "unit": "px",
+                                            "top": "0",
+                                            "right": "0",
+                                            "bottom": "0",
+                                            "left": "0",
+                                            "isLinked": false
+                                        },
+                                        "border_border": "solid",
+                                        "border_width": {
+                                            "unit": "px",
+                                            "top": "0",
+                                            "right": "0",
+                                            "bottom": "1",
+                                            "left": "0",
+                                            "isLinked": false
+                                        },
+                                        "border_color": "#4F4955",
+                                        "custom_css": "selector:hover .elementor-heading-title, selector:hover .elementor-icon { color: #FFE25C; }\nselector:hover .elementor-icon svg { fill: #FFE25C; }\nselector .elementor-icon { transition: transform .15s; }\nselector:hover .elementor-icon { transform: translateX(4px); }\n"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "5f9b372b",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Cómo llegar",
+                                                "header_size": "span",
+                                                "title_color": "#FFFFFF",
+                                                "typography_typography": "custom",
+                                                "typography_font_family": "Montserrat",
+                                                "typography_font_size": {
+                                                    "unit": "px",
+                                                    "size": 16,
+                                                    "sizes": []
+                                                },
+                                                "typography_font_weight": "700",
+                                                "typography_line_height": {
+                                                    "unit": "em",
+                                                    "size": 1.3,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "bb5e03",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "selected_icon": {
+                                                    "value": "fas fa-arrow-right",
+                                                    "library": "fa-solid"
+                                                },
+                                                "primary_color": "#FFFFFF",
+                                                "size": {
+                                                    "unit": "px",
+                                                    "size": 18,
+                                                    "sizes": []
+                                                }
+                                            },
+                                            "elements": [],
+                                            "widgetType": "icon"
+                                        }
+                                    ],
+                                    "isInner": true
+                                }
+                            ],
+                            "isInner": true
+                        }
+                    ],
+                    "isInner": true
+                }
+            ],
+            "isInner": false
+        }
+    ]
+}

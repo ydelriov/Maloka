@@ -86,7 +86,15 @@
        "size": 32
       },
       "flex_align_items": "flex-end",
-      "flex_align_items_tablet": "flex-start"
+      "flex_align_items_tablet": "flex-start",
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": true
+      }
      },
      "elements": [
       {
@@ -111,6 +119,14 @@
          "unit": "%",
          "size": 100,
          "sizes": []
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
         }
        },
        "elements": [
@@ -181,6 +197,14 @@
          "unit": "%",
          "size": 100,
          "sizes": []
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
         }
        },
        "elements": [
@@ -441,18 +465,18 @@
        "sizes": []
       },
       "grid_rows_grid": {
-       "unit": "fr",
-       "size": 1,
+       "unit": "custom",
+       "size": "auto",
        "sizes": []
       },
       "grid_rows_grid_tablet": {
-       "unit": "fr",
-       "size": 3,
+       "unit": "custom",
+       "size": "auto",
        "sizes": []
       },
       "grid_rows_grid_mobile": {
-       "unit": "fr",
-       "size": 5,
+       "unit": "custom",
+       "size": "auto",
        "sizes": []
       },
       "grid_auto_flow": "row",
@@ -505,6 +529,14 @@
          "isLinked": true,
          "unit": "px",
          "size": 24
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
         }
        },
        "elements": [
@@ -554,7 +586,15 @@
            "unit": "px",
            "size": 16
           },
-          "flex_align_items": "center"
+          "flex_align_items": "center",
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
          },
          "elements": [
           {
@@ -621,6 +661,14 @@
          "isLinked": true,
          "unit": "px",
          "size": 12
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
         }
        },
        "elements": [
@@ -779,6 +827,14 @@
          "isLinked": true,
          "unit": "px",
          "size": 4
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
         }
        },
        "elements": [
@@ -963,6 +1019,14 @@
          "isLinked": true,
          "unit": "px",
          "size": 12
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
         }
        },
        "elements": [
@@ -1071,7 +1135,7 @@
          "settings": {
           "title": "¿Cómo llegar? →",
           "header_size": "#FFE25C",
-          "title_color": "#FFFFFF",
+          "title_color": "#FFE25C",
           "link": {
            "url": "/visitanos/#llegar",
            "is_external": "",
@@ -1110,6 +1174,14 @@
          "isLinked": true,
          "unit": "px",
          "size": 12
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
         }
        },
        "elements": [

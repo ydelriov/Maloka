@@ -6,6 +6,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 |---|---|---|
 | `header-v13.json` | Header: logo, menú y botón «Compra tus entradas» | Plantillas › Theme Builder › Header |
 | `footer-v13.json` | Footer con la información de maloka.org: boletín, redes, Maloka, horarios, ubicación, Corporación Maloka, certificaciones y NIT | Plantillas › Theme Builder › Footer |
+| `header-v13-megamenu.json` | Header ya armado con el widget Menú (mega menú) y sus 4 paneles, exportado de pruebas.maloka.org | Plantillas › Theme Builder › Header (reemplaza los pasos 1 y 2 de abajo) |
 | `menu-paneles-v13.json` | Los 4 paneles en hueso del mega menú (Visítanos, Ven en grupo, Descubre, Crea con Maloka) | Plantillas › Plantillas guardadas |
 | `logo-maloka.svg` / `.png` | Logo de las maquetas, por si el sitio aún no tiene uno | Apariencia › Personalizar › Identidad del sitio |
 | `popup-combos.json` | Modal de los combos de TuBoleta | Plantillas › Popups |
@@ -13,9 +14,15 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `acf-horarios.json` + `horarios-snippet.php` | Horarios en un solo lugar (página de inicio) para menú, home, Visítanos y footer | ACF › Importar y Code Snippets |
 | `evento-single-v13.json` | Ficha de cada evento (plantilla del Theme Builder para Eventos) | Plantillas › Theme Builder › Entrada individual |
 | `noticia-single-v13.json` + `noticias-snippet.php` | Página de cada noticia (plantilla del Theme Builder para Entradas) y tiempo de lectura | Theme Builder › Entrada individual · Code Snippets |
+| `hero-inicio-v13.json` | El hero de Inicio tal como está en pruebas.maloka.org (carrusel propio, horario y un botón por frase) | Se inserta arriba en la home |
 | `hero-campanas-v13.json` | Banner de la home: tres frases sobre la foto, cada una con su botón | Plantillas › Importar, y se inserta arriba en la home |
 | `agenda-snippet.php` | Ordena la agenda por fecha, oculta los eventos pasados y formatea las fechas | Plugin Code Snippets |
 | `visitanos-v13-parte1.json`, `-parte2.json`, `-parte3.json` | Página Visítanos en 3 partes (10 secciones) | Se insertan en orden en la página Visítanos |
+| `loop-evento.json`, `loop-evento-destacado.json`, `loop-evento-texto.json`, `loop-evento-pasado.json` | Loop Items de la agenda: fila de Agéndate, destacado, fila de solo texto (home) y evento reciente | Plantillas › Theme Builder › Loop Item (tipo de contenido Eventos) |
+| `agendate-v13.json` | Página Agéndate conectada a los eventos: filtro, destacado, próximos, recientes y «Todos los días» | Se inserta en la página Agéndate |
+| `loop-noticia.json` · `home-v13-noticias.json` | Tarjeta de noticia (Loop Item de Entradas) y sección «Noticias» de la home con las 3 últimas | Theme Builder › Loop Item · reemplaza la sección Noticias de Inicio |
+| `home-v13-agenda.json` | Sección «Próximos eventos» de la home: los 3 eventos más cercanos | Reemplaza la sección Agenda de Inicio |
+| `home-v13-secciones.json` | Las 6 secciones de la home debajo del hero (Imperdibles, Agenda, Ven en grupo, Descubre con mapa, Crea, Noticias) | Plantillas › Plantillas guardadas, y se inserta en Inicio debajo del hero |
 
 ## Menú y header · paso a paso
 
@@ -60,6 +67,18 @@ cada uno tiene su propio contenedor desplegable. Por eso los paneles vienen apar
    - Indicador: subrayado de 2 px `#231B2B`.
    - Contenedor del desplegable: sin relleno (el panel ya trae el suyo) y sin borde.
 7. Borra el widget **Menú de navegación** (el del paso 1) y **Publicar**.
+
+### Ajustes que necesitó el mega menú (ya incluidos en `header-v13-megamenu.json`)
+
+- **El breakpoint de tablet del sitio es 1200 px**, no 1024: todo el CSS personalizado del header y del hero usa
+  `max-width: 1200px` / `min-width: 1201px`. Con 1024, entre 1025 y 1200 px el recuadro de horario del hero tapaba el título.
+- **Desplegable (escritorio):** el widget lo abre justo debajo de sí mismo (px 59), no del header (80 px). Se baja con
+  `top: calc(100% + 21px)` y un puente invisible de 21 px para que no se cierre al bajar el mouse.
+- **Sin marco:** cada contenedor del desplegable traía el relleno de 10 px y fondo blanco del Kit; ahora va en 0 y
+  transparente, y el panel sin sombra, a todo el ancho como en la maqueta.
+- **Menú móvil:** Ajustes del menú › Distancia del desplegable = 26 px (header de 72 px en tablet y celular), para que
+  no tape el logo ni el botón.
+- Logo a 48 px y sin el espaciado de palabras de 4 px en los ítems.
 
 ### Cómo revisar
 
@@ -151,6 +170,27 @@ más de ~12 en un solo archivo.
 - Si el contenedor de anclas no queda fijo, actívalo en Avanzado › Efectos de movimiento › Fijo: Arriba (desplazamiento 80).
 - Más adelante, los planes y las funciones pueden salir de tipos de contenido con **Loop Grid** (Pro), para que el
   equipo los actualice sin editar la página.
+
+## home-v13-secciones.json · Home debajo del hero
+
+Se genera con `python3 scripts/elementor-home-v13.py` (antes `npm run build`, porque toma el mapa ya renderizado). Lee
+los textos de `src/data/n/home.json`, así que si cambia el contenido del prototipo basta con volver a generarlo.
+Sin `--medios`, las fotos apuntan a GitHub Pages; con `--medios archivo.json` usa las de la Biblioteca de medios.
+
+| # | Sección | Contenedores y widgets |
+|---|---|---|
+| 1 | Imperdibles (hueso) | Contenedor-enlace grande con foto de fondo + tres filas con foto cuadrada |
+| 2 | Agenda (blanco) | **Reemplazada por `home-v13-agenda.json`** (Loop Grid conectado a los eventos). La versión estática de este archivo queda solo como referencia |
+| 3 | Ven en grupo (noche) | Pista con scroll horizontal (clase `mk-carrusel`) y flechas (HTML con script) |
+| 4 | Descubre (menta) | Mapa de territorios (HTML con el SVG) y 4 tarjetas-enlace en 2 columnas |
+| 5 | Crea con Maloka (noche) | Enlace grande amarillo y 5 filas-enlace que se llenan de lavanda |
+| 6 | Noticias (blanco) | 3 tarjetas-enlace con foto 3:2 y etiqueta |
+
+El CSS común (foco visible y el arreglo del ancho del carrusel del hero) va en **Ajustes de la página › CSS
+personalizado**; está en `page_settings.custom_css` del JSON.
+
+Ojo: en los **contenedores** el ajuste de clases se llama `css_classes` (en los widgets es `_css_classes`). El hero de
+Inicio se había guardado con `_css_classes` en sus contenedores y por eso el carrusel no funcionaba.
 
 ## footer-v13.json · Footer
 
@@ -244,6 +284,27 @@ sumar los mismos campos ACF.
 
 Para los eventos que ya existen basta con abrir cada uno, llenar «Datos del evento» y asignarle su tipo.
 
+### Así quedó en pruebas.maloka.org
+
+Las plantillas se generan con `python3 scripts/elementor-agenda.py` (lee `src/data/n/agenda.json`).
+
+- **Tipo de contenido y taxonomía** creados con ACF (Eventos `eventos` y Tipos de evento `tipo_evento`, con Cine,
+  Talleres, Charlas, Artes escénicas y Encuentros), grupo «Datos del evento» importado de `acf-evento.json` (se agregó
+  el lugar «Cine Digital») y los 9 eventos de la maqueta cargados con su afiche, extracto, campos y tipo.
+- **Code Snippets** con `agenda-snippet.php` («Agenda de Maloka (Agéndate)»). Cambios frente a la guía:
+  - Query ID nuevo **`proximos_home`**: la home muestra los **3** eventos más cercanos, incluido el destacado
+    (`proximos_eventos` lo excluye porque en Agéndate va arriba en grande).
+  - Shortcode **`[evento_descripcion]`**: «Ver descripción» con `<details>`, en lugar del Acordeón anidado (el
+    experimento de elementos anidados no está activo en el sitio).
+  - `[evento_dias]` pone los rangos («28–29») en `<span class="maloka-rango">` para mostrarlos más pequeños.
+  - La consulta interna del destacado va marcada con `maloka_interno`: sin eso, los Query ID se llamaban a sí mismos
+    sin fin y la página se caía por memoria.
+- **Loop Items:** «Evento · fila (Agéndate)», «Evento · destacado (Agéndate)», «Evento · texto (home)» y
+  «Evento · reciente (Agéndate)». El color de la etiqueta y del hover sale de la clase `tipo_evento-<slug>` que
+  WordPress pone en cada ítem (CSS en los ajustes de cada Loop Item).
+- **Agéndate** (`/agendate/`) e **Inicio** (sección `#agenda`) usan esas plantillas con el Filtro de taxonomía.
+- Al importar a mano, los Loop Grid traen `@loop:<nombre>` en la plantilla: elige la Loop Item correspondiente.
+
 ## Horarios en un solo lugar
 
 El horario aparece en el panel del menú (Visítanos), en Visítanos y en el footer. Para que **se cambie una sola vez**:
@@ -280,10 +341,25 @@ todos los eventos (los de hoy y los que se creen después) se ven así, sin dise
 ### Cómo instalarla
 1. Tener activos `agenda-snippet.php` y `horarios-snippet.php` (Code Snippets) y los campos de `acf-evento.json`.
 2. Plantillas › Theme Builder › **Entrada individual** › Importar › `evento-single-v13.json`.
-3. Ábrela y, en la sección «Otros próximos eventos», reemplaza el texto de ayuda por un **Loop Grid** con la plantilla
-   «Evento · texto», fuente Eventos, Query ID `proximos_eventos`, 3 columnas y 3 por página.
+3. Importa también la Loop Item `loop-evento-tarjeta.json` («Evento · tarjeta (ficha)»). La sección «Otros próximos
+   eventos» ya trae su **Loop Grid** (3 columnas, Query ID `otros_eventos`, que deja fuera el evento que se está
+   viendo); si al importar sale vacío, elige esa plantilla en el widget.
 4. **Publicar** con la condición **Eventos › Todos** (o «Todos los Eventos»).
 5. Abre cualquier evento para revisar: si un dato no aparece, revisa que el evento tenga llenos sus «Datos del evento».
+
+### Así quedó en pruebas.maloka.org
+
+- Plantilla «Evento · ficha (Maloka V13)» publicada con la condición **Eventos › Todos** (por ejemplo
+  `/eventos/la-otra-forma-proyeccion-y-taller-de-escombros/`). Los títulos de la home y de Agéndate llevan ahí.
+- `scripts/elementor-agenda.py` completa `evento-single-v13.json` (es idempotente): pone el Loop Grid de «Otros
+  próximos eventos», corrige encabezados que traían el color en `header_size`, ajusta la etiqueta del tipo al ancho
+  del texto con el pastel de cada tipo, y agrega `[evento_estado]`.
+- **Eventos pasados:** muestran «Este evento ya pasó» y ocultan «Inscríbete/Compra tu entrada» y «Agregar a Google
+  Calendar» (`maloka_terminado()` en el snippet), como en la maqueta.
+- `[evento_boton]` es un botón noche en la ficha (estilo global del snippet); en las listas de Agéndate el Loop Item lo
+  deja como enlace subrayado.
+- También quedaron activos `acf-horarios.json` (grupo «Horarios de Maloka» en la página de inicio) y el snippet
+  «Horarios de Maloka», que usa el «Ten en cuenta» de la ficha (`[maloka_venta]`).
 
 ## Noticias (blog)
 
@@ -316,6 +392,13 @@ La propuesta usa las **entradas** de siempre (el equipo publica igual que hoy) c
 ### En la home
 Loop Grid con «Noticia», Entradas, **3 por página**, 3 columnas, sin paginación, y el enlace «Ver todas las noticias»
 a la página Noticias.
+
+**Así quedó en pruebas.maloka.org:** categorías Programación, Ciencia e Institucional creadas; las 9 entradas recientes de
+la sala de prensa de maloka.org importadas con su fecha, categoría, imagen destacada, extracto y texto (meta
+`_maloka_fuente` con la URL original); Loop Item «Noticia · tarjeta» (`loop-noticia.json`) y la sección `#noticias` de
+Inicio (`home-v13-noticias.json`), generados con `python3 scripts/elementor-noticias.py`. El color de la categoría sale
+de la clase `category-<slug>` de cada entrada. Pendiente: la página Noticias (`/noticias/`, a donde lleva «Ver todas»)
+y la plantilla de cada noticia.
 
 ### Página de cada noticia (Theme Builder)
 
@@ -353,6 +436,14 @@ frase**, para llevar a la acción del momento:
 Cuando haya una campaña (una promoción, un episodio del podcast, el boletín), se cambia la frase y el botón de una de
 las diapositivas: «Comprar entradas 2x1», «Escuchar en Spotify», «Suscríbete al boletín». El botón siempre dice la
 acción, nunca «Ver más».
+
+### En pruebas.maloka.org
+
+La home usa el carrusel propio del hero (tres diapositivas con su foto, puntos y pausa), no el widget Slides: a cada
+«Diapositiva N · texto» se le agregó un widget **Botón** («Botón de la frase»): amarillo `#FFE25C`, texto noche, 56 px
+de alto, icono a la izquierda y flecha a la derecha (↗ si abre TuBoleta en otra pestaña). Para cambiar el texto o el
+enlace se edita ese botón. Exportado en `hero-inicio-v13.json`. Además, los controles del carrusel quedan alineados
+con el texto (`max(80px, (100% - 1280px) / 2)`) y sin el fondo rosado que les ponía el tema al hacer clic.
 
 ### Cómo se actualiza en Elementor
 `hero-campanas-v13.json` es un widget **Slides** (Elementor Pro) con las tres frases sobre la misma foto: cada ítem

@@ -396,7 +396,7 @@
          "widgetType": "text-editor",
          "isInner": false,
          "settings": {
-          "editor": "<p>Información de maloka.org/como-llegar. Las rutas cambian: confírmalas en la app de TransMilenio el día de tu visita.</p>",
+          "editor": "<p>Las rutas y paradas de TransMilenio y el SITP pueden cambiar. Antes de salir, revisa tu recorrido en TransMiApp o en Google Maps.</p>",
           "text_color": "#4F4955",
           "typography_typography": "custom",
           "typography_font_size": {
