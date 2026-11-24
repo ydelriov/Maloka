@@ -1,11 +1,12 @@
 ---
-/* Footer noche con la información real de maloka.org (src/data/n/footer.json): frase grande, enlace al boletín y
+/* Footer noche con la información real de maloka.org (src/data/n/footer.json; el horario sale de site.json): frase grande, enlace al boletín y
    redes; columnas Maloka, Horarios, Ubicación y Corporación Maloka; certificaciones ICONTEC e IQNet; NIT.
    Redes con los iconos de Font Awesome 5 (src/data/n/redes-iconos.json), los mismos del widget Iconos sociales.
    Pensado para Elementor (Theme Builder › Footer): encabezados, listas de enlaces, Iconos sociales e Imagen;
    el JSON importable es elementor/footer-v13.json.
    grupo: dentro de /seleccion/, «¿Cómo llegar?» lleva a la página Visítanos del grupo. */
 import f from '../../data/n/footer.json';
+import site from '../../data/site.json';
 import iconos from '../../data/n/redes-iconos.json';
 import Logo from '../ui/Logo.astro';
 import Icon from '../ui/Icon.astro';
@@ -41,8 +42,8 @@ const ext = (u) => /^https?:/.test(u);
       <div>
         <p class="nf-ct">{f.horarios.titulo}</p>
         <ul class="nf-datos">
-          {f.horarios.items.map((h) => <li><b>{h.dias}</b><span>{h.horas}</span></li>)}
-          <li class="nf-nota">{f.horarios.venta}</li>
+          {[site.horarios.semana, site.horarios.finde].map((h) => <li><b>{h.dias}</b><span>{h.texto}</span></li>)}
+          <li class="nf-nota">{site.horarios.ventaHasta}</li>
         </ul>
       </div>
       <div>

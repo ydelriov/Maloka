@@ -5,7 +5,7 @@
  "page_settings": {},
  "content": [
   {
-   "id": "6dee6f39",
+   "id": "f8439f28",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -104,7 +104,7 @@
    },
    "elements": [
     {
-     "id": "79e95e0b",
+     "id": "cb86c119",
      "elType": "widget",
      "widgetType": "theme-site-logo",
      "isInner": false,
@@ -120,7 +120,7 @@
      "elements": []
     },
     {
-     "id": "fa5a02f9",
+     "id": "5aa07977",
      "elType": "widget",
      "widgetType": "nav-menu",
      "isInner": false,
@@ -236,7 +236,7 @@
      "elements": []
     },
     {
-     "id": "c9dace8b",
+     "id": "5e38767e",
      "elType": "widget",
      "widgetType": "button",
      "isInner": false,

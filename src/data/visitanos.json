@@ -352,8 +352,7 @@
           {
             "titulo": "Food Hall",
             "icono": "food",
-            "texto": "Un nuevo espacio de comida.",
-            "etiqueta": "Próximamente"
+            "texto": "Un nuevo espacio de comida."
           }
         ]
       },
@@ -368,7 +367,12 @@
           {
             "titulo": "Guía digital",
             "icono": "guide",
-            "texto": "Recorre Maloka desde tu celular con Bloomberg Connects. Es gratuita."
+            "texto": "Recorre Maloka desde tu celular con Bloomberg Connects. Es gratuita.",
+            "enlace": {
+              "texto": "Abrir la guía en Bloomberg Connects",
+              "href": "https://guides.bloombergconnects.org/es-US/guide/malokaScienceCenter",
+              "externo": true
+            }
           },
           {
             "titulo": "Atención al visitante",
@@ -395,16 +399,6 @@
   },
   "preguntas": [
     {
-      "p": "¿Cuál es el horario de Maloka?",
-      "r": "De lunes a viernes de 11:00 a. m. a 5:00 p. m. Sábados, domingos y festivos de 9:30 a. m. a 6:00 p. m.",
-      "real": true
-    },
-    {
-      "p": "¿Hasta qué hora puedo comprar entradas?",
-      "r": "La venta de entradas cierra a las 4:00 p. m.",
-      "real": true
-    },
-    {
       "p": "¿Desde qué edad se paga la entrada?",
       "r": "La entrada es paga desde los 4 años. Los menores de 4 años y los adultos mayores entran gratis al recorrido exploratorio.",
       "real": true
@@ -422,7 +416,11 @@
     {
       "p": "¿Hay guía para recorrer Maloka?",
       "r": "Sí. La guía digital es gratuita y se usa desde el celular con la aplicación Bloomberg Connects.",
-      "real": true
+      "real": true,
+      "enlace": {
+        "texto": "Abrir la guía de Maloka",
+        "url": "https://guides.bloombergconnects.org/es-US/guide/malokaScienceCenter"
+      }
     }
   ],
   "avisos": [
@@ -713,5 +711,12 @@
     "Mayores de 60 años: entran gratis al recorrido exploratorio.",
     "Estudiantes: descuento en el recorrido presentando el carné vigente en taquilla.",
     "Personas con discapacidad: recorrido gratis con un acompañante y 25 % de descuento en el cine ($14.700), con certificado médico en taquilla."
-  ]
+  ],
+  "guia": {
+    "ante": "Guía digital gratuita",
+    "titulo": "Lleva la guía de Maloka en tu celular.",
+    "texto": "Descarga gratis la app Bloomberg Connects y recorre Maloka a tu ritmo desde tu celular, antes y durante tu visita.",
+    "enlace": "Abrir la guía de Maloka",
+    "url": "https://guides.bloombergconnects.org/es-US/guide/malokaScienceCenter"
+  }
 }

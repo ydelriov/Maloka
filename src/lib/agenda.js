@@ -17,3 +17,21 @@ export const rango = (e) => (e.fechaFin ? `${dia(e.fecha)}–${dia(e.fechaFin)}`
 export const acceso = (e) => `${a.acceso[e.acceso]}${e.valor ? ` · ${e.valor}` : ''}`;
 export const cta = (e) => (e.acceso === 'pago' ? 'Compra tu entrada' : e.acceso === 'inscripcion' ? 'Inscríbete' : null);
 export const filtros = [{ id: 'todo', label: 'Todos' }, ...a.tipos.map((t) => ({ id: t.id, label: t.label }))];
+
+/** Slug de la ficha del evento (en WordPress lo pone el título del evento). */
+export const slug = (e) => e.titulo.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+/** Enlace a la ficha del evento dentro de un grupo publicado (p. ej. /seleccion/agendate/<slug>/). */
+export const ficha = (e, url, grupo = 'seleccion') => url(`${grupo}/agendate/${slug(e)}/`);
+/** Enlace «Agregar a Google Calendar» (evento de día completo; el horario va en la descripción). */
+export const calendario = (e) => {
+  const ymd = (iso) => iso.replaceAll('-', '');
+  const masUno = (iso) => { const d = new Date(`${iso}T12:00:00`); d.setDate(d.getDate() + 1); return d.toISOString().slice(0, 10).replaceAll('-', ''); };
+  const p = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: `${e.titulo} · Maloka`,
+    dates: `${ymd(e.fecha)}/${masUno(e.fechaFin || e.fecha)}`,
+    details: `${e.horario}. ${e.resumen}`,
+    location: `${e.lugar} – Maloka, Cra. 68D # 24A-51, Bogotá`,
+  });
+  return `https://calendar.google.com/calendar/render?${p}`;
+};

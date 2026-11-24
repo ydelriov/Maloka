@@ -21,7 +21,7 @@ import d from '../../data/n/home.json';
 import { img } from '../../lib/images.js';
 import { rutaPara } from '../../lib/rutas.js';
 import { url } from '../../lib/url.js';
-import { agenda, proximos, tipo, rango, mes, sem, acceso, filtros as agFiltros } from '../../lib/agenda.js';
+import { agenda, proximos, tipo, rango, mes, sem, acceso, filtros as agFiltros, ficha } from '../../lib/agenda.js';
 import '../../styles/noche.css';
 // grupo: «seleccion» la publica en /seleccion/ (hoy solo V13, sin barra de versiones)
 const { grupo } = Astro.props;
@@ -72,7 +72,7 @@ const t = d.territorios;
         <ul class="v13-ag" id="v13-ag-l">
           {proximos.slice(0, 4).map((e, i) => (
             <li data-filtro={e.tipo} data-rv style={`--d:${i}`}>
-              <a class="v13-ag-a" href={e.url || ruta('Programación')} style={`--c:var(--n-${tipo[e.tipo].color})`}>
+              <a class="v13-ag-a" href={grupo ? ficha(e, url, grupo) : (e.url || ruta('Programación'))} style={`--c:var(--n-${tipo[e.tipo].color})`}>
                 <span class:list={['v13-ag-f', e.fechaFin && 'v13-ag-f--r']}><b class="t-num">{rango(e)}</b><span>{mes(e.fecha)}</span><small>{sem(e.fecha)}</small></span>
                 <span class="v13-ag-t"><span class={`n-tag n-tag--${tipo[e.tipo].color}`}>{tipo[e.tipo].label}</span><h3>{e.titulo}</h3><span class="v13-ag-x">{e.resumen}</span></span>
                 <span class="v13-ag-m"><span><Icon name="clock" size="18" />{e.horario}</span><span><Icon name="pin" size="18" />{e.lugar}</span><span><Icon name="ticket" size="18" />{acceso(e)}</span></span>

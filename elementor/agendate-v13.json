@@ -9,7 +9,7 @@
  },
  "content": [
   {
-   "id": "6565dbf",
+   "id": "7974372",
    "elType": "container",
    "settings": {
     "_title": "Agéndate · cabecera",
@@ -37,7 +37,7 @@
    },
    "elements": [
     {
-     "id": "0a05978",
+     "id": "1898a72",
      "elType": "container",
      "settings": {
       "_title": "Cabecera · contenido",
@@ -83,7 +83,7 @@
      },
      "elements": [
       {
-       "id": "0760608",
+       "id": "f05373e",
        "elType": "widget",
        "settings": {
         "editor": "<p><a href=\"/\">Inicio</a> <span aria-hidden=\"true\">/</span> <span aria-current=\"page\">Agéndate</span></p>",
@@ -108,7 +108,7 @@
        "widgetType": "text-editor"
       },
       {
-       "id": "8335ba7",
+       "id": "ffd2db0",
        "elType": "widget",
        "settings": {
         "title": "Agéndate",
@@ -147,7 +147,7 @@
        "widgetType": "heading"
       },
       {
-       "id": "3ae8ade",
+       "id": "9a0800d",
        "elType": "widget",
        "settings": {
         "editor": "<p>Talleres, charlas, cine, teatro y encuentros en Maloka. Muchos son gratis con inscripción previa: los cupos son limitados.</p>",
@@ -182,7 +182,7 @@
        "widgetType": "text-editor"
       },
       {
-       "id": "33ca5a5",
+       "id": "9a42d9b",
        "elType": "widget",
        "settings": {
         "title": "Recibe la agenda de Maloka en tu correo cada mes: suscríbete al boletín ↗",
@@ -220,7 +220,7 @@
    "isInner": false
   },
   {
-   "id": "ff419bf",
+   "id": "fa8a9fd",
    "elType": "container",
    "settings": {
     "_title": "Agéndate · próximos eventos",
@@ -265,7 +265,7 @@
    },
    "elements": [
     {
-     "id": "2d0ed61",
+     "id": "d00bdaa",
      "elType": "container",
      "settings": {
       "_title": "Agéndate · próximos eventos · contenido",
@@ -310,7 +310,7 @@
      },
      "elements": [
       {
-       "id": "ffd2db0",
+       "id": "ee5ff68",
        "elType": "container",
        "settings": {
         "_title": "Encabezado",
@@ -337,7 +337,7 @@
        },
        "elements": [
         {
-         "id": "f05373e",
+         "id": "e136276",
          "elType": "container",
          "settings": {
           "_title": "Encabezado · textos",
@@ -362,7 +362,7 @@
          },
          "elements": [
           {
-           "id": "4efbd72",
+           "id": "2d0ed61",
            "elType": "widget",
            "settings": {
             "title": "Programación",
@@ -391,7 +391,7 @@
            "widgetType": "heading"
           },
           {
-           "id": "9890cb0",
+           "id": "ff419bf",
            "elType": "widget",
            "settings": {
             "title": "Próximos eventos",
@@ -433,7 +433,7 @@
          "isInner": true
         },
         {
-         "id": "d127497",
+         "id": "f46eeed",
          "elType": "container",
          "settings": {
           "_title": "Filtro",
@@ -451,7 +451,7 @@
          },
          "elements": [
           {
-           "id": "213ad27",
+           "id": "8aec131",
            "elType": "widget",
            "settings": {
             "selected_element": "a9e4c01",
@@ -534,7 +534,7 @@
        "isInner": true
       },
       {
-       "id": "9a42d9b",
+       "id": "612efd6",
        "elType": "container",
        "settings": {
         "_title": "Destacado",
@@ -551,7 +551,7 @@
        },
        "elements": [
         {
-         "id": "9a0800d",
+         "id": "fdb8343",
          "elType": "widget",
          "settings": {
           "_skin": "post",
@@ -606,7 +606,7 @@
        "isInner": true
       },
       {
-       "id": "7974372",
+       "id": "9b9900f",
        "elType": "container",
        "settings": {
         "_title": "Lista",
@@ -694,7 +694,7 @@
    "isInner": false
   },
   {
-   "id": "d00bdaa",
+   "id": "c006e6a",
    "elType": "container",
    "settings": {
     "_title": "Agéndate · eventos recientes",
@@ -737,7 +737,7 @@
    },
    "elements": [
     {
-     "id": "9b9900f",
+     "id": "40e49da",
      "elType": "container",
      "settings": {
       "_title": "Agéndate · eventos recientes · contenido",
@@ -782,7 +782,7 @@
      },
      "elements": [
       {
-       "id": "fdb8343",
+       "id": "4e75c48",
        "elType": "container",
        "settings": {
         "_title": "Encabezado",
@@ -809,7 +809,7 @@
        },
        "elements": [
         {
-         "id": "ee5ff68",
+         "id": "16b2f11",
          "elType": "container",
          "settings": {
           "_title": "Encabezado · textos",
@@ -834,7 +834,7 @@
          },
          "elements": [
           {
-           "id": "8aec131",
+           "id": "6373f00",
            "elType": "widget",
            "settings": {
             "title": "Ya pasaron",
@@ -863,7 +863,7 @@
            "widgetType": "heading"
           },
           {
-           "id": "f46eeed",
+           "id": "3a41f14",
            "elType": "widget",
            "settings": {
             "title": "Eventos recientes",
@@ -902,7 +902,7 @@
            "widgetType": "heading"
           },
           {
-           "id": "e136276",
+           "id": "b0b6cf9",
            "elType": "widget",
            "settings": {
             "editor": "<p>Los eventos salen solos de «Próximos» al terminar su fecha.</p>",
@@ -937,7 +937,7 @@
        "isInner": true
       },
       {
-       "id": "d178d4a",
+       "id": "3bb80f5",
        "elType": "container",
        "settings": {
         "_title": "Recientes",
@@ -964,7 +964,7 @@
        },
        "elements": [
         {
-         "id": "612efd6",
+         "id": "175ac36",
          "elType": "widget",
          "settings": {
           "_skin": "post",
@@ -1025,7 +1025,7 @@
    "isInner": false
   },
   {
-   "id": "e709b1e",
+   "id": "6442ed5",
    "elType": "container",
    "settings": {
     "_title": "Agéndate · todos los días",
@@ -1068,7 +1068,7 @@
    },
    "elements": [
     {
-     "id": "52de460",
+     "id": "7aabeac",
      "elType": "container",
      "settings": {
       "_title": "Agéndate · todos los días · contenido",
@@ -1113,7 +1113,7 @@
      },
      "elements": [
       {
-       "id": "63a3f25",
+       "id": "b5fb29b",
        "elType": "container",
        "settings": {
         "_title": "Encabezado",
@@ -1140,7 +1140,7 @@
        },
        "elements": [
         {
-         "id": "c25312a",
+         "id": "f50f8c0",
          "elType": "container",
          "settings": {
           "_title": "Encabezado · textos",
@@ -1165,7 +1165,7 @@
          },
          "elements": [
           {
-           "id": "40e49da",
+           "id": "bdbbf7c",
            "elType": "widget",
            "settings": {
             "title": "Todos los días",
@@ -1194,7 +1194,7 @@
            "widgetType": "heading"
           },
           {
-           "id": "c006e6a",
+           "id": "1ca5c58",
            "elType": "widget",
            "settings": {
             "title": "Todos los días en Maloka.",
@@ -1233,7 +1233,7 @@
            "widgetType": "heading"
           },
           {
-           "id": "1741602",
+           "id": "9a1545f",
            "elType": "widget",
            "settings": {
             "editor": "<p>Además de la agenda, cada día hay funciones en el Cine Domo y talleres en los laboratorios que puedes comprar en línea.</p>",
@@ -1268,7 +1268,7 @@
        "isInner": true
       },
       {
-       "id": "be608dd",
+       "id": "e680354",
        "elType": "container",
        "settings": {
         "_title": "Bloques",
@@ -1300,7 +1300,7 @@
        },
        "elements": [
         {
-         "id": "b0b6cf9",
+         "id": "be608dd",
          "elType": "container",
          "settings": {
           "_title": "Bloque · Funciones en el Cine Domo",
@@ -1352,7 +1352,7 @@
          },
          "elements": [
           {
-           "id": "fa8a9fd",
+           "id": "1741602",
            "elType": "widget",
            "settings": {
             "title": "Funciones en el Cine Domo",
@@ -1387,7 +1387,7 @@
            "widgetType": "heading"
           },
           {
-           "id": "6373f00",
+           "id": "c25312a",
            "elType": "widget",
            "settings": {
             "editor": "<p>Documentales, animadas y shows láser en toda la cúpula.</p>",
@@ -1411,7 +1411,7 @@
            "widgetType": "text-editor"
           },
           {
-           "id": "3a41f14",
+           "id": "63a3f25",
            "elType": "widget",
            "settings": {
             "selected_icon": {
@@ -1433,7 +1433,7 @@
          "isInner": true
         },
         {
-         "id": "3bb80f5",
+         "id": "5f964d5",
          "elType": "container",
          "settings": {
           "_title": "Bloque · Laboratorios",
@@ -1485,7 +1485,7 @@
          },
          "elements": [
           {
-           "id": "16b2f11",
+           "id": "52de460",
            "elType": "widget",
            "settings": {
             "title": "Laboratorios",
@@ -1520,7 +1520,7 @@
            "widgetType": "heading"
           },
           {
-           "id": "4e75c48",
+           "id": "e709b1e",
            "elType": "widget",
            "settings": {
             "editor": "<p>Pequeños Inventores, Bio e Inventores, según la edad.</p>",
@@ -1544,7 +1544,7 @@
            "widgetType": "text-editor"
           },
           {
-           "id": "175ac36",
+           "id": "5d76eec",
            "elType": "widget",
            "settings": {
             "selected_icon": {

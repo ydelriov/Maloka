@@ -27,3 +27,4 @@ Astro las convierte a AVIF/WebP en el build.
 | colibri-paramo.jpg | Colibrí de páramo |
 | edificio-domo.jpg | Exterior de Maloka y su domo |
 | panoramica-maloka.jpg | Panorámica del edificio |
+| sala-digital.jpg | Sala Digital: pantalla gigante y sillas de colores (galería de maloka.org/acerca-de) |

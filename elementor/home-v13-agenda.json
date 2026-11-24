@@ -5,7 +5,7 @@
  "page_settings": [],
  "content": [
   {
-   "id": "921c169",
+   "id": "696d2b4",
    "elType": "container",
    "settings": {
     "_title": "Inicio · Agenda",
@@ -49,7 +49,7 @@
    },
    "elements": [
     {
-     "id": "f44bd21",
+     "id": "3969031",
      "elType": "container",
      "settings": {
       "_title": "Inicio · Agenda · contenido",
@@ -94,7 +94,7 @@
      },
      "elements": [
       {
-       "id": "f50f8c0",
+       "id": "ab0fdd1",
        "elType": "container",
        "settings": {
         "_title": "Encabezado",
@@ -121,7 +121,7 @@
        },
        "elements": [
         {
-         "id": "9a1545f",
+         "id": "98160f7",
          "elType": "container",
          "settings": {
           "_title": "Encabezado · textos",
@@ -146,7 +146,7 @@
          },
          "elements": [
           {
-           "id": "5d76eec",
+           "id": "03eb350",
            "elType": "widget",
            "settings": {
             "title": "Agéndate",
@@ -175,7 +175,7 @@
            "widgetType": "heading"
           },
           {
-           "id": "5f964d5",
+           "id": "fb17820",
            "elType": "widget",
            "settings": {
             "title": "Próximos eventos",
@@ -217,7 +217,7 @@
          "isInner": true
         },
         {
-         "id": "1ca5c58",
+         "id": "921c169",
          "elType": "container",
          "settings": {
           "_title": "Filtro",
@@ -235,7 +235,7 @@
          },
          "elements": [
           {
-           "id": "bdbbf7c",
+           "id": "f44bd21",
            "elType": "widget",
            "settings": {
             "selected_element": "b7e4c02",
@@ -318,7 +318,7 @@
        "isInner": true
       },
       {
-       "id": "e680354",
+       "id": "4a8b9b8",
        "elType": "container",
        "settings": {
         "_title": "Agenda · filas",
@@ -400,7 +400,7 @@
        "isInner": true
       },
       {
-       "id": "fb17820",
+       "id": "731924a",
        "elType": "container",
        "settings": {
         "_title": "Agenda · pie",
@@ -417,7 +417,7 @@
        },
        "elements": [
         {
-         "id": "03eb350",
+         "id": "ca0341f",
          "elType": "container",
          "settings": {
           "_title": "Enlace · Toda la programación",
@@ -461,7 +461,7 @@
          },
          "elements": [
           {
-           "id": "7aabeac",
+           "id": "45af722",
            "elType": "widget",
            "settings": {
             "title": "Toda la programación",
@@ -495,7 +495,7 @@
            "widgetType": "heading"
           },
           {
-           "id": "6442ed5",
+           "id": "fa0c577",
            "elType": "widget",
            "settings": {
             "selected_icon": {

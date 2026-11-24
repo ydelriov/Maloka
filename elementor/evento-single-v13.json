@@ -1,0 +1,1554 @@
+{
+ "title": "Evento · ficha (Maloka V13)",
+ "type": "single-post",
+ "version": "0.4",
+ "page_settings": {
+  "custom_css": "/* Etiqueta del tipo de evento con el pastel de su tipo */\n.tipo_evento-cine .mk-ev-tipo { background-color: #9CCBF2 !important; }\n.tipo_evento-taller .mk-ev-tipo { background-color: #9FE8C8 !important; }\n.tipo_evento-charla .mk-ev-tipo { background-color: #B4A5F5 !important; }\n.tipo_evento-escenicas .mk-ev-tipo { background-color: #F4A39A !important; }\n.tipo_evento-encuentro .mk-ev-tipo { background-color: #FFE25C !important; }\n"
+ },
+ "content": [
+  {
+   "id": "a96eec6a",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "container_type": "flex",
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1280,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "28",
+     "row": "28",
+     "isLinked": true,
+     "unit": "px",
+     "size": 28
+    },
+    "padding": {
+     "unit": "px",
+     "top": "32",
+     "right": "80",
+     "bottom": "64",
+     "left": "80",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "28",
+     "right": "40",
+     "bottom": "48",
+     "left": "40",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "24",
+     "right": "16",
+     "bottom": "40",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#F4F1EC"
+   },
+   "elements": [
+    {
+     "id": "432c3705",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "row",
+      "flex_direction_mobile": "row",
+      "flex_wrap": "wrap",
+      "content_width": "full",
+      "flex_gap": {
+       "column": "8",
+       "row": "8",
+       "isLinked": true,
+       "unit": "px",
+       "size": 8
+      }
+     },
+     "elements": [
+      {
+       "id": "cdd34629",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Inicio",
+        "header_size": "p",
+        "title_color": "#4F4955",
+        "link": {
+         "url": "/",
+         "is_external": "",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.4,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "4d5d8685",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "/",
+        "header_size": "p",
+        "title_color": "#4F4955",
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.4,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "ee1e29c3",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Agéndate",
+        "header_size": "p",
+        "title_color": "#4F4955",
+        "link": {
+         "url": "/agendate/",
+         "is_external": "",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.4,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "3435a5c1",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "/",
+        "header_size": "p",
+        "title_color": "#4F4955",
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.4,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "3ed4b20c",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Título del evento",
+        "header_size": "div",
+        "title_color": "#231B2B",
+        "_element_width": "auto",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 14,
+         "sizes": []
+        },
+        "typography_font_weight": "600",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.4,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat",
+        "__dynamic__": {
+         "title": "[elementor-tag id=\"7078ead\" name=\"post-title\" settings=\"%7B%7D\"]"
+        }
+       },
+       "elements": []
+      }
+     ]
+    },
+    {
+     "id": "16c673b1",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "row",
+      "content_width": "full",
+      "flex_wrap": "nowrap",
+      "flex_direction_tablet": "column",
+      "flex_direction_mobile": "column",
+      "flex_gap": {
+       "column": "56",
+       "row": "56",
+       "isLinked": true,
+       "unit": "px",
+       "size": 56
+      },
+      "flex_gap_tablet": {
+       "column": "32",
+       "row": "32",
+       "isLinked": true,
+       "unit": "px",
+       "size": 32
+      },
+      "flex_align_items": "flex-start"
+     },
+     "elements": [
+      {
+       "id": "fbfde3bb",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "width": {
+         "unit": "%",
+         "size": 40,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 60,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "1798683f",
+         "elType": "widget",
+         "widgetType": "image",
+         "isInner": false,
+         "settings": {
+          "image": {
+           "url": "https://ydelriov.github.io/Maloka/elementor/img/cine-domo-cupula.jpg",
+           "id": 0,
+           "alt": "Afiche del evento"
+          },
+          "image_size": "full",
+          "caption_source": "none",
+          "link_to": "none",
+          "width": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          },
+          "__dynamic__": {
+           "image": "[elementor-tag id=\"bc43024\" name=\"post-featured-image\" settings=\"%7B%7D\"]"
+          }
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "2140ee5e",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "20",
+         "row": "20",
+         "isLinked": true,
+         "unit": "px",
+         "size": 20
+        },
+        "width": {
+         "unit": "%",
+         "size": 56,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        }
+       },
+       "elements": [
+        {
+         "id": "69ccd421",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Cine",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "_element_width": "auto",
+          "_background_background": "classic",
+          "_background_color": "#9CCBF2",
+          "_padding": {
+           "unit": "px",
+           "top": "5",
+           "right": "12",
+           "bottom": "5",
+           "left": "12",
+           "isLinked": false
+          },
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.4,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat",
+          "__dynamic__": {
+           "title": "[elementor-tag id=\"e03e7ef\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bevento_tipo%5D%22%7D\"]"
+          },
+          "_css_classes": "mk-ev-tipo",
+          "_flex_align_self": "flex-start"
+         },
+         "elements": []
+        },
+        {
+         "id": "ebd4d71",
+         "elType": "widget",
+         "settings": {
+          "shortcode": "[evento_estado]",
+          "_title": "Este evento ya pasó",
+          "custom_css": "selector .maloka-evento-pasado { display: inline-block; padding: 5px 12px; background: #E7E3DC; color: #4F4955; font: 700 14px/1.4 Montserrat, sans-serif; }\nselector .elementor-shortcode:empty { display: none; }\n"
+         },
+         "elements": [],
+         "widgetType": "shortcode"
+        },
+        {
+         "id": "84712fa7",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Título del evento",
+          "header_size": "h1",
+          "title_color": "#231B2B",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 64,
+           "sizes": []
+          },
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 48,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 34,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.05,
+           "sizes": []
+          },
+          "typography_letter_spacing": {
+           "unit": "em",
+           "size": -0.025,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat",
+          "__dynamic__": {
+           "title": "[elementor-tag id=\"219166a\" name=\"post-title\" settings=\"%7B%7D\"]"
+          }
+         },
+         "elements": []
+        },
+        {
+         "id": "153c0cae",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "isInner": false,
+         "settings": {
+          "editor": "<p>Resumen del evento.</p>",
+          "text_color": "#4F4955",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 19,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 17,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.55,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat",
+          "__dynamic__": {
+           "editor": "[elementor-tag id=\"707ac48\" name=\"post-excerpt\" settings=\"%7B%7D\"]"
+          }
+         },
+         "elements": []
+        },
+        {
+         "id": "5f1f96f9",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "grid",
+          "content_width": "full",
+          "grid_columns_grid": {
+           "unit": "fr",
+           "size": 2,
+           "sizes": []
+          },
+          "grid_columns_grid_mobile": {
+           "unit": "fr",
+           "size": 1,
+           "sizes": []
+          },
+          "grid_rows_grid": {
+           "unit": "fr",
+           "size": 2,
+           "sizes": []
+          },
+          "grid_rows_grid_mobile": {
+           "unit": "fr",
+           "size": 4,
+           "sizes": []
+          },
+          "grid_auto_flow": "row",
+          "grid_gaps": {
+           "column": "16",
+           "row": "0",
+           "isLinked": false,
+           "unit": "px",
+           "size": 16
+          },
+          "grid_align_items": "stretch",
+          "border_border": "solid",
+          "border_width": {
+           "unit": "px",
+           "top": "2",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "border_color": "#231B2B"
+         },
+         "elements": [
+          {
+           "id": "f9681290",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "container_type": "flex",
+            "flex_direction": "column",
+            "content_width": "full",
+            "flex_gap": {
+             "column": "6",
+             "row": "6",
+             "isLinked": true,
+             "unit": "px",
+             "size": 6
+            },
+            "padding": {
+             "unit": "px",
+             "top": "18",
+             "right": "16",
+             "bottom": "18",
+             "left": "0",
+             "isLinked": false
+            },
+            "border_border": "solid",
+            "border_width": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "1",
+             "left": "0",
+             "isLinked": false
+            },
+            "border_color": "rgba(35,27,43,0.25)"
+           },
+           "elements": [
+            {
+             "id": "613bb831",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "isInner": false,
+             "settings": {
+              "view": "traditional",
+              "icon_list": [
+               {
+                "_id": "2bq3v7b",
+                "text": "Fecha",
+                "selected_icon": {
+                 "value": "far fa-calendar-alt",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": ""
+                }
+               }
+              ],
+              "icon_color": "#231B2B",
+              "text_color": "#6B5BD6",
+              "icon_size": {
+               "unit": "px",
+               "size": 20,
+               "sizes": []
+              },
+              "text_indent": {
+               "unit": "px",
+               "size": 8,
+               "sizes": []
+              },
+              "icon_typography_typography": "custom",
+              "icon_typography_font_size": {
+               "unit": "px",
+               "size": 13,
+               "sizes": []
+              },
+              "icon_typography_font_weight": "700",
+              "icon_typography_line_height": {
+               "unit": "em",
+               "size": 1.3,
+               "sizes": []
+              },
+              "icon_typography_font_family": "Montserrat"
+             },
+             "elements": []
+            },
+            {
+             "id": "7e3d3276",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "Domingo, 29 de noviembre de 2026",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 18,
+               "sizes": []
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 17,
+               "sizes": []
+              },
+              "typography_font_weight": "600",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.35,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat",
+              "__dynamic__": {
+               "title": "[elementor-tag id=\"076ff68\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bevento_fecha_larga%5D%22%7D\"]"
+              }
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "804ecc91",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "container_type": "flex",
+            "flex_direction": "column",
+            "content_width": "full",
+            "flex_gap": {
+             "column": "6",
+             "row": "6",
+             "isLinked": true,
+             "unit": "px",
+             "size": 6
+            },
+            "padding": {
+             "unit": "px",
+             "top": "18",
+             "right": "16",
+             "bottom": "18",
+             "left": "0",
+             "isLinked": false
+            },
+            "border_border": "solid",
+            "border_width": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "1",
+             "left": "0",
+             "isLinked": false
+            },
+            "border_color": "rgba(35,27,43,0.25)"
+           },
+           "elements": [
+            {
+             "id": "a28cda3c",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "isInner": false,
+             "settings": {
+              "view": "traditional",
+              "icon_list": [
+               {
+                "_id": "8o00kqq",
+                "text": "Horario",
+                "selected_icon": {
+                 "value": "far fa-clock",
+                 "library": "fa-regular"
+                },
+                "link": {
+                 "url": ""
+                }
+               }
+              ],
+              "icon_color": "#231B2B",
+              "text_color": "#6B5BD6",
+              "icon_size": {
+               "unit": "px",
+               "size": 20,
+               "sizes": []
+              },
+              "text_indent": {
+               "unit": "px",
+               "size": 8,
+               "sizes": []
+              },
+              "icon_typography_typography": "custom",
+              "icon_typography_font_size": {
+               "unit": "px",
+               "size": 13,
+               "sizes": []
+              },
+              "icon_typography_font_weight": "700",
+              "icon_typography_line_height": {
+               "unit": "em",
+               "size": 1.3,
+               "sizes": []
+              },
+              "icon_typography_font_family": "Montserrat"
+             },
+             "elements": []
+            },
+            {
+             "id": "dfb9c11a",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "4:00 p. m.",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 18,
+               "sizes": []
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 17,
+               "sizes": []
+              },
+              "typography_font_weight": "600",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.35,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat",
+              "__dynamic__": {
+               "title": "[elementor-tag id=\"b84d765\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bevento_campo%20campo%3D%5C%22horario%5C%22%5D%22%7D\"]"
+              }
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "fa4c473c",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "container_type": "flex",
+            "flex_direction": "column",
+            "content_width": "full",
+            "flex_gap": {
+             "column": "6",
+             "row": "6",
+             "isLinked": true,
+             "unit": "px",
+             "size": 6
+            },
+            "padding": {
+             "unit": "px",
+             "top": "18",
+             "right": "16",
+             "bottom": "18",
+             "left": "0",
+             "isLinked": false
+            },
+            "border_border": "solid",
+            "border_width": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "1",
+             "left": "0",
+             "isLinked": false
+            },
+            "border_color": "rgba(35,27,43,0.25)"
+           },
+           "elements": [
+            {
+             "id": "bfa1f725",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "isInner": false,
+             "settings": {
+              "view": "traditional",
+              "icon_list": [
+               {
+                "_id": "31u58zb",
+                "text": "Lugar",
+                "selected_icon": {
+                 "value": "fas fa-map-marker-alt",
+                 "library": "fa-solid"
+                },
+                "link": {
+                 "url": ""
+                }
+               }
+              ],
+              "icon_color": "#231B2B",
+              "text_color": "#6B5BD6",
+              "icon_size": {
+               "unit": "px",
+               "size": 20,
+               "sizes": []
+              },
+              "text_indent": {
+               "unit": "px",
+               "size": 8,
+               "sizes": []
+              },
+              "icon_typography_typography": "custom",
+              "icon_typography_font_size": {
+               "unit": "px",
+               "size": 13,
+               "sizes": []
+              },
+              "icon_typography_font_weight": "700",
+              "icon_typography_line_height": {
+               "unit": "em",
+               "size": 1.3,
+               "sizes": []
+              },
+              "icon_typography_font_family": "Montserrat"
+             },
+             "elements": []
+            },
+            {
+             "id": "b6449f0d",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "Sala Digital",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 18,
+               "sizes": []
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 17,
+               "sizes": []
+              },
+              "typography_font_weight": "600",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.35,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat",
+              "__dynamic__": {
+               "title": "[elementor-tag id=\"7f7e3b4\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bevento_campo%20campo%3D%5C%22lugar%5C%22%5D%22%7D\"]"
+              }
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "63a9a945",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "container_type": "flex",
+            "flex_direction": "column",
+            "content_width": "full",
+            "flex_gap": {
+             "column": "6",
+             "row": "6",
+             "isLinked": true,
+             "unit": "px",
+             "size": 6
+            },
+            "padding": {
+             "unit": "px",
+             "top": "18",
+             "right": "16",
+             "bottom": "18",
+             "left": "0",
+             "isLinked": false
+            },
+            "border_border": "solid",
+            "border_width": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "1",
+             "left": "0",
+             "isLinked": false
+            },
+            "border_color": "rgba(35,27,43,0.25)"
+           },
+           "elements": [
+            {
+             "id": "8f918351",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "isInner": false,
+             "settings": {
+              "view": "traditional",
+              "icon_list": [
+               {
+                "_id": "w4ndndt",
+                "text": "Acceso",
+                "selected_icon": {
+                 "value": "fas fa-ticket-alt",
+                 "library": "fa-solid"
+                },
+                "link": {
+                 "url": ""
+                }
+               }
+              ],
+              "icon_color": "#231B2B",
+              "text_color": "#6B5BD6",
+              "icon_size": {
+               "unit": "px",
+               "size": 20,
+               "sizes": []
+              },
+              "text_indent": {
+               "unit": "px",
+               "size": 8,
+               "sizes": []
+              },
+              "icon_typography_typography": "custom",
+              "icon_typography_font_size": {
+               "unit": "px",
+               "size": 13,
+               "sizes": []
+              },
+              "icon_typography_font_weight": "700",
+              "icon_typography_line_height": {
+               "unit": "em",
+               "size": 1.3,
+               "sizes": []
+              },
+              "icon_typography_font_family": "Montserrat"
+             },
+             "elements": []
+            },
+            {
+             "id": "27fe9749",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "Gratis con inscripción",
+              "header_size": "div",
+              "title_color": "#231B2B",
+              "typography_typography": "custom",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 18,
+               "sizes": []
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 17,
+               "sizes": []
+              },
+              "typography_font_weight": "600",
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.35,
+               "sizes": []
+              },
+              "typography_font_family": "Montserrat",
+              "__dynamic__": {
+               "title": "[elementor-tag id=\"75002a2\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bevento_acceso%5D%22%7D\"]"
+              }
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "bc0dc469",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "container_type": "flex",
+          "flex_direction": "row",
+          "flex_wrap": "wrap",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "32",
+           "row": "16",
+           "isLinked": false,
+           "unit": "px",
+           "size": 32
+          },
+          "flex_align_items": "center"
+         },
+         "elements": [
+          {
+           "id": "de50e1bf",
+           "elType": "widget",
+           "widgetType": "shortcode",
+           "isInner": false,
+           "settings": {
+            "shortcode": "[evento_boton]"
+           },
+           "elements": []
+          },
+          {
+           "id": "5bc86a66",
+           "elType": "widget",
+           "widgetType": "shortcode",
+           "isInner": false,
+           "settings": {
+            "shortcode": "[evento_calendario]"
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "c40641a8",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "container_type": "flex",
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1280,
+     "sizes": []
+    },
+    "flex_direction": "row",
+    "flex_wrap": "nowrap",
+    "flex_direction_tablet": "column",
+    "flex_direction_mobile": "column",
+    "flex_gap": {
+     "column": "64",
+     "row": "64",
+     "isLinked": true,
+     "unit": "px",
+     "size": 64
+    },
+    "flex_gap_tablet": {
+     "column": "32",
+     "row": "32",
+     "isLinked": true,
+     "unit": "px",
+     "size": 32
+    },
+    "flex_align_items": "flex-start",
+    "padding": {
+     "unit": "px",
+     "top": "96",
+     "right": "80",
+     "bottom": "96",
+     "left": "80",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "80",
+     "right": "40",
+     "bottom": "80",
+     "left": "40",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "64",
+     "right": "16",
+     "bottom": "64",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#FFFFFF"
+   },
+   "elements": [
+    {
+     "id": "04a2ec8d",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "column",
+      "content_width": "full",
+      "flex_gap": {
+       "column": "20",
+       "row": "20",
+       "isLinked": true,
+       "unit": "px",
+       "size": 20
+      },
+      "width": {
+       "unit": "%",
+       "size": 58,
+       "sizes": []
+      },
+      "width_tablet": {
+       "unit": "%",
+       "size": 100,
+       "sizes": []
+      },
+      "width_mobile": {
+       "unit": "%",
+       "size": 100,
+       "sizes": []
+      }
+     },
+     "elements": [
+      {
+       "id": "ae6e9e93",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Sobre el evento",
+        "header_size": "h2",
+        "title_color": "#231B2B",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 40,
+         "sizes": []
+        },
+        "typography_font_size_tablet": {
+         "unit": "px",
+         "size": 34,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 28,
+         "sizes": []
+        },
+        "typography_font_weight": "700",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.1,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "55abafd2",
+       "elType": "widget",
+       "widgetType": "theme-post-content",
+       "isInner": false,
+       "settings": {
+        "align": "left",
+        "text_color": "#231B2B",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 19,
+         "sizes": []
+        },
+        "typography_font_size_mobile": {
+         "unit": "px",
+         "size": 17,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.7,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      }
+     ]
+    },
+    {
+     "id": "b4890e13",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "container_type": "flex",
+      "flex_direction": "column",
+      "content_width": "full",
+      "flex_gap": {
+       "column": "12",
+       "row": "12",
+       "isLinked": true,
+       "unit": "px",
+       "size": 12
+      },
+      "width": {
+       "unit": "%",
+       "size": 38,
+       "sizes": []
+      },
+      "width_tablet": {
+       "unit": "%",
+       "size": 100,
+       "sizes": []
+      },
+      "width_mobile": {
+       "unit": "%",
+       "size": 100,
+       "sizes": []
+      },
+      "padding": {
+       "unit": "px",
+       "top": "28",
+       "right": "28",
+       "bottom": "28",
+       "left": "28",
+       "isLinked": true
+      },
+      "background_background": "classic",
+      "background_color": "#9FE8C8",
+      "flex_align_items": "flex-start"
+     },
+     "elements": [
+      {
+       "id": "50b45a33",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Ten en cuenta",
+        "header_size": "div",
+        "title_color": "#231B2B",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 20,
+         "sizes": []
+        },
+        "typography_font_weight": "700",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.3,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "47353a1a",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Es gratis, pero necesitas inscribirte: los cupos son limitados.",
+        "header_size": "div",
+        "title_color": "#231B2B",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.5,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat",
+        "__dynamic__": {
+         "title": "[elementor-tag id=\"760a7c0\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bevento_nota%5D%22%7D\"]"
+        }
+       },
+       "elements": []
+      },
+      {
+       "id": "a873a83b",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Llega con tiempo: la entrada a Maloka es por la Carrera 68D # 24A-51.",
+        "header_size": "div",
+        "title_color": "#231B2B",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.5,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      },
+      {
+       "id": "1b40a0a1",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Venta de entradas hasta las 4:00 p. m.",
+        "header_size": "div",
+        "title_color": "#231B2B",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "400",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.5,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat",
+        "__dynamic__": {
+         "title": "[elementor-tag id=\"ad74818\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_venta%5D%22%7D\"]"
+        }
+       },
+       "elements": []
+      },
+      {
+       "id": "134b1a0f",
+       "elType": "widget",
+       "widgetType": "heading",
+       "isInner": false,
+       "settings": {
+        "title": "Cómo llegar →",
+        "header_size": "div",
+        "title_color": "#231B2B",
+        "link": {
+         "url": "/visitanos/#llegar",
+         "is_external": "",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "_element_width": "auto",
+        "_padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "2",
+         "left": "0",
+         "isLinked": false
+        },
+        "_border_border": "solid",
+        "_border_width": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "2",
+         "left": "0",
+         "isLinked": false
+        },
+        "_border_color": "#231B2B",
+        "typography_typography": "custom",
+        "typography_font_size": {
+         "unit": "px",
+         "size": 16,
+         "sizes": []
+        },
+        "typography_font_weight": "700",
+        "typography_line_height": {
+         "unit": "em",
+         "size": 1.3,
+         "sizes": []
+        },
+        "typography_font_family": "Montserrat"
+       },
+       "elements": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cf7841a7",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "container_type": "flex",
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1280,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "24",
+     "row": "24",
+     "isLinked": true,
+     "unit": "px",
+     "size": 24
+    },
+    "padding": {
+     "unit": "px",
+     "top": "96",
+     "right": "80",
+     "bottom": "96",
+     "left": "80",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "unit": "px",
+     "top": "80",
+     "right": "40",
+     "bottom": "80",
+     "left": "40",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "64",
+     "right": "16",
+     "bottom": "64",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#F4F1EC"
+   },
+   "elements": [
+    {
+     "id": "cbfca28c",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Agéndate",
+      "header_size": "p",
+      "title_color": "#6B5BD6",
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 18,
+       "sizes": []
+      },
+      "typography_font_weight": "600",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.4,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
+     },
+     "elements": []
+    },
+    {
+     "id": "ac3877ef",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Otros próximos eventos",
+      "header_size": "h2",
+      "title_color": "#231B2B",
+      "typography_typography": "custom",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 40,
+       "sizes": []
+      },
+      "typography_font_size_tablet": {
+       "unit": "px",
+       "size": 34,
+       "sizes": []
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 28,
+       "sizes": []
+      },
+      "typography_font_weight": "700",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.1,
+       "sizes": []
+      },
+      "typography_font_family": "Montserrat"
+     },
+     "elements": []
+    },
+    {
+     "id": "ebd4d71",
+     "elType": "widget",
+     "settings": {
+      "_skin": "post",
+      "template_id": "@loop:evento-tarjeta",
+      "columns": 3,
+      "columns_tablet": 2,
+      "columns_mobile": 1,
+      "posts_per_page": 3,
+      "post_query_post_type": "eventos",
+      "post_query_query_id": "otros_eventos",
+      "pagination_type": "",
+      "column_gap": {
+       "unit": "px",
+       "size": 24,
+       "sizes": []
+      },
+      "row_gap": {
+       "unit": "px",
+       "size": 24,
+       "sizes": []
+      },
+      "row_gap_tablet": {
+       "unit": "px",
+       "size": 24,
+       "sizes": []
+      },
+      "row_gap_mobile": {
+       "unit": "px",
+       "size": 24,
+       "sizes": []
+      },
+      "nothing_found_message_text": "Pronto publicaremos más eventos.",
+      "nothing_found_message_color": "#4F4955",
+      "nothing_found_message_typography_typography": "custom",
+      "nothing_found_message_typography_font_family": "Montserrat",
+      "nothing_found_message_typography_font_size": {
+       "unit": "px",
+       "size": 17,
+       "sizes": []
+      },
+      "nothing_found_message_typography_font_weight": "400",
+      "nothing_found_message_typography_line_height": {
+       "unit": "em",
+       "size": 1.5,
+       "sizes": []
+      }
+     },
+     "elements": [],
+     "widgetType": "loop-grid"
+    }
+   ]
+  }
+ ]
+}

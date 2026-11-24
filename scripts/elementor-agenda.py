@@ -203,8 +203,9 @@ def fecha(grande=64, mes=16, tab=48, mov=38, semana=True, ancho=120):
 ACCESO_CSS = (f'selector .elementor-shortcode {{ display: inline-block; padding: 4px 10px; background: {NOCHE}; color: {AMARILLO}; '
               'font: 700 14px/1.3 Montserrat, sans-serif; }\nselector .elementor-shortcode:empty { display: none; }\n')
 BOTON_CSS = (f'selector .maloka-evento-boton {{ display: inline-flex; gap: 6px; font: 700 16px/1.3 Montserrat, sans-serif; color: {NOCHE}; '
-             'border-bottom: 2px solid currentColor; padding-bottom: 2px; }\n'
-             'selector .maloka-evento-boton:hover { color: #6B5BD6; }\n'
+             'background: none; min-height: 0; padding: 0 0 2px; border-bottom: 2px solid currentColor; }\n'
+             '/* En las listas es un enlace subrayado: anula el botón noche de la ficha (estilo global del snippet) */\n'
+             'selector .maloka-evento-boton:hover { color: #6B5BD6; background: none; }\n'
              'selector .screen-reader-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }\n')
 DESC_CSS = ('selector details summary { display: inline-flex; align-items: center; gap: 6px; font: 700 14px/1.3 Montserrat, sans-serif; '
             f'color: {NOCHE}; cursor: pointer; list-style: none; border-bottom: 2px solid currentColor; padding-bottom: 1px; }}\n'
@@ -315,6 +316,21 @@ pas = cont('Evento · reciente', [
 LOOP_PAS = loop_item('Evento · reciente (Agéndate)', pas, '')
 
 
+# ---------- Loop Item · tarjeta (otros próximos eventos en la ficha) ----------
+tarjeta = cont('Evento · tarjeta', [
+    cont('Fecha', [sc('[evento_dias]', f'selector {{ font: 700 48px/1 Montserrat, sans-serif; letter-spacing: -0.03em; color: {NOCHE}; }}\n'
+                      'selector .maloka-rango { font-size: 0.75em; }\n', 'Día'),
+                   sc('[evento_fecha formato="M · D"]', f'selector {{ font: 600 16px/1.2 Montserrat, sans-serif; color: {NOCHE}; text-transform: lowercase; }}\n', 'Mes y día')],
+         flex_gap=gap(6), custom_css='selector .elementor-shortcode { margin: 0; }\n'),
+    etiqueta_tipo(),
+    titulo_evento(20, 20, 20, enlazar=False),
+    sc('[evento_campo campo="horario"] · [evento_campo campo="lugar"]', f'selector {{ font: 400 14px/1.4 Montserrat, sans-serif; color: {TEXTO2}; }}\n', 'Horario y lugar'),
+], html_tag='a', flex_gap=gap(10), flex_align_items='flex-start', padding=caja(24), background_background='classic',
+    background_color=BLANCO, _css_classes='mk-ev-tarjeta', __dynamic__={'link': tag('post-url')},
+    custom_css='selector { height: 100%; transition: background-color .15s; }\nselector:focus-visible { outline: 3px solid #6B5BD6; outline-offset: 3px; }\n')
+LOOP_TARJETA = loop_item('Evento · tarjeta (ficha)', tarjeta, color_por_tipo('.mk-ev-tarjeta', mezcla=100))
+
+
 # ---------- Widgets de agenda ----------
 def filtro(objetivo, todos='Todos'):
     return widget('taxonomy-filter', selected_element=objetivo, taxonomy='tipo_evento', show_first_item='yes',
@@ -414,7 +430,52 @@ HOME = seccion('Inicio · Agenda', BLANCO, [
 ], idx='agenda')
 HOME_JSON = {'title': 'Inicio V13 · agenda (3 próximos eventos)', 'type': 'container', 'version': '0.4', 'page_settings': [], 'content': [HOME]}
 
+# ---------- Ficha del evento: completa la plantilla de master (elementor/evento-single-v13.json) ----------
+def completar_ficha():
+    """Pone el Loop Grid de «Otros próximos eventos» donde estaba el texto de ayuda y corrige encabezados con
+    header_size y color intercambiados. Es idempotente: se puede correr varias veces."""
+    ruta = RAIZ / 'elementor/evento-single-v13.json'
+    d = json.loads(ruta.read_text())
+    cambios = []
+
+    def recorrer(els):
+        for i, e in enumerate(els):
+            st = e['settings']
+            if e.get('widgetType') == 'heading' and str(st.get('header_size', '')).startswith('#'):
+                st['title_color'], st['header_size'] = st['header_size'], 'p'
+                cambios.append('encabezado ' + st.get('title', ''))
+            if e.get('widgetType') == 'text-editor' and 'Aquí va un Loop Grid' in st.get('editor', ''):
+                els[i] = loop_grid('evento-tarjeta', 'otros_eventos', 3, 3, col_tab=2, col_mov=1, gap_filas=24,
+                                   vacio='Pronto publicaremos más eventos.')
+                els[i]['settings']['column_gap'] = px(24)
+                cambios.append('loop grid')
+            if e.get('widgetType') == 'heading' and 'evento_tipo' in json.dumps(st.get('__dynamic__', {})):
+                if not any(x.get('widgetType') == 'shortcode' and '[evento_estado]' in x['settings'].get('shortcode', '') for x in els):
+                    els.insert(i + 1, sc('[evento_estado]', 'selector .maloka-evento-pasado { display: inline-block; padding: 5px 12px; '
+                                         'background: #E7E3DC; color: #4F4955; font: 700 14px/1.4 Montserrat, sans-serif; }\n'
+                                         'selector .elementor-shortcode:empty { display: none; }\n', 'Este evento ya pasó'))
+                    cambios.append('estado pasado')
+                if st.get('_css_classes') != 'mk-ev-tipo':
+                    st['_css_classes'] = 'mk-ev-tipo'
+                    st['_flex_align_self'] = 'flex-start'
+                    cambios.append('etiqueta del tipo')
+            recorrer(e['elements'])
+    recorrer(d['content'])
+    # Color de la etiqueta según el tipo (clase tipo_evento-<slug> en el contenedor de la plantilla)
+    css = '/* Etiqueta del tipo de evento con el pastel de su tipo */\n' + ''.join(
+        f'.tipo_evento-{slug} .mk-ev-tipo {{ background-color: {PASTEL[t["color"]]} !important; }}\n' for slug, t in TIPOS.items())
+    if not isinstance(d.get('page_settings'), dict):
+        d['page_settings'] = {}
+    if d['page_settings'].get('custom_css') != css:
+        d['page_settings']['custom_css'] = css
+        cambios.append('CSS por tipo')
+    ruta.write_text(json.dumps(d, ensure_ascii=False, indent=1))
+    print('Ficha:', ', '.join(cambios) or 'sin cambios')
+
+
+completar_ficha()
+
 for nombre, datos_json in [('loop-evento', LOOP_FILA), ('loop-evento-destacado', LOOP_DEST), ('loop-evento-texto', LOOP_TXT),
-                           ('loop-evento-pasado', LOOP_PAS), ('agendate-v13', AGENDATE), ('home-v13-agenda', HOME_JSON)]:
+                           ('loop-evento-pasado', LOOP_PAS), ('loop-evento-tarjeta', LOOP_TARJETA), ('agendate-v13', AGENDATE), ('home-v13-agenda', HOME_JSON)]:
     (RAIZ / f'elementor/{nombre}.json').write_text(json.dumps(datos_json, ensure_ascii=False, indent=1))
     print('Escrito', f'elementor/{nombre}.json')

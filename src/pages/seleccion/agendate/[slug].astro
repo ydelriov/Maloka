@@ -1,0 +1,166 @@
+---
+/* Ficha de un evento · propuesta para la plantilla «Entrada individual» de Eventos en el Theme Builder de Elementor Pro.
+   Una sola plantilla para todos los eventos: cada dato sale de los campos del evento (ACF) y de su contenido.
+   1. Migas · 2. Cabecera: afiche (imagen destacada) + tipo, título, fecha grande y recuadro con fecha, horario, lugar
+   y acceso; botón de inscripción o compra y «Agregar a Google Calendar» · 3. Descripción (contenido del evento) y
+   «Ten en cuenta» · 4. Cómo llegar · 5. Otros próximos eventos. JSON importable: elementor/evento-single-v13.json. */
+import Base from '../../../layouts/Base.astro';
+import NHeader from '../../../components/n/NHeader.astro';
+import NFooter from '../../../components/n/NFooter.astro';
+import Icon from '../../../components/ui/Icon.astro';
+import { agenda as a, tipo, proximos, rango, mes, sem, dia, acceso, cta, slug, ficha, calendario, hoy } from '../../../lib/agenda.js';
+import site from '../../../data/site.json';
+import { url } from '../../../lib/url.js';
+import '../../../styles/noche.css';
+
+export function getStaticPaths() {
+  return a.eventos.map((e) => ({ params: { slug: slug(e) }, props: { e } }));
+}
+const { e } = Astro.props;
+const G = 'seleccion';
+const t = tipo[e.tipo];
+const pasado = (e.fechaFin || e.fecha) < hoy;
+const f = (iso, o) => new Date(`${iso}T12:00:00`).toLocaleDateString('es-CO', o);
+const fechaLarga = e.fechaFin
+  ? `${f(e.fecha, { weekday: 'long', day: 'numeric' })} y ${f(e.fechaFin, { weekday: 'long', day: 'numeric', month: 'long' })}`
+  : f(e.fecha, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+const otros = proximos.filter((x) => x !== e).slice(0, 3);
+const boton = cta(e);
+---
+<Base variante="evento" grupo={G} title={`${e.titulo} · Agéndate · Maloka`} description={e.resumen} clase="nn">
+  <NHeader variante="blanco" panel="hueso" grupo={G} inicio={url(`${G}/`)} />
+  <main id="contenido">
+    <article>
+      <!-- Cabecera -->
+      <section class="ev-hero n-hueso" aria-labelledby="ev-h1">
+        <div class="mk-w">
+          <nav class="ev-migas" aria-label="Ruta"><a href={url(`${G}/`)}>Inicio</a><span aria-hidden="true">/</span><a href={url(`${G}/agendate/`)}>Agéndate</a><span aria-hidden="true">/</span><span aria-current="page">{e.titulo}</span></nav>
+          <div class="ev-hero-in">
+            <div class="ev-afiche">
+              {e.afiche
+                ? <img src={e.afiche} alt={`Afiche de ${e.titulo}`} width="1080" height="1440" />
+                : <span class="ev-afiche-vacio" style={`--c:var(--n-${t.color})`}><b class="t-num">{rango(e)}</b><span>{mes(e.fecha)}</span><span>{t.label}</span></span>}
+            </div>
+            <div class="ev-info">
+              <div class="ev-tags">
+                <span class={`n-tag n-tag--${t.color}`}>{t.label}</span>
+                {pasado && <span class="n-tag ev-tag-pasado">Este evento ya pasó</span>}
+              </div>
+              <h1 class="ev-h1" id="ev-h1">{e.titulo}</h1>
+              <p class="ev-resumen">{e.resumen}</p>
+              <dl class="ev-datos">
+                <div><dt><Icon name="cal" size="22" />Fecha</dt><dd>{fechaLarga}</dd></div>
+                <div><dt><Icon name="clock" size="22" />Horario</dt><dd>{e.horario}</dd></div>
+                <div><dt><Icon name="pin" size="22" />Lugar</dt><dd>{e.lugar}{e.lugar !== 'Maloka' && ' – Maloka'}</dd></div>
+                <div><dt><Icon name="ticket" size="22" />Acceso</dt><dd>{acceso(e)}</dd></div>
+              </dl>
+              {!pasado && (
+                <div class="ev-acc">
+                  {boton && e.enlace && <a class="ev-btn" href={e.enlace} target="_blank" rel="noopener">{boton}<Icon name="ext" size="20" /><span class="sr-only"> (abre en una pestaña nueva)</span></a>}
+                  <a class="n-a" href={calendario(e)} target="_blank" rel="noopener">Agregar a Google Calendar<Icon name="ext" size="18" /><span class="sr-only"> (abre en una pestaña nueva)</span></a>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Descripción -->
+      <section class="n-sec n-blanco" aria-labelledby="ev-de">
+        <div class="mk-w ev-de">
+          <div class="ev-texto">
+            <h2 class="n-titulo" id="ev-de">Sobre el evento</h2>
+            <p>{e.descripcion || e.resumen}</p>
+          </div>
+          <aside class="ev-nota" aria-label="Ten en cuenta">
+            <p class="ev-nota-t">Ten en cuenta</p>
+            <ul>
+              {e.acceso === 'inscripcion' && <li>Es gratis, pero necesitas inscribirte: los cupos son limitados.</li>}
+              {e.acceso === 'pago' && <li>Compra tu entrada en línea: puede agotarse en taquilla.</li>}
+              {e.acceso === 'gratis' && <li>Entrada libre hasta completar el aforo.</li>}
+              <li>Llega con tiempo: la entrada a Maloka es por la Carrera 68D # 24A-51.</li>
+              <li>{site.horarios.ventaHasta}, si también quieres recorrer las salas.</li>
+            </ul>
+            <a class="n-a" href={url(`${G}/visitanos/#llegar`)}>Cómo llegar<Icon name="arrow" size="18" /></a>
+          </aside>
+        </div>
+      </section>
+    </article>
+
+    <!-- Otros eventos -->
+    {otros.length > 0 && (
+      <section class="n-sec n-hueso" aria-labelledby="ev-ot">
+        <div class="mk-w">
+          <div class="n-head"><div><p class="n-ante">Agéndate</p><h2 class="n-titulo" id="ev-ot">Otros próximos eventos</h2></div><a class="n-a" href={url(`${G}/agendate/`)}>Toda la programación<Icon name="arrow" size="20" /></a></div>
+          <ul class="ev-otros">
+            {otros.map((o) => (
+              <li><a class="ev-otro" href={ficha(o, url)} style={`--c:var(--n-${tipo[o.tipo].color})`}>
+                <span class="ev-otro-f"><b class="t-num">{rango(o)}</b><span>{mes(o.fecha)} · {sem(o.fecha)}</span></span>
+                <span class={`n-tag n-tag--${tipo[o.tipo].color}`}>{tipo[o.tipo].label}</span>
+                <h3>{o.titulo}</h3>
+                <span class="ev-otro-m">{o.horario} · {o.lugar}</span>
+              </a></li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )}
+  </main>
+  <NFooter grupo={G} />
+</Base>
+
+<style>
+  .ev-hero { padding-block: 32px 64px; }
+  .ev-migas { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; font-size: 14px; font-weight: 600; color: var(--n-texto2); }
+  .ev-migas a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  .ev-migas [aria-current] { color: var(--n-noche); }
+  .ev-hero-in { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: start; }
+  .ev-afiche img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
+  .ev-afiche-vacio { display: grid; align-content: end; gap: 4px; aspect-ratio: 3 / 4; padding: 32px; background: var(--c); color: var(--n-noche); }
+  .ev-afiche-vacio b { font-size: 120px; line-height: .9; letter-spacing: -0.04em; }
+  .ev-afiche-vacio span { font-size: 24px; font-weight: 700; }
+  .ev-info { display: grid; gap: 20px; align-content: start; }
+  .ev-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .ev-tag-pasado { background: var(--n-noche); color: #fff; }
+  .ev-h1 { margin: 0; font-size: var(--n-display); line-height: 1.05; font-weight: 700; letter-spacing: -0.025em; }
+  .ev-resumen { font-size: 19px; line-height: 1.55; color: var(--n-texto2); max-width: 56ch; }
+  .ev-datos { display: grid; grid-template-columns: 1fr 1fr; border-top: 2px solid var(--n-noche); }
+  .ev-datos div { display: grid; gap: 6px; padding: 18px 16px 18px 0; border-bottom: 1px solid rgba(35, 27, 43, .25); }
+  .ev-datos dt { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--n-lavanda-osc); }
+  .ev-datos dt :global(.mk-ic) { color: var(--n-noche); }
+  .ev-datos dd { margin: 0; font-size: 18px; font-weight: 600; }
+  .ev-datos div:first-child dd::first-letter { text-transform: uppercase; }
+  .ev-acc { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; margin-top: 8px; }
+  .ev-btn { display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 28px; background: var(--n-noche); color: var(--n-amarillo); font-size: 18px; font-weight: 700; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
+  .ev-btn:hover { background: var(--n-amarillo); color: var(--n-noche); }
+
+  .ev-de { display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: start; }
+  .ev-texto { display: grid; gap: 20px; }
+  .ev-texto p { font-size: 19px; line-height: 1.7; max-width: 64ch; }
+  .ev-nota { display: grid; gap: 14px; justify-items: start; padding: 28px; background: var(--n-menta); }
+  .ev-nota-t { font-size: 20px; font-weight: 700; }
+  .ev-nota ul { display: grid; gap: 10px; }
+  .ev-nota li { position: relative; padding-left: 18px; font-size: 16px; line-height: 1.5; }
+  .ev-nota li::before { content: ""; position: absolute; left: 0; top: .55em; width: 7px; height: 7px; background: var(--n-noche); }
+
+  .ev-otros { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .ev-otro { display: grid; gap: 10px; align-content: start; justify-items: start; height: 100%; padding: 24px; background: #fff; color: inherit; transition: background-color var(--mk-t-rapida); }
+  .ev-otro:hover { background: var(--c); }
+  .ev-otro-f { display: grid; line-height: 1; }
+  .ev-otro-f b { font-size: 48px; font-weight: 700; letter-spacing: -0.03em; }
+  .ev-otro-f span { margin-top: 6px; font-weight: 600; }
+  .ev-otro h3 { margin: 0; font-size: 20px; line-height: 1.25; font-weight: 700; }
+  .ev-otro-m { font-size: 14px; color: var(--n-texto2); }
+
+  @media (max-width: 1024px) {
+    .ev-hero-in, .ev-de { grid-template-columns: 1fr; gap: 32px; }
+    .ev-afiche { max-width: 420px; }
+    .ev-otros { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 767px) {
+    .ev-hero { padding-block: 24px 40px; }
+    .ev-datos { grid-template-columns: 1fr; }
+    .ev-otros { grid-template-columns: 1fr; }
+    .ev-btn { width: 100%; justify-content: center; }
+  }
+</style>

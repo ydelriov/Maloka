@@ -1,0 +1,176 @@
+{
+ "title": "Evento · tarjeta (ficha)",
+ "type": "loop-item",
+ "version": "0.4",
+ "page_settings": {
+  "source": "eventos",
+  "custom_css": ".tipo_evento-cine .mk-ev-tipo:not(.mk-ev-tipo--linea) .elementor-heading-title { background: #9CCBF2 !important; }\n.tipo_evento-cine .mk-ev-tarjeta:hover { background-color: color-mix(in srgb, #9CCBF2 100%, #fff); }\n.tipo_evento-taller .mk-ev-tipo:not(.mk-ev-tipo--linea) .elementor-heading-title { background: #9FE8C8 !important; }\n.tipo_evento-taller .mk-ev-tarjeta:hover { background-color: color-mix(in srgb, #9FE8C8 100%, #fff); }\n.tipo_evento-charla .mk-ev-tipo:not(.mk-ev-tipo--linea) .elementor-heading-title { background: #B4A5F5 !important; }\n.tipo_evento-charla .mk-ev-tarjeta:hover { background-color: color-mix(in srgb, #B4A5F5 100%, #fff); }\n.tipo_evento-escenicas .mk-ev-tipo:not(.mk-ev-tipo--linea) .elementor-heading-title { background: #F4A39A !important; }\n.tipo_evento-escenicas .mk-ev-tarjeta:hover { background-color: color-mix(in srgb, #F4A39A 100%, #fff); }\n.tipo_evento-encuentro .mk-ev-tipo:not(.mk-ev-tipo--linea) .elementor-heading-title { background: #FFE25C !important; }\n.tipo_evento-encuentro .mk-ev-tarjeta:hover { background-color: color-mix(in srgb, #FFE25C 100%, #fff); }\n"
+ },
+ "content": [
+  {
+   "id": "d127497",
+   "elType": "container",
+   "settings": {
+    "_title": "Evento · tarjeta",
+    "content_width": "full",
+    "flex_direction": "column",
+    "padding": {
+     "unit": "px",
+     "top": "24",
+     "right": "24",
+     "bottom": "24",
+     "left": "24",
+     "isLinked": false
+    },
+    "html_tag": "a",
+    "flex_gap": {
+     "column": "10",
+     "row": "10",
+     "isLinked": true,
+     "unit": "px",
+     "size": 10
+    },
+    "flex_align_items": "flex-start",
+    "background_background": "classic",
+    "background_color": "#FFFFFF",
+    "__dynamic__": {
+     "link": "[elementor-tag id=\"213ad27\" name=\"post-url\" settings=\"%7B%7D\"]"
+    },
+    "custom_css": "selector { height: 100%; transition: background-color .15s; }\nselector:focus-visible { outline: 3px solid #6B5BD6; outline-offset: 3px; }\n",
+    "css_classes": "mk-ev-tarjeta"
+   },
+   "elements": [
+    {
+     "id": "3ae8ade",
+     "elType": "container",
+     "settings": {
+      "_title": "Fecha",
+      "content_width": "full",
+      "flex_direction": "column",
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "flex_gap": {
+       "column": "6",
+       "row": "6",
+       "isLinked": true,
+       "unit": "px",
+       "size": 6
+      },
+      "custom_css": "selector .elementor-shortcode { margin: 0; }\n"
+     },
+     "elements": [
+      {
+       "id": "0760608",
+       "elType": "widget",
+       "settings": {
+        "shortcode": "[evento_dias]",
+        "_title": "Día",
+        "custom_css": "selector { font: 700 48px/1 Montserrat, sans-serif; letter-spacing: -0.03em; color: #231B2B; }\nselector .maloka-rango { font-size: 0.75em; }\n"
+       },
+       "elements": [],
+       "widgetType": "shortcode"
+      },
+      {
+       "id": "8335ba7",
+       "elType": "widget",
+       "settings": {
+        "shortcode": "[evento_fecha formato=\"M · D\"]",
+        "_title": "Mes y día",
+        "custom_css": "selector { font: 600 16px/1.2 Montserrat, sans-serif; color: #231B2B; text-transform: lowercase; }\n"
+       },
+       "elements": [],
+       "widgetType": "shortcode"
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "33ca5a5",
+     "elType": "widget",
+     "settings": {
+      "title": "Tipo",
+      "header_size": "span",
+      "title_color": "#231B2B",
+      "typography_typography": "custom",
+      "typography_font_family": "Montserrat",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 14,
+       "sizes": []
+      },
+      "typography_font_weight": "700",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1,
+       "sizes": []
+      },
+      "custom_css": "selector { align-self: flex-start; }\nselector .elementor-heading-title { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; background: #B4A5F5; white-space: nowrap; }\n",
+      "_element_width": "auto",
+      "_css_classes": "mk-ev-tipo",
+      "__dynamic__": {
+       "title": "[elementor-tag id=\"0a05978\" name=\"post-terms\" settings=\"%7B%22taxonomy%22%3A%22tipo_evento%22%2C%22separator%22%3A%22%2C%20%22%2C%22link%22%3A%22%22%7D\"]"
+      }
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "6565dbf",
+     "elType": "widget",
+     "settings": {
+      "title": "Título del evento",
+      "header_size": "h3",
+      "title_color": "#231B2B",
+      "typography_typography": "custom",
+      "typography_font_family": "Montserrat",
+      "typography_font_size": {
+       "unit": "px",
+       "size": 20,
+       "sizes": []
+      },
+      "typography_font_weight": "700",
+      "typography_line_height": {
+       "unit": "em",
+       "size": 1.2,
+       "sizes": []
+      },
+      "typography_font_size_tablet": {
+       "unit": "px",
+       "size": 20,
+       "sizes": []
+      },
+      "typography_font_size_mobile": {
+       "unit": "px",
+       "size": 20,
+       "sizes": []
+      },
+      "custom_css": "selector a { color: inherit; }\nselector a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }\n",
+      "__dynamic__": {
+       "title": "[elementor-tag id=\"4efbd72\" name=\"post-title\" settings=\"%7B%7D\"]"
+      }
+     },
+     "elements": [],
+     "widgetType": "heading"
+    },
+    {
+     "id": "9890cb0",
+     "elType": "widget",
+     "settings": {
+      "shortcode": "[evento_campo campo=\"horario\"] · [evento_campo campo=\"lugar\"]",
+      "_title": "Horario y lugar",
+      "custom_css": "selector { font: 400 14px/1.4 Montserrat, sans-serif; color: #4F4955; }\n"
+     },
+     "elements": [],
+     "widgetType": "shortcode"
+    }
+   ],
+   "isInner": true
+  }
+ ]
+}

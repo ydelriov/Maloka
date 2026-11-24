@@ -5,7 +5,7 @@
  "page_settings": {},
  "content": [
   {
-   "id": "dc2e3bbf",
+   "id": "bf86bd3a",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -61,7 +61,7 @@
    },
    "elements": [
     {
-     "id": "758e08cd",
+     "id": "f9a39adf",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -98,7 +98,7 @@
      },
      "elements": [
       {
-       "id": "7c80e58d",
+       "id": "da95251f",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -131,7 +131,7 @@
        },
        "elements": [
         {
-         "id": "c7435ad0",
+         "id": "12dfc839",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -168,7 +168,7 @@
        ]
       },
       {
-       "id": "6801e206",
+       "id": "e2af8330",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -209,7 +209,7 @@
        },
        "elements": [
         {
-         "id": "5f5cf4e3",
+         "id": "84d43366",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -264,7 +264,7 @@
          "elements": []
         },
         {
-         "id": "a744da0c",
+         "id": "b6243319",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -289,14 +289,14 @@
          "elements": []
         },
         {
-         "id": "f2ce241b",
+         "id": "76a1f9d0",
          "elType": "widget",
          "widgetType": "social-icons",
          "isInner": false,
          "settings": {
           "social_icon_list": [
            {
-            "_id": "i5guvot",
+            "_id": "idquep3",
             "social_icon": {
              "value": "fab fa-tiktok",
              "library": "fa-brands"
@@ -310,7 +310,7 @@
             "text": "TikTok"
            },
            {
-            "_id": "skp32s6",
+            "_id": "j6yrnlr",
             "social_icon": {
              "value": "fab fa-instagram",
              "library": "fa-brands"
@@ -324,7 +324,7 @@
             "text": "Instagram"
            },
            {
-            "_id": "grtlro1",
+            "_id": "19ot9j9",
             "social_icon": {
              "value": "fab fa-facebook-f",
              "library": "fa-brands"
@@ -338,7 +338,7 @@
             "text": "Facebook"
            },
            {
-            "_id": "qjutw7y",
+            "_id": "pceuxgd",
             "social_icon": {
              "value": "fab fa-youtube",
              "library": "fa-brands"
@@ -352,7 +352,7 @@
             "text": "YouTube"
            },
            {
-            "_id": "cx7wjkp",
+            "_id": "f0gi43x",
             "social_icon": {
              "value": "fab fa-linkedin-in",
              "library": "fa-brands"
@@ -366,7 +366,7 @@
             "text": "LinkedIn"
            },
            {
-            "_id": "zqpo7wd",
+            "_id": "1j6b097",
             "social_icon": {
              "value": "fab fa-whatsapp",
              "library": "fa-brands"
@@ -429,7 +429,7 @@
      ]
     },
     {
-     "id": "f454b321",
+     "id": "cc13f570",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -502,7 +502,7 @@
      },
      "elements": [
       {
-       "id": "de31a37e",
+       "id": "293d6d27",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -527,7 +527,7 @@
        },
        "elements": [
         {
-         "id": "2c87b0d3",
+         "id": "1e6541fd",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -556,7 +556,7 @@
          "elements": []
         },
         {
-         "id": "80e26c1c",
+         "id": "d0a1ee58",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -584,7 +584,7 @@
          },
          "elements": [
           {
-           "id": "ee2e0476",
+           "id": "2cf59440",
            "elType": "widget",
            "widgetType": "image",
            "isInner": false,
@@ -607,7 +607,7 @@
            "elements": []
           },
           {
-           "id": "10ef45e0",
+           "id": "a71f20a7",
            "elType": "widget",
            "widgetType": "image",
            "isInner": false,
@@ -634,7 +634,7 @@
        ]
       },
       {
-       "id": "308bd1d5",
+       "id": "acb96fb7",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -659,7 +659,7 @@
        },
        "elements": [
         {
-         "id": "520a8284",
+         "id": "02456d30",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -684,7 +684,7 @@
          "elements": []
         },
         {
-         "id": "70d5e1eb",
+         "id": "d16e6a63",
          "elType": "widget",
          "widgetType": "icon-list",
          "isInner": false,
@@ -692,7 +692,7 @@
           "view": "traditional",
           "icon_list": [
            {
-            "_id": "509wpr2",
+            "_id": "wvuvmrh",
             "text": "¿Qué es Maloka?",
             "selected_icon": {
              "value": "",
@@ -706,7 +706,7 @@
             }
            },
            {
-            "_id": "1qbnfpz",
+            "_id": "expzyh7",
             "text": "Prensa",
             "selected_icon": {
              "value": "",
@@ -720,7 +720,7 @@
             }
            },
            {
-            "_id": "46018la",
+            "_id": "sm725lw",
             "text": "Trabaja con nosotros",
             "selected_icon": {
              "value": "",
@@ -734,7 +734,7 @@
             }
            },
            {
-            "_id": "wqluugg",
+            "_id": "i29e6vd",
             "text": "Preguntas frecuentes",
             "selected_icon": {
              "value": "",
@@ -748,7 +748,7 @@
             }
            },
            {
-            "_id": "nakgm7h",
+            "_id": "hg0fjll",
             "text": "Contacto",
             "selected_icon": {
              "value": "",
@@ -800,7 +800,7 @@
        ]
       },
       {
-       "id": "55591fd3",
+       "id": "37361b0c",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -825,7 +825,7 @@
        },
        "elements": [
         {
-         "id": "1b31984f",
+         "id": "d301906d",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -850,7 +850,7 @@
          "elements": []
         },
         {
-         "id": "61a57f78",
+         "id": "16401c3a",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -870,17 +870,20 @@
            "size": 1.4,
            "sizes": []
           },
-          "typography_font_family": "Montserrat"
+          "typography_font_family": "Montserrat",
+          "__dynamic__": {
+           "title": "[elementor-tag id=\"b1427b4\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_dias%20dia%3D%5C%22semana%5C%22%5D%22%7D\"]"
+          }
          },
          "elements": []
         },
         {
-         "id": "10a7e117",
+         "id": "bd0c656c",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
          "settings": {
-          "title": "11:00 a. m. a 5:00 p. m.",
+          "title": "11:00 a. m. – 5:00 p. m.",
           "header_size": "div",
           "title_color": "#D9D3E0",
           "typography_typography": "custom",
@@ -895,12 +898,15 @@
            "size": 1.4,
            "sizes": []
           },
-          "typography_font_family": "Montserrat"
+          "typography_font_family": "Montserrat",
+          "__dynamic__": {
+           "title": "[elementor-tag id=\"d07d31f\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_horario%20dia%3D%5C%22semana%5C%22%5D%22%7D\"]"
+          }
          },
          "elements": []
         },
         {
-         "id": "04d286ea",
+         "id": "797fd3f5",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -920,17 +926,20 @@
            "size": 1.4,
            "sizes": []
           },
-          "typography_font_family": "Montserrat"
+          "typography_font_family": "Montserrat",
+          "__dynamic__": {
+           "title": "[elementor-tag id=\"15e0993\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_dias%20dia%3D%5C%22finde%5C%22%5D%22%7D\"]"
+          }
          },
          "elements": []
         },
         {
-         "id": "7693ebeb",
+         "id": "415ea8b9",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
          "settings": {
-          "title": "9:30 a. m. a 6:00 p. m.",
+          "title": "9:30 a. m. – 6:00 p. m.",
           "header_size": "div",
           "title_color": "#D9D3E0",
           "typography_typography": "custom",
@@ -945,17 +954,20 @@
            "size": 1.4,
            "sizes": []
           },
-          "typography_font_family": "Montserrat"
+          "typography_font_family": "Montserrat",
+          "__dynamic__": {
+           "title": "[elementor-tag id=\"85b2406\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_horario%20dia%3D%5C%22finde%5C%22%5D%22%7D\"]"
+          }
          },
          "elements": []
         },
         {
-         "id": "2059faa4",
+         "id": "5d48a538",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
          "settings": {
-          "title": "La venta de entradas está disponible hasta las 4:00 p. m.",
+          "title": "Venta de entradas hasta las 4:00 p. m.",
           "header_size": "div",
           "title_color": "#D9D3E0",
           "typography_typography": "custom",
@@ -970,14 +982,17 @@
            "size": 1.4,
            "sizes": []
           },
-          "typography_font_family": "Montserrat"
+          "typography_font_family": "Montserrat",
+          "__dynamic__": {
+           "title": "[elementor-tag id=\"32a1e01\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_venta%5D%22%7D\"]"
+          }
          },
          "elements": []
         }
        ]
       },
       {
-       "id": "514459a4",
+       "id": "036a55de",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1002,7 +1017,7 @@
        },
        "elements": [
         {
-         "id": "9c42dd04",
+         "id": "a1fce65f",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1027,7 +1042,7 @@
          "elements": []
         },
         {
-         "id": "4c815caa",
+         "id": "c523fea3",
          "elType": "widget",
          "widgetType": "icon-list",
          "isInner": false,
@@ -1035,7 +1050,7 @@
           "view": "traditional",
           "icon_list": [
            {
-            "_id": "wt11v5k",
+            "_id": "slptncs",
             "text": "Cra. 68D # 24A - 51, Bogotá, Colombia",
             "selected_icon": {
              "value": "",
@@ -1049,7 +1064,7 @@
             }
            },
            {
-            "_id": "l8ze6ro",
+            "_id": "i7jkox4",
             "text": "Teléfono: +57 (601) 427 2707",
             "selected_icon": {
              "value": "",
@@ -1099,7 +1114,7 @@
          "elements": []
         },
         {
-         "id": "f1b8b704",
+         "id": "6de0e31b",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1132,7 +1147,7 @@
        ]
       },
       {
-       "id": "a9438b49",
+       "id": "e3b8e146",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1157,7 +1172,7 @@
        },
        "elements": [
         {
-         "id": "c37a272a",
+         "id": "bbaf4cf1",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1182,7 +1197,7 @@
          "elements": []
         },
         {
-         "id": "4cfc15c8",
+         "id": "f6c7c506",
          "elType": "widget",
          "widgetType": "icon-list",
          "isInner": false,
@@ -1190,7 +1205,7 @@
           "view": "traditional",
           "icon_list": [
            {
-            "_id": "74gpkho",
+            "_id": "t7scts7",
             "text": "Informes de gestión",
             "selected_icon": {
              "value": "",
@@ -1204,7 +1219,7 @@
             }
            },
            {
-            "_id": "ybdxvho",
+            "_id": "74h3tsg",
             "text": "Sistema Integrado de Gestión",
             "selected_icon": {
              "value": "",
@@ -1218,7 +1233,7 @@
             }
            },
            {
-            "_id": "ss3jak4",
+            "_id": "wafytsd",
             "text": "Intranet",
             "selected_icon": {
              "value": "",
@@ -1232,7 +1247,7 @@
             }
            },
            {
-            "_id": "26nh0dy",
+            "_id": "j7z26z5",
             "text": "Junta Directiva",
             "selected_icon": {
              "value": "",
@@ -1246,7 +1261,7 @@
             }
            },
            {
-            "_id": "3t95la4",
+            "_id": "j9eelbk",
             "text": "Contratación",
             "selected_icon": {
              "value": "",
@@ -1260,7 +1275,7 @@
             }
            },
            {
-            "_id": "b3ordf5",
+            "_id": "64l85z5",
             "text": "PQRSF",
             "selected_icon": {
              "value": "",
@@ -1274,7 +1289,7 @@
             }
            },
            {
-            "_id": "gkcgvtb",
+            "_id": "zt2aqxs",
             "text": "ESAL",
             "selected_icon": {
              "value": "",
@@ -1288,7 +1303,7 @@
             }
            },
            {
-            "_id": "d5lff6r",
+            "_id": "uvo4gmo",
             "text": "Registro de proveedores",
             "selected_icon": {
              "value": "",
@@ -1342,7 +1357,7 @@
      ]
     },
     {
-     "id": "58070de7",
+     "id": "06c43e1e",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1378,7 +1393,7 @@
      },
      "elements": [
       {
-       "id": "e4905772",
+       "id": "15569c65",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -1399,7 +1414,7 @@
        "elements": []
       },
       {
-       "id": "0588d162",
+       "id": "de8d31f9",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -1420,7 +1435,7 @@
        "elements": []
       },
       {
-       "id": "b1287d35",
+       "id": "fad51474",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,

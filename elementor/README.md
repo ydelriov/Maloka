@@ -11,6 +11,8 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `logo-maloka.svg` / `.png` | Logo de las maquetas, por si el sitio aún no tiene uno | Apariencia › Personalizar › Identidad del sitio |
 | `popup-combos.json` | Modal de los combos de TuBoleta | Plantillas › Popups |
 | `acf-evento.json` | Campos de cada evento (tipo de contenido «eventos»): fecha, horario, lugar, acceso, enlace, destacado | ACF › Herramientas › Importar |
+| `acf-horarios.json` + `horarios-snippet.php` | Horarios en un solo lugar (página de inicio) para menú, home, Visítanos y footer | ACF › Importar y Code Snippets |
+| `evento-single-v13.json` | Ficha de cada evento (plantilla del Theme Builder para Eventos) | Plantillas › Theme Builder › Entrada individual |
 | `agenda-snippet.php` | Ordena la agenda por fecha, oculta los eventos pasados y formatea las fechas | Plugin Code Snippets |
 | `visitanos-v13-parte1.json`, `-parte2.json`, `-parte3.json` | Página Visítanos en 3 partes (10 secciones) | Se insertan en orden en la página Visítanos |
 | `loop-evento.json`, `loop-evento-destacado.json`, `loop-evento-texto.json`, `loop-evento-pasado.json` | Loop Items de la agenda: fila de Agéndate, destacado, fila de solo texto (home) y evento reciente | Plantillas › Theme Builder › Loop Item (tipo de contenido Eventos) |
@@ -138,6 +140,7 @@ más de ~12 en un solo archivo.
 | 1 | 1 | Cabecera | Compacta: migas, título H1, texto y el horario en una línea (Lista de iconos en línea) |
 | 1 | 2 | Anclas | Contenedor **fijo arriba** (Pro) con enlaces a `#horarios`, `#tarifas`… |
 | 1 | 3 | Horarios (`#horarios`) | Dos contenedores pastel + Lista de iconos (venta, cambio de horario y beneficios) |
+| 1 | 3b | Guía digital | Franja menta que es todo el enlace a la guía de Maloka en **Bloomberg Connects** (ícono, título, texto y «Abrir la guía de Maloka ↗») |
 | 1 | 4 | Planes y tarifas (`#tarifas`) | 3 pasos de color + grupos **Entradas** (4 columnas) y **Combos** (5 columnas). Cada tarjeta es un contenedor-enlace a TuBoleta con la imagen cuadrada de maloka.org, datos y precio |
 | 2 | 5 | Funciones (`#funciones`) | **Cine Domo** (5 afiches cuadrados en 5 columnas) y **Conciertos y artes escénicas** (tarjeta horizontal) |
 | 3 | 6 | Cómo llegar (`#llegar`) | Widget **Pestañas** (TransMilenio, SITP, Carro y moto, Bicicleta) + **Google Maps** |
@@ -297,4 +300,60 @@ Las plantillas se generan con `python3 scripts/elementor-agenda.py` (lee `src/da
   WordPress pone en cada ítem (CSS en los ajustes de cada Loop Item).
 - **Agéndate** (`/agendate/`) e **Inicio** (sección `#agenda`) usan esas plantillas con el Filtro de taxonomía.
 - Al importar a mano, los Loop Grid traen `@loop:<nombre>` en la plantilla: elige la Loop Item correspondiente.
+
+## Horarios en un solo lugar
+
+El horario aparece en el panel del menú (Visítanos), en Visítanos y en el footer. Para que **se cambie una sola vez**:
+
+1. ACF › Herramientas › Importar › `acf-horarios.json`. Aparece el grupo **«Horarios de Maloka»** al editar la
+   **página de inicio**: días, hora de apertura y cierre entre semana y fin de semana, venta de entradas hasta, y un
+   aviso opcional de cambio de horario.
+2. Code Snippets › pega `horarios-snippet.php` › Ejecutar en todo el sitio › Activar.
+3. Listo: `header`/`menu-paneles`, `footer-v13.json` y `visitanos-v13-parte1.json` ya traen esos textos conectados con la
+   etiqueta dinámica **Shortcode** (`[maloka_horario dia="semana"]`, `[maloka_dias dia="finde"]`, `[maloka_venta]`,
+   `[maloka_aviso]`). Si no aparece el valor, en el widget haz clic en el ícono de etiquetas dinámicas › Shortcode y
+   escribe el shortcode.
+
+Cuando cambie el horario, o haya un cierre especial, solo se edita la página de inicio › «Horarios de Maloka».
+En la maqueta pasa igual: todo sale de `src/data/site.json`.
+
+## Ficha del evento (Theme Builder)
+
+Maqueta: por ejemplo https://ydelriov.github.io/Maloka/seleccion/agendate/la-otra-forma-proyeccion-y-taller-de-escombros/
+
+Hoy la página de cada evento en maloka.org es solo el texto con emojis. Con **una sola plantilla** del Theme Builder,
+todos los eventos (los de hoy y los que se creen después) se ven así, sin diseñar cada uno:
+
+| Parte | Qué muestra | De dónde sale |
+|---|---|---|
+| Migas | Inicio / Agéndate / título | Título del evento (etiqueta dinámica) |
+| Cabecera (hueso) | Afiche, tipo, título, resumen | Imagen destacada · `[evento_tipo]` · Título · Extracto |
+| Recuadro de datos | Fecha, horario, lugar, acceso | `[evento_fecha_larga]` · `[evento_campo campo="horario"]` · `[evento_campo campo="lugar"]` · `[evento_acceso]` |
+| Acciones | «Inscríbete» / «Compra tu entrada» y «Agregar a Google Calendar» | `[evento_boton]` · `[evento_calendario]` (widget Shortcode) |
+| Sobre el evento | El texto completo | Contenido del evento (widget Contenido de la entrada) |
+| Ten en cuenta (menta) | Aviso según el acceso, entrada y venta de entradas, «Cómo llegar» | `[evento_nota]` · `[maloka_venta]` |
+| Otros próximos eventos | 3 eventos | Loop Grid «Evento · texto» con Query ID `proximos_eventos` |
+
+### Cómo instalarla
+1. Tener activos `agenda-snippet.php` y `horarios-snippet.php` (Code Snippets) y los campos de `acf-evento.json`.
+2. Plantillas › Theme Builder › **Entrada individual** › Importar › `evento-single-v13.json`.
+3. Importa también la Loop Item `loop-evento-tarjeta.json` («Evento · tarjeta (ficha)»). La sección «Otros próximos
+   eventos» ya trae su **Loop Grid** (3 columnas, Query ID `otros_eventos`, que deja fuera el evento que se está
+   viendo); si al importar sale vacío, elige esa plantilla en el widget.
+4. **Publicar** con la condición **Eventos › Todos** (o «Todos los Eventos»).
+5. Abre cualquier evento para revisar: si un dato no aparece, revisa que el evento tenga llenos sus «Datos del evento».
+
+### Así quedó en pruebas.maloka.org
+
+- Plantilla «Evento · ficha (Maloka V13)» publicada con la condición **Eventos › Todos** (por ejemplo
+  `/eventos/la-otra-forma-proyeccion-y-taller-de-escombros/`). Los títulos de la home y de Agéndate llevan ahí.
+- `scripts/elementor-agenda.py` completa `evento-single-v13.json` (es idempotente): pone el Loop Grid de «Otros
+  próximos eventos», corrige encabezados que traían el color en `header_size`, ajusta la etiqueta del tipo al ancho
+  del texto con el pastel de cada tipo, y agrega `[evento_estado]`.
+- **Eventos pasados:** muestran «Este evento ya pasó» y ocultan «Inscríbete/Compra tu entrada» y «Agregar a Google
+  Calendar» (`maloka_terminado()` en el snippet), como en la maqueta.
+- `[evento_boton]` es un botón noche en la ficha (estilo global del snippet); en las listas de Agéndate el Loop Item lo
+  deja como enlace subrayado.
+- También quedaron activos `acf-horarios.json` (grupo «Horarios de Maloka» en la página de inicio) y el snippet
+  «Horarios de Maloka», que usa el «Ten en cuenta» de la ficha (`[maloka_venta]`).
 

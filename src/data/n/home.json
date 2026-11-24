@@ -20,7 +20,7 @@
       { "id": "domo", "etiqueta": "Cine Domo", "color": "cielo", "titulo": "Levanta la mirada.", "texto": "El universo proyectado sobre toda la cúpula. Funciones todos los días.", "meta": "Entrada al Cine Domo", "imagen": "cine-domo-cupula.jpg", "alt": "Planeta proyectado en la cúpula del Cine Domo", "ruta": "Ver funciones" },
       { "id": "salas", "etiqueta": "Salas interactivas", "color": "lavanda", "titulo": "Aquí está prohibido no tocar.", "texto": "Toca, prueba, equivócate y vuelve a intentar.", "meta": "Incluido con tu entrada", "imagen": "sala-alta-tension.jpg", "alt": "Público frente a la jaula de Faraday en la sala Alta Tensión", "ruta": "Salas interactivas" },
       { "id": "labs", "etiqueta": "Laboratorios", "color": "menta", "titulo": "Ponte la bata.", "texto": "Haz ciencia de verdad junto a nuestros mediadores.", "meta": "Costo adicional", "imagen": "laboratorio-microscopio.jpg", "alt": "Niñas de colegio observando por un microscopio", "ruta": "Laboratorios" },
-      { "id": "digital", "etiqueta": "Sala Digital", "color": "salmon", "titulo": "Mundos que responden.", "texto": "Entra a experiencias que reaccionan a tus movimientos.", "meta": "Incluido con tu entrada", "imagen": "sala-entorno-sostenible.jpg", "alt": "Sala interactiva de Maloka", "ruta": "Sala Digital", "fotoReutilizada": true }
+      { "id": "digital", "etiqueta": "Sala Digital", "color": "salmon", "titulo": "Mundos que responden.", "texto": "Entra a experiencias que reaccionan a tus movimientos.", "meta": "Incluido con tu entrada", "imagen": "sala-digital.jpg", "alt": "Sala Digital de Maloka: pantalla gigante con tortugas marinas y sillas de colores", "ruta": "Sala Digital" }
     ]
   },
   "agenda": {
