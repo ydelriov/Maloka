@@ -9,6 +9,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `logo-maloka.svg` / `.png` | Logo de las maquetas, por si el sitio aún no tiene uno | Apariencia › Personalizar › Identidad del sitio |
 | `popup-combos.json` | Modal de los combos de TuBoleta | Plantillas › Popups |
 | `visitanos-v13.json` | Página Visítanos completa (10 secciones) | Plantillas › Plantillas guardadas, y se inserta en la página Visítanos |
+| `home-v13-secciones.json` | Las 6 secciones de la home debajo del hero (Imperdibles, Agenda, Ven en grupo, Descubre con mapa, Crea, Noticias) | Plantillas › Plantillas guardadas, y se inserta en Inicio debajo del hero |
 
 ## Menú y header · paso a paso
 
@@ -139,3 +140,24 @@ solo con contenedores y widgets nativos:
 - Si el contenedor de anclas no queda fijo, actívalo en Avanzado › Efectos de movimiento › Fijo: Arriba (desplazamiento 80).
 - Más adelante, los planes pueden salir de un tipo de contenido «Planes» con **Loop Grid** y **Filtro de taxonomía**
   (Pro), para que el equipo los actualice sin editar la página.
+
+## home-v13-secciones.json · Home debajo del hero
+
+Se genera con `python3 scripts/elementor-home-v13.py` (antes `npm run build`, porque toma el mapa ya renderizado). Lee
+los textos de `src/data/n/home.json`, así que si cambia el contenido del prototipo basta con volver a generarlo.
+Sin `--medios`, las fotos apuntan a GitHub Pages; con `--medios archivo.json` usa las de la Biblioteca de medios.
+
+| # | Sección | Contenedores y widgets |
+|---|---|---|
+| 1 | Imperdibles (hueso) | Contenedor-enlace grande con foto de fondo + tres filas con foto cuadrada |
+| 2 | Agenda (blanco) | Filtros (HTML con script) y 4 filas-enlace: fecha grande, etiqueta, título y Lista de iconos |
+| 3 | Ven en grupo (noche) | Pista con scroll horizontal (clase `mk-carrusel`) y flechas (HTML con script) |
+| 4 | Descubre (menta) | Mapa de territorios (HTML con el SVG) y 4 tarjetas-enlace en 2 columnas |
+| 5 | Crea con Maloka (noche) | Enlace grande amarillo y 5 filas-enlace que se llenan de lavanda |
+| 6 | Noticias (blanco) | 3 tarjetas-enlace con foto 3:2 y etiqueta |
+
+El CSS común (foco visible y el arreglo del ancho del carrusel del hero) va en **Ajustes de la página › CSS
+personalizado**; está en `page_settings.custom_css` del JSON.
+
+Ojo: en los **contenedores** el ajuste de clases se llama `css_classes` (en los widgets es `_css_classes`). El hero de
+Inicio se había guardado con `_css_classes` en sus contenedores y por eso el carrusel no funcionaba.
