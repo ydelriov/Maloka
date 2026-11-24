@@ -6,7 +6,7 @@
    2. Anclas (contenedor fijo arriba con enlaces a #id)
    3. Horarios (contenedores pastel + icon-list)
    4. Planes y tarifas (3 pasos + grupos Entradas y Combos: tarjetas con imagen cuadrada de maloka.org, datos, precio)
-   5. Cine Domo y Sala Digital (grilla de afiches cuadrados) · 6. Cómo llegar (widget Pestañas + Google Maps)
+   5. Funciones como en maloka.org: Cine Domo, Conciertos y artes escénicas, Sala Digital (afiches cuadrados) · 6. Cómo llegar (widget Pestañas + Google Maps)
    7. Servicios (icon-box) · 8. Accesibilidad (icon-list) · 9. Experiencias (grilla de tarjetas)
    10. Preguntas frecuentes (widget Acordeón con FAQ schema).
    Datos de maloka.org en src/data/visitanos.json (por validar: precios y vigencias cambian por temporada).
@@ -113,18 +113,30 @@ const ll = v.llegar;
     <section class="n-sec n-noche vi-sec" id="funciones" aria-labelledby="vi-cd">
       <div class="mk-w">
         <div class="n-head"><div><p class="n-ante">Funciones</p><h2 class="n-titulo" id="vi-cd">{v.funciones.titulo}</h2><p class="n-lead">{v.funciones.texto}</p></div></div>
-        <ul class="vi-fun">
-          {v.funciones.items.map((f, i) => (
+        {(() => {
+          const [cine, ...otros] = v.funciones.grupos;
+          const tarjeta = (f, g, i, h) => (
             <li data-rv style={`--d:${i % 5}`}>
-              <a class="vi-fun-a" href={f.url} target="_blank" rel="noopener">
+              <a class:list={['vi-fun-a', h && 'vi-fun-a--h']} href={f.url} target="_blank" rel="noopener">
                 <span class="vi-plan-f"><img src={f.imagen} alt={`Afiche de ${f.titulo}`} width="500" height="500" loading="lazy" decoding="async" /></span>
-                <span class={`n-tag n-tag--${f.sala === 'Sala Digital' ? 'salmon' : 'cielo'}`}>{f.sala}</span>
-                <h3 class="vi-fun-t">{f.titulo}</h3>
-                <span class="vi-fun-m">{f.meta}</span>
+                <span class="vi-fun-c">
+                  <span class={`n-tag n-tag--${g.color}`}>{g.titulo}</span>
+                  <h4 class="vi-fun-t">{f.titulo}</h4>
+                  <span class="vi-fun-m">{f.meta}</span>
+                </span>
               </a>
             </li>
-          ))}
-        </ul>
+          );
+          const cabeza = (g) => <div class="vi-fun-h"><h3>{g.titulo}</h3><p>{g.texto}</p></div>;
+          return (
+            <>
+              <div class="vi-fun-g">{cabeza(cine)}<ul class="vi-fun">{cine.items.map((f, i) => tarjeta(f, cine, i))}</ul></div>
+              <div class="vi-fun-par">
+                {otros.map((g) => <div class="vi-fun-g">{cabeza(g)}<ul class="vi-fun vi-fun--1">{g.items.map((f, i) => tarjeta(f, g, i, true))}</ul></div>)}
+              </div>
+            </>
+          );
+        })()}
         <p class="vi-fun-av"><Icon name="bolt" size="18" /><span>{v.funciones.aviso}</span></p>
       </div>
     </section>
@@ -304,9 +316,20 @@ const ll = v.llegar;
   /* Funciones */
   .vi-col { display: grid; gap: 16px; align-content: start; }
   .vi-fun { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 32px 20px; }
+  .vi-fun-g + .vi-fun-g, .vi-fun-par { margin-top: 48px; }
+  .vi-fun-par { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .vi-fun-par .vi-fun-g { margin-top: 0; }
+  .vi-fun-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid rgba(255, 255, 255, .5); }
+  .vi-fun-h h3 { margin: 0; font-size: var(--n-sub); font-weight: 700; }
+  .vi-fun-h p { color: var(--n-texto2-osc); }
+  .vi-fun--1 { grid-template-columns: 1fr; }
   .vi-fun-a { display: grid; gap: 8px; align-content: start; justify-items: start; color: #fff; }
   .vi-fun-a .vi-plan-f { width: 100%; margin-bottom: 6px; }
+  .vi-fun-c { display: grid; gap: 8px; justify-items: start; }
+  .vi-fun-a--h { grid-template-columns: 200px 1fr; gap: 20px; align-items: center; }
+  .vi-fun-a--h .vi-plan-f { margin-bottom: 0; }
   .vi-fun-t { margin: 0; font-size: 18px; line-height: 1.25; font-weight: 700; }
+  .vi-fun-a--h .vi-fun-t { font-size: var(--n-sub); }
   .vi-fun-a:hover .vi-fun-t { color: var(--n-amarillo); }
   .vi-fun-m { font-size: 14px; color: var(--n-texto2-osc); }
   .vi-fun-av { display: flex; gap: 8px; margin-top: 32px; font-size: 14px; color: var(--n-texto2-osc); }
@@ -367,6 +390,7 @@ const ll = v.llegar;
     .vi-planes, .vi-planes--5, .vi-ex { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .vi-planes--5 { gap: 24px; }
     .vi-fun { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .vi-fun-par { grid-template-columns: 1fr; }
     .vi-mapa { position: static; aspect-ratio: 16 / 10; }
     .vi-anclas { top: 72px; } .vi-sec { scroll-margin-top: 128px; }
   }
@@ -386,6 +410,8 @@ const ll = v.llegar;
     .vi-plan-d div:nth-child(n+2) { display: none; }
     .vi-plan-precio b { font-size: 18px; }
     .vi-fun { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 12px; }
+    .vi-fun--1 { grid-template-columns: 1fr; }
+    .vi-fun-a--h { grid-template-columns: 120px 1fr; gap: 14px; }
     .vi-fun-t { font-size: 16px; }
     .vi-ho-b { padding: 24px; }
     .vi-ex { gap: 12px; }

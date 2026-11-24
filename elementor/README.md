@@ -122,7 +122,7 @@ más de ~12 en un solo archivo.
 | 1 | 2 | Anclas | Contenedor **fijo arriba** (Pro) con enlaces a `#horarios`, `#tarifas`… |
 | 1 | 3 | Horarios (`#horarios`) | Dos contenedores pastel + Lista de iconos (venta, cambio de horario y beneficios) |
 | 1 | 4 | Planes y tarifas (`#tarifas`) | 3 pasos de color + grupos **Entradas** (4 columnas) y **Combos** (5 columnas). Cada tarjeta es un contenedor-enlace a TuBoleta con la imagen cuadrada de maloka.org, datos y precio |
-| 2 | 5 | Cine Domo y Sala Digital | Grilla de 9 afiches cuadrados (5 columnas) con sala, título y ficha |
+| 2 | 5 | Funciones (`#funciones`) | Como en maloka.org: **Cine Domo** (8 afiches cuadrados en 5 columnas), **Conciertos y artes escénicas** y **Sala Digital** (tarjetas horizontales, lado a lado) |
 | 3 | 6 | Cómo llegar (`#llegar`) | Widget **Pestañas** (TransMilenio, SITP, Carro y moto, Bicicleta) + **Google Maps** |
 | 3 | 7 | Servicios (`#servicios`) | Grilla de 2 columnas con **Caja de icono** |
 | 3 | 8 | Accesibilidad (`#accesibilidad`) | Lista de iconos y enlace a la subpágina |
