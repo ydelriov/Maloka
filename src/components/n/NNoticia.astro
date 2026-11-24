@@ -1,0 +1,49 @@
+---
+/* Tarjeta de noticia (entrada del blog), la misma en la home (3 últimas) y en /noticias/ (todas).
+   En Elementor es una Loop Item de Entradas: imagen destacada cuadrada, categoría, fecha, título y extracto; toda la
+   tarjeta es el enlace. variante: «tarjeta» (grilla) · «grande» (la más reciente, imagen a la izquierda). */
+import Icon from '../ui/Icon.astro';
+import n from '../../data/n/noticias.json';
+const { item, variante = 'tarjeta', nivel = 3 } = Astro.props;
+const cat = n.categorias.find((c) => c.id === item.categoria);
+const fecha = new Date(`${item.fecha}T12:00:00`).toLocaleDateString('es-CO', { day: 'numeric', month: 'long', year: 'numeric' });
+const H = `h${nivel}`;
+---
+<a class:list={['nno', `nno--${variante}`]} href={item.url}>
+  <span class="nno-f"><img src={item.imagen} alt="" width="1080" height="1080" loading={variante === 'grande' ? 'eager' : 'lazy'} decoding="async" /></span>
+  <span class="nno-c">
+    <span class="nno-meta">{cat && <span class={`n-tag n-tag--${cat.color}`}>{cat.label}</span>}<time datetime={item.fecha}>{fecha}</time></span>
+    <H class="nno-t">{item.titulo}</H>
+    <span class="nno-x">{item.resumen}</span>
+    <span class="nno-a">Leer noticia<Icon name="arrow" size="18" /></span>
+  </span>
+</a>
+
+<style>
+  .nno { display: grid; grid-template-rows: auto 1fr; height: 100%; background: var(--mk-hueso); color: var(--n-noche); transition: background-color var(--mk-t-rapida); }
+  .nno:hover { background: #FFF3B0; }
+  .nno-f { display: block; aspect-ratio: 1; overflow: hidden; background: var(--n-carbon); }
+  .nno-f img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--mk-ease); }
+  .nno:hover .nno-f img { transform: scale(1.04); }
+  .nno-c { display: flex; flex-direction: column; gap: 10px; padding: 20px 20px 24px; }
+  .nno-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: 14px; font-weight: 600; color: var(--n-texto2); }
+  .nno-t { margin: 0; font-size: 20px; line-height: 1.25; font-weight: 700; }
+  .nno-x { font-size: 15px; line-height: 1.5; color: var(--n-texto2); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .nno-a { display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; margin-top: auto; padding-top: 6px; font-weight: 700; border-bottom: 2px solid currentColor; }
+  .nno-a :global(.mk-ic) { transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .nno:hover .nno-a :global(.mk-ic) { transform: translateX(4px); }
+
+  .nno--grande { grid-template-columns: 5fr 7fr; grid-template-rows: none; background: var(--mk-hueso); }
+  .nno--grande .nno-c { justify-content: center; gap: 16px; padding: 40px 48px; }
+  .nno--grande .nno-t { font-size: var(--n-titulo); line-height: 1.1; letter-spacing: -0.015em; }
+  .nno--grande .nno-x { font-size: 18px; -webkit-line-clamp: 4; }
+  .nno--grande .nno-a { margin-top: 8px; font-size: 18px; }
+
+  @media (max-width: 1024px) { .nno--grande { grid-template-columns: 1fr 1fr; } .nno--grande .nno-c { padding: 28px; } }
+  @media (max-width: 767px) {
+    .nno--grande { grid-template-columns: 1fr; }
+    .nno--grande .nno-c { padding: 20px 20px 24px; gap: 10px; }
+    .nno-t { font-size: 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .nno:hover .nno-f img { transform: none; } }
+</style>

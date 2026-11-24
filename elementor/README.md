@@ -282,3 +282,35 @@ todos los eventos (los de hoy y los que se creen después) se ven así, sin dise
    «Evento · texto», fuente Eventos, Query ID `proximos_eventos`, 3 columnas y 3 por página.
 4. **Publicar** con la condición **Eventos › Todos** (o «Todos los Eventos»).
 5. Abre cualquier evento para revisar: si un dato no aparece, revisa que el evento tenga llenos sus «Datos del evento».
+
+## Noticias (blog)
+
+Maqueta: https://ydelriov.github.io/Maloka/seleccion/noticias/ · en la home, «Noticias» muestra las 3 últimas.
+
+Hoy `/noticias` lleva a la Sala de prensa: un texto largo y un widget Entradas con tarjetas de imagen, título y fecha.
+La propuesta usa las **entradas** de siempre (el equipo publica igual que hoy) con una tarjeta más limpia y filtros.
+
+### Configuración (una vez)
+1. **Categorías:** en Entradas › Categorías crea **Programación**, **Ciencia** e **Institucional** y asígnalas a las
+   entradas (hoy todas están en «Sin categoría», así que no se pueden filtrar). Cada entrada necesita **imagen
+   destacada cuadrada** (1080 × 1080, como las de hoy) y **Extracto** de una o dos líneas.
+2. **Loop Item «Noticia»** (Theme Builder › Loop Item, tipo Entradas), fondo hueso `#F4F1EC`, hover `#FFF3B0`,
+   todo el contenedor es el enlace a la entrada:
+   - Imagen destacada, proporción 1:1, ajuste «cubrir».
+   - Fila: **Términos de la entrada** (Categorías, como etiqueta de color) + **Fecha** (formato «j \d\e F \d\e Y»).
+   - **Título de la entrada** (20 px, 700) · **Extracto** (15 px, gris, 3 líneas) · «Leer noticia →».
+3. **Loop Item «Noticia · grande»**: la misma tarjeta en horizontal (imagen 5/12 a la izquierda, texto a la derecha),
+   título de 40 px y extracto de 4 líneas.
+
+### La página Noticias
+| Sección | Widget | Ajustes |
+|---|---|---|
+| Cabecera | Encabezado H1 y texto | Igual que Visítanos y Agéndate |
+| Filtro | **Filtro de taxonomía** | Categorías, conectado a la grilla |
+| La más reciente | **Loop Grid** con «Noticia · grande» | Entradas · 1 por página |
+| Las demás | **Loop Grid** con «Noticia» | 3 columnas (2 en tablet, 1 en celular) · **Desplazamiento 1** (para no repetir la primera) · 6 por página · Paginación **«Cargar más al hacer clic»** con el texto «Cargar más noticias» |
+| Para medios | Contenedor lavanda | «¿Eres periodista?», correo de prensa y enlace a la Trivia de la semana |
+
+### En la home
+Loop Grid con «Noticia», Entradas, **3 por página**, 3 columnas, sin paginación, y el enlace «Ver todas las noticias»
+a la página Noticias.

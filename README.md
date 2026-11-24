@@ -6,6 +6,7 @@ Design System de Claude Design para validar el diseño antes de llevarlo a WordP
 - Publicado: https://ydelriov.github.io/Maloka/
 - Solo V13 (sin índice ni barra de versiones): https://ydelriov.github.io/Maloka/seleccion/
 - Visítanos con el diseño de la V13: https://ydelriov.github.io/Maloka/seleccion/visitanos/ (el menú de la V13 ya enlaza ahí)
+- Noticias con el diseño de la V13: https://ydelriov.github.io/Maloka/seleccion/noticias/ (la home muestra las 3 últimas)
 - Agéndate con el diseño de la V13: https://ydelriov.github.io/Maloka/seleccion/agendate/ (agenda que se actualiza desde WordPress, ver elementor/README.md) y la ficha de cada evento en /seleccion/agendate/<evento>/
 
 ## Qué se publica

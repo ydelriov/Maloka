@@ -1,0 +1,105 @@
+{
+ "fuente": "Entradas de maloka.org/sala-de-prensa (noviembre de 2026). Las categorías son una propuesta: hoy todas están en «Sin categoría».",
+ "titulo": "Noticias",
+ "texto": "Lo que pasa en Maloka: programación, ciencia, alianzas y comunicados de prensa.",
+ "categorias": [
+  {
+   "id": "programacion",
+   "label": "Programación",
+   "color": "amarillo"
+  },
+  {
+   "id": "ciencia",
+   "label": "Ciencia",
+   "color": "cielo"
+  },
+  {
+   "id": "institucional",
+   "label": "Institucional",
+   "color": "lavanda"
+  }
+ ],
+ "prensa": {
+  "titulo": "¿Eres periodista?",
+  "texto": "Si quieres recibir nuestros comunicados o agendar entrevistas, escríbenos.",
+  "correo": "nvelasco@maloka.org",
+  "trivia": {
+   "texto": "Trivia de la semana",
+   "url": "https://maloka.org/trivia-de-la-semana/"
+  }
+ },
+ "items": [
+  {
+   "titulo": "Vacaciones de otro mundo en Maloka: Ciencia cuántica, robótica y cine inmersivo",
+   "fecha": "2026-11-20",
+   "categoria": "programacion",
+   "resumen": "Con el cierre de año llega el momento perfecto para despertar la curiosidad y aprender jugando en familia. Del 30 de noviembre de 2026 al 31 de enero de 2027…",
+   "imagen": "https://maloka.org/wp-content/uploads/2026/11/1080-Vacaciones.jpg",
+   "url": "https://maloka.org/noticias/vacaciones-de-otro-mundo-en-maloka-ciencia-cuantica-robotica-y-cine-inmersivo/"
+  },
+  {
+   "titulo": "Ya puedes consultar la edición de noviembre de la Circular Astronómica de la RAC",
+   "fecha": "2026-11-18",
+   "categoria": "ciencia",
+   "resumen": "Te invitamos a explorar la entrega de noviembre de la Circular Astronómica, la publicación mensual editada por la Red de Astronomía de Colombia (RAC), una…",
+   "imagen": "https://maloka.org/wp-content/uploads/2026/11/circular_astronomica_cuadrada.jpg",
+   "url": "https://maloka.org/noticias/ya-puedes-consultar-la-edicion-de-noviembre-de-la-circular-astronomica-de-la-rac/"
+  },
+  {
+   "titulo": "Día Mundial de la Ciencia para la Paz y el Desarrollo: La ciencia como puente y punto de encuentro",
+   "fecha": "2026-11-10",
+   "categoria": "ciencia",
+   "resumen": "En el marco del Día Mundial de la Ciencia para la Paz y el Desarrollo, que se conmemora hoy, 10 de noviembre, Maloka reafirma su compromiso con la…",
+   "imagen": "https://maloka.org/wp-content/uploads/2026/11/Dia-Mundial-de-la-Ciencia-2026.png",
+   "url": "https://maloka.org/noticias/dia-mundial-de-la-ciencia-para-la-paz-y-el-desarrollo-la-ciencia-como-puente-y-punto-de-encuentro/"
+  },
+  {
+   "titulo": "Llega a Maloka ‘Ratós, el tejido del tiempo’: la premiada obra internacional que enamora a grandes y chicos",
+   "fecha": "2026-11-05",
+   "categoria": "programacion",
+   "resumen": "En el marco de la franja de Artes Escénicas, de su agenda cultural y científica, Maloka abre sus puertas a uno de los montajes infantiles y familiares más…",
+   "imagen": "https://maloka.org/wp-content/uploads/2026/11/IMG_8749.jpeg",
+   "url": "https://maloka.org/noticias/llega-a-maloka-ratos-el-tejido-del-tiempo-la-premiada-obra-internacional-que-enamora-a-grandes-y-chicos/"
+  },
+  {
+   "titulo": "Maloka y Mutibo se unen para celebrar la VII Noche de Museos de Bogotá y la IV Noche Iberoamericana de Museos",
+   "fecha": "2026-11-04",
+   "categoria": "programacion",
+   "resumen": "Este 13 de noviembre, Bogotá se prepara para vivir una jornada cultural inolvidable en las calles, los barrios y los espacios patrimoniales con la llegada de…",
+   "imagen": "https://maloka.org/wp-content/uploads/2026/11/IMG_2453-1.png",
+   "url": "https://maloka.org/noticias/maloka-y-mutibo-se-unen-para-celebrar-la-vii-noche-de-museos-de-bogota-y-la-iv-noche-iberoamericana-de-museos/"
+  },
+  {
+   "titulo": "📣 Maloka despliega en noviembre una agenda de cine, ciencia, títeres y medio ambiente para toda la familia 🎭🎬🌱",
+   "fecha": "2026-10-30",
+   "categoria": "programacion",
+   "resumen": "Durante el mes de noviembre, Maloka presenta una programación diversa que integra festivales de cine ambiental y animación, talleres de astronomía, encuentros…",
+   "imagen": "https://maloka.org/wp-content/uploads/2026/10/1080_Web-Agenda.jpg",
+   "url": "https://maloka.org/noticias/agenda-cultural-y-cientifica-noviembre-2026/"
+  },
+  {
+   "titulo": "Maloka celebra el nombramiento del Padre Harold Castilla De Voz como nuevo Presidente de ASCUN",
+   "fecha": "2026-10-23",
+   "categoria": "institucional",
+   "resumen": "Con gran orgullo y alegría, desde Maloka celebramos la designación del Padre Harold Castilla De Voz, presidente de nuestra Junta Directiva, como nuevo…",
+   "imagen": "https://maloka.org/wp-content/uploads/2026/10/diario-republia.png",
+   "url": "https://maloka.org/noticias/maloka-celebra-el-nombramiento-del-padre-harold-castilla-de-voz-como-nuevo-presidente-de-ascun/"
+  },
+  {
+   "titulo": "¡Al aire \"Tonalidades humanas\"! Gran final de temporada de La Maloka sobre la genética de nuestra piel",
+   "fecha": "2026-10-19",
+   "categoria": "ciencia",
+   "resumen": "¿Alguna vez te has preguntado por qué tenemos diferentes tonos de piel o por qué no siempre nos parecemos a nuestros abuelos?",
+   "imagen": "https://maloka.org/wp-content/uploads/2026/10/PE-100.jpg",
+   "url": "https://maloka.org/noticias/al-aire-tonalidades-humanas-gran-final-de-temporada-de-la-maloka-sobre-la-genetica-de-nuestra-piel/"
+  },
+  {
+   "titulo": "La ventana invisible del cosmos: Felicitaciones a Francis Halzen, Premio Nobel de Física 2026",
+   "fecha": "2026-10-06",
+   "categoria": "ciencia",
+   "resumen": "Desde Maloka, Museo interactivo y Centro de ciencia de Bogotá, nos unimos a la celebración de la comunidad científica internacional para felicitar…",
+   "imagen": "https://maloka.org/wp-content/uploads/2026/10/95E7EB7E-ED85-4E60-BE3A-A6838E2BA7D3.png",
+   "url": "https://maloka.org/noticias/la-ventana-invisible-del-cosmos-felicitaciones-a-francis-halzen-premio-nobel-de-fisica-2026/"
+  }
+ ]
+}
