@@ -123,7 +123,7 @@ más de ~12 en un solo archivo.
 | 1 | 2 | Anclas | Contenedor **fijo arriba** (Pro) con enlaces a `#horarios`, `#tarifas`… |
 | 1 | 3 | Horarios (`#horarios`) | Dos contenedores pastel + Lista de iconos (venta, cambio de horario y beneficios) |
 | 1 | 4 | Planes y tarifas (`#tarifas`) | 3 pasos de color + grupos **Entradas** (4 columnas) y **Combos** (5 columnas). Cada tarjeta es un contenedor-enlace a TuBoleta con la imagen cuadrada de maloka.org, datos y precio |
-| 2 | 5 | Cine Domo y Sala Digital | Grilla de 9 afiches cuadrados (5 columnas) con sala, título y ficha |
+| 2 | 5 | Funciones (`#funciones`) | **Cine Domo** (5 afiches cuadrados en 5 columnas) y **Conciertos y artes escénicas** (tarjeta horizontal) |
 | 3 | 6 | Cómo llegar (`#llegar`) | Widget **Pestañas** (TransMilenio, SITP, Carro y moto, Bicicleta) + **Google Maps** |
 | 3 | 7 | Servicios (`#servicios`) | Grilla de 2 columnas con **Caja de icono** |
 | 3 | 8 | Accesibilidad (`#accesibilidad`) | Lista de iconos y enlace a la subpágina |
@@ -220,11 +220,20 @@ maqueta) con un contenedor-enlace a la entrada y, dentro:
 | Fecha (110 px) | Encabezado con Shortcode `[evento_dias]` (56 px, 700) · Encabezado `[evento_fecha formato="M"]` (18 px, 700) · Encabezado `[evento_fecha formato="D"]` (14 px) |
 | Afiche (96 px, 3:4) | Imagen destacada |
 | Información | Términos (taxonomía Tipos de evento, como etiqueta de color) · Título (24 px, 700) · Lista de iconos con **Campo ACF** `horario` (reloj) y `lugar` (pin) |
+| Descripción | **Extracto** como resumen (15 px, gris) y debajo un **Acordeón anidado** de un ítem, «Ver descripción», con el widget **Contenido de la entrada** dentro: el texto completo del evento |
 | Acceso (220 px) | Encabezado `[evento_acceso]` (fondo noche, texto amarillo) · Shortcode `[evento_boton]` |
 
 Línea inferior de 2 px noche en el contenedor; en celular, fecha a la izquierda y el resto apilado (sin afiche).
 Haz una segunda Loop Item, **«Evento destacado»**, con el afiche grande a la izquierda y fecha, título, extracto,
 horario, lugar, acceso y botón a la derecha, sobre fondo hueso.
+
+### La agenda de la home (solo texto)
+
+En la home va la misma agenda, sin afiche: haz una tercera Loop Item, **«Evento · texto»**, igual a la tarjeta pero sin
+la columna del afiche ni el acordeón (fecha grande · tipo · título · extracto · horario, lugar y acceso · flecha ↗).
+En la home: **Loop Grid** con esa plantilla, fuente Eventos, **Query ID `proximos_eventos`**, 4 por página, el mismo
+**Filtro de taxonomía** (Tipos de evento) y el enlace «Toda la programación» a Agéndate. Así la home y Agéndate muestran
+los mismos eventos con las mismas etiquetas: la home como texto y Agéndate con afiche y descripción.
 
 ### La página Agéndate
 

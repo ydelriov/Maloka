@@ -21,6 +21,7 @@ import d from '../../data/n/home.json';
 import { img } from '../../lib/images.js';
 import { rutaPara } from '../../lib/rutas.js';
 import { url } from '../../lib/url.js';
+import { agenda, proximos, tipo, rango, mes, sem, acceso, filtros as agFiltros } from '../../lib/agenda.js';
 import '../../styles/noche.css';
 // grupo: «seleccion» la publica en /seleccion/ (hoy solo V13, sin barra de versiones)
 const { grupo } = Astro.props;
@@ -65,22 +66,22 @@ const t = d.territorios;
     <section class="n-sec n-blanco" aria-labelledby="v13-ag">
       <div class="mk-w">
         <div class="n-head">
-          <div><p class="n-ante">Agéndate</p><h2 class="n-titulo" id="v13-ag">{d.agenda.titulo}</h2></div>
-          <NFiltros filtros={d.agenda.filtros} objetivo="v13-ag-l" />
+          <div><p class="n-ante">Agéndate</p><h2 class="n-titulo" id="v13-ag">Próximos eventos</h2></div>
+          <NFiltros filtros={agFiltros} objetivo="v13-ag-l" etiqueta="Filtrar por tipo de evento" unidad="eventos" />
         </div>
         <ul class="v13-ag" id="v13-ag-l">
-          {d.agenda.items.map((a, i) => (
-            <li data-filtro={a.filtro} data-rv style={`--d:${i}`}>
-              <a class="v13-ag-a" href={ruta('Programación')} style={`--c:var(--n-${a.color})`}>
-                <span class="v13-ag-f"><b class="t-num">{a.dia}</b><span>{a.mes}</span></span>
-                <span class="v13-ag-t"><span class={`n-tag n-tag--${a.color}`}>{a.categoria}</span><h3>{a.titulo}</h3><span class="v13-ag-x">{a.texto}</span></span>
-                <span class="v13-ag-m"><span><Icon name="clock" size="18" />{a.hora}</span><span><Icon name="pin" size="18" />{a.lugar}</span><span><Icon name="ticket" size="18" />{a.costo}</span></span>
+          {proximos.slice(0, 4).map((e, i) => (
+            <li data-filtro={e.tipo} data-rv style={`--d:${i}`}>
+              <a class="v13-ag-a" href={e.url || ruta('Programación')} style={`--c:var(--n-${tipo[e.tipo].color})`}>
+                <span class:list={['v13-ag-f', e.fechaFin && 'v13-ag-f--r']}><b class="t-num">{rango(e)}</b><span>{mes(e.fecha)}</span><small>{sem(e.fecha)}</small></span>
+                <span class="v13-ag-t"><span class={`n-tag n-tag--${tipo[e.tipo].color}`}>{tipo[e.tipo].label}</span><h3>{e.titulo}</h3><span class="v13-ag-x">{e.resumen}</span></span>
+                <span class="v13-ag-m"><span><Icon name="clock" size="18" />{e.horario}</span><span><Icon name="pin" size="18" />{e.lugar}</span><span><Icon name="ticket" size="18" />{acceso(e)}</span></span>
                 <Icon name="ext" size="28" class="v13-ag-ic" />
               </a>
             </li>
           ))}
         </ul>
-        <div class="v13-pie"><a class="n-b" href={ruta(d.agenda.enlace)}>{d.agenda.enlace}<Icon name="arrow" /></a><span class="n-ej">Contenido de ejemplo · fechas por validar</span></div>
+        <div class="v13-pie"><a class="n-b" href={ruta('Toda la programación')}>Toda la programación<Icon name="arrow" /></a><span class="n-ej">Eventos reales de maloka.org · mismos datos y tipos que la página Agéndate</span></div>
       </div>
     </section>
 
@@ -166,6 +167,9 @@ const t = d.territorios;
   .v13-ag-f { display: grid; line-height: 1; }
   .v13-ag-f b { font-size: 64px; font-weight: 700; letter-spacing: -0.03em; }
   .v13-ag-f span { font-weight: 600; margin-top: 6px; }
+  .v13-ag-f b { white-space: nowrap; }
+  .v13-ag-f--r b { font-size: 44px; }
+  .v13-ag-f small { font-size: 14px; color: var(--n-texto2); margin-top: 4px; }
   .v13-ag-t { display: grid; gap: 8px; }
   .v13-ag-t h3 { margin: 0; font-size: var(--n-sub); line-height: 1.2; font-weight: 700; }
   .v13-ag-x { color: var(--n-texto2); }
@@ -204,6 +208,7 @@ const t = d.territorios;
     .v13-ag-a { grid-template-columns: 96px 1fr auto; }
     .v13-ag-m { grid-column: 2; grid-row: 2; display: flex; flex-wrap: wrap; gap: 6px 16px; }
     .v13-ag-f b { font-size: 48px; }
+    .v13-ag-f--r b { font-size: 36px; }
   }
   @media (max-width: 767px) {
     .v13-np-c { grid-template-columns: 120px 1fr; gap: 14px; }
@@ -211,6 +216,7 @@ const t = d.territorios;
     .v13-no { grid-template-columns: 1fr; }
     .v13-ag-a { grid-template-columns: 64px 1fr; gap: 12px 16px; padding: 20px 4px; }
     .v13-ag-f b { font-size: 38px; }
+    .v13-ag-f--r b { font-size: 21px; }
     .v13-ag :global(.v13-ag-ic) { display: none; }
     .v13-de-l { gap: 24px 12px; }
   }

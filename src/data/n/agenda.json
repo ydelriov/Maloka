@@ -55,7 +55,8 @@
    "resumen": "Cortometrajes de animación artística, científica y comercial, efectos especiales y técnicas interactivas de todo el mundo.",
    "afiche": "https://maloka.org/wp-content/uploads/elementor/thumbs/Post-28_11-rwlehkz7jcjgk3s4td0z95mgudbn7bq7ipu1woc0n4.jpg",
    "url": "https://maloka.org/noticias/eventos/%f0%9f%8e%a8-muestra-audiovisual-y-muestra-de-tecnologia-grafica-festival-de-animacion-acm-siggraph-bogota/",
-   "destacado": true
+   "destacado": true,
+   "descripcion": "El capítulo bogotano de ACM SIGGRAPH presenta una curaduría internacional con lo más destacado del mundo en cortometrajes de animación artística, científica y comercial, así como avances en efectos especiales y técnicas interactivas."
   },
   {
    "titulo": "La otra forma: proyección y Taller de escombros",
@@ -67,7 +68,8 @@
    "enlace": "https://forms.gle/gFc3WRib7Ao6ohPE7",
    "resumen": "Animación colombiana de ciencia ficción de Diego Guzmán, seguida de un taller con Daniela Sáenz.",
    "afiche": "https://maloka.org/wp-content/uploads/elementor/thumbs/10-Web-rvyjzlmlj2pgwpxkba8em4r44h5lo45h6wwlpfcklc.jpg",
-   "url": "https://maloka.org/noticias/eventos/%f0%9f%93%90-proyeccion-de-la-pelicula-la-otra-forma-y-taller-de-escombros/"
+   "url": "https://maloka.org/noticias/eventos/%f0%9f%93%90-proyeccion-de-la-pelicula-la-otra-forma-y-taller-de-escombros/",
+   "descripcion": "Presentación del largometraje de ciencia ficción distópica y animación colombiana dirigido por Diego Guzmán, seguido del «Taller de Escombros» liderado por Daniela Sáenz. La historia explora la obsesión humana por encajar en un mundo donde todo debe ser cuadrado."
   },
   {
    "titulo": "Ratós, el tejido del tiempo",
@@ -80,7 +82,8 @@
    "enlace": "https://www.tuboleta.com/es/eventos/ratos-el-tejido-del-tiempo-4",
    "resumen": "Títeres, clown y teatro gestual sobre la memoria, la infancia y la vejez.",
    "afiche": "https://maloka.org/wp-content/uploads/elementor/thumbs/Post-22_11-rwlek29vklxp726fbxmjc1399z3iikkpizt6hynm80.jpg",
-   "url": "https://maloka.org/noticias/eventos/%f0%9f%8e%ad-obra-de-teatro-ratos-el-tejido-del-tiempo/"
+   "url": "https://maloka.org/noticias/eventos/%f0%9f%8e%ad-obra-de-teatro-ratos-el-tejido-del-tiempo/",
+   "descripcion": "La compañía El Baúl de la Fantasía presenta un viaje escénico sobre la memoria, la infancia y la vejez a través de la historia de un pequeño ratón, narrada con telas, hilos, poesía de la materia y lenguaje clown."
   },
   {
    "titulo": "Encuentro de huerteras y huerteros de Fontibón",
@@ -92,7 +95,8 @@
    "enlace": "https://forms.gle/xWGojZMb4G5gkJdP9",
    "resumen": "Talleres, círculo de palabra, mesa generosa y el «Muro de nuestra siembra».",
    "afiche": "https://maloka.org/wp-content/uploads/elementor/thumbs/8-Web-rvyjwzmqjn4snpq3k5lposh0py0wadsbhzo1pr7xvk.jpg",
-   "url": "https://maloka.org/noticias/eventos/%f0%9f%91%a9%f0%9f%8c%be-encuentro-de-huerteras-y-huerteros-de-fontibon-segundo-momento/"
+   "url": "https://maloka.org/noticias/eventos/%f0%9f%91%a9%f0%9f%8c%be-encuentro-de-huerteras-y-huerteros-de-fontibon-segundo-momento/",
+   "descripcion": "Una jornada completa con talleres, círculo de palabra, Mesa Generosa para compartir alimento y la presentación del «Muro de nuestra siembra», donde se expondrán pósters sobre experiencias de ciencia ciudadana desde la agricultura urbana."
   },
   {
    "titulo": "La sonda Voyager y el Disco de Oro",
@@ -104,7 +108,8 @@
    "enlace": "https://forms.gle/DUMEnkqxrkfKUPwq7",
    "resumen": "Charla interactiva de astronomía: descifra los sonidos e imágenes del disco como si fueras una civilización extraterrestre.",
    "afiche": "https://maloka.org/wp-content/uploads/elementor/thumbs/Post-21_11-rw9tdr45k102j740poqa5cjnn0fovtxbp9fhjogcao.jpg",
-   "url": "https://maloka.org/noticias/eventos/%f0%9f%9a%80-charla-interactiva-de-astronomia-la-sonda-voyager-y-el-disco-de-oro/"
+   "url": "https://maloka.org/noticias/eventos/%f0%9f%9a%80-charla-interactiva-de-astronomia-la-sonda-voyager-y-el-disco-de-oro/",
+   "descripcion": "A propósito de la llegada de la sonda Voyager 1 a una distancia histórica de 1 día luz de la Tierra, se analizará el famoso disco bañado en oro que viaja hacia el espacio interestelar. A través de un ejercicio práctico, el público descifrará los sonidos e imágenes del disco como si fuera una civilización extraterrestre."
   },
   {
    "titulo": "VII Noche de Museos de Bogotá",
@@ -113,7 +118,8 @@
    "horario": "5:00 p. m. a 8:00 p. m.",
    "lugar": "Maloka",
    "acceso": "gratis",
-   "resumen": "Recorridos, Cine Domo y la sala Javier Villafañe del Museo Virtual Mutibo con títeres en vivo."
+   "resumen": "Recorridos, Cine Domo y la sala Javier Villafañe del Museo Virtual Mutibo con títeres en vivo.",
+   "descripcion": "Bajo el lema «El poder de los museos: Museos uniendo un mundo dividido», Maloka se suma a esta fiesta distrital e iberoamericana ofreciendo recorridos sobre evolución y ecosistemas, proyecciones en el Cine Domo (Tunka en el reino de las aves) y la visita mediada a la sala «Javier Villafañe» del Museo Virtual Mutibo, con títeres en vivo acompañando a los visitantes."
   },
   {
    "titulo": "La voz no existe",
@@ -122,7 +128,8 @@
    "horario": "5:00 p. m.",
    "lugar": "Sala Digital",
    "acceso": "inscripcion",
-   "resumen": "Una experiencia participativa para explorar cómo se produce la voz humana."
+   "resumen": "Una experiencia participativa para explorar cómo se produce la voz humana.",
+   "descripcion": "La voz no es un órgano ni un elemento que se pueda señalar; no está en la garganta. La voz es una acción en movimiento que surge cuando activamos distintas partes del cuerpo, el sonido y la intención de comunicar. Una experiencia práctica para explorar las posibilidades sonoras del cuerpo humano. Trae una botellita de agua y prepárate para sonar."
   },
   {
    "titulo": "¿Y qué tal un domingo para «huertiar»?",
@@ -131,7 +138,8 @@
    "horario": "9:00 a. m.",
    "lugar": "Huerta Uaque",
    "acceso": "gratis",
-   "resumen": "Aula ambiental abierta para organizar la compostera y aprender de siembra y cosecha."
+   "resumen": "Aula ambiental abierta para organizar la compostera y aprender de siembra y cosecha.",
+   "descripcion": "En conmemoración del Día de las Reservas de Biósfera y del Día de los Parques Nacionales Naturales, Maloka abre el aula ambiental de la Huerta Uaque para organizar la compostera y aprender colectivamente sobre siembra y cosecha. Se reciben residuos orgánicos compostables durante la primera hora."
   },
   {
    "titulo": "Festival Sumapaz: cine y foro ambiental",
@@ -140,24 +148,19 @@
    "horario": "5:00 p. m.",
    "lugar": "Cine Digital",
    "acceso": "inscripcion",
-   "resumen": "Clausura de El Cine Suma Paz con Tuktu, Padre Maíz y Antes de la nieve."
+   "resumen": "Clausura de El Cine Suma Paz con Tuktu, Padre Maíz y Antes de la nieve.",
+   "descripcion": "Clausura de El Cine Suma Paz para ver y hablar de Tuktu, Padre Maíz, de Mauricio Prieto Muriel, y Antes de la nieve, de Alessandro Angulo: dos historias para conversar sobre la memoria, la cultura de paz, el agua y los páramos."
   }
  ],
  "permanente": {
   "titulo": "Todos los días en Maloka.",
-  "texto": "Además de la agenda, cada día hay funciones y talleres que puedes comprar en línea.",
+  "texto": "Además de la agenda, cada día hay funciones en el Cine Domo y talleres en los laboratorios que puedes comprar en línea.",
   "items": [
    {
     "titulo": "Funciones en el Cine Domo",
     "texto": "Documentales, animadas y shows láser en toda la cúpula.",
     "ruta": "visitanos/#funciones",
     "color": "cielo"
-   },
-   {
-    "titulo": "Sala Digital",
-    "texto": "Películas para toda la familia.",
-    "ruta": "visitanos/#funciones",
-    "color": "salmon"
    },
    {
     "titulo": "Laboratorios",

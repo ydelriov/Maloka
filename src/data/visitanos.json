@@ -650,71 +650,60 @@
     ]
   },
   "funciones": {
-    "titulo": "Cine Domo y Sala Digital.",
-    "texto": "Funciones proyectadas en toda la cúpula y en la Sala Digital. Cada entrada cuesta $19.600.",
-    "items": [
+    "titulo": "Cine Domo y artes escénicas.",
+    "texto": "Lo que está en cartelera en maloka.org. Compra cada función en TuBoleta.",
+    "grupos": [
       {
-        "titulo": "Esfera: un instante de vida",
-        "sala": "Cine Domo",
-        "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/fc8dfc51-bfbf-4c3c-92c8-ae8bd19690bf_5.jpg",
-        "url": "https://www.tuboleta.com/es/eventos/cine-domo-esfera-un-instante-de-vida",
-        "meta": "Documental · 30 min · Todo público"
+        "id": "cine-domo",
+        "titulo": "Cine Domo",
+        "texto": "Películas y shows láser en toda la cúpula · $19.600",
+        "color": "cielo",
+        "items": [
+          {
+            "titulo": "Esfera: un instante de vida",
+            "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/fc8dfc51-bfbf-4c3c-92c8-ae8bd19690bf_5.jpg",
+            "url": "https://www.tuboleta.com/es/eventos/cine-domo-esfera-un-instante-de-vida",
+            "meta": "Documental · 30 min · Todo público"
+          },
+          {
+            "titulo": "Migrantes climáticos",
+            "imagen": "https://maloka.org/wp-content/uploads/2026/04/500_Migrantes.jpg",
+            "url": "https://www.tuboleta.com/es/eventos/cine-domo-migrantes-climaticos",
+            "meta": "Documental ambiental · 20 min · Todo público"
+          },
+          {
+            "titulo": "Biosfera oscura",
+            "imagen": "https://maloka.org/wp-content/uploads/2026/02/500_Biosfera-Oscura.jpg",
+            "url": "https://www.tuboleta.com/es/eventos/cine-domo-biosfera-oscura",
+            "meta": "Exploración · 27 min · Todo público"
+          },
+          {
+            "titulo": "El increíble sistema solar",
+            "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/2347c074-fb9d-4a99-a3b9-369749007fed.jpg",
+            "url": "https://www.tuboleta.com/es/eventos/cine-domo-el-increible-sistema-solar-0",
+            "meta": "Documental educativo · 20 min · Todo público"
+          },
+          {
+            "titulo": "Show láser: Fantasía musical",
+            "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/470ded48-5b77-4aa6-8a4a-207787b78b13_1.jpg",
+            "url": "https://www.tuboleta.com/es/eventos/show-laser-fantasia-musical",
+            "meta": "Animado · 40 min · Mayores de 4 años"
+          }
+        ]
       },
       {
-        "titulo": "Migrantes climáticos",
-        "sala": "Cine Domo",
-        "imagen": "https://maloka.org/wp-content/uploads/2026/04/500_Migrantes.jpg",
-        "url": "https://www.tuboleta.com/es/eventos/cine-domo-migrantes-climaticos",
-        "meta": "Documental ambiental · 20 min · Todo público"
-      },
-      {
-        "titulo": "Biosfera oscura",
-        "sala": "Cine Domo",
-        "imagen": "https://maloka.org/wp-content/uploads/2026/02/500_Biosfera-Oscura.jpg",
-        "url": "https://www.tuboleta.com/es/eventos/cine-domo-biosfera-oscura",
-        "meta": "Exploración · 27 min · Todo público"
-      },
-      {
-        "titulo": "El increíble sistema solar",
-        "sala": "Cine Domo",
-        "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/2347c074-fb9d-4a99-a3b9-369749007fed.jpg",
-        "url": "https://www.tuboleta.com/es/eventos/cine-domo-el-increible-sistema-solar-0",
-        "meta": "Documental educativo · 20 min · Todo público"
-      },
-      {
-        "titulo": "Tunka",
-        "sala": "Cine Domo",
-        "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/6a4c9c68-b758-4e9c-a557-49eb8df2498c.jpg",
-        "url": "https://www.tuboleta.com/es/eventos/cine-domo-tunka-1",
-        "meta": "Animada · 40 min · Todo público"
-      },
-      {
-        "titulo": "Show láser: Fantasía musical",
-        "sala": "Cine Domo",
-        "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/470ded48-5b77-4aa6-8a4a-207787b78b13_1.jpg",
-        "url": "https://www.tuboleta.com/es/eventos/show-laser-fantasia-musical",
-        "meta": "Animado · 40 min · Mayores de 4 años"
-      },
-      {
-        "titulo": "Show láser: Leyendas del rock en español",
-        "sala": "Cine Domo",
-        "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/ec0b8ecb-aafe-4401-826d-618a0f44679f.jpg",
-        "url": "https://www.tuboleta.com/es/eventos/show-laser-leyendas-del-rock-0",
-        "meta": "Alternativo · 50 min · Mayores de 8 años"
-      },
-      {
-        "titulo": "Show láser: Tributo a ABBA",
-        "sala": "Cine Domo",
-        "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/45d609c4-d527-4605-aa0c-dc41d1b2900a_1.jpg",
-        "url": "https://www.tuboleta.com/es/eventos/show-laser-leyendas-del-rock-0",
-        "meta": "Alternativo · Mayores de 16 años"
-      },
-      {
-        "titulo": "Una jungla de locura 2",
-        "sala": "Sala Digital",
-        "imagen": "https://www.tuboleta.com/sites/default/files/imported-images/content-comar-prod-secutix-hm3xd8p3/images/catalog/product/xlarge/88e5eafb-5f75-4edb-a780-a7d7c2a6b10c.jpg",
-        "url": "https://www.tuboleta.com/es/eventos/sala-digital-una-jungla-de-locura",
-        "meta": "Animada · 90 min · Todo público"
+        "id": "escenicas",
+        "titulo": "Conciertos y artes escénicas",
+        "texto": "Funciones con fecha y hora",
+        "color": "salmon",
+        "items": [
+          {
+            "titulo": "Ratós, el tejido del tiempo",
+            "imagen": "https://maloka.org/wp-content/uploads/2026/10/1080-22_11.jpg",
+            "url": "https://www.tuboleta.com/es/eventos/ratos-el-tejido-del-tiempo-4",
+            "meta": "Teatro de títeres y clown · Sáb. 28 de noviembre · 11:00 a. m. · Desde los 2 años"
+          }
+        ]
       }
     ],
     "aviso": "Los shows láser no son aptos para personas fotosensibles: tienen luces intermitentes y efectos visuales intensos."
