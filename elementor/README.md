@@ -9,6 +9,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `logo-maloka.svg` / `.png` | Logo de las maquetas, por si el sitio aún no tiene uno | Apariencia › Personalizar › Identidad del sitio |
 | `popup-combos.json` | Modal de los combos de TuBoleta | Plantillas › Popups |
 | `visitanos-v13.json` | Página Visítanos completa (10 secciones) | Plantillas › Plantillas guardadas, y se inserta en la página Visítanos |
+| `footer-v13.json` | Footer noche: suscripción, contacto, mapa del sitio, legal y redes | Plantillas › Theme Builder › Footer (condición: Todo el sitio) |
 | `home-v13-secciones.json` | Las 6 secciones de la home debajo del hero (Imperdibles, Agenda, Ven en grupo, Descubre con mapa, Crea, Noticias) | Plantillas › Plantillas guardadas, y se inserta en Inicio debajo del hero |
 
 ## Menú y header · paso a paso
@@ -161,3 +162,15 @@ personalizado**; está en `page_settings.custom_css` del JSON.
 
 Ojo: en los **contenedores** el ajuste de clases se llama `css_classes` (en los widgets es `_css_classes`). El hero de
 Inicio se había guardado con `_css_classes` en sus contenedores y por eso el carrusel no funcionaba.
+
+## footer-v13.json · Footer
+
+Se genera con `python3 scripts/elementor-footer-v13.py` a partir de `src/data/propuestas/home.json` y
+`src/data/site.json`. En pruebas.maloka.org ya está publicado como «Footer · Maloka V13» con la condición **Todo el sitio**.
+
+- **Suscripción:** widget Formulario (Pro) con un campo de correo. Solo guarda los correos en **Elementor › Envíos**;
+  no manda correos ni se conecta a ninguna herramienta de mailing. Para eso, agrega una acción en el formulario
+  (Mailchimp, webhook, correo al equipo…).
+- **Logo:** widget Logo del sitio, en blanco con un filtro CSS (el logo del sitio es morado).
+- **Por completar:** las URL de Instagram, YouTube, TikTok y Facebook, y las páginas legales (Política de privacidad,
+  Tratamiento de datos, PQRSF) apuntan a `#`.
