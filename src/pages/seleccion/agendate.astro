@@ -120,22 +120,17 @@ const filtros = [{ id: 'todo', label: 'Todos' }, ...a.tipos.map((t) => ({ id: t.
       </section>
     )}
 
-    <!-- 4 · Todos los días -->
-    <section class="n-sec n-noche" aria-labelledby="ag-td">
-      <div class="mk-w ag-td">
-        <div class="ag-col">
-          <p class="n-ante">Todos los días</p>
-          <h2 class="n-titulo" id="ag-td">{a.permanente.titulo}</h2>
-          <p class="n-lead">{a.permanente.texto}</p>
-        </div>
+    <!-- 4 · Todos los días: fondo blanco con bloques de color (no noche, para no confundirse con el footer) -->
+    <section class="n-sec n-blanco" aria-labelledby="ag-td">
+      <div class="mk-w">
+        <div class="n-head"><div><p class="n-ante">Todos los días</p><h2 class="n-titulo" id="ag-td">{a.permanente.titulo}</h2><p class="n-lead">{a.permanente.texto}</p></div></div>
         <ul class="ag-td-l">
-          {a.permanente.items.map((p) => (
-            <li><a class="ag-td-a" href={url(`${G}/${p.ruta}`)} style={`--c:var(--n-${p.color})`}><span><b>{p.titulo}</b><span>{p.texto}</span></span><Icon name="arrow" size="24" /></a></li>
+          {a.permanente.items.map((p, i) => (
+            <li data-rv style={`--d:${i}`}><a class="ag-td-a" href={url(`${G}/${p.ruta}`)} style={`--c:var(--n-${p.color})`}><b>{p.titulo}</b><span>{p.texto}</span><Icon name="arrow" size="28" /></a></li>
           ))}
         </ul>
       </div>
     </section>
-
   </main>
   <NFooter grupo={G} />
 </Base>
@@ -196,18 +191,13 @@ const filtros = [{ id: 'todo', label: 'Todos' }, ...a.tipos.map((t) => ({ id: t.
   .ag-pas-x { font-size: 14px; }
 
   /* Todos los días */
-  .ag-col { display: grid; gap: 16px; align-content: start; }
-  .ag-td { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
-  .ag-td-l { border-top: 2px solid rgba(255, 255, 255, .5); }
-  .ag-td-l li { border-bottom: 2px solid rgba(255, 255, 255, .5); }
-  .ag-td-a { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 24px 16px; color: #fff; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
-  .ag-td-a > span { display: grid; gap: 4px; }
-  .ag-td-a b { font-size: var(--n-sub); }
-  .ag-td-a > span span { color: var(--n-texto2-osc); }
-  .ag-td-a:hover { background: var(--c); color: var(--n-noche); }
-  .ag-td-a:hover > span span { color: var(--n-noche); }
-
-  .ag-bol { margin-top: 4px; font-size: 15px; }
+  .ag-td-l { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .ag-td-a { display: grid; grid-template-rows: auto 1fr auto; gap: 10px; min-height: 220px; height: 100%; padding: 28px; background: var(--c); color: var(--n-noche); transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
+  .ag-td-a b { font-size: var(--n-sub); line-height: 1.2; }
+  .ag-td-a span { font-size: 16px; }
+  .ag-td-a :global(.mk-ic) { justify-self: end; transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .ag-td-a:hover { background: var(--n-noche); color: #fff; }
+  .ag-td-a:hover :global(.mk-ic) { transform: translateX(6px); color: var(--c); }
 
   @media (max-width: 1024px) {
     .ag-dest { grid-template-columns: 5fr 7fr; gap: 32px; padding: 24px; }
@@ -215,7 +205,8 @@ const filtros = [{ id: 'todo', label: 'Todos' }, ...a.tipos.map((t) => ({ id: t.
     .ag-fila { grid-template-columns: 88px 80px 1fr; }
     .ag-fila-acc { grid-column: 3; }
     .ag-pasados { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .ag-td { grid-template-columns: 1fr; gap: 32px; }
+    .ag-td-l { grid-template-columns: 1fr; gap: 12px; }
+    .ag-td-a { min-height: 0; padding: 22px; }
   }
   @media (max-width: 767px) {
     .ag-hero { padding-block: 24px 28px; }
