@@ -12,6 +12,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `acf-evento.json` | Campos de cada evento (tipo de contenido «eventos»): fecha, horario, lugar, acceso, enlace, destacado | ACF › Herramientas › Importar |
 | `acf-horarios.json` + `horarios-snippet.php` | Horarios en un solo lugar (página de inicio) para menú, home, Visítanos y footer | ACF › Importar y Code Snippets |
 | `evento-single-v13.json` | Ficha de cada evento (plantilla del Theme Builder para Eventos) | Plantillas › Theme Builder › Entrada individual |
+| `noticia-single-v13.json` + `noticias-snippet.php` | Página de cada noticia (plantilla del Theme Builder para Entradas) y tiempo de lectura | Theme Builder › Entrada individual · Code Snippets |
 | `agenda-snippet.php` | Ordena la agenda por fecha, oculta los eventos pasados y formatea las fechas | Plugin Code Snippets |
 | `visitanos-v13-parte1.json`, `-parte2.json`, `-parte3.json` | Página Visítanos en 3 partes (10 secciones) | Se insertan en orden en la página Visítanos |
 
@@ -314,3 +315,23 @@ La propuesta usa las **entradas** de siempre (el equipo publica igual que hoy) c
 ### En la home
 Loop Grid con «Noticia», Entradas, **3 por página**, 3 columnas, sin paginación, y el enlace «Ver todas las noticias»
 a la página Noticias.
+
+### Página de cada noticia (Theme Builder)
+
+Maqueta: por ejemplo https://ydelriov.github.io/Maloka/seleccion/noticias/llega-a-maloka-ratos-el-tejido-del-tiempo-la-premiada-obra-internacional-que-enamora-a-grandes-y-chicos/
+
+| Parte | Qué muestra | De dónde sale |
+|---|---|---|
+| Cabecera (hueso) | Migas, categoría, fecha, tiempo de lectura, título, extracto, compartir; imagen destacada cuadrada a la derecha | Info de la entrada (categoría y fecha) · `[maloka_lectura]` · Título · Extracto · **Botones para compartir** (WhatsApp, Facebook, X, LinkedIn) · Imagen destacada |
+| Cuerpo | El texto en una columna de lectura de 720 px (19 px, interlineado amplio) | Contenido de la entrada |
+| Pie | «Volver a noticias» y compartir otra vez | Fijo |
+| Más noticias | 3 noticias de la misma categoría | Loop Grid «Noticia», fuente **Relacionadas** |
+
+**Cómo instalarla:**
+1. Code Snippets › pega `noticias-snippet.php` › Activar.
+2. Theme Builder › **Entrada individual** › Importar › `noticia-single-v13.json`.
+3. En «Más noticias», reemplaza el texto de ayuda por un **Loop Grid** con «Noticia», fuente **Relacionadas**
+   (por Categorías), 3 columnas y 3 por página.
+4. **Publicar** con la condición **Entradas › Todas** (la de Eventos ya tiene su propia plantilla).
+5. Revisa una entrada larga: los subtítulos (H2/H3), listas, enlaces e imágenes del texto toman el estilo del widget
+   Contenido de la entrada; ajusta en Estilo si alguna entrada vieja trae estilos propios.

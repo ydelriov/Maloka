@@ -36,10 +36,10 @@ const filtros = [{ id: 'todo', label: 'Todas' }, ...n.categorias.map((c) => ({ i
           <NFiltros filtros={filtros} objetivo="no-lista" etiqueta="Filtrar noticias por categoría" unidad="noticias" />
         </div>
         <div id="no-lista">
-          <div class="no-primera" data-filtro={primera.categoria}><NNoticia item={primera} variante="grande" nivel={2} /></div>
+          <div class="no-primera" data-filtro={primera.categoria}><NNoticia item={primera} variante="grande" nivel={2} grupo={G} /></div>
           <ul class="no-grid">
             {resto.map((it, i) => (
-              <li data-filtro={it.categoria} class:list={[i >= PRIMERAS && 'no-mas']} data-rv style={`--d:${i % 3}`}><NNoticia item={it} /></li>
+              <li data-filtro={it.categoria} class:list={[i >= PRIMERAS && 'no-mas']} data-rv style={`--d:${i % 3}`}><NNoticia item={it} grupo={G} /></li>
             ))}
           </ul>
         </div>

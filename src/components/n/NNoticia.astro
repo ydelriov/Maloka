@@ -4,12 +4,16 @@
    tarjeta es el enlace. variante: «tarjeta» (grilla) · «grande» (la más reciente, imagen a la izquierda). */
 import Icon from '../ui/Icon.astro';
 import n from '../../data/n/noticias.json';
-const { item, variante = 'tarjeta', nivel = 3 } = Astro.props;
+import { url } from '../../lib/url.js';
+import { slugNoticia } from '../../lib/noticias.js';
+const { item, variante = 'tarjeta', nivel = 3, grupo } = Astro.props;
+// Con grupo (p. ej. «seleccion») enlaza a la página de la noticia en la maqueta; sin grupo, a maloka.org.
+const href = grupo ? url(`${grupo}/noticias/${slugNoticia(item)}/`) : item.url;
 const cat = n.categorias.find((c) => c.id === item.categoria);
 const fecha = new Date(`${item.fecha}T12:00:00`).toLocaleDateString('es-CO', { day: 'numeric', month: 'long', year: 'numeric' });
 const H = `h${nivel}`;
 ---
-<a class:list={['nno', `nno--${variante}`]} href={item.url}>
+<a class:list={['nno', `nno--${variante}`]} href={href}>
   <span class="nno-f"><img src={item.imagen} alt="" width="1080" height="1080" loading={variante === 'grande' ? 'eager' : 'lazy'} decoding="async" /></span>
   <span class="nno-c">
     <span class="nno-meta">{cat && <span class={`n-tag n-tag--${cat.color}`}>{cat.label}</span>}<time datetime={item.fecha}>{fecha}</time></span>

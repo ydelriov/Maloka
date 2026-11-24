@@ -133,7 +133,7 @@ const t = d.territorios;
       <div class="mk-w">
         <div class="n-head"><div><p class="n-ante">Lo último</p><h2 class="n-titulo" id="v13-no">Noticias</h2></div><a class="n-a" href={ruta('Ver todas')}>Ver todas las noticias<Icon name="arrow" size="20" /></a></div>
         <ul class="v13-no">
-          {noticias.items.slice(0, 3).map((it, i) => <li data-rv style={`--d:${i}`}><NNoticia item={it} /></li>)}
+          {noticias.items.slice(0, 3).map((it, i) => <li data-rv style={`--d:${i}`}><NNoticia item={it} grupo={grupo} /></li>)}
         </ul>
       </div>
     </section>
