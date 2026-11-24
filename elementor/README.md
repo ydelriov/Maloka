@@ -398,7 +398,7 @@ a la página Noticias.
 la sala de prensa de maloka.org importadas con su fecha, categoría, imagen destacada, extracto y texto (meta
 `_maloka_fuente` con la URL original); Loop Item «Noticia · tarjeta» (`loop-noticia.json`) y la sección `#noticias` de
 Inicio (`home-v13-noticias.json`), generados con `python3 scripts/elementor-noticias.py`. El color de la categoría sale
-de la clase `category-<slug>` de cada entrada. La página Noticias también está hecha (ver abajo); falta la plantilla de cada noticia.
+de la clase `category-<slug>` de cada entrada. La página Noticias y la plantilla de cada noticia también están hechas (ver abajo).
 
 ### Así quedó la página Noticias en pruebas.maloka.org
 
@@ -430,6 +430,19 @@ Maqueta: por ejemplo https://ydelriov.github.io/Maloka/seleccion/noticias/llega-
 4. **Publicar** con la condición **Entradas › Todas** (la de Eventos ya tiene su propia plantilla).
 5. Revisa una entrada larga: los subtítulos (H2/H3), listas, enlaces e imágenes del texto toman el estilo del widget
    Contenido de la entrada; ajusta en Estilo si alguna entrada vieja trae estilos propios.
+
+**Así quedó en pruebas.maloka.org:** plantilla «Noticia · página (Maloka V13)» publicada con la condición **Entradas ›
+Todas** y el snippet «Noticias de Maloka (tiempo de lectura)» activo. `scripts/elementor-noticias.py` completa
+`noticia-single-v13.json` (idempotente):
+- «Más noticias» es un Loop Grid con la tarjeta «Noticia» y el Query ID **`noticias_relacionadas`** (en
+  `noticias-snippet.php`): 3 entradas de la misma categoría, sin la actual. La opción «Relacionadas» de Elementor
+  caía en las más recientes. Columnas `minmax(0, 1fr)`: con `1fr` una imagen ancha estiraba la página.
+- La fila de datos es la etiqueta de la categoría (con su color; «Sin categoría» no se muestra) y la fecha completa;
+  el widget Info de la entrada traía un formato de fecha no válido y mostraba la hora.
+- Botones de compartir de 44 px: `button_size` se multiplica por 10 y va sin unidad (0.8em los dejaba en 4 px).
+- Enlaces del texto en violeta `#6B5BD6` subrayado, no el rosado del tema.
+- Los generadores revisan que no haya **ids repetidos**: Elementor arma el CSS con el id de cada elemento y dos
+  elementos con el mismo id comparten estilos (los títulos de «Más noticias» no hacían salto de línea por eso).
 
 ## Banner de la home (con botón)
 

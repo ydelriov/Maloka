@@ -283,6 +283,99 @@ PAGINA = {'title': 'Noticias · V13', 'type': 'page', 'version': '0.4',
                             'custom_css': 'a.e-con { text-decoration: none; }\na.e-con:focus-visible { outline: 3px solid #6B5BD6; outline-offset: 3px; }\n'},
           'content': [cab, sec_todas, prensa]}
 
+# ---------- Página de cada noticia: completa la plantilla de master (elementor/noticia-single-v13.json) ----------
+def ids_unicos(contenido):
+    """Elementor usa el id de cada elemento en su CSS: si dos se repiten, uno hereda los estilos del otro.
+    Renombra los repetidos (pasa cuando se insertan elementos en corridas distintas del generador)."""
+    import secrets
+    vistos, n = set(), 0
+
+    def rec(els):
+        nonlocal n
+        for e in els:
+            if e['id'] in vistos:
+                e['id'] = secrets.token_hex(4)[:7]
+                n += 1
+            vistos.add(e['id'])
+            rec(e['elements'])
+    rec(contenido)
+    return n
+
+
+def completar_noticia():
+    """Pone el Loop Grid de «Más noticias» (relacionadas por categoría, sin la actual) donde estaba el texto de ayuda y
+    corrige encabezados con el color guardado en header_size. Idempotente."""
+    ruta = RAIZ / 'elementor/noticia-single-v13.json'
+    d = json.loads(ruta.read_text())
+    cambios = []
+
+    def recorrer(els):
+        for i, e in enumerate(els):
+            st = e['settings']
+            if e.get('widgetType') == 'heading' and str(st.get('header_size', '')).startswith('#'):
+                st['title_color'], st['header_size'] = st['header_size'], 'p'
+                cambios.append('encabezado ' + st.get('title', ''))
+            if e.get('widgetType') == 'text-editor' and 'Aquí va un Loop Grid' in st.get('editor', ''):
+                g = widget('loop-grid', _skin='post', template_id='@loop:noticia', columns=3, columns_tablet=2, columns_mobile=1,
+                           posts_per_page=3, post_query_post_type='post', post_query_query_id='noticias_relacionadas',
+                           equal_height='yes', column_gap=px(24), row_gap=px(24), row_gap_tablet=px(24), row_gap_mobile=px(20),
+                           nothing_found_message_text='')
+                els[i] = g
+                cambios.append('loop grid')
+            if e.get('widgetType') == 'loop-grid' and st.get('post_query_post_type') == 'related':
+                for k in ('post_query_related_taxonomies', 'post_query_related_fallback', 'post_query_exclude'):
+                    st.pop(k, None)
+                st.update(post_query_post_type='post', post_query_query_id='noticias_relacionadas')
+                cambios.append('relacionadas por Query ID')
+            if e.get('widgetType') == 'loop-grid' and 'minmax(0, 1fr)' not in st.get('custom_css', ''):
+                # Columnas que no crecen con el contenido: sin esto una imagen ancha estira la grilla y la página
+                st['custom_css'] = ('selector { width: 100%; align-self: stretch; }\n'
+                                    'selector .elementor-loop-container { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }\n'
+                                    '@media (max-width: 1200px) { selector .elementor-loop-container { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }\n'
+                                    '@media (max-width: 767px) { selector .elementor-loop-container { grid-template-columns: minmax(0, 1fr) !important; } }\n'
+                                    'selector .e-loop-item { min-width: 0; }\nselector img { max-width: 100%; }\n')
+                cambios.append('columnas minmax(0, 1fr)')
+            if e.get('widgetType') == 'share-buttons' and st.get('button_size', {}).get('unit') != 'px':
+                # button_size se multiplica por 10 y va sin unidad (px): 0.8em dejaba botones de 4 px
+                st.update(button_size={'unit': 'px', 'size': 1.6, 'sizes': []}, button_height={'unit': 'px', 'size': 44, 'sizes': []},
+                          icon_size={'unit': 'px', 'size': 20, 'sizes': []}, border_size={'unit': 'px', 'size': 2, 'sizes': []},
+                          column_gap={'unit': 'px', 'size': 8, 'sizes': []}, row_gap={'unit': 'px', 'size': 8, 'sizes': []},
+                          custom_css=('selector .elementor-share-btn { width: 44px; justify-content: center; }\n'
+                                      'selector .elementor-share-btn:focus-visible { outline: 3px solid #6B5BD6; outline-offset: 2px; }\n'))
+                cambios.append('botones de compartir 44 px')
+            if e.get('widgetType') == 'post-info':
+                # Categoría como etiqueta de color y fecha completa, como en las tarjetas
+                c = titulo('Categoría', 'span', NOCHE, 14, '700', 1, _element_width='auto', _css_classes='mk-no-cat',
+                           css=('selector .elementor-heading-title { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; '
+                                f'background: {PASTEL["lavanda"]}; white-space: nowrap; }}\n'))
+                c['settings']['__dynamic__'] = {'title': tag('post-terms', taxonomy='category', separator=', ', link='')}
+                f = titulo('Fecha', 'span', TEXTO2, 15, '600', 1.4, _element_width='auto')
+                f['settings']['__dynamic__'] = {'title': tag('post-date', type='post_date', format='custom', custom_format='j \\d\\e F \\d\\e Y')}
+                els[i:i + 1] = [c, f]
+                cambios.append('categoría y fecha')
+                break
+            recorrer(e['elements'])
+    recorrer(d['content'])
+    css = ('/* Categoría con su pastel (clase category-<slug> de la entrada); «Sin categoría» no se muestra */\n' + ''.join(
+        f'.category-{c["id"]} .mk-no-cat .elementor-heading-title {{ background: {PASTEL[c["color"]]} !important; }}\n'
+        for c in n['categorias']) + '.category-sin-categoria .mk-no-cat { display: none; }\n'
+        + '/* Enlaces del texto con el violeta del Design System (no el rosado del tema) */\n'
+        + '.elementor-widget-theme-post-content a { color: #6B5BD6; text-decoration: underline; text-underline-offset: 3px; }\n'
+        + '.elementor-widget-theme-post-content a:hover { color: #231B2B; }\n')
+    if not isinstance(d.get('page_settings'), dict):
+        d['page_settings'] = {}
+    if d['page_settings'].get('custom_css') != css:
+        d['page_settings']['custom_css'] = css
+        cambios.append('CSS por categoría')
+    repetidos = ids_unicos(d['content'])
+    if repetidos:
+        cambios.append(f'{repetidos} ids repetidos')
+    ruta.write_text(json.dumps(d, ensure_ascii=False, indent=1))
+    print('Noticia:', ', '.join(cambios) or 'sin cambios')
+
+
+completar_noticia()
+
 for nombre, datos in [('loop-noticia', LOOP_NOTICIA), ('home-v13-noticias', HOME), ('loop-noticia-grande', LOOP_GRANDE), ('noticias-v13', PAGINA)]:
     (RAIZ / f'elementor/{nombre}.json').write_text(json.dumps(datos, ensure_ascii=False, indent=1))
     print('Escrito', f'elementor/{nombre}.json')

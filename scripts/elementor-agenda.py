@@ -431,6 +431,24 @@ HOME = seccion('Inicio · Agenda', BLANCO, [
 HOME_JSON = {'title': 'Inicio V13 · agenda (3 próximos eventos)', 'type': 'container', 'version': '0.4', 'page_settings': [], 'content': [HOME]}
 
 # ---------- Ficha del evento: completa la plantilla de master (elementor/evento-single-v13.json) ----------
+def ids_unicos(contenido):
+    """Elementor usa el id de cada elemento en su CSS: si dos se repiten, uno hereda los estilos del otro.
+    Renombra los repetidos (pasa cuando se insertan elementos en corridas distintas del generador)."""
+    import secrets
+    vistos, n = set(), 0
+
+    def rec(els):
+        nonlocal n
+        for e in els:
+            if e['id'] in vistos:
+                e['id'] = secrets.token_hex(4)[:7]
+                n += 1
+            vistos.add(e['id'])
+            rec(e['elements'])
+    rec(contenido)
+    return n
+
+
 def completar_ficha():
     """Pone el Loop Grid de «Otros próximos eventos» donde estaba el texto de ayuda y corrige encabezados con
     header_size y color intercambiados. Es idempotente: se puede correr varias veces."""
@@ -469,6 +487,9 @@ def completar_ficha():
     if d['page_settings'].get('custom_css') != css:
         d['page_settings']['custom_css'] = css
         cambios.append('CSS por tipo')
+    repetidos = ids_unicos(d['content'])
+    if repetidos:
+        cambios.append(f'{repetidos} ids repetidos')
     ruta.write_text(json.dumps(d, ensure_ascii=False, indent=1))
     print('Ficha:', ', '.join(cambios) or 'sin cambios')
 
