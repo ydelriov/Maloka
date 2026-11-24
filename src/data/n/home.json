@@ -4,10 +4,74 @@
     "alt": "Banner de Maloka: collage con un invitado, el domo y ondas de sonido.",
     "antetitulo": "Centro interactivo de ciencia y tecnología · Bogotá",
     "slides": [
-      { "titulo": "Atrévete a vivir la ciencia.", "texto": "Salas para tocar, un domo para mirar el universo y laboratorios para preguntar." },
-      { "titulo": "El universo, sobre tu cabeza.", "texto": "En el Cine Domo las estrellas y los planetas se proyectan sobre toda la cúpula." },
-      { "titulo": "Aquí está prohibido no tocar.", "texto": "En las salas interactivas las preguntas se responden con las manos." }
-    ]
+      {
+        "titulo": "Atrévete a vivir la ciencia.",
+        "texto": "Salas para tocar, un domo para mirar el universo y laboratorios para preguntar."
+      },
+      {
+        "titulo": "El universo, sobre tu cabeza.",
+        "texto": "En el Cine Domo las estrellas y los planetas se proyectan sobre toda la cúpula."
+      },
+      {
+        "titulo": "Aquí está prohibido no tocar.",
+        "texto": "En las salas interactivas las preguntas se responden con las manos."
+      }
+    ],
+    "campanas": [
+      {
+        "tipo": "Promoción",
+        "titulo": "2x1 en Maloka este 25 y 27 de noviembre.",
+        "texto": "Recorrido Exploratorio por $49.000 para dos personas con el código Maloka2x1, en línea o en taquilla.",
+        "cta": {
+          "texto": "Comprar entradas 2x1",
+          "url": "https://maloka.checkout.tuboleta.com/list/partnerAdvantage?code=Maloka2x1",
+          "icono": "ticket",
+          "externo": true
+        },
+        "imagen": "https://maloka.org/wp-content/uploads/2025/12/anuncio-maloka-banner-portada-3.jpg",
+        "ajuste": "cubrir"
+      },
+      {
+        "tipo": "Agenda",
+        "titulo": "Noviembre en Maloka.",
+        "texto": "Cine ambiental, talleres ecológicos, Noche de Museos y teatro para todas las edades.",
+        "cta": {
+          "texto": "Ver la programación",
+          "ruta": "Toda la programación",
+          "icono": "cal"
+        },
+        "imagen": "https://maloka.org/wp-content/uploads/2026/11/1920_Web-Agenda.jpg",
+        "ajuste": "cubrir"
+      },
+      {
+        "tipo": "Podcast",
+        "titulo": "La Maloka: todo tiene su ciencia.",
+        "texto": "Escucha «Tonalidades humanas», el último episodio de la temporada, sobre la genética del color de la piel.",
+        "cta": {
+          "texto": "Escuchar en Spotify",
+          "url": "https://open.spotify.com/episode/2UP73QswKPyTR8sbBByvlF",
+          "icono": "play",
+          "externo": true
+        },
+        "imagen": "https://maloka.org/wp-content/uploads/2026/10/PE-100.jpg",
+        "ajuste": "contener",
+        "color": "#231B2B"
+      },
+      {
+        "tipo": "Boletín",
+        "titulo": "Que no se te pase nada.",
+        "texto": "Recibe cada mes la agenda, las novedades y los descuentos de Maloka en tu correo.",
+        "cta": {
+          "texto": "Suscríbete al boletín",
+          "url": "https://maloka.ipzmarketing.com/f/57LlRORGSBE",
+          "icono": "mail",
+          "externo": true
+        },
+        "imagen": "hero-slide-1.jpg",
+        "ajuste": "cubrir"
+      }
+    ],
+    "campanasNota": "Promoción 2x1 y agenda: banners actuales de maloka.org. Podcast y boletín: ejemplos con contenido real (episodio de La Maloka y formulario del boletín)."
   },
   "horario": {
     "titulo": "Bienvenido a Maloka",

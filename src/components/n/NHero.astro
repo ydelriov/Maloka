@@ -7,30 +7,51 @@ import { Picture } from 'astro:assets';
 import d from '../../data/n/home.json';
 import Icon from '../ui/Icon.astro';
 import NHorario from './NHorario.astro';
+import { rutaPara } from '../../lib/rutas.js';
 import { img } from '../../lib/images.js';
-const { variante = 'foto', colorBloque = 'amarillo', grupo } = Astro.props;
+const { variante = 'foto', colorBloque = 'amarillo', grupo, campanas = false } = Astro.props;
 const h = d.hero;
+// campanas (V13): cada diapositiva es una campaña con su imagen, tipo y llamado a la acción (comprar, escuchar,
+// suscribirse…), y las pestañas de abajo muestran todas. En Elementor: widget Slides, un ítem por campaña.
+const usaCampanas = campanas && variante === 'foto';
+const slides = usaCampanas ? h.campanas : h.slides;
+const ruta = rutaPara(grupo);
+const destino = (c) => c.url || ruta(c.ruta);
 ---
-<section class:list={['nhe', `nhe--${variante}`]} style={`--nhe-c:var(--n-${colorBloque})`} aria-roledescription="carrusel" aria-label="Destacados de Maloka" data-nslider>
+<section class:list={['nhe', `nhe--${variante}`, usaCampanas && 'nhe--campanas']} style={`--nhe-c:var(--n-${colorBloque})`} aria-roledescription="carrusel" aria-label="Destacados de Maloka" data-nslider>
   <div class="nhe-media">
-    <Picture src={img(h.imagen)} alt="" formats={['avif', 'webp']} widths={[640, 1024, 1440, 1942]} sizes={variante === 'split' ? '(max-width: 1024px) 100vw, 50vw' : '100vw'} class="nhe-img" loading="eager" fetchpriority="high" decoding="async" />
+    {usaCampanas ? slides.map((c, i) => (
+      <div class:list={['nhe-capa', `nhe-capa--${c.ajuste}`, i === 0 && 'is-activa']} style={c.color ? `background:${c.color}` : undefined} data-media>
+        {c.imagen.startsWith('http')
+          ? <img src={c.imagen} alt="" class="nhe-img" loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
+          : <Picture src={img(c.imagen)} alt="" formats={['avif', 'webp']} widths={[640, 1024, 1440, 1942]} sizes="100vw" class="nhe-img" loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />}
+      </div>
+    )) : <Picture src={img(h.imagen)} alt="" formats={['avif', 'webp']} widths={[640, 1024, 1440, 1942]} sizes={variante === 'split' ? '(max-width: 1024px) 100vw, 50vw' : '100vw'} class="nhe-img" loading="eager" fetchpriority="high" decoding="async" />}
     {variante === 'foto' && <span class="nhe-velo" aria-hidden="true"></span>}
   </div>
   <div class="nhe-txt-w">
     <div class:list={['nhe-txt', variante === 'foto' && 'mk-w']}>
       <p class="nhe-ante">{h.antetitulo}</p>
       <div class="nhe-slides">
-        {h.slides.map((s, i) => (
-          <div class:list={['nhe-slide', i === 0 && 'is-activa']} role="group" aria-roledescription="diapositiva" aria-label={`${i + 1} de ${h.slides.length}`} aria-hidden={i === 0 ? undefined : 'true'} data-slide>
+        {slides.map((s, i) => (
+          <div class:list={['nhe-slide', i === 0 && 'is-activa']} role="group" aria-roledescription="diapositiva" aria-label={`${i + 1} de ${slides.length}${s.tipo ? `: ${s.tipo}` : ''}`} aria-hidden={i === 0 ? undefined : 'true'} data-slide>
+            {s.tipo && <span class="nhe-tipo">{s.tipo}</span>}
             {i === 0 ? <h1 class="nhe-t">{s.titulo}</h1> : <p class="nhe-t">{s.titulo}</p>}
             <p class="nhe-x">{s.texto}</p>
+            {s.cta && (
+              <a class="nhe-cta" href={destino(s.cta)} {...(s.cta.externo ? { target: '_blank', rel: 'noopener' } : {})} tabindex={i === 0 ? undefined : -1}>
+                <Icon name={s.cta.icono} size="22" />{s.cta.texto}<Icon name={s.cta.externo ? 'ext' : 'arrow'} size="20" />{s.cta.externo && <span class="sr-only"> (abre en una pestaña nueva)</span>}
+              </a>
+            )}
           </div>
         ))}
       </div>
       <div class="nhe-ctrl">
         <button type="button" class="nhe-pausa" aria-label="Pausar el carrusel" data-pausa><Icon name="pause" size="20" class="ic-pausa" /><Icon name="play" size="20" class="ic-play" /></button>
         <div class="nhe-dots" role="group" aria-label="Elegir diapositiva">
-          {h.slides.map((_, i) => <button type="button" class="nhe-dot" aria-label={`Ir a la diapositiva ${i + 1}`} aria-current={i === 0 ? 'true' : undefined} data-ir={i}></button>)}
+          {slides.map((s, i) => usaCampanas
+            ? <button type="button" class="nhe-pest" aria-label={`Ir a ${s.tipo}: ${s.titulo}`} aria-current={i === 0 ? 'true' : undefined} data-ir={i}><span class="t-num">{String(i + 1).padStart(2, '0')}</span>{s.tipo}</button>
+            : <button type="button" class="nhe-dot" aria-label={`Ir a la diapositiva ${i + 1}`} aria-current={i === 0 ? 'true' : undefined} data-ir={i}></button>)}
         </div>
       </div>
     </div>
@@ -63,6 +84,22 @@ const h = d.hero;
   .nhe-dot[aria-current="true"]::before { opacity: 1; }
   .nhe :global(.nhe-horario) { position: absolute; right: 0; bottom: 0; z-index: 2; }
 
+  /* Campañas (V13) */
+  .nhe-capa { position: absolute; inset: 0; opacity: 0; transition: opacity 600ms var(--mk-ease); }
+  .nhe--campanas .nhe-velo { top: 0; height: auto; background: rgba(20, 10, 31, .38); }
+  .nhe--campanas .nhe-slide { align-content: end; }
+  .nhe-capa.is-activa { opacity: 1; }
+  .nhe-capa--contener :global(.nhe-img) { object-fit: contain; object-position: 85% 40%; padding: 48px 0 220px; }
+  .nhe-tipo { justify-self: start; padding: 4px 12px; background: var(--n-amarillo); color: var(--n-noche); font-size: 14px; font-weight: 700; }
+  .nhe-cta { display: inline-flex; align-items: center; gap: 10px; justify-self: start; min-height: 56px; margin-top: 8px; padding: 0 24px; background: var(--n-amarillo); color: var(--n-noche); font-size: 18px; font-weight: 700; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida); }
+  .nhe-cta:hover { background: #fff; }
+  .nhe-cta :global(.mk-ic:last-of-type) { transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .nhe-cta:hover :global(.mk-ic:last-of-type) { transform: translate(3px, -3px); }
+  .nhe-pest { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 12px; border: 0; border-top: 3px solid rgba(255, 255, 255, .35); background: none; color: rgba(255, 255, 255, .75); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; transition: color var(--mk-t-rapida), border-color var(--mk-t-rapida); }
+  .nhe-pest span { font-size: 12px; opacity: .8; }
+  .nhe-pest:hover { color: #fff; }
+  .nhe-pest[aria-current="true"] { border-top-color: var(--n-amarillo); color: #fff; }
+
   /* foto · a sangre */
   .nhe--foto { height: calc(100svh - 80px); min-height: 640px; max-height: 860px; display: flex; align-items: flex-end; }
   .nhe--foto .nhe-txt-w { position: relative; width: 100%; padding-bottom: 196px; }
@@ -86,12 +123,16 @@ const h = d.hero;
     .nhe--foto .nhe-velo { height: 100%; }
     .nhe--foto .nhe-txt-w { position: absolute; left: 0; right: 0; top: 0; height: 420px; display: flex; align-items: flex-end; padding-bottom: 32px; }
     .nhe :global(.nhe-horario) { position: relative; }
+    .nhe-capa--contener :global(.nhe-img) { padding: 24px 0 140px; object-position: 90% 20%; }
     .nhe--split { grid-template-columns: 1fr; min-height: 0; }
     .nhe--split .nhe-media { grid-column: 1; grid-row: 2; height: 380px; }
     .nhe--split .nhe-txt-w { grid-row: 1; padding: 56px var(--mk-margen) 40px; }
   }
   @media (max-width: 767px) {
-    .nhe--foto .nhe-media, .nhe--foto .nhe-txt-w { height: 520px; }
+    .nhe--foto .nhe-media, .nhe--foto .nhe-txt-w { height: 560px; }
+    .nhe-dots:has(.nhe-pest) { flex-wrap: wrap; }
+    .nhe-pest { padding: 0 8px; font-size: 13px; }
+    .nhe-cta { font-size: 16px; padding: 0 18px; min-height: 50px; }
     .nhe :global(.nhe-img) { object-position: 78% 30%; }
     .nhe--split .nhe-media { height: 280px; }
     .nhe--split .nhe-t { font-size: 44px; }
@@ -102,13 +143,15 @@ const h = d.hero;
 <script>
   document.querySelectorAll('[data-nslider]').forEach((root) => {
     const slides = [...root.querySelectorAll('[data-slide]')];
+    const capas = [...root.querySelectorAll('[data-media]')];
     const dots = [...root.querySelectorAll('[data-ir]')];
     const pausa = root.querySelector('[data-pausa]');
     const anuncio = root.querySelector('[data-anuncio]');
     let actual = 0, timer = null, pausado = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const mostrar = (n, anunciar = true) => {
       actual = (n + slides.length) % slides.length;
-      slides.forEach((s, i) => { const on = i === actual; s.classList.toggle('is-activa', on); on ? s.removeAttribute('aria-hidden') : s.setAttribute('aria-hidden', 'true'); });
+      slides.forEach((s, i) => { const on = i === actual; s.classList.toggle('is-activa', on); on ? s.removeAttribute('aria-hidden') : s.setAttribute('aria-hidden', 'true'); s.querySelectorAll('a').forEach((a) => (on ? a.removeAttribute('tabindex') : a.setAttribute('tabindex', '-1'))); });
+      capas.forEach((c, i) => c.classList.toggle('is-activa', i === actual));
       dots.forEach((d, i) => (i === actual ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current')));
       if (anunciar) anuncio.textContent = `Diapositiva ${actual + 1} de ${slides.length}`;
     };
