@@ -1,0 +1,108 @@
+---
+/* Noticias · propuesta con el Design System v3 de la V13 (publicada en /seleccion/noticias/).
+   Reemplaza la «Sala de prensa» de maloka.org. En Elementor Pro todo es nativo:
+   1. Cabecera compacta · 2. Filtro de taxonomía (Categorías) · 3. La noticia más reciente en grande (Loop Grid de 1
+   con la Loop Item «Noticia · grande») · 4. Grilla de 3 columnas (Loop Grid con «Noticia», sin repetir la primera:
+   desplazamiento 1) y paginación «Cargar más» · 5. Para medios (contacto de prensa y trivia).
+   La home muestra las 3 últimas con la misma tarjeta (NNoticia). Guía en elementor/README.md. */
+import Base from '../../layouts/Base.astro';
+import NHeader from '../../components/n/NHeader.astro';
+import NFiltros from '../../components/n/NFiltros.astro';
+import NNoticia from '../../components/n/NNoticia.astro';
+import NFooter from '../../components/n/NFooter.astro';
+import Icon from '../../components/ui/Icon.astro';
+import n from '../../data/n/noticias.json';
+import { url } from '../../lib/url.js';
+import '../../styles/noche.css';
+const G = 'seleccion';
+const [primera, ...resto] = n.items;
+const PRIMERAS = 6;
+const filtros = [{ id: 'todo', label: 'Todas' }, ...n.categorias.map((c) => ({ id: c.id, label: c.label }))];
+---
+<Base variante="noticias" grupo={G} title="Noticias · Maloka" description={n.texto} clase="nn">
+  <NHeader variante="blanco" panel="hueso" grupo={G} inicio={url(`${G}/`)} />
+  <main id="contenido">
+    <section class="no-hero n-hueso" aria-labelledby="no-h1">
+      <div class="mk-w no-hero-in">
+        <nav class="no-migas" aria-label="Ruta"><a href={url(`${G}/`)}>Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Noticias</span></nav>
+        <h1 class="no-h1" id="no-h1">{n.titulo}</h1>
+        <p class="no-lead">{n.texto}</p>
+      </div>
+    </section>
+
+    <section class="n-sec n-blanco" aria-label="Todas las noticias">
+      <div class="mk-w">
+        <div class="no-barra">
+          <NFiltros filtros={filtros} objetivo="no-lista" etiqueta="Filtrar noticias por categoría" unidad="noticias" />
+        </div>
+        <div id="no-lista">
+          <div class="no-primera" data-filtro={primera.categoria}><NNoticia item={primera} variante="grande" nivel={2} grupo={G} /></div>
+          <ul class="no-grid">
+            {resto.map((it, i) => (
+              <li data-filtro={it.categoria} class:list={[i >= PRIMERAS && 'no-mas']} data-rv style={`--d:${i % 3}`}><NNoticia item={it} grupo={G} /></li>
+            ))}
+          </ul>
+        </div>
+        {resto.length > PRIMERAS && (
+          <div class="no-pie"><button type="button" class="no-cargar" data-no-cargar>Cargar más noticias<Icon name="down" size="20" /></button></div>
+        )}
+        <span class="n-ej">{n.fuente}</span>
+      </div>
+    </section>
+
+    <section class="no-prensa" aria-labelledby="no-pr">
+      <div class="mk-w no-prensa-in">
+        <div>
+          <p class="no-prensa-ante">Para medios</p>
+          <h2 class="n-titulo" id="no-pr">{n.prensa.titulo}</h2>
+          <p class="no-prensa-x">{n.prensa.texto}</p>
+        </div>
+        <div class="no-prensa-acc">
+          <a class="n-b" href={`mailto:${n.prensa.correo}`}>{n.prensa.correo}<Icon name="mail" /></a>
+          <a class="n-a" href={n.prensa.trivia.url}>{n.prensa.trivia.texto}<Icon name="arrow" size="18" /></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <NFooter grupo={G} />
+</Base>
+
+<style>
+  .no-hero { padding-block: 32px 36px; }
+  .no-hero-in { display: grid; gap: 10px; justify-items: start; }
+  .no-migas { display: flex; gap: 8px; font-size: 14px; font-weight: 600; color: var(--n-texto2); }
+  .no-migas a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  .no-migas [aria-current] { color: var(--n-noche); }
+  .no-h1 { margin: 0; font-size: var(--n-titulo); line-height: 1.1; font-weight: 700; letter-spacing: -0.015em; }
+  .no-lead { font-size: 16px; line-height: 1.5; color: var(--n-texto2); max-width: 640px; }
+  .no-barra { margin-bottom: 32px; }
+  .no-primera { margin-bottom: 32px; }
+  .no-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 24px; }
+  .no-mas { display: none; }
+  .no-lista-abierta .no-mas { display: block; }
+  .no-pie { display: flex; justify-content: center; margin-top: 40px; }
+  .no-cargar { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 0 24px; border: 2px solid var(--n-noche); background: transparent; color: var(--n-noche); font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; }
+  .no-cargar:hover { background: var(--n-noche); color: var(--n-amarillo); }
+  .no-prensa { padding-block: 72px; background: var(--n-lavanda); color: var(--n-noche); }
+  .no-prensa-in { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px 48px; }
+  .no-prensa-in > div:first-child { display: grid; gap: 10px; }
+  .no-prensa-ante { font-size: 18px; font-weight: 600; }
+  .no-prensa-x { font-size: 17px; max-width: 52ch; }
+  .no-prensa-acc { display: grid; gap: 16px; justify-items: start; }
+  @media (max-width: 1024px) { .no-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 767px) {
+    .no-hero { padding-block: 24px 28px; }
+    .no-grid { grid-template-columns: 1fr; gap: 20px; }
+    .no-prensa { padding-block: 56px; }
+    .no-prensa .n-b { font-size: 18px; }
+  }
+</style>
+
+<script>
+  /* «Cargar más» (en Elementor: paginación «Cargar más al hacer clic» del Loop Grid). Al filtrar se muestran todas. */
+  const lista = document.getElementById('no-lista');
+  const boton = document.querySelector('[data-no-cargar]');
+  const abrir = () => { lista.classList.add('no-lista-abierta'); boton?.parentElement.remove(); };
+  boton?.addEventListener('click', abrir);
+  document.querySelectorAll('[data-nfl="no-lista"] [data-f]').forEach((b) => b.addEventListener('click', () => { if (b.dataset.f !== 'todo') abrir(); }));
+</script>

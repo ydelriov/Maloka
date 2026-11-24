@@ -62,4 +62,4 @@ export const pagina = (path) => (MOSTRAR_PAGINAS ? url(path) : '#');
 /** Para un grupo publicado (p. ej. «seleccion»): los enlaces de Visítanos y Agéndate van a sus páginas dentro del
  *  grupo (/seleccion/visitanos/…, /seleccion/agendate/…); el resto sigue como `ruta`. Sin grupo, es igual a `ruta`. */
 export const rutaPara = (grupo) => (label) =>
-  grupo && /^(visitanos|agendate)\//.test(RUTAS[label] || '') ? url(`${grupo}/${RUTAS[label]}`) : ruta(label);
+  grupo && /^(visitanos|agendate|noticias)\//.test(RUTAS[label] || '') ? url(`${grupo}/${RUTAS[label]}`) : ruta(label);

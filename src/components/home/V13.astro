@@ -16,6 +16,8 @@ import NMapa from '../../components/n/NMapa.astro';
 import NCarrusel from '../../components/n/NCarrusel.astro';
 import NCardFoto from '../../components/n/NCardFoto.astro';
 import NFooter from '../../components/n/NFooter.astro';
+import NNoticia from '../../components/n/NNoticia.astro';
+import noticias from '../../data/n/noticias.json';
 import Icon from '../../components/ui/Icon.astro';
 import d from '../../data/n/home.json';
 import { img } from '../../lib/images.js';
@@ -129,11 +131,10 @@ const t = d.territorios;
 
     <section class="n-sec n-blanco" aria-labelledby="v13-no">
       <div class="mk-w">
-        <div class="n-head"><div><p class="n-ante">Lo último</p><h2 class="n-titulo" id="v13-no">{d.noticias.titulo}</h2></div><a class="n-a" href={ruta(d.noticias.enlace)}>{d.noticias.enlace}<Icon name="arrow" size="20" /></a></div>
+        <div class="n-head"><div><p class="n-ante">Lo último</p><h2 class="n-titulo" id="v13-no">Noticias</h2></div><a class="n-a" href={ruta('Ver todas')}>Ver todas las noticias<Icon name="arrow" size="20" /></a></div>
         <ul class="v13-no">
-          {d.noticias.items.map((n, i) => <li data-rv style={`--d:${i}`}><NActividad image={n.imagen} alt={n.alt} categoria={n.categoria} color={n.color} titulo={n.titulo} texto={n.texto} meta={`${n.dia} ${n.mes}`} href={ruta('Noticias')} ratio="3 / 2" sizes="(max-width: 767px) 100vw, 33vw" /></li>)}
+          {noticias.items.slice(0, 3).map((it, i) => <li data-rv style={`--d:${i}`}><NNoticia item={it} grupo={grupo} /></li>)}
         </ul>
-        <span class="n-ej">Contenido de ejemplo</span>
       </div>
     </section>
   </main>
