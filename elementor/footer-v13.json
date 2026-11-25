@@ -586,28 +586,19 @@
        "isInner": true,
        "settings": {
         "container_type": "flex",
-        "flex_direction": "column",
+        "flex_direction": "row",
         "content_width": "full",
         "flex_gap": {
-         "column": "24",
-         "row": "24",
+         "column": "16",
+         "row": "16",
          "isLinked": true,
          "unit": "px",
-         "size": 24
+         "size": 16
         },
         "grid_column_tablet": "custom",
         "grid_column_custom_tablet": "3",
         "grid_row_tablet": "custom",
         "grid_row_custom_tablet": "1",
-        "flex_align_items_tablet": "flex-end",
-        "padding_tablet": {
-         "unit": "px",
-         "top": "0",
-         "right": "0",
-         "bottom": "0",
-         "left": "0",
-         "isLinked": true
-        },
         "grid_column_mobile": "custom",
         "grid_column_custom_mobile": "auto",
         "grid_row_mobile": "custom",
@@ -631,7 +622,12 @@
         "flex_direction_mobile": "row",
         "flex_align_items_mobile": "center",
         "flex_justify_content_mobile": "flex-start",
-        "flex_wrap_mobile": "wrap"
+        "flex_wrap_mobile": "wrap",
+        "flex_direction_tablet": "row",
+        "flex_wrap": "nowrap",
+        "flex_align_items": "center",
+        "flex_justify_content": "flex-start",
+        "flex_justify_content_tablet": "flex-end"
        },
        "elements": [
         {
@@ -661,7 +657,8 @@
            "unit": "px",
            "size": 64,
            "sizes": []
-          }
+          },
+          "_element_width": "auto"
          },
          "elements": []
         },
@@ -692,7 +689,13 @@
            "isLinked": true
           },
           "flex_justify_content_tablet": "flex-end",
-          "flex_justify_content_mobile": "flex-start"
+          "flex_justify_content_mobile": "flex-start",
+          "_element_width": "auto",
+          "width": {
+           "unit": "px",
+           "size": "",
+           "sizes": []
+          }
          },
          "elements": [
           {

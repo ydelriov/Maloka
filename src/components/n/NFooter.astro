@@ -75,7 +75,8 @@ const ext = (u) => /^https?:/.test(u);
   .nf-redes svg { width: 22px; height: 22px; }
   .nf-redes a:hover { border-color: var(--n-amarillo); background: var(--n-amarillo); color: var(--n-noche); }
   .nf-cols { display: grid; grid-template-columns: 1fr 1fr 1.3fr 2fr; gap: 32px; padding-top: 40px; border-top: 1px solid var(--n-linea); }
-  .nf-marca { display: grid; gap: 24px; align-content: start; }
+  /* Logo y sellos ICONTEC e IQNet en una sola línea en todos los tamaños */
+  .nf-marca { display: flex; flex-wrap: nowrap; align-items: center; align-self: start; gap: 16px; }
   .nf-logo { color: #fff; display: inline-flex; }
   .nf-cert { display: flex; align-items: center; gap: 16px; }
   .nf-ct { font-weight: 700; color: #fff; margin-bottom: 12px; }
@@ -97,7 +98,7 @@ const ext = (u) => /^https?:/.test(u);
     .nf-bol { grid-column: 1; grid-row: 2; justify-self: start; }
     .nf-redes { grid-column: 2; grid-row: 1 / span 2; align-self: end; }
     .nf-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 32px; }
-    .nf-marca { order: 3; grid-auto-flow: row; align-content: start; justify-items: end; }
+    .nf-marca { order: 3; justify-content: flex-end; }
     .nf-corp { order: 5; grid-column: 1 / -1; }
     .nf-cols .nf-corp ul { columns: 3; }
   }
@@ -105,7 +106,7 @@ const ext = (u) => /^https?:/.test(u);
     .nf-top { grid-template-columns: minmax(0, 1fr); }
     .nf-top .nf-acc { display: grid; }
     .nf-grande, .nf-bol, .nf-redes { grid-column: auto; grid-row: auto; }
-    .nf-marca { order: 0; justify-items: start; padding-top: 0; grid-auto-flow: column; justify-content: start; align-items: center; }
+    .nf-marca { order: 0; justify-content: flex-start; }
     .nf-corp { order: 0; grid-column: auto; }
     .nf-cols .nf-corp ul { display: grid; columns: auto; }
     .nf-corp li { margin-bottom: 0; }
