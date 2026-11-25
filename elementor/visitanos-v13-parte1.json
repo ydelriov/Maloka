@@ -673,6 +673,14 @@
        "isLinked": true,
        "unit": "px",
        "size": 10
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": true
       }
      },
      "elements": [
@@ -771,6 +779,14 @@
        "isLinked": true,
        "unit": "px",
        "size": 16
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": true
       }
      },
      "elements": [
@@ -1340,6 +1356,14 @@
        "unit": "%",
        "size": 100,
        "sizes": []
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": true
       }
      },
      "elements": [
@@ -1555,6 +1579,14 @@
        "isLinked": true,
        "unit": "px",
        "size": 10
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": true
       }
      },
      "elements": [
@@ -1675,6 +1707,14 @@
        "isLinked": true,
        "unit": "px",
        "size": 0
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": true
       }
      },
      "elements": [
@@ -1769,7 +1809,15 @@
            "size": 80,
            "sizes": []
           },
-          "_flex_size": "grow"
+          "_flex_size": "grow",
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
          },
          "elements": [
           {
@@ -1916,7 +1964,15 @@
            "size": 80,
            "sizes": []
           },
-          "_flex_size": "grow"
+          "_flex_size": "grow",
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
          },
          "elements": [
           {
@@ -2063,7 +2119,15 @@
            "size": 80,
            "sizes": []
           },
-          "_flex_size": "grow"
+          "_flex_size": "grow",
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
          },
          "elements": [
           {
@@ -2253,6 +2317,14 @@
        "bottom": "32",
        "left": "0",
        "isLinked": false
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": true
       }
      },
      "elements": [
@@ -2296,6 +2368,14 @@
          "unit": "s",
          "size": 0.2,
          "sizes": []
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
         }
        },
        "elements": [
@@ -2607,6 +2687,14 @@
              "isLinked": true,
              "unit": "px",
              "size": 10
+            },
+            "padding": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": true
             }
            },
            "elements": [
@@ -2730,6 +2818,14 @@
          "unit": "s",
          "size": 0.2,
          "sizes": []
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
         }
        },
        "elements": [
@@ -3041,6 +3137,14 @@
              "isLinked": true,
              "unit": "px",
              "size": 10
+            },
+            "padding": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": true
             }
            },
            "elements": [
@@ -3164,6 +3268,14 @@
          "unit": "s",
          "size": 0.2,
          "sizes": []
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
         }
        },
        "elements": [
@@ -3475,6 +3587,14 @@
              "isLinked": true,
              "unit": "px",
              "size": 10
+            },
+            "padding": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": true
             }
            },
            "elements": [
@@ -3864,6 +3984,14 @@
        "bottom": "32",
        "left": "0",
        "isLinked": false
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": true
       }
      },
      "elements": [
@@ -3907,6 +4035,14 @@
          "unit": "s",
          "size": 0.2,
          "sizes": []
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
         }
        },
        "elements": [
@@ -4254,6 +4390,14 @@
              "isLinked": true,
              "unit": "px",
              "size": 10
+            },
+            "padding": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": true
             }
            },
            "elements": [
@@ -4377,6 +4521,14 @@
          "unit": "s",
          "size": 0.2,
          "sizes": []
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
         }
        },
        "elements": [
@@ -4688,6 +4840,14 @@
              "isLinked": true,
              "unit": "px",
              "size": 10
+            },
+            "padding": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": true
             }
            },
            "elements": [
@@ -4811,6 +4971,14 @@
          "unit": "s",
          "size": 0.2,
          "sizes": []
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
         }
        },
        "elements": [
@@ -5122,6 +5290,14 @@
              "isLinked": true,
              "unit": "px",
              "size": 10
+            },
+            "padding": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": true
             }
            },
            "elements": [
@@ -5245,6 +5421,14 @@
          "unit": "s",
          "size": 0.2,
          "sizes": []
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
         }
        },
        "elements": [
@@ -5556,6 +5740,14 @@
              "isLinked": true,
              "unit": "px",
              "size": 10
+            },
+            "padding": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": true
             }
            },
            "elements": [
@@ -5679,6 +5871,14 @@
          "unit": "s",
          "size": 0.2,
          "sizes": []
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
         }
        },
        "elements": [
@@ -5990,6 +6190,14 @@
              "isLinked": true,
              "unit": "px",
              "size": 10
+            },
+            "padding": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": true
             }
            },
            "elements": [
@@ -6081,7 +6289,7 @@
      "widgetType": "text-editor",
      "isInner": false,
      "settings": {
-      "editor": "<p>Planes, fotos y precios de maloka.org/horarios-y-tarifas (noviembre de 2026). Los precios pueden cambiar: confírmalos en TuBoleta.</p>",
+      "editor": "<p>Los precios pueden cambiar. Confirma el valor final en TuBoleta antes de pagar.</p>",
       "text_color": "#4F4955",
       "typography_typography": "custom",
       "typography_font_size": {

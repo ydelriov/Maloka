@@ -5,13 +5,13 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | Archivo | Qué es | Se importa en |
 |---|---|---|
 | `header-v13.json` | Header: logo, menú y botón «Compra tus entradas» | Plantillas › Theme Builder › Header |
-| `footer-v13.json` | Footer con la información de maloka.org: boletín, redes, Maloka, horarios, ubicación, Corporación Maloka, certificaciones y NIT | Plantillas › Theme Builder › Footer |
+| `footer-v13.json` | Footer con la información de maloka.org: boletín, redes, Maloka, ubicación, Corporación Maloka (enlaces en 2 columnas, 3 en tableta), certificaciones y NIT | Plantillas › Theme Builder › Footer |
 | `header-v13-megamenu.json` | Header ya armado con el widget Menú (mega menú) y sus 4 paneles, exportado de pruebas.maloka.org | Plantillas › Theme Builder › Header (reemplaza los pasos 1 y 2 de abajo) |
 | `menu-paneles-v13.json` | Los 4 paneles en hueso del mega menú (Visítanos, Ven en grupo, Descubre, Crea con Maloka) | Plantillas › Plantillas guardadas |
 | `logo-maloka.svg` / `.png` | Logo de las maquetas, por si el sitio aún no tiene uno | Apariencia › Personalizar › Identidad del sitio |
 | `popup-combos.json` | Modal de los combos de TuBoleta | Plantillas › Popups |
 | `acf-evento.json` | Campos de cada evento (tipo de contenido «eventos»): fecha, horario, lugar, acceso, enlace, destacado | ACF › Herramientas › Importar |
-| `acf-horarios.json` + `horarios-snippet.php` | Horarios en un solo lugar (página de inicio) para menú, home, Visítanos y footer | ACF › Importar y Code Snippets |
+| `acf-horarios.json` + `horarios-snippet.php` | Horarios en un solo lugar (página de inicio) para menú, home y Visítanos | ACF › Importar y Code Snippets |
 | `evento-single-v13.json` | Ficha de cada evento (plantilla del Theme Builder para Eventos) | Plantillas › Theme Builder › Entrada individual |
 | `noticia-single-v13.json` + `noticias-snippet.php` | Página de cada noticia (plantilla del Theme Builder para Entradas) y tiempo de lectura | Theme Builder › Entrada individual · Code Snippets |
 | `hero-inicio-v13.json` | El hero de Inicio tal como está en pruebas.maloka.org (carrusel propio, horario y un botón por frase) | Se inserta arriba en la home |
@@ -21,6 +21,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `ven-en-grupo-v13.json` | Página Ven en grupo (colegios, cumpleaños, empresas y Maloka Puertas Abiertas) | Se inserta en la página Ven en grupo |
 | `loop-evento.json`, `loop-evento-destacado.json`, `loop-evento-texto.json`, `loop-evento-pasado.json` | Loop Items de la agenda: fila de Agéndate, destacado, fila de solo texto (home) y evento reciente | Plantillas › Theme Builder › Loop Item (tipo de contenido Eventos) |
 | `agendate-v13.json` | Página Agéndate conectada a los eventos: filtro, destacado, próximos, recientes y «Todos los días» | Se inserta en la página Agéndate |
+| `noticias-v13.json` · `loop-noticia-grande.json` | Página Noticias (filtro, la más reciente en grande, «Cargar más», para medios) y su tarjeta grande | Se inserta en la página Noticias · Theme Builder › Loop Item |
 | `loop-noticia.json` · `home-v13-noticias.json` | Tarjeta de noticia (Loop Item de Entradas) y sección «Noticias» de la home con las 3 últimas | Theme Builder › Loop Item · reemplaza la sección Noticias de Inicio |
 | `home-v13-agenda.json` | Sección «Próximos eventos» de la home: los 3 eventos más cercanos | Reemplaza la sección Agenda de Inicio |
 | `home-v13-secciones.json` | Las 6 secciones de la home debajo del hero (Imperdibles, Agenda, Ven en grupo, Descubre con mapa, Crea, Noticias) | Plantillas › Plantillas guardadas, y se inserta en Inicio debajo del hero |
@@ -163,6 +164,13 @@ más de ~12 en un solo archivo.
    de GitHub Pages).
 4. En Ajustes de la página, plantilla **Elementor ancho completo** (el header y el footer los pone el Theme Builder).
 5. Revisa en el modo responsive de Elementor (tablet y celular) y publica.
+
+### Así quedó en pruebas.maloka.org
+
+La página Visítanos (`/visitanos/`) tiene las 3 partes en orden (11 secciones), con las 18 imágenes de TuBoleta,
+maloka.org y GitHub Pages copiadas a la Biblioteca de medios. Los contenedores internos llevan relleno 0: sin eso
+heredaban los 10 px del Kit y Funciones, Cómo llegar, Servicios y Preguntas quedaban corridas. Los enlaces del texto van
+en violeta `#6B5BD6` (no el rosado del tema). El mapa es el widget Google Maps (ya trae la dirección de Maloka).
 
 ### Lo que hay que validar o completar
 - Planes, fotos y precios se tomaron de maloka.org/horarios-y-tarifas en noviembre de 2026; los precios están
@@ -432,8 +440,18 @@ a la página Noticias.
 la sala de prensa de maloka.org importadas con su fecha, categoría, imagen destacada, extracto y texto (meta
 `_maloka_fuente` con la URL original); Loop Item «Noticia · tarjeta» (`loop-noticia.json`) y la sección `#noticias` de
 Inicio (`home-v13-noticias.json`), generados con `python3 scripts/elementor-noticias.py`. El color de la categoría sale
-de la clase `category-<slug>` de cada entrada. Pendiente: la página Noticias (`/noticias/`, a donde lleva «Ver todas»)
-y la plantilla de cada noticia.
+de la clase `category-<slug>` de cada entrada. La página Noticias y la plantilla de cada noticia también están hechas (ver abajo).
+
+### Así quedó la página Noticias en pruebas.maloka.org
+
+`/noticias/` (generada con `python3 scripts/elementor-noticias.py` → `noticias-v13.json` y `loop-noticia-grande.json`):
+- Cabecera hueso (migas, H1 y texto), **Filtro de taxonomía** de Categorías alineado a la izquierda («Sin categoría», la
+  de las entradas antiguas, se oculta con CSS) y un solo **Loop Grid** de Entradas: 3 columnas (2 en tablet, 1 en
+  celular), 7 por página y **«Cargar más noticias»** (Ajax).
+- La más reciente sale en grande con la opción **Plantilla alterna** del Loop Grid: plantilla «Noticia · grande»,
+  posición 1, ocupa 3 columnas, «mostrar una vez» y **sin** «posición estática» (con ella la primera noticia salía
+  repetida). Así el filtro también pone en grande la más reciente de cada categoría.
+- Bloque lavanda «Para medios» con el correo de prensa y la Trivia de la semana.
 
 ### Página de cada noticia (Theme Builder)
 
@@ -454,6 +472,19 @@ Maqueta: por ejemplo https://ydelriov.github.io/Maloka/seleccion/noticias/llega-
 4. **Publicar** con la condición **Entradas › Todas** (la de Eventos ya tiene su propia plantilla).
 5. Revisa una entrada larga: los subtítulos (H2/H3), listas, enlaces e imágenes del texto toman el estilo del widget
    Contenido de la entrada; ajusta en Estilo si alguna entrada vieja trae estilos propios.
+
+**Así quedó en pruebas.maloka.org:** plantilla «Noticia · página (Maloka V13)» publicada con la condición **Entradas ›
+Todas** y el snippet «Noticias de Maloka (tiempo de lectura)» activo. `scripts/elementor-noticias.py` completa
+`noticia-single-v13.json` (idempotente):
+- «Más noticias» es un Loop Grid con la tarjeta «Noticia» y el Query ID **`noticias_relacionadas`** (en
+  `noticias-snippet.php`): 3 entradas de la misma categoría, sin la actual. La opción «Relacionadas» de Elementor
+  caía en las más recientes. Columnas `minmax(0, 1fr)`: con `1fr` una imagen ancha estiraba la página.
+- La fila de datos es la etiqueta de la categoría (con su color; «Sin categoría» no se muestra) y la fecha completa;
+  el widget Info de la entrada traía un formato de fecha no válido y mostraba la hora.
+- Botones de compartir de 44 px: `button_size` se multiplica por 10 y va sin unidad (0.8em los dejaba en 4 px).
+- Enlaces del texto en violeta `#6B5BD6` subrayado, no el rosado del tema.
+- Los generadores revisan que no haya **ids repetidos**: Elementor arma el CSS con el id de cada elemento y dos
+  elementos con el mismo id comparten estilos (los títulos de «Más noticias» no hacían salto de línea por eso).
 
 ## Banner de la home (con botón)
 

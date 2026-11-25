@@ -516,13 +516,13 @@
             },
             "taxonomy_filter_padding": {
              "unit": "px",
-             "top": "12",
+             "top": "0",
              "right": "18",
-             "bottom": "12",
+             "bottom": "0",
              "left": "18",
              "isLinked": false
             },
-            "custom_css": "selector { --width: auto; width: auto; }\nselector button, selector a { min-height: 44px; }\n"
+            "custom_css": "selector { --width: auto; width: auto; }\nselector .e-filter-item { min-height: 44px; display: inline-flex; align-items: center; box-sizing: border-box; }\n"
            },
            "elements": [],
            "widgetType": "taxonomy-filter"

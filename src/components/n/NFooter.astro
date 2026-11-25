@@ -1,12 +1,11 @@
 ---
-/* Footer noche con la información real de maloka.org (src/data/n/footer.json; el horario sale de site.json): frase grande, enlace al boletín y
-   redes; columnas Maloka, Horarios, Ubicación y Corporación Maloka; certificaciones ICONTEC e IQNet; NIT.
+/* Footer noche con la información real de maloka.org (src/data/n/footer.json): frase grande, enlace al boletín y
+   redes; columnas Maloka, Ubicación y Corporación Maloka (los horarios ya están en el menú y en Visítanos); certificaciones ICONTEC e IQNet; NIT.
    Redes con los iconos de Font Awesome 5 (src/data/n/redes-iconos.json), los mismos del widget Iconos sociales.
    Pensado para Elementor (Theme Builder › Footer): encabezados, listas de enlaces, Iconos sociales e Imagen;
    el JSON importable es elementor/footer-v13.json.
    grupo: dentro de /seleccion/, «¿Cómo llegar?» lleva a la página Visítanos del grupo. */
 import f from '../../data/n/footer.json';
-import site from '../../data/site.json';
 import iconos from '../../data/n/redes-iconos.json';
 import Logo from '../ui/Logo.astro';
 import Icon from '../ui/Icon.astro';
@@ -39,13 +38,6 @@ const ext = (u) => /^https?:/.test(u);
         <p class="nf-ct">{f.maloka.titulo}</p>
         <ul>{f.maloka.links.map((l) => <li><a href={l.url}>{l.texto}</a></li>)}</ul>
       </nav>
-      <div>
-        <p class="nf-ct">{f.horarios.titulo}</p>
-        <ul class="nf-datos">
-          {[site.horarios.semana, site.horarios.finde].map((h) => <li><b>{h.dias}</b><span>{h.texto}</span></li>)}
-          <li class="nf-nota">{site.horarios.ventaHasta}</li>
-        </ul>
-      </div>
       <div>
         <p class="nf-ct">{f.ubicacion.titulo}</p>
         <ul class="nf-datos">
@@ -82,19 +74,21 @@ const ext = (u) => /^https?:/.test(u);
   .nf-redes a { display: grid; place-items: center; width: 48px; height: 48px; border: 2px solid rgba(255, 255, 255, .5); color: #fff; transition: background-color var(--mk-t-rapida), color var(--mk-t-rapida), border-color var(--mk-t-rapida); }
   .nf-redes svg { width: 22px; height: 22px; }
   .nf-redes a:hover { border-color: var(--n-amarillo); background: var(--n-amarillo); color: var(--n-noche); }
-  .nf-cols { display: grid; grid-template-columns: 1fr 1fr 1.2fr 1.2fr 1.3fr; gap: 32px; padding-top: 40px; border-top: 1px solid var(--n-linea); }
+  .nf-cols { display: grid; grid-template-columns: 1fr 1fr 1.3fr 2fr; gap: 32px; padding-top: 40px; border-top: 1px solid var(--n-linea); }
   .nf-marca { display: grid; gap: 24px; align-content: start; }
   .nf-logo { color: #fff; display: inline-flex; }
   .nf-cert { display: flex; align-items: center; gap: 16px; }
   .nf-ct { font-weight: 700; color: #fff; margin-bottom: 12px; }
   .nf-cols ul { display: grid; gap: 8px; }
+  .nf-cols .nf-corp ul { display: block; columns: 2; column-gap: 32px; }
+  .nf-corp li { break-inside: avoid; margin-bottom: 8px; }
   .nf-datos li { display: grid; gap: 2px; color: var(--n-texto2-osc); }
   .nf-datos b { color: #fff; font-weight: 600; }
   .nf-nota { font-size: 13px; }
   .nf .nf-llegar { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--n-amarillo); }
   .nf-legal { display: flex; flex-wrap: wrap; gap: 8px 24px; padding-top: 24px; border-top: 1px solid var(--n-linea); font-size: 13px; color: var(--n-texto2-osc); }
-  /* Tablet: arriba frase + boletín a la izquierda y redes a la derecha; abajo Maloka · Horarios · Ubicación en 3
-     columnas y Corporación Maloka (enlaces en 2 columnas) con el logo y los sellos al lado */
+  /* Tablet: arriba frase + boletín a la izquierda y redes a la derecha; abajo Maloka · Ubicación · logo y sellos en
+     3 columnas, y Corporación Maloka a todo el ancho con sus enlaces en 3 columnas */
   @media (max-width: 1024px) {
     .nf-top { grid-template-columns: minmax(0, 1fr) auto; gap: 24px 40px; }
     .nf-acc { gap: 20px; }
@@ -103,10 +97,9 @@ const ext = (u) => /^https?:/.test(u);
     .nf-bol { grid-column: 1; grid-row: 2; justify-self: start; }
     .nf-redes { grid-column: 2; grid-row: 1 / span 2; align-self: end; }
     .nf-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 32px; }
-    .nf-marca { order: 6; grid-auto-flow: row; align-content: end; justify-items: end; padding-top: 28px; }
-    .nf-corp { order: 5; grid-column: span 2; }
-    .nf-corp ul { display: block; columns: 2; column-gap: 32px; }
-    .nf-corp li { break-inside: avoid; margin-bottom: 8px; }
+    .nf-marca { order: 3; grid-auto-flow: row; align-content: start; justify-items: end; }
+    .nf-corp { order: 5; grid-column: 1 / -1; }
+    .nf-cols .nf-corp ul { columns: 3; }
   }
   @media (max-width: 767px) {
     .nf-top { grid-template-columns: minmax(0, 1fr); }
@@ -114,7 +107,7 @@ const ext = (u) => /^https?:/.test(u);
     .nf-grande, .nf-bol, .nf-redes { grid-column: auto; grid-row: auto; }
     .nf-marca { order: 0; justify-items: start; padding-top: 0; grid-auto-flow: column; justify-content: start; align-items: center; }
     .nf-corp { order: 0; grid-column: auto; }
-    .nf-corp ul { display: grid; columns: auto; }
+    .nf-cols .nf-corp ul { display: grid; columns: auto; }
     .nf-corp li { margin-bottom: 0; }
     .nf-cols { grid-template-columns: minmax(0, 1fr); gap: 28px; }
     .nf-cols a { overflow-wrap: anywhere; }
