@@ -4,22 +4,70 @@
   "correo": "info@maloka.org",
   "hero": {
     "lead": "Cotiza tu visita a Maloka: salidas escolares, cumpleaños, eventos corporativos y experiencias educativas en ciencia y tecnología. Nuestras salas interactivas, actividades y talleres te sorprenderán y quedarás con ganas de volver.",
-    "tips": { "texto": "Tips para tu visita", "url": "https://maloka.org/wp-content/uploads/2026/01/2026_TIPS-PARA-VISITA-A-MALOKA_PRE_VISITA.pdf" }
+    "tips": {
+      "texto": "Tips para tu visita",
+      "url": "https://maloka.org/wp-content/uploads/2026/01/2026_TIPS-PARA-VISITA-A-MALOKA_PRE_VISITA.pdf"
+    }
   },
   "publicos": [
-    { "id": "colegios", "n": "01", "ante": "Colegios", "titulo": "Oferta educativa y grupos", "corto": "Salidas escolares con bitácoras por edades", "color": "amarillo", "imagen": "https://maloka.org/wp-content/uploads/2023/09/1_NICOLAS-BUENAVENTURA_16_11_22_VISITA-A-MALOKA-e1696535806444.jpg", "alt": "Estudiantes de colegio en el laboratorio Inventores de Maloka" },
-    { "id": "cumpleanos", "n": "02", "ante": "Familias", "titulo": "Celebra tu cumpleaños", "corto": "Recorrido, talleres, Cine Domo y salón decorado", "color": "salmon", "imagen": "https://maloka.org/wp-content/uploads/2024/05/Cumpleanos-MLK-Corp_Pagina_01.jpg", "alt": "Familia celebrando un cumpleaños en Maloka con globos morados" },
-    { "id": "empresas", "n": "03", "ante": "Empresas", "titulo": "Eventos especiales", "corto": "Lanzamientos, conferencias y premiaciones", "color": "cielo", "imagen": "https://maloka.org/wp-content/uploads/2025/05/cine-domo-maloka-1.jpg", "alt": "Evento con público y luces dentro del Domo de Maloka" },
-    { "id": "marcas", "n": "04", "ante": "Marcas", "titulo": "Patrocinios y pautas", "corto": "Más de 1.200 visitantes al día", "color": "menta", "imagen": "https://maloka.org/wp-content/uploads/2021/12/maloka_galeria_seccion_experimenta_saladigital_0.jpg", "alt": "Sala Digital de Maloka con la pantalla encendida" },
-    { "id": "mpa", "n": "05", "ante": "Acceso gratuito", "titulo": "Maloka Puertas Abiertas", "corto": "Gratis con la Alcaldía de Bogotá", "color": "lavanda", "imagen": "https://maloka.org/wp-content/uploads/2022/05/Portada-externa-MPA-Alcaldi%CC%81a-1.jpg", "alt": "Pieza gráfica del programa Maloka Puertas Abiertas de la Alcaldía de Bogotá" }
+    {
+      "id": "colegios",
+      "n": "01",
+      "ante": "Colegios",
+      "titulo": "Oferta educativa y grupos",
+      "corto": "Salidas escolares con bitácoras por edades",
+      "color": "amarillo",
+      "imagen": "https://maloka.org/wp-content/uploads/2023/09/1_NICOLAS-BUENAVENTURA_16_11_22_VISITA-A-MALOKA-e1696535806444.jpg",
+      "alt": "Estudiantes de colegio en el laboratorio Inventores de Maloka"
+    },
+    {
+      "id": "cumpleanos",
+      "n": "02",
+      "ante": "Familias",
+      "titulo": "Celebra tu cumpleaños",
+      "corto": "Recorrido, talleres, Cine Domo y salón decorado",
+      "color": "salmon",
+      "imagen": "https://maloka.org/wp-content/uploads/2024/05/Cumpleanos-MLK-Corp_Pagina_01.jpg",
+      "alt": "Familia celebrando un cumpleaños en Maloka con globos morados"
+    },
+    {
+      "id": "empresas",
+      "n": "03",
+      "ante": "Empresas",
+      "titulo": "Eventos especiales",
+      "corto": "Lanzamientos, conferencias y premiaciones",
+      "color": "cielo",
+      "imagen": "https://maloka.org/wp-content/uploads/2025/05/cine-domo-maloka-1.jpg",
+      "alt": "Evento con público y luces dentro del Domo de Maloka"
+    },
+    {
+      "id": "mpa",
+      "n": "04",
+      "ante": "Acceso gratuito",
+      "titulo": "Maloka Puertas Abiertas",
+      "corto": "Gratis con la Alcaldía de Bogotá",
+      "color": "lavanda",
+      "imagen": "https://maloka.org/wp-content/uploads/2022/05/Portada-externa-MPA-Alcaldi%CC%81a-1.jpg",
+      "alt": "Pieza gráfica del programa Maloka Puertas Abiertas de la Alcaldía de Bogotá"
+    }
   ],
   "colegios": {
     "titulo": "Una salida escolar que se aprende haciendo.",
     "texto": "Maloka es un escenario que desarrolla experiencias, materiales didácticos y ambientes de aprendizaje significativos por medio de la interacción, la experimentación, la participación y el goce de los estudiantes que visitan nuestro Centro Interactivo.",
     "bitacorasTitulo": "Bitácoras de actividades sugeridas",
     "bitacoras": [
-      { "edad": "6 a 11 años", "titulo": "Bitácora Primaria", "texto": "Actividades sugeridas para niñas y niños de 6 a 11 años.", "url": "https://maloka.org/wp-content/uploads/2025/09/Bita%CC%81cora-Primaria-Maloka-A-comprimido.pdf" },
-      { "edad": "11 años en adelante", "titulo": "Bitácora Secundaria", "texto": "Actividades sugeridas para niñas, niños y jóvenes de 11 años en adelante.", "url": "https://maloka.org/wp-content/uploads/2025/09/Bita%CC%81cora-Secundaria-Maloka-A%20%281%29-comprimido.pdf" }
+      {
+        "edad": "6 a 11 años",
+        "titulo": "Bitácora Primaria",
+        "texto": "Actividades sugeridas para niñas y niños de 6 a 11 años.",
+        "url": "https://maloka.org/wp-content/uploads/2025/09/Bita%CC%81cora-Primaria-Maloka-A-comprimido.pdf"
+      },
+      {
+        "edad": "11 años en adelante",
+        "titulo": "Bitácora Secundaria",
+        "texto": "Actividades sugeridas para niñas, niños y jóvenes de 11 años en adelante.",
+        "url": "https://maloka.org/wp-content/uploads/2025/09/Bita%CC%81cora-Secundaria-Maloka-A%20%281%29-comprimido.pdf"
+      }
     ],
     "oficiales": "¿Tu colegio es oficial y está en Bogotá o Cundinamarca? Pueden venir gratis en grupo con Maloka Puertas Abiertas."
   },
@@ -27,59 +75,174 @@
     "titulo": "Un cumpleaños para aprender jugando.",
     "texto": "Celebra tu cumpleaños en Maloka y vive una experiencia inolvidable explorando la ciencia, la tecnología y la diversión. Arma tu plan a la medida:",
     "incluye": [
-      { "icono": "compass", "titulo": "Recorrido interactivo", "texto": "Por las salas del museo" },
-      { "icono": "flask", "titulo": "Talleres en laboratorios", "texto": "BIO, Inventores y Pequeños Inventores" },
-      { "icono": "dome", "titulo": "Cine Domo", "texto": "Proyecciones sorprendentes" },
-      { "icono": "cake", "titulo": "Salón decorado", "texto": "Para celebrar con tus amigos" },
-      { "icono": "bulb", "titulo": "Actividades educativas", "texto": "Diseñadas para aprender jugando" },
-      { "icono": "heart", "titulo": "Souvenirs especiales", "texto": "Un recuerdo de tu día" }
+      {
+        "icono": "compass",
+        "titulo": "Recorrido interactivo",
+        "texto": "Por las salas del museo"
+      },
+      {
+        "icono": "flask",
+        "titulo": "Talleres en laboratorios",
+        "texto": "BIO, Inventores y Pequeños Inventores"
+      },
+      {
+        "icono": "dome",
+        "titulo": "Cine Domo",
+        "texto": "Proyecciones sorprendentes"
+      },
+      {
+        "icono": "cake",
+        "titulo": "Salón decorado",
+        "texto": "Para celebrar con tus amigos"
+      },
+      {
+        "icono": "bulb",
+        "titulo": "Actividades educativas",
+        "texto": "Diseñadas para aprender jugando"
+      },
+      {
+        "icono": "heart",
+        "titulo": "Souvenirs especiales",
+        "texto": "Un recuerdo de tu día"
+      }
     ],
-    "brochure": { "texto": "Brochure de cumpleaños", "url": "https://maloka.org/wp-content/uploads/2026/08/BROCHURE%20CUMPLEAN%CC%83OS.pdf" }
+    "brochure": {
+      "texto": "Brochure de cumpleaños",
+      "url": "https://maloka.org/wp-content/uploads/2026/08/BROCHURE%20CUMPLEAN%CC%83OS.pdf"
+    }
   },
   "empresas": {
     "titulo": "Eventos que tus invitados no van a olvidar.",
     "texto": "Organiza tus eventos corporativos en Maloka y sorprende a tus invitados con experiencias únicas en espacios innovadores, versátiles y memorables.",
     "espacios": [
-      { "titulo": "El Domo", "texto": "Lanzamientos, conferencias y premiaciones en el espacio más icónico de Maloka.", "imagen": "https://maloka.org/wp-content/uploads/2025/05/cine-domo-maloka-1.jpg", "alt": "Evento dentro del Domo de Maloka" },
-      { "titulo": "Salas digitales y aulas", "texto": "Reuniones estratégicas, talleres y capacitaciones para tu equipo.", "imagen": "https://maloka.org/wp-content/uploads/2026/08/IMG_6163-1.png", "alt": "Grupo de adultos trabajando en mesas durante un taller en Maloka" },
-      { "titulo": "Recorridos exclusivos", "texto": "Salas interactivas y laboratorios científicos solo para tus invitados.", "imagen": "https://maloka.org/wp-content/uploads/2021/12/maloka_galeria_seccion_experimenta_saladigital_0.jpg", "alt": "Sala Digital de Maloka" }
+      {
+        "titulo": "El Domo",
+        "texto": "Lanzamientos, conferencias y premiaciones en el espacio más icónico de Maloka.",
+        "imagen": "https://maloka.org/wp-content/uploads/2025/05/cine-domo-maloka-1.jpg",
+        "alt": "Evento dentro del Domo de Maloka"
+      },
+      {
+        "titulo": "Salas digitales y aulas",
+        "texto": "Reuniones estratégicas, talleres y capacitaciones para tu equipo.",
+        "imagen": "https://maloka.org/wp-content/uploads/2026/08/IMG_6163-1.png",
+        "alt": "Grupo de adultos trabajando en mesas durante un taller en Maloka"
+      },
+      {
+        "titulo": "Recorridos exclusivos",
+        "texto": "Salas interactivas y laboratorios científicos solo para tus invitados.",
+        "imagen": "https://maloka.org/wp-content/uploads/2021/12/maloka_galeria_seccion_experimenta_saladigital_0.jpg",
+        "alt": "Sala Digital de Maloka"
+      }
     ],
     "serviciosTitulo": "Te acompañamos con",
-    "servicios": ["Acompañamiento logístico", "Asesoría en producción", "Mobiliario", "Sonido", "Catering", "Parqueadero"],
-    "portafolio": { "texto": "Conoce el portafolio para eventos", "url": "https://maloka.org/wp-content/uploads/2026/08/BROCHURE-DE-EVENTOS.pdf" }
-  },
-  "marcas": {
-    "titulo": "Tu marca, en uno de los museos más visitados de Bogotá.",
-    "texto": "Conecta con una audiencia diversa y comprometida con la ciencia, la tecnología y el aprendizaje. Patrocina contenidos y experiencias, o pauta en espacios de alto impacto, y conviértete en aliado de una institución educativa y cultural reconocida a nivel nacional e internacional.",
-    "cifra": { "valor": "+1.200", "label": "personas visitan Maloka cada día" },
-    "espacios": ["El Domo", "Sala Digital", "Ascensores", "Escaleras eléctricas", "Taquillas", "Zonas VIP"],
-    "formatos": ["Cajas de luz", "Spots publicitarios", "Branding de espacios", "Patrocinio de contenidos y experiencias"],
-    "portafolio": { "texto": "Conoce el portafolio de patrocinios", "url": "https://maloka.org/wp-content/uploads/2026/08/Patrocinicios_%26_pautas_V7.pdf" }
+    "servicios": [
+      "Acompañamiento logístico",
+      "Asesoría en producción",
+      "Mobiliario",
+      "Sonido",
+      "Catering",
+      "Parqueadero"
+    ],
+    "portafolio": {
+      "texto": "Conoce el portafolio para eventos",
+      "url": "https://maloka.org/wp-content/uploads/2026/08/BROCHURE-DE-EVENTOS.pdf"
+    }
   },
   "mpa": {
     "titulo": "Maloka Puertas Abiertas.",
     "texto": "Gracias a la Alcaldía Mayor de Bogotá, quienes vivan en Bogotá o Cundinamarca y cumplan uno de estos requisitos disfrutan gratis de las salas, las proyecciones digitales y un taller en los laboratorios.",
     "aviso": "Los cupos de 2026 están agotados. Cuando se habiliten los de 2027 lo anunciaremos en nuestros canales oficiales.",
-    "requisitos": ["Sisbén categorías A, B o C", "Estratos 1 o 2 (recibo de servicios públicos a tu nombre)", "Personas con discapacidad", "Docentes de colegios oficiales"],
+    "requisitos": [
+      "Sisbén categorías A, B o C",
+      "Estratos 1 o 2 (recibo de servicios públicos a tu nombre)",
+      "Personas con discapacidad",
+      "Docentes de colegios oficiales"
+    ],
     "datos": [
-      { "valor": "80", "label": "cupos cada día" },
-      { "valor": "72 h", "label": "de anticipación para reservar" }
+      {
+        "valor": "80",
+        "label": "cupos cada día"
+      },
+      {
+        "valor": "72 h",
+        "label": "de anticipación para reservar"
+      }
     ],
     "grupos": "Colegios oficiales y entidades que trabajan con población vulnerable en Bogotá o Cundinamarca pueden venir gratis en grupo.",
     "correo": "gratuidad@maloka.org",
-    "enlace": { "texto": "Requisitos, términos y condiciones", "url": "https://maloka.org/maloka-puertas-abiertas-mpa/" }
+    "enlace": {
+      "texto": "Requisitos, términos y condiciones",
+      "url": "https://maloka.org/maloka-puertas-abiertas-mpa/"
+    }
   },
   "pasos": [
-    { "n": "1", "titulo": "Elige tu plan", "texto": "Revisa la bitácora, el brochure o el portafolio que corresponda a tu grupo." },
-    { "n": "2", "titulo": "Llena el formulario", "texto": "Cuéntanos qué quieres hacer, cuántas personas vienen y en qué fecha." },
-    { "n": "3", "titulo": "Recibe tu propuesta", "texto": "Te escribimos con la propuesta y las tarifas especiales para grupos." }
+    {
+      "n": "1",
+      "titulo": "Elige tu plan",
+      "texto": "Revisa la bitácora, el brochure o el portafolio que corresponda a tu grupo."
+    },
+    {
+      "n": "2",
+      "titulo": "Llena el formulario",
+      "texto": "Cuéntanos qué quieres hacer, cuántas personas vienen y en qué fecha."
+    },
+    {
+      "n": "3",
+      "titulo": "Recibe tu propuesta",
+      "texto": "Te escribimos con la propuesta y las tarifas especiales para grupos."
+    }
   ],
   "preguntas": [
-    { "p": "¿Tienen tarifas especiales para grupos?", "r": "Sí. Colegios, cumpleaños y empresas tienen tarifas especiales. Llena el formulario de cotización o escríbenos a info@maloka.org." },
-    { "p": "¿Qué incluye una salida escolar?", "r": "Recorrido por las salas interactivas, actividades y talleres. Descarga la bitácora de actividades sugeridas para la edad de tus estudiantes y revisa los tips para preparar la visita." },
-    { "p": "¿Puedo armar el cumpleaños a mi medida?", "r": "Sí. Puedes combinar recorrido por el museo, talleres en los laboratorios BIO, Inventores y Pequeños Inventores, proyecciones en el Cine Domo, salón decorado y souvenirs. Todo está en el brochure de cumpleaños." },
-    { "p": "¿Qué servicios ofrecen para eventos corporativos?", "r": "Acompañamiento logístico, asesoría en producción, mobiliario, sonido, catering y parqueadero, en el Domo, las salas digitales, las aulas o con recorridos exclusivos." },
-    { "p": "¿Mi colegio oficial puede venir gratis?", "r": "Sí, si está en Bogotá o Cundinamarca, con el programa Maloka Puertas Abiertas. Escribe a gratuidad@maloka.org para conocer el proceso." },
-    { "p": "¿Cuántas personas pueden ingresar al día con Maloka Puertas Abiertas?", "r": "Hay 80 cupos diarios, con registro previo y aprobación. Las reservas se hacen con mínimo 72 horas de anticipación y se activan a inicios de cada mes." }
-  ]
+    {
+      "p": "¿Tienen tarifas especiales para grupos?",
+      "r": "Sí. Colegios, cumpleaños y empresas tienen tarifas especiales. Llena el formulario de cotización o escríbenos a info@maloka.org."
+    },
+    {
+      "p": "¿Qué incluye una salida escolar?",
+      "r": "Recorrido por las salas interactivas, actividades y talleres. Descarga la bitácora de actividades sugeridas para la edad de tus estudiantes y revisa los tips para preparar la visita."
+    },
+    {
+      "p": "¿Puedo armar el cumpleaños a mi medida?",
+      "r": "Sí. Puedes combinar recorrido por el museo, talleres en los laboratorios BIO, Inventores y Pequeños Inventores, proyecciones en el Cine Domo, salón decorado y souvenirs. Todo está en el brochure de cumpleaños."
+    },
+    {
+      "p": "¿Qué servicios ofrecen para eventos corporativos?",
+      "r": "Acompañamiento logístico, asesoría en producción, mobiliario, sonido, catering y parqueadero, en el Domo, las salas digitales, las aulas o con recorridos exclusivos."
+    },
+    {
+      "p": "¿Mi colegio oficial puede venir gratis?",
+      "r": "Sí, si está en Bogotá o Cundinamarca, con el programa Maloka Puertas Abiertas. Escribe a gratuidad@maloka.org para conocer el proceso."
+    },
+    {
+      "p": "¿Cuántas personas pueden ingresar al día con Maloka Puertas Abiertas?",
+      "r": "Hay 80 cupos diarios, con registro previo y aprobación. Las reservas se hacen con mínimo 72 horas de anticipación y se activan a inicios de cada mes."
+    }
+  ],
+  "marcasParaCrea": {
+    "titulo": "Tu marca, en uno de los museos más visitados de Bogotá.",
+    "texto": "Conecta con una audiencia diversa y comprometida con la ciencia, la tecnología y el aprendizaje. Patrocina contenidos y experiencias, o pauta en espacios de alto impacto, y conviértete en aliado de una institución educativa y cultural reconocida a nivel nacional e internacional.",
+    "cifra": {
+      "valor": "+1.200",
+      "label": "personas visitan Maloka cada día"
+    },
+    "espacios": [
+      "El Domo",
+      "Sala Digital",
+      "Ascensores",
+      "Escaleras eléctricas",
+      "Taquillas",
+      "Zonas VIP"
+    ],
+    "formatos": [
+      "Cajas de luz",
+      "Spots publicitarios",
+      "Branding de espacios",
+      "Patrocinio de contenidos y experiencias"
+    ],
+    "portafolio": {
+      "texto": "Conoce el portafolio de patrocinios",
+      "url": "https://maloka.org/wp-content/uploads/2026/08/Patrocinicios_%26_pautas_V7.pdf"
+    },
+    "nota": "Patrocinios y pautas van en Crea con Maloka (#patrocinios); se guardan aquí para esa página."
+  }
 }

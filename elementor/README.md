@@ -18,7 +18,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `hero-campanas-v13.json` | Banner de la home: tres frases sobre la foto, cada una con su botón | Plantillas › Importar, y se inserta arriba en la home |
 | `agenda-snippet.php` | Ordena la agenda por fecha, oculta los eventos pasados y formatea las fechas | Plugin Code Snippets |
 | `visitanos-v13-parte1.json`, `-parte2.json`, `-parte3.json` | Página Visítanos en 3 partes (10 secciones) | Se insertan en orden en la página Visítanos |
-| `ven-en-grupo-v13.json` | Página Ven en grupo (colegios, cumpleaños, empresas, marcas y Maloka Puertas Abiertas) | Se inserta en la página Ven en grupo |
+| `ven-en-grupo-v13.json` | Página Ven en grupo (colegios, cumpleaños, empresas y Maloka Puertas Abiertas) | Se inserta en la página Ven en grupo |
 | `loop-evento.json`, `loop-evento-destacado.json`, `loop-evento-texto.json`, `loop-evento-pasado.json` | Loop Items de la agenda: fila de Agéndate, destacado, fila de solo texto (home) y evento reciente | Plantillas › Theme Builder › Loop Item (tipo de contenido Eventos) |
 | `agendate-v13.json` | Página Agéndate conectada a los eventos: filtro, destacado, próximos, recientes y «Todos los días» | Se inserta en la página Agéndate |
 | `loop-noticia.json` · `home-v13-noticias.json` | Tarjeta de noticia (Loop Item de Entradas) y sección «Noticias» de la home con las 3 últimas | Theme Builder › Loop Item · reemplaza la sección Noticias de Inicio |
@@ -178,20 +178,21 @@ Maqueta: https://ydelriov.github.io/Maloka/seleccion/ven-en-grupo/
 
 Reúne en una sola página lo que hoy está en maloka.org/cotizaciones-y-grupos/ y en
 maloka.org/maloka-puertas-abiertas-mpa/ (textos, PDF, fotos y el formulario de cotización de Google). Todo con
-contenedores y widgets nativos; tiene 9 fotos, así que va en un solo archivo.
+contenedores y widgets nativos; tiene 8 fotos, así que va en un solo archivo. Los **patrocinios y pautas** no van
+aquí: son de **Crea con Maloka** (`#patrocinios`); sus textos y el portafolio quedan guardados en `grupos-v13.json`
+(`marcasParaCrea`) para esa página.
 
 | # | Sección | Contenedores y widgets |
 |---|---|---|
 | 1 | Cabecera | Migas, H1, texto, «Cotiza tu evento ↗» (formulario) y «Tips para tu visita» (PDF) |
-| 2 | Anclas | Contenedor **fijo arriba** con enlaces a `#colegios`, `#cumpleanos`, `#empresas`, `#marcas`, `#mpa`, `#cotizar`, `#preguntas` |
-| 3 | ¿Con quién vienes? | 5 contenedores-enlace (foto cuadrada + franja pastel con número, título y texto corto) que bajan a cada sección |
+| 2 | Anclas | Contenedor **fijo arriba** con enlaces a `#colegios`, `#cumpleanos`, `#empresas`, `#mpa`, `#cotizar`, `#preguntas` |
+| 3 | ¿Con quién vienes? | 4 contenedores-enlace (foto cuadrada + franja pastel con número, título y texto corto) que bajan a cada sección |
 | 4 | Colegios (`#colegios`) | Foto + texto + las dos **bitácoras** en PDF (Primaria y Secundaria) y el aviso para colegios oficiales |
 | 5 | Cumpleaños (`#cumpleanos`) | Grilla 2×3 de **Caja de icono** (lo que se puede incluir), brochure en PDF y foto |
 | 6 | Empresas (`#empresas`) | 3 espacios con foto (Domo, salas y aulas, recorridos), servicios en Lista de iconos en línea y portafolio en PDF |
-| 7 | Marcas (`#marcas`) | Cifra «+1.200 personas al día», listas de espacios y formatos, portafolio de patrocinios |
-| 8 | Maloka Puertas Abiertas (`#mpa`) | Aviso «Cupos 2026 agotados», requisitos, 80 cupos/72 h, correo gratuidad@maloka.org |
-| 9 | Cotiza (`#cotizar`) | 3 pasos de color + «Cotiza tu evento en Maloka ↗», correo y teléfono |
-| 10 | Preguntas (`#preguntas`) | **Acordeón** con FAQ schema |
+| 7 | Maloka Puertas Abiertas (`#mpa`) | Aviso «Cupos 2026 agotados», requisitos, 80 cupos/72 h, correo gratuidad@maloka.org |
+| 8 | Cotiza (`#cotizar`) | 3 pasos de color + «Cotiza tu evento en Maloka ↗», correo y teléfono |
+| 9 | Preguntas (`#preguntas`) | **Acordeón** con FAQ schema |
 
 **Cómo importarla:** crea la página **Ven en grupo** (slug `ven-en-grupo`), ábrela con Elementor, carpeta › **Importar**
 › `ven-en-grupo-v13.json` › **Insertar**. Plantilla **Elementor ancho completo**, revisa en tablet y celular y publica.

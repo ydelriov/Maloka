@@ -5,11 +5,11 @@
    El JSON importable es elementor/ven-en-grupo-v13.json.
    1. Cabecera compacta (migas, H1, texto, «Cotiza tu evento» y tips)
    2. Anclas (contenedor fijo arriba con enlaces a #id)
-   3. ¿Con quién vienes? (5 tarjetas-enlace: imagen cuadrada de maloka.org, franja pastel, título)
+   3. ¿Con quién vienes? (4 tarjetas-enlace: imagen cuadrada de maloka.org, franja pastel, título)
    4. Colegios (imagen + texto + bitácoras PDF) · 5. Cumpleaños (icon-box 3×2 + imagen)
-   6. Empresas (3 espacios con imagen + servicios) · 7. Marcas (cifra + espacios y formatos)
-   8. Maloka Puertas Abiertas (aviso de cupos + requisitos) · 9. Cómo cotizar (3 pasos + botón)
-   10. Preguntas frecuentes (widget Acordeón con FAQ schema).
+   6. Empresas (3 espacios con imagen + servicios) · 7. Maloka Puertas Abiertas (aviso de cupos + requisitos)
+   8. Cómo cotizar (3 pasos + botón) · 9. Preguntas frecuentes (widget Acordeón con FAQ schema).
+   Patrocinios y pautas no van aquí: son de Crea con Maloka.
    Datos en src/data/grupos-v13.json. «Cotiza tu evento» lleva al formulario de Google que hoy usa maloka.org. */
 import Base from '../../layouts/Base.astro';
 import NHeader from '../../components/n/NHeader.astro';
@@ -23,12 +23,12 @@ const G = 'seleccion';
 const P = Object.fromEntries(g.publicos.map((p) => [p.id, p]));
 const anclas = [
   { id: 'colegios', label: 'Colegios' }, { id: 'cumpleanos', label: 'Cumpleaños' }, { id: 'empresas', label: 'Empresas' },
-  { id: 'marcas', label: 'Marcas' }, { id: 'mpa', label: 'Acceso gratuito' }, { id: 'cotizar', label: 'Cotiza' }, { id: 'preguntas', label: 'Preguntas' }
+  { id: 'mpa', label: 'Acceso gratuito' }, { id: 'cotizar', label: 'Cotiza' }, { id: 'preguntas', label: 'Preguntas' }
 ];
 const nt = { target: '_blank', rel: 'noopener' };
 const ante = (id) => `${P[id].n} · ${P[id].ante}`;
 ---
-<Base variante="grupos" grupo={G} title="Ven en grupo · Colegios, cumpleaños, empresas y marcas · Maloka" description="Cotiza tu visita a Maloka en grupo: salidas escolares con bitácoras por edades, cumpleaños a la medida, eventos corporativos en el Domo, patrocinios y pauta, y acceso gratuito con Maloka Puertas Abiertas." clase="nn">
+<Base variante="grupos" grupo={G} title="Ven en grupo · Colegios, cumpleaños y empresas · Maloka" description="Cotiza tu visita a Maloka en grupo: salidas escolares con bitácoras por edades, cumpleaños a la medida, eventos corporativos en el Domo y acceso gratuito con Maloka Puertas Abiertas." clase="nn">
   <NHeader variante="blanco" panel="hueso" grupo={G} inicio={url(`${G}/`)} />
   <main id="contenido">
     <!-- 1 · Cabecera -->
@@ -141,30 +141,7 @@ const ante = (id) => `${P[id].n} · ${P[id].ante}`;
       </div>
     </section>
 
-    <!-- 7 · Marcas -->
-    <section class="n-sec vg-menta vg-sec" id="marcas" aria-labelledby="vg-ma">
-      <div class="mk-w vg-ma">
-        <div class="vg-col">
-          <p class="n-ante vg-osc">{ante('marcas')}</p>
-          <h2 class="n-titulo" id="vg-ma">{g.marcas.titulo}</h2>
-          <p class="vg-cifra"><b class="t-num">{g.marcas.cifra.valor}</b><span>{g.marcas.cifra.label}</span></p>
-        </div>
-        <div class="vg-col">
-          <p class="n-lead vg-osc">{g.marcas.texto}</p>
-          <div class="vg-ma-l">
-            <div><h3 class="vg-k">Espacios</h3><ul>{g.marcas.espacios.map((x) => <li>{x}</li>)}</ul></div>
-            <div><h3 class="vg-k">Formatos</h3><ul>{g.marcas.formatos.map((x) => <li>{x}</li>)}</ul></div>
-          </div>
-          <p class="vg-precio">Consulta en <a href={`mailto:${g.correo}`}>{g.correo}</a></p>
-          <div class="vg-enl">
-            <a class="n-a" href={g.marcas.portafolio.url} {...nt}><Icon name="download" size="18" />{g.marcas.portafolio.texto} (PDF)</a>
-            <a class="n-a" href={g.cotizar} {...nt}>Cotiza tu pauta<Icon name="ext" size="18" /></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8 · Maloka Puertas Abiertas -->
+    <!-- 7 · Maloka Puertas Abiertas -->
     <section class="n-sec vg-lavanda vg-sec" id="mpa" aria-labelledby="vg-mp">
       <div class="mk-w vg-mp">
         <div class="vg-col">
@@ -183,7 +160,7 @@ const ante = (id) => `${P[id].n} · ${P[id].ante}`;
       </div>
     </section>
 
-    <!-- 9 · Cómo cotizar -->
+    <!-- 8 · Cómo cotizar -->
     <section class="n-sec n-noche vg-sec" id="cotizar" aria-labelledby="vg-ct">
       <div class="mk-w vg-ct">
         <div class="vg-col">
@@ -201,7 +178,7 @@ const ante = (id) => `${P[id].n} · ${P[id].ante}`;
       </div>
     </section>
 
-    <!-- 10 · Preguntas -->
+    <!-- 9 · Preguntas -->
     <section class="n-sec n-blanco vg-sec" id="preguntas" aria-labelledby="vg-pr">
       <div class="mk-w vg-pr">
         <div class="vg-col">
@@ -247,12 +224,12 @@ const ante = (id) => `${P[id].n} · ${P[id].ante}`;
 
   /* Colores */
   .vg-amarillo { background: var(--n-amarillo); } .vg-salmon { background: var(--n-salmon); } .vg-cielo { background: var(--n-cielo); }
-  .vg-menta { background: var(--n-menta); color: var(--n-noche); } .vg-lavanda { background: var(--n-lavanda); color: var(--n-noche); }
+  .vg-lavanda { background: var(--n-lavanda); color: var(--n-noche); }
   .vg-osc { color: var(--n-noche); }
   .vg-am { color: var(--n-amarillo); }
 
   /* ¿Con quién vienes? */
-  .vg-pu { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+  .vg-pu { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
   .vg-pu-a { display: grid; grid-template-rows: auto 1fr; height: 100%; color: var(--n-noche); }
   .vg-pu-f { display: block; aspect-ratio: 1; overflow: hidden; background: var(--n-carbon); }
   .vg-pu-f img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--mk-ease); }
@@ -286,7 +263,7 @@ const ante = (id) => `${P[id].n} · ${P[id].ante}`;
   .vg-precio a { color: var(--n-noche); font-weight: 700; }
   .vg-precio--osc { margin-top: 24px; color: var(--n-texto2-osc); }
   .vg-precio--osc a { color: #fff; }
-  .vg-menta .vg-precio, .vg-lavanda .vg-precio { color: var(--n-noche); }
+  .vg-lavanda .vg-precio { color: var(--n-noche); }
 
   /* Cumpleaños */
   .vg-split--inv { align-items: start; }
@@ -311,16 +288,9 @@ const ante = (id) => `${P[id].n} · ${P[id].ante}`;
   .vg-serv :global(.mk-ic) { color: var(--n-menta); }
   .n-noche .vg-enl { margin-top: 8px; }
 
-  /* Marcas */
-  .vg-ma, .vg-mp { display: grid; grid-template-columns: 6fr 6fr; gap: 64px; align-items: start; }
-  .vg-cifra { display: grid; gap: 4px; margin-top: 16px; padding-top: 20px; border-top: 2px solid var(--n-noche); }
-  .vg-cifra b { font-size: 96px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; }
-  .vg-cifra span { font-size: 18px; font-weight: 600; }
-  .vg-ma-l { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; }
-  .vg-ma-l ul { display: grid; border-top: 2px solid var(--n-noche); margin-top: 10px; }
-  .vg-ma-l li { padding: 12px 2px; border-bottom: 1px solid rgba(35, 27, 43, .3); font-weight: 600; }
-
   /* Maloka Puertas Abiertas */
+  .vg-mp { display: grid; grid-template-columns: 6fr 6fr; gap: 64px; align-items: start; }
+
   .vg-aviso { display: flex; gap: 12px; align-items: flex-start; margin-top: 8px; padding: 18px 20px; background: var(--n-noche); color: #fff; font-size: 15px; }
   .vg-aviso :global(.mk-ic) { flex: none; color: var(--n-amarillo); }
   .vg-aviso b { color: var(--n-amarillo); }
@@ -358,32 +328,27 @@ const ante = (id) => `${P[id].n} · ${P[id].ante}`;
 
   @media (max-width: 1024px) {
     .vg-hero-in { grid-template-columns: 1fr; }
-    .vg-pu { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-    .vg-pu li { grid-column: span 2; }
-    .vg-pu li:nth-child(n+4) { grid-column: span 3; }
-    .vg-pu li:nth-child(n+4) .vg-pu-a { grid-template-columns: 45% 1fr; grid-template-rows: none; }
-    .vg-pu li:nth-child(n+4) .vg-pu-f { aspect-ratio: auto; height: 100%; }
-    .vg-split, .vg-ma, .vg-mp, .vg-ct, .vg-pr { grid-template-columns: 1fr; gap: 32px; }
+    .vg-pu { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .vg-pu-a { grid-template-columns: 42% 1fr; grid-template-rows: none; }
+    .vg-pu-f { aspect-ratio: auto; height: 100%; min-height: 200px; }
+    .vg-split, .vg-mp, .vg-ct, .vg-pr { grid-template-columns: 1fr; gap: 32px; }
     .vg-split--inv .vg-foto { position: static; order: -1; }
     .vg-foto { aspect-ratio: 16 / 9; }
     .vg-esp { gap: 20px; }
-    .vg-cifra b { font-size: 72px; }
-    .vg-anclas { top: 72px; } .vg-sec { scroll-margin-top: 128px; }
+      .vg-anclas { top: 72px; } .vg-sec { scroll-margin-top: 128px; }
   }
   @media (max-width: 767px) {
     .vg-hero { padding-block: 24px 28px; }
     .vg-pu { grid-template-columns: 1fr; gap: 12px; }
-    .vg-pu li, .vg-pu li:nth-child(n+4) { grid-column: auto; }
-    .vg-pu-a, .vg-pu li:nth-child(n+4) .vg-pu-a { grid-template-columns: 112px 1fr; grid-template-rows: none; }
-    .vg-pu-f, .vg-pu li:nth-child(n+4) .vg-pu-f { aspect-ratio: auto; height: 100%; min-height: 112px; }
+    .vg-pu-a { grid-template-columns: 112px 1fr; }
+    .vg-pu-f { min-height: 112px; }
     .vg-pu-c { padding: 14px 44px 14px 14px; }
     .vg-pu-c :global(.vg-pu-ic) { left: auto; right: 12px; bottom: auto; top: 14px; }
     .vg-pu-t { font-size: 17px; }
-    .vg-desc, .vg-inc, .vg-esp, .vg-ma-l { grid-template-columns: 1fr; }
+    .vg-desc, .vg-inc, .vg-esp { grid-template-columns: 1fr; }
     .vg-esp { gap: 32px; }
     .vg-serv { flex-direction: column; align-items: flex-start; }
-    .vg-cifra b { font-size: 56px; }
-    .vg-paso { padding: 20px; gap: 16px; }
+      .vg-paso { padding: 20px; gap: 16px; }
     .vg-paso-n { font-size: 36px; }
     .vg-q summary { font-size: 17px; }
     .vg-anclas a { min-height: 48px; padding: 0 10px; font-size: 14px; }
