@@ -11,7 +11,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `logo-maloka.svg` / `.png` | Logo de las maquetas, por si el sitio aún no tiene uno | Apariencia › Personalizar › Identidad del sitio |
 | `popup-combos.json` | Modal de los combos de TuBoleta | Plantillas › Popups |
 | `acf-evento.json` | Campos de cada evento (tipo de contenido «eventos»): fecha, horario, lugar, acceso, enlace, destacado | ACF › Herramientas › Importar |
-| `acf-horarios.json` + `horarios-snippet.php` | Horarios en un solo lugar (página de inicio) para menú, home y Visítanos | ACF › Importar y Code Snippets |
+| `acf-horarios.json` + `horarios-snippet.php` | Horarios y días especiales en un solo lugar (página de inicio) para menú, home y Visítanos | ACF › Importar y Code Snippets |
 | `evento-single-v13.json` | Ficha de cada evento (plantilla del Theme Builder para Eventos) | Plantillas › Theme Builder › Entrada individual |
 | `noticia-single-v13.json` + `noticias-snippet.php` | Página de cada noticia (plantilla del Theme Builder para Entradas) y tiempo de lectura | Theme Builder › Entrada individual · Code Snippets |
 | `hero-inicio-v13.json` | El hero de Inicio tal como está en pruebas.maloka.org (carrusel propio, horario y un botón por frase) | Se inserta arriba en la home |
@@ -350,19 +350,36 @@ Las plantillas se generan con `python3 scripts/elementor-agenda.py` (lee `src/da
 
 ## Horarios en un solo lugar
 
-El horario aparece en el panel del menú (Visítanos), en Visítanos y en el footer. Para que **se cambie una sola vez**:
+El horario aparece en el panel del menú (Visítanos), en el recuadro «Hoy abrimos» del hero de Inicio y en Visítanos.
+Para que **se cambie una sola vez**:
 
 1. ACF › Herramientas › Importar › `acf-horarios.json`. Aparece el grupo **«Horarios de Maloka»** al editar la
-   **página de inicio**: días, hora de apertura y cierre entre semana y fin de semana, venta de entradas hasta, y un
-   aviso opcional de cambio de horario.
+   **página de inicio** (pantalla normal de WordPress, no Elementor), con dos pestañas:
+   - **Horario normal:** días, apertura y cierre entre semana y fin de semana, y venta de entradas hasta. Las horas
+     van en formato de 24 horas (12:00 = mediodía, 17:00 = 5:00 p. m.).
+   - **Días especiales:** 5 espacios con fecha, «¿Cómo abrimos?» (cerrado todo el día · festivo con horario de fin
+     de semana · horario especial con abre y cierra) y una nota opcional. Cada día se muestra hasta que pasa su fecha
+     y después desaparece solo; no hace falta borrarlo ni llenarlos en orden.
 2. Code Snippets › pega `horarios-snippet.php` › Ejecutar en todo el sitio › Activar.
-3. Listo: `header`/`menu-paneles`, `footer-v13.json` y `visitanos-v13-parte1.json` ya traen esos textos conectados con la
-   etiqueta dinámica **Shortcode** (`[maloka_horario dia="semana"]`, `[maloka_dias dia="finde"]`, `[maloka_venta]`,
-   `[maloka_aviso]`). Si no aparece el valor, en el widget haz clic en el ícono de etiquetas dinámicas › Shortcode y
-   escribe el shortcode.
+3. Listo: `header-v13-megamenu.json`, `menu-paneles-v13.json`, `hero-inicio-v13.json` y `visitanos-v13-parte1.json`
+   ya traen los textos conectados con la etiqueta dinámica **Shortcode**. Si no aparece el valor, en el widget haz clic
+   en el ícono de etiquetas dinámicas › Shortcode y escribe el shortcode.
 
-Cuando cambie el horario, o haya un cierre especial, solo se edita la página de inicio › «Horarios de Maloka».
-En la maqueta pasa igual: todo sale de `src/data/site.json`.
+| Shortcode | Muestra | Dónde |
+|---|---|---|
+| `[maloka_dias dia="semana"]` / `dia="finde"` | «Lunes a viernes» / «Sábados, domingos y festivos» | Menú, Visítanos |
+| `[maloka_horario dia="semana"]` / `dia="finde"` | «11:00 a. m. – 5:00 p. m.» | Menú, Visítanos |
+| `[maloka_venta]` | «Venta de entradas hasta las 4:00 p. m.» | Menú, hero, Visítanos, ficha del evento |
+| `[maloka_aviso etiqueta="Cambio de horario"]` | Una línea por día especial: «**Cambio de horario · jueves 26 de noviembre:** Cerrado todo el día.» | Visítanos (la fila se oculta si no hay) |
+| `[maloka_aviso_corto]` | Solo el próximo: «Cambio de horario · jue. 26 nov.: Cerrado todo el día.» | Panel de horarios del menú |
+
+El recuadro **«Hoy abrimos»** del hero (widget HTML) no usa shortcodes: el fragmento le pone `data-semana`,
+`data-finde` y `data-especiales` al mostrar la página, y su script decide con la hora de Bogotá entre «Hoy abrimos»,
+«Abierto ahora», «Cerrado ahora · Así abrimos hoy» y, en un día especial cerrado, «Hoy estamos cerrados». El
+fragmento también lo marca como contenido dinámico para que la caché de Elementor (`_elementor_element_cache`) no lo
+guarde con un horario viejo.
+
+En la maqueta los horarios salen de `src/data/site.json` y los avisos de `src/data/visitanos.json`.
 
 ## Ficha del evento (Theme Builder)
 
