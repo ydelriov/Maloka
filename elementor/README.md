@@ -88,8 +88,7 @@ Compáralo con https://ydelriov.github.io/Maloka/seleccion/:
 - Pasa el mouse por Visítanos: panel hueso a ancho completo, enlaces en 2 columnas y el recuadro noche de horarios.
 - Pasa el mouse por Ven en grupo: a la derecha va el recuadro noche **Cotiza tu evento**, con el enlace
   «Cotiza tu evento ↗» al formulario de cotización (https://forms.gle/N3pnMAnyiRcSffWN7, abre en pestaña nueva).
-  Si usas `header-v13-megamenu.json` (exportado de pruebas.maloka.org), ese recuadro aún no está: cópialo del panel
-  Ven en grupo de `menu-paneles-v13.json` y pégalo como tercera columna.
+  `header-v13-megamenu.json` ya lo trae (columnas 20 % · 52 % · 24 %, como en `menu-paneles-v13.json`).
 - Cada enlace se llena del pastel de su sección (Visítanos amarillo, Ven en grupo salmón, Descubre menta, Crea
   lavanda).
 - Teclado: Tab llega a cada ítem, Enter abre y Esc cierra.
