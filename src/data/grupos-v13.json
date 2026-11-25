@@ -12,7 +12,6 @@
   "publicos": [
     {
       "id": "colegios",
-      "n": "01",
       "ante": "Colegios",
       "titulo": "Oferta educativa y grupos",
       "corto": "Salidas escolares con bitácoras por edades",
@@ -22,7 +21,6 @@
     },
     {
       "id": "cumpleanos",
-      "n": "02",
       "ante": "Familias",
       "titulo": "Celebra tu cumpleaños",
       "corto": "Recorrido, talleres, Cine Domo y salón decorado",
@@ -32,7 +30,6 @@
     },
     {
       "id": "empresas",
-      "n": "03",
       "ante": "Empresas",
       "titulo": "Eventos especiales",
       "corto": "Lanzamientos, conferencias y premiaciones",
@@ -42,7 +39,6 @@
     },
     {
       "id": "mpa",
-      "n": "04",
       "ante": "Acceso gratuito",
       "titulo": "Maloka Puertas Abiertas",
       "corto": "Gratis con la Alcaldía de Bogotá",

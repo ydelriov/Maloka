@@ -45,6 +45,12 @@ const COLOR = { visitanos: 'amarillo', agendate: 'cielo', grupo: 'salmon', descu
                     <p class="nmm-venta">{site.horarios.ventaHasta}</p>
                     <a class="n-a" href={ruta('Cómo llegar')}>Cómo llegar<Icon name="arrow" size="20" /></a>
                   </aside>
+                ) : it.cta ? (
+                  <aside class="nmm-card" aria-label={it.cta.titulo}>
+                    <p class="nmm-card-t">{it.cta.titulo}</p>
+                    <p class="nmm-cta-x">{it.cta.texto}</p>
+                    <a class="n-a" href={it.cta.url} target="_blank" rel="noopener">{it.cta.enlace}<Icon name="ext" size="20" /><span class="sr-only"> (formulario, abre en una pestaña nueva)</span></a>
+                  </aside>
                 ) : <span aria-hidden="true"></span>}
               </div>
             </div>
@@ -73,6 +79,7 @@ const COLOR = { visitanos: 'amarillo', agendate: 'cielo', grupo: 'salmon', descu
                 </button>
                 <ul class="nh-dd-sub" id={`ndd-${it.id}`} style={`--c:var(--n-${COLOR[it.id] || 'lavanda'})`} hidden>
                   {it.links.map((l) => <li><a href={ruta(l.label)}><span class="nmm-ib nmm-ib--s"><Icon name={l.icono} size="18" /></span>{l.label}</a></li>)}
+                  {it.cta && <li><a class="nh-dd-cta" href={it.cta.url} target="_blank" rel="noopener"><span class="nmm-ib nmm-ib--s nmm-ib--noche"><Icon name="ext" size="18" /></span>{it.cta.enlace}<span class="sr-only"> (formulario, abre en una pestaña nueva)</span></a></li>}
                 </ul>
               </>
             ) : (
@@ -137,6 +144,9 @@ const COLOR = { visitanos: 'amarillo', agendate: 'cielo', grupo: 'salmon', descu
   .nmm-h b { font-weight: 700; }
   .nmm-h span { color: var(--n-texto2-osc); }
   .nmm-venta { font-size: 13px; color: var(--n-texto2-osc); }
+  .nmm-cta-x { font-size: 14px; line-height: 1.5; color: var(--n-texto2-osc); }
+  .nh-dd-sub .nh-dd-cta { font-weight: 700; }
+  .nmm-ib--noche { background: var(--n-noche); color: var(--n-amarillo); }
   .nmm-card .n-a { color: var(--n-amarillo); }
 
   /* Panel del menú desplegado en hueso (V13), como el fondo de «Imperdibles» */

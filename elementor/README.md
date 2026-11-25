@@ -86,6 +86,10 @@ cada uno tiene su propio contenedor desplegable. Por eso los paneles vienen apar
 
 Compáralo con https://ydelriov.github.io/Maloka/seleccion/:
 - Pasa el mouse por Visítanos: panel hueso a ancho completo, enlaces en 2 columnas y el recuadro noche de horarios.
+- Pasa el mouse por Ven en grupo: a la derecha va el recuadro noche **Cotiza tu evento**, con el enlace
+  «Cotiza tu evento ↗» al formulario de cotización (https://forms.gle/N3pnMAnyiRcSffWN7, abre en pestaña nueva).
+  Si usas `header-v13-megamenu.json` (exportado de pruebas.maloka.org), ese recuadro aún no está: cópialo del panel
+  Ven en grupo de `menu-paneles-v13.json` y pégalo como tercera columna.
 - Cada enlace se llena del pastel de su sección (Visítanos amarillo, Ven en grupo salmón, Descubre menta, Crea
   lavanda).
 - Teclado: Tab llega a cada ítem, Enter abre y Esc cierra.
@@ -97,7 +101,7 @@ Compáralo con https://ydelriov.github.io/Maloka/seleccion/:
 |---|---|
 | Visítanos | Horarios y tarifas `/horarios-y-tarifas/` · Cómo llegar `/como-llegar/` · Servicios `/servicios/` · Accesibilidad `/accesibilidad/` · Experiencias `/experiencias/` · Preguntas frecuentes `/preguntas-frecuentes/` |
 | Agéndate | Programación `/programacion/` |
-| Ven en grupo | Colegios y universidades `/colegios-y-universidades/` · Cumpleaños `/cumpleanos/` · Empresas y eventos `/empresas-y-eventos/` · MPA `/mpa/` |
+| Ven en grupo | Colegios y universidades `/colegios-y-universidades/` · Cumpleaños `/cumpleanos/` · Empresas y eventos `/empresas-y-eventos/` · MPA `/mpa/` · recuadro **Cotiza tu evento** (formulario) |
 | Descubre | Programas y proyectos `/programas-y-proyectos/` · Experiencias `/experiencias/` · Conoce Maloka `/conoce-maloka/` · Recursos educativos `/recursos-educativos/` · Noticias `/noticias/` |
 | Crea con Maloka | Patrocinios y alianzas `/patrocinios-y-alianzas/` · Experiencias museográficas `/experiencias-museograficas/` · Acompañamiento pedagógico `/acompanamiento-pedagogico/` · Investigación y consultoría `/investigacion-y-consultoria/` · Maloka viajera `/maloka-viajera/` |
 

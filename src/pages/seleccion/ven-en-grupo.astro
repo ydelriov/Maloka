@@ -26,7 +26,7 @@ const anclas = [
   { id: 'mpa', label: 'Acceso gratuito' }, { id: 'cotizar', label: 'Cotiza' }, { id: 'preguntas', label: 'Preguntas' }
 ];
 const nt = { target: '_blank', rel: 'noopener' };
-const ante = (id) => `${P[id].n} · ${P[id].ante}`;
+const ante = (id) => P[id].ante;
 ---
 <Base variante="grupos" grupo={G} title="Ven en grupo · Colegios, cumpleaños y empresas · Maloka" description="Cotiza tu visita a Maloka en grupo: salidas escolares con bitácoras por edades, cumpleaños a la medida, eventos corporativos en el Domo y acceso gratuito con Maloka Puertas Abiertas." clase="nn">
   <NHeader variante="blanco" panel="hueso" grupo={G} inicio={url(`${G}/`)} />
@@ -61,7 +61,7 @@ const ante = (id) => `${P[id].n} · ${P[id].ante}`;
               <a class="vg-pu-a" href={`#${p.id}`}>
                 <span class="vg-pu-f"><img src={p.imagen} alt="" width="500" height="500" loading="lazy" decoding="async" /></span>
                 <span class={`vg-pu-c vg-${p.color}`}>
-                  <span class="vg-pu-n t-num">{p.n} · {p.ante}</span>
+                  <span class="vg-pu-n">{p.ante}</span>
                   <h3 class="vg-pu-t">{p.titulo}</h3>
                   <span class="vg-pu-x">{p.corto}</span>
                   <Icon name="down" size="24" class="vg-pu-ic" />
