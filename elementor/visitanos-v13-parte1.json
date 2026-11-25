@@ -6289,7 +6289,7 @@
      "widgetType": "text-editor",
      "isInner": false,
      "settings": {
-      "editor": "<p>Planes, fotos y precios de maloka.org/horarios-y-tarifas (noviembre de 2026). Los precios pueden cambiar: confírmalos en TuBoleta.</p>",
+      "editor": "<p>Los precios pueden cambiar. Confirma el valor final en TuBoleta antes de pagar.</p>",
       "text_color": "#4F4955",
       "typography_typography": "custom",
       "typography_font_size": {
