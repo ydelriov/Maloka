@@ -1,0 +1,405 @@
+{
+  "fuente": "Textos de maloka.org/programas-proyectos/, maloka.org/maloka-viajeras/, maloka.org/maloka-airbus/ y maloka.org/cotizaciones-y-grupos/ (noviembre de 2026).",
+  "correo": "info@maloka.org",
+  "hero": {
+    "titulo": "Crea con Maloka",
+    "lead": "Transformemos una idea en una experiencia. Creamos contenidos y soluciones que conectan ciencia, educación e innovación para empresas, entidades públicas, colegios y territorios."
+  },
+  "intro": {
+    "titulo": "Más de 27 años convirtiendo la ciencia en experiencias.",
+    "texto": "Maloka ha diseñado y ejecutado programas y proyectos que inspiran, educan y movilizan a miles de personas alrededor de la ciencia, la tecnología y la innovación. Desde consultorías especializadas y acompañamiento pedagógico hasta experiencias museográficas únicas, hemos construido un puente sólido entre conocimiento y ciudadanía. Abrimos la puerta a nuevos aliados que quieran invertir en estas iniciativas o co-crear proyectos que potencien el impacto social, educativo y cultural de la ciencia en Colombia y la región.",
+    "cifras": [
+      {
+        "valor": "+27",
+        "label": "años de trayectoria"
+      },
+      {
+        "valor": "+10.000",
+        "label": "niñas en Chicas STEAM, en los 32 departamentos"
+      },
+      {
+        "valor": "89.486",
+        "label": "personas en 60 municipios con Gestión del Riesgo"
+      },
+      {
+        "valor": "+60.000",
+        "label": "estudiantes en Vanti en la Escuela"
+      }
+    ]
+  },
+  "aliados": [
+    "Airbus Foundation",
+    "Vanti",
+    "Cenit",
+    "Fundación Grupo Social",
+    "MinTIC",
+    "Minciencias",
+    "Ministerio de las Culturas",
+    "UNGRD",
+    "Defensoría del Pueblo",
+    "IDU",
+    "Gobernación de Cundinamarca",
+    "Secretaría de Educación de Bogotá",
+    "Secretaría de Cultura, Recreación y Deporte",
+    "ICETEX"
+  ],
+  "pasos": [
+    {
+      "n": "1",
+      "titulo": "Cuéntanos tu necesidad",
+      "texto": "Objetivo, público, alcance y posibles fechas."
+    },
+    {
+      "n": "2",
+      "titulo": "Diseñamos la propuesta",
+      "texto": "Una propuesta a la medida de tus objetivos."
+    },
+    {
+      "n": "3",
+      "titulo": "Lo hacemos realidad",
+      "texto": "Co-creamos, ejecutamos y te entregamos resultados."
+    }
+  ],
+  "lineas": [
+    {
+      "id": "patrocinios",
+      "slug": "patrocinios-y-alianzas",
+      "menu": "Patrocinios y alianzas",
+      "color": "amarillo",
+      "icono": "heart",
+      "titulo": "Patrocinios y alianzas",
+      "frase": "Tu marca, en uno de los museos más visitados de Bogotá.",
+      "corto": "Patrocina contenidos y experiencias, pauta en el museo o co-crea un proyecto con impacto social.",
+      "lead": "Visibiliza tu marca en Maloka y conecta con una audiencia diversa y comprometida con la ciencia, la tecnología y el aprendizaje. Conviértete en aliado de una institución educativa y cultural reconocida a nivel nacional e internacional, o co-crea con nosotros proyectos que potencien el impacto social de la ciencia.",
+      "para": [
+        "Empresas",
+        "Marcas",
+        "Fundaciones",
+        "Cooperación internacional"
+      ],
+      "hacemos": [
+        "Patrocinio de contenidos, salas y experiencias",
+        "Pauta en espacios de alto impacto del museo",
+        "Proyectos de impacto social co-creados con tu organización",
+        "Programas educativos con tu marca como aliada"
+      ],
+      "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/vanti-maloka-1-rc5jzcn5162g25z7a707685prcq0e33ufk3sxz3t68.jpeg",
+      "alt": "Sala Vanti en Maloka, con un módulo interactivo sobre gas natural",
+      "pauta": {
+        "cifra": {
+          "valor": "+1.200",
+          "label": "personas visitan Maloka cada día"
+        },
+        "espacios": [
+          "El Domo",
+          "Sala Digital",
+          "Ascensores",
+          "Escaleras eléctricas",
+          "Taquillas",
+          "Zonas VIP"
+        ],
+        "formatos": [
+          "Cajas de luz",
+          "Spots publicitarios",
+          "Branding de espacios"
+        ],
+        "portafolio": {
+          "texto": "Conoce el portafolio de patrocinios",
+          "url": "https://maloka.org/wp-content/uploads/2026/08/Patrocinicios_%26_pautas_V7.pdf"
+        }
+      },
+      "proyectos": [
+        {
+          "titulo": "Clubes de Ciencia al Barrio",
+          "aliado": "Airbus Foundation",
+          "texto": "Dos clubes en Engativá y Fontibón acercaron a niñas, niños y jóvenes a las ciencias aeronáuticas y aeroespaciales, con 7 guías para replicar las actividades.",
+          "cifra": "56 participantes de 10 a 14 años",
+          "imagen": "https://maloka.org/wp-content/uploads/2026/06/IMG_0584.jpeg",
+          "url": "https://maloka.org/maloka-airbus/"
+        },
+        {
+          "titulo": "Vanti en la Escuela",
+          "aliado": "Vanti",
+          "texto": "Talleres virtuales y visitas a la Sala Vanti en Maloka sobre cultura energética y uso responsable del gas natural.",
+          "cifra": "+60.000 estudiantes",
+          "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/vanti-maloka-1-rc5jzcn5162g25z7a707685prcq0e33ufk3sxz3t68.jpeg",
+          "url": "https://maloka.org/programas-proyectos/vanti-en-la-escuela/"
+        },
+        {
+          "titulo": "Apropiación social del riesgo",
+          "aliado": "Cenit",
+          "texto": "Co-creación con comunidades, colegios y autoridades: caja de herramientas educativas y la exposición interactiva Cenit, ruta de gestión del riesgo por Colombia.",
+          "cifra": "5 departamentos",
+          "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/programa-cenit-maloka-1-rc5jzsme9cobjjbzovwuum4juwj90xva5r723og48g.jpg",
+          "url": "https://maloka.org/programas-proyectos/apropiacion-social-del-conocimiento-de-la-gestion-del-riesgo-de-desastres-asociados-al-transporte-de-hidrocarburos/"
+        }
+      ]
+    },
+    {
+      "id": "museografia",
+      "slug": "experiencias-museograficas",
+      "menu": "Experiencias museográficas",
+      "color": "lavanda",
+      "icono": "dome",
+      "titulo": "Experiencias museográficas",
+      "frase": "Diseñamos espacios que mueven a las personas hacia el conocimiento.",
+      "corto": "Salas, museos y exposiciones fijas, móviles o itinerantes, diseñados con tu organización y las comunidades.",
+      "lead": "El diseño de ambientes de aprendizaje y la creación de narrativas científicas que mueven las emociones y los intereses de las personas hacia el conocimiento ha sido un sello de Maloka desde su nacimiento. Hoy creamos estos escenarios con metodologías de diseño participativo, que involucran a nuestros aliados y a las comunidades en el desarrollo colectivo de ideas para futuros más sostenibles.",
+      "para": [
+        "Entidades públicas",
+        "Empresas",
+        "Museos y centros de ciencia",
+        "Gobiernos locales"
+      ],
+      "hacemos": [
+        "Diseño de salas y museos interactivos",
+        "Exposiciones móviles e itinerantes",
+        "Narrativas científicas y kits pedagógicos",
+        "Co-creación con comunidades"
+      ],
+      "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/CiuLab-Maloka-scaled-rc5jz54fihs5haa4i3r6ma2109r2oi9zqivx3reyk0.jpg",
+      "alt": "Visitantes recorriendo la sala CiuLab de Maloka",
+      "proyectos": [
+        {
+          "titulo": "CiuLab Bogotá – Laboratorio de Ciudad",
+          "aliado": "IDU",
+          "texto": "Espacio interactivo en el bloque Entorno Sostenible para reflexionar, experimentar y proponer soluciones para la sostenibilidad urbana.",
+          "cifra": "130 m²",
+          "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/CiuLab-Maloka-scaled-rc5jz54fihs5haa4i3r6ma2109r2oi9zqivx3reyk0.jpg",
+          "url": "https://maloka.org/programas-proyectos/ciulab-bogota-laboratorio-de-ciudad-y-cultura-ciudadana/"
+        },
+        {
+          "titulo": "Gestión del Riesgo en Cundinamarca",
+          "aliado": "Gobernación de Cundinamarca",
+          "texto": "Exposición móvil, kits pedagógicos y un espacio virtual para fortalecer la gestión del riesgo; se formaron 124 líderes comunitarios.",
+          "cifra": "89.486 personas en 60 municipios",
+          "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/GESTION-RIESGO-MALOKA-rc5jzhcbzc8vo7sdir1c0oz0qa2ugkmi47d8ccwub4.webp",
+          "url": "https://maloka.org/programas-proyectos/gestion-del-riesgo-de-desastres-en-el-departamento-de-cundinamarca/"
+        },
+        {
+          "titulo": "Magma: Museo Interactivo del Riesgo",
+          "aliado": "UNGRD",
+          "texto": "Diseño y producción del museo, reconocido como Centro de Ciencias, con experiencias sobre la prevención y el cuidado de la vida.",
+          "cifra": "Centro de Ciencias",
+          "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/Magma-8-e1696535712634-rc5jz629pbtfsw8rcm5t6rthlnmfw7dq2njel1dkds.jpeg",
+          "url": "https://maloka.org/programas-proyectos/magma-museo-interactivo-del-riesgo/"
+        },
+        {
+          "titulo": "Museo Itinerante de Derechos Humanos",
+          "aliado": "Defensoría del Pueblo",
+          "texto": "Museo interactivo co-creado con comunidades de distintas regiones; hoy tiene sede en Bogotá y presencia digital.",
+          "cifra": "+6.500 personas",
+          "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/dignidad-humana-maloka-rc5jz629pbtfsw8rcm5t6rthlnmfw7dq2njel1dkds.jpg",
+          "url": "https://maloka.org/programas-proyectos/exposicion-itinerante-de-derechos-humanos/"
+        }
+      ]
+    },
+    {
+      "id": "pedagogia",
+      "slug": "acompanamiento-pedagogico",
+      "menu": "Acompañamiento pedagógico",
+      "color": "menta",
+      "icono": "book",
+      "titulo": "Acompañamiento pedagógico",
+      "frase": "Formamos a quienes enseñan y a quienes aprenden.",
+      "corto": "Formación de docentes, clubes STEM, recursos educativos y asesoría a colegios.",
+      "lead": "El aprendizaje sucede a lo largo de la vida y en múltiples escenarios. Fortalecer la manera en que aprendemos y desarrollamos habilidades y actitudes científicas para formar ciudadanías críticas es una de nuestras líneas centrales: desde la formación de docentes y formadores hasta procesos de experimentación y creación con las y los más jóvenes.",
+      "para": [
+        "Secretarías de Educación",
+        "Colegios",
+        "Fundaciones",
+        "Empresas con programas educativos"
+      ],
+      "hacemos": [
+        "Cursos y seminarios para docentes",
+        "Clubes STEM y STEAM",
+        "Recursos educativos abiertos y guías",
+        "Asesoría para implementar el enfoque STEM+"
+      ],
+      "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/IMG_4612-1-rvod8bvgk66djutrcg4as62ykjrc77j8zmo3rq6d0w.jpg",
+      "alt": "Docentes haciendo un experimento en el curso Del museo al aula",
+      "proyectos": [
+        {
+          "titulo": "Chicas STEAM",
+          "aliado": "MinTIC y Secretaría de Educación",
+          "texto": "Programa que fomenta la participación de niñas y adolescentes de 12 a 15 años en ciencia, tecnología, ingeniería, artes y matemáticas.",
+          "cifra": "+10.000 participantes en 32 departamentos",
+          "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/chicas-steam-2022-mintic-1-rc5k0053s0ym4f12gz5vek88lzi6qip4usexxw4yuo.png",
+          "url": "https://maloka.org/programas-proyectos/chicas-steam/"
+        },
+        {
+          "titulo": "Del museo al aula",
+          "aliado": "SED – ICETEX",
+          "texto": "Curso de 13 sesiones híbridas en el que docentes crearon recursos educativos abiertos para primaria a partir de preguntas investigables.",
+          "cifra": "37 docentes · 10 recursos",
+          "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/IMG_4612-1-rvod8bvgk66djutrcg4as62ykjrc77j8zmo3rq6d0w.jpg",
+          "url": "https://maloka.org/del-museo-al-aula/"
+        },
+        {
+          "titulo": "Clubes STEM",
+          "aliado": "Secretaría de Educación de Bogotá",
+          "texto": "Sesiones semanales y una visita al museo para estudiantes de 4.º y 5.º en ocho colegios oficiales de siete localidades.",
+          "cifra": "1.000 niñas y niños",
+          "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/3_SAN-MARTIN-DE-PORRES_18_11_22_VISITA-A-MALOKA-e1696535851144-rc5jz703w5uq4i7e74kfr9ky71ht3whges6w2bc67k.jpg",
+          "url": "https://maloka.org/programas-proyectos/clubes-stem/"
+        },
+        {
+          "titulo": "Aprende en casa con Maloka",
+          "aliado": "Secretaría de Educación del Distrito",
+          "texto": "Guías impresas y digitales, encuentros virtuales y acompañamiento pedagógico para niños, familias y docentes.",
+          "cifra": "+26.000 estudiantes",
+          "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/en-casa-con-maloka-logo-rc5jzcn5162g25z7a707685prcq0e33ufk3sxz3t68.jpg",
+          "url": "https://maloka.org/programas-proyectos/aprende-en-casa-con-maloka/"
+        },
+        {
+          "titulo": "Enfoque STEM+ en Suba",
+          "aliado": "Fundación Grupo Social",
+          "texto": "Talleres, asesoría y co-diseño con directivos y docentes de tres instituciones educativas para implementar el enfoque STEM+.",
+          "cifra": "3 colegios",
+          "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/fundacion-grupo-social-maloka-e1738791537219-rc5jzfgnlo6b0zv3tq82vpg3jic416f1fy29dszmnk.webp",
+          "url": "https://maloka.org/programas-proyectos/asesoria-pedagogica-para-la-implementacion-del-enfoque-stem/"
+        },
+        {
+          "titulo": "Mi Brújula hacia el Futuro",
+          "aliado": "Secretaría de Educación Distrital",
+          "texto": "Catálogo con videos, entrevistas y guías que orienta a jóvenes sobre su proyecto de vida en artes escénicas e industrias creativas.",
+          "cifra": "Orientación socio-ocupacional",
+          "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/guia-uso-mi-brujula-e1756931434500-rc5jzcn5162g25z7a707685prcq0e33ufk3sxz3t68.jpg",
+          "url": "https://maloka.org/programas-proyectos/catalogo-socio-ocupacional-de-las-industrias-creativas-y-las-artes-escenicas/"
+        }
+      ]
+    },
+    {
+      "id": "investigacion",
+      "slug": "investigacion-y-consultoria",
+      "menu": "Investigación y consultoría",
+      "color": "cielo",
+      "icono": "flask",
+      "titulo": "Investigación y consultoría",
+      "frase": "Producimos conocimiento para mejores decisiones.",
+      "corto": "Evaluación, estudios de públicos y consultoría para políticas públicas en ciencia y cultura.",
+      "lead": "Aprender sobre las dinámicas del sector de ciencia y tecnología, del sector cultural y de las prácticas de apropiación social del conocimiento, para alimentar políticas públicas o mejorar nuestro quehacer, es uno de los motores que nos impulsa. Adelantamos procesos de evaluación, investigación y consultoría para entidades que encuentran en nuestra experiencia una posibilidad para crecer y aprender conjuntamente.",
+      "para": [
+        "Ministerios y entidades públicas",
+        "Centros de investigación",
+        "Sector cultural",
+        "Cooperación"
+      ],
+      "hacemos": [
+        "Diagnósticos y estudios de política comparada",
+        "Estudios de públicos",
+        "Evaluación de programas y proyectos",
+        "Fortalecimiento de industrias creativas"
+      ],
+      "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/laboratorio-maloka-rc5jzhcbzc8vo7sdir1c0oz0qa2ugkmi47d8ccwub4.webp",
+      "alt": "Investigadora trabajando en un laboratorio",
+      "proyectos": [
+        {
+          "titulo": "Modelos de financiamiento basal",
+          "aliado": "Minciencias",
+          "texto": "Diagnóstico y estudios de política comparada para diseñar tres modelos de financiamiento basal para los centros de investigación y desarrollo tecnológico de Colombia.",
+          "cifra": "3 modelos de financiamiento",
+          "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/laboratorio-maloka-rc5jzhcbzc8vo7sdir1c0oz0qa2ugkmi47d8ccwub4.webp",
+          "url": "https://maloka.org/programas-proyectos/financiamiento-basal/"
+        },
+        {
+          "titulo": "Gente Convergente",
+          "aliado": "Secretaría de Cultura, Recreación y Deporte",
+          "texto": "Fortalecimiento de nueve empresas creativas con coproducciones, estímulos económicos y una ruta de formación con expertos.",
+          "cifra": "284 conexiones · +450 asistentes",
+          "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/GENTE_CONVERGENTE_PE-rc5jzsme9cobjjbzovwuum4juwj90xva5r723og48g.jpg",
+          "url": "https://maloka.org/gente-convergente/"
+        },
+        {
+          "titulo": "Reconocer para conectar",
+          "aliado": "Ministerio de las Culturas",
+          "texto": "Estudio de públicos con 22 grupos del programa Maloka Puertas Abiertas: para el 67 % fue su primera visita a un museo.",
+          "cifra": "22 grupos estudiados",
+          "imagen": "https://maloka.org/wp-content/uploads/elementor/thumbs/becas-estudios-publicos-maloka-e1738791382766-rc5jzgehsi7lcltqo8mpg77k4w7h8virs2pqv2y8hc.webp",
+          "url": "https://maloka.org/programas-proyectos/reconocer-para-conectar-con-los-publicos-del-programa-maloka-puertas-abiertas/"
+        }
+      ]
+    },
+    {
+      "id": "viajera",
+      "slug": "maloka-viajera",
+      "menu": "Maloka viajera",
+      "color": "salmon",
+      "icono": "globe",
+      "titulo": "Maloka viajera",
+      "frase": "Llevamos la experiencia Maloka a tu territorio.",
+      "corto": "Exposiciones interactivas itinerantes que se instalan en coliseos, auditorios, bibliotecas o colegios.",
+      "lead": "Maloka viajera es nuestra muestra interactiva itinerante. Cruzamos fronteras para llevar ciencia, asombro y aprendizaje a cualquier rincón del país, transformando coliseos, auditorios, bibliotecas, colegios y más en laboratorios de curiosidad: una herramienta para fortalecer procesos educativos, culturales y comunitarios.",
+      "para": [
+        "Alcaldías y gobernaciones",
+        "Cajas de compensación",
+        "Colegios y universidades",
+        "Empresas"
+      ],
+      "hacemos": [
+        "Transporte desde Bogotá a cualquier municipio",
+        "Montaje y desmontaje (unos 6 días)",
+        "Mediadores para atender al público",
+        "Espacio cubierto de unos 450 m²"
+      ],
+      "imagen": "https://maloka.org/wp-content/uploads/2026/07/Micrositio_MalokaViajera-2.png",
+      "alt": "Ilustración del camión de Maloka viajera con módulos de ciencia",
+      "exposiciones": [
+        {
+          "tag": "Medio ambiente",
+          "titulo": "Cambio climático",
+          "texto": "Un recorrido para comprender qué es el cambio climático, cómo impacta nuestra vida diaria y qué podemos hacer para enfrentarlo.",
+          "vivencias": [
+            "Entender el cambio climático y sus efectos",
+            "Reconocer el impacto de nuestras acciones",
+            "Pasar de la conciencia a la acción"
+          ]
+        },
+        {
+          "tag": "Física y mente",
+          "titulo": "Matemáticas y percepción",
+          "texto": "Estaciones interactivas que combinan ciencia, matemáticas y exploración sensorial, con planetario móvil y generador de Van de Graaff.",
+          "vivencias": [
+            "Explorar cómo percibimos la realidad",
+            "Aprender matemáticas de forma vivencial",
+            "Viajar por el universo sin salir del lugar"
+          ]
+        },
+        {
+          "tag": "Biología y emociones",
+          "titulo": "La ciencia de una emoción: ¡Guácala!",
+          "texto": "Una mirada nueva al asco: su papel en la salud, la cultura y el comportamiento humano.",
+          "vivencias": [
+            "Descubrir el poder biológico del asco",
+            "Reconocer la diversidad en nuestras emociones",
+            "Entender el asco como construcción cultural"
+          ]
+        }
+      ],
+      "pasos": [
+        {
+          "n": "1",
+          "titulo": "Cuéntanos tu necesidad",
+          "texto": "Cantidad de participantes, objetivo, público y posibles fechas."
+        },
+        {
+          "n": "2",
+          "titulo": "Diseñamos la propuesta",
+          "texto": "Según tus objetivos."
+        },
+        {
+          "n": "3",
+          "titulo": "Valoramos el espacio",
+          "texto": "Lugar de montaje y condiciones técnicas."
+        },
+        {
+          "n": "4",
+          "titulo": "Llevamos la experiencia",
+          "texto": "Maloka llega para transformar tu ciudad."
+        }
+      ],
+      "asunto": "Cotizar Maloka viajera",
+      "proyectos": []
+    }
+  ]
+}

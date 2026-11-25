@@ -18,6 +18,7 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | `hero-campanas-v13.json` | Banner de la home: tres frases sobre la foto, cada una con su botón | Plantillas › Importar, y se inserta arriba en la home |
 | `agenda-snippet.php` | Ordena la agenda por fecha, oculta los eventos pasados y formatea las fechas | Plugin Code Snippets |
 | `visitanos-v13-parte1.json`, `-parte2.json`, `-parte3.json` | Página Visítanos en 3 partes (10 secciones) | Se insertan en orden en la página Visítanos |
+| `crea-con-maloka-v13.json` + `crea-<línea>-v13.json` (5) | Crea con Maloka: página general y una subpágina por línea del menú | Se inserta en cada página (ver la sección Crea con Maloka) |
 | `ven-en-grupo-v13.json` | Página Ven en grupo (colegios, cumpleaños, empresas y Maloka Puertas Abiertas) | Se inserta en la página Ven en grupo |
 | `loop-evento.json`, `loop-evento-destacado.json`, `loop-evento-texto.json`, `loop-evento-pasado.json` | Loop Items de la agenda: fila de Agéndate, destacado, fila de solo texto (home) y evento reciente | Plantillas › Theme Builder › Loop Item (tipo de contenido Eventos) |
 | `agendate-v13.json` | Página Agéndate conectada a los eventos: filtro, destacado, próximos, recientes y «Todos los días» | Se inserta en la página Agéndate |
@@ -184,6 +185,35 @@ en violeta `#6B5BD6` (no el rosado del tema). El mapa es el widget Google Maps (
 - Más adelante, los planes y las funciones pueden salir de tipos de contenido con **Loop Grid** (Pro), para que el
   equipo los actualice sin editar la página.
 
+## Crea con Maloka · página general y 5 subpáginas
+
+Maquetas: https://ydelriov.github.io/Maloka/seleccion/crea-con-maloka/ y una subpágina por ítem del menú:
+`/crea-con-maloka/patrocinios-y-alianzas/`, `/experiencias-museograficas/`, `/acompanamiento-pedagogico/`,
+`/investigacion-y-consultoria/` y `/maloka-viajera/`.
+
+Textos de maloka.org/programas-proyectos/, /maloka-viajeras/, /maloka-airbus/ y /cotizaciones-y-grupos/ (datos en
+`src/data/crea-v13.json`). La página general explica las 5 líneas y cada subpágina las desarrolla con sus proyectos.
+
+| Archivo | Página (slug) | Secciones |
+|---|---|---|
+| `crea-con-maloka-v13.json` | `crea-con-maloka` | Cabecera · trayectoria y 4 cifras · las 5 líneas como filas-enlace · cómo trabajamos (3 pasos) · aliados · Hablemos (`#contacto`) |
+| `crea-patrocinios-y-alianzas-v13.json` | `crea-con-maloka/patrocinios-y-alianzas` | Qué hacemos y para quién · pauta (+1.200 visitantes/día, espacios, formatos, portafolio PDF) · proyectos (Airbus, Vanti, Cenit) |
+| `crea-experiencias-museograficas-v13.json` | `crea-con-maloka/experiencias-museograficas` | Qué hacemos · proyectos (CiuLab, Gestión del Riesgo, Magma, Museo de Derechos Humanos) |
+| `crea-acompanamiento-pedagogico-v13.json` | `crea-con-maloka/acompanamiento-pedagogico` | Qué hacemos · 6 proyectos (Chicas STEAM, Del museo al aula, Clubes STEM…) |
+| `crea-investigacion-y-consultoria-v13.json` | `crea-con-maloka/investigacion-y-consultoria` | Qué hacemos · proyectos (financiamiento basal, Gente Convergente, estudio de públicos) |
+| `crea-maloka-viajera-v13.json` | `crea-con-maloka/maloka-viajera` | El valor incluye · 3 exposiciones · cómo funciona (4 pasos) · cotizar |
+
+Todas las subpáginas tienen la misma estructura: cabecera con foto cuadrada, anclas fijas, «Qué hacemos», proyectos
+(tarjetas que abren la página del proyecto en maloka.org), «Otras formas de crear con nosotros» y «Hablemos», que abre
+un correo a info@maloka.org con el asunto de cada línea.
+
+**Cómo importarlas:** crea la página **Crea con Maloka** (slug `crea-con-maloka`) y, como páginas hijas, las 5 de
+la tabla. En cada una: Elementor › carpeta › **Importar** › su JSON › **Insertar**; plantilla **Elementor ancho
+completo**; revisa tablet y celular y publica.
+
+**Por validar:** los 3 pasos de «Cómo trabajamos», las listas «Lo que podemos hacer contigo» y «Para» de cada línea
+(se dedujeron de los textos de maloka.org) y si conviene un formulario en lugar del correo para «Hablemos».
+
 ## ven-en-grupo-v13.json · Página Ven en grupo
 
 Maqueta: https://ydelriov.github.io/Maloka/seleccion/ven-en-grupo/
@@ -191,8 +221,7 @@ Maqueta: https://ydelriov.github.io/Maloka/seleccion/ven-en-grupo/
 Reúne en una sola página lo que hoy está en maloka.org/cotizaciones-y-grupos/ y en
 maloka.org/maloka-puertas-abiertas-mpa/ (textos, PDF, fotos y el formulario de cotización de Google). Todo con
 contenedores y widgets nativos; tiene 8 fotos, así que va en un solo archivo. Los **patrocinios y pautas** no van
-aquí: son de **Crea con Maloka** (`#patrocinios`); sus textos y el portafolio quedan guardados en `grupos-v13.json`
-(`marcasParaCrea`) para esa página.
+aquí: están en **Crea con Maloka › Patrocinios y alianzas** (`crea-patrocinios-y-alianzas-v13.json`).
 
 | # | Sección | Contenedores y widgets |
 |---|---|---|

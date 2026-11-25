@@ -46,11 +46,11 @@ const RUTAS = {
   'Noticias': 'noticias/',
   // Crea con Maloka
   'Crea con Maloka': 'crea-con-maloka/',
-  'Patrocinios y alianzas': 'crea-con-maloka/#patrocinios',
-  'Experiencias museográficas': 'crea-con-maloka/#museografia',
-  'Acompañamiento pedagógico': 'crea-con-maloka/#pedagogia',
-  'Investigación y consultoría': 'crea-con-maloka/#investigacion',
-  'Maloka viajera': 'crea-con-maloka/#viajera',
+  'Patrocinios y alianzas': 'crea-con-maloka/patrocinios-y-alianzas/',
+  'Experiencias museográficas': 'crea-con-maloka/experiencias-museograficas/',
+  'Acompañamiento pedagógico': 'crea-con-maloka/acompanamiento-pedagogico/',
+  'Investigación y consultoría': 'crea-con-maloka/investigacion-y-consultoria/',
+  'Maloka viajera': 'crea-con-maloka/maloka-viajera/',
   'Hablemos de tu proyecto': 'crea-con-maloka/#contacto'
 };
 
@@ -62,4 +62,4 @@ export const pagina = (path) => (MOSTRAR_PAGINAS ? url(path) : '#');
 /** Para un grupo publicado (p. ej. «seleccion»): los enlaces de Visítanos, Agéndate, Noticias y Ven en grupo van a sus páginas dentro del
  *  grupo (/seleccion/visitanos/…, /seleccion/agendate/…); el resto sigue como `ruta`. Sin grupo, es igual a `ruta`. */
 export const rutaPara = (grupo) => (label) =>
-  grupo && /^(visitanos|agendate|noticias|ven-en-grupo)\//.test(RUTAS[label] || '') ? url(`${grupo}/${RUTAS[label]}`) : ruta(label);
+  grupo && /^(visitanos|agendate|noticias|ven-en-grupo|crea-con-maloka)\//.test(RUTAS[label] || '') ? url(`${grupo}/${RUTAS[label]}`) : ruta(label);

@@ -213,32 +213,5 @@
       "p": "¿Cuántas personas pueden ingresar al día con Maloka Puertas Abiertas?",
       "r": "Hay 80 cupos diarios, con registro previo y aprobación. Las reservas se hacen con mínimo 72 horas de anticipación y se activan a inicios de cada mes."
     }
-  ],
-  "marcasParaCrea": {
-    "titulo": "Tu marca, en uno de los museos más visitados de Bogotá.",
-    "texto": "Conecta con una audiencia diversa y comprometida con la ciencia, la tecnología y el aprendizaje. Patrocina contenidos y experiencias, o pauta en espacios de alto impacto, y conviértete en aliado de una institución educativa y cultural reconocida a nivel nacional e internacional.",
-    "cifra": {
-      "valor": "+1.200",
-      "label": "personas visitan Maloka cada día"
-    },
-    "espacios": [
-      "El Domo",
-      "Sala Digital",
-      "Ascensores",
-      "Escaleras eléctricas",
-      "Taquillas",
-      "Zonas VIP"
-    ],
-    "formatos": [
-      "Cajas de luz",
-      "Spots publicitarios",
-      "Branding de espacios",
-      "Patrocinio de contenidos y experiencias"
-    ],
-    "portafolio": {
-      "texto": "Conoce el portafolio de patrocinios",
-      "url": "https://maloka.org/wp-content/uploads/2026/08/Patrocinicios_%26_pautas_V7.pdf"
-    },
-    "nota": "Patrocinios y pautas van en Crea con Maloka (#patrocinios); se guardan aquí para esa página."
-  }
+  ]
 }

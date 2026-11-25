@@ -1,0 +1,170 @@
+---
+/* Crea con Maloka · subpágina de cada línea del menú (publicada en /seleccion/crea-con-maloka/<línea>/):
+   patrocinios-y-alianzas, experiencias-museograficas, acompanamiento-pedagogico, investigacion-y-consultoria y
+   maloka-viajera. Una sola plantilla con los datos de src/data/crea-v13.json; en Elementor es una página por línea con
+   la misma estructura (elementor/crea-<línea>-v13.json).
+   1. Cabecera con foto cuadrada · 2. Anclas · 3. Qué hacemos y para quién
+   4. Bloque propio: pauta (Patrocinios) o exposiciones y pasos (Maloka viajera)
+   5. Proyectos (tarjetas-enlace a maloka.org) · 6. Otras líneas · 7. Hablemos (#contacto) */
+import Base from '../../../layouts/Base.astro';
+import NHeader from '../../../components/n/NHeader.astro';
+import NFooter from '../../../components/n/NFooter.astro';
+import Icon from '../../../components/ui/Icon.astro';
+import c from '../../../data/crea-v13.json';
+import site from '../../../data/site.json';
+import { url } from '../../../lib/url.js';
+import '../../../styles/noche.css';
+import '../../../styles/crea.css';
+
+export function getStaticPaths() {
+  return c.lineas.map((l) => ({ params: { slug: l.slug }, props: { l } }));
+}
+const { l } = Astro.props;
+const G = 'seleccion';
+const correo = `mailto:${c.correo}?subject=${encodeURIComponent(l.asunto || `Crea con Maloka: ${l.titulo}`)}`;
+const otras = c.lineas.filter((x) => x.id !== l.id);
+const anclas = [
+  { id: 'que-hacemos', label: 'Qué hacemos' },
+  ...(l.pauta ? [{ id: 'pauta', label: 'Pauta' }] : []),
+  ...(l.exposiciones ? [{ id: 'exposiciones', label: 'Exposiciones' }, { id: 'como', label: 'Cómo funciona' }] : []),
+  ...(l.proyectos.length ? [{ id: 'proyectos', label: 'Proyectos' }] : []),
+  { id: 'contacto', label: l.exposiciones ? 'Cotizar' : 'Hablemos' }
+];
+---
+<Base variante="crea" grupo={G} title={`${l.titulo} · Crea con Maloka`} description={l.lead} clase="nn">
+  <NHeader variante="blanco" panel="hueso" grupo={G} inicio={url(`${G}/`)} />
+  <main id="contenido">
+    <!-- 1 · Cabecera -->
+    <section class={`cr-hero n-hueso cr-${l.color}`} aria-labelledby="cr-h1">
+      <div class="mk-w cr-hero-in">
+        <div class="cr-hero-t">
+          <nav class="cr-migas" aria-label="Ruta"><a href={url(`${G}/`)}>Inicio</a><span aria-hidden="true">/</span><a href={url(`${G}/crea-con-maloka/`)}>Crea con Maloka</a><span aria-hidden="true">/</span><span aria-current="page">{l.titulo}</span></nav>
+          <span class="cr-tag">{l.titulo}</span>
+          <h1 class="cr-h1 cr-h1--t" id="cr-h1">{l.frase}</h1>
+          <p class="cr-lead">{l.lead}</p>
+          <a class="n-b" href="#contacto">{l.exposiciones ? 'Quiero cotizar esta experiencia' : 'Hablemos de tu proyecto'}<Icon name="arrow" /></a>
+        </div>
+        <div class="cr-hero-f"><img src={l.imagen} alt={l.alt} width="600" height="600" decoding="async" /></div>
+      </div>
+    </section>
+
+    <!-- 2 · Anclas -->
+    <nav class="cr-anclas" aria-label="En esta página">
+      <ul class="mk-w">{anclas.map((a) => <li><a href={`#${a.id}`}>{a.label}</a></li>)}</ul>
+    </nav>
+
+    <!-- 3 · Qué hacemos -->
+    <section class={`n-sec n-blanco cr-sec cr-${l.color}`} id="que-hacemos" aria-labelledby="cr-qh">
+      <div class="mk-w cr-dos">
+        <div class="cr-col">
+          <p class="n-ante">Qué hacemos</p>
+          <h2 class="n-titulo" id="cr-qh">{l.exposiciones ? 'El valor incluye' : 'Lo que podemos hacer contigo'}</h2>
+          <p class="cr-k">Para</p>
+          <ul class="cr-para">{l.para.map((p) => <li>{p}</li>)}</ul>
+        </div>
+        <div>
+          <ul class="cr-hace">{l.hacemos.map((h) => <li><Icon name="check" size="22" />{h}</li>)}</ul>
+          {!l.exposiciones && <span class="n-ej">Lista por validar con el equipo</span>}
+        </div>
+      </div>
+    </section>
+
+    <!-- 4a · Pauta (Patrocinios) -->
+    {l.pauta && (
+      <section class="n-sec cr-sec" id="pauta" aria-labelledby="cr-pa" style="background:var(--n-menta)">
+        <div class="mk-w cr-dos">
+          <div class="cr-col">
+            <p class="n-ante" style="color:var(--n-noche)">Pauta y patrocinio</p>
+            <h2 class="n-titulo" id="cr-pa">Espacios de alto impacto.</h2>
+            <p class="cr-cifra"><b class="t-num">{l.pauta.cifra.valor}</b><span>{l.pauta.cifra.label}</span></p>
+          </div>
+          <div class="cr-col">
+            <div class="cr-listas">
+              <div><h3 class="cr-k">Espacios</h3><ul>{l.pauta.espacios.map((x) => <li>{x}</li>)}</ul></div>
+              <div><h3 class="cr-k">Formatos</h3><ul>{l.pauta.formatos.map((x) => <li>{x}</li>)}</ul></div>
+            </div>
+            <a class="n-a" href={l.pauta.portafolio.url} target="_blank" rel="noopener"><Icon name="download" size="18" />{l.pauta.portafolio.texto} (PDF)</a>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- 4b · Exposiciones y cómo funciona (Maloka viajera) -->
+    {l.exposiciones && (
+      <>
+        <section class="n-sec n-hueso cr-sec" id="exposiciones" aria-labelledby="cr-ex">
+          <div class="mk-w">
+            <div class="n-head"><div><p class="n-ante">Exposiciones</p><h2 class="n-titulo" id="cr-ex">Elige una o llévalas las tres.</h2><p class="n-lead">Para estudiantes, docentes, familias, grupos de adulto mayor y todo tipo de público.</p></div></div>
+            <ul class="cr-expo">
+              {l.exposiciones.map((x) => (
+                <li>
+                  <span class={`cr-tag cr-${l.color}`}>{x.tag}</span>
+                  <h3>{x.titulo}</h3>
+                  <p>{x.texto}</p>
+                  <ul>{x.vivencias.map((v) => <li><Icon name="check" size="20" />{v}</li>)}</ul>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+        <section class="n-sec n-blanco cr-sec" id="como" aria-labelledby="cr-cm">
+          <div class="mk-w">
+            <div class="n-head"><div><p class="n-ante">Cómo funciona</p><h2 class="n-titulo" id="cr-cm">Así llevamos Maloka a tu territorio.</h2></div></div>
+            <ol class="cr-pasos" style={`--n:${l.pasos.length}`}>
+              {l.pasos.map((p) => <li class="cr-paso"><b class="cr-paso-n t-num">{p.n}</b><span><b>{p.titulo}</b><span>{p.texto}</span></span></li>)}
+            </ol>
+          </div>
+        </section>
+      </>
+    )}
+
+    <!-- 5 · Proyectos -->
+    {l.proyectos.length > 0 && (
+      <section class="n-sec n-noche cr-sec" id="proyectos" aria-labelledby="cr-pr">
+        <div class="mk-w">
+          <div class="n-head"><div><p class="n-ante">Proyectos</p><h2 class="n-titulo" id="cr-pr">Lo que hemos creado con aliados.</h2></div></div>
+          <ul class="cr-proy">
+            {l.proyectos.map((p, i) => (
+              <li data-rv style={`--d:${i % 3}`}>
+                <a class="cr-proy-a" href={p.url} target="_blank" rel="noopener">
+                  <span class="cr-proy-f"><img src={p.imagen} alt="" width="600" height="600" loading="lazy" decoding="async" /></span>
+                  <span class={`cr-tag cr-${l.color}`}>{p.aliado}</span>
+                  <h3 class="cr-proy-t">{p.titulo}</h3>
+                  <span class="cr-proy-x">{p.texto}</span>
+                  <span class="cr-proy-c t-num">{p.cifra}</span>
+                  <span class="cr-proy-l">Ver proyecto<Icon name="ext" size="18" /><span class="sr-only"> en maloka.org (abre en una pestaña nueva)</span></span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )}
+
+    <!-- 6 · Otras líneas -->
+    <section class="n-sec n-blanco" aria-labelledby="cr-ot">
+      <div class="mk-w">
+        <div class="n-head"><div><p class="n-ante">Crea con Maloka</p><h2 class="n-titulo" id="cr-ot">Otras formas de crear con nosotros.</h2></div><a class="n-a" href={url(`${G}/crea-con-maloka/`)}>Ver todo<Icon name="arrow" size="20" /></a></div>
+        <ul class="cr-otras">
+          {otras.map((o) => <li><a class={`cr-otra cr-${o.color}`} href={url(`${G}/crea-con-maloka/${o.slug}/`)}><b>{o.titulo}</b><span>{o.corto}</span><Icon name="arrow" size="24" /></a></li>)}
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7 · Contacto -->
+    <section class="n-sec n-noche cr-sec" id="contacto" aria-labelledby="cr-ct">
+      <div class="mk-w cr-ct">
+        <div class="cr-col">
+          <p class="n-ante">{l.titulo}</p>
+          <h2 class="n-display" id="cr-ct">{l.exposiciones ? '¿Listo para inspirar a tu comunidad?' : '¿Tienes una idea? Hagámosla realidad.'}</h2>
+          <a class="n-b" href={correo}>{l.exposiciones ? 'Quiero cotizar esta experiencia' : 'Hablemos de tu proyecto'}<Icon name="arrow" /></a>
+        </div>
+        <div class="cr-cont">
+          <a href={correo}><Icon name="mail" size="22" />{c.correo}</a>
+          <a href={`tel:${site.telefonoHref}`}><Icon name="phone" size="22" />{site.telefono}</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <NFooter grupo={G} />
+</Base>
