@@ -237,7 +237,7 @@ lista = widget('loop-grid', _skin='post', template_id='@loop:noticia', columns=3
                load_more_button_align='center', load_more_spacing=px(40),
                button_text_color=NOCHE, background_background='classic', background_color='rgba(0,0,0,0)',
                button_background_hover_background='classic', button_background_hover_color=NOCHE,
-               button_hover_color='#FFE25C', border_border='solid', border_width=caja(2), border_color=NOCHE,
+               hover_color='#FFE25C', border_border='solid', border_width=caja(2), border_color=NOCHE,
                border_radius=caja(0), text_padding=caja(14, 24),
                load_more_no_posts_message_switcher='yes', load_more_no_posts_custom_message='Ya viste todas las noticias.',
                nothing_found_message_text='No hay noticias de esta categoría por ahora.',

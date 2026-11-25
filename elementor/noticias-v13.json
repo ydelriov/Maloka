@@ -427,7 +427,7 @@
         "background_color": "rgba(0,0,0,0)",
         "button_background_hover_background": "classic",
         "button_background_hover_color": "#231B2B",
-        "button_hover_color": "#FFE25C",
+        "hover_color": "#FFE25C",
         "border_border": "solid",
         "border_width": {
          "unit": "px",
