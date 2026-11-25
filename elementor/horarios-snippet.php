@@ -123,3 +123,19 @@ add_filter(
 	10,
 	2
 );
+
+/**
+ * Elementor guarda una copia ya armada de cada página (_elementor_element_cache). El recuadro «Hoy abrimos» se marca
+ * como contenido dinámico para que no quede guardado con un horario viejo.
+ */
+add_filter(
+	'elementor/element/is_dynamic_content',
+	function ( $es_dinamico, $datos ) {
+		if ( isset( $datos['widgetType'] ) && 'html' === $datos['widgetType'] && false !== strpos( $datos['settings']['html'] ?? '', 'mk-hoy' ) ) {
+			return true;
+		}
+		return $es_dinamico;
+	},
+	10,
+	2
+);
