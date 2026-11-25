@@ -54,7 +54,7 @@ const ext = (u) => /^https?:/.test(u);
           <li><a class="nf-llegar" href={llegar}>{f.ubicacion.llegar}<Icon name="arrow" size="18" /></a></li>
         </ul>
       </div>
-      <nav aria-label={f.corporacion.titulo}>
+      <nav class="nf-corp" aria-label={f.corporacion.titulo}>
         <p class="nf-ct">{f.corporacion.titulo}</p>
         <ul>{f.corporacion.links.map((l) => <li><a href={l.url} {...(ext(l.url) && !l.url.includes('maloka.org') ? { target: '_blank', rel: 'noopener' } : {})}>{l.texto}</a></li>)}</ul>
       </nav>
@@ -93,12 +93,29 @@ const ext = (u) => /^https?:/.test(u);
   .nf-nota { font-size: 13px; }
   .nf .nf-llegar { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--n-amarillo); }
   .nf-legal { display: flex; flex-wrap: wrap; gap: 8px 24px; padding-top: 24px; border-top: 1px solid var(--n-linea); font-size: 13px; color: var(--n-texto2-osc); }
+  /* Tablet: arriba frase + boletín a la izquierda y redes a la derecha; abajo Maloka · Horarios · Ubicación en 3
+     columnas y Corporación Maloka (enlaces en 2 columnas) con el logo y los sellos al lado */
   @media (max-width: 1024px) {
-    .nf-top { grid-template-columns: minmax(0, 1fr); }
-    .nf-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .nf-marca { grid-column: 1 / -1; grid-auto-flow: column; justify-content: start; align-items: center; }
+    .nf-top { grid-template-columns: minmax(0, 1fr) auto; gap: 24px 40px; }
+    .nf-acc { gap: 20px; }
+    .nf-top .nf-acc { display: contents; }
+    .nf-grande { grid-column: 1; grid-row: 1; align-self: end; }
+    .nf-bol { grid-column: 1; grid-row: 2; justify-self: start; }
+    .nf-redes { grid-column: 2; grid-row: 1 / span 2; align-self: end; }
+    .nf-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 32px; }
+    .nf-marca { order: 6; grid-auto-flow: row; align-content: end; justify-items: end; padding-top: 28px; }
+    .nf-corp { order: 5; grid-column: span 2; }
+    .nf-corp ul { display: block; columns: 2; column-gap: 32px; }
+    .nf-corp li { break-inside: avoid; margin-bottom: 8px; }
   }
   @media (max-width: 767px) {
+    .nf-top { grid-template-columns: minmax(0, 1fr); }
+    .nf-top .nf-acc { display: grid; }
+    .nf-grande, .nf-bol, .nf-redes { grid-column: auto; grid-row: auto; }
+    .nf-marca { order: 0; justify-items: start; padding-top: 0; grid-auto-flow: column; justify-content: start; align-items: center; }
+    .nf-corp { order: 0; grid-column: auto; }
+    .nf-corp ul { display: grid; columns: auto; }
+    .nf-corp li { margin-bottom: 0; }
     .nf-cols { grid-template-columns: minmax(0, 1fr); gap: 28px; }
     .nf-cols a { overflow-wrap: anywhere; }
     .nf-redes ul { gap: 6px; }

@@ -198,9 +198,14 @@ Inicio se había guardado con `_css_classes` en sus contenedores y por eso el ca
 Con la información del footer de maloka.org (noviembre de 2026):
 
 - Arriba: «Que la curiosidad no se detenga.», enlace **Suscríbete al boletín de Maloka** (formulario de ipzmarketing) y
-  **Síguenos en** con los iconos de TikTok, Instagram, Facebook, YouTube, LinkedIn y el canal de WhatsApp (widget Iconos sociales).
-- Grilla de 5 columnas (2 en tablet, 1 en celular): logo blanco y certificaciones ICONTEC ISO 9001 e IQNet; Maloka;
+  **Síguenos en** con los iconos de TikTok, Instagram, Facebook, YouTube, Spotify (podcast La Maloka), LinkedIn y el
+  canal de WhatsApp (widget Iconos sociales). Es un contenedor **Grilla**: en tablet la frase y el boletín quedan a la
+  izquierda y las redes a la derecha.
+- Grilla de 5 columnas (1 en celular): logo blanco y certificaciones ICONTEC ISO 9001 e IQNet; Maloka;
   Horarios; Ubicación (dirección con enlace a Google Maps, teléfono y «¿Cómo llegar?»); Corporación Maloka.
+- **En tablet** la grilla pasa a 3 columnas: Maloka · Horarios · Ubicación en la primera fila; abajo Corporación Maloka
+  ocupa 2 columnas con sus enlaces en dos listas lado a lado, y el logo con los sellos va a la derecha. La posición de
+  cada bloque está en Avanzado › **Elemento de grilla** (columna y fila personalizadas, solo en tablet y celular).
 - Abajo: NIT 830.040.745-0, © 2026 Corporación Maloka y Tratamiento de datos.
 
 **Cómo importarlo:** Plantillas › Theme Builder › Footer › **Importar** › `footer-v13.json`, ábrelo, revisa y **Publicar**

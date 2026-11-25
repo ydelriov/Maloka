@@ -5,7 +5,7 @@
  "page_settings": {},
  "content": [
   {
-   "id": "4f16cac7",
+   "id": "5dab0bf8",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -61,32 +61,65 @@
    },
    "elements": [
     {
-     "id": "4f150494",
+     "id": "083f3c9f",
      "elType": "container",
      "isInner": true,
      "settings": {
-      "container_type": "flex",
-      "flex_direction": "row",
+      "container_type": "grid",
       "content_width": "full",
-      "flex_wrap": "nowrap",
-      "flex_direction_tablet": "column",
-      "flex_direction_mobile": "column",
-      "flex_gap": {
+      "grid_columns_grid": {
+       "unit": "custom",
+       "size": "1fr 1fr",
+       "sizes": []
+      },
+      "grid_columns_grid_tablet": {
+       "unit": "custom",
+       "size": "1fr auto",
+       "sizes": []
+      },
+      "grid_columns_grid_mobile": {
+       "unit": "fr",
+       "size": 1,
+       "sizes": []
+      },
+      "grid_rows_grid": {
+       "unit": "custom",
+       "size": "auto",
+       "sizes": []
+      },
+      "grid_rows_grid_tablet": {
+       "unit": "custom",
+       "size": "auto",
+       "sizes": []
+      },
+      "grid_rows_grid_mobile": {
+       "unit": "custom",
+       "size": "auto",
+       "sizes": []
+      },
+      "grid_auto_flow": "row",
+      "grid_gaps": {
        "column": "64",
-       "row": "64",
-       "isLinked": true,
+       "row": "28",
+       "isLinked": false,
        "unit": "px",
        "size": 64
       },
-      "flex_gap_tablet": {
-       "column": "32",
-       "row": "32",
+      "grid_gaps_tablet": {
+       "column": "40",
+       "row": "20",
+       "isLinked": false,
+       "unit": "px",
+       "size": 40
+      },
+      "grid_gaps_mobile": {
+       "column": "28",
+       "row": "28",
        "isLinked": true,
        "unit": "px",
-       "size": 32
+       "size": 28
       },
-      "flex_align_items": "flex-end",
-      "flex_align_items_tablet": "flex-start",
+      "grid_align_items": "end",
       "padding": {
        "unit": "px",
        "top": "0",
@@ -98,28 +131,23 @@
      },
      "elements": [
       {
-       "id": "06c64595",
+       "id": "cb95441f",
        "elType": "container",
        "isInner": true,
        "settings": {
         "container_type": "flex",
         "flex_direction": "column",
         "content_width": "full",
-        "width": {
-         "unit": "%",
-         "size": 48,
-         "sizes": []
-        },
-        "width_tablet": {
-         "unit": "%",
-         "size": 100,
-         "sizes": []
-        },
-        "width_mobile": {
-         "unit": "%",
-         "size": 100,
-         "sizes": []
-        },
+        "grid_column": "custom",
+        "grid_column_custom": "1",
+        "grid_row": "custom",
+        "grid_row_custom": "1 / span 2",
+        "grid_row_tablet": "custom",
+        "grid_row_custom_tablet": "1",
+        "grid_column_mobile": "custom",
+        "grid_column_custom_mobile": "auto",
+        "grid_row_mobile": "custom",
+        "grid_row_custom_mobile": "auto",
         "padding": {
          "unit": "px",
          "top": "0",
@@ -131,7 +159,7 @@
        },
        "elements": [
         {
-         "id": "d2d5b8bb",
+         "id": "59dca337",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -168,36 +196,26 @@
        ]
       },
       {
-       "id": "483ba69e",
+       "id": "664fd515",
        "elType": "container",
        "isInner": true,
        "settings": {
         "container_type": "flex",
         "flex_direction": "column",
         "content_width": "full",
-        "flex_gap": {
-         "column": "14",
-         "row": "14",
-         "isLinked": true,
-         "unit": "px",
-         "size": 14
-        },
         "flex_align_items": "flex-start",
-        "width": {
-         "unit": "%",
-         "size": 48,
-         "sizes": []
-        },
-        "width_tablet": {
-         "unit": "%",
-         "size": 100,
-         "sizes": []
-        },
-        "width_mobile": {
-         "unit": "%",
-         "size": 100,
-         "sizes": []
-        },
+        "grid_column": "custom",
+        "grid_column_custom": "2",
+        "grid_row": "custom",
+        "grid_row_custom": "1",
+        "grid_column_tablet": "custom",
+        "grid_column_custom_tablet": "1",
+        "grid_row_tablet": "custom",
+        "grid_row_custom_tablet": "2",
+        "grid_column_mobile": "custom",
+        "grid_column_custom_mobile": "auto",
+        "grid_row_mobile": "custom",
+        "grid_row_custom_mobile": "auto",
         "padding": {
          "unit": "px",
          "top": "0",
@@ -209,7 +227,7 @@
        },
        "elements": [
         {
-         "id": "01b7191d",
+         "id": "66d6a302",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -262,9 +280,49 @@
           "typography_font_family": "Montserrat"
          },
          "elements": []
+        }
+       ]
+      },
+      {
+       "id": "c1bbe9e4",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "container_type": "flex",
+        "flex_direction": "column",
+        "content_width": "full",
+        "flex_gap": {
+         "column": "14",
+         "row": "14",
+         "isLinked": true,
+         "unit": "px",
+         "size": 14
         },
+        "flex_align_items": "flex-start",
+        "grid_column": "custom",
+        "grid_column_custom": "2",
+        "grid_row": "custom",
+        "grid_row_custom": "2",
+        "grid_column_tablet": "custom",
+        "grid_column_custom_tablet": "2",
+        "grid_row_tablet": "custom",
+        "grid_row_custom_tablet": "1 / span 2",
+        "grid_column_mobile": "custom",
+        "grid_column_custom_mobile": "auto",
+        "grid_row_mobile": "custom",
+        "grid_row_custom_mobile": "auto",
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
+        }
+       },
+       "elements": [
         {
-         "id": "6a589539",
+         "id": "a4a354ca",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -289,14 +347,14 @@
          "elements": []
         },
         {
-         "id": "b266a1c6",
+         "id": "8b7877ef",
          "elType": "widget",
          "widgetType": "social-icons",
          "isInner": false,
          "settings": {
           "social_icon_list": [
            {
-            "_id": "f85lvcg",
+            "_id": "ymwzlc2",
             "social_icon": {
              "value": "fab fa-tiktok",
              "library": "fa-brands"
@@ -310,7 +368,7 @@
             "text": "TikTok"
            },
            {
-            "_id": "zdl0w31",
+            "_id": "3gtbgcx",
             "social_icon": {
              "value": "fab fa-instagram",
              "library": "fa-brands"
@@ -324,7 +382,7 @@
             "text": "Instagram"
            },
            {
-            "_id": "crkofx4",
+            "_id": "c8hkw7i",
             "social_icon": {
              "value": "fab fa-facebook-f",
              "library": "fa-brands"
@@ -338,7 +396,7 @@
             "text": "Facebook"
            },
            {
-            "_id": "5nfvdam",
+            "_id": "s7evj9s",
             "social_icon": {
              "value": "fab fa-youtube",
              "library": "fa-brands"
@@ -352,7 +410,7 @@
             "text": "YouTube"
            },
            {
-            "_id": "enkxxna",
+            "_id": "m3crpun",
             "social_icon": {
              "value": "fab fa-spotify",
              "library": "fa-brands"
@@ -366,7 +424,7 @@
             "text": "Spotify (podcast La Maloka)"
            },
            {
-            "_id": "kketkq3",
+            "_id": "2ayh8h1",
             "social_icon": {
              "value": "fab fa-linkedin-in",
              "library": "fa-brands"
@@ -380,7 +438,7 @@
             "text": "LinkedIn"
            },
            {
-            "_id": "e20t85z",
+            "_id": "f87jjc3",
             "social_icon": {
              "value": "fab fa-whatsapp",
              "library": "fa-brands"
@@ -443,7 +501,7 @@
      ]
     },
     {
-     "id": "77904b7c",
+     "id": "bd5ced60",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -456,7 +514,7 @@
       },
       "grid_columns_grid_tablet": {
        "unit": "fr",
-       "size": 2,
+       "size": 3,
        "sizes": []
       },
       "grid_columns_grid_mobile": {
@@ -484,6 +542,13 @@
        "column": "32",
        "row": "32",
        "isLinked": true,
+       "unit": "px",
+       "size": 32
+      },
+      "grid_gaps_tablet": {
+       "column": "32",
+       "row": "40",
+       "isLinked": false,
        "unit": "px",
        "size": 32
       },
@@ -516,7 +581,7 @@
      },
      "elements": [
       {
-       "id": "3ca77248",
+       "id": "3b35d7e1",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -530,6 +595,23 @@
          "unit": "px",
          "size": 24
         },
+        "grid_column_tablet": "custom",
+        "grid_column_custom_tablet": "3",
+        "grid_row_tablet": "custom",
+        "grid_row_custom_tablet": "2",
+        "flex_align_items_tablet": "flex-end",
+        "padding_tablet": {
+         "unit": "px",
+         "top": "28",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "grid_column_mobile": "custom",
+        "grid_column_custom_mobile": "auto",
+        "grid_row_mobile": "custom",
+        "grid_row_custom_mobile": "auto",
         "padding": {
          "unit": "px",
          "top": "0",
@@ -541,7 +623,7 @@
        },
        "elements": [
         {
-         "id": "135958bd",
+         "id": "00d80237",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -553,6 +635,8 @@
           },
           "image_size": "full",
           "align": "left",
+          "align_tablet": "right",
+          "align_mobile": "left",
           "caption_source": "none",
           "link_to": "custom",
           "link": {
@@ -570,7 +654,7 @@
          "elements": []
         },
         {
-         "id": "6ad48b77",
+         "id": "6816fb2b",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -598,7 +682,7 @@
          },
          "elements": [
           {
-           "id": "243305bb",
+           "id": "6a6ee2e8",
            "elType": "widget",
            "widgetType": "image",
            "isInner": false,
@@ -621,7 +705,7 @@
            "elements": []
           },
           {
-           "id": "a0b8d740",
+           "id": "a1f788e0",
            "elType": "widget",
            "widgetType": "image",
            "isInner": false,
@@ -648,7 +732,7 @@
        ]
       },
       {
-       "id": "4fd8c56f",
+       "id": "a965908b",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -673,7 +757,7 @@
        },
        "elements": [
         {
-         "id": "c515e232",
+         "id": "59ad6331",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -698,7 +782,7 @@
          "elements": []
         },
         {
-         "id": "8a246cd8",
+         "id": "61bb3df2",
          "elType": "widget",
          "widgetType": "icon-list",
          "isInner": false,
@@ -706,7 +790,7 @@
           "view": "traditional",
           "icon_list": [
            {
-            "_id": "z8qtlkv",
+            "_id": "o0qsiil",
             "text": "¿Qué es Maloka?",
             "selected_icon": {
              "value": "",
@@ -720,7 +804,7 @@
             }
            },
            {
-            "_id": "hnuwk63",
+            "_id": "l67hqkr",
             "text": "Prensa",
             "selected_icon": {
              "value": "",
@@ -734,7 +818,7 @@
             }
            },
            {
-            "_id": "utzyq47",
+            "_id": "30i9ddt",
             "text": "Trabaja con nosotros",
             "selected_icon": {
              "value": "",
@@ -748,7 +832,7 @@
             }
            },
            {
-            "_id": "uh97kbg",
+            "_id": "cpy3na2",
             "text": "Preguntas frecuentes",
             "selected_icon": {
              "value": "",
@@ -762,7 +846,7 @@
             }
            },
            {
-            "_id": "g4vskr4",
+            "_id": "10sxxsi",
             "text": "Contacto",
             "selected_icon": {
              "value": "",
@@ -814,7 +898,7 @@
        ]
       },
       {
-       "id": "63f4aebe",
+       "id": "fba1e87a",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -839,7 +923,7 @@
        },
        "elements": [
         {
-         "id": "64fd505a",
+         "id": "95947875",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -864,7 +948,7 @@
          "elements": []
         },
         {
-         "id": "76aeeacb",
+         "id": "a62846a8",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -886,13 +970,13 @@
           },
           "typography_font_family": "Montserrat",
           "__dynamic__": {
-           "title": "[elementor-tag id=\"321ecc3\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_dias%20dia%3D%5C%22semana%5C%22%5D%22%7D\"]"
+           "title": "[elementor-tag id=\"dba9be9\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_dias%20dia%3D%5C%22semana%5C%22%5D%22%7D\"]"
           }
          },
          "elements": []
         },
         {
-         "id": "04fec956",
+         "id": "5b8c4b10",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -914,13 +998,13 @@
           },
           "typography_font_family": "Montserrat",
           "__dynamic__": {
-           "title": "[elementor-tag id=\"1cb8430\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_horario%20dia%3D%5C%22semana%5C%22%5D%22%7D\"]"
+           "title": "[elementor-tag id=\"ef1c3a4\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_horario%20dia%3D%5C%22semana%5C%22%5D%22%7D\"]"
           }
          },
          "elements": []
         },
         {
-         "id": "b1b8a498",
+         "id": "9e903d60",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -942,13 +1026,13 @@
           },
           "typography_font_family": "Montserrat",
           "__dynamic__": {
-           "title": "[elementor-tag id=\"4406af7\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_dias%20dia%3D%5C%22finde%5C%22%5D%22%7D\"]"
+           "title": "[elementor-tag id=\"14ef646\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_dias%20dia%3D%5C%22finde%5C%22%5D%22%7D\"]"
           }
          },
          "elements": []
         },
         {
-         "id": "457ce797",
+         "id": "89edd165",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -970,13 +1054,13 @@
           },
           "typography_font_family": "Montserrat",
           "__dynamic__": {
-           "title": "[elementor-tag id=\"ac237ed\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_horario%20dia%3D%5C%22finde%5C%22%5D%22%7D\"]"
+           "title": "[elementor-tag id=\"34c00c1\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_horario%20dia%3D%5C%22finde%5C%22%5D%22%7D\"]"
           }
          },
          "elements": []
         },
         {
-         "id": "c31d5eed",
+         "id": "8de5e210",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -998,7 +1082,7 @@
           },
           "typography_font_family": "Montserrat",
           "__dynamic__": {
-           "title": "[elementor-tag id=\"ae48f21\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_venta%5D%22%7D\"]"
+           "title": "[elementor-tag id=\"ea411be\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_venta%5D%22%7D\"]"
           }
          },
          "elements": []
@@ -1006,7 +1090,7 @@
        ]
       },
       {
-       "id": "ce6fd420",
+       "id": "f71f19c8",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1031,7 +1115,7 @@
        },
        "elements": [
         {
-         "id": "6fe71570",
+         "id": "9d7705fd",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1056,7 +1140,7 @@
          "elements": []
         },
         {
-         "id": "f9cd3031",
+         "id": "602ffd5a",
          "elType": "widget",
          "widgetType": "icon-list",
          "isInner": false,
@@ -1064,7 +1148,7 @@
           "view": "traditional",
           "icon_list": [
            {
-            "_id": "fz047hu",
+            "_id": "ijcfruc",
             "text": "Cra. 68D # 24A - 51, Bogotá, Colombia",
             "selected_icon": {
              "value": "",
@@ -1078,7 +1162,7 @@
             }
            },
            {
-            "_id": "0j216zs",
+            "_id": "ddoyxxa",
             "text": "Teléfono: +57 (601) 427 2707",
             "selected_icon": {
              "value": "",
@@ -1128,14 +1212,14 @@
          "elements": []
         },
         {
-         "id": "c9fc636a",
+         "id": "e56e04fa",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
          "settings": {
           "title": "¿Cómo llegar? →",
           "header_size": "#FFE25C",
-          "title_color": "#FFE25C",
+          "title_color": "#FFFFFF",
           "link": {
            "url": "/visitanos/#llegar",
            "is_external": "",
@@ -1161,7 +1245,7 @@
        ]
       },
       {
-       "id": "399d22a8",
+       "id": "940185bd",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1175,6 +1259,14 @@
          "unit": "px",
          "size": 12
         },
+        "grid_column_tablet": "custom",
+        "grid_column_custom_tablet": "1 / span 2",
+        "grid_row_tablet": "custom",
+        "grid_row_custom_tablet": "2",
+        "grid_column_mobile": "custom",
+        "grid_column_custom_mobile": "auto",
+        "grid_row_mobile": "custom",
+        "grid_row_custom_mobile": "auto",
         "padding": {
          "unit": "px",
          "top": "0",
@@ -1186,7 +1278,7 @@
        },
        "elements": [
         {
-         "id": "559e125a",
+         "id": "48d1e919",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1211,167 +1303,305 @@
          "elements": []
         },
         {
-         "id": "4b2e0690",
-         "elType": "widget",
-         "widgetType": "icon-list",
-         "isInner": false,
+         "id": "9b19dc55",
+         "elType": "container",
+         "isInner": true,
          "settings": {
-          "view": "traditional",
-          "icon_list": [
-           {
-            "_id": "lu4ac14",
-            "text": "Informes de gestión",
-            "selected_icon": {
-             "value": "",
-             "library": ""
-            },
-            "link": {
-             "url": "https://maloka.org/informes-de-gestion",
-             "is_external": "",
-             "nofollow": "",
-             "custom_attributes": ""
-            }
-           },
-           {
-            "_id": "mekpnpc",
-            "text": "Sistema Integrado de Gestión",
-            "selected_icon": {
-             "value": "",
-             "library": ""
-            },
-            "link": {
-             "url": "https://maloka.org/sistema-integrado-de-gestion",
-             "is_external": "",
-             "nofollow": "",
-             "custom_attributes": ""
-            }
-           },
-           {
-            "_id": "o8xlvcj",
-            "text": "Intranet",
-            "selected_icon": {
-             "value": "",
-             "library": ""
-            },
-            "link": {
-             "url": "http://intranet.maloka.org/",
-             "is_external": "",
-             "nofollow": "",
-             "custom_attributes": ""
-            }
-           },
-           {
-            "_id": "2c81bu0",
-            "text": "Junta Directiva",
-            "selected_icon": {
-             "value": "",
-             "library": ""
-            },
-            "link": {
-             "url": "https://maloka.org/junta-directiva/",
-             "is_external": "",
-             "nofollow": "",
-             "custom_attributes": ""
-            }
-           },
-           {
-            "_id": "4598z7q",
-            "text": "Contratación",
-            "selected_icon": {
-             "value": "",
-             "library": ""
-            },
-            "link": {
-             "url": "https://maloka.org/contratacion",
-             "is_external": "",
-             "nofollow": "",
-             "custom_attributes": ""
-            }
-           },
-           {
-            "_id": "buc56ha",
-            "text": "PQRSF",
-            "selected_icon": {
-             "value": "",
-             "library": ""
-            },
-            "link": {
-             "url": "https://forms.gle/iPLFZxvPBK9UqYjJA",
-             "is_external": "on",
-             "nofollow": "",
-             "custom_attributes": ""
-            }
-           },
-           {
-            "_id": "tc9k7z8",
-            "text": "ESAL",
-            "selected_icon": {
-             "value": "",
-             "library": ""
-            },
-            "link": {
-             "url": "https://maloka.org/esal",
-             "is_external": "",
-             "nofollow": "",
-             "custom_attributes": ""
-            }
-           },
-           {
-            "_id": "gkkxim2",
-            "text": "Registro de proveedores",
-            "selected_icon": {
-             "value": "",
-             "library": ""
-            },
-            "link": {
-             "url": "https://docs.google.com/forms/d/e/1FAIpQLSd7E3X6LplIo857p7fMVeWIKH9iTN2laRzKQm2ncDGJqciuvQ/viewform",
-             "is_external": "on",
-             "nofollow": "",
-             "custom_attributes": ""
-            }
-           }
-          ],
-          "text_color": "#D9D3E0",
-          "text_color_hover": "#FFE25C",
-          "icon_color": "#FFFFFF",
-          "icon_color_hover": "#FFE25C",
-          "icon_size": {
+          "container_type": "flex",
+          "flex_direction": "column",
+          "flex_direction_tablet": "row",
+          "flex_direction_mobile": "column",
+          "content_width": "full",
+          "flex_gap": {
+           "column": "8",
+           "row": "8",
+           "isLinked": true,
            "unit": "px",
-           "size": 16,
-           "sizes": []
+           "size": 8
           },
-          "text_indent": {
+          "flex_gap_tablet": {
+           "column": "32",
+           "row": "32",
+           "isLinked": true,
            "unit": "px",
-           "size": 8,
-           "sizes": []
+           "size": 32
           },
-          "space_between": {
+          "flex_gap_mobile": {
+           "column": "8",
+           "row": "8",
+           "isLinked": true,
            "unit": "px",
-           "size": 8,
-           "sizes": []
+           "size": 8
           },
-          "icon_typography_typography": "custom",
-          "icon_typography_font_size": {
+          "flex_wrap": "nowrap",
+          "padding": {
            "unit": "px",
-           "size": 14,
-           "sizes": []
-          },
-          "icon_typography_font_weight": "400",
-          "icon_typography_line_height": {
-           "unit": "em",
-           "size": 1.5,
-           "sizes": []
-          },
-          "icon_typography_font_family": "Montserrat"
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": true
+          }
          },
-         "elements": []
+         "elements": [
+          {
+           "id": "d8706161",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "container_type": "flex",
+            "flex_direction": "column",
+            "content_width": "full",
+            "width_tablet": {
+             "unit": "%",
+             "size": 50,
+             "sizes": []
+            },
+            "padding": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "ac3b5f49",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "isInner": false,
+             "settings": {
+              "view": "traditional",
+              "icon_list": [
+               {
+                "_id": "i34dn5q",
+                "text": "Informes de gestión",
+                "selected_icon": {
+                 "value": "",
+                 "library": ""
+                },
+                "link": {
+                 "url": "https://maloka.org/informes-de-gestion",
+                 "is_external": "",
+                 "nofollow": "",
+                 "custom_attributes": ""
+                }
+               },
+               {
+                "_id": "0qapb63",
+                "text": "Sistema Integrado de Gestión",
+                "selected_icon": {
+                 "value": "",
+                 "library": ""
+                },
+                "link": {
+                 "url": "https://maloka.org/sistema-integrado-de-gestion",
+                 "is_external": "",
+                 "nofollow": "",
+                 "custom_attributes": ""
+                }
+               },
+               {
+                "_id": "5f03jx3",
+                "text": "Intranet",
+                "selected_icon": {
+                 "value": "",
+                 "library": ""
+                },
+                "link": {
+                 "url": "http://intranet.maloka.org/",
+                 "is_external": "",
+                 "nofollow": "",
+                 "custom_attributes": ""
+                }
+               },
+               {
+                "_id": "vwzz31u",
+                "text": "Junta Directiva",
+                "selected_icon": {
+                 "value": "",
+                 "library": ""
+                },
+                "link": {
+                 "url": "https://maloka.org/junta-directiva/",
+                 "is_external": "",
+                 "nofollow": "",
+                 "custom_attributes": ""
+                }
+               }
+              ],
+              "text_color": "#D9D3E0",
+              "text_color_hover": "#FFE25C",
+              "icon_color": "#FFFFFF",
+              "icon_color_hover": "#FFE25C",
+              "icon_size": {
+               "unit": "px",
+               "size": 16,
+               "sizes": []
+              },
+              "text_indent": {
+               "unit": "px",
+               "size": 8,
+               "sizes": []
+              },
+              "space_between": {
+               "unit": "px",
+               "size": 8,
+               "sizes": []
+              },
+              "icon_typography_typography": "custom",
+              "icon_typography_font_size": {
+               "unit": "px",
+               "size": 14,
+               "sizes": []
+              },
+              "icon_typography_font_weight": "400",
+              "icon_typography_line_height": {
+               "unit": "em",
+               "size": 1.5,
+               "sizes": []
+              },
+              "icon_typography_font_family": "Montserrat"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "1e439bef",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "container_type": "flex",
+            "flex_direction": "column",
+            "content_width": "full",
+            "width_tablet": {
+             "unit": "%",
+             "size": 50,
+             "sizes": []
+            },
+            "padding": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "2da555d9",
+             "elType": "widget",
+             "widgetType": "icon-list",
+             "isInner": false,
+             "settings": {
+              "view": "traditional",
+              "icon_list": [
+               {
+                "_id": "b1ya3ra",
+                "text": "Contratación",
+                "selected_icon": {
+                 "value": "",
+                 "library": ""
+                },
+                "link": {
+                 "url": "https://maloka.org/contratacion",
+                 "is_external": "",
+                 "nofollow": "",
+                 "custom_attributes": ""
+                }
+               },
+               {
+                "_id": "4tke33n",
+                "text": "PQRSF",
+                "selected_icon": {
+                 "value": "",
+                 "library": ""
+                },
+                "link": {
+                 "url": "https://forms.gle/iPLFZxvPBK9UqYjJA",
+                 "is_external": "on",
+                 "nofollow": "",
+                 "custom_attributes": ""
+                }
+               },
+               {
+                "_id": "kog4max",
+                "text": "ESAL",
+                "selected_icon": {
+                 "value": "",
+                 "library": ""
+                },
+                "link": {
+                 "url": "https://maloka.org/esal",
+                 "is_external": "",
+                 "nofollow": "",
+                 "custom_attributes": ""
+                }
+               },
+               {
+                "_id": "g8lj11n",
+                "text": "Registro de proveedores",
+                "selected_icon": {
+                 "value": "",
+                 "library": ""
+                },
+                "link": {
+                 "url": "https://docs.google.com/forms/d/e/1FAIpQLSd7E3X6LplIo857p7fMVeWIKH9iTN2laRzKQm2ncDGJqciuvQ/viewform",
+                 "is_external": "on",
+                 "nofollow": "",
+                 "custom_attributes": ""
+                }
+               }
+              ],
+              "text_color": "#D9D3E0",
+              "text_color_hover": "#FFE25C",
+              "icon_color": "#FFFFFF",
+              "icon_color_hover": "#FFE25C",
+              "icon_size": {
+               "unit": "px",
+               "size": 16,
+               "sizes": []
+              },
+              "text_indent": {
+               "unit": "px",
+               "size": 8,
+               "sizes": []
+              },
+              "space_between": {
+               "unit": "px",
+               "size": 8,
+               "sizes": []
+              },
+              "icon_typography_typography": "custom",
+              "icon_typography_font_size": {
+               "unit": "px",
+               "size": 14,
+               "sizes": []
+              },
+              "icon_typography_font_weight": "400",
+              "icon_typography_line_height": {
+               "unit": "em",
+               "size": 1.5,
+               "sizes": []
+              },
+              "icon_typography_font_family": "Montserrat"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
         }
        ]
       }
      ]
     },
     {
-     "id": "5674eb54",
+     "id": "14f6bdb6",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1407,7 +1637,7 @@
      },
      "elements": [
       {
-       "id": "3f1d6fc3",
+       "id": "cbab84ff",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -1428,7 +1658,7 @@
        "elements": []
       },
       {
-       "id": "694862bc",
+       "id": "b85f76b0",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -1449,7 +1679,7 @@
        "elements": []
       },
       {
-       "id": "3c93fc09",
+       "id": "d60b9b48",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
