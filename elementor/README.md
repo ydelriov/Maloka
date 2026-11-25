@@ -5,13 +5,13 @@ Archivos JSON para importar en WordPress con **Elementor Pro**.
 | Archivo | Qué es | Se importa en |
 |---|---|---|
 | `header-v13.json` | Header: logo, menú y botón «Compra tus entradas» | Plantillas › Theme Builder › Header |
-| `footer-v13.json` | Footer con la información de maloka.org: boletín, redes, Maloka, horarios, ubicación, Corporación Maloka, certificaciones y NIT | Plantillas › Theme Builder › Footer |
+| `footer-v13.json` | Footer con la información de maloka.org: boletín, redes, Maloka, ubicación, Corporación Maloka (enlaces en 2 columnas, 3 en tableta), certificaciones y NIT | Plantillas › Theme Builder › Footer |
 | `header-v13-megamenu.json` | Header ya armado con el widget Menú (mega menú) y sus 4 paneles, exportado de pruebas.maloka.org | Plantillas › Theme Builder › Header (reemplaza los pasos 1 y 2 de abajo) |
 | `menu-paneles-v13.json` | Los 4 paneles en hueso del mega menú (Visítanos, Ven en grupo, Descubre, Crea con Maloka) | Plantillas › Plantillas guardadas |
 | `logo-maloka.svg` / `.png` | Logo de las maquetas, por si el sitio aún no tiene uno | Apariencia › Personalizar › Identidad del sitio |
 | `popup-combos.json` | Modal de los combos de TuBoleta | Plantillas › Popups |
 | `acf-evento.json` | Campos de cada evento (tipo de contenido «eventos»): fecha, horario, lugar, acceso, enlace, destacado | ACF › Herramientas › Importar |
-| `acf-horarios.json` + `horarios-snippet.php` | Horarios en un solo lugar (página de inicio) para menú, home, Visítanos y footer | ACF › Importar y Code Snippets |
+| `acf-horarios.json` + `horarios-snippet.php` | Horarios en un solo lugar (página de inicio) para menú, home y Visítanos | ACF › Importar y Code Snippets |
 | `evento-single-v13.json` | Ficha de cada evento (plantilla del Theme Builder para Eventos) | Plantillas › Theme Builder › Entrada individual |
 | `noticia-single-v13.json` + `noticias-snippet.php` | Página de cada noticia (plantilla del Theme Builder para Entradas) y tiempo de lectura | Theme Builder › Entrada individual · Code Snippets |
 | `hero-inicio-v13.json` | El hero de Inicio tal como está en pruebas.maloka.org (carrusel propio, horario y un botón por frase) | Se inserta arriba en la home |

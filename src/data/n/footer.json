@@ -68,10 +68,6 @@
       }
     ]
   },
-  "horarios": {
-    "titulo": "Horarios",
-    "nota": "Los horarios salen de src/data/site.json (un solo lugar para todo el sitio)."
-  },
   "ubicacion": {
     "titulo": "Ubicación",
     "direccion": "Cra. 68D # 24A - 51, Bogotá, Colombia",
