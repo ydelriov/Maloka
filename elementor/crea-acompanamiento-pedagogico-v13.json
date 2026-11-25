@@ -5,7 +5,7 @@
  "page_settings": {},
  "content": [
   {
-   "id": "3153b266",
+   "id": "c9272aef",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -60,7 +60,7 @@
    },
    "elements": [
     {
-     "id": "77ebf602",
+     "id": "89ddce36",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -88,7 +88,7 @@
      },
      "elements": [
       {
-       "id": "4a590888",
+       "id": "814ffd3c",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -120,7 +120,7 @@
        },
        "elements": [
         {
-         "id": "c1ab87b0",
+         "id": "701b2a02",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -145,7 +145,7 @@
          "elements": []
         },
         {
-         "id": "9f27a586",
+         "id": "4ca7604e",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -181,7 +181,7 @@
          "elements": []
         },
         {
-         "id": "de590838",
+         "id": "822a8f95",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -221,7 +221,7 @@
          "elements": []
         },
         {
-         "id": "bd03e062",
+         "id": "2a4148c3",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -250,7 +250,7 @@
          "elements": []
         },
         {
-         "id": "59f2dc9d",
+         "id": "987df598",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -307,7 +307,7 @@
        ]
       },
       {
-       "id": "6da3d688",
+       "id": "0b916d90",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -339,7 +339,7 @@
        },
        "elements": [
         {
-         "id": "9f7f2d6d",
+         "id": "decf1ce0",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -367,7 +367,7 @@
    ]
   },
   {
-   "id": "c1387acf",
+   "id": "5744315e",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -437,7 +437,7 @@
    },
    "elements": [
     {
-     "id": "5ae6d8ff",
+     "id": "f3ff1c70",
      "elType": "widget",
      "widgetType": "heading",
      "isInner": false,
@@ -489,7 +489,7 @@
      "elements": []
     },
     {
-     "id": "4a36f217",
+     "id": "85dd48be",
      "elType": "widget",
      "widgetType": "heading",
      "isInner": false,
@@ -541,7 +541,7 @@
      "elements": []
     },
     {
-     "id": "c3008c9d",
+     "id": "2fb4d5e0",
      "elType": "widget",
      "widgetType": "heading",
      "isInner": false,
@@ -595,7 +595,7 @@
    ]
   },
   {
-   "id": "329e8234",
+   "id": "2ebfb07d",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -651,7 +651,7 @@
    },
    "elements": [
     {
-     "id": "212e557d",
+     "id": "1f42d1d7",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -679,7 +679,7 @@
      },
      "elements": [
       {
-       "id": "a2f57531",
+       "id": "4af67d34",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -711,7 +711,7 @@
        },
        "elements": [
         {
-         "id": "79cd2b87",
+         "id": "39497956",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -741,7 +741,7 @@
          "elements": []
         },
         {
-         "id": "0c4e850a",
+         "id": "56254834",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -781,7 +781,7 @@
          "elements": []
         },
         {
-         "id": "a2db4a78",
+         "id": "1ea03440",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -806,7 +806,7 @@
          "elements": []
         },
         {
-         "id": "c57b76dd",
+         "id": "af898776",
          "elType": "container",
          "isInner": true,
          "settings": {
@@ -825,7 +825,7 @@
          },
          "elements": [
           {
-           "id": "ab6d49a7",
+           "id": "582a72a7",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -861,7 +861,7 @@
            "elements": []
           },
           {
-           "id": "aaac2e58",
+           "id": "64043468",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -897,7 +897,7 @@
            "elements": []
           },
           {
-           "id": "2ef1703c",
+           "id": "fbf311db",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -933,7 +933,7 @@
            "elements": []
           },
           {
-           "id": "254d8780",
+           "id": "692e133e",
            "elType": "widget",
            "widgetType": "heading",
            "isInner": false,
@@ -973,7 +973,7 @@
        ]
       },
       {
-       "id": "9a990903",
+       "id": "878c4333",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1005,7 +1005,7 @@
        },
        "elements": [
         {
-         "id": "9053f84b",
+         "id": "6669d2bb",
          "elType": "widget",
          "widgetType": "divider",
          "isInner": false,
@@ -1031,14 +1031,14 @@
          "elements": []
         },
         {
-         "id": "e14bc41b",
+         "id": "c94428e0",
          "elType": "widget",
          "widgetType": "icon-list",
          "isInner": false,
          "settings": {
           "icon_list": [
            {
-            "_id": "951bwkb",
+            "_id": "pqtwoyd",
             "text": "Cursos y seminarios para docentes",
             "selected_icon": {
              "value": "fas fa-check",
@@ -1049,7 +1049,7 @@
             }
            },
            {
-            "_id": "2mbzux2",
+            "_id": "atuh3rs",
             "text": "Clubes STEM y STEAM",
             "selected_icon": {
              "value": "fas fa-check",
@@ -1060,7 +1060,7 @@
             }
            },
            {
-            "_id": "rictch3",
+            "_id": "bywbxob",
             "text": "Recursos educativos abiertos y guías",
             "selected_icon": {
              "value": "fas fa-check",
@@ -1071,7 +1071,7 @@
             }
            },
            {
-            "_id": "a3yluv4",
+            "_id": "nhxd66e",
             "text": "Asesoría para implementar el enfoque STEM+",
             "selected_icon": {
              "value": "fas fa-check",
@@ -1131,7 +1131,7 @@
    ]
   },
   {
-   "id": "2f5cab77",
+   "id": "7dc571f1",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -1187,7 +1187,7 @@
    },
    "elements": [
     {
-     "id": "7b685b2f",
+     "id": "b8e175bf",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1204,7 +1204,7 @@
      },
      "elements": [
       {
-       "id": "e0d834aa",
+       "id": "b7c6e576",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -1234,7 +1234,7 @@
        "elements": []
       },
       {
-       "id": "d006833a",
+       "id": "7999318e",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -1276,7 +1276,7 @@
      ]
     },
     {
-     "id": "8b117b19",
+     "id": "482ca8d7",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -1331,7 +1331,7 @@
      },
      "elements": [
       {
-       "id": "4ee62d50",
+       "id": "8c4be96f",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1349,7 +1349,7 @@
        },
        "elements": [
         {
-         "id": "43b12e09",
+         "id": "229da947",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -1371,7 +1371,7 @@
          "elements": []
         },
         {
-         "id": "0e6862f0",
+         "id": "f48f9d6e",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1407,7 +1407,7 @@
          "elements": []
         },
         {
-         "id": "a7f1f2c6",
+         "id": "4e97228c",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1442,7 +1442,7 @@
          "elements": []
         },
         {
-         "id": "8094036a",
+         "id": "ca341f7a",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -1466,7 +1466,7 @@
          "elements": []
         },
         {
-         "id": "ee15b490",
+         "id": "e48ce430",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1491,7 +1491,7 @@
          "elements": []
         },
         {
-         "id": "b62a76bc",
+         "id": "0fa25b3b",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1543,7 +1543,7 @@
        ]
       },
       {
-       "id": "60608aaf",
+       "id": "6bb835ac",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1561,7 +1561,7 @@
        },
        "elements": [
         {
-         "id": "876789f7",
+         "id": "b01b34e5",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -1583,7 +1583,7 @@
          "elements": []
         },
         {
-         "id": "589efa50",
+         "id": "7ad3a1ae",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1619,7 +1619,7 @@
          "elements": []
         },
         {
-         "id": "ce889112",
+         "id": "073ff2c8",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1654,7 +1654,7 @@
          "elements": []
         },
         {
-         "id": "4e2b37c8",
+         "id": "cca53b52",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -1678,7 +1678,7 @@
          "elements": []
         },
         {
-         "id": "2aa8f64d",
+         "id": "a77e5591",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1703,7 +1703,7 @@
          "elements": []
         },
         {
-         "id": "935fe1f1",
+         "id": "e1cdeee1",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1755,7 +1755,7 @@
        ]
       },
       {
-       "id": "ec886d8c",
+       "id": "104ca8f9",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1773,7 +1773,7 @@
        },
        "elements": [
         {
-         "id": "9a8aeacf",
+         "id": "cc665284",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -1795,7 +1795,7 @@
          "elements": []
         },
         {
-         "id": "d59a9404",
+         "id": "cc752add",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1831,7 +1831,7 @@
          "elements": []
         },
         {
-         "id": "b3939ab0",
+         "id": "fd30fdb0",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1866,7 +1866,7 @@
          "elements": []
         },
         {
-         "id": "f144cf4b",
+         "id": "0d473ede",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -1890,7 +1890,7 @@
          "elements": []
         },
         {
-         "id": "bb82ff32",
+         "id": "1e1e00f7",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1915,7 +1915,7 @@
          "elements": []
         },
         {
-         "id": "6affe18b",
+         "id": "e7e2c988",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -1967,7 +1967,7 @@
        ]
       },
       {
-       "id": "b433bac2",
+       "id": "48d8b0ee",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -1985,7 +1985,7 @@
        },
        "elements": [
         {
-         "id": "493ce5a2",
+         "id": "2c2138f3",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -2007,7 +2007,7 @@
          "elements": []
         },
         {
-         "id": "2e54031a",
+         "id": "7ed870e4",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2043,7 +2043,7 @@
          "elements": []
         },
         {
-         "id": "1bf6f00e",
+         "id": "617ad163",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2078,7 +2078,7 @@
          "elements": []
         },
         {
-         "id": "9ceeed59",
+         "id": "761bc41d",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -2102,7 +2102,7 @@
          "elements": []
         },
         {
-         "id": "92b44def",
+         "id": "cc5702e4",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2127,7 +2127,7 @@
          "elements": []
         },
         {
-         "id": "fe723420",
+         "id": "e89ebdc7",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2179,7 +2179,7 @@
        ]
       },
       {
-       "id": "afb28edd",
+       "id": "60fc2425",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2197,7 +2197,7 @@
        },
        "elements": [
         {
-         "id": "8d6702d6",
+         "id": "43e37236",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -2219,7 +2219,7 @@
          "elements": []
         },
         {
-         "id": "cf88c5a6",
+         "id": "0f8bde41",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2255,7 +2255,7 @@
          "elements": []
         },
         {
-         "id": "67886da6",
+         "id": "46330b8f",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2290,7 +2290,7 @@
          "elements": []
         },
         {
-         "id": "ebd39023",
+         "id": "086a85e4",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -2314,7 +2314,7 @@
          "elements": []
         },
         {
-         "id": "7a5c082e",
+         "id": "ef941b01",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2339,7 +2339,7 @@
          "elements": []
         },
         {
-         "id": "8027d5c8",
+         "id": "36b94b29",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2391,7 +2391,7 @@
        ]
       },
       {
-       "id": "12354afd",
+       "id": "2b1faa51",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2409,7 +2409,7 @@
        },
        "elements": [
         {
-         "id": "9bba4d60",
+         "id": "3c9ff7ba",
          "elType": "widget",
          "widgetType": "image",
          "isInner": false,
@@ -2431,7 +2431,7 @@
          "elements": []
         },
         {
-         "id": "cd84143d",
+         "id": "1c8685f6",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2467,7 +2467,7 @@
          "elements": []
         },
         {
-         "id": "8167498b",
+         "id": "8f74c0cb",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2502,7 +2502,7 @@
          "elements": []
         },
         {
-         "id": "ced10f8f",
+         "id": "f4d0dcd7",
          "elType": "widget",
          "widgetType": "text-editor",
          "isInner": false,
@@ -2526,7 +2526,7 @@
          "elements": []
         },
         {
-         "id": "a55f0e21",
+         "id": "77e2a9af",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2551,7 +2551,7 @@
          "elements": []
         },
         {
-         "id": "ecdd51e4",
+         "id": "6102478c",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2607,7 +2607,7 @@
    ]
   },
   {
-   "id": "23595b81",
+   "id": "b7774be9",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -2662,7 +2662,7 @@
    },
    "elements": [
     {
-     "id": "0d55d39c",
+     "id": "33e47471",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -2684,7 +2684,7 @@
      },
      "elements": [
       {
-       "id": "5ad37eb2",
+       "id": "f9b6561e",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2711,7 +2711,7 @@
        },
        "elements": [
         {
-         "id": "66d6fc21",
+         "id": "d1542679",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2741,7 +2741,7 @@
          "elements": []
         },
         {
-         "id": "ecc60c36",
+         "id": "12d6ded5",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2783,7 +2783,7 @@
        ]
       },
       {
-       "id": "d910f96c",
+       "id": "82847103",
        "elType": "widget",
        "widgetType": "heading",
        "isInner": false,
@@ -2835,7 +2835,7 @@
      ]
     },
     {
-     "id": "2a31788b",
+     "id": "8c165c95",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -2890,7 +2890,7 @@
      },
      "elements": [
       {
-       "id": "426cbd37",
+       "id": "45bab7d9",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -2925,7 +2925,7 @@
        },
        "elements": [
         {
-         "id": "b0be4ac6",
+         "id": "a4047338",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2950,7 +2950,7 @@
          "elements": []
         },
         {
-         "id": "d58ab9d4",
+         "id": "83273bd1",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -2975,7 +2975,7 @@
          "elements": []
         },
         {
-         "id": "8f4aa79b",
+         "id": "9007e75a",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3002,7 +3002,7 @@
        ]
       },
       {
-       "id": "b8790d89",
+       "id": "f8883f34",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3037,7 +3037,7 @@
        },
        "elements": [
         {
-         "id": "c41ba7ae",
+         "id": "de3cdd95",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3062,7 +3062,7 @@
          "elements": []
         },
         {
-         "id": "33fc74e7",
+         "id": "c8532de5",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3087,7 +3087,7 @@
          "elements": []
         },
         {
-         "id": "e6a21da4",
+         "id": "23b52b8e",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3114,7 +3114,7 @@
        ]
       },
       {
-       "id": "0485805e",
+       "id": "122a4419",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3149,7 +3149,7 @@
        },
        "elements": [
         {
-         "id": "7e0166e0",
+         "id": "5cfd1cf2",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3174,7 +3174,7 @@
          "elements": []
         },
         {
-         "id": "da7f5de8",
+         "id": "377ee810",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3199,7 +3199,7 @@
          "elements": []
         },
         {
-         "id": "499e9998",
+         "id": "8de28062",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3226,7 +3226,7 @@
        ]
       },
       {
-       "id": "717c9c59",
+       "id": "dd5528f0",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3261,7 +3261,7 @@
        },
        "elements": [
         {
-         "id": "21b54df8",
+         "id": "cfa7b410",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3286,7 +3286,7 @@
          "elements": []
         },
         {
-         "id": "ef5433e7",
+         "id": "3869da78",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3311,7 +3311,7 @@
          "elements": []
         },
         {
-         "id": "d10454c5",
+         "id": "df7e414e",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3342,7 +3342,7 @@
    ]
   },
   {
-   "id": "ed52f305",
+   "id": "ac9a4432",
    "elType": "container",
    "isInner": false,
    "settings": {
@@ -3398,7 +3398,7 @@
    },
    "elements": [
     {
-     "id": "a0590741",
+     "id": "76e5a070",
      "elType": "container",
      "isInner": true,
      "settings": {
@@ -3426,7 +3426,7 @@
      },
      "elements": [
       {
-       "id": "e4d2c672",
+       "id": "5a0fd7e5",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3458,7 +3458,7 @@
        },
        "elements": [
         {
-         "id": "53fd1d5f",
+         "id": "9cae4117",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3488,7 +3488,7 @@
          "elements": []
         },
         {
-         "id": "e33debc0",
+         "id": "b6b00393",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3528,7 +3528,7 @@
          "elements": []
         },
         {
-         "id": "4ce1610a",
+         "id": "36cf18c5",
          "elType": "widget",
          "widgetType": "heading",
          "isInner": false,
@@ -3585,7 +3585,7 @@
        ]
       },
       {
-       "id": "1aaf17cd",
+       "id": "d9c84ef8",
        "elType": "container",
        "isInner": true,
        "settings": {
@@ -3617,7 +3617,7 @@
        },
        "elements": [
         {
-         "id": "fa508030",
+         "id": "dd868ff9",
          "elType": "widget",
          "widgetType": "icon-list",
          "isInner": false,
@@ -3625,7 +3625,7 @@
           "view": "traditional",
           "icon_list": [
            {
-            "_id": "fos665i",
+            "_id": "6ndopo8",
             "text": "info@maloka.org",
             "selected_icon": {
              "value": "far fa-envelope",
@@ -3639,7 +3639,7 @@
             }
            },
            {
-            "_id": "hzy8pyr",
+            "_id": "smhhuxr",
             "text": "(+57) 601 427 2707",
             "selected_icon": {
              "value": "fas fa-phone-alt",

@@ -92,7 +92,7 @@ const anclas = [
     <!-- 4b · Exposiciones y cómo funciona (Maloka viajera) -->
     {l.exposiciones && (
       <>
-        <section class="n-sec n-hueso cr-sec" id="exposiciones" aria-labelledby="cr-ex">
+        <section class={`n-sec n-noche cr-sec cr-${l.color}`} id="exposiciones" aria-labelledby="cr-ex">
           <div class="mk-w">
             <div class="n-head"><div><p class="n-ante">Exposiciones</p><h2 class="n-titulo" id="cr-ex">Elige una o llévalas las tres.</h2><p class="n-lead">Para estudiantes, docentes, familias, grupos de adulto mayor y todo tipo de público.</p></div></div>
             <ul class="cr-expo">
@@ -107,7 +107,7 @@ const anclas = [
             </ul>
           </div>
         </section>
-        <section class="n-sec n-blanco cr-sec" id="como" aria-labelledby="cr-cm">
+        <section class={`n-sec n-blanco cr-sec cr-${l.color}`} id="como" aria-labelledby="cr-cm">
           <div class="mk-w">
             <div class="n-head"><div><p class="n-ante">Cómo funciona</p><h2 class="n-titulo" id="cr-cm">Así llevamos Maloka a tu territorio.</h2></div></div>
             <ol class="cr-pasos" style={`--n:${l.pasos.length}`}>

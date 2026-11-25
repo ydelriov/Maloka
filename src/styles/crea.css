@@ -52,13 +52,13 @@
 .cr-aliados li { padding: 10px 16px; border: 2px solid var(--n-noche); font-weight: 700; font-size: 15px; }
 
 /* Pasos */
-.cr-pasos { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 0; }
-.cr-paso { display: flex; gap: 16px; align-items: flex-start; padding: 24px; color: var(--n-noche); }
-.cr-paso:nth-child(4n+1) { background: var(--n-amarillo); } .cr-paso:nth-child(4n+2) { background: var(--n-menta); }
-.cr-paso:nth-child(4n+3) { background: var(--n-cielo); } .cr-paso:nth-child(4n+4) { background: var(--n-salmon); }
-.cr-paso-n { font-size: 44px; line-height: 1; font-weight: 700; }
-.cr-paso > span { display: grid; gap: 4px; font-size: 15px; }
-.cr-paso > span b { font-size: 18px; }
+.cr-pasos { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--n-noche); }
+/* Pasos: número en un cuadro noche con el color de la línea (--c); sin fondos pastel para no repetir colores */
+.cr-paso { display: grid; gap: 14px; align-content: start; padding: 28px 24px 0 0; color: var(--n-noche); }
+.cr-paso + .cr-paso { padding-left: 24px; border-left: 1px solid rgba(35, 27, 43, .25); }
+.cr-paso-n { display: grid; place-items: center; width: 64px; height: 64px; background: var(--n-noche); color: var(--c, var(--n-amarillo)); font-size: 32px; line-height: 1; font-weight: 700; }
+.cr-paso > span { display: grid; gap: 6px; font-size: 15px; line-height: 1.5; color: var(--n-texto2); }
+.cr-paso > span b { font-size: 20px; line-height: 1.25; color: var(--n-noche); }
 
 /* Qué hacemos / para quién */
 .cr-hace { display: grid; border-top: 2px solid var(--n-noche); width: 100%; }
@@ -86,6 +86,12 @@
 .cr-expo p { color: var(--n-texto2); }
 .cr-expo ul { display: grid; width: 100%; border-top: 2px solid var(--n-noche); }
 .cr-expo ul li { display: flex; gap: 10px; padding: 12px 0; background: none; border-bottom: 1px solid rgba(35, 27, 43, .2); font-weight: 600; font-size: 15px; }
+/* Exposiciones sobre noche: tarjetas oscuras con la etiqueta y los checks en el color de la línea */
+.n-noche .cr-expo > li { background: var(--n-carbon); color: #fff; border-top: 4px solid var(--c); }
+.n-noche .cr-expo p { color: var(--n-texto2-osc); }
+.n-noche .cr-expo ul { border-top-color: rgba(255, 255, 255, .5); }
+.n-noche .cr-expo ul li { border-bottom-color: rgba(255, 255, 255, .2); color: #fff; }
+.n-noche .cr-expo ul .mk-ic { color: var(--c); }
 
 /* Patrocinios: pauta */
 .cr-cifra { display: grid; gap: 4px; padding-top: 20px; border-top: 2px solid var(--n-noche); }
@@ -123,6 +129,8 @@
   .cr-proy, .cr-expo { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cr-otras { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cr-pasos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cr-paso:nth-child(odd) { padding-left: 0; border-left: 0; }
+  .cr-paso:nth-child(n+3) { padding-top: 28px; margin-top: 28px; border-top: 1px solid rgba(35, 27, 43, .25); }
   .cr-anclas { top: 72px; } .cr-sec { scroll-margin-top: 128px; }
   .cr-cifra b { font-size: 72px; }
 }
@@ -136,6 +144,8 @@
   .cr-linea-x { font-size: 15px; }
   .cr-proy, .cr-expo, .cr-otras, .cr-pasos, .cr-listas { grid-template-columns: 1fr; }
   .cr-expo li { padding: 22px; }
+  .cr-paso, .cr-paso + .cr-paso { padding: 20px 0; margin-top: 0; border-left: 0; border-top: 0; border-bottom: 1px solid rgba(35, 27, 43, .25); grid-template-columns: 56px 1fr; gap: 16px; }
+  .cr-paso-n { width: 56px; height: 56px; font-size: 26px; }
   .cr-cifra b { font-size: 56px; }
   .cr-anclas a { min-height: 48px; padding: 0 10px; font-size: 14px; }
   .cr-anclas a::after { left: 10px; right: 10px; }
