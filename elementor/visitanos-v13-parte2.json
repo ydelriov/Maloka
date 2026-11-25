@@ -180,7 +180,18 @@
          "size": 1.55,
          "sizes": []
         },
-        "typography_font_family": "Montserrat"
+        "typography_font_family": "Montserrat",
+        "_element_width": "initial",
+        "_element_custom_width": {
+         "unit": "px",
+         "size": 620,
+         "sizes": []
+        },
+        "_element_custom_width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        }
        },
        "elements": []
       }
@@ -1370,8 +1381,8 @@
             "flex_direction": "column",
             "content_width": "full",
             "width": {
-             "unit": "%",
-             "size": 36,
+             "unit": "px",
+             "size": 200,
              "sizes": []
             },
             "width_mobile": {
@@ -1386,7 +1397,8 @@
              "bottom": "0",
              "left": "0",
              "isLinked": true
-            }
+            },
+            "_flex_size": "none"
            },
            "elements": [
             {
@@ -1447,7 +1459,8 @@
              "bottom": "0",
              "left": "0",
              "isLinked": true
-            }
+            },
+            "_flex_size": "grow"
            },
            "elements": [
             {
@@ -1598,7 +1611,15 @@
        "size": 1.5,
        "sizes": []
       },
-      "icon_typography_font_family": "Montserrat"
+      "icon_typography_font_family": "Montserrat",
+      "_margin": {
+       "unit": "px",
+       "top": "32",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      }
      },
      "elements": []
     }

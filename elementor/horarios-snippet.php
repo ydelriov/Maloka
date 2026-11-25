@@ -11,6 +11,8 @@
  *   [maloka_venta]                  → «Venta de entradas hasta las 4:00 p. m.»
  *   [maloka_horario_hoy]            → «Hoy: 11:00 a. m. – 5:00 p. m.» según el día (los festivos no se detectan)
  *   [maloka_aviso]                  → el aviso de cambio de horario, o nada si está vacío
+ *   [maloka_aviso etiqueta="Cambio de horario"] → «<b>Cambio de horario · 26 de noviembre:</b> Cerrado todo el día.»
+ *                                     (para Visítanos; el aviso se escribe «26 de noviembre: Cerrado todo el día.»)
  *
  * Si el grupo ACF todavía no existe, se muestran los horarios actuales de maloka.org.
  */
@@ -84,7 +86,17 @@ add_shortcode(
 
 add_shortcode(
 	'maloka_aviso',
-	function () {
-		return esc_html( maloka_horario_campo( 'aviso' ) );
+	function ( $atts ) {
+		$atts  = shortcode_atts( array( 'etiqueta' => '' ), $atts );
+		$aviso = trim( (string) maloka_horario_campo( 'aviso' ) );
+		if ( '' === $aviso || '' === $atts['etiqueta'] ) {
+			return esc_html( $aviso );
+		}
+		// «26 de noviembre: Cerrado todo el día.» → la fecha va en negrilla junto a la etiqueta
+		$partes = array_map( 'trim', explode( ':', $aviso, 2 ) );
+		if ( 2 === count( $partes ) ) {
+			return '<b>' . esc_html( $atts['etiqueta'] . ' · ' . $partes[0] ) . ':</b> ' . esc_html( $partes[1] );
+		}
+		return '<b>' . esc_html( $atts['etiqueta'] ) . ':</b> ' . esc_html( $aviso );
 	}
 );
