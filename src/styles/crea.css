@@ -104,12 +104,14 @@
 .cr-otra .mk-ic { position: absolute; left: 24px; bottom: 18px; transition: transform var(--mk-t-rapida) var(--mk-ease); }
 .cr-otra:hover { outline: 3px solid var(--n-noche); outline-offset: -3px; }
 
-/* Contacto */
+/* Contacto: lavanda, nunca noche, para que no se una con el footer */
+.cr-cierre { background: var(--n-lavanda); color: var(--n-noche); }
+.cr-cierre .n-ante { color: var(--n-noche); }
 .cr-ct { display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: end; }
-.cr-ct .n-b { color: var(--n-amarillo); }
+.cr-ct .n-b { color: var(--n-noche); }
 .cr-cont { display: grid; gap: 12px; }
-.cr-cont a { display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 600; color: #fff; }
-.cr-cont a:hover { color: var(--n-amarillo); }
+.cr-cont a { display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 600; color: var(--n-noche); }
+.cr-cont a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .cr-fuente { display: flex; gap: 8px; margin-top: 32px; font-size: 13px; color: var(--n-texto2); }
 
 @media (max-width: 1024px) {

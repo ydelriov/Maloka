@@ -23,3 +23,5 @@ Antes del commit, corre `npm run build` para no publicar un sitio roto.
 - Todo se construirá en **WordPress + Elementor Pro**: las maquetas usan solo patrones que Elementor hace de forma
   nativa, y cada página tiene su JSON importable en `elementor/` (ver `elementor/README.md`).
 - Textos en español de Colombia; Design System v3 «Noche y pastel» (`src/styles/noche.css`, README).
+- **La última sección de cada página nunca va en noche (#231B2B):** el footer es noche y se unirían. Usa blanco, hueso o
+  un pastel (en la maqueta y en el JSON de Elementor).
