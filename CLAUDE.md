@@ -17,7 +17,8 @@ Antes del commit, corre `npm run build` para no publicar un sitio roto.
 ## Contexto del proyecto
 
 - Prototipo de la home de maloka.org en Astro; la versión elegida es la **V13** (`src/components/home/V13.astro`),
-  publicada sola en https://ydelriov.github.io/Maloka/seleccion/ junto con Visítanos (`/seleccion/visitanos/`).
+  publicada sola en https://ydelriov.github.io/Maloka/seleccion/ junto con Visítanos (`/seleccion/visitanos/`), Agéndate,
+  Noticias y Ven en grupo (`/seleccion/ven-en-grupo/`).
 - Todo se construirá en **WordPress + Elementor Pro**: las maquetas usan solo patrones que Elementor hace de forma
   nativa, y cada página tiene su JSON importable en `elementor/` (ver `elementor/README.md`).
 - Textos en español de Colombia; Design System v3 «Noche y pastel» (`src/styles/noche.css`, README).
