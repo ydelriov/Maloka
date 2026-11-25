@@ -1219,7 +1219,7 @@
          "settings": {
           "title": "¿Cómo llegar? →",
           "header_size": "#FFE25C",
-          "title_color": "#FFFFFF",
+          "title_color": "#FFE25C",
           "link": {
            "url": "/visitanos/#llegar",
            "is_external": "",
