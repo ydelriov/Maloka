@@ -359,8 +359,8 @@ Para que **se cambie una sola vez**:
 
 1. ACF › Herramientas › Importar › `acf-horarios.json`. Aparece el grupo **«Horarios de Maloka»** al editar la
    **página de inicio** (pantalla normal de WordPress, no Elementor), con dos pestañas:
-   - **Horario normal:** días, apertura y cierre entre semana y fin de semana, y venta de entradas hasta. Las horas
-     van en formato de 24 horas (12:00 = mediodía, 17:00 = 5:00 p. m.).
+   - **Horario normal:** días, apertura y cierre entre semana y fin de semana. Las horas van en formato de 24 horas
+     (12:00 = mediodía, 17:00 = 5:00 p. m.). La venta de entradas no se escribe: cierra **una hora antes** que Maloka.
    - **Días especiales:** 5 espacios con fecha, «¿Cómo abrimos?» (cerrado todo el día · festivo con horario de fin
      de semana · horario especial con abre y cierra) y una nota opcional. Cada día se muestra hasta que pasa su fecha
      y después desaparece solo; no hace falta borrarlo ni llenarlos en orden.
@@ -373,7 +373,8 @@ Para que **se cambie una sola vez**:
 |---|---|---|
 | `[maloka_dias dia="semana"]` / `dia="finde"` | «Lunes a viernes» / «Sábados, domingos y festivos» | Menú, Visítanos |
 | `[maloka_horario dia="semana"]` / `dia="finde"` | «11:00 a. m. – 5:00 p. m.» | Menú, Visítanos |
-| `[maloka_venta]` | «Venta de entradas hasta las 4:00 p. m.» | Menú, hero, Visítanos, ficha del evento |
+| `[maloka_venta]` | «Venta de entradas hasta una hora antes del cierre» | Menú, Visítanos, ficha del evento |
+| `[maloka_venta dia="hoy"]` | «Venta de entradas hasta las 4:00 p. m.» con el cierre de hoy (5:00 p. m. el fin de semana; una hora antes del cierre en un día especial); nada si hoy está cerrado | Hero de Inicio |
 | `[maloka_aviso etiqueta="Cambio de horario"]` | Una línea por día especial: «**Cambio de horario · jueves 26 de noviembre:** Cerrado todo el día.» | Visítanos (la fila se oculta si no hay) |
 | `[maloka_aviso_corto]` | Solo el próximo: «Cambio de horario · jue. 26 nov.: Cerrado todo el día.» | Panel de horarios del menú |
 

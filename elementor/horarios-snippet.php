@@ -8,7 +8,9 @@
  *
  *   [maloka_dias dia="semana"]      → «Lunes a viernes»            (dia="finde" → «Sábados, domingos y festivos»)
  *   [maloka_horario dia="semana"]   → «11:00 a. m. – 5:00 p. m.»   (dia="finde" → «9:30 a. m. – 6:00 p. m.»)
- *   [maloka_venta]                  → «Venta de entradas hasta las 4:00 p. m.»
+ *   [maloka_venta]                  → «Venta de entradas hasta una hora antes del cierre» (menú, Visítanos)
+ *   [maloka_venta dia="hoy"]        → «Venta de entradas hasta las 4:00 p. m.» con el cierre de hoy (fin de semana o
+ *                                     día especial incluidos), o nada si hoy está cerrado (hero de Inicio)
  *   [maloka_horario_hoy]            → «Hoy: 11:00 a. m. – 5:00 p. m.» según el día (los festivos no se detectan)
  *   [maloka_aviso]                  → los próximos días especiales en texto, o nada si no hay
  *   [maloka_aviso etiqueta="Cambio de horario"] → una línea por día: «<b>Cambio de horario · jueves 26 de noviembre:</b>
@@ -37,7 +39,6 @@ function maloka_horario_campo( $campo ) {
 		'finde_dias'    => 'Sábados, domingos y festivos',
 		'finde_abre'    => '09:30',
 		'finde_cierra'  => '18:00',
-		'venta_hasta'   => '16:00',
 	);
 	$inicio = (int) get_option( 'page_on_front' );
 	$valor  = ( $inicio && function_exists( 'get_field' ) ) ? get_field( $campo, $inicio ) : null;
@@ -75,18 +76,45 @@ add_shortcode(
 	}
 );
 
+/** La venta de entradas cierra una hora antes que Maloka. «17:00» → «16:00». */
+function maloka_venta_hasta( $cierra ) {
+	$p = array_map( 'intval', explode( ':', $cierra ) );
+	$m = max( 0, $p[0] * 60 + ( $p[1] ?? 0 ) - 60 );
+	return sprintf( '%02d:%02d', intdiv( $m, 60 ), $m % 60 );
+}
+
+/** Horario de hoy: array( 'cerrado' => bool, 'abre' => '11:00', 'cierra' => '17:00' ), con los días especiales. */
+function maloka_horario_hoy() {
+	$hoy = wp_date( 'Y-m-d' );
+	foreach ( maloka_especiales() as $e ) {
+		if ( $e['fecha'] === $hoy ) {
+			return array( 'cerrado' => 'cerrado' === $e['tipo'], 'abre' => $e['abre'], 'cierra' => $e['cierra'] );
+		}
+	}
+	$dia = (int) wp_date( 'N' ) >= 6 ? 'finde' : 'semana';
+	return array( 'cerrado' => false, 'abre' => maloka_horario_campo( "{$dia}_abre" ), 'cierra' => maloka_horario_campo( "{$dia}_cierra" ) );
+}
+
 add_shortcode(
 	'maloka_venta',
-	function () {
-		return esc_html( 'Venta de entradas hasta las ' . maloka_hora( maloka_horario_campo( 'venta_hasta' ) ) );
+	function ( $atts ) {
+		$atts = shortcode_atts( array( 'dia' => '' ), $atts );
+		if ( 'hoy' !== $atts['dia'] ) {
+			return esc_html( 'Venta de entradas hasta una hora antes del cierre' );
+		}
+		$h = maloka_horario_hoy();
+		if ( $h['cerrado'] ) {
+			return ''; // Elementor no muestra el título vacío
+		}
+		return esc_html( 'Venta de entradas hasta las ' . maloka_hora( maloka_venta_hasta( $h['cierra'] ) ) );
 	}
 );
 
 add_shortcode(
 	'maloka_horario_hoy',
 	function () {
-		$dia = (int) wp_date( 'N' ) >= 6 ? 'finde' : 'semana';
-		return esc_html( 'Hoy: ' . maloka_rango( $dia ) );
+		$h = maloka_horario_hoy();
+		return esc_html( $h['cerrado'] ? 'Hoy estamos cerrados' : 'Hoy: ' . maloka_hora( $h['abre'] ) . ' – ' . maloka_hora( $h['cierra'] ) );
 	}
 );
 

@@ -1162,7 +1162,7 @@
                                             "sizes": []
                                         },
                                         "__dynamic__": {
-                                            "title": "[elementor-tag id=\"0952b89\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_venta%5D%22%7D\"]"
+                                            "title": "[elementor-tag id=\"5be7f84\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_venta%20dia%3D%5C%22hoy%5C%22%5D%22%7D\"]"
                                         }
                                     },
                                     "elements": [],
