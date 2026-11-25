@@ -807,7 +807,7 @@
         },
         "width": {
          "unit": "%",
-         "size": 48,
+         "size": 40,
          "sizes": []
         },
         "width_mobile": {
@@ -832,7 +832,10 @@
          "isLinked": true
         },
         "background_background": "classic",
-        "background_color": "#FFE25C"
+        "background_color": "#FFE25C",
+        "_flex_size": "custom",
+        "_flex_grow": 1,
+        "_flex_shrink": 1
        },
        "elements": [
         {
@@ -925,7 +928,7 @@
         },
         "width": {
          "unit": "%",
-         "size": 48,
+         "size": 40,
          "sizes": []
         },
         "width_mobile": {
@@ -950,7 +953,10 @@
          "isLinked": true
         },
         "background_background": "classic",
-        "background_color": "#9CCBF2"
+        "background_color": "#9CCBF2",
+        "_flex_size": "custom",
+        "_flex_grow": 1,
+        "_flex_shrink": 1
        },
        "elements": [
         {
@@ -1055,60 +1061,290 @@
      "elements": []
     },
     {
-     "id": "7555471a",
-     "elType": "widget",
-     "widgetType": "heading",
-     "isInner": false,
+     "id": "vh01fila",
+     "elType": "container",
+     "isInner": true,
      "settings": {
-      "title": "Venta de entradas hasta las 4:00 p. m.",
-      "header_size": "div",
-      "title_color": "#231B2B",
-      "typography_typography": "custom",
-      "typography_font_size": {
+      "container_type": "flex",
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "nowrap",
+      "flex_align_items": "flex-start",
+      "flex_gap": {
+       "column": "10",
+       "row": "10",
+       "isLinked": true,
        "unit": "px",
-       "size": 17,
-       "sizes": []
+       "size": 10
       },
-      "typography_font_weight": "700",
-      "typography_line_height": {
-       "unit": "em",
-       "size": 1.5,
-       "sizes": []
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "14",
+       "left": "0",
+       "isLinked": false
       },
-      "typography_font_family": "Montserrat",
-      "__dynamic__": {
-       "title": "[elementor-tag id=\"8475c99\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_venta%5D%22%7D\"]"
-      }
+      "border_border": "solid",
+      "border_width": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "1",
+       "left": "0",
+       "isLinked": false
+      },
+      "border_color": "rgba(35,27,43,0.25)"
      },
-     "elements": []
+     "elements": [
+      {
+       "id": "vh01filai",
+       "elType": "widget",
+       "widgetType": "icon",
+       "isInner": false,
+       "elements": [],
+       "settings": {
+        "selected_icon": {
+         "value": "fas fa-ticket-alt",
+         "library": "fa-solid"
+        },
+        "primary_color": "#231B2B",
+        "size": {
+         "unit": "px",
+         "size": 20,
+         "sizes": []
+        },
+        "_element_width": "auto",
+        "_margin": {
+         "unit": "px",
+         "top": "3",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "_flex_size": "none"
+       }
+      },
+      {
+       "id": "vh01filat",
+       "elType": "container",
+       "isInner": true,
+       "elements": [
+        {
+         "id": "7555471a",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Venta de entradas hasta las 4:00 p. m.",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 17,
+           "sizes": []
+          },
+          "typography_font_weight": "700",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.5,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat",
+          "__dynamic__": {
+           "title": "[elementor-tag id=\"8475c99\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_venta%5D%22%7D\"]"
+          },
+          "_element_width": "auto"
+         },
+         "elements": []
+        },
+        {
+         "id": "vh01comp",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "elements": [],
+         "settings": {
+          "title": "· Compra con anticipación: las entradas pueden agotarse en taquilla.",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "_element_width": "auto",
+          "typography_typography": "custom",
+          "typography_font_family": "Montserrat",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 17,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.5,
+           "sizes": []
+          }
+         }
+        }
+       ],
+       "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "flex_wrap": "wrap",
+        "flex_gap": {
+         "column": "6",
+         "row": "0",
+         "isLinked": false,
+         "unit": "px",
+         "size": 6
+        },
+        "flex_align_items": "baseline",
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
+        },
+        "_flex_size": "custom",
+        "_flex_grow": 1,
+        "_flex_shrink": 1,
+        "custom_css": "selector { min-width: 0; } selector > .elementor-widget { max-width: 100%; }\n"
+       }
+      }
+     ]
     },
     {
-     "id": "551ef34e",
-     "elType": "widget",
-     "widgetType": "heading",
-     "isInner": false,
+     "id": "vh02fila",
+     "elType": "container",
+     "isInner": true,
      "settings": {
-      "title": "Cambio de horario · 26 de noviembre: Cerrado todo el día.",
-      "header_size": "div",
-      "title_color": "#231B2B",
-      "typography_typography": "custom",
-      "typography_font_size": {
+      "container_type": "flex",
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "nowrap",
+      "flex_align_items": "flex-start",
+      "flex_gap": {
+       "column": "10",
+       "row": "10",
+       "isLinked": true,
        "unit": "px",
-       "size": 17,
-       "sizes": []
+       "size": 10
       },
-      "typography_font_weight": "400",
-      "typography_line_height": {
-       "unit": "em",
-       "size": 1.5,
-       "sizes": []
+      "padding": {
+       "unit": "px",
+       "top": "14",
+       "right": "0",
+       "bottom": "14",
+       "left": "0",
+       "isLinked": false
       },
-      "typography_font_family": "Montserrat",
-      "__dynamic__": {
-       "title": "[elementor-tag id=\"92bde0e\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_aviso%5D%22%7D\"]"
-      }
+      "border_border": "solid",
+      "border_width": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "1",
+       "left": "0",
+       "isLinked": false
+      },
+      "border_color": "rgba(35,27,43,0.25)",
+      "custom_css": "selector:not(:has(.elementor-widget-heading)) { display: none; }\n"
      },
-     "elements": []
+     "elements": [
+      {
+       "id": "vh02filai",
+       "elType": "widget",
+       "widgetType": "icon",
+       "isInner": false,
+       "elements": [],
+       "settings": {
+        "selected_icon": {
+         "value": "fas fa-bolt",
+         "library": "fa-solid"
+        },
+        "primary_color": "#231B2B",
+        "size": {
+         "unit": "px",
+         "size": 20,
+         "sizes": []
+        },
+        "_element_width": "auto",
+        "_margin": {
+         "unit": "px",
+         "top": "3",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "_flex_size": "none"
+       }
+      },
+      {
+       "id": "vh02filat",
+       "elType": "container",
+       "isInner": true,
+       "elements": [
+        {
+         "id": "551ef34e",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "<b>Cambio de horario · 26 de noviembre:</b> Cerrado todo el día.",
+          "header_size": "div",
+          "title_color": "#231B2B",
+          "typography_typography": "custom",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 17,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.5,
+           "sizes": []
+          },
+          "typography_font_family": "Montserrat",
+          "__dynamic__": {
+           "title": "[elementor-tag id=\"92bde0e\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_aviso%20etiqueta%3D%5C%22Cambio%20de%20horario%5C%22%5D%22%7D\"]"
+          }
+         },
+         "elements": []
+        }
+       ],
+       "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "flex_wrap": "wrap",
+        "flex_gap": {
+         "column": "6",
+         "row": "0",
+         "isLinked": false,
+         "unit": "px",
+         "size": 6
+        },
+        "flex_align_items": "baseline",
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
+        },
+        "_flex_size": "custom",
+        "_flex_grow": 1,
+        "_flex_shrink": 1,
+        "custom_css": "selector { min-width: 0; } selector > .elementor-widget { max-width: 100%; }\n"
+       }
+      }
+     ]
     },
     {
      "id": "bdbc1bd6",
@@ -1117,17 +1353,6 @@
      "isInner": false,
      "settings": {
       "icon_list": [
-       {
-        "_id": "y1bekew",
-        "text": "Compra con anticipación: las entradas pueden agotarse en taquilla.",
-        "selected_icon": {
-         "value": "fas fa-ticket-alt",
-         "library": "fa-solid"
-        },
-        "link": {
-         "url": ""
-        }
-       },
        {
         "_id": "ov16kxe",
         "text": "Menores de 4 años: entran gratis al recorrido exploratorio.",
@@ -1211,7 +1436,15 @@
        "size": 1,
        "sizes": []
       },
-      "divider_color": "rgba(35,27,43,0.25)"
+      "divider_color": "rgba(35,27,43,0.25)",
+      "_margin": {
+       "unit": "px",
+       "top": "14",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      }
      },
      "elements": []
     }
@@ -1685,7 +1918,18 @@
          "size": 1.55,
          "sizes": []
         },
-        "typography_font_family": "Montserrat"
+        "typography_font_family": "Montserrat",
+        "_element_width": "initial",
+        "_element_custom_width": {
+         "unit": "px",
+         "size": 620,
+         "sizes": []
+        },
+        "_element_custom_width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        }
        },
        "elements": []
       }
@@ -6286,24 +6530,62 @@
     {
      "id": "84d06875",
      "elType": "widget",
-     "widgetType": "text-editor",
+     "widgetType": "icon-list",
      "isInner": false,
      "settings": {
-      "editor": "<p>Los precios pueden cambiar. Confirma el valor final en TuBoleta antes de pagar.</p>",
+      "icon_list": [
+       {
+        "_id": "84d0687",
+        "text": "Los precios pueden cambiar. Confirma el valor final en TuBoleta antes de pagar.",
+        "selected_icon": {
+         "value": "fas fa-info-circle",
+         "library": "fa-solid"
+        },
+        "link": {
+         "url": ""
+        }
+       }
+      ],
+      "view": "traditional",
+      "icon_color": "#4F4955",
       "text_color": "#4F4955",
-      "typography_typography": "custom",
-      "typography_font_size": {
+      "icon_size": {
+       "unit": "px",
+       "size": 16,
+       "sizes": []
+      },
+      "text_indent": {
+       "unit": "px",
+       "size": 8,
+       "sizes": []
+      },
+      "icon_self_vertical_align": "flex-start",
+      "icon_vertical_offset": {
+       "unit": "px",
+       "size": 3,
+       "sizes": []
+      },
+      "_margin": {
+       "unit": "px",
+       "top": "32",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "icon_typography_typography": "custom",
+      "icon_typography_font_family": "Montserrat",
+      "icon_typography_font_size": {
        "unit": "px",
        "size": 14,
        "sizes": []
       },
-      "typography_font_weight": "400",
-      "typography_line_height": {
+      "icon_typography_font_weight": "400",
+      "icon_typography_line_height": {
        "unit": "em",
        "size": 1.5,
        "sizes": []
-      },
-      "typography_font_family": "Montserrat"
+      }
      },
      "elements": []
     }

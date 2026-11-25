@@ -2,8 +2,25 @@
  {
   "key": "group_maloka_horarios",
   "title": "Horarios de Maloka",
-  "description": "Único lugar donde se cambian los horarios: los usan el menú, la home, Visítanos y el footer.",
+  "description": "Único lugar donde se cambian los horarios: los usan el menú, la home y Visítanos. En «Días especiales» van los días cerrados, festivos u horarios distintos.",
   "fields": [
+   {
+    "key": "field_maloka_horarios_tab_normal",
+    "label": "Horario normal",
+    "name": "",
+    "aria-label": "",
+    "type": "tab",
+    "instructions": "",
+    "required": 0,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "",
+     "class": "",
+     "id": ""
+    },
+    "placement": "top",
+    "endpoint": 0
+   },
    {
     "key": "field_maloka_horarios_semana_dias",
     "label": "Días entre semana",
@@ -34,7 +51,7 @@
      "class": "",
      "id": ""
     },
-    "display_format": "g:i a",
+    "display_format": "H:i",
     "return_format": "H:i",
     "default_value": "11:00:00"
    },
@@ -52,7 +69,7 @@
      "class": "",
      "id": ""
     },
-    "display_format": "g:i a",
+    "display_format": "H:i",
     "return_format": "H:i",
     "default_value": "17:00:00"
    },
@@ -86,7 +103,7 @@
      "class": "",
      "id": ""
     },
-    "display_format": "g:i a",
+    "display_format": "H:i",
     "return_format": "H:i",
     "default_value": "09:30:00"
    },
@@ -96,7 +113,7 @@
     "name": "finde_cierra",
     "aria-label": "",
     "type": "time_picker",
-    "instructions": "",
+    "instructions": "La venta de entradas cierra una hora antes que Maloka (se calcula sola).",
     "required": 1,
     "conditional_logic": 0,
     "wrapper": {
@@ -104,44 +121,699 @@
      "class": "",
      "id": ""
     },
-    "display_format": "g:i a",
+    "display_format": "H:i",
     "return_format": "H:i",
     "default_value": "18:00:00"
    },
    {
-    "key": "field_maloka_horarios_venta_hasta",
-    "label": "Venta de entradas hasta",
-    "name": "venta_hasta",
+    "key": "field_maloka_horarios_tab_especiales",
+    "label": "Días especiales",
+    "name": "",
     "aria-label": "",
-    "type": "time_picker",
+    "type": "tab",
     "instructions": "",
-    "required": 1,
-    "conditional_logic": 0,
-    "wrapper": {
-     "width": "40",
-     "class": "",
-     "id": ""
-    },
-    "display_format": "g:i a",
-    "return_format": "H:i",
-    "default_value": "16:00:00"
-   },
-   {
-    "key": "field_maloka_horarios_aviso",
-    "label": "Aviso de cambio de horario",
-    "name": "aviso",
-    "aria-label": "",
-    "type": "text",
-    "instructions": "Opcional. Ej.: «26 de noviembre: cerrado todo el día». Déjalo vacío cuando pase.",
     "required": 0,
     "conditional_logic": 0,
     "wrapper": {
-     "width": "60",
+     "width": "",
      "class": "",
      "id": ""
     },
-    "default_value": "",
-    "maxlength": 140
+    "placement": "top",
+    "endpoint": 0
+   },
+   {
+    "key": "field_maloka_horarios_especiales_ayuda",
+    "label": "Cómo usarlos",
+    "name": "",
+    "aria-label": "",
+    "type": "message",
+    "instructions": "",
+    "required": 0,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "",
+     "class": "",
+     "id": ""
+    },
+    "message": "Para días con horario distinto: cerrado, festivo o un horario especial. Se muestran en Visítanos, en el menú y en «Hoy abrimos» de la home, y <b>desaparecen solos</b> al día siguiente. No hace falta llenarlos en orden.",
+    "new_lines": "wpautop",
+    "esc_html": 0
+   },
+   {
+    "key": "field_maloka_horarios_especial_1",
+    "label": "Día especial 1",
+    "name": "especial_1",
+    "aria-label": "",
+    "type": "group",
+    "instructions": "",
+    "required": 0,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "",
+     "class": "",
+     "id": ""
+    },
+    "layout": "block",
+    "sub_fields": [
+     {
+      "key": "field_maloka_horarios_especial_1_fecha",
+      "label": "Fecha",
+      "name": "fecha",
+      "aria-label": "",
+      "type": "date_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+       "width": "25",
+       "class": "",
+       "id": ""
+      },
+      "display_format": "d/m/Y",
+      "return_format": "Ymd",
+      "first_day": 1
+     },
+     {
+      "key": "field_maloka_horarios_especial_1_tipo",
+      "label": "¿Cómo abrimos?",
+      "name": "tipo",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+       "width": "25",
+       "class": "",
+       "id": ""
+      },
+      "choices": {
+       "cerrado": "Cerrado todo el día",
+       "festivo": "Festivo (horario de fin de semana)",
+       "especial": "Horario especial"
+      },
+      "default_value": "cerrado",
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "ajax": 0,
+      "placeholder": ""
+     },
+     {
+      "key": "field_maloka_horarios_especial_1_abre",
+      "label": "Abre",
+      "name": "abre",
+      "aria-label": "",
+      "type": "time_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+       [
+        {
+         "field": "field_maloka_horarios_especial_1_tipo",
+         "operator": "==",
+         "value": "especial"
+        }
+       ]
+      ],
+      "wrapper": {
+       "width": "12",
+       "class": "",
+       "id": ""
+      },
+      "display_format": "H:i",
+      "return_format": "H:i"
+     },
+     {
+      "key": "field_maloka_horarios_especial_1_cierra",
+      "label": "Cierra",
+      "name": "cierra",
+      "aria-label": "",
+      "type": "time_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+       [
+        {
+         "field": "field_maloka_horarios_especial_1_tipo",
+         "operator": "==",
+         "value": "especial"
+        }
+       ]
+      ],
+      "wrapper": {
+       "width": "12",
+       "class": "",
+       "id": ""
+      },
+      "display_format": "H:i",
+      "return_format": "H:i"
+     },
+     {
+      "key": "field_maloka_horarios_especial_1_nota",
+      "label": "Nota (opcional)",
+      "name": "nota",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+       "width": "26",
+       "class": "",
+       "id": ""
+      },
+      "placeholder": "Ej.: por mantenimiento",
+      "maxlength": 80,
+      "default_value": ""
+     }
+    ]
+   },
+   {
+    "key": "field_maloka_horarios_especial_2",
+    "label": "Día especial 2",
+    "name": "especial_2",
+    "aria-label": "",
+    "type": "group",
+    "instructions": "",
+    "required": 0,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "",
+     "class": "",
+     "id": ""
+    },
+    "layout": "block",
+    "sub_fields": [
+     {
+      "key": "field_maloka_horarios_especial_2_fecha",
+      "label": "Fecha",
+      "name": "fecha",
+      "aria-label": "",
+      "type": "date_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+       "width": "25",
+       "class": "",
+       "id": ""
+      },
+      "display_format": "d/m/Y",
+      "return_format": "Ymd",
+      "first_day": 1
+     },
+     {
+      "key": "field_maloka_horarios_especial_2_tipo",
+      "label": "¿Cómo abrimos?",
+      "name": "tipo",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+       "width": "25",
+       "class": "",
+       "id": ""
+      },
+      "choices": {
+       "cerrado": "Cerrado todo el día",
+       "festivo": "Festivo (horario de fin de semana)",
+       "especial": "Horario especial"
+      },
+      "default_value": "cerrado",
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "ajax": 0,
+      "placeholder": ""
+     },
+     {
+      "key": "field_maloka_horarios_especial_2_abre",
+      "label": "Abre",
+      "name": "abre",
+      "aria-label": "",
+      "type": "time_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+       [
+        {
+         "field": "field_maloka_horarios_especial_2_tipo",
+         "operator": "==",
+         "value": "especial"
+        }
+       ]
+      ],
+      "wrapper": {
+       "width": "12",
+       "class": "",
+       "id": ""
+      },
+      "display_format": "H:i",
+      "return_format": "H:i"
+     },
+     {
+      "key": "field_maloka_horarios_especial_2_cierra",
+      "label": "Cierra",
+      "name": "cierra",
+      "aria-label": "",
+      "type": "time_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+       [
+        {
+         "field": "field_maloka_horarios_especial_2_tipo",
+         "operator": "==",
+         "value": "especial"
+        }
+       ]
+      ],
+      "wrapper": {
+       "width": "12",
+       "class": "",
+       "id": ""
+      },
+      "display_format": "H:i",
+      "return_format": "H:i"
+     },
+     {
+      "key": "field_maloka_horarios_especial_2_nota",
+      "label": "Nota (opcional)",
+      "name": "nota",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+       "width": "26",
+       "class": "",
+       "id": ""
+      },
+      "placeholder": "Ej.: por mantenimiento",
+      "maxlength": 80,
+      "default_value": ""
+     }
+    ]
+   },
+   {
+    "key": "field_maloka_horarios_especial_3",
+    "label": "Día especial 3",
+    "name": "especial_3",
+    "aria-label": "",
+    "type": "group",
+    "instructions": "",
+    "required": 0,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "",
+     "class": "",
+     "id": ""
+    },
+    "layout": "block",
+    "sub_fields": [
+     {
+      "key": "field_maloka_horarios_especial_3_fecha",
+      "label": "Fecha",
+      "name": "fecha",
+      "aria-label": "",
+      "type": "date_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+       "width": "25",
+       "class": "",
+       "id": ""
+      },
+      "display_format": "d/m/Y",
+      "return_format": "Ymd",
+      "first_day": 1
+     },
+     {
+      "key": "field_maloka_horarios_especial_3_tipo",
+      "label": "¿Cómo abrimos?",
+      "name": "tipo",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+       "width": "25",
+       "class": "",
+       "id": ""
+      },
+      "choices": {
+       "cerrado": "Cerrado todo el día",
+       "festivo": "Festivo (horario de fin de semana)",
+       "especial": "Horario especial"
+      },
+      "default_value": "cerrado",
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "ajax": 0,
+      "placeholder": ""
+     },
+     {
+      "key": "field_maloka_horarios_especial_3_abre",
+      "label": "Abre",
+      "name": "abre",
+      "aria-label": "",
+      "type": "time_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+       [
+        {
+         "field": "field_maloka_horarios_especial_3_tipo",
+         "operator": "==",
+         "value": "especial"
+        }
+       ]
+      ],
+      "wrapper": {
+       "width": "12",
+       "class": "",
+       "id": ""
+      },
+      "display_format": "H:i",
+      "return_format": "H:i"
+     },
+     {
+      "key": "field_maloka_horarios_especial_3_cierra",
+      "label": "Cierra",
+      "name": "cierra",
+      "aria-label": "",
+      "type": "time_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+       [
+        {
+         "field": "field_maloka_horarios_especial_3_tipo",
+         "operator": "==",
+         "value": "especial"
+        }
+       ]
+      ],
+      "wrapper": {
+       "width": "12",
+       "class": "",
+       "id": ""
+      },
+      "display_format": "H:i",
+      "return_format": "H:i"
+     },
+     {
+      "key": "field_maloka_horarios_especial_3_nota",
+      "label": "Nota (opcional)",
+      "name": "nota",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+       "width": "26",
+       "class": "",
+       "id": ""
+      },
+      "placeholder": "Ej.: por mantenimiento",
+      "maxlength": 80,
+      "default_value": ""
+     }
+    ]
+   },
+   {
+    "key": "field_maloka_horarios_especial_4",
+    "label": "Día especial 4",
+    "name": "especial_4",
+    "aria-label": "",
+    "type": "group",
+    "instructions": "",
+    "required": 0,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "",
+     "class": "",
+     "id": ""
+    },
+    "layout": "block",
+    "sub_fields": [
+     {
+      "key": "field_maloka_horarios_especial_4_fecha",
+      "label": "Fecha",
+      "name": "fecha",
+      "aria-label": "",
+      "type": "date_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+       "width": "25",
+       "class": "",
+       "id": ""
+      },
+      "display_format": "d/m/Y",
+      "return_format": "Ymd",
+      "first_day": 1
+     },
+     {
+      "key": "field_maloka_horarios_especial_4_tipo",
+      "label": "¿Cómo abrimos?",
+      "name": "tipo",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+       "width": "25",
+       "class": "",
+       "id": ""
+      },
+      "choices": {
+       "cerrado": "Cerrado todo el día",
+       "festivo": "Festivo (horario de fin de semana)",
+       "especial": "Horario especial"
+      },
+      "default_value": "cerrado",
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "ajax": 0,
+      "placeholder": ""
+     },
+     {
+      "key": "field_maloka_horarios_especial_4_abre",
+      "label": "Abre",
+      "name": "abre",
+      "aria-label": "",
+      "type": "time_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+       [
+        {
+         "field": "field_maloka_horarios_especial_4_tipo",
+         "operator": "==",
+         "value": "especial"
+        }
+       ]
+      ],
+      "wrapper": {
+       "width": "12",
+       "class": "",
+       "id": ""
+      },
+      "display_format": "H:i",
+      "return_format": "H:i"
+     },
+     {
+      "key": "field_maloka_horarios_especial_4_cierra",
+      "label": "Cierra",
+      "name": "cierra",
+      "aria-label": "",
+      "type": "time_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+       [
+        {
+         "field": "field_maloka_horarios_especial_4_tipo",
+         "operator": "==",
+         "value": "especial"
+        }
+       ]
+      ],
+      "wrapper": {
+       "width": "12",
+       "class": "",
+       "id": ""
+      },
+      "display_format": "H:i",
+      "return_format": "H:i"
+     },
+     {
+      "key": "field_maloka_horarios_especial_4_nota",
+      "label": "Nota (opcional)",
+      "name": "nota",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+       "width": "26",
+       "class": "",
+       "id": ""
+      },
+      "placeholder": "Ej.: por mantenimiento",
+      "maxlength": 80,
+      "default_value": ""
+     }
+    ]
+   },
+   {
+    "key": "field_maloka_horarios_especial_5",
+    "label": "Día especial 5",
+    "name": "especial_5",
+    "aria-label": "",
+    "type": "group",
+    "instructions": "",
+    "required": 0,
+    "conditional_logic": 0,
+    "wrapper": {
+     "width": "",
+     "class": "",
+     "id": ""
+    },
+    "layout": "block",
+    "sub_fields": [
+     {
+      "key": "field_maloka_horarios_especial_5_fecha",
+      "label": "Fecha",
+      "name": "fecha",
+      "aria-label": "",
+      "type": "date_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+       "width": "25",
+       "class": "",
+       "id": ""
+      },
+      "display_format": "d/m/Y",
+      "return_format": "Ymd",
+      "first_day": 1
+     },
+     {
+      "key": "field_maloka_horarios_especial_5_tipo",
+      "label": "¿Cómo abrimos?",
+      "name": "tipo",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+       "width": "25",
+       "class": "",
+       "id": ""
+      },
+      "choices": {
+       "cerrado": "Cerrado todo el día",
+       "festivo": "Festivo (horario de fin de semana)",
+       "especial": "Horario especial"
+      },
+      "default_value": "cerrado",
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "ajax": 0,
+      "placeholder": ""
+     },
+     {
+      "key": "field_maloka_horarios_especial_5_abre",
+      "label": "Abre",
+      "name": "abre",
+      "aria-label": "",
+      "type": "time_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+       [
+        {
+         "field": "field_maloka_horarios_especial_5_tipo",
+         "operator": "==",
+         "value": "especial"
+        }
+       ]
+      ],
+      "wrapper": {
+       "width": "12",
+       "class": "",
+       "id": ""
+      },
+      "display_format": "H:i",
+      "return_format": "H:i"
+     },
+     {
+      "key": "field_maloka_horarios_especial_5_cierra",
+      "label": "Cierra",
+      "name": "cierra",
+      "aria-label": "",
+      "type": "time_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+       [
+        {
+         "field": "field_maloka_horarios_especial_5_tipo",
+         "operator": "==",
+         "value": "especial"
+        }
+       ]
+      ],
+      "wrapper": {
+       "width": "12",
+       "class": "",
+       "id": ""
+      },
+      "display_format": "H:i",
+      "return_format": "H:i"
+     },
+     {
+      "key": "field_maloka_horarios_especial_5_nota",
+      "label": "Nota (opcional)",
+      "name": "nota",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+       "width": "26",
+       "class": "",
+       "id": ""
+      },
+      "placeholder": "Ej.: por mantenimiento",
+      "maxlength": 80,
+      "default_value": ""
+     }
+    ]
    }
   ],
   "location": [

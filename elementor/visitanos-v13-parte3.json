@@ -348,17 +348,17 @@
            {
             "_id": "c5pio3e",
             "tab_title": "TransMilenio",
-            "tab_content": "<p><strong>Estación El Tiempo – Maloka</strong></p><ol><li>Toma una ruta troncal por la Calle 26 hacia la zona K.</li><li>Bájate en la estación El Tiempo – Maloka.</li><li>Sal de la estación y camina hacia el suroccidente hasta Maloka.</li></ol><p><strong>Rutas troncales:</strong> K16 · K23 · K43 · K54 · K86</p>"
+            "tab_content": "<p><strong>Estación El Tiempo – Maloka</strong></p><ol><li>Toma una ruta troncal por la Calle 26 hacia la zona K.</li><li>Bájate en la estación El Tiempo – Maloka.</li><li>Sal de la estación y camina hacia el suroccidente hasta Maloka.</li></ol><p class=\"maloka-k\">Rutas troncales</p><ul class=\"maloka-rutas\"><li>K16</li><li>K23</li><li>K43</li><li>K54</li><li>K86</li></ul>"
            },
            {
             "_id": "b8lth54",
             "tab_title": "SITP",
-            "tab_content": "<p><strong>Rutas zonales del SITP</strong></p><p><strong>Paraderos</strong></p><ul><li>Calle 26 con Carrera 68D – Estación El Tiempo – Maloka</li><li>Av. La Esperanza (Calle 24) con Carrera 69 – Maloka</li></ul><p><strong>Rutas:</strong> 291 · Terminal Norte – Makro – Tierra Buena · C27 · La Estancia – Normandía · C115 · C135 · 603B · Z8</p>"
+            "tab_content": "<p><strong>Rutas zonales del SITP</strong></p><p class=\"maloka-k\">Paraderos</p><ul><li>Calle 26 con Carrera 68D – Estación El Tiempo – Maloka</li><li>Av. La Esperanza (Calle 24) con Carrera 69 – Maloka</li></ul><p class=\"maloka-k\">Rutas</p><ul class=\"maloka-rutas\"><li>291 · Terminal Norte – Makro – Tierra Buena</li><li>C27 · La Estancia – Normandía</li><li>C115</li><li>C135</li><li>603B</li><li>Z8</li></ul>"
            },
            {
             "_id": "0e26zng",
             "tab_title": "Carro y moto",
-            "tab_content": "<p><strong>Parqueadero de Maloka</strong></p><ol><li>El parqueadero está al respaldo del centro interactivo.</li><li>La entrada es por la Calle 25.</li><li>Tiene espacios para carros, motos y bicicletas.</li><li>Visitantes de Maloka: 1 hora gratis.</li></ol><p><strong>Tarifas del parqueadero</strong></p><ul><li>Carro: $130 por minuto · $27.000 tarifa plena hasta 12 horas</li><li>Moto: $90 por minuto · $15.000 tarifa plena hasta 12 horas</li></ul>"
+            "tab_content": "<p><strong>Parqueadero de Maloka</strong></p><ol><li>El parqueadero está al respaldo del centro interactivo.</li><li>La entrada es por la Calle 25.</li><li>Tiene espacios para carros, motos y bicicletas.</li><li>Visitantes de Maloka: 1 hora gratis.</li></ol><p class=\"maloka-k\">Tarifas del parqueadero</p><ul><li>Carro: $130 por minuto · $27.000 tarifa plena hasta 12 horas</li><li>Moto: $90 por minuto · $15.000 tarifa plena hasta 12 horas</li></ul>"
            },
            {
             "_id": "h0slmda",
@@ -402,31 +402,70 @@
            "size": 1.6,
            "sizes": []
           },
-          "content_typography_font_family": "Montserrat"
+          "content_typography_font_family": "Montserrat",
+          "custom_css": "selector .elementor-tabs-wrapper { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }\nselector .elementor-tab-desktop-title { display: flex; align-items: center; min-height: 44px; padding: 0 16px; border: 2px solid #231B2B !important; color: #231B2B; }\nselector .elementor-tab-desktop-title.elementor-active { background: #231B2B; color: #FFE25C !important; }\nselector .elementor-tab-desktop-title::before, selector .elementor-tab-desktop-title::after { display: none !important; }\nselector .elementor-tab-desktop-title:hover { background: #FFE25C; color: #231B2B; }\nselector .elementor-tab-desktop-title.elementor-active:hover { background: #231B2B; color: #FFE25C !important; }\nselector .elementor-tabs-content-wrapper, selector .elementor-tab-content { border: 0 !important; }\nselector .elementor-tab-content { padding: 24px; background: #F4F1EC; }\nselector .elementor-tab-content > p:first-child strong { font-size: 22px; line-height: 1.25; }\nselector .elementor-tab-content p, selector .elementor-tab-content ol, selector .elementor-tab-content ul { margin: 0 0 10px; }\nselector .elementor-tab-content ol, selector .elementor-tab-content ul { padding-left: 20px; }\nselector .elementor-tab-content ul { list-style: square; }\nselector .maloka-k { margin: 6px 0 4px !important; font-size: 13px; font-weight: 700; color: #6B5BD6; }\nselector ul.maloka-rutas { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; margin: 0; }\nselector .maloka-rutas li { padding: 4px 10px; background: #fff; font-size: 14px; font-weight: 700; line-height: 1.4; }\n@media (max-width: 767px) { selector .elementor-tab-mobile-title { border: 2px solid #231B2B !important; margin-bottom: 8px; } selector .elementor-tab-mobile-title.elementor-active { background: #231B2B; color: #FFE25C !important; } }\n"
          },
          "elements": []
         },
         {
          "id": "bda7818b",
          "elType": "widget",
-         "widgetType": "text-editor",
+         "widgetType": "icon-list",
          "isInner": false,
          "settings": {
-          "editor": "<p>Las rutas y paradas de TransMilenio y el SITP pueden cambiar. Antes de salir, revisa tu recorrido en TransMiApp o en Google Maps.</p>",
+          "icon_list": [
+           {
+            "_id": "bda7818",
+            "text": "Las rutas y paradas de TransMilenio y el SITP pueden cambiar. Antes de salir, revisa tu recorrido en TransMiApp o en Google Maps.",
+            "selected_icon": {
+             "value": "fas fa-info-circle",
+             "library": "fa-solid"
+            },
+            "link": {
+             "url": ""
+            }
+           }
+          ],
+          "view": "traditional",
+          "icon_color": "#4F4955",
           "text_color": "#4F4955",
-          "typography_typography": "custom",
-          "typography_font_size": {
+          "icon_size": {
            "unit": "px",
-           "size": 13,
+           "size": 16,
            "sizes": []
           },
-          "typography_font_weight": "400",
-          "typography_line_height": {
+          "text_indent": {
+           "unit": "px",
+           "size": 8,
+           "sizes": []
+          },
+          "icon_self_vertical_align": "flex-start",
+          "icon_vertical_offset": {
+           "unit": "px",
+           "size": 3,
+           "sizes": []
+          },
+          "_margin": {
+           "unit": "px",
+           "top": "16",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "icon_typography_typography": "custom",
+          "icon_typography_font_family": "Montserrat",
+          "icon_typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "icon_typography_font_weight": "400",
+          "icon_typography_line_height": {
            "unit": "em",
            "size": 1.5,
            "sizes": []
-          },
-          "typography_font_family": "Montserrat"
+          }
          },
          "elements": []
         }
@@ -469,7 +508,9 @@
          "bottom": "0",
          "left": "0",
          "isLinked": true
-        }
+        },
+        "background_background": "classic",
+        "background_color": "#F4F1EC"
        },
        "elements": [
         {
@@ -486,7 +527,7 @@
           },
           "height": {
            "unit": "px",
-           "size": 560,
+           "size": 620,
            "sizes": []
           },
           "height_tablet": {
@@ -684,7 +725,18 @@
          "size": 1.55,
          "sizes": []
         },
-        "typography_font_family": "Montserrat"
+        "typography_font_family": "Montserrat",
+        "_element_width": "initial",
+        "_element_custom_width": {
+         "unit": "px",
+         "size": 620,
+         "sizes": []
+        },
+        "_element_custom_width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        }
        },
        "elements": []
       }
@@ -740,7 +792,8 @@
        "bottom": "0",
        "left": "0",
        "isLinked": true
-      }
+      },
+      "custom_css": "selector .maloka-tag { display: inline-block; margin: 4px 0 6px; padding: 2px 8px; background: #9FE8C8; color: #231B2B; font-size: 13px; font-weight: 700; line-height: 1.6; }\nselector .maloka-enlace { display: inline-block; margin-top: 6px; color: #231B2B; font-weight: 700; text-decoration: none; border-bottom: 2px solid #231B2B; }\nselector .maloka-enlace:hover { color: #6B5BD6; border-color: #6B5BD6; }\n"
      },
      "elements": [
       {
@@ -842,7 +895,7 @@
           "view": "stacked",
           "shape": "square",
           "title_text": "Parqueadero",
-          "description_text": "Al respaldo de Maloka, con entrada por la Calle 25. Espacios para carros, motos y bicicletas. (1 hora gratis para visitantes)",
+          "description_text": "<span class=\"maloka-tag\">1 hora gratis para visitantes</span><br>Al respaldo de Maloka, con entrada por la Calle 25. Espacios para carros, motos y bicicletas.<br><a class=\"maloka-enlace\" href=\"#llegar\">Tarifas del parqueadero →</a>",
           "title_size": "h4",
           "position": "left",
           "position_mobile": "left",
@@ -1760,7 +1813,7 @@
           "view": "stacked",
           "shape": "square",
           "title_text": "Guía digital",
-          "description_text": "Recorre Maloka desde tu celular con Bloomberg Connects. Es gratuita.",
+          "description_text": "Recorre Maloka desde tu celular con Bloomberg Connects. Es gratuita.<br><a class=\"maloka-enlace\" href=\"https://guides.bloombergconnects.org/es-US/guide/malokaScienceCenter\" target=\"_blank\" rel=\"noopener\">Abrir la guía en Bloomberg Connects ↗</a>",
           "link": {
            "url": "https://guides.bloombergconnects.org/es-US/guide/malokaScienceCenter",
            "is_external": "on",
@@ -2644,7 +2697,7 @@
       "flex_direction_mobile": "column",
       "content_width": "full",
       "flex_justify_content": "space-between",
-      "flex_align_items": "flex-end",
+      "flex_align_items": "flex-start",
       "flex_gap": {
        "column": "24",
        "row": "24",
@@ -2793,7 +2846,18 @@
            "size": 1.55,
            "sizes": []
           },
-          "typography_font_family": "Montserrat"
+          "typography_font_family": "Montserrat",
+          "_element_width": "initial",
+          "_element_custom_width": {
+           "unit": "px",
+           "size": 620,
+           "sizes": []
+          },
+          "_element_custom_width_mobile": {
+           "unit": "%",
+           "size": 100,
+           "sizes": []
+          }
          },
          "elements": []
         }
@@ -2955,10 +3019,27 @@
         },
         "background_size": "cover",
         "background_position": "center center",
-        "background_overlay_background": "classic",
-        "background_overlay_color": "rgba(35,27,43,0.55)",
+        "background_overlay_background": "gradient",
+        "background_overlay_color": "rgba(35,27,43,0.30)",
         "background_overlay_hover_background": "classic",
-        "background_overlay_hover_color": "rgba(35,27,43,0.25)"
+        "background_overlay_hover_color": "rgba(35,27,43,0.25)",
+        "background_overlay_color_stop": {
+         "unit": "%",
+         "size": 30,
+         "sizes": []
+        },
+        "background_overlay_color_b": "rgba(35,27,43,0.85)",
+        "background_overlay_color_b_stop": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "background_overlay_gradient_type": "linear",
+        "background_overlay_gradient_angle": {
+         "unit": "deg",
+         "size": 180,
+         "sizes": []
+        }
        },
        "elements": [
         {
@@ -3157,10 +3238,27 @@
         },
         "background_size": "cover",
         "background_position": "center center",
-        "background_overlay_background": "classic",
-        "background_overlay_color": "rgba(35,27,43,0.55)",
+        "background_overlay_background": "gradient",
+        "background_overlay_color": "rgba(35,27,43,0.30)",
         "background_overlay_hover_background": "classic",
-        "background_overlay_hover_color": "rgba(35,27,43,0.25)"
+        "background_overlay_hover_color": "rgba(35,27,43,0.25)",
+        "background_overlay_color_stop": {
+         "unit": "%",
+         "size": 30,
+         "sizes": []
+        },
+        "background_overlay_color_b": "rgba(35,27,43,0.85)",
+        "background_overlay_color_b_stop": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "background_overlay_gradient_type": "linear",
+        "background_overlay_gradient_angle": {
+         "unit": "deg",
+         "size": 180,
+         "sizes": []
+        }
        },
        "elements": [
         {
@@ -3359,10 +3457,27 @@
         },
         "background_size": "cover",
         "background_position": "center center",
-        "background_overlay_background": "classic",
-        "background_overlay_color": "rgba(35,27,43,0.55)",
+        "background_overlay_background": "gradient",
+        "background_overlay_color": "rgba(35,27,43,0.30)",
         "background_overlay_hover_background": "classic",
-        "background_overlay_hover_color": "rgba(35,27,43,0.25)"
+        "background_overlay_hover_color": "rgba(35,27,43,0.25)",
+        "background_overlay_color_stop": {
+         "unit": "%",
+         "size": 30,
+         "sizes": []
+        },
+        "background_overlay_color_b": "rgba(35,27,43,0.85)",
+        "background_overlay_color_b_stop": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "background_overlay_gradient_type": "linear",
+        "background_overlay_gradient_angle": {
+         "unit": "deg",
+         "size": 180,
+         "sizes": []
+        }
        },
        "elements": [
         {
@@ -3561,10 +3676,27 @@
         },
         "background_size": "cover",
         "background_position": "center center",
-        "background_overlay_background": "classic",
-        "background_overlay_color": "rgba(35,27,43,0.55)",
+        "background_overlay_background": "gradient",
+        "background_overlay_color": "rgba(35,27,43,0.30)",
         "background_overlay_hover_background": "classic",
-        "background_overlay_hover_color": "rgba(35,27,43,0.25)"
+        "background_overlay_hover_color": "rgba(35,27,43,0.25)",
+        "background_overlay_color_stop": {
+         "unit": "%",
+         "size": 30,
+         "sizes": []
+        },
+        "background_overlay_color_b": "rgba(35,27,43,0.85)",
+        "background_overlay_color_b_stop": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "background_overlay_gradient_type": "linear",
+        "background_overlay_gradient_angle": {
+         "unit": "deg",
+         "size": 180,
+         "sizes": []
+        }
        },
        "elements": [
         {
@@ -3923,7 +4055,8 @@
            "size": 1.55,
            "sizes": []
           },
-          "typography_font_family": "Montserrat"
+          "typography_font_family": "Montserrat",
+          "custom_css": "selector a { color: inherit !important; text-decoration: none !important; font-weight: 700; }\n"
          },
          "elements": []
         }
@@ -4071,7 +4204,8 @@
            "size": 1.6,
            "sizes": []
           },
-          "content_typography_font_family": "Montserrat"
+          "content_typography_font_family": "Montserrat",
+          "custom_css": "selector .elementor-accordion { border-top: 2px solid #231B2B; }\nselector .elementor-accordion .elementor-accordion-item { border: 0 !important; border-bottom: 2px solid #231B2B !important; }\nselector .elementor-accordion .elementor-tab-title, selector .elementor-accordion .elementor-tab-content { border: 0 !important; }\nselector .elementor-accordion .elementor-tab-title:hover { background: #FFE25C; }\nselector .elementor-accordion-icon i { font-size: 16px; }\nselector .elementor-accordion-icon svg { width: 16px; height: 16px; }\nselector .elementor-tab-content p { max-width: 62ch; margin: 0; }\n"
          },
          "elements": []
         }
