@@ -1,9 +1,9 @@
 # Instrucciones para Claude en este repositorio
 
-## «Despliégalo» = commit + push + GitHub Pages
+## «Oki» = commit + push + GitHub Pages
 
-Cuando el usuario diga **«despliégalo»** (o «despliega», «súbelo a GitHub Pages», «publícalo»), haz siempre los tres
-pasos, sin preguntar:
+Cuando el usuario diga **«oki»** (también vale «despliégalo», «despliega», «súbelo a GitHub Pages» o «publícalo»), haz
+siempre los tres pasos, sin preguntar:
 
 1. **Commit** de todos los cambios pendientes, con un mensaje claro en español.
 2. **Push** a la rama de trabajo de la sesión **y** a `master`
