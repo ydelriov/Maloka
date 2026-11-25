@@ -1,0 +1,392 @@
+---
+/* Ven en grupo · propuesta con el Design System v3 de la V13 (publicada en /seleccion/ven-en-grupo/).
+   Reúne lo que hoy está en maloka.org/cotizaciones-y-grupos/ y maloka.org/maloka-puertas-abiertas-mpa/.
+   Maqueta pensada para Elementor: cada bloque es un contenedor o un widget nativo, sin código a medida.
+   El JSON importable es elementor/ven-en-grupo-v13.json.
+   1. Cabecera compacta (migas, H1, texto, «Cotiza tu evento» y tips)
+   2. Anclas (contenedor fijo arriba con enlaces a #id)
+   3. ¿Con quién vienes? (5 tarjetas-enlace: imagen cuadrada de maloka.org, franja pastel, título)
+   4. Colegios (imagen + texto + bitácoras PDF) · 5. Cumpleaños (icon-box 3×2 + imagen)
+   6. Empresas (3 espacios con imagen + servicios) · 7. Marcas (cifra + espacios y formatos)
+   8. Maloka Puertas Abiertas (aviso de cupos + requisitos) · 9. Cómo cotizar (3 pasos + botón)
+   10. Preguntas frecuentes (widget Acordeón con FAQ schema).
+   Datos en src/data/grupos-v13.json. «Cotiza tu evento» lleva al formulario de Google que hoy usa maloka.org. */
+import Base from '../../layouts/Base.astro';
+import NHeader from '../../components/n/NHeader.astro';
+import NFooter from '../../components/n/NFooter.astro';
+import Icon from '../../components/ui/Icon.astro';
+import g from '../../data/grupos-v13.json';
+import site from '../../data/site.json';
+import { url } from '../../lib/url.js';
+import '../../styles/noche.css';
+const G = 'seleccion';
+const P = Object.fromEntries(g.publicos.map((p) => [p.id, p]));
+const anclas = [
+  { id: 'colegios', label: 'Colegios' }, { id: 'cumpleanos', label: 'Cumpleaños' }, { id: 'empresas', label: 'Empresas' },
+  { id: 'marcas', label: 'Marcas' }, { id: 'mpa', label: 'Acceso gratuito' }, { id: 'cotizar', label: 'Cotiza' }, { id: 'preguntas', label: 'Preguntas' }
+];
+const nt = { target: '_blank', rel: 'noopener' };
+const ante = (id) => `${P[id].n} · ${P[id].ante}`;
+---
+<Base variante="grupos" grupo={G} title="Ven en grupo · Colegios, cumpleaños, empresas y marcas · Maloka" description="Cotiza tu visita a Maloka en grupo: salidas escolares con bitácoras por edades, cumpleaños a la medida, eventos corporativos en el Domo, patrocinios y pauta, y acceso gratuito con Maloka Puertas Abiertas." clase="nn">
+  <NHeader variante="blanco" panel="hueso" grupo={G} inicio={url(`${G}/`)} />
+  <main id="contenido">
+    <!-- 1 · Cabecera -->
+    <section class="vg-hero n-hueso" aria-labelledby="vg-h1">
+      <div class="mk-w vg-hero-in">
+        <div class="vg-hero-t">
+          <nav class="vg-migas" aria-label="Ruta"><a href={url(`${G}/`)}>Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Ven en grupo</span></nav>
+          <h1 class="vg-h1" id="vg-h1">Ven en grupo</h1>
+          <p class="vg-lead">{g.hero.lead}</p>
+        </div>
+        <div class="vg-hero-a">
+          <a class="n-b" href={g.cotizar} {...nt}>Cotiza tu evento<Icon name="ext" /><span class="sr-only"> (formulario, abre en una pestaña nueva)</span></a>
+          <a class="n-a" href={g.hero.tips.url} {...nt}><Icon name="download" size="18" />{g.hero.tips.texto} (PDF)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · Anclas -->
+    <nav class="vg-anclas" aria-label="En esta página">
+      <ul class="mk-w">{anclas.map((a) => <li><a href={`#${a.id}`}>{a.label}</a></li>)}</ul>
+    </nav>
+
+    <!-- 3 · ¿Con quién vienes? -->
+    <section class="n-sec n-blanco" aria-labelledby="vg-pu">
+      <div class="mk-w">
+        <div class="n-head"><div><p class="n-ante">Para cada grupo</p><h2 class="n-titulo" id="vg-pu">¿Con quién vienes?</h2></div></div>
+        <ul class="vg-pu">
+          {g.publicos.map((p, i) => (
+            <li data-rv style={`--d:${i}`}>
+              <a class="vg-pu-a" href={`#${p.id}`}>
+                <span class="vg-pu-f"><img src={p.imagen} alt="" width="500" height="500" loading="lazy" decoding="async" /></span>
+                <span class={`vg-pu-c vg-${p.color}`}>
+                  <span class="vg-pu-n t-num">{p.n} · {p.ante}</span>
+                  <h3 class="vg-pu-t">{p.titulo}</h3>
+                  <span class="vg-pu-x">{p.corto}</span>
+                  <Icon name="down" size="24" class="vg-pu-ic" />
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4 · Colegios -->
+    <section class="n-sec n-hueso vg-sec" id="colegios" aria-labelledby="vg-co">
+      <div class="mk-w vg-split">
+        <div class="vg-foto"><img src={P.colegios.imagen} alt={P.colegios.alt} width="960" height="720" loading="lazy" decoding="async" /></div>
+        <div class="vg-col">
+          <p class="n-ante">{ante('colegios')}</p>
+          <h2 class="n-titulo" id="vg-co">{g.colegios.titulo}</h2>
+          <p class="n-lead">{g.colegios.texto}</p>
+          <h3 class="vg-k">{g.colegios.bitacorasTitulo}</h3>
+          <ul class="vg-desc">
+            {g.colegios.bitacoras.map((b) => (
+              <li><a class="vg-desc-a" href={b.url} {...nt}>
+                <span class="vg-desc-ic"><Icon name="download" size="24" /></span>
+                <span class="vg-desc-t"><b>{b.titulo}</b><span>{b.edad} · PDF</span></span>
+              </a></li>
+            ))}
+          </ul>
+          <p class="vg-nota"><Icon name="heart" size="20" /><span>{g.colegios.oficiales} <a href="#mpa">Conoce cómo</a></span></p>
+          <a class="n-a" href={g.cotizar} {...nt}>Cotiza la salida de tu colegio<Icon name="ext" size="18" /></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · Cumpleaños -->
+    <section class="n-sec n-blanco vg-sec" id="cumpleanos" aria-labelledby="vg-cu">
+      <div class="mk-w vg-split vg-split--inv">
+        <div class="vg-col">
+          <p class="n-ante">{ante('cumpleanos')}</p>
+          <h2 class="n-titulo" id="vg-cu">{g.cumpleanos.titulo}</h2>
+          <p class="n-lead">{g.cumpleanos.texto}</p>
+          <ul class="vg-inc">
+            {g.cumpleanos.incluye.map((x) => <li><span class="vg-inc-ic"><Icon name={x.icono} size="24" /></span><span><b>{x.titulo}</b><span>{x.texto}</span></span></li>)}
+          </ul>
+          <p class="vg-precio">Tarifas especiales para grupos. Consulta en <a href={`mailto:${g.correo}`}>{g.correo}</a></p>
+          <div class="vg-enl">
+            <a class="n-a" href={g.cumpleanos.brochure.url} {...nt}><Icon name="download" size="18" />{g.cumpleanos.brochure.texto} (PDF)</a>
+            <a class="n-a" href={g.cotizar} {...nt}>Cotiza tu cumpleaños<Icon name="ext" size="18" /></a>
+          </div>
+        </div>
+        <div class="vg-foto vg-foto--salmon"><img src={P.cumpleanos.imagen} alt={P.cumpleanos.alt} width="960" height="540" loading="lazy" decoding="async" /></div>
+      </div>
+    </section>
+
+    <!-- 6 · Empresas -->
+    <section class="n-sec n-noche vg-sec" id="empresas" aria-labelledby="vg-em">
+      <div class="mk-w">
+        <div class="n-head"><div><p class="n-ante">{ante('empresas')}</p><h2 class="n-titulo" id="vg-em">{g.empresas.titulo}</h2><p class="n-lead">{g.empresas.texto}</p></div></div>
+        <ul class="vg-esp">
+          {g.empresas.espacios.map((e, i) => (
+            <li data-rv style={`--d:${i}`}>
+              <span class="vg-esp-f"><img src={e.imagen} alt={e.alt} width="640" height="480" loading="lazy" decoding="async" /></span>
+              <h3 class="vg-esp-t">{e.titulo}</h3>
+              <p class="vg-esp-x">{e.texto}</p>
+            </li>
+          ))}
+        </ul>
+        <div class="vg-serv">
+          <p class="vg-serv-t">{g.empresas.serviciosTitulo}</p>
+          <ul>{g.empresas.servicios.map((s) => <li><Icon name="check" size="18" />{s}</li>)}</ul>
+        </div>
+        <p class="vg-precio vg-precio--osc">Tarifas especiales para grupos. Consulta en <a href={`mailto:${g.correo}`}>{g.correo}</a></p>
+        <div class="vg-enl">
+          <a class="n-a vg-am" href={g.empresas.portafolio.url} {...nt}><Icon name="download" size="18" />{g.empresas.portafolio.texto} (PDF)</a>
+          <a class="n-a vg-am" href={g.cotizar} {...nt}>Cotiza tu evento<Icon name="ext" size="18" /></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · Marcas -->
+    <section class="n-sec vg-menta vg-sec" id="marcas" aria-labelledby="vg-ma">
+      <div class="mk-w vg-ma">
+        <div class="vg-col">
+          <p class="n-ante vg-osc">{ante('marcas')}</p>
+          <h2 class="n-titulo" id="vg-ma">{g.marcas.titulo}</h2>
+          <p class="vg-cifra"><b class="t-num">{g.marcas.cifra.valor}</b><span>{g.marcas.cifra.label}</span></p>
+        </div>
+        <div class="vg-col">
+          <p class="n-lead vg-osc">{g.marcas.texto}</p>
+          <div class="vg-ma-l">
+            <div><h3 class="vg-k">Espacios</h3><ul>{g.marcas.espacios.map((x) => <li>{x}</li>)}</ul></div>
+            <div><h3 class="vg-k">Formatos</h3><ul>{g.marcas.formatos.map((x) => <li>{x}</li>)}</ul></div>
+          </div>
+          <p class="vg-precio">Consulta en <a href={`mailto:${g.correo}`}>{g.correo}</a></p>
+          <div class="vg-enl">
+            <a class="n-a" href={g.marcas.portafolio.url} {...nt}><Icon name="download" size="18" />{g.marcas.portafolio.texto} (PDF)</a>
+            <a class="n-a" href={g.cotizar} {...nt}>Cotiza tu pauta<Icon name="ext" size="18" /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 · Maloka Puertas Abiertas -->
+    <section class="n-sec vg-lavanda vg-sec" id="mpa" aria-labelledby="vg-mp">
+      <div class="mk-w vg-mp">
+        <div class="vg-col">
+          <p class="n-ante vg-osc">{ante('mpa')}</p>
+          <h2 class="n-display" id="vg-mp" data-rv="barrido">{g.mpa.titulo}</h2>
+          <p class="n-lead vg-osc">{g.mpa.texto}</p>
+          <p class="vg-aviso"><Icon name="bolt" size="22" /><span><b>Cupos 2026 agotados.</b> {g.mpa.aviso.replace(/^Los cupos de 2026 están agotados\. /, '')}</span></p>
+        </div>
+        <div class="vg-col">
+          <h3 class="vg-k">Necesitas cumplir solo uno de estos requisitos</h3>
+          <ul class="vg-req">{g.mpa.requisitos.map((r) => <li><Icon name="check" size="22" />{r}</li>)}</ul>
+          <div class="vg-datos">{g.mpa.datos.map((d) => <p><b class="t-num">{d.valor}</b><span>{d.label}</span></p>)}</div>
+          <p class="vg-nota vg-nota--osc"><Icon name="school" size="20" /><span>{g.mpa.grupos} Escribe a <a href={`mailto:${g.mpa.correo}`}>{g.mpa.correo}</a></span></p>
+          <a class="n-a" href={g.mpa.enlace.url} {...nt}>{g.mpa.enlace.texto}<Icon name="ext" size="18" /></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 · Cómo cotizar -->
+    <section class="n-sec n-noche vg-sec" id="cotizar" aria-labelledby="vg-ct">
+      <div class="mk-w vg-ct">
+        <div class="vg-col">
+          <p class="n-ante">Cotiza tu visita</p>
+          <h2 class="n-display" id="vg-ct">¡Ven y compruébalo por ti mismo!</h2>
+          <a class="n-b vg-am" href={g.cotizar} {...nt}>Cotiza tu evento en Maloka<Icon name="ext" /><span class="sr-only"> (formulario, abre en una pestaña nueva)</span></a>
+          <p class="vg-cont"><a href={`mailto:${g.correo}`}><Icon name="mail" size="20" />{g.correo}</a><a href={`tel:${site.telefonoHref}`}><Icon name="phone" size="20" />{site.telefono}</a></p>
+        </div>
+        <div>
+          <ol class="vg-pasos">
+            {g.pasos.map((p, i) => <li class={`vg-paso vg-paso--${i}`}><b class="vg-paso-n t-num">{p.n}</b><span><b>{p.titulo}</b><span>{p.texto}</span></span></li>)}
+          </ol>
+          <span class="n-ej">Pasos por validar con el equipo de ventas</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 · Preguntas -->
+    <section class="n-sec n-blanco vg-sec" id="preguntas" aria-labelledby="vg-pr">
+      <div class="mk-w vg-pr">
+        <div class="vg-col">
+          <p class="n-ante">Preguntas frecuentes</p>
+          <h2 class="n-titulo" id="vg-pr">Resolvemos tus dudas.</h2>
+          <p class="n-lead">¿Tienes otra pregunta? Escríbenos a <a href={`mailto:${g.correo}`}>{g.correo}</a> o llámanos al <a href={`tel:${site.telefonoHref}`}>{site.telefono}</a>.</p>
+          <a class="n-a" href={g.hero.tips.url} {...nt}><Icon name="download" size="18" />{g.hero.tips.texto} (PDF)</a>
+        </div>
+        <div class="vg-faq">
+          {g.preguntas.map((q, i) => (
+            <details class="vg-q" open={i === 0}>
+              <summary><span>{q.p}</span><Icon name="down" size="22" /></summary>
+              <p>{q.r}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+  <NFooter grupo={G} />
+</Base>
+
+<style>
+  /* Cabecera */
+  .vg-hero { padding-block: 32px 40px; }
+  .vg-hero-in { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 64px; align-items: end; }
+  .vg-hero-t { display: grid; gap: 10px; justify-items: start; }
+  .vg-hero-a { display: grid; gap: 16px; justify-items: start; }
+  .vg-migas { display: flex; gap: 8px; font-size: 14px; font-weight: 600; color: var(--n-texto2); }
+  .vg-migas a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  .vg-migas [aria-current] { color: var(--n-noche); }
+  .vg-h1 { margin: 0; font-size: var(--n-titulo); line-height: 1.1; font-weight: 700; letter-spacing: -0.015em; }
+  .vg-lead { font-size: 16px; line-height: 1.5; color: var(--n-texto2); max-width: 680px; }
+
+  /* Anclas */
+  .vg-anclas { position: sticky; top: 80px; z-index: 50; background: #fff; border-block: 1px solid rgba(35, 27, 43, .16); }
+  .vg-anclas ul { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+  .vg-anclas ul::-webkit-scrollbar { display: none; }
+  .vg-anclas a { position: relative; display: inline-flex; align-items: center; min-height: 56px; padding: 0 14px; font-size: 15px; font-weight: 600; color: var(--n-noche); white-space: nowrap; }
+  .vg-anclas a::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: 0; height: 3px; background: var(--n-noche); transform: scaleX(0); transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .vg-anclas a:hover::after { transform: scaleX(1); }
+  .vg-sec { scroll-margin-top: 136px; }
+
+  /* Colores */
+  .vg-amarillo { background: var(--n-amarillo); } .vg-salmon { background: var(--n-salmon); } .vg-cielo { background: var(--n-cielo); }
+  .vg-menta { background: var(--n-menta); color: var(--n-noche); } .vg-lavanda { background: var(--n-lavanda); color: var(--n-noche); }
+  .vg-osc { color: var(--n-noche); }
+  .vg-am { color: var(--n-amarillo); }
+
+  /* ¿Con quién vienes? */
+  .vg-pu { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+  .vg-pu-a { display: grid; grid-template-rows: auto 1fr; height: 100%; color: var(--n-noche); }
+  .vg-pu-f { display: block; aspect-ratio: 1; overflow: hidden; background: var(--n-carbon); }
+  .vg-pu-f img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--mk-ease); }
+  .vg-pu-a:hover .vg-pu-f img { transform: scale(1.04); }
+  .vg-pu-c { position: relative; display: grid; align-content: start; gap: 6px; padding: 18px 18px 48px; }
+  .vg-pu-n { font-size: 13px; font-weight: 700; }
+  .vg-pu-t { margin: 0; font-size: 20px; line-height: 1.2; font-weight: 700; }
+  .vg-pu-x { font-size: 14px; line-height: 1.4; }
+  .vg-pu-c :global(.vg-pu-ic) { position: absolute; left: 18px; bottom: 14px; transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .vg-pu-a:hover :global(.vg-pu-ic) { transform: translateY(4px); }
+
+  /* Bloques imagen + texto */
+  .vg-split { display: grid; grid-template-columns: 6fr 6fr; gap: 64px; align-items: center; }
+  .vg-col { display: grid; gap: 16px; align-content: start; justify-items: start; }
+  .vg-foto { aspect-ratio: 4 / 3; overflow: hidden; background: var(--n-carbon); }
+  .vg-foto img { width: 100%; height: 100%; object-fit: cover; }
+  .vg-foto--salmon { aspect-ratio: 16 / 9; background: var(--n-salmon); }
+  .vg-k { margin: 12px 0 0; font-size: 18px; font-weight: 700; }
+  .vg-desc { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }
+  .vg-desc-a { display: flex; gap: 14px; align-items: center; height: 100%; padding: 16px; background: var(--n-amarillo); color: var(--n-noche); transition: background-color var(--mk-t) var(--mk-ease); }
+  .vg-desc-a:hover { background: #fff; }
+  .vg-desc-ic { display: grid; place-items: center; flex: none; width: 48px; height: 48px; background: var(--n-noche); color: var(--n-amarillo); }
+  .vg-desc-t { display: grid; gap: 2px; font-size: 14px; }
+  .vg-desc-t b { font-size: 17px; }
+  .vg-nota { display: flex; gap: 10px; align-items: flex-start; padding: 14px 16px; background: #fff; font-size: 15px; }
+  .vg-nota :global(.mk-ic) { flex: none; margin-top: 1px; }
+  .vg-nota a { color: var(--n-noche); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  .vg-nota--osc { background: rgba(255, 255, 255, .55); }
+  .vg-enl { display: flex; flex-wrap: wrap; gap: 12px 32px; }
+  .vg-precio { font-size: 15px; color: var(--n-texto2); }
+  .vg-precio a { color: var(--n-noche); font-weight: 700; }
+  .vg-precio--osc { margin-top: 24px; color: var(--n-texto2-osc); }
+  .vg-precio--osc a { color: #fff; }
+  .vg-menta .vg-precio, .vg-lavanda .vg-precio { color: var(--n-noche); }
+
+  /* Cumpleaños */
+  .vg-split--inv { align-items: start; }
+  .vg-split--inv .vg-foto { position: sticky; top: 156px; }
+  .vg-inc { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; width: 100%; border-top: 2px solid var(--n-noche); }
+  .vg-inc li { display: flex; gap: 14px; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(35, 27, 43, .2); }
+  .vg-inc-ic { display: grid; place-items: center; flex: none; width: 44px; height: 44px; background: var(--n-salmon); }
+  .vg-inc li > span:last-child { display: grid; gap: 2px; font-size: 14px; color: var(--n-texto2); }
+  .vg-inc b { font-size: 16px; color: var(--n-noche); }
+
+  /* Empresas */
+  .vg-esp { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .vg-esp li { display: grid; gap: 8px; align-content: start; }
+  .vg-esp-f { display: block; aspect-ratio: 4 / 3; overflow: hidden; margin-bottom: 8px; background: var(--n-carbon); }
+  .vg-esp-f img { width: 100%; height: 100%; object-fit: cover; }
+  .vg-esp-t { margin: 0; font-size: var(--n-sub); font-weight: 700; }
+  .vg-esp-x { color: var(--n-texto2-osc); }
+  .vg-serv { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 48px; padding-block: 20px; border-block: 1px solid rgba(255, 255, 255, .3); }
+  .vg-serv-t { font-weight: 700; color: var(--n-lavanda); }
+  .vg-serv ul { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+  .vg-serv li { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+  .vg-serv :global(.mk-ic) { color: var(--n-menta); }
+  .n-noche .vg-enl { margin-top: 8px; }
+
+  /* Marcas */
+  .vg-ma, .vg-mp { display: grid; grid-template-columns: 6fr 6fr; gap: 64px; align-items: start; }
+  .vg-cifra { display: grid; gap: 4px; margin-top: 16px; padding-top: 20px; border-top: 2px solid var(--n-noche); }
+  .vg-cifra b { font-size: 96px; line-height: 1; font-weight: 700; letter-spacing: -0.03em; }
+  .vg-cifra span { font-size: 18px; font-weight: 600; }
+  .vg-ma-l { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; }
+  .vg-ma-l ul { display: grid; border-top: 2px solid var(--n-noche); margin-top: 10px; }
+  .vg-ma-l li { padding: 12px 2px; border-bottom: 1px solid rgba(35, 27, 43, .3); font-weight: 600; }
+
+  /* Maloka Puertas Abiertas */
+  .vg-aviso { display: flex; gap: 12px; align-items: flex-start; margin-top: 8px; padding: 18px 20px; background: var(--n-noche); color: #fff; font-size: 15px; }
+  .vg-aviso :global(.mk-ic) { flex: none; color: var(--n-amarillo); }
+  .vg-aviso b { color: var(--n-amarillo); }
+  .vg-req { display: grid; width: 100%; border-top: 2px solid var(--n-noche); }
+  .vg-req li { display: flex; gap: 12px; align-items: center; padding: 16px 4px; border-bottom: 2px solid var(--n-noche); font-weight: 600; }
+  .vg-datos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%; }
+  .vg-datos p { display: grid; gap: 2px; padding: 16px 18px; background: #fff; }
+  .vg-datos b { font-size: var(--n-dato); line-height: 1.1; font-weight: 700; }
+  .vg-datos span { font-size: 14px; }
+
+  /* Cómo cotizar */
+  .vg-ct { display: grid; grid-template-columns: 6fr 6fr; gap: 64px; align-items: center; }
+  .vg-ct .n-b { margin-top: 8px; }
+  .vg-cont { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 8px; }
+  .vg-cont a { display: inline-flex; align-items: center; gap: 8px; color: var(--n-texto2-osc); font-weight: 600; }
+  .vg-cont a:hover { color: var(--n-amarillo); }
+  .vg-pasos { display: grid; gap: 0; }
+  .vg-paso { display: flex; gap: 20px; align-items: flex-start; padding: 24px 28px; color: var(--n-noche); }
+  .vg-paso--0 { background: var(--n-amarillo); } .vg-paso--1 { background: var(--n-menta); } .vg-paso--2 { background: var(--n-cielo); }
+  .vg-paso-n { font-size: 48px; line-height: 1; font-weight: 700; }
+  .vg-paso > span { display: grid; gap: 4px; font-size: 15px; }
+  .vg-paso > span b { font-size: 20px; }
+
+  /* Preguntas */
+  .vg-pr { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start; }
+  .vg-pr .n-lead a { color: inherit; font-weight: 700; }
+  .vg-faq { border-top: 2px solid var(--n-noche); }
+  .vg-q { border-bottom: 2px solid var(--n-noche); }
+  .vg-q summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4px; font-size: 19px; font-weight: 700; cursor: pointer; list-style: none; }
+  .vg-q summary::-webkit-details-marker { display: none; }
+  .vg-q summary:hover { background: var(--n-amarillo); }
+  .vg-q summary :global(.mk-ic) { flex: none; transition: transform var(--mk-t-rapida) var(--mk-ease); }
+  .vg-q[open] summary :global(.mk-ic) { transform: rotate(180deg); }
+  .vg-q p { padding: 0 4px 22px; font-size: 17px; line-height: 1.6; color: var(--n-texto2); max-width: 62ch; }
+
+  @media (max-width: 1024px) {
+    .vg-hero-in { grid-template-columns: 1fr; }
+    .vg-pu { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .vg-pu li { grid-column: span 2; }
+    .vg-pu li:nth-child(n+4) { grid-column: span 3; }
+    .vg-pu li:nth-child(n+4) .vg-pu-a { grid-template-columns: 45% 1fr; grid-template-rows: none; }
+    .vg-pu li:nth-child(n+4) .vg-pu-f { aspect-ratio: auto; height: 100%; }
+    .vg-split, .vg-ma, .vg-mp, .vg-ct, .vg-pr { grid-template-columns: 1fr; gap: 32px; }
+    .vg-split--inv .vg-foto { position: static; order: -1; }
+    .vg-foto { aspect-ratio: 16 / 9; }
+    .vg-esp { gap: 20px; }
+    .vg-cifra b { font-size: 72px; }
+    .vg-anclas { top: 72px; } .vg-sec { scroll-margin-top: 128px; }
+  }
+  @media (max-width: 767px) {
+    .vg-hero { padding-block: 24px 28px; }
+    .vg-pu { grid-template-columns: 1fr; gap: 12px; }
+    .vg-pu li, .vg-pu li:nth-child(n+4) { grid-column: auto; }
+    .vg-pu-a, .vg-pu li:nth-child(n+4) .vg-pu-a { grid-template-columns: 112px 1fr; grid-template-rows: none; }
+    .vg-pu-f, .vg-pu li:nth-child(n+4) .vg-pu-f { aspect-ratio: auto; height: 100%; min-height: 112px; }
+    .vg-pu-c { padding: 14px 44px 14px 14px; }
+    .vg-pu-c :global(.vg-pu-ic) { left: auto; right: 12px; bottom: auto; top: 14px; }
+    .vg-pu-t { font-size: 17px; }
+    .vg-desc, .vg-inc, .vg-esp, .vg-ma-l { grid-template-columns: 1fr; }
+    .vg-esp { gap: 32px; }
+    .vg-serv { flex-direction: column; align-items: flex-start; }
+    .vg-cifra b { font-size: 56px; }
+    .vg-paso { padding: 20px; gap: 16px; }
+    .vg-paso-n { font-size: 36px; }
+    .vg-q summary { font-size: 17px; }
+    .vg-anclas a { min-height: 48px; padding: 0 10px; font-size: 14px; }
+    .vg-anclas a::after { left: 10px; right: 10px; }
+  }
+</style>
