@@ -661,7 +661,8 @@
            "unit": "px",
            "size": 64,
            "sizes": []
-          }
+          },
+          "_flex_size_mobile": "none"
          },
          "elements": []
         },
@@ -692,7 +693,13 @@
            "isLinked": true
           },
           "flex_justify_content_tablet": "flex-end",
-          "flex_justify_content_mobile": "flex-start"
+          "flex_justify_content_mobile": "flex-start",
+          "width_mobile": {
+           "unit": "custom",
+           "size": "auto",
+           "sizes": []
+          },
+          "_flex_size_mobile": "none"
          },
          "elements": [
           {
