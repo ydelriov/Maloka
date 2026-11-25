@@ -14,6 +14,9 @@
  *   [maloka_aviso etiqueta="Cambio de horario"] → «<b>Cambio de horario · 26 de noviembre:</b> Cerrado todo el día.»
  *                                     (para Visítanos; el aviso se escribe «26 de noviembre: Cerrado todo el día.»)
  *
+ * El recuadro «Hoy abrimos» del hero (widget HTML con class="mk-hoy") también toma las horas de aquí: este
+ * fragmento cambia sus atributos data-semana y data-finde al mostrar la página.
+ *
  * Si el grupo ACF todavía no existe, se muestran los horarios actuales de maloka.org.
  */
 
@@ -99,4 +102,24 @@ add_shortcode(
 		}
 		return '<b>' . esc_html( $atts['etiqueta'] ) . ':</b> ' . esc_html( $aviso );
 	}
+);
+
+/** Recuadro «Hoy abrimos» del hero (widget HTML): pone las horas de la página de inicio en data-semana y data-finde. */
+add_filter(
+	'elementor/widget/render_content',
+	function ( $html, $widget ) {
+		if ( 'html' !== $widget->get_name() || false === strpos( $html, 'mk-hoy' ) ) {
+			return $html;
+		}
+		$semana = maloka_horario_campo( 'semana_abre' ) . '-' . maloka_horario_campo( 'semana_cierra' );
+		$finde  = maloka_horario_campo( 'finde_abre' ) . '-' . maloka_horario_campo( 'finde_cierra' );
+		$html   = preg_replace( '/data-semana="[^"]*"/', 'data-semana="' . esc_attr( $semana ) . '"', $html );
+		$html   = preg_replace( '/data-finde="[^"]*"/', 'data-finde="' . esc_attr( $finde ) . '"', $html );
+		// Texto inicial (antes del script) con el horario entre semana
+		$html = preg_replace( '/(<span data-abre>)[^<]*(<\/span>)/', '${1}' . esc_html( maloka_hora( maloka_horario_campo( 'semana_abre' ) ) ) . '${2}', $html );
+		$html = preg_replace( '/(<span data-cierra>)[^<]*(<\/span>)/', '${1}' . esc_html( maloka_hora( maloka_horario_campo( 'semana_cierra' ) ) ) . '${2}', $html );
+		return $html;
+	},
+	10,
+	2
 );

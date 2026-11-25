@@ -559,7 +559,7 @@
                                                         },
                                                         "html_tag": "a",
                                                         "link": {
-                                                            "url": "/horarios-y-tarifas/",
+                                                            "url": "/visitanos/#horarios",
                                                             "is_external": "",
                                                             "nofollow": "",
                                                             "custom_attributes": ""
@@ -727,7 +727,7 @@
                                                         },
                                                         "html_tag": "a",
                                                         "link": {
-                                                            "url": "/como-llegar/",
+                                                            "url": "/visitanos/#llegar",
                                                             "is_external": "",
                                                             "nofollow": "",
                                                             "custom_attributes": ""
@@ -895,7 +895,7 @@
                                                         },
                                                         "html_tag": "a",
                                                         "link": {
-                                                            "url": "/servicios/",
+                                                            "url": "/visitanos/#servicios",
                                                             "is_external": "",
                                                             "nofollow": "",
                                                             "custom_attributes": ""
@@ -1063,7 +1063,7 @@
                                                         },
                                                         "html_tag": "a",
                                                         "link": {
-                                                            "url": "/accesibilidad/",
+                                                            "url": "/visitanos/#accesibilidad",
                                                             "is_external": "",
                                                             "nofollow": "",
                                                             "custom_attributes": ""
@@ -1231,7 +1231,7 @@
                                                         },
                                                         "html_tag": "a",
                                                         "link": {
-                                                            "url": "/experiencias/",
+                                                            "url": "/visitanos/#experiencias",
                                                             "is_external": "",
                                                             "nofollow": "",
                                                             "custom_attributes": ""
@@ -1395,7 +1395,7 @@
                                                         },
                                                         "html_tag": "a",
                                                         "link": {
-                                                            "url": "/preguntas-frecuentes/",
+                                                            "url": "/visitanos/#preguntas",
                                                             "is_external": "",
                                                             "nofollow": "",
                                                             "custom_attributes": ""
@@ -1619,7 +1619,10 @@
                                                             "size": 1.4,
                                                             "sizes": []
                                                         },
-                                                        "typography_font_family": "Montserrat"
+                                                        "typography_font_family": "Montserrat",
+                                                        "__dynamic__": {
+                                                            "title": "[elementor-tag id=\"6eda502\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_dias%20dia%3D%5C%22semana%5C%22%5D%22%7D\"]"
+                                                        }
                                                     },
                                                     "elements": [],
                                                     "widgetType": "heading"
@@ -1643,7 +1646,10 @@
                                                             "size": 1.4,
                                                             "sizes": []
                                                         },
-                                                        "typography_font_family": "Montserrat"
+                                                        "typography_font_family": "Montserrat",
+                                                        "__dynamic__": {
+                                                            "title": "[elementor-tag id=\"455c47b\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_horario%20dia%3D%5C%22semana%5C%22%5D%22%7D\"]"
+                                                        }
                                                     },
                                                     "elements": [],
                                                     "widgetType": "heading"
@@ -1667,7 +1673,10 @@
                                                             "size": 1.4,
                                                             "sizes": []
                                                         },
-                                                        "typography_font_family": "Montserrat"
+                                                        "typography_font_family": "Montserrat",
+                                                        "__dynamic__": {
+                                                            "title": "[elementor-tag id=\"10e58d8\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_dias%20dia%3D%5C%22finde%5C%22%5D%22%7D\"]"
+                                                        }
                                                     },
                                                     "elements": [],
                                                     "widgetType": "heading"
@@ -1691,7 +1700,10 @@
                                                             "size": 1.4,
                                                             "sizes": []
                                                         },
-                                                        "typography_font_family": "Montserrat"
+                                                        "typography_font_family": "Montserrat",
+                                                        "__dynamic__": {
+                                                            "title": "[elementor-tag id=\"4adfb9a\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_horario%20dia%3D%5C%22finde%5C%22%5D%22%7D\"]"
+                                                        }
                                                     },
                                                     "elements": [],
                                                     "widgetType": "heading"
@@ -1715,7 +1727,10 @@
                                                             "size": 1.4,
                                                             "sizes": []
                                                         },
-                                                        "typography_font_family": "Montserrat"
+                                                        "typography_font_family": "Montserrat",
+                                                        "__dynamic__": {
+                                                            "title": "[elementor-tag id=\"ce6eb0a\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_venta%5D%22%7D\"]"
+                                                        }
                                                     },
                                                     "elements": [],
                                                     "widgetType": "heading"
@@ -1727,7 +1742,7 @@
                                                         "title": "Cómo llegar →",
                                                         "header_size": "div",
                                                         "link": {
-                                                            "url": "/como-llegar/",
+                                                            "url": "/visitanos/#llegar",
                                                             "is_external": "",
                                                             "nofollow": "",
                                                             "custom_attributes": ""
@@ -3170,7 +3185,7 @@
                                                         },
                                                         "html_tag": "a",
                                                         "link": {
-                                                            "url": "/experiencias/",
+                                                            "url": "/visitanos/#experiencias",
                                                             "is_external": "",
                                                             "nofollow": "",
                                                             "custom_attributes": ""

@@ -1160,6 +1160,9 @@
                                             "unit": "em",
                                             "size": 1.4,
                                             "sizes": []
+                                        },
+                                        "__dynamic__": {
+                                            "title": "[elementor-tag id=\"0952b89\" name=\"shortcode\" settings=\"%7B%22shortcode%22%3A%22%5Bmaloka_venta%5D%22%7D\"]"
                                         }
                                     },
                                     "elements": [],

@@ -310,7 +310,7 @@
         },
         "html_tag": "a",
         "link": {
-         "url": "/horarios-y-tarifas/",
+         "url": "/visitanos/#horarios",
          "is_external": "",
          "nofollow": "",
          "custom_attributes": ""
@@ -475,7 +475,7 @@
         },
         "html_tag": "a",
         "link": {
-         "url": "/como-llegar/",
+         "url": "/visitanos/#llegar",
          "is_external": "",
          "nofollow": "",
          "custom_attributes": ""
@@ -640,7 +640,7 @@
         },
         "html_tag": "a",
         "link": {
-         "url": "/servicios/",
+         "url": "/visitanos/#servicios",
          "is_external": "",
          "nofollow": "",
          "custom_attributes": ""
@@ -805,7 +805,7 @@
         },
         "html_tag": "a",
         "link": {
-         "url": "/accesibilidad/",
+         "url": "/visitanos/#accesibilidad",
          "is_external": "",
          "nofollow": "",
          "custom_attributes": ""
@@ -970,7 +970,7 @@
         },
         "html_tag": "a",
         "link": {
-         "url": "/experiencias/",
+         "url": "/visitanos/#experiencias",
          "is_external": "",
          "nofollow": "",
          "custom_attributes": ""
@@ -1135,7 +1135,7 @@
         },
         "html_tag": "a",
         "link": {
-         "url": "/preguntas-frecuentes/",
+         "url": "/visitanos/#preguntas",
          "is_external": "",
          "nofollow": "",
          "custom_attributes": ""
@@ -1486,7 +1486,7 @@
         "title": "Cómo llegar →",
         "header_size": "div",
         "link": {
-         "url": "/como-llegar/",
+         "url": "/visitanos/#llegar",
          "is_external": "",
          "nofollow": "",
          "custom_attributes": ""
@@ -2839,7 +2839,7 @@
         },
         "html_tag": "a",
         "link": {
-         "url": "/experiencias/",
+         "url": "/visitanos/#experiencias",
          "is_external": "",
          "nofollow": "",
          "custom_attributes": ""
