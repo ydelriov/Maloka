@@ -164,6 +164,13 @@ más de ~12 en un solo archivo.
 4. En Ajustes de la página, plantilla **Elementor ancho completo** (el header y el footer los pone el Theme Builder).
 5. Revisa en el modo responsive de Elementor (tablet y celular) y publica.
 
+### Así quedó en pruebas.maloka.org
+
+La página Visítanos (`/visitanos/`) tiene las 3 partes en orden (11 secciones), con las 18 imágenes de TuBoleta,
+maloka.org y GitHub Pages copiadas a la Biblioteca de medios. Los contenedores internos llevan relleno 0: sin eso
+heredaban los 10 px del Kit y Funciones, Cómo llegar, Servicios y Preguntas quedaban corridas. Los enlaces del texto van
+en violeta `#6B5BD6` (no el rosado del tema). El mapa es el widget Google Maps (ya trae la dirección de Maloka).
+
 ### Lo que hay que validar o completar
 - Planes, fotos y precios se tomaron de maloka.org/horarios-y-tarifas en noviembre de 2026; los precios están
   dentro de cada imagen y en el texto de la tarjeta. Si cambian, hay que actualizar ambos.
