@@ -622,7 +622,7 @@
         "flex_direction_mobile": "row",
         "flex_align_items_mobile": "center",
         "flex_justify_content_mobile": "flex-start",
-        "flex_wrap_mobile": "wrap",
+        "flex_wrap_mobile": "nowrap",
         "flex_direction_tablet": "row",
         "flex_wrap": "nowrap",
         "flex_align_items": "center",
@@ -658,7 +658,8 @@
            "size": 64,
            "sizes": []
           },
-          "_element_width": "auto"
+          "_element_width": "auto",
+          "_flex_size": "none"
          },
          "elements": []
         },
@@ -670,7 +671,7 @@
           "container_type": "flex",
           "flex_direction": "row",
           "flex_direction_mobile": "row",
-          "flex_wrap": "wrap",
+          "flex_wrap": "nowrap",
           "content_width": "full",
           "flex_gap": {
            "column": "16",
@@ -692,10 +693,11 @@
           "flex_justify_content_mobile": "flex-start",
           "_element_width": "auto",
           "width": {
-           "unit": "px",
-           "size": "",
+           "unit": "custom",
+           "size": "auto",
            "sizes": []
-          }
+          },
+          "_flex_size": "none"
          },
          "elements": [
           {
