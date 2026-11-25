@@ -26,7 +26,13 @@
         { "label": "Cumpleaños", "icono": "cake" },
         { "label": "Empresas y eventos", "icono": "building" },
         { "label": "MPA", "icono": "heart", "desc": "Maloka Puertas Abiertas" }
-      ]
+      ],
+      "cta": {
+        "titulo": "Cotiza tu evento",
+        "texto": "Tarifas especiales para colegios, cumpleaños y empresas. Cuéntanos qué quieres hacer y te enviamos la propuesta.",
+        "enlace": "Cotiza tu evento",
+        "url": "https://forms.gle/N3pnMAnyiRcSffWN7"
+      }
     },
     {
       "id": "descubre", "label": "Descubre", "icono": "compass",
